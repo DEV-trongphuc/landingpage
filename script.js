@@ -552,18 +552,27 @@
             isAnimating = true;
 
             const cards = [...stack.querySelectorAll('.accred-stack-card')];
-            const topCard = stack.querySelector('.pos-1');
 
             if (direction === 'next') {
-                // Animate top card out
-                topCard.classList.add('exit');
+                const topCard = stack.querySelector('.pos-1');
+
+                // Swing OUT to the right
+                topCard.style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+                topCard.style.transform = 'translateX(120%) rotate(20deg) translateZ(100px)';
+                topCard.style.opacity = '0';
+                topCard.style.zIndex = '10';
 
                 setTimeout(() => {
-                    // Update classes for others
+                    // Update classes after it's out
                     cards.forEach(card => {
                         if (card.classList.contains('pos-1')) {
-                            card.classList.remove('pos-1', 'exit');
+                            card.classList.remove('pos-1');
                             card.classList.add('pos-3');
+                            // Reset position/opacity for bottom state
+                            card.style.transition = 'none';
+                            card.style.transform = '';
+                            card.style.opacity = '';
+                            card.style.zIndex = '';
                         } else if (card.classList.contains('pos-2')) {
                             card.classList.remove('pos-2');
                             card.classList.add('pos-1');
@@ -572,17 +581,22 @@
                             card.classList.add('pos-2');
                         }
                     });
-                    isAnimating = false;
-                }, 600);
+
+                    setTimeout(() => {
+                        cards.forEach(c => c.style.transition = '');
+                        isAnimating = false;
+                    }, 50);
+                }, 500);
             } else {
-                // Previous: move back card to front
+                // Previous: swing IN from the left (Bottom to Top)
                 const backCard = stack.querySelector('.pos-3');
                 backCard.style.transition = 'none';
                 backCard.style.transform = 'translateX(-120%) rotate(-15deg) translateZ(100px)';
                 backCard.style.opacity = '0';
+                backCard.style.zIndex = '10';
 
                 setTimeout(() => {
-                    backCard.style.transition = '';
+                    backCard.style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
                     cards.forEach(card => {
                         if (card.classList.contains('pos-1')) {
                             card.classList.remove('pos-1');
@@ -595,9 +609,14 @@
                             card.classList.add('pos-1');
                             card.style.transform = '';
                             card.style.opacity = '';
+                            card.style.zIndex = '';
                         }
                     });
-                    isAnimating = false;
+
+                    setTimeout(() => {
+                        cards.forEach(c => c.style.transition = '');
+                        isAnimating = false;
+                    }, 600);
                 }, 50);
             }
         }

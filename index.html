@@ -2302,15 +2302,12 @@
             }
 
             /* Enrollment & Trip Centering */
-            .enroll-right,
-            .trip-content {
-                text-align: center !important;
+
+            .accred-feature-list li {
+                justify-content: flex-start !important;
             }
 
-            .apply-title,
-            .trip-desc {
-                text-align: center !important;
-            }
+
 
             .trip-highlights {
                 display: inline-block !important;
@@ -2355,8 +2352,7 @@
                 display: flex !important;
                 overflow-x: auto !important;
                 scroll-snap-type: x mandatory;
-                scroll-padding-left: 20px;
-                /* Snaps to the padding start */
+                scroll-padding: 0 20px;
                 gap: 16px;
                 padding-bottom: 24px !important;
                 padding-left: 20px !important;
@@ -2365,9 +2361,14 @@
                 margin-right: -16px !important;
                 -webkit-overflow-scrolling: touch;
                 scrollbar-width: none;
-                /* Firefox */
                 -ms-overflow-style: none;
-                /* IE/Edge */
+                align-items: stretch !important;
+            }
+
+            .competency-grid::after {
+                content: "";
+                flex: 0 0 20px;
+                display: block;
             }
 
             .competency-grid::-webkit-scrollbar {
@@ -2377,19 +2378,21 @@
 
             .competency-card {
                 flex: 0 0 280px !important;
-                scroll-snap-align: start;
+                scroll-snap-align: center;
                 opacity: 1 !important;
                 transform: none !important;
+                height: auto !important;
             }
+
 
             /* Horizontal Scroll for Testimonials */
             .testimonials-grid {
                 display: flex !important;
                 overflow-x: auto !important;
                 scroll-snap-type: x mandatory;
-                scroll-padding-left: 20px;
+                scroll-padding: 0 20px;
                 gap: 16px;
-                padding-bottom: 24px !important;
+                padding-bottom: 32px !important;
                 padding-left: 20px !important;
                 padding-right: 20px !important;
                 margin-left: -16px !important;
@@ -2397,6 +2400,15 @@
                 -webkit-overflow-scrolling: touch;
                 scrollbar-width: none;
                 -ms-overflow-style: none;
+                align-items: stretch !important;
+                /* Ensure uniform height */
+            }
+
+            .testimonials-grid::after {
+                content: "";
+                flex: 0 0 20px;
+                /* Invisible spacer to ensure last card padding */
+                display: block;
             }
 
             .testimonials-grid::-webkit-scrollbar {
@@ -2404,9 +2416,13 @@
             }
 
             .testi-card-v4 {
-                flex: 0 0 305px !important;
-                scroll-snap-align: start;
+                flex: 0 0 calc(90vw - 40px) !important;
+                /* Responsive card width */
+                max-width: 320px !important;
+                scroll-snap-align: center;
                 margin-bottom: 0 !important;
+                height: auto !important;
+                /* Allow stretching */
             }
 
             /* Horizontal Scroll for Gallery */
