@@ -2690,11 +2690,28 @@ abbr {
 
 .gallery-subtitle {
   text-align: center;
-  color: var(--clr-text-muted);
-  font-size: 1.05rem;
-  max-width: 600px;
+  color: #475569;
+  font-size: 1.12rem;
+  max-width: 680px;
   margin: 0 auto 48px;
-  line-height: 1.7;
+  line-height: 1.75;
+  font-weight: 450;
+  border-bottom: 2px solid #ab0e00;
+  padding-bottom: 12px;
+  display: inline-block;
+  width: auto;
+}
+
+.gallery-subtitle em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.gallery-subtitle strong {
+  color: #ab0e00;
+  font-weight: 800;
 }
 
 /* Mosaic: 1 tall item left, 2Ã—2 grid right */
@@ -3561,8 +3578,8 @@ abbr {
   border-radius: 12px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
 
@@ -3577,13 +3594,14 @@ abbr {
   background: #fff;
 }
 
-.flip-card-overlay, .flip-card-back-overlay {
+.flip-card-overlay,
+.flip-card-back-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 20px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -3602,7 +3620,7 @@ abbr {
 }
 
 .flip-back-badge {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   color: #fff;
   padding: 4px 10px;
   border-radius: 6px;
@@ -3654,7 +3672,11 @@ abbr {
 }
 
 @media (max-width: 768px) {
-  .flip-card { height: 320px; }
-  .degree-samples-title { font-size: 1.75rem; }
-}
+  .flip-card {
+    height: 320px;
+  }
 
+  .degree-samples-title {
+    font-size: 1.75rem;
+  }
+}

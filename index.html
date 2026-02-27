@@ -9,7 +9,7 @@
     <!-- SEO Primary -->
     <title>MBA Thụy Sĩ Trực Tuyến | Thạc Sĩ Quản Trị Kinh Doanh Swiss UMEF</title>
     <meta name="description"
-        content="Chương trình Thạc sĩ Quản trị Kinh doanh (MBA) trực tuyến 100% do Swiss UMEF Thụy Sĩ cấp bằng. 16-18 tháng, công nhận quốc tế, dành cho người đi làm từ 2 năm kinh nghiệm." />
+        content="Chương trình Thạc sĩ Quản trị Kinh doanh (MBA) trực tuyến 100% do Swiss UMEF Thụy Sĩ cấp bằng. 16-18 tháng, công nhận quốc tế." />
     <meta name="keywords"
         content="MBA Thụy Sĩ, thạc sĩ quản trị kinh doanh, MBA online, Swiss UMEF, MBA trực tuyến, bằng MBA quốc tế, học MBA online Việt Nam" />
     <meta name="robots" content="index, follow" />
@@ -19,7 +19,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="MBA Thụy Sĩ Trực Tuyến | Swiss UMEF – Bứt phá sự nghiệp trong 16-18 tháng" />
     <meta property="og:description"
-        content="Chương trình MBA chính quy cấp bởi Swiss UMEF Thụy Sĩ. Học 100% trực tuyến, 16-18 tháng, dành cho người đi làm muốn thăng tiến lên vai trò quản lý." />
+        content="Chương trình MBA chính quy cấp bởi Swiss UMEF Thụy Sĩ. Học 100% trực tuyến, 16-18 tháng, dành cho người muốn thăng tiến lên vai trò quản lý." />
     <meta property="og:image" content="https://ideas.edu.vn/wp-content/uploads/2026/01/Logo_15_nam.webp" />
     <meta property="og:url" content="https://ideas.edu.vn/mba-swiss-umef/" />
     <meta property="og:locale" content="vi_VN" />
@@ -38,7 +38,7 @@
     "@context": "https://schema.org",
     "@type": "Course",
     "name": "Thạc Sĩ Quản Trị Kinh Doanh (MBA) – Swiss UMEF",
-    "description": "Chương trình MBA trực tuyến 100% do Swiss UMEF Thụy Sĩ cấp bằng, dành cho người đi làm từ 2 năm kinh nghiệm.",
+    "description": "Chương trình MBA trực tuyến 100% do Swiss UMEF Thụy Sĩ cấp bằng, dành cho những ai muốn nâng tầm sự nghiệp.",
     "provider": {
       "@type": "Organization",
       "name": "Swiss UMEF – IDEAS Education",
@@ -382,19 +382,19 @@
             z-index: 2;
         }
 
-        /* ── Bottom accreditation strip ── */
+        /* Master Card Layout - Unified Flow */
+        .proof-card-inner {
+            padding: 48px 56px 32px;
+            /* Reduced bottom padding */
+        }
+
         .proof-accred-strip {
             position: relative;
             z-index: 1;
             border-top: 1px solid #f1f5f9;
-            padding: 32px 56px 36px;
-            margin-top: 12px;
-        }
-
-        @media (max-width: 560px) {
-            .proof-accred-strip {
-                padding: 24px 20px 28px;
-            }
+            padding: 32px 56px;
+            background: #fafbff;
+            /* Light contrast for the strip */
         }
 
         .proof-accred-label {
@@ -412,35 +412,57 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 32px;
-            opacity: 0.65;
-            filter: grayscale(1);
-            transition: opacity 0.4s ease, filter 0.4s ease;
-        }
-
-        .proof-accred-logos:hover {
+            gap: 40px;
             opacity: 1;
-            filter: grayscale(0);
+            filter: none;
+            transition: all 0.4s ease;
+            margin: 0 auto;
+            max-width: 1000px;
         }
 
         .proof-accred-logos img {
-            height: 36px;
+            height: 3.2rem;
             width: auto;
             object-fit: contain;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+            filter: grayscale(0.2) opacity(0.85);
+            cursor: pointer;
         }
 
         .proof-accred-logos img:hover {
-            transform: scale(1.1);
+            transform: scale(1.15) translateY(-5px);
+            filter: grayscale(0) opacity(1);
         }
 
-        @media (max-width: 560px) {
-            .proof-accred-logos img {
-                height: 24px;
+        .proof-card-accred {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 56px;
+            border-top: 1px solid #f1f5f9;
+            background: #fff;
+        }
+
+        .combined-cta-wrap {
+            padding: 0 56px 60px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            border-radius: 0 0 2rem 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .proof-card-accred {
+                grid-template-columns: 1fr;
+                padding: 40px 32px;
+                gap: 40px;
+                text-align: center;
             }
 
-            .proof-accred-logos {
-                gap: 20px;
+            .proof-accred-strip {
+                padding: 32px 32px;
             }
         }
 
@@ -901,6 +923,7 @@
         .solution-section {
             background: linear-gradient(160deg, #f8f9fb 0%, #fff 50%, #f4f6ff 100%);
             position: relative;
+            padding-bottom: 24px !important;
         }
 
         .solution-section::before {
@@ -1652,21 +1675,46 @@
 
         /* Competency grid — bottom space before next band */
         .competency-grid {
-            padding-bottom: 88px;
+            padding-bottom: 0;
+            margin-bottom: 32px;
         }
 
         /* Testimonials — full-width grey band */
         .testimonials-section {
-            background: #f4f6fb;
+            position: relative;
+            background-color: #ffffff;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 24px 24px;
             width: 100vw;
             margin-left: calc(-50vw + 50%);
-            padding: 72px calc(50vw - 50%) !important;
+            padding: 72px calc(50vw - 50%) 20px !important;
             border-top: 1px solid rgba(17, 23, 41, 0.07);
-            border-bottom: 1px solid rgba(17, 23, 41, 0.07);
-            border-radius: 0;
-            box-shadow: none;
-            border-left: none;
-            border-right: none;
+            border-bottom: none;
+            overflow: hidden;
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(171, 14, 0, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .testimonials-section::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .testimonials-title {
@@ -1688,142 +1736,232 @@
             align-items: stretch;
         }
 
-        /* Card */
-        .testi-card-v3 {
-            background: #fff;
-            border-radius: 20px;
-            border: 1.5px solid rgba(17, 23, 41, 0.08);
-            box-shadow: 0 4px 24px rgba(17, 23, 41, 0.06);
+        /* ═══════════════════════════════════════
+           TESTIMONIALS v4-EXACT — Matching Image Style
+        ═══════════════════════════════════════ */
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .testi-card-v4 {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            overflow: hidden;
+            height: 100%;
             position: relative;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .testi-card-v3:hover {
+        .testi-card-v4:hover {
             transform: translateY(-5px);
-            box-shadow: 0 16px 48px rgba(17, 23, 41, 0.12);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.1);
         }
 
-        .testi-card-v3--featured {
-            border-color: rgba(171, 14, 0, 0.18);
-            box-shadow: 0 8px 40px rgba(171, 14, 0, 0.12);
-            transform: translateY(-6px);
+        /* Background Star Watermark */
+        .testi-v4-bg-star {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 72px;
+            height: 72px;
+            pointer-events: none;
+            opacity: 0.03;
+            transition: all 0.3s ease;
+            color: currentColor;
         }
 
-        .testi-card-v3--featured:hover {
-            transform: translateY(-11px);
-            box-shadow: 0 20px 60px rgba(171, 14, 0, 0.18);
+        .testi-card-v4:hover .testi-v4-bg-star {
+            opacity: 0.08;
+            transform: scale(1.1);
         }
 
-        .testi-card-v3-body {
-            padding: 32px 28px 20px;
-            flex: 1;
-        }
-
-        .testi-v3-quote {
-            font-size: 3.5rem;
-            font-family: Georgia, serif;
-            line-height: 1;
-            color: #ab0e00;
-            opacity: 0.25;
-            margin-bottom: 10px;
-            user-select: none;
-        }
-
-        .testi-card-v3--featured .testi-v3-quote {
-            opacity: 0.45;
-        }
-
-        .testi-v3-text {
-            font-size: 0.92rem;
-            color: #374151;
-            line-height: 1.75;
-            font-style: italic;
-        }
-
-        /* Footer */
-        .testi-v3-footer {
-            padding: 0 28px 28px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .testi-v3-stars {
-            font-size: 0.85rem;
-            color: #f59e0b;
-            letter-spacing: 2px;
-        }
-
-        .testi-v3-author {
+        /* Header Section */
+        .testi-v4-header {
+            padding: 32px;
+            padding-bottom: 24px;
+            border-bottom: none;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 20px;
         }
 
-        .testi-v3-avatar {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ab0e00, #e53e3e);
+        .testi-v4-avatar-wrap {
+            position: relative;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            font-size: 0.72rem;
-            color: #fff;
-            flex-shrink: 0;
-            letter-spacing: 0.04em;
         }
 
-        .testi-v3-avatar--photo {
-            background: none;
+        .testi-v4-avatar-glow {
+            position: absolute;
+            inset: -4px;
+            border: 1px solid #fee2e2;
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .testi-card-v4:hover .testi-v4-avatar-glow {
+            opacity: 1;
+        }
+
+        .testi-v4-avatar {
+            width: 64px;
+            height: 80px;
+            border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            filter: grayscale(1);
+            transition: all 0.7s ease;
+            background: #f1f5f9;
         }
 
-        .testi-v3-avatar--photo img {
+        .testi-card-v4:hover .testi-v4-avatar {
+            filter: grayscale(0);
+        }
+
+        .testi-v4-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .testi-v3-author strong {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 800;
-            color: var(--clr-text);
+        .testi-v4-meta {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
         }
 
-        .testi-v3-author span {
-            font-size: 0.78rem;
-            color: #64748b;
-            margin-top: 2px;
-            display: block;
-        }
-
-        .testi-v3-verified {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: #10b981;
-            letter-spacing: 0.05em;
+        .testi-v4-name {
+            font-size: 1rem;
+            font-weight: 900;
+            color: #0f172a;
             text-transform: uppercase;
+            letter-spacing: -0.01em;
+            margin-bottom: 2px;
+            line-height: 1.2;
         }
 
-        /* Red bottom bar */
-        .testi-v3-bar {
-            height: 3px;
-            background: linear-gradient(90deg, #ab0e00, #ef4444);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.35s ease;
+        .testi-v4-role {
+            font-size: 10px;
+            font-weight: 700;
+            color: #ab0e00;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
         }
 
-        .testi-card-v3:hover .testi-v3-bar,
-        .testi-card-v3--featured .testi-v3-bar {
-            transform: scaleX(1);
+        .testi-v4-company {
+            font-size: 9px;
+            font-weight: 800;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Body Section */
+        .testi-v4-body {
+            padding: 32px;
+            padding-top: 32px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .testi-v4-quote-icon {
+            width: 20px;
+            height: 20px;
+            color: #ab0e00;
+            opacity: 0.08;
+            margin-bottom: 20px;
+        }
+
+        .testi-v4-text {
+            font-size: 13.5px;
+            color: #475569;
+            font-weight: 500;
+            line-height: 1.7;
+            font-style: italic;
+            margin: 0;
+            text-align: left;
+        }
+
+        /* Footer Section */
+        .testi-v4-footer {
+            margin-top: auto;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: none;
+        }
+
+        .testi-v4-stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .testi-v4-star {
+            width: 12px;
+            height: 12px;
+            color: #fbbf24;
+            fill: currentColor;
+        }
+
+        .testi-v4-verified {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .testi-v4-verified-lbl {
+            font-size: 8px;
+            font-weight: 900;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .testi-v4-verified-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #10b981;
+        }
+
+        /* Bottom Animated Bar */
+        .testi-v4-bottom-bar {
+            height: 2px;
+            width: 0;
+            background: #ab0e00;
+            transition: width 0.5s ease;
+        }
+
+        .testi-card-v4:hover .testi-v4-bottom-bar {
+            width: 100%;
+        }
+
+        @media (max-width: 1024px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -1831,8 +1969,10 @@
                 grid-template-columns: 1fr;
             }
 
-            .testi-card-v3--featured {
-                transform: translateY(0);
+            .testi-v4-header,
+            .testi-v4-body,
+            .testi-v4-footer {
+                padding: 24px;
             }
         }
 
@@ -1929,27 +2069,29 @@
         }
 
         .ecosystem-title {
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             font-weight: 900;
-            color: #fff;
+            color: #ffffff !important;
             margin: 16px 0 12px;
-            line-height: 1.25;
-            letter-spacing: -0.02em;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
         }
 
         .eco-title-accent {
-            background: linear-gradient(135deg, #ef4444 0%, #ab0e00 100%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ef4444 50%, #ab0e00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.3));
         }
 
         .ecosystem-sub {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.5);
-            max-width: 520px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7) !important;
+            max-width: 600px;
             margin: 0 auto;
-            line-height: 1.65;
+            line-height: 1.75;
+            font-weight: 400;
         }
 
         /* Grid — 2 columns with generous gap */
@@ -2062,18 +2204,18 @@
 
         /* Pricing — full-width grey band */
         .pricing-section {
-            background: #f4f6fb;
+            background-color: #f4f6fb;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 24px 24px;
             width: 100vw;
             margin-left: calc(-50vw + 50%);
             margin-top: 0 !important;
             margin-bottom: 0;
-            padding: 72px calc(50vw - 50%) !important;
+            padding: 20px calc(50vw - 50%) 80px !important;
             border-top: 1px solid rgba(17, 23, 41, 0.07);
             border-bottom: 1px solid rgba(17, 23, 41, 0.07);
             border-radius: 0;
-            box-shadow: none;
-            border-left: none;
-            border-right: none;
+            position: relative;
         }
 
         /* Section-label tinted inside bands */
@@ -2082,6 +2224,282 @@
             background: rgba(171, 14, 0, 0.07);
             color: #ab0e00;
             border: 1px solid rgba(171, 14, 0, 0.12);
+        }
+
+
+        /* ═══════════════════════════════════════
+           MOBILE & TABLET OPTIMIZATIONS
+        ═══════════════════════════════════════ */
+        @media (max-width: 768px) {
+            :root {
+                --section-py: 64px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .section-title {
+                text-align: center !important;
+                margin-bottom: 24px;
+            }
+
+            .hero {
+                padding-top: 100px;
+                padding-bottom: 60px;
+                text-align: center;
+            }
+
+            .hero-layout {
+                gap: 32px;
+            }
+
+            .hero-badge {
+                margin: 0 auto 20px;
+            }
+
+            .hero-sub {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .section-label {
+                margin-left: auto !important;
+                margin-right: auto !important;
+                display: table !important;
+                margin-bottom: 1.2rem !important;
+            }
+
+            .section-cta {
+                text-align: center;
+            }
+
+            .hero-badges-row {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                margin-bottom: 24px;
+            }
+
+            .info-badge {
+                width: 100% !important;
+                justify-content: center;
+                padding: 12px 8px !important;
+                font-size: 0.78rem !important;
+                margin: 0 !important;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            /* Enrollment & Trip Centering */
+            .enroll-right,
+            .trip-content {
+                text-align: center !important;
+            }
+
+            .apply-title,
+            .trip-desc {
+                text-align: center !important;
+            }
+
+            .trip-highlights {
+                display: inline-block !important;
+                text-align: left !important;
+                margin: 0 auto 24px !important;
+            }
+
+            .apply-req {
+                justify-content: center !important;
+            }
+
+            .apply-steps {
+                text-align: left !important;
+            }
+
+            .hero-photo-main img {
+                height: 280px !important;
+            }
+
+            .hero-float-badge {
+                display: none;
+                /* Hide floating badges on very small screens to reduce clutter */
+            }
+
+            .mobile-menu a {
+                padding: 18px 24px;
+                /* Increased touch target */
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            }
+
+            .ecosystem-section {
+                padding: 80px 16px !important;
+            }
+
+            .pricing-section {
+                padding: 64px 16px !important;
+            }
+
+            /* Horizontal Scroll for Competencies */
+            .competency-grid {
+                display: flex !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory;
+                scroll-padding-left: 20px;
+                /* Snaps to the padding start */
+                gap: 16px;
+                padding-bottom: 24px !important;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                margin-left: -16px !important;
+                margin-right: -16px !important;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                /* Firefox */
+                -ms-overflow-style: none;
+                /* IE/Edge */
+            }
+
+            .competency-grid::-webkit-scrollbar {
+                display: none;
+                /* Chrome/Safari */
+            }
+
+            .competency-card {
+                flex: 0 0 280px !important;
+                scroll-snap-align: start;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            /* Horizontal Scroll for Testimonials */
+            .testimonials-grid {
+                display: flex !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory;
+                scroll-padding-left: 20px;
+                gap: 16px;
+                padding-bottom: 24px !important;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                margin-left: -16px !important;
+                margin-right: -16px !important;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .testimonials-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .testi-card-v4 {
+                flex: 0 0 305px !important;
+                scroll-snap-align: start;
+                margin-bottom: 0 !important;
+            }
+
+            /* Horizontal Scroll for Gallery */
+            .gallery-mosaic {
+                display: flex !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory;
+                scroll-padding-left: 20px;
+                gap: 12px;
+                padding-bottom: 24px !important;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                margin-left: -20px !important;
+                margin-right: -16px !important;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .gallery-mosaic::-webkit-scrollbar {
+                display: none;
+            }
+
+            .gallery-item {
+                flex: 0 0 280px !important;
+                height: 220px !important;
+                scroll-snap-align: start;
+            }
+
+            .gallery-item--large {
+                flex: 0 0 280px !important;
+                height: 220px !important;
+            }
+
+            /* Scroll Dots Indicators */
+            .scroll-dots {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 12px;
+                margin-bottom: 24px;
+            }
+
+            .scroll-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            .scroll-dot.active {
+                background: #ab0e00;
+                transform: scale(1.2);
+            }
+
+            .proof-card-inner {
+                padding: 32px 20px;
+            }
+
+            .proof-accred-strip {
+                padding: 24px 20px;
+            }
+
+            .proof-accred-logos {
+                gap: 20px;
+            }
+
+            .proof-accred-logos img {
+                height: 2.5rem;
+            }
+
+            .sacom-banner {
+                padding: 20px;
+            }
+
+            .sacom-headline {
+                font-size: 1.1rem;
+            }
+
+            .sol-photo-grid {
+                height: 260px;
+            }
+
+            .floating-cta {
+                bottom: 16px;
+                right: 16px;
+                left: 16px;
+            }
+
+            .floating-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-hl-big {
+                font-size: 2.2rem !important;
+            }
         }
     </style>
 
@@ -2149,9 +2567,7 @@
 
                     <p class="hero-sub">
                         Chương trình <strong>Thạc Sĩ Quản Trị Kinh Doanh (MBA) trực tuyến</strong> dành cho người đi làm
-                        từ&nbsp;<strong>3 năm kinh nghiệm</strong> — đã có chuyên môn nhưng chưa bứt phá lên vai trò
-                        quản lý vì thiếu tư
-                        duy
+                        — đã có chuyên môn nhưng muốn bứt phá lên vai trò quản lý cao cấp với nền tảng tư duy
                         quản trị bài bản.
                     </p>
 
@@ -2189,15 +2605,20 @@
                         <span class="hero-accred-label">Được kiểm định &amp; công nhận bởi</span>
                         <div class="hero-accred-logos">
                             <img src="https://ideas.edu.vn/wp-content/uploads/2025/10/qs-1.webp" alt="QS Stars"
-                                title="QS Stars" height="40" loading="lazy" />
+                                class="accred-trigger" data-accred="qs" height="40" loading="lazy" />
                             <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef1.png"
-                                alt="Swiss Accreditation" title="Swiss Accreditation" height="40" loading="lazy" />
+                                alt="Swiss Accreditation" class="accred-trigger" data-accred="sac" height="40"
+                                loading="lazy" />
                             <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef3.png" alt="Eduqua"
-                                title="Eduqua" height="40" loading="lazy" />
+                                class="accred-trigger" data-accred="eduqua" height="40" loading="lazy" />
                             <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef4.png" alt="IACBE"
-                                title="IACBE" height="40" loading="lazy" />
+                                class="accred-trigger" data-accred="iacbe" height="40" loading="lazy" />
+                            <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png" alt="CHEA"
+                                class="accred-trigger" data-accred="chea" height="40" loading="lazy" />
                             <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png" alt="ACBSP"
-                                title="ACBSP" height="40" loading="lazy" />
+                                class="accred-trigger" data-accred="acbsp" height="40" loading="lazy" />
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg" alt="VN-Naric"
+                                class="accred-trigger" data-accred="vnnaric" height="40" loading="lazy" />
                         </div>
                     </div>
 
@@ -2392,7 +2813,7 @@
                 <div class="pain-bottom-row reveal-up">
                     <div class="pain-stat-card" role="region" aria-label="Thống kê cảnh báo">
                         <div class="pain-stat-glow" aria-hidden="true"></div>
-                        <div class="pain-stat-number">43<span>%</span></div>
+                        <div class="pain-stat-number">43<span>%</span> <span>bị thay thế</span></div>
                         <div class="pain-stat-text">
                             <p>Bạn có đang nằm trong <strong>43% người lao động</strong> lo lắng sẽ bị thay thế trong
                                 vòng 2 năm tới?</p>
@@ -2407,9 +2828,9 @@
                                     stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
                                     aria-hidden="true">
                                     <polyline points="17 1 21 5 17 9" />
-                                    <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+                                    <path d="M3 11V9a4 0 0 1 4-4h14" />
                                     <polyline points="7 23 3 19 7 15" />
-                                    <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+                                    <path d="M21 13v2a4 0 0 1-4 4H3" />
                                 </svg>
                             </span>
                             <p><strong>AI thế hệ mới và tự động hóa</strong> đang tái định nghĩa công việc của nhân sự
@@ -2443,14 +2864,13 @@
 
                 <!-- Warning bar -->
                 <div class="pain-warning-v2 reveal-up">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                        style="color: #ef4444; opacity: 0.8;">
                         <path
-                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                        <line x1="12" y1="9" x2="12" y2="13" />
-                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                            d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H14.017V7H15.017C18.883 7 22.017 10.134 22.017 14V21H14.017ZM3.01697 21L3.01697 18C3.01697 16.8954 3.9124 16 5.01697 16H8.01697V14C8.01697 11.7909 6.22611 10 4.01697 10H3.01697V7H4.01697C7.883 7 11.017 10.134 11.017 14V21H3.01697Z" />
                     </svg>
-                    <strong>Không bước ra khỏi vùng an toàn chính là rủi ro dài hạn cho sự nghiệp của bạn.</strong>
+                    <strong style="font-style: italic;">"Không bước ra khỏi vùng an toàn chính là rủi ro dài hạn cho sự
+                        nghiệp của bạn."</strong>
                 </div>
 
                 <div class="section-cta reveal-up">
@@ -2625,8 +3045,8 @@
                                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
                             </svg>
-                            <span class="sol-v2-stat-val">12+1</span>
-                            <span class="sol-v2-stat-lbl">Môn + Luận văn</span>
+                            <span class="sol-v2-stat-val">12 môn + 1</span>
+                            <span class="sol-v2-stat-lbl">Luận văn</span>
                         </div>
                         <div class="sol-v2-stat">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -2697,19 +3117,88 @@
                         </div>
                     </div>
                 </div>
+            </div> <!-- end container sol-v2-wrap -->
 
+            <!-- Added 4 Core Competencies from Benefits - Now in its own container to fill width -->
+            <div class="container">
+                <div class="competency-relocated reveal-up" style="margin-top: 20px; margin-bottom: 0;">
+                    <h2 class="section-title reveal-up" id="competency-headline"
+                        style="text-align: center; margin-bottom: 48px;">
+                        Đưa sự nghiệp lên một tầm cao mới bằng<br />
+                        <span class="gradient-text">4 năng lực quản trị cốt lõi</span>
+                    </h2>
+
+                    <div class="competency-grid reveal-up" aria-label="4 năng lực quản trị cốt lõi">
+                        <article class="competency-card">
+                            <div class="comp-number">01</div>
+                            <div class="comp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                                </svg></div>
+                            <h3 class="comp-title">Tư duy quản trị tổng thể</h3>
+                            <p class="comp-desc">Hình thành tư duy quản trị bài bản, giúp bạn hiểu cách một doanh nghiệp
+                                vận hành từ chiến lược đến thực thi và kết nối hiệu quả giữa các phòng ban.</p>
+                        </article>
+                        <article class="competency-card">
+                            <div class="comp-number">02</div>
+                            <div class="comp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="18" y1="20" x2="18" y2="10" />
+                                    <line x1="12" y1="20" x2="12" y2="4" />
+                                    <line x1="6" y1="20" x2="6" y2="14" />
+                                </svg></div>
+                            <h3 class="comp-title">Quản trị thị trường</h3>
+                            <p class="comp-desc">Phát triển năng lực phân tích thị trường, thấu hiểu hành vi khách hàng,
+                                xây dựng chiến lược marketing và định giá sản phẩm phù hợp với mục tiêu kinh doanh.</p>
+                        </article>
+                        <article class="competency-card">
+                            <div class="comp-number">03</div>
+                            <div class="comp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                    <polyline points="17 6 23 6 23 12" />
+                                </svg></div>
+                            <h3 class="comp-title">Ra quyết định dựa trên dữ liệu</h3>
+                            <p class="comp-desc">Nâng cao khả năng phân tích tài chính, đọc hiểu báo cáo tài chính, đánh
+                                giá hiệu quả dự án, kiểm soát ngân sách và đưa ra quyết định dựa trên số liệu thực tế.
+                            </p>
+                        </article>
+                        <article class="competency-card">
+                            <div class="comp-number">04</div>
+                            <div class="comp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg></div>
+                            <h3 class="comp-title">Quản trị con người trong tổ chức</h3>
+                            <p class="comp-desc">Trang bị năng lực quản lý đội nhóm, ứng dụng công nghệ và tư duy đổi
+                                mới để nâng cao hiệu suất và đóng góp tích cực vào quá trình đổi mới của doanh nghiệp.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="scroll-dots" data-scroll-target=".competency-grid"></div>
+                </div>
             </div>
         </section>
 
         <!-- ══════════════════════════════════════════
          SECTION: CURRICULUM
      ══════════════════════════════════════════ -->
-        <section class="curriculum-section" id="chuong-trinh" aria-labelledby="curriculum-headline">
+        <section class="curriculum-section" id="chuong-trinh" aria-labelledby="curriculum-headline"
+            style="padding-top: 40px;">
             <div class="container">
                 <div class="section-label reveal-up">CHƯƠNG TRÌNH HỌC</div>
                 <h2 class="section-title reveal-up" id="curriculum-headline">
-                    12 môn học + Luận văn thiết kế<br />
-                    <span class="gradient-text">theo chuẩn châu Âu (90 ECTS)</span>
+                    12 môn + Thesis<br />
+                    <span class="gradient-text">Thiết kế theo chuẩn Châu Âu (90 ECTS)</span>
                 </h2>
                 <p class="solution-intro reveal-up">Chương trình được xây dựng theo tiêu chuẩn Bologna của châu Âu, đảm
                     bảo tính hệ thống từ nền tảng quản trị đến chuyên sâu chiến lược, ứng dụng ngay vào công việc hiện
@@ -2722,9 +3211,10 @@
                             <span class="curri-pillar-title">Nền tảng quản trị</span>
                         </div>
                         <ul class="curri-subjects">
-                            <li><span class="curri-dot"></span>Quản trị học (Management Principles)</li>
-                            <li><span class="curri-dot"></span>Kinh tế học ứng dụng (Managerial Economics)</li>
-                            <li><span class="curri-dot"></span>Kế toán quản trị (Managerial Accounting)</li>
+                            <li><span class="curri-dot"></span>Marketing Management (Quản trị Marketing)</li>
+                            <li><span class="curri-dot"></span>Accounting for Managers (Kế toán dành cho nhà quản lý)
+                            </li>
+                            <li><span class="curri-dot"></span>Organizational Behaviour (Hành vi tổ chức)</li>
                         </ul>
                     </div>
                     <div class="curri-pillar">
@@ -2733,9 +3223,9 @@
                             <span class="curri-pillar-title">Tài chính & Thị trường</span>
                         </div>
                         <ul class="curri-subjects">
-                            <li><span class="curri-dot"></span>Quản trị tài chính (Financial Management)</li>
-                            <li><span class="curri-dot"></span>Marketing chiến lược (Strategic Marketing)</li>
-                            <li><span class="curri-dot"></span>Hành vi tổ chức (Organizational Behavior)</li>
+                            <li><span class="curri-dot"></span>Corporate Finance (Tài chính doanh nghiệp)</li>
+                            <li><span class="curri-dot"></span>Accounting for Managers (Kế toán dành cho nhà quản lý)
+                            </li>
                         </ul>
                     </div>
                     <div class="curri-pillar">
@@ -2744,9 +3234,12 @@
                             <span class="curri-pillar-title">Chiến lược & Vận hành</span>
                         </div>
                         <ul class="curri-subjects">
-                            <li><span class="curri-dot"></span>Quản trị chiến lược (Strategic Management)</li>
-                            <li><span class="curri-dot"></span>Quản lý chuỗi cung ứng (Supply Chain)</li>
-                            <li><span class="curri-dot"></span>Quản trị dự án (Project Management)</li>
+                            <li><span class="curri-dot"></span>Strategy Management (Quản trị chiến lược)</li>
+                            <li><span class="curri-dot"></span>Project Management (Quản lý dự án)</li>
+                            <li><span class="curri-dot"></span>Digital Transformation (Chuyển đổi số trong doanh nghiệp)
+                            </li>
+                            <li><span class="curri-dot"></span>AI in Business Decision Making (Ứng dụng AI trong ra
+                                quyết định kinh doanh)</li>
                         </ul>
                     </div>
                     <div class="curri-pillar">
@@ -2755,9 +3248,13 @@
                             <span class="curri-pillar-title">Lãnh đạo & Đổi mới</span>
                         </div>
                         <ul class="curri-subjects">
-                            <li><span class="curri-dot"></span>Lãnh đạo & Phát triển con người (Leadership)</li>
-                            <li><span class="curri-dot"></span>Kinh doanh quốc tế (International Business)</li>
-                            <li><span class="curri-dot"></span>Đổi mới & Khởi nghiệp (Innovation)</li>
+                            <li><span class="curri-dot"></span>Leadership Development (Phát triển năng lực lãnh đạo)
+                            </li>
+                            <li><span class="curri-dot"></span>Human Capital and Talent Management (Quản trị nguồn nhân
+                                lực và nhân tài)</li>
+                            <li><span class="curri-dot"></span>Entrepreneurship and Innovation (Khởi nghiệp và đổi mới
+                                sáng tạo)</li>
+                            <li><span class="curri-dot"></span>Business Negotiation (Đàm phán kinh doanh)</li>
                         </ul>
                     </div>
                 </div>
@@ -2790,10 +3287,81 @@
                 </div>
             </div>
         </section>
+        <!-- ecosystem-section -->
+        <section class="ecosystem-section reveal-up">
+            <div class="eco-orb eco-orb-1" aria-hidden="true"></div>
+            <div class="eco-orb eco-orb-2" aria-hidden="true"></div>
+            <div class="eco-orb eco-orb-3" aria-hidden="true"></div>
+            <div class="eco-inner">
+                <div class="eco-header">
+                    <div class="section-label eco-label-light">HỆ SINH THÁI HỌC TẬP</div>
+                    <h3 class="ecosystem-title">Hệ sinh thái học tập toàn diện<br /><span class="eco-title-accent">luôn
+                            đồng hành cùng bạn</span></h3>
+                    <p class="ecosystem-sub">IDEAS là đối tác tuyển sinh chính thức của Swiss UMEF, xây dựng hệ
+                        sinh thái học tập toàn diện cho người học Việt Nam.</p>
+                </div>
 
-        <!-- ══════════════════════════════════════════
-         SECTION: ENROLLMENT TIMELINE + APPLICATION
-     ══════════════════════════════════════════ -->
+                <div class="ecosystem-grid-v2">
+                    <article class="eco-card-v2">
+                        <div class="eco-card-v2-icon eco-card-v2-icon--logo"
+                            style="--icon-clr:#ef4444;--icon-bg:rgba(255,255,255,0.95)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/1280px-Moodle-logo.svg.png"
+                                alt="Moodle logo" style="width:68px;height:auto;object-fit:contain;" loading="lazy" />
+                        </div>
+                        <div class="eco-card-v2-body">
+                            <div class="eco-card-v2-num">01</div>
+                            <h4 class="eco-card-v2-title">LMS Powered by Moodle</h4>
+                            <p class="eco-card-v2-desc">Nền tảng học tập hiện đại, hỗ trợ video bài giảng, tài
+                                liệu và bài tập — truy cập 24/7 mọi lúc, mọi nơi.</p>
+                        </div>
+                    </article>
+
+                    <article class="eco-card-v2">
+                        <div class="eco-card-v2-icon eco-card-v2-icon--logo"
+                            style="--icon-clr:#a78bfa;--icon-bg:rgba(255,255,255,0.95)">
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2026/02/Buffet-AI-R.webp"
+                                alt="Buffet AI logo" style="width:68px;height:auto;object-fit:contain;"
+                                loading="lazy" />
+                        </div>
+                        <div class="eco-card-v2-body">
+                            <div class="eco-card-v2-num">02</div>
+                            <h4 class="eco-card-v2-title">Buffet AI</h4>
+                            <p class="eco-card-v2-desc">Trợ lý AI hỗ trợ giải thích kiến thức, nghiên cứu tài
+                                liệu và tối ưu thời gian học tập hiệu quả.</p>
+                        </div>
+                    </article>
+
+                    <article class="eco-card-v2">
+                        <div class="eco-card-v2-icon eco-card-v2-icon--logo"
+                            style="--icon-clr:#34d399;--icon-bg:rgba(255,255,255,0.95)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Cengage-logo.svg/1280px-Cengage-logo.svg.png"
+                                alt="Cengage logo" style="width:68px;height:auto;object-fit:contain;" loading="lazy" />
+                        </div>
+                        <div class="eco-card-v2-body">
+                            <div class="eco-card-v2-num">03</div>
+                            <h4 class="eco-card-v2-title">Cengage Library</h4>
+                            <p class="eco-card-v2-desc">Miễn phí truy cập hơn 1.000 đầu sách học thuật chuyên
+                                ngành kinh doanh và quản lý quốc tế.</p>
+                        </div>
+                    </article>
+
+                    <article class="eco-card-v2">
+                        <div class="eco-card-v2-icon eco-card-v2-icon--logo"
+                            style="--icon-clr:#34d399;--icon-bg:rgba(255,255,255,0.95)">
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/06/log_ideas.png" alt="Chuyên đề"
+                                style="width:68px;height:auto;object-fit:contain;" loading="lazy" />
+                        </div>
+                        <div class="eco-card-v2-body">
+                            <div class="eco-card-v2-num">04</div>
+                            <h4 class="eco-card-v2-title">Lớp chuyên đề bổ trợ</h4>
+                            <p class="eco-card-v2-desc">Các buổi chuyên đề cuối tuần với giảng viên và chuyên
+                                gia đầu ngành, kết nối kiến thức MBA với thực tiễn.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section class="enroll-section" id="tuyen-sinh" aria-labelledby="enroll-headline">
             <div class="container">
                 <div class="enroll-inner">
@@ -2808,27 +3376,28 @@
                             <div class="enroll-step enroll-step--done">
                                 <div class="enroll-step-dot"></div>
                                 <div class="enroll-step-content">
-                                    <div class="enroll-step-date">20/11/2025</div>
-                                    <div class="enroll-step-label">Mở tuyển sinh</div>
+                                    <div class="enroll-step-date">Tuyển sinh liên tục</div>
+                                    <div class="enroll-step-label">Mở đăng ký hàng tháng</div>
                                 </div>
                             </div>
                             <div class="enroll-step enroll-step--active">
                                 <div class="enroll-step-dot"></div>
                                 <div class="enroll-step-content">
-                                    <div class="enroll-step-date">20/04/2026</div>
-                                    <div class="enroll-step-label">Chốt khoá — <strong>Hạn cuối nộp hồ sơ</strong></div>
+                                    <div class="enroll-step-date">Ngày 25 hàng tháng</div>
+                                    <div class="enroll-step-label">Chốt khoá — <strong>Hạn cuối nộp hồ sơ</strong>
+                                    </div>
                                 </div>
                             </div>
                             <div class="enroll-step">
                                 <div class="enroll-step-dot"></div>
                                 <div class="enroll-step-content">
-                                    <div class="enroll-step-date">29/04/2026</div>
-                                    <div class="enroll-step-label">Dự kiến khai giảng môn học đầu tiên</div>
+                                    <div class="enroll-step-date">Ngày 01 hàng tháng</div>
+                                    <div class="enroll-step-label">Khai giảng môn học mới</div>
                                 </div>
                             </div>
                         </div>
                         <a href="#dang-ky" class="btn btn-primary" id="enroll-cta">
-                            Đăng ký giữ chỗ ngay
+                            Đăng ký MBA Online ngay
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
@@ -2845,8 +3414,8 @@
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            <span>Tốt nghiệp <strong>cử nhân</strong> &amp; có <strong>ít nhất 3 năm kinh
-                                    nghiệm</strong> làm việc</span>
+                            <span>Tốt nghiệp <strong>Cử nhân</strong> &amp; có <strong>trình độ tiếng Anh B2</strong>
+                                (hoặc phỏng vấn đánh giá tiếng Anh)</span>
                         </div>
                         <ol class="apply-steps">
                             <li class="apply-step">
@@ -2867,14 +3436,16 @@
                                 <span class="apply-step-num">03</span>
                                 <div>
                                     <strong>Xét duyệt hồ sơ</strong>
-                                    <p>Hội đồng tuyển sinh Swiss UMEF xem xét hồ sơ trong vòng 3–5 ngày làm việc.</p>
+                                    <p>Hội đồng tuyển sinh Swiss UMEF xem xét hồ sơ trong vòng 3–5 ngày làm việc.
+                                    </p>
                                 </div>
                             </li>
                             <li class="apply-step">
                                 <span class="apply-step-num">04</span>
                                 <div>
                                     <strong>Thanh toán học phí &amp; khai giảng</strong>
-                                    <p>Hỗ trợ trả góp 12–24 tháng qua Sacombank. Nhận tài khoản LMS và bắt đầu học.</p>
+                                    <p>Hỗ trợ trả góp 12–24 tháng qua Sacombank. Nhận tài khoản LMS và bắt đầu học.
+                                    </p>
                                 </div>
                             </li>
                         </ol>
@@ -2892,12 +3463,15 @@
                     <div class="trip-content">
                         <div class="section-label">ĐIỂM NHẤN ĐẶC BIỆT</div>
                         <h2 class="section-title" id="trip-headline">
-                            Chuyến đi du học<br />
-                            <span class="gradient-text">trải nghiệm &amp; Lễ Tốt Nghiệp tại Thụy Sĩ</span>
+                            Chuyến đi trải nghiệm<br />
+                            <span class="gradient-text">&amp; Lễ Tốt Nghiệp tại Thụy Sĩ</span>
                         </h2>
-                        <p class="trip-desc">Kết thúc chương trình MBA, học viên được mời tham dự <strong>chuyến đi châu
-                                Âu kết hợp Lễ Tốt Nghiệp chính thức tại trường Swiss UMEF – Geneva, Thụy Sĩ</strong>.
-                            Đây là trải nghiệm học thuật quốc tế độc đáo, đánh dấu sự chuyển mình trong sự nghiệp của
+                        <p class="trip-desc">Kết thúc chương trình MBA, học viên tham dự <strong>chuyến đi
+                                châu
+                                Âu kết hợp Lễ Tốt Nghiệp chính thức tại trường Swiss UMEF – Geneva, Thụy
+                                Sĩ</strong>.
+                            Đây là trải nghiệm học thuật quốc tế độc đáo, đánh dấu sự chuyển mình trong sự nghiệp
+                            của
                             bạn.</p>
                         <ul class="trip-highlights">
                             <li>
@@ -2959,7 +3533,7 @@
         <!-- ══════════════════════════════════════════
          SECTION 4: PROOF
      ══════════════════════════════════════════ -->
-        <section class="proof-section" id="chung-minh" aria-labelledby="proof-headline">
+        <section class="proof-section" id="chung-minh" aria-labelledby="proof-headline" style="padding-bottom: 0;">
             <div class="container">
                 <div class="section-label reveal-up">UY TÍN &amp; CHỨNG NHẬN</div>
                 <h2 class="section-title reveal-up" id="proof-headline">
@@ -2994,7 +3568,7 @@
                                 </a>
                                 <span class="proof-card-headline-text">
                                     Văn bằng quốc tế<br />
-                                    <span class="proof-headline-accent">5 Sao QS Rankings</span>
+                                    <span class="proof-headline-accent">5 Sao toàn diện QS Stars</span>
                                 </span>
                             </h3>
 
@@ -3022,7 +3596,8 @@
                                             <path d="M5 13l4 4L19 7" />
                                         </svg>
                                     </span>
-                                    <p>Xếp hạng xuất sắc trong bảng xếp hạng QS World University Rankings.</p>
+                                    <p>Đạt xếp hạng 5 sao toàn diện (5 Stars Overall) từ tổ chức giáo dục uy tín QS
+                                        Stars.</p>
                                 </li>
                                 <li class="proof-check-item">
                                     <span class="proof-check-icon">
@@ -3050,36 +3625,116 @@
                         </div>
                     </div>
 
-                    <!-- Bottom: Accreditation logos strip -->
+                    <!-- Bottom: Accreditation logos strip (Restored & Integrated) -->
                     <div class="proof-accred-strip">
-                        <p class="proof-accred-label">kiểm định – công nhận</p>
+                        <p class="proof-accred-label">Hệ thống thành viên &amp; đối tác kiểm định</p>
                         <div class="proof-accred-logos">
                             <img src="https://ideas.edu.vn/wp-content/uploads/2025/10/qs-1.webp" alt="QS Stars"
-                                title="QS Stars" loading="lazy" />
+                                title="Click to view details" class="accred-trigger" data-accred="qs" />
                             <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef1.png"
-                                alt="Swiss Accreditation" title="Swiss Accreditation" loading="lazy" />
+                                alt="Swiss Accreditation Council" title="Click to view details" class="accred-trigger"
+                                data-accred="sac" />
                             <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef3.png" alt="Eduqua"
-                                title="Eduqua" loading="lazy" />
+                                title="Click to view details" class="accred-trigger" data-accred="eduqua" />
                             <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef4.png" alt="IACBE"
-                                title="IACBE" loading="lazy" />
-                            <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png" alt="ACBSB"
-                                title="ACBSB" loading="lazy" />
+                                title="Click to view details" class="accred-trigger" data-accred="iacbe" />
+                            <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png" alt="CHEA"
+                                title="Click to view details" class="accred-trigger" data-accred="chea" />
+                            <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png" alt="ACBSP"
+                                title="Click to view details" class="accred-trigger" data-accred="acbsp" />
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg" alt="VN-Naric"
+                                title="Click to view details" class="accred-trigger" data-accred="vnnaric" />
                         </div>
                     </div>
-                </div>
 
+                    <!-- NEW INTEGRATED ACCREDITATION AREA WITHIN CARD -->
+                    <div class="proof-card-accred">
+                        <div class="accred-feature-content">
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2023/07/Logo-Swiss-UMEF.webp"
+                                alt="Swiss UMEF Logo" class="accred-school-logo" width="160"
+                                style="margin-bottom: 20px;">
+                            <h2 class="section-title" style="font-size: 1.8rem;">Hệ thống <em>Kiểm định &amp; Công
+                                    nhận</em>
+                                quốc tế</h2>
+                            <ul class="accred-feature-list">
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    QS Stars 5 Stars Overall
+                                </li>
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Swiss Accreditation Council
+                                </li>
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    SGS – EduQua
+                                </li>
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Accreditation Council for Business Schools &amp; Programs
+                                </li>
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    International Accreditation Council for Business Education
+                                </li>
+                            </ul>
+                            <div class="accred-commitment">
+                                <strong>IDEAS cam kết:</strong>
+                                Tất cả trường và chương trình đối tác đều đã được kiểm định – chứng nhận đầy đủ. Học
+                                viên
+                                hoàn
+                                toàn yên tâm về tính hợp pháp, giá trị bằng cấp và uy tín quốc tế.
+                            </div>
+                        </div>
+                        <div class="accred-fan-wrap">
+                            <div class="accred-stack" id="accred-stack" title="Click để lật xem các chứng chỉ">
+                                <div class="accred-stack-card pos-1">
+                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/10/QSStarsCertificateSwissUMEF-1-1-1-1.webp"
+                                        alt="QS Stars Certificate">
+                                </div>
+                                <div class="accred-stack-card pos-2">
+                                    <img src="https://vtci.edu.vn/wp-content/uploads/2025/08/SGS_eduQua_2021_CHGE_000771_FR-1.png"
+                                        alt="EduQua Certificate">
+                                </div>
+                                <div class="accred-stack-card pos-3">
+                                    <img src="https://vtci.edu.vn/wp-content/uploads/2025/08/5158dd02-aad4-411e-9917-2cf1e287dc1d.png"
+                                        alt="IACBE Certificate">
+                                </div>
+                            </div>
+                            <div class="accred-stack-controls">
+                                <button class="accred-step-btn" id="accred-prev" aria-label="Previous">❮</button>
+                                <button class="accred-step-btn" id="accred-next" aria-label="Next">❯</button>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="section-cta reveal-up">
-                    <a href="#dang-ky" class="btn btn-primary" id="proof-cta">
-                        Đăng ký nhận tư vấn lộ trình MBA
-                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
+                    <!-- Integrated CTA -->
+                    <div class="combined-cta-wrap">
+                        <a href="#dang-ky" class="btn btn-primary">
+                            <span>Tư vấn Kiểm định - Bằng cấp</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
+
+
+
 
         <!-- ══════════════════════════════════════════
 
@@ -3092,8 +3747,10 @@
                     Hơn 500 học viên đã tốt nghiệp<br />
                     <span class="gradient-text">MBA Swiss UMEF tại Việt Nam</span>
                 </h2>
-                <p class="gallery-subtitle reveal-up">Những khoảnh khắc đáng nhớ trong hành trình chinh phục bằng MBA
-                    Thụy Sĩ của học viên IDEAS</p>
+                <p class="gallery-subtitle reveal-up">Những <em>khoảnh khắc đáng nhớ</em> trong hành trình chinh
+                    phục
+                    <br /> bằng <strong>MBA Thụy Sĩ</strong> của học viên <strong>IDEAS</strong>
+                </p>
 
                 <div class="gallery-mosaic reveal-up" aria-label="Hình ảnh học viên tốt nghiệp MBA">
                     <div class="gallery-item gallery-item--large">
@@ -3206,6 +3863,7 @@
                         </div>
                     </div> -->
                 </div>
+                <div class="scroll-dots" data-scroll-target=".gallery-mosaic"></div>
         </section>
 
         <!-- Lightbox -->
@@ -3217,223 +3875,233 @@
         <!-- ══════════════════════════════════════════
          SECTION 5: BENEFIT
     ══════════════════════════════════════════ -->
-        <section class="benefit-section" id="loi-ich" aria-labelledby="benefit-headline">
+        <section class="benefit-section" id="loi-ich" aria-labelledby="testimonials-headline">
             <div class="container">
                 <div class="section-label reveal-up">LỢI ÍCH</div>
-                <h2 class="section-title reveal-up" id="benefit-headline">
-                    Đưa sự nghiệp lên một tầm cao mới bằng<br />
-                    <span class="gradient-text">4 năng lực quản trị cốt lõi</span>
-                </h2>
-
-                <!-- 4 Core Competencies -->
-                <div class="competency-grid reveal-up" aria-label="4 năng lực quản trị cốt lõi">
-                    <article class="competency-card">
-                        <div class="comp-number">01</div>
-                        <div class="comp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                                aria-hidden="true">
-                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                                <circle cx="12" cy="12" r="10" />
-                                <line x1="12" y1="17" x2="12.01" y2="17" />
-                            </svg></div>
-                        <h3 class="comp-title">Tư duy quản trị tổng thể</h3>
-                        <p class="comp-desc">Hình thành tư duy quản trị bài bản, giúp bạn hiểu cách một doanh nghiệp vận
-                            hành từ chiến lược đến thực thi và kết nối hiệu quả giữa các phòng ban.</p>
-                    </article>
-                    <article class="competency-card">
-                        <div class="comp-number">02</div>
-                        <div class="comp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                                aria-hidden="true">
-                                <line x1="18" y1="20" x2="18" y2="10" />
-                                <line x1="12" y1="20" x2="12" y2="4" />
-                                <line x1="6" y1="20" x2="6" y2="14" />
-                            </svg></div>
-                        <h3 class="comp-title">Quản trị thị trường</h3>
-                        <p class="comp-desc">Phát triển năng lực phân tích thị trường, thấu hiểu hành vi khách hàng, xây
-                            dựng chiến lược marketing và định giá sản phẩm phù hợp với mục tiêu kinh doanh.</p>
-                    </article>
-                    <article class="competency-card">
-                        <div class="comp-number">03</div>
-                        <div class="comp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                                aria-hidden="true">
-                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                                <polyline points="17 6 23 6 23 12" />
-                            </svg></div>
-                        <h3 class="comp-title">Ra quyết định dựa trên dữ liệu</h3>
-                        <p class="comp-desc">Nâng cao khả năng phân tích tài chính, đọc hiểu báo cáo tài chính, đánh giá
-                            hiệu quả dự án, kiểm soát ngân sách và đưa ra quyết định dựa trên số liệu thực tế.</p>
-                    </article>
-                    <article class="competency-card">
-                        <div class="comp-number">04</div>
-                        <div class="comp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                                aria-hidden="true">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg></div>
-                        <h3 class="comp-title">Quản trị con người trong tổ chức</h3>
-                        <p class="comp-desc">Trang bị năng lực quản lý đội nhóm, ứng dụng công nghệ và tư duy đổi mới để
-                            nâng cao hiệu suất và đóng góp tích cực vào quá trình đổi mới của doanh nghiệp.</p>
-                    </article>
-                </div>
 
                 <!-- Testimonials -->
                 <div class="testimonials-section reveal-up" aria-label="Phản hồi từ học viên">
-                    <h3 class="testimonials-title">Học viên nói gì về chương trình</h3>
+                    <h3 class="testimonials-title" id="testimonials-headline">Học viên nói gì về chương trình</h3>
                     <div class="testimonials-grid">
-                        <article class="testi-card-v3">
-                            <div class="testi-card-v3-body">
-                                <div class="testi-v3-quote">“</div>
-                                <p class="testi-v3-text">Đối với chương trình trực tuyến, tôi khuyên bạn nên chọn nơi
+                        <!-- Card 1: Nguyễn Thanh Bình -->
+                        <article class="testi-card-v4">
+                            <div class="testi-v4-bg-star">
+                                <svg viewBox="0 0 100 100" fill="currentColor">
+                                    <path
+                                        d="M50 0L61.2 38.8H100L68.8 61.2L80 100L50 77.6L20 100L31.2 61.2L0 38.8H38.8L50 0Z" />
+                                </svg>
+                            </div>
+                            <div class="testi-v4-header">
+                                <div class="testi-v4-avatar-wrap">
+                                    <div class="testi-v4-avatar-glow"></div>
+                                    <div class="testi-v4-avatar">
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/02/casc1.jpg"
+                                            alt="Nguyễn Thanh Bình">
+                                    </div>
+                                </div>
+                                <div class="testi-v4-meta">
+                                    <h4 class="testi-v4-name">Nguyễn Thanh Bình</h4>
+                                    <div class="testi-v4-role">Director</div>
+                                    <div class="testi-v4-company">INF. & ENV. TECH INSTITUTE</div>
+                                </div>
+                            </div>
+                            <div class="testi-v4-body">
+                                <svg class="testi-v4-quote-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017Z">
+                                    </path>
+                                </svg>
+                                <p class="testi-v4-text">Cảm ơn sự hỗ trợ nhiệt tình của IDEAS, đã đồng hành hỗ trợ
+                                    không quản ngày đêm để chúng tôi hoàn thành mục tiêu nghiên cứu Tiến Sĩ – cấp bậc
+                                    cao nhất của Học vị.</p>
+                            </div>
+                            <div class="testi-v4-footer">
+                                <div class="testi-v4-stars">
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="testi-v4-verified">
+                                    <span class="testi-v4-verified-lbl">Verified Profile</span>
+                                    <div class="testi-v4-verified-dot"></div>
+                                </div>
+                            </div>
+                            <div class="testi-v4-bottom-bar"></div>
+                        </article>
+
+                        <!-- Card 2: Nguyễn Huỳnh Phương -->
+                        <article class="testi-card-v4">
+                            <div class="testi-v4-bg-star">
+                                <svg viewBox="0 0 100 100" fill="currentColor">
+                                    <path
+                                        d="M50 0L61.2 38.8H100L68.8 61.2L80 100L50 77.6L20 100L31.2 61.2L0 38.8H38.8L50 0Z" />
+                                </svg>
+                            </div>
+                            <div class="testi-v4-header">
+                                <div class="testi-v4-avatar-wrap">
+                                    <div class="testi-v4-avatar-glow"></div>
+                                    <div class="testi-v4-avatar">
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/02/huynhphuong.jpg"
+                                            alt="Nguyễn Huỳnh Phương">
+                                    </div>
+                                </div>
+                                <div class="testi-v4-meta">
+                                    <h4 class="testi-v4-name">Nguyễn Huỳnh Phương</h4>
+                                    <div class="testi-v4-role">Unit Manager</div>
+                                    <div class="testi-v4-company">HANWHA LIFE VIETNAM</div>
+                                </div>
+                            </div>
+                            <div class="testi-v4-body">
+                                <svg class="testi-v4-quote-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017Z">
+                                    </path>
+                                </svg>
+                                <p class="testi-v4-text">Đối với chương trình trực tuyến, tôi khuyên bạn nên chọn nơi
                                     đáng tin cậy như IDEAS. Giảng viên luôn đưa ra những gợi ý hữu ích giúp vượt qua khó
                                     khăn.</p>
                             </div>
-                            <div class="testi-v3-footer">
-                                <div class="testi-v3-stars">★★★★★</div>
-                                <div class="testi-v3-author">
-                                    <div class="testi-v3-avatar">NHP</div>
-                                    <div>
-                                        <strong>Nguyễn Huỳnh Phương</strong>
-                                        <span>Unit Manager · Hanwha Life Vietnam</span>
+                            <div class="testi-v4-footer">
+                                <div class="testi-v4-stars">
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="testi-v4-verified">
+                                    <span class="testi-v4-verified-lbl">Verified Profile</span>
+                                    <div class="testi-v4-verified-dot"></div>
+                                </div>
+                            </div>
+                            <div class="testi-v4-bottom-bar"></div>
+                        </article>
+
+                        <!-- Card 3: Nguyễn Thị Hà Miên -->
+                        <article class="testi-card-v4">
+                            <div class="testi-v4-bg-star">
+                                <svg viewBox="0 0 100 100" fill="currentColor">
+                                    <path
+                                        d="M50 0L61.2 38.8H100L68.8 61.2L80 100L50 77.6L20 100L31.2 61.2L0 38.8H38.8L50 0Z" />
+                                </svg>
+                            </div>
+                            <div class="testi-v4-header">
+                                <div class="testi-v4-avatar-wrap">
+                                    <div class="testi-v4-avatar-glow"></div>
+                                    <div class="testi-v4-avatar">
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/02/hamien.jpg"
+                                            alt="Nguyễn Thị Hà Miên">
                                     </div>
                                 </div>
-                                <div class="testi-v3-verified">✔ Verified Profile</div>
+                                <div class="testi-v4-meta">
+                                    <h4 class="testi-v4-name">Nguyễn Thị Hà Miên</h4>
+                                    <div class="testi-v4-role">Deputy Project Manager</div>
+                                    <div class="testi-v4-company">GLOBAL INFRASTRUCTURE</div>
+                                </div>
                             </div>
-                            <div class="testi-v3-bar"></div>
-                        </article>
-                        <article class="testi-card-v3 testi-card-v3--featured">
-                            <div class="testi-card-v3-body">
-                                <div class="testi-v3-quote">“</div>
-                                <p class="testi-v3-text">Tôi chọn chương trình vì sự linh hoạt. Sự hỗ trợ 24/7 của IDEAS
+                            <div class="testi-v4-body">
+                                <svg class="testi-v4-quote-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017Z">
+                                    </path>
+                                </svg>
+                                <p class="testi-v4-text">Tôi chọn chương trình vì sự linh hoạt. Sự hỗ trợ 24/7 của IDEAS
                                     giúp tôi hoàn thành tốt thời hạn nộp bài cũng như các lớp học trực tuyến.</p>
                             </div>
-                            <div class="testi-v3-footer">
-                                <div class="testi-v3-stars">★★★★★</div>
-                                <div class="testi-v3-author">
-                                    <div class="testi-v3-avatar testi-v3-avatar--photo">
-                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/02/hamien.jpg"
-                                            alt="Nguyễn Thị Hà Miên" loading="lazy" />
-                                    </div>
-                                    <div>
-                                        <strong>Nguyễn Thị Hà Miên</strong>
-                                        <span>Deputy PM · Global Infrastructure</span>
-                                    </div>
+                            <div class="testi-v4-footer">
+                                <div class="testi-v4-stars">
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="testi-v4-star" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
                                 </div>
-                                <div class="testi-v3-verified">✔ Verified Profile</div>
-                            </div>
-                            <div class="testi-v3-bar"></div>
-                        </article>
-                        <article class="testi-card-v3">
-                            <div class="testi-card-v3-body">
-                                <div class="testi-v3-quote">“</div>
-                                <p class="testi-v3-text">Chương trình kết nối tôi với nhiều bạn học đa ngành nghề. Tôi
-                                    đặc biệt cảm ơn IDEAS từ kiến thức chuyên gia đến hỗ trợ hành chính tận tâm.</p>
-                            </div>
-                            <div class="testi-v3-footer">
-                                <div class="testi-v3-stars">★★★★★</div>
-                                <div class="testi-v3-author">
-                                    <div class="testi-v3-avatar">LNT</div>
-                                    <div>
-                                        <strong>Lê Ngọc Thương</strong>
-                                        <span>Executive · Boehringer Ingelheim</span>
-                                    </div>
+                                <div class="testi-v4-verified">
+                                    <span class="testi-v4-verified-lbl">Verified Profile</span>
+                                    <div class="testi-v4-verified-dot"></div>
                                 </div>
-                                <div class="testi-v3-verified">✔ Verified Profile</div>
                             </div>
-                            <div class="testi-v3-bar"></div>
+                            <div class="testi-v4-bottom-bar"></div>
                         </article>
+
                     </div>
+                    <div class="scroll-dots" data-scroll-target=".testimonials-grid"></div>
                 </div>
 
                 <!-- Ecosystem -->
-                <div class="ecosystem-section reveal-up">
-                    <!-- Decorative background orbs -->
-                    <div class="eco-orb eco-orb-1" aria-hidden="true"></div>
-                    <div class="eco-orb eco-orb-2" aria-hidden="true"></div>
-                    <div class="eco-orb eco-orb-3" aria-hidden="true"></div>
-                    <div class="eco-inner">
-                        <div class="eco-header">
-                            <div class="section-label eco-label-light">HỆ SINH THÁI HỌC TẬP</div>
-                            <h3 class="ecosystem-title">Hệ sinh thái học tập toàn diện<br /><span
-                                    class="eco-title-accent">luôn đồng hành cùng bạn</span></h3>
-                            <p class="ecosystem-sub">IDEAS là đối tác tuyển sinh chính thức của Swiss UMEF, xây dựng hệ
-                                sinh thái học tập toàn diện cho người học Việt Nam.</p>
-                        </div>
 
-                        <div class="ecosystem-grid-v2">
-                            <article class="eco-card-v2">
-                                <div class="eco-card-v2-icon eco-card-v2-icon--logo"
-                                    style="--icon-clr:#ef4444;--icon-bg:rgba(255,255,255,0.95)">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/1280px-Moodle-logo.svg.png"
-                                        alt="Moodle logo" style="width:68px;height:auto;object-fit:contain;"
-                                        loading="lazy" />
-                                </div>
-                                <div class="eco-card-v2-body">
-                                    <div class="eco-card-v2-num">01</div>
-                                    <h4 class="eco-card-v2-title">LMS Powered by Moodle</h4>
-                                    <p class="eco-card-v2-desc">Nền tảng học tập hiện đại, hỗ trợ video bài giảng, tài
-                                        liệu và bài tập — truy cập 24/7 mọi lúc, mọi nơi.</p>
-                                </div>
-                            </article>
-
-                            <article class="eco-card-v2">
-                                <div class="eco-card-v2-icon eco-card-v2-icon--logo"
-                                    style="--icon-clr:#a78bfa;--icon-bg:rgba(255,255,255,0.95)">
-                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/otrwbw1q-1.webp"
-                                        alt="Buffet AI logo" style="width:68px;height:auto;object-fit:contain;"
-                                        loading="lazy" />
-                                </div>
-                                <div class="eco-card-v2-body">
-                                    <div class="eco-card-v2-num">02</div>
-                                    <h4 class="eco-card-v2-title">Buffet AI</h4>
-                                    <p class="eco-card-v2-desc">Trợ lý AI hỗ trợ giải thích kiến thức, nghiên cứu tài
-                                        liệu và tối ưu thời gian học tập hiệu quả.</p>
-                                </div>
-                            </article>
-
-                            <article class="eco-card-v2">
-                                <div class="eco-card-v2-icon eco-card-v2-icon--logo"
-                                    style="--icon-clr:#34d399;--icon-bg:rgba(255,255,255,0.95)">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Cengage-logo.svg/1280px-Cengage-logo.svg.png"
-                                        alt="Cengage logo" style="width:68px;height:auto;object-fit:contain;"
-                                        loading="lazy" />
-                                </div>
-                                <div class="eco-card-v2-body">
-                                    <div class="eco-card-v2-num">03</div>
-                                    <h4 class="eco-card-v2-title">Cengage Library</h4>
-                                    <p class="eco-card-v2-desc">Miễn phí truy cập hơn 1.000 đầu sách học thuật chuyên
-                                        ngành kinh doanh và quản lý quốc tế.</p>
-                                </div>
-                            </article>
-
-                            <article class="eco-card-v2">
-                                <div class="eco-card-v2-icon eco-card-v2-icon--logo"
-                                    style="--icon-clr:#34d399;--icon-bg:rgba(255,255,255,0.95)">
-                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/06/log_ideas.png"
-                                        alt="Chuyên đề" style="width:68px;height:auto;object-fit:contain;"
-                                        loading="lazy" />
-                                </div>
-                                <div class="eco-card-v2-body">
-                                    <div class="eco-card-v2-num">04</div>
-                                    <h4 class="eco-card-v2-title">Lớp chuyên đề bổ trợ</h4>
-                                    <p class="eco-card-v2-desc">Các buổi chuyên đề cuối tuần với giảng viên và chuyên
-                                        gia đầu ngành, kết nối kiến thức MBA với thực tiễn.</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Pricing -->
-                <div class="pricing-section reveal-up" id="bang-gia">
-                    <div class="section-label" style="text-align:center;margin-bottom:1rem;">HỌC PHÍ</div>
-                    <h3 class="pricing-title">MBA Swiss UMEF — Chọn hình thức học<br /><span style="color:#ab0e00">phù
+                <div class="pricing-section reveal-up" id="bang-gia" style="text-align: center;">
+                    <div class="section-label" style="margin: 0 auto 1.5rem; display: table;">HỌC PHÍ</div>
+                    <h3 class="pricing-title"
+                        style="text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #0f172a; margin-bottom: 12px; line-height: 1.2;">
+                        MBA Swiss UMEF — Chọn hình thức học<br /><span style="color:#ab0e00">phù
                             hợp với lịch trình của bạn</span></h3>
-                    <p class="pricing-subtitle">Cùng bằng MBA — cùng giá trị quốc tế. Khác nhau ở mức độ tương tác với
+                    <p class="pricing-subtitle">Cùng bằng MBA — cùng giá trị quốc tế. Khác nhau ở mức độ tương tác
+                        với
                         giảng viên.</p>
 
                     <div class="pricing-grid-v2">
@@ -3570,7 +4238,8 @@
                         <div class="sacom-right">
                             <div class="sacom-headline">Hỗ trợ trả góp <span class="sacom-highlight">12 – 24
                                     tháng</span></div>
-                            <p class="sacom-sub">Thanh toán học phí linh hoạt qua thẻ tín dụng Sacombank Visa — lãi suất
+                            <p class="sacom-sub">Thanh toán học phí linh hoạt qua thẻ tín dụng Sacombank Visa — lãi
+                                suất
                                 ưu đãi, không cần thế chấp</p>
                             <div class="sacom-pills">
                                 <span class="sacom-pill">✓ Duyệt nhanh trong ngày</span>
@@ -3596,8 +4265,10 @@
                 <div class="cta-left reveal-up">
                     <div class="gmac-quote" role="blockquote" aria-label="Trích dẫn GMAC">
                         <div class="quote-mark">"</div>
-                        <p>Theo báo cáo từ GMAC, người đi làm sở hữu bằng MBA thường ghi nhận mức <strong>tăng thu nhập
-                                trung bình từ 50% trở lên</strong> và cơ hội thăng tiến rõ rệt sau khi hoàn thành chương
+                        <p>Theo báo cáo từ GMAC, người đi làm sở hữu bằng MBA thường ghi nhận mức <strong>tăng thu
+                                nhập
+                                trung bình từ 50% trở lên</strong> và cơ hội thăng tiến rõ rệt sau khi hoàn thành
+                            chương
                             trình.</p>
                     </div>
 
@@ -3609,7 +4280,8 @@
 
                     <ul class="cta-checklist" aria-label="Điểm nổi bật chương trình">
                         <li><span class="cta-check">✓</span> Bằng MBA <strong>chính quy Thụy Sĩ</strong></li>
-                        <li><span class="cta-check">✓</span> Lộ trình <strong>thiết kế riêng cho người đi làm</strong>
+                        <li><span class="cta-check">✓</span> Lộ trình <strong>thiết kế riêng cho người đi
+                                làm</strong>
                         </li>
                         <li><span class="cta-check">✓</span> Hỗ trợ học thuật và đồng hành suốt chương trình học từ
                             IDEAS</li>
@@ -3690,7 +4362,8 @@
                                 <polyline points="22 4 12 14.01 9 11.01" />
                             </svg></div>
                         <h3>Đăng ký thành công!</h3>
-                        <p>Chuyên viên tư vấn IDEAS sẽ liên hệ với bạn trong vòng <strong>24 giờ làm việc</strong>.</p>
+                        <p>Chuyên viên tư vấn IDEAS sẽ liên hệ với bạn trong vòng <strong>24 giờ làm việc</strong>.
+                        </p>
                         <p>Trong thời gian chờ, hãy khám phá thêm thông tin về chương trình MBA Swiss UMEF.</p>
                     </div>
                 </div>
@@ -3718,6 +4391,23 @@
         </div>
     </footer>
 
+    <!-- Accreditation Modal -->
+    <div class="accred-modal" id="accred-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="accred-modal-overlay" id="accred-modal-overlay"></div>
+        <div class="accred-modal-container">
+            <button class="accred-modal-close" id="accred-modal-close" aria-label="Close modal">✕</button>
+            <div class="accred-modal-content">
+                <div class="accred-modal-body">
+                    <div class="accred-modal-info" style="padding: 50px;">
+                        <div class="accred-modal-label">Thông tin kiểm định</div>
+                        <h3 class="accred-modal-title" id="accred-title">---</h3>
+                        <div class="accred-modal-desc" id="accred-desc">---</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Floating CTA -->
     <div class="floating-cta" id="floating-cta" aria-hidden="true">
         <a href="#dang-ky" class="btn btn-primary floating-btn" tabindex="-1">
@@ -3732,4 +4422,4 @@
     <script src="script.js"></script>
 </body>
 
-</html>
+</html>/
