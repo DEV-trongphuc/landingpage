@@ -9,17 +9,19 @@
     /* ─── Smooth-scroll anchor links ─── */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            // Close mobile menu on link click BEFORE anything else
+            if (typeof closeMobileMenu === 'function') {
+                closeMobileMenu();
+            }
+
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            if (targetId === '#' || targetId === '#dang-ky') return;
             const target = document.querySelector(targetId);
             if (!target) return;
             e.preventDefault();
             const headerH = document.getElementById('site-header')?.offsetHeight || 68;
             const top = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
             window.scrollTo({ top, behavior: 'smooth' });
-
-            // Close mobile menu on link click
-            closeMobileMenu();
         });
     });
 
@@ -28,13 +30,22 @@
     const floatingCta = document.getElementById('floating-cta');
     const heroCta = document.getElementById('hero-main-cta');
 
+    let lastScrollTop = 0;
     function onScroll() {
         const scrollY = window.scrollY;
 
         // Scrolled class
         if (header) {
             header.classList.toggle('scrolled', scrollY > 40);
+
+            // Hide on scroll down, show on scroll up
+            if (scrollY > 100 && scrollY > lastScrollTop) {
+                header.classList.add('hide');
+            } else if (scrollY < lastScrollTop) {
+                header.classList.remove('hide');
+            }
         }
+        lastScrollTop = scrollY;
 
         // Floating CTA: show after hero section leaves viewport
         if (floatingCta && heroCta) {
@@ -56,13 +67,19 @@
     /* ─── Mobile Menu ─── */
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
 
     function closeMobileMenu() {
         if (mobileMenu) {
             mobileMenu.classList.remove('open');
             mobileMenu.setAttribute('aria-hidden', 'true');
         }
+        if (mobileOverlay) {
+            mobileOverlay.classList.remove('visible');
+        }
         if (hamburger) {
+            hamburger.classList.remove('active');
             hamburger.setAttribute('aria-expanded', 'false');
         }
     }
@@ -75,13 +92,23 @@
             } else {
                 mobileMenu.classList.add('open');
                 mobileMenu.setAttribute('aria-hidden', 'false');
+                hamburger.classList.add('active');
                 hamburger.setAttribute('aria-expanded', 'true');
+                if (mobileOverlay) mobileOverlay.classList.add('visible');
             }
         });
 
+        if (mobileOverlay) {
+            mobileOverlay.addEventListener('click', closeMobileMenu);
+        }
+
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+        }
+
         // Close on outside click
         document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+            if (hamburger && mobileMenu && !hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
                 closeMobileMenu();
             }
         });
@@ -249,16 +276,41 @@
     }
 
     /* ─── Form Validation & Submission ─── */
-    const form = document.getElementById('cta-form');
-    const formSuccess = document.getElementById('form-success');
-    const submitBtn = document.getElementById('form-submit-btn');
-    const btnText = document.getElementById('btn-text');
 
-    if (form) {
+    /* ─── Form Validation & Submission ─── */
+    function initForm(formId, successId) {
+        const form = document.getElementById(formId);
+        const formSuccess = document.getElementById(successId);
+        if (!form) return;
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const btnText = submitBtn.querySelector('span') || submitBtn;
+
         const fields = {
-            fullname: { el: document.getElementById('fullname'), errorEl: document.getElementById('fullname-error') },
-            phone: { el: document.getElementById('phone'), errorEl: document.getElementById('phone-error') },
-            email: { el: document.getElementById('email'), errorEl: document.getElementById('email-error') },
+            fullname: {
+                el: form.querySelector('[name="fullname"]'),
+                errorEl: form.querySelector('.form-error[id*="fullname-error"]')
+            },
+            phone: {
+                el: form.querySelector('[name="phone"]'),
+                errorEl: form.querySelector('.form-error[id*="phone-error"]')
+            },
+            email: {
+                el: form.querySelector('[name="email"]'),
+                errorEl: form.querySelector('.form-error[id*="email-error"]')
+            },
+            education: {
+                el: form.querySelector('[name="education"]'),
+                errorEl: form.querySelector('.form-error[id*="education-error"]')
+            },
+            english: {
+                el: form.querySelector('[name="english"]'),
+                errorEl: form.querySelector('.form-error[id*="english-error"]')
+            },
+            message: {
+                el: form.querySelector('[name="message"]'),
+                errorEl: form.querySelector('.form-error[id*="message-error"]')
+            },
         };
 
         function validatePhone(val) {
@@ -270,40 +322,48 @@
         }
 
         function showError(field, msg) {
+            if (!field.el || !field.errorEl) return;
             field.el.classList.add('error');
             field.errorEl.textContent = msg;
         }
 
         function clearError(field) {
+            if (!field.el || !field.errorEl) return;
             field.el.classList.remove('error');
             field.errorEl.textContent = '';
         }
 
         // Live validation on blur
-        fields.fullname.el.addEventListener('blur', () => {
-            const val = fields.fullname.el.value.trim();
-            if (!val) showError(fields.fullname, 'Vui lòng nhập họ và tên.');
-            else if (val.length < 2) showError(fields.fullname, 'Họ tên phải có ít nhất 2 ký tự.');
-            else clearError(fields.fullname);
-        });
+        if (fields.fullname.el) {
+            fields.fullname.el.addEventListener('blur', () => {
+                const val = fields.fullname.el.value.trim();
+                if (!val) showError(fields.fullname, 'Vui lòng nhập họ và tên.');
+                else if (val.length < 2) showError(fields.fullname, 'Họ tên phải có ít nhất 2 ký tự.');
+                else clearError(fields.fullname);
+            });
+        }
 
-        fields.phone.el.addEventListener('blur', () => {
-            const val = fields.phone.el.value.trim();
-            if (!val) showError(fields.phone, 'Vui lòng nhập số điện thoại.');
-            else if (!validatePhone(val)) showError(fields.phone, 'Số điện thoại không hợp lệ.');
-            else clearError(fields.phone);
-        });
+        if (fields.phone.el) {
+            fields.phone.el.addEventListener('blur', () => {
+                const val = fields.phone.el.value.trim();
+                if (!val) showError(fields.phone, 'Vui lòng nhập số điện thoại.');
+                else if (!validatePhone(val)) showError(fields.phone, 'Số điện thoại không hợp lệ.');
+                else clearError(fields.phone);
+            });
+        }
 
-        fields.email.el.addEventListener('blur', () => {
-            const val = fields.email.el.value.trim();
-            if (!val) showError(fields.email, 'Vui lòng nhập email.');
-            else if (!validateEmail(val)) showError(fields.email, 'Địa chỉ email không hợp lệ.');
-            else clearError(fields.email);
-        });
+        if (fields.email.el) {
+            fields.email.el.addEventListener('blur', () => {
+                const val = fields.email.el.value.trim();
+                if (!val) showError(fields.email, 'Vui lòng nhập email.');
+                else if (!validateEmail(val)) showError(fields.email, 'Địa chỉ email không hợp lệ.');
+                else clearError(fields.email);
+            });
+        }
 
         // Clear errors on input
         Object.values(fields).forEach(f => {
-            f.el.addEventListener('input', () => clearError(f));
+            if (f.el) f.el.addEventListener('input', () => clearError(f));
         });
 
         form.addEventListener('submit', function (e) {
@@ -311,26 +371,25 @@
 
             let valid = true;
 
-            const nameVal = fields.fullname.el.value.trim();
+            const nameVal = fields.fullname.el ? fields.fullname.el.value.trim() : '';
             if (!nameVal || nameVal.length < 2) {
                 showError(fields.fullname, 'Vui lòng nhập họ và tên hợp lệ.');
                 valid = false;
             } else clearError(fields.fullname);
 
-            const phoneVal = fields.phone.el.value.trim();
+            const phoneVal = fields.phone.el ? fields.phone.el.value.trim() : '';
             if (!phoneVal || !validatePhone(phoneVal)) {
                 showError(fields.phone, 'Vui lòng nhập số điện thoại hợp lệ.');
                 valid = false;
             } else clearError(fields.phone);
 
-            const emailVal = fields.email.el.value.trim();
+            const emailVal = fields.email.el ? fields.email.el.value.trim() : '';
             if (!emailVal || !validateEmail(emailVal)) {
                 showError(fields.email, 'Vui lòng nhập địa chỉ email hợp lệ.');
                 valid = false;
             } else clearError(fields.email);
 
             if (!valid) {
-                // Shake the button
                 submitBtn.style.animation = 'shake 0.4s ease';
                 setTimeout(() => { submitBtn.style.animation = ''; }, 400);
                 return;
@@ -338,33 +397,122 @@
 
             // Show loading state
             submitBtn.disabled = true;
+            const originalText = btnText.textContent;
             btnText.textContent = 'Đang gửi...';
             submitBtn.style.opacity = '0.7';
 
-            // Simulate async submission (replace with real API call)
-            setTimeout(() => {
-                form.style.display = 'none';
-                formSuccess.style.display = 'block';
+            // Collect form data
+            const eduEl = fields.education ? fields.education.el : null;
+            const engEl = fields.english ? fields.english.el : null;
+            const msgEl = fields.message ? fields.message.el : null;
 
-                // Scroll to success message
-                formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            const eduVal = eduEl ? eduEl.value : '';
+            const engVal = engEl ? engEl.value : '';
+            const msgVal = msgEl ? msgEl.value.trim() : '';
 
-                // Re-enable in case user wants to submit again later
-                submitBtn.disabled = false;
-                btnText.textContent = 'Đăng ký tư vấn MIỄN PHÍ ngay';
-                submitBtn.style.opacity = '1';
+            // Gộp học vấn + tiếng Anh vào note
+            const noteParts = [];
+            if (eduVal) noteParts.push('Học vấn: ' + eduVal);
+            if (engVal) noteParts.push('Tiếng Anh: ' + engVal);
+            if (msgVal) noteParts.push(msgVal);
+            const combinedNote = noteParts.join(' | ');
 
-                // Push to dataLayer if GTM is present
-                if (typeof window.dataLayer !== 'undefined') {
-                    window.dataLayer.push({
-                        event: 'form_submit',
-                        form_id: 'mba-lead-form',
-                        program: document.getElementById('program')?.value || ''
-                    });
-                }
-            }, 1600);
+            const payload = {
+                form_id: "3ebd9ef0f28f4d1bd0a4d56b089e1c25",
+                email: emailVal,
+                firstName: nameVal,
+                phoneNumber: phoneVal,
+                hoc_van: eduVal,
+                tieng_anh: engVal,
+                khach_note: combinedNote,
+                chuong_trinh: "Online MBA"
+            };
+
+            fetch("https://automation.ideas.edu.vn/mail_api/forms.php?route=submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            })
+                .then(res => res.json())
+                .then(result => {
+                    form.style.display = 'none';
+                    if (formSuccess) formSuccess.style.display = 'block';
+                    if (formId === 'cta-form') {
+                        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                    if (typeof window.dataLayer !== 'undefined') {
+                        window.dataLayer.push({
+                            event: 'form_submit',
+                            form_id: 'mba-lead-form',
+                            form_type: formId === 'modal-cta-form' ? 'modal' : 'inline'
+                        });
+                    }
+                })
+                .catch(err => {
+                    console.error('Lỗi gửi form tư vấn:', err);
+                    // Still show success to user on network error (graceful)
+                    form.style.display = 'none';
+                    if (formSuccess) formSuccess.style.display = 'block';
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    btnText.textContent = originalText;
+                    submitBtn.style.opacity = '1';
+                });
         });
     }
+
+    // Initialize both forms
+    initForm('cta-form', 'form-success');
+    initForm('modal-cta-form', 'modal-form-success');
+
+    /* ─── Registration Modal ─── */
+    const regModal = document.getElementById('reg-modal');
+    const regClose = document.getElementById('reg-modal-close');
+    const regOverlay = document.getElementById('reg-modal-overlay');
+
+    function openRegModal() {
+        if (!regModal) return;
+
+        // Reset form visibility in case it was submitted successfully before
+        const modalForm = document.getElementById('modal-cta-form');
+        const modalSuccess = document.getElementById('modal-form-success');
+        if (modalForm) modalForm.style.display = 'grid';
+        if (modalSuccess) modalSuccess.style.display = 'none';
+
+        regModal.style.display = 'flex'; // Ensure it's showing
+        setTimeout(() => {
+            regModal.classList.add('open');
+            regModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }, 10);
+    }
+
+    function closeRegModal() {
+        if (!regModal) return;
+        regModal.classList.remove('open');
+        regModal.setAttribute('aria-hidden', 'true');
+        setTimeout(() => {
+            regModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }, 400);
+    }
+
+    if (regClose) regClose.addEventListener('click', closeRegModal);
+    if (regOverlay) regOverlay.addEventListener('click', closeRegModal);
+
+    // Intercept all CTA clicks (links to #dang-ky) to show popup instead
+    document.querySelectorAll('a[href="#dang-ky"]').forEach(cta => {
+        cta.addEventListener('click', function (e) {
+            // Check if this CTA is NOT the one inside the bottom section already
+            // If it's a general CTA, show popup. If it's already at the bottom, just let it scroll.
+            // But let's follow user: "các CTA nhấp vào sẽ hiện popup"
+            e.preventDefault();
+            e.stopPropagation();
+            openRegModal();
+        });
+    });
+
 
     /* ─── Pricing card hover parity ─── */
     document.querySelectorAll('.pricing-card').forEach(card => {
@@ -535,6 +683,7 @@
         if (e.key === 'Escape') {
             closeLightbox();
             closeAccredModal();
+            closeRegModal();
         }
     });
 
@@ -682,7 +831,90 @@
         });
     }
 
-    // Initialize dots on load and window resize
+    /* ─── Custom Select Transformer ─── */
+    function initCustomSelects() {
+        // Find all selects within cta-forms (both inline and modal)
+        const selects = document.querySelectorAll('.cta-form select');
+
+        selects.forEach(select => {
+            // Avoid double initialization
+            if (select.parentNode.classList.contains('select-wrapper')) return;
+
+            // 1. Create wrapper structure
+            const wrapper = document.createElement('div');
+            wrapper.className = 'select-wrapper';
+            select.parentNode.insertBefore(wrapper, select);
+            wrapper.appendChild(select);
+
+            // 2. Create custom Trigger (the visible box)
+            const trigger = document.createElement('div');
+            trigger.className = 'select-trigger';
+            const selectedText = select.options[select.selectedIndex]?.text || 'Chọn một tùy chọn';
+            trigger.innerHTML = `<span class="select-value">${selectedText}</span>`;
+            wrapper.appendChild(trigger);
+
+            // 3. Create Dropdown Menu
+            const dropdown = document.createElement('div');
+            dropdown.className = 'select-dropdown';
+
+            // Build options
+            [...select.options].forEach((option, idx) => {
+                const optDiv = document.createElement('div');
+                optDiv.className = 'select-option';
+                if (select.selectedIndex === idx) optDiv.classList.add('selected');
+                optDiv.textContent = option.text;
+
+                optDiv.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    select.selectedIndex = idx;
+                    trigger.querySelector('.select-value').textContent = option.text;
+
+                    // Update visual classes
+                    dropdown.querySelectorAll('.select-option').forEach(o => o.classList.remove('selected'));
+                    optDiv.classList.add('selected');
+
+                    // Close menu
+                    dropdown.classList.remove('show');
+                    trigger.classList.remove('active');
+
+                    // Fire events so validation knows something changed
+                    select.dispatchEvent(new Event('change', { bubbles: true }));
+                    select.dispatchEvent(new Event('input', { bubbles: true }));
+                });
+                dropdown.appendChild(optDiv);
+            });
+
+            wrapper.appendChild(dropdown);
+
+            // 4. Toggle Interaction
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                // Close any other open dropdowns first
+                document.querySelectorAll('.select-dropdown.show').forEach(d => {
+                    if (d !== dropdown) {
+                        d.classList.remove('show');
+                        d.previousElementSibling.classList.remove('active');
+                    }
+                });
+
+                const isOpening = !dropdown.classList.contains('show');
+                dropdown.classList.toggle('show');
+                trigger.classList.toggle('active');
+            });
+        });
+
+        // Close dropdowns when clicking anywhere else
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.select-dropdown.show').forEach(d => {
+                d.classList.remove('show');
+                d.previousElementSibling.classList.remove('active');
+            });
+        });
+    }
+
+    // Initialize everything
+    initCustomSelects();
     initScrollDots();
     window.addEventListener('resize', initScrollDots);
 
