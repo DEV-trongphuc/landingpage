@@ -298,7 +298,7 @@ const modernPricingHtml = `
                             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Học trực tiếp qua Zoom với Giảng viên quốc tế Thụy Sĩ</li>
                             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Truy cập toàn bộ Học liệu, và kho Case study Thực tiễn</li>
                             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Tham gia Cộng đồng Lãnh đạo AI và kết nối doanh nghiệp</li>
-                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sử dụng trọn đời Hệ sinh thái IDEAS LMS & Buffet AI</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sử dụng trọn đời Hệ sinh thái IDEAS LMS & IDEAS AI Platform</li>
                         </ul>
                         <div style="text-align: center;">
                             <a href="#dang-ky" class="cyber-btn" id="standard-cta">Tư vấn Học phí & Nhận ưu đãi</a>

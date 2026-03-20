@@ -236,7 +236,7 @@ const pricingSectionHtml = `
                                 <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ab0e00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Học trực tiếp qua Zoom với Giảng viên quốc tế</li>
                                 <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ab0e00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Truy cập toàn bộ Học liệu, Case study Thực tiễn</li>
                                 <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ab0e00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Tham gia Cộng đồng Lãnh đạo AI</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ab0e00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Hệ sinh thái IDEAS LMS & Buffet AI</li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ab0e00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Hệ sinh thái IDEAS LMS & IDEAS AI Platform</li>
                             </ul>
                             <a href="#dang-ky" class="btn pcv2-btn-featured" id="standard-cta">Tư vấn Học phí ngay</a>
                         </article>
