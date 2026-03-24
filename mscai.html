@@ -3189,14 +3189,15 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:20px;">
-                        <a href="#dang-ky" class="btn btn-primary" id="hero-main-cta"
-                            style="background: #fff; color: #ab0e00; border: none; box-shadow: 0 8px 25px rgba(0,0,0,0.2);">
+                        <button type="button" class="btn btn-primary" id="hero-main-cta"
+                            onclick="quizModal.open()"
+                            style="background: #fff; color: #ab0e00; border: none; box-shadow: 0 8px 25px rgba(0,0,0,0.2); cursor:pointer;">
                             <span>Đánh giá mức độ phù hợp với MSc AI</span>
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
-                        </a>
+                        </button>
 
                     </div>
 
@@ -3224,7 +3225,7 @@
                         </div>
                         <p style="color: rgba(255,255,255,0.9); margin-top: 0; margin-bottom: 0;"><strong
                                 style="color:#ffffff;">2502+</strong>
-                            học viên tốt nghệp các chương trình Swiss UMEF tại Việt Nam cùng IDEAS</p>
+                            học viên Tốt nghiệp các chương trình Swiss UMEF tại Việt Nam cùng IDEAS</p>
                     </div>
 
                 </div>
@@ -5865,6 +5866,686 @@
 
     <script src="script.js"></script>
     <script src="booking-modal.js"></script>
+
+    <!-- ═══════════════════════════════════════
+         MSc AI QUIZ POPUP
+    ═══════════════════════════════════════ -->
+    <style>
+        /* ── Overlay ── */
+        .qz-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            background: rgba(5, 11, 20, 0.78);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.32s ease;
+        }
+        .qz-overlay.qz-open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* ── Modal shell ── */
+        .qz-modal {
+            position: relative;
+            background: #fff;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 660px;
+            max-height: 92vh;
+            overflow-y: auto;
+            box-shadow: 0 32px 80px rgba(5,11,20,0.35);
+            transform: translateY(24px) scale(0.97);
+            transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;
+            opacity: 0;
+        }
+        .qz-overlay.qz-open .qz-modal {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        /* ── Close btn ── */
+        .qz-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            background: #f1f5f9;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 18px;
+            line-height: 1;
+            transition: background 0.2s, color 0.2s;
+            z-index: 2;
+        }
+        .qz-close:hover { background: #fecaca; color: #ab0e00; }
+
+        /* ── Header ── */
+        .qz-header {
+            background: linear-gradient(135deg, #ab0e00 0%, #d91c0a 100%);
+            padding: 32px 36px 24px;
+            border-radius: 24px 24px 0 0;
+            color: #fff;
+        }
+        .qz-header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 999px;
+            padding: 4px 12px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .qz-header-badge span { width:6px; height:6px; border-radius:50%; background:#fbbf24; display:inline-block; }
+        .qz-header h2 {
+            margin: 0 0 6px;
+            font-size: clamp(1.15rem, 3vw, 1.45rem);
+            font-weight: 800;
+            line-height: 1.25;
+        }
+        .qz-header p {
+            margin: 0;
+            font-size: 0.82rem;
+            opacity: 0.85;
+        }
+
+        /* ── Progress bar ── */
+        .qz-progress-wrap {
+            padding: 20px 36px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .qz-progress-bar {
+            flex: 1;
+            height: 5px;
+            background: #f1f5f9;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+        .qz-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ab0e00, #ef4444);
+            border-radius: 999px;
+            transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+            width: 20%;
+        }
+        .qz-progress-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #94a3b8;
+            min-width: 44px;
+            text-align: right;
+        }
+
+        /* ── Q&A body ── */
+        .qz-body {
+            padding: 24px 36px 32px;
+        }
+        .qz-question-wrap { display: none; }
+        .qz-question-wrap.qz-active { display: block; }
+
+        .qz-q-number {
+            font-size: 11px;
+            font-weight: 800;
+            color: #ab0e00;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+        .qz-q-text {
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            font-weight: 700;
+            color: #111729;
+            line-height: 1.5;
+            margin: 0 0 20px;
+        }
+
+        /* ── Answers grid ── */
+        .qz-answers {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .qz-answer-btn {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 18px;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #334155;
+            line-height: 1.5;
+            transition: border-color 0.2s, background 0.2s, transform 0.15s, box-shadow 0.2s;
+            width: 100%;
+        }
+        .qz-answer-btn:hover {
+            border-color: #ab0e00;
+            background: #fff5f5;
+            transform: translateX(3px);
+            box-shadow: 0 4px 16px rgba(171,14,0,0.1);
+        }
+        .qz-answer-btn.qz-selected {
+            border-color: #ab0e00;
+            background: linear-gradient(135deg, #fff5f5, #fff);
+            box-shadow: 0 4px 20px rgba(171,14,0,0.15);
+        }
+        .qz-answer-icon {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            border-radius: 8px;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 900;
+            color: #64748b;
+            transition: background 0.2s, color 0.2s;
+        }
+        .qz-answer-btn.qz-selected .qz-answer-icon {
+            background: #ab0e00;
+            color: #fff;
+        }
+
+        /* ── Nav buttons ── */
+        .qz-nav {
+            display: none; /* auto-advance replaces manual next button */
+        }
+        .qz-btn-next {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #ab0e00, #d91c0a);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 20px rgba(171,14,0,0.3);
+        }
+        .qz-btn-next:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(171,14,0,0.4); }
+        .qz-btn-next:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        /* ── Result screen ── */
+        .qz-result { display: none; padding: 36px; text-align: center; }
+        .qz-result.qz-active { display: block; }
+        .qz-result-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+        .qz-result-icon--strategic { background: linear-gradient(135deg,#fef3c7,#fde68a); }
+        .qz-result-icon--tech      { background: linear-gradient(135deg,#dbeafe,#93c5fd); }
+        .qz-result-icon--hybrid    { background: linear-gradient(135deg,#f0fdf4,#86efac); }
+        .qz-result-group {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .qz-result-group--strategic { background:#fef3c7; color:#92400e; }
+        .qz-result-group--tech      { background:#dbeafe; color:#1e40af; }
+        .qz-result-group--hybrid    { background:#f0fdf4; color:#166534; }
+        .qz-result h3 {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-weight: 900;
+            color: #111729;
+            margin: 0 0 12px;
+            line-height: 1.3;
+        }
+        .qz-result-msg {
+            font-size: 0.92rem;
+            color: #475569;
+            line-height: 1.7;
+            max-width: 460px;
+            margin: 0 auto 24px;
+        }
+        .qz-result-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 14px;
+            font-size: 0.92rem;
+            font-weight: 800;
+            font-family: inherit;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .qz-result-cta--strategic {
+            background: linear-gradient(135deg,#ab0e00,#d91c0a);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(171,14,0,0.3);
+        }
+        .qz-result-cta--tech {
+            background: linear-gradient(135deg,#1d4ed8,#3b82f6);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(29,78,216,0.3);
+        }
+        .qz-result-cta--hybrid {
+            background: linear-gradient(135deg,#15803d,#22c55e);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(21,128,61,0.3);
+        }
+        .qz-result-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.22); }
+        .qz-result-restart {
+            display: block;
+            margin-top: 14px;
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 0.82rem;
+            color: #94a3b8;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .qz-result-restart:hover { color: #ab0e00; }
+
+        /* scrollbar inside modal */
+        .qz-modal::-webkit-scrollbar { width: 5px; }
+        .qz-modal::-webkit-scrollbar-track { background: transparent; }
+        .qz-modal::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+
+        @media (max-width: 480px) {
+            .qz-header { padding: 24px 20px 18px; }
+            .qz-progress-wrap { padding: 16px 20px 0; }
+            .qz-body { padding: 20px 20px 28px; }
+            .qz-result { padding: 28px 20px; }
+            .qz-answer-btn { padding: 12px 14px; font-size: 0.83rem; }
+        }
+    </style>
+
+    <!-- Quiz Popup HTML -->
+    <div class="qz-overlay" id="qz-overlay" role="dialog" aria-modal="true" aria-labelledby="qz-modal-title">
+        <div class="qz-modal" id="qz-modal">
+
+            <button class="qz-close" id="qz-close" aria-label="Đóng">&#x2715;</button>
+
+            <!-- Header -->
+            <div class="qz-header">
+                <div class="qz-header-badge"><span></span> Trắc nghiệm định hướng</div>
+                <h2 id="qz-modal-title">Bạn phù hợp với MSc AI ở mức độ nào?</h2>
+                <p>Trả lời 5 câu hỏi ngắn — nhận kết quả ngay lập tức.</p>
+            </div>
+
+            <!-- Progress -->
+            <div class="qz-progress-wrap">
+                <div class="qz-progress-bar"><div class="qz-progress-fill" id="qz-progress"></div></div>
+                <div class="qz-progress-label" id="qz-progress-label">1 / 5</div>
+            </div>
+
+            <!-- Questions -->
+            <div class="qz-body" id="qz-body">
+
+                <!-- Q1 -->
+                <div class="qz-question-wrap qz-active" id="qz-q-1">
+                    <div class="qz-q-number">Câu 1 / 5</div>
+                    <p class="qz-q-text">Mục tiêu sự nghiệp ưu tiên của bạn trong 2–3 năm tới?</p>
+                    <div class="qz-answers">
+                        <button class="qz-answer-btn" data-q="1" data-type="A">
+                            <span class="qz-answer-icon">1</span>
+                            Điều hành doanh nghiệp hoặc tối ưu hóa mô hình khởi nghiệp.
+                        </button>
+                        <button class="qz-answer-btn" data-q="1" data-type="B">
+                            <span class="qz-answer-icon">2</span>
+                            Dẫn dắt các dự án công nghệ và chuyển đổi số toàn diện.
+                        </button>
+                        <button class="qz-answer-btn" data-q="1" data-type="C">
+                            <span class="qz-answer-icon">3</span>
+                            Mở rộng mạng lưới quan hệ với cộng đồng lãnh đạo cấp cao.
+                        </button>
+                        <button class="qz-answer-btn" data-q="1" data-type="D">
+                            <span class="qz-answer-icon">4</span>
+                            Ứng dụng AI để bứt phá hiệu suất quản lý tổ chức.
+                        </button>
+                    </div>
+                    <div class="qz-nav">
+                        <button class="qz-btn-next" id="qz-next-1" disabled>Tiếp theo <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="qz-question-wrap" id="qz-q-2">
+                    <div class="qz-q-number">Câu 2 / 5</div>
+                    <p class="qz-q-text">Kỹ năng nào cấp thiết nhất để nâng tầm vị thế của bạn?</p>
+                    <div class="qz-answers">
+                        <button class="qz-answer-btn" data-q="2" data-type="A">
+                            <span class="qz-answer-icon">1</span>
+                            Quản trị tài chính, nhân sự và chiến lược toàn cầu.
+                        </button>
+                        <button class="qz-answer-btn" data-q="2" data-type="B">
+                            <span class="qz-answer-icon">2</span>
+                            Phân tích dữ liệu và làm chủ các mô hình AI/Machine Learning.
+                        </button>
+                        <button class="qz-answer-btn" data-q="2" data-type="C">
+                            <span class="qz-answer-icon">3</span>
+                            Đàm phán chiến lược và xử lý các bài toán quản trị phức tạp.
+                        </button>
+                        <button class="qz-answer-btn" data-q="2" data-type="D">
+                            <span class="qz-answer-icon">4</span>
+                            Tư duy hệ thống và giải quyết vấn đề bằng công nghệ mới.
+                        </button>
+                    </div>
+                    <div class="qz-nav">
+                        <button class="qz-btn-next" id="qz-next-2" disabled>Tiếp theo <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="qz-question-wrap" id="qz-q-3">
+                    <div class="qz-q-number">Câu 3 / 5</div>
+                    <p class="qz-q-text">Bạn cảm thấy hứng thú nhất khi thực hiện vai trò nào?</p>
+                    <div class="qz-answers">
+                        <button class="qz-answer-btn" data-q="3" data-type="A">
+                            <span class="qz-answer-icon">1</span>
+                            Truyền cảm hứng, dẫn dắt đội ngũ và phối hợp nguồn lực.
+                        </button>
+                        <button class="qz-answer-btn" data-q="3" data-type="B">
+                            <span class="qz-answer-icon">2</span>
+                            Khai phá dữ liệu để tìm ra các quy luật/giải pháp đột phá.
+                        </button>
+                        <button class="qz-answer-btn" data-q="3" data-type="C">
+                            <span class="qz-answer-icon">3</span>
+                            Tối ưu hóa mô hình vận hành và chuỗi giá trị doanh nghiệp.
+                        </button>
+                        <button class="qz-answer-btn" data-q="3" data-type="D">
+                            <span class="qz-answer-icon">4</span>
+                            Trải nghiệm và thực thi các công cụ tự động hóa thông minh.
+                        </button>
+                    </div>
+                    <div class="qz-nav">
+                        <button class="qz-btn-next" id="qz-next-3" disabled>Tiếp theo <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="qz-question-wrap" id="qz-q-4">
+                    <div class="qz-q-number">Câu 4 / 5</div>
+                    <p class="qz-q-text">Phương pháp ưu tiên khi đối mặt với bài toán kinh doanh khó?</p>
+                    <div class="qz-answers">
+                        <button class="qz-answer-btn" data-q="4" data-type="A">
+                            <span class="qz-answer-icon">1</span>
+                            Dựa trên kinh nghiệm thực chiến và tầm nhìn thị trường.
+                        </button>
+                        <button class="qz-answer-btn" data-q="4" data-type="B">
+                            <span class="qz-answer-icon">2</span>
+                            Dựa trên các mô hình dự báo và phân tích số liệu khoa học.
+                        </button>
+                        <button class="qz-answer-btn" data-q="4" data-type="C">
+                            <span class="qz-answer-icon">3</span>
+                            Tham vấn hội đồng quản trị và các chuyên gia cố vấn.
+                        </button>
+                        <button class="qz-answer-btn" data-q="4" data-type="D">
+                            <span class="qz-answer-icon">4</span>
+                            Sử dụng AI để phân tích đa chiều và tìm phương án tối ưu.
+                        </button>
+                    </div>
+                    <div class="qz-nav">
+                        <button class="qz-btn-next" id="qz-next-4" disabled>Tiếp theo <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="qz-question-wrap" id="qz-q-5">
+                    <div class="qz-q-number">Câu 5 / 5</div>
+                    <p class="qz-q-text">Giá trị lớn nhất bạn kỳ vọng từ chương trình Thạc sĩ?</p>
+                    <div class="qz-answers">
+                        <button class="qz-answer-btn" data-q="5" data-type="A">
+                            <span class="qz-answer-icon">1</span>
+                            Khẳng định vị thế lãnh đạo và thăng tiến cấp C-level.
+                        </button>
+                        <button class="qz-answer-btn" data-q="5" data-type="B">
+                            <span class="qz-answer-icon">2</span>
+                            Nắm vững công nghệ tương lai để dẫn đầu kỷ nguyên AI.
+                        </button>
+                        <button class="qz-answer-btn" data-q="5" data-type="C">
+                            <span class="qz-answer-icon">3</span>
+                            Kết nối và cộng tác kinh doanh với học viên cùng đẳng cấp.
+                        </button>
+                        <button class="qz-answer-btn" data-q="5" data-type="D">
+                            <span class="qz-answer-icon">4</span>
+                            Trực tiếp số hóa và thông minh hóa doanh nghiệp hiện tại.
+                        </button>
+                    </div>
+                    <div class="qz-nav">
+                        <button class="qz-btn-next" id="qz-next-5" disabled>Xem kết quả <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                    </div>
+                </div>
+
+            </div><!-- /qz-body -->
+
+            <!-- Result screen -->
+            <div class="qz-result" id="qz-result">
+                <div class="qz-result-icon" id="qz-result-icon"></div>
+                <div class="qz-result-group" id="qz-result-group"></div>
+                <h3 id="qz-result-title"></h3>
+                <p class="qz-result-msg" id="qz-result-msg"></p>
+                <a href="#dang-ky" class="qz-result-cta" id="qz-result-cta" onclick="quizModal.close()"></a>
+                <button class="qz-result-restart" id="qz-result-restart">↺ Làm lại từ đầu</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+    /* ─── MSc AI Quiz Modal ─── */
+    const quizModal = (() => {
+        const overlay  = document.getElementById('qz-overlay');
+        const progress = document.getElementById('qz-progress');
+        const progLbl  = document.getElementById('qz-progress-label');
+        const body     = document.getElementById('qz-body');
+        const resultEl = document.getElementById('qz-result');
+
+        const TOTAL = 5;
+        let current = 1;
+        // answers[q] = type char ('A','B','C','D')
+        const answers = {};
+
+        /* ─ helpers ─ */
+        function showQ(n) {
+            document.querySelectorAll('.qz-question-wrap').forEach(el => el.classList.remove('qz-active'));
+            const q = document.getElementById('qz-q-' + n);
+            if (q) q.classList.add('qz-active');
+            progress.style.width = (n / TOTAL * 100) + '%';
+            progLbl.textContent  = n + ' / ' + TOTAL;
+        }
+
+        function classify() {
+            let A=0, B=0, C=0, D=0;
+            for (let i=1; i<=TOTAL; i++) {
+                const t = answers[i];
+                if      (t==='A') A++;
+                else if (t==='B') B++;
+                else if (t==='C') C++;
+                else if (t==='D') D++;
+            }
+
+            const strategic = A + C;
+            const tech      = B + D;
+
+            if      (strategic >= 4) return 'strategic';
+            else if (tech      >= 4) return 'tech';
+            else                     return 'hybrid';
+        }
+
+        const RESULTS = {
+            strategic: {
+                icon:  '🏆',
+                group: 'Nhà Quản Trị Chiến Lược',
+                groupCls: 'qz-result-group--strategic',
+                iconCls:  'qz-result-icon--strategic',
+                title: 'Bạn là nhà điều hành bản lĩnh!',
+                msg:   'Bạn sở hữu tư duy của một nhà điều hành bản lĩnh, tập trung vào con người và tầm nhìn dài hạn. Chương trình EMBA sẽ phù hợp hơn với định hướng của bạn.',
+                cta:   'Khám phá chương trình EMBA →',
+                ctaCls: 'qz-result-cta--strategic',
+                action: () => { close(); window.location.href = 'emba.html'; }
+            },
+            tech: {
+                icon:  '🚀',
+                group: 'Nhà Lãnh Đạo Công Nghệ',
+                groupCls: 'qz-result-group--tech',
+                iconCls:  'qz-result-icon--tech',
+                title: 'Bạn là người tiên phong công nghệ!',
+                msg:   'Bạn là người tiên phong, sẵn sàng dùng công nghệ và dữ liệu để tạo ra đột phá cho doanh nghiệp. MSc AI chính là bệ phóng hoàn hảo cho hành trình của bạn.',
+                cta:   'Đăng ký tư vấn MSc AI ngay →',
+                ctaCls: 'qz-result-cta--tech',
+                action: () => { close(); const ob = document.querySelector('.bk-open-btn'); if (ob) ob.click(); }
+            },
+            hybrid: {
+                icon:  '⚡',
+                group: 'Lãnh Đạo Đa Năng (Hybrid)',
+                groupCls: 'qz-result-group--hybrid',
+                iconCls:  'qz-result-icon--hybrid',
+                title: 'Bạn là lãnh đạo đa năng hiếm có!',
+                msg:   'Bạn có sự giao thoa hiếm có giữa bản lĩnh quản trị và tư duy công nghệ 4.0. Hãy xem tổng hợp các chương trình để chọn lộ trình phù hợp nhất.',
+                cta:   'Xem tất cả chương trình →',
+                ctaCls: 'qz-result-cta--hybrid',
+                action: () => { close(); window.location.href = 'index.html'; }
+            }
+        };
+
+        // store current action for CTA click
+        let currentAction = null;
+
+        function showResult() {
+            const type = classify();
+            const r    = RESULTS[type];
+
+            body.style.display = 'none';
+            document.querySelector('.qz-progress-wrap').style.display = 'none';
+
+            const icon  = document.getElementById('qz-result-icon');
+            const grp   = document.getElementById('qz-result-group');
+            const title = document.getElementById('qz-result-title');
+            const msg   = document.getElementById('qz-result-msg');
+            const cta   = document.getElementById('qz-result-cta');
+
+            icon.textContent  = r.icon;
+            icon.className    = 'qz-result-icon ' + r.iconCls;
+            grp.textContent   = r.group;
+            grp.className     = 'qz-result-group ' + r.groupCls;
+            title.textContent = r.title;
+            msg.textContent   = r.msg;
+            cta.textContent   = r.cta;
+            cta.className     = 'qz-result-cta ' + r.ctaCls;
+
+            // store action for this result type
+            currentAction = r.action;
+
+            resultEl.classList.add('qz-active');
+        }
+
+        /* ─ CTA click ─ */
+        document.getElementById('qz-result-cta').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (currentAction) currentAction();
+        });
+
+        /* ─ event delegation for answer buttons — auto-advance ─ */
+        document.getElementById('qz-body').addEventListener('click', function(e) {
+            const btn = e.target.closest('.qz-answer-btn');
+            if (!btn) return;
+            const q    = parseInt(btn.dataset.q);
+            const type = btn.dataset.type;
+
+            // deselect siblings, mark selected
+            document.querySelectorAll('.qz-answer-btn[data-q="'+q+'"]').forEach(b => b.classList.remove('qz-selected'));
+            btn.classList.add('qz-selected');
+            answers[q] = type;
+
+            // auto-advance after brief highlight
+            setTimeout(function() {
+                if (q < TOTAL) {
+                    current = q + 1;
+                    showQ(current);
+                } else {
+                    showResult();
+                }
+            }, 350);
+        });
+
+        /* ─ restart ─ */
+        document.getElementById('qz-result-restart').addEventListener('click', function() {
+            reset();
+        });
+
+        /* ─ close ─ */
+        document.getElementById('qz-close').addEventListener('click', close);
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) close();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') close();
+        });
+
+        function reset() {
+            current = 1;
+            currentAction = null;
+            for (let k in answers) delete answers[k];
+            document.querySelectorAll('.qz-answer-btn').forEach(b => b.classList.remove('qz-selected'));
+            body.style.display = '';
+            document.querySelector('.qz-progress-wrap').style.display = '';
+            resultEl.classList.remove('qz-active');
+            showQ(1);
+        }
+
+        function open() {
+            reset();
+            overlay.classList.add('qz-open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function close() {
+            overlay.classList.remove('qz-open');
+            document.body.style.overflow = '';
+        }
+
+        return { open, close };
+    })();
+    </script>
+
 </body>
 
 </html>
