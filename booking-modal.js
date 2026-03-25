@@ -451,13 +451,13 @@
         const email = document.getElementById('bk-email');
         const program = document.querySelector('input[name="bk-program"]:checked');
 
-        const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val || '—'; };
+        const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val || '-'; };
         set('bk-confirm-date', formatDateFull(state.selectedDate));
         set('bk-confirm-time', state.selectedTime);
-        set('bk-confirm-name', name ? name.value.trim() : '—');
-        set('bk-confirm-phone', phone ? phone.value.trim() : '—');
-        set('bk-confirm-email', email ? email.value.trim() : '—');
-        set('bk-confirm-program', program ? program.value : '—');
+        set('bk-confirm-name', name ? name.value.trim() : '-');
+        set('bk-confirm-phone', phone ? phone.value.trim() : '-');
+        set('bk-confirm-email', email ? email.value.trim() : '-');
+        set('bk-confirm-program', program ? program.value : '-');
     }
 
     /* ── Calendar ──────────────────────────── */
@@ -538,7 +538,7 @@
             return;
         }
 
-        label.textContent = 'Khung giờ có sẵn — ' + formatDateShort(state.selectedDate);
+        label.textContent = 'Khung giờ có sẵn - ' + formatDateShort(state.selectedDate);
         grid.innerHTML = '';
 
         timeSlots.forEach(t => {
@@ -576,7 +576,7 @@
     const DAYS_VI = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'];
 
     function formatDateFull(d) {
-        if (!d) return '—';
+        if (!d) return '-';
         return `${DAYS_VI[d.getDay()]}, ${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
     }
     function formatDateShort(d) {

@@ -229,7 +229,7 @@ const pricingSectionHtml = `
                             <div class="pcv2-badge">Được lựa chọn nhiều nhất</div>
                             <div class="pcv2-header">
                                 <div class="pcv2-tier">MSc AI High Quality</div>
-                                <p class="pcv2-desc">Tương tác trực tiếp — Học 100% bằng Tiếng Anh</p>
+                                <p class="pcv2-desc">Tương tác trực tiếp - Học 100% bằng Tiếng Anh</p>
                             </div>
                             <div class="pcv2-divider"></div>
                             <ul class="pcv2-features">
@@ -256,7 +256,7 @@ const pricingSectionHtml = `
                         </div>
                         <div class="sacom-right">
                             <div class="sacom-headline">Hỗ trợ trả góp <span class="sacom-highlight">12 – 24 tháng</span></div>
-                            <p class="sacom-sub">Thanh toán học phí linh hoạt qua thẻ tín dụng Sacombank Visa — lãi suất ưu đãi, không cần thế chấp</p>
+                            <p class="sacom-sub">Thanh toán học phí linh hoạt qua thẻ tín dụng Sacombank Visa - lãi suất ưu đãi, không cần thế chấp</p>
                         </div>
                     </div>
                 </div>

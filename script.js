@@ -240,7 +240,7 @@
                             if (text.includes('100')) animateCounter(valueEl, 100, '%');
                             else if (text.includes('16')) animateCounter(valueEl, 18, '', 1000);
                             else if (text.includes('12')) {
-                                // "12 + 1" — custom
+                                // "12 + 1" - custom
                                 setTimeout(() => { valueEl.textContent = '12 + 1'; }, 1200);
                                 animateCounter(valueEl, 12, '', 1100);
                             }

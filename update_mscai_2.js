@@ -144,7 +144,7 @@ const modernPricingHtml = `
                             ĐƯỢC LỰA CHỌN NHIỀU NHẤT
                         </div>
                         <h4 class="cyber-tier-name">MSc AI High Quality</h4>
-                        <p class="cyber-desc">Tương tác trực tiếp — Học 100% bằng Tiếng Anh cùng chuyên gia quốc tế</p>
+                        <p class="cyber-desc">Tương tác trực tiếp - Học 100% bằng Tiếng Anh cùng chuyên gia quốc tế</p>
                         
                         <ul class="cyber-features">
                             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Học trực tiếp qua Zoom với Giảng viên quốc tế Thụy Sĩ</li>
@@ -169,7 +169,7 @@ const modernPricingHtml = `
                         </div>
                         <div class="sacom-right">
                             <div class="sacom-headline" style="color:#0f172a;">Hỗ trợ trả góp <span class="sacom-highlight" style="background:#ab0e00; color:#fff; padding:2px 8px; border-radius:4px;">12 – 24 tháng</span></div>
-                            <p class="sacom-sub" style="color:#475569;">Thanh toán học phí linh hoạt qua thẻ tín dụng Sacombank Visa — lãi suất ưu đãi, không cần thế chấp</p>
+                            <p class="sacom-sub" style="color:#475569;">Thanh toán học phí linh hoạt qua thẻ tín dụng Sacombank Visa - lãi suất ưu đãi, không cần thế chấp</p>
                         </div>
                     </div>
                 </div>

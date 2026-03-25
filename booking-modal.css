@@ -108,7 +108,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Progress tracker — sticky top */
+/* Progress tracker - sticky top */
 .bk-progress {
     position: sticky;
     top: 0;
@@ -322,7 +322,7 @@
     position: relative;
 }
 
-/* Hidden native select — still in DOM for form data */
+/* Hidden native select - still in DOM for form data */
 .bk-select-wrap select {
     position: absolute;
     opacity: 0;
@@ -560,7 +560,7 @@
     margin-top: 12px;
 }
 
-/* Sticky bottom actions — only on the date/time step */
+/* Sticky bottom actions - only on the date/time step */
 #bk-step-2 .bk-step-actions {
     position: sticky;
     bottom: 0;
