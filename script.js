@@ -441,6 +441,10 @@
             if (msgVal) noteParts.push(msgVal);
             const combinedNote = noteParts.join(' | ');
 
+            let chuongTrinhVal = "Online MBA";
+            if (window.location.pathname.includes("mscai")) chuongTrinhVal = "Online MSc AI";
+            else if (window.location.pathname.includes("emba")) chuongTrinhVal = "Online EMBA";
+
             const payload = {
                 form_id: "3ebd9ef0f28f4d1bd0a4d56b089e1c25",
                 email: emailVal,
@@ -449,7 +453,7 @@
                 hoc_van: eduVal,
                 tieng_anh: engVal,
                 khach_note: combinedNote,
-                chuong_trinh: "Online MBA"
+                chuong_trinh: chuongTrinhVal
             };
 
             fetch("https://automation.ideas.edu.vn/mail_api/forms.php?route=submit", {

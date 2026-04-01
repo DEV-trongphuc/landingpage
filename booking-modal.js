@@ -375,6 +375,10 @@
         const noteParts = [programVal, eduVal, engVal].filter(Boolean);
         const noteDatLich = noteParts.join(' | ');
 
+        let chuongTrinhVal = "Online MBA";
+        if (window.location.pathname.includes("mscai")) chuongTrinhVal = "Online MSc AI";
+        else if (window.location.pathname.includes("emba")) chuongTrinhVal = "Online EMBA";
+
         const payload = {
             form_id: "4fe1eeb0570742a1fdde61af6fc0680c",
             email: emailVal,
@@ -382,7 +386,7 @@
             phoneNumber: phoneVal,
             time_dat_lich: timeDatLich,
             note_dat_lich: noteDatLich,
-            chuong_trinh_dat_lich: "Online MBA"
+            chuong_trinh_dat_lich: chuongTrinhVal
         };
 
         // Loading state
