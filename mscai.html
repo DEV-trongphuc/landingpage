@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" style="overflow-x: hidden;">
 
 <head>
     <base href="/wp-content/new_public/LANDINGPAGE_MBA/" />
@@ -2312,8 +2312,9 @@
             }
 
             .hero-badges-row {
-                display: grid !important;
-                grid-template-columns: 1fr 1fr;
+                display: flex !important;
+                flex-wrap: wrap;
+                justify-content: center;
                 gap: 10px;
                 margin-bottom: 24px;
             }
@@ -2323,7 +2324,6 @@
             }
 
             .info-badge {
-                width: 100% !important;
                 justify-content: flex-start;
                 padding: 12px 8px !important;
                 padding-left: 20px !important;
