@@ -107,7 +107,7 @@ High Quality
 Phù hợp nếu bạn ưu tiên tính linh hoạt cao
 Phù hợp nếu bạn muốn tương tác và trao đổi thực tế với giảng viên
 - Học qua video bài giảng trên LMS
-- Buổi trực tiếp với Giảng viên nước ngoài (tùy chọn)
+- Buổi học trực tiếp với Giảng viên nước ngoài (tùy chọn)
 - Lớp chuyên đề Chủ nhật với Giảng viên Việt Nam
 CTA: Nhận brochure EMBA Standard
 - Học trực tiếp qua Zoom với Giảng viên quốc tế
