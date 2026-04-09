@@ -628,6 +628,8 @@ abbr {
 .hero-content {
   position: relative;
   z-index: 2;
+  min-width: 0;
+  word-break: break-word; /* Ensure extremely long unbroken strings don't force grid wider */
 }
 
 /* ─── Hero Visual Panel ─── */
@@ -818,6 +820,8 @@ abbr {
   font-weight: 700;
   color: var(--clr-primary);
   margin-bottom: 28px;
+  max-width: 100%;
+  white-space: normal;
 }
 
 .badge-dot {
