@@ -69,6 +69,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -552,7 +553,7 @@ abbr {
   align-items: center;
   background: var(--grad-hero);
   padding: 108px 0 80px;
-  overflow: clip;
+  overflow: hidden;
 }
 
 .hero-bg {
@@ -2793,7 +2794,7 @@ abbr {
     padding-left: 0;
     line-height: 1.5;
     font-size: 0.74rem;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   /* Title sizing requested: standard 1.5rem; dual: black 1.15rem / red 1.35rem */
