@@ -2313,7 +2313,7 @@ abbr {
 .cta-headline {
   font-size: clamp(1.6rem, 3.2vw, 2.2rem);
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.5;
   letter-spacing: -0.015em;
   margin-bottom: 28px;
   color: #111827;
