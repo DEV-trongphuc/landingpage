@@ -2,11 +2,14 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# /mba → landing page MBA (URL giữ nguyên là /mba)
-RewriteRule ^mba/?$ /wp-content/new_public/LANDINGPAGE_MBA/index.html [L]
+# /mba → landing page MBA
+RewriteRule ^mba/?$ /wp-content/new_public/LANDINGPAGE_MBA/mba.html [L]
 RewriteRule ^mscai/?$ /wp-content/new_public/LANDINGPAGE_MBA/mscai.html [L]
 RewriteRule ^emba/?$ /wp-content/new_public/LANDINGPAGE_MBA/emba.html [L]
 RewriteRule ^bba/?$ /wp-content/new_public/LANDINGPAGE_MBA/bba.html [L]
+RewriteRule ^fullbba/?$ /wp-content/new_public/LANDINGPAGE_MBA/fullbba.html [L]
+RewriteRule ^mbainai/?$ /wp-content/new_public/LANDINGPAGE_MBA/mbainai.html [L]
+RewriteRule ^dual-dba(-estiam-rb)?/?$ /wp-content/new_public/LANDINGPAGE_MBA/dual-dba.html [L]
 RewriteRule ^dat-lich/?$ /wp-content/new_public/LANDINGPAGE_MBA/dat-lich.html [L]
 
 # Route riêng cho landing xét duyệt (giữ nguyên rule cũ)

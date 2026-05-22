@@ -77,7 +77,7 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css?v=1.1" />
+    <link rel="stylesheet" href="style.css?v=1.2" />
     <link rel="stylesheet" href="booking-modal.css?v=1.1" />
     <style>
         /* ═══════════════════════════════════════
@@ -285,7 +285,7 @@
         .proof-check-icon svg {
             width: 14px;
             height: 14px;
-            color: #fff;
+            color: #0f172a;
         }
 
         .proof-check-item p {
@@ -383,7 +383,7 @@
             left: 50%;
             transform: translateX(-50%);
             background: #ab0e00;
-            color: #fff;
+            color: #0f172a;
             padding: 8px 20px;
             border-radius: 999px;
             font-size: 9px;
@@ -414,7 +414,7 @@
         .proof-accred-label {
             font-size: 10px;
             font-weight: 900;
-            color: #94a3b8;
+            color: #475569;
             text-transform: uppercase;
             letter-spacing: 0.14em;
             text-align: center;
@@ -541,7 +541,7 @@
             gap: 10px;
             padding: 5px 14px;
             background: rgba(171, 14, 0, 0.18);
-            color: #fca5a5;
+            color: #ab0e00;
             border: 1px solid rgba(171, 14, 0, 0.4);
             border-radius: 999px;
             font-size: 10px;
@@ -579,7 +579,7 @@
 
         .pain-sub {
             font-size: 1rem;
-            color: #94a3b8;
+            color: #475569;
             margin: 0;
         }
 
@@ -646,7 +646,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fca5a5;
+            color: #ab0e00;
             flex-shrink: 0;
             transition: transform 0.3s ease;
         }
@@ -657,7 +657,7 @@
 
         .pain-card-v2 p {
             font-size: 0.82rem;
-            color: #cbd5e1;
+            color: #334155;
             line-height: 1.65;
             margin: 0;
         }
@@ -727,7 +727,7 @@
 
         .pain-stat-text p {
             font-size: 0.88rem;
-            color: #cbd5e1;
+            color: #334155;
             line-height: 1.65;
             margin: 0 0 4px;
         }
@@ -793,7 +793,7 @@
 
         .pain-trend-icon--blue {
             background: rgba(59, 130, 246, 0.15);
-            color: #93c5fd;
+            color: #0369a1;
             border: 1px solid rgba(59, 130, 246, 0.25);
         }
 
@@ -811,7 +811,7 @@
 
         .pain-trend-item p {
             font-size: 0.84rem;
-            color: #94a3b8;
+            color: #475569;
             line-height: 1.65;
             margin: 0;
             padding-top: 6px;
@@ -1261,7 +1261,7 @@
             border-radius: 99px;
             font-size: 0.73rem;
             font-weight: 700;
-            color: #fff;
+            color: #0f172a;
             white-space: nowrap;
             border: 1px solid rgba(255, 255, 255, 0.15);
             z-index: 10;
@@ -1424,7 +1424,7 @@
             border-radius: 99px;
             font-size: 0.72rem;
             font-weight: 800;
-            color: #fff;
+            color: #0f172a;
             letter-spacing: 0.02em;
             margin-bottom: 20px;
             width: fit-content;
@@ -1442,7 +1442,7 @@
         }
 
         .pcv2-featured .pcv2-tier {
-            color: #fff;
+            color: #0f172a;
         }
 
         .pcv2-desc {
@@ -1513,7 +1513,7 @@
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(4px);
             border: 1.5px solid rgba(255, 255, 255, 0.4);
-            color: #fff;
+            color: #0f172a;
             font-weight: 800;
             font-size: 0.9rem;
             font-family: var(--font-sans);
@@ -1635,7 +1635,7 @@
         .sacom-headline {
             font-size: 1.25rem;
             font-weight: 800;
-            color: #fff;
+            color: #0f172a;
             margin-bottom: 6px;
             line-height: 1.3;
         }
@@ -1706,7 +1706,7 @@
         /* Testimonials - full-width grey band */
         .testimonials-section {
             position: relative;
-            background-color: #ffffff;
+            background-color: #0f172a;
             background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
             background-size: 24px 24px;
             width: 100vw;
@@ -1891,7 +1891,7 @@
         .testi-v4-company {
             font-size: 9px;
             font-weight: 800;
-            color: #94a3b8;
+            color: #475569;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             white-space: nowrap;
@@ -1958,7 +1958,7 @@
         .testi-v4-verified-lbl {
             font-size: 8px;
             font-weight: 900;
-            color: #cbd5e1;
+            color: #334155;
             text-transform: uppercase;
             letter-spacing: 0.15em;
         }
@@ -2200,7 +2200,7 @@
         .eco-card-v2-title {
             font-size: 1rem;
             font-weight: 800;
-            color: #fff;
+            color: #0f172a;
             margin: 0 0 8px;
             line-height: 1.3;
         }
@@ -2600,6 +2600,96 @@
                 padding: 14px 18px !important;
             }
         }
+    
+        /* ==========================================
+           MOBILE & VIEWPORT OPTIMIZATIONS
+           ========================================== */
+        @media (max-width: 1024px) {
+            .pain-cards {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 16px !important;
+            }
+            .pain-cards > .pain-card-v2,
+            .pain-cards > div {
+                flex: 0 1 calc(33.333% - 12px) !important;
+                min-width: 250px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Tighten paddings */
+            section, 
+            .pricing-section, 
+            .cta-section,
+            .hero-section,
+            .ecosystem-section {
+                padding: 32px 12px !important;
+            }
+            .container {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+            .premium-policy-wrapper {
+                padding: 0 !important;
+            }
+            .premium-policy-wrapper > div {
+                padding: 24px 12px !important;
+                border-radius: 16px !important;
+            }
+            
+            /* Clamp titles */
+            h1, .hero-title {
+                font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
+            }
+            h2, .section-title {
+                font-size: clamp(1.6rem, 4.5vw, 1.9rem) !important;
+            }
+            h3, .pricing-title, .cta-headline {
+                font-size: clamp(1.4rem, 4vw, 1.7rem) !important;
+            }
+            
+            /* Pain cards on mobile */
+            .pain-cards {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 12px !important;
+                grid-template-columns: none !important;
+            }
+            .pain-cards > .pain-card-v2,
+            .pain-cards > div {
+                flex: 0 1 calc(50% - 8px) !important;
+                min-width: 140px !important;
+                padding: 16px 12px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pain-cards > .pain-card-v2,
+            .pain-cards > div {
+                flex: 0 1 100% !important;
+            }
+        }
+
+        /* Responsive Table style adjustments for light theme */
+        @media (max-width: 768px) {
+            .fee-table-responsive tr:not(.section-header) {
+                border-bottom: 1px solid #e2e8f0 !important;
+                background: #ffffff !important;
+            }
+            .fee-table-responsive tr:not(.section-header) td:first-child {
+                color: #0f172a !important;
+            }
+            .fee-table-responsive tr:not(.section-header) td:not(:first-child)::before {
+                color: #64748b !important;
+            }
+            .fee-table-responsive tr.total-row {
+                background: rgba(171, 14, 0, 0.05) !important;
+                border-top: 1.5px solid rgba(171, 14, 0, 0.1) !important;
+            }
+        }
     </style>
 
     <!-- Favicon -->
@@ -2658,7 +2748,7 @@
         }
 
         #hero-headline {
-            color: #fff;
+            color: #0f172a;
         }
 
         .ai-hero-title-small {
@@ -2685,7 +2775,7 @@
         }
 
         .ai-hero-desc {
-            color: #94a3b8;
+            color: #475569;
             font-size: 1.15rem;
             line-height: 1.6;
             max-width: 500px;
@@ -2779,7 +2869,7 @@
             gap: 8px;
             font-size: 0.9rem;
             font-weight: 500;
-            color: #cbd5e1;
+            color: #334155;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 8px 16px;
@@ -2791,7 +2881,7 @@
             background: rgba(171, 14, 0, 0.15);
             border-left: 4px solid #ef4444;
             padding: 16px 20px;
-            color: #fff;
+            color: #0f172a;
             font-style: italic;
             font-weight: 500;
             font-size: 1.05rem;
@@ -2835,7 +2925,7 @@
             letter-spacing: 0.1em;
             background: rgba(171, 14, 0, 0.2);
             border: 1px solid rgba(171, 14, 0, 0.5);
-            color: #fca5a5;
+            color: #ab0e00;
             padding: 6px 12px;
             border-radius: 99px;
             margin-bottom: 24px;
@@ -2851,7 +2941,7 @@
         }
 
         .cyber-desc {
-            color: #94a3b8;
+            color: #475569;
             font-size: 0.95rem;
             margin: 0 0 32px;
             font-style: italic;
@@ -2910,7 +3000,52 @@
             <nav class="header-nav">
                 <a href="#van-de" class="nav-link">Vấn đề</a>
                 <a href="#giai-phap" class="nav-link">Giải pháp</a>
-                <a href="#chuong-trinh" class="nav-link">Chương trình</a>
+                <div class="nav-dropdown">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Chương trình đào tạo
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu-box">
+                        <div class="dropdown-column">
+                            <div class="dropdown-column-title">Thạc sĩ</div>
+                            <a href="mba.html" class="dropdown-item">
+                                <div class="item-title">Online MBA</div>
+                                <div class="item-desc">Thạc sĩ QTKD trực tuyến Thụy Sĩ</div>
+                            </a>
+                            <a href="emba.html" class="dropdown-item">
+                                <div class="item-title">Executive MBA</div>
+                                <div class="item-desc">Thạc sĩ điều hành cao cấp</div>
+                            </a>
+                            <a href="mscai.html" class="dropdown-item">
+                                <div class="item-title">Master AI (MSc AI)</div>
+                                <div class="item-desc">Thạc sĩ khoa học sâu về AI</div>
+                            </a>
+                            <a href="mbainai.html" class="dropdown-item">
+                                <div class="item-title">MBA in AI</div>
+                                <div class="item-desc">Quản trị & ứng dụng AI no-code</div>
+                            </a>
+                        </div>
+                        <div class="dropdown-column-divider"></div>
+                        <div class="dropdown-column">
+                            <div class="dropdown-column-title">Cử nhân & Tiến sĩ</div>
+                            <a href="bba.html" class="dropdown-item">
+                                <div class="item-title">Top-up BBA</div>
+                                <div class="item-desc">Liên thông Cử nhân 12 tháng</div>
+                            </a>
+                            <a href="fullbba.html" class="dropdown-item">
+                                <div class="item-title">Full BBA</div>
+                                <div class="item-desc">Cử nhân QTKD chính quy 3 năm</div>
+                            </a>
+                            <div class="dropdown-column-title" style="margin-top: 16px;">Tiến sĩ</div>
+                            <a href="dual-dba.html" class="dropdown-item">
+                                <div class="item-title">Dual DBA</div>
+                                <div class="item-desc">Tiến sĩ song bằng Pháp & Anh</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <a href="#tuyen-sinh" class="nav-link">Tuyển sinh</a>
                 <div style="display:flex;align-items:center;gap:8px;">
                     <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
@@ -2949,7 +3084,29 @@
         </button>
         <a href="#van-de" class="nav-link">Vấn đề</a>
         <a href="#giai-phap" class="nav-link">Giải pháp</a>
-        <a href="#chuong-trinh" class="nav-link">Chương trình</a>
+        <div class="mobile-dropdown">
+            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+                Chương trình
+                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+                <div class="mobile-dropdown-section">
+                    <div class="mobile-section-title">Thạc sĩ</div>
+                    <a href="mba.html" class="mobile-dropdown-item">Online MBA</a>
+                    <a href="emba.html" class="mobile-dropdown-item">Executive MBA</a>
+                    <a href="mscai.html" class="mobile-dropdown-item">Master AI (MSc AI)</a>
+                    <a href="mbainai.html" class="mobile-dropdown-item">MBA in AI</a>
+                </div>
+                <div class="mobile-dropdown-section">
+                    <div class="mobile-section-title">Cử nhân & Tiến sĩ</div>
+                    <a href="bba.html" class="mobile-dropdown-item">Top-up BBA</a>
+                    <a href="fullbba.html" class="mobile-dropdown-item">Full BBA</a>
+                    <a href="dual-dba.html" class="mobile-dropdown-item" style="margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">Dual DBA (Tiến sĩ)</a>
+                </div>
+            </div>
+        </div>
         <a href="#tuyen-sinh" class="nav-link">Tuyển sinh</a>
         <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
     </div>
@@ -3070,7 +3227,7 @@
 
             <div class="container hero-layout">
                 <!-- LEFT: Text -->
-                <div class="hero-content reveal-up" style="color: #fff;">
+                <div class="hero-content reveal-up" style="color: #0f172a;">
                     <div class="hero-badge"
                         style="background: rgba(255,255,255,0.95); color: #ab0e00; border: none; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.15); margin-bottom: 20px;">
                         <span class="badge-dot"
@@ -3081,13 +3238,11 @@
                     <h1 class="hero-headline" id="hero-headline"
                         style="margin-top: 0; margin-bottom: 8px; line-height: 1.4 !important;">
                         <span class="hero-hl-big ai-strong-hook"
-                            style="font-family: 'Space Grotesk', sans-serif; font-style: normal; font-weight: 800; color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); line-height: 1.3; letter-spacing: -0.03em; margin: 0; display: block; text-transform: uppercase;">
+                            style="font-family: 'Space Grotesk', sans-serif; font-style: normal; font-weight: 800; color: #0f172a; text-shadow: 0 4px 20px rgba(0,0,0,0.5); line-height: 1.3; letter-spacing: -0.03em; margin: 0; display: block; text-transform: uppercase;">
                             <span
-                                style="font-size: clamp(1.8rem, 4vw, 2.5rem); display: block; line-height: 1.2; margin-bottom: 4px;">AI
-                                không cướp công việc của bạn</span>
+                                style="font-size: clamp(1.8rem, 4vw, 2.5rem); display: block; line-height: 1.2; margin-bottom: 4px;">AI không cướp công việc của bạn</span>
                             <span
-                                style="background: linear-gradient(90deg, #fecaca, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none; display: inline-block; padding-top: 0.15em; font-size: clamp(2.5rem, 6vw, 4.2rem); line-height: 1.2;">Người
-                                hiểu AI thì có</span>
+                                style="background: linear-gradient(90deg, #fecaca, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none; display: inline-block; padding-top: 0.15em; font-size: clamp(2.5rem, 6vw, 4.2rem); line-height: 1.2;">Người hiểu AI thì có</span>
                         </span>
                     </h1>
 
@@ -3098,13 +3253,12 @@
 
                     <p class="hero-sub"
                         style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.6; max-width: 600px;">
-                        MSc AI của <strong>Swiss UMEF</strong> được thiết kế dành cho nhà quản lý và lãnh đạo doanh
-                        nghiệp muốn <strong>hiểu - ứng dụng - quản trị AI</strong> ở cấp độ chiến lược.
+                        MSc AI của <strong>Swiss UMEF</strong> được thiết kế dành cho nhà quản lý và lãnh đạo doanh nghiệp muốn <strong>hiểu - ứng dụng - quản trị AI</strong> ở cấp độ chiến lược.
                     </p>
 
                     <div class="hero-badges-row" aria-label="Thông tin nhanh về chương trình">
                         <div class="info-badge"
-                            style="color: #fff; border-color: rgba(255,255,255,0.3); background: rgba(0,0,0,0.2);"><span
+                            style="color: #0f172a; border-color: rgba(255,255,255,0.3); background: rgba(0,0,0,0.2);"><span
                                 class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" aria-hidden="true">
@@ -3112,7 +3266,7 @@
                                     <polyline points="12 6 12 12 16 14" />
                                 </svg></span><span>16–18 tháng</span></div>
                         <div class="info-badge"
-                            style="color: #fff; border-color: rgba(255,255,255,0.3); background: rgba(0,0,0,0.2);"><span
+                            style="color: #0f172a; border-color: rgba(255,255,255,0.3); background: rgba(0,0,0,0.2);"><span
                                 class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" aria-hidden="true">
@@ -3120,7 +3274,7 @@
                                     <polyline points="8 21 12 17 16 21" />
                                 </svg></span><span>100% Trực tuyến</span></div>
                         <div class="info-badge"
-                            style="color: #fff; border-color: rgba(255,255,255,0.3); background: rgba(0,0,0,0.2);"><span
+                            style="color: #0f172a; border-color: rgba(255,255,255,0.3); background: rgba(0,0,0,0.2);"><span
                                 class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" aria-hidden="true">
@@ -3128,7 +3282,7 @@
                                     <path d="M6 12v5c3 3 9 3 12 0v-5" />
                                 </svg></span><span>Bằng cấp Thụy Sĩ</span></div>
                         <div class="info-badge"
-                            style="color: #fff; border-color: rgba(255,255,255,0.3); background: rgba(0,0,0,0.2);"><span
+                            style="color: #0f172a; border-color: rgba(255,255,255,0.3); background: rgba(0,0,0,0.2);"><span
                                 class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" aria-hidden="true">
@@ -3200,7 +3354,7 @@
 
                     </div>
 
-                    <div class="hero-social-proof" style="color: #fff;">
+                    <div class="hero-social-proof" style="color: #0f172a;">
                         <div class="avatars" aria-hidden="true">
                             <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/casc1.jpg"
                                 alt="Học viên MSc AI Swiss UMEF 1" class="avatar av1" loading="lazy" width="40"
@@ -3790,7 +3944,7 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:28px">
-                        <a href="#dang-ky" class="btn btn-primary" id="solution-cta">
+                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta" onclick="quizModal.open()">
                             Nhận Brochure MSc AI Swiss UMEF
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -4967,28 +5121,28 @@
                         style="max-width: 1000px; margin: 0 auto; margin-bottom: 40px; position: relative;">
                         <!-- Glow effect -->
                         <div
-                            style="position: absolute; inset: -4px; background: linear-gradient(135deg, #ab0e00, #ff4c4c, #ab0e00); filter: blur(25px); opacity: 0.15; border-radius: 28px; z-index: 0;">
+                            style="position: absolute; inset: -4px; background: linear-gradient(135deg, #ab0e00, #ff4c4c, #ab0e00); filter: blur(25px); opacity: 0.02; border-radius: 28px; z-index: 0;">
                         </div>
 
                         <div
-                            style="position: relative; background: linear-gradient(145deg, #0f172a, #0b1120); border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); padding: 48px; box-shadow: inset 0 1px 1px rgba(255,255,255,0.1), 0 25px 50px -12px rgba(0,0,0,0.5); z-index: 1; overflow: hidden; color: #cbd5e1;">
+                            style="position: relative; background: #ffffff; border-radius: 24px; border: 1px solid #e2e8f0; padding: 48px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); z-index: 1; overflow: hidden; color: #334155;">
 
                             <!-- Header -->
                             <div
-                                style="text-align: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 32px; margin-bottom: 32px;">
+                                style="text-align: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 32px; margin-bottom: 32px;">
                                 <h4
-                                    style="font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900; color: #ffffff; margin-bottom: 16px; letter-spacing: -0.5px; background: linear-gradient(90deg, #f87171, #ab0e00); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    style="font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900; color: #ab0e00; margin-bottom: 16px; letter-spacing: -0.5px; color: #ab0e00;">
                                     CHÍNH SÁCH HỖ TRỢ</h4>
                                 <p
-                                    style="font-size: 1.05rem; line-height: 1.6; max-width: 800px; margin: 0 auto; color: #94a3b8; text-align: left;">
-                                    <strong style="color: #fff;">Thời gian áp dụng:</strong> từ ngày <strong
-                                        style="color: #fca5a5;">08/05/2026</strong> đến hết ngày <strong
-                                        style="color: #fca5a5;">15/07/2026</strong>.<br /><br />
+                                    style="font-size: 1.05rem; line-height: 1.6; max-width: 800px; margin: 0 auto; color: #475569; text-align: left;">
+                                    <strong style="color: #0f172a;">Thời gian áp dụng:</strong> từ ngày <strong
+                                        style="color: #ab0e00;">08/05/2026</strong> đến hết ngày <strong
+                                        style="color: #ab0e00;">15/07/2026</strong>.<br /><br />
                                     Trong thời gian ưu đãi, học viên có thể lựa chọn không tham gia chuyến đi Campus.
                                     Các mức học phí ưu đãi dưới đây được áp dụng khi <strong>không bao gồm phí chuyến
                                         đi</strong>. Học phí được áp dụng tỷ giá <strong>33.000 VNĐ</strong>. Học viên
                                     thanh toán qua IDEAS <strong>không phụ thu phí dịch vụ thu hộ</strong>.<br /><br />
-                                    <em style="color: #f87171;">* Chính sách dưới đây không áp dụng đối với Cựu học viên
+                                    <em style="color: #ab0e00;">* Chính sách dưới đây không áp dụng đối với Cựu học viên
                                         của IDEAS</em>
                                 </p>
                             </div>
@@ -4999,97 +5153,97 @@
                                     style="width: 100%; border-collapse: collapse; min-width: 700px; text-align: left;">
                                     <thead>
                                         <tr
-                                            style="background: rgba(171, 14, 0, 0.15); border-bottom: 1px solid rgba(171, 14, 0, 0.3);">
+                                            style="background: rgba(171, 14, 0, 0.04); border-bottom: 1.5px solid rgba(171, 14, 0, 0.2);">
                                             <th
-                                                style="padding: 16px; font-weight: 800; color: #fca5a5; font-size: 0.95rem; text-transform: uppercase;">
+                                                style="padding: 16px; font-weight: 800; color: #ab0e00; font-size: 0.95rem; text-transform: uppercase;">
                                                 Thời gian áp dụng</th>
                                             <th
-                                                style="padding: 16px; font-weight: 800; color: #fca5a5; font-size: 0.95rem; text-transform: uppercase; white-space: nowrap;">
+                                                style="padding: 16px; font-weight: 800; color: #ab0e00; font-size: 0.95rem; text-transform: uppercase; white-space: nowrap;">
                                                 Trợ phí từ<br />UMEF</th>
                                             <th
-                                                style="padding: 16px; font-weight: 800; color: #fca5a5; font-size: 0.95rem; text-transform: uppercase; white-space: nowrap;">
+                                                style="padding: 16px; font-weight: 800; color: #ab0e00; font-size: 0.95rem; text-transform: uppercase; white-space: nowrap;">
                                                 Trợ phí từ<br />IDEAS</th>
                                             <th
-                                                style="padding: 16px; font-weight: 800; color: #fca5a5; font-size: 0.95rem; text-transform: uppercase;">
+                                                style="padding: 16px; font-weight: 800; color: #ab0e00; font-size: 0.95rem; text-transform: uppercase;">
                                                 Học phí còn lại<br />(VNĐ)</th>
                                             <th
-                                                style="padding: 16px; font-weight: 800; color: #fca5a5; font-size: 0.95rem; text-transform: uppercase; white-space: nowrap;">
+                                                style="padding: 16px; font-weight: 800; color: #ab0e00; font-size: 0.95rem; text-transform: uppercase; white-space: nowrap;">
                                                 VNĐ (1 lần)<br />(Dis 10%)</th>
                                         </tr>
                                     </thead>
                                     <tbody id="tuition-table-body">
                                         <tr data-start="2026-05-08" data-end="2026-05-25"
-                                            style="border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.3s;"
+                                            style="border-bottom: 1px solid #f1f5f9; transition: background 0.3s;"
                                             onmouseover="this.style.background='rgba(255,255,255,0.05)'"
                                             onmouseout="this.style.background='transparent'">
-                                            <td style="padding: 16px; font-weight: 600; color: #fff;" class="t-col-1">Từ
+                                            <td style="padding: 16px; font-weight: 600; color: #0f172a;" class="t-col-1">Từ
                                                 08/05/26 đến hết 25/05/2026</td>
                                             <td
-                                                style="padding: 16px; color: #cbd5e1; font-weight: 600; white-space: nowrap;">
+                                                style="padding: 16px; color: #334155; font-weight: 600; white-space: nowrap;">
                                                 3.000 CHF</td>
                                             <td
-                                                style="padding: 16px; color: #cbd5e1; font-weight: 600; white-space: nowrap;">
+                                                style="padding: 16px; color: #334155; font-weight: 600; white-space: nowrap;">
                                                 900 CHF</td>
                                             <td style="padding: 16px;">
-                                                <div style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 4px;">
+                                                <div style="color: #475569; font-size: 0.85rem; margin-bottom: 4px;">
                                                     4.820 CHF</div>
                                                 <div
-                                                    style="color: #fff; font-weight: 700; font-size: 1.1rem; white-space: nowrap;">
+                                                    style="color: #0f172a; font-weight: 700; font-size: 1.1rem; white-space: nowrap;">
                                                     159.060.000</div>
                                             </td>
                                             <td style="padding: 16px;">
                                                 <div
-                                                    style="color: #4ade80; font-weight: 800; font-size: 1.2rem; white-space: nowrap;">
+                                                    style="color: #ab0e00; font-weight: 800; font-size: 1.2rem; white-space: nowrap;">
                                                     143.154.000</div>
                                             </td>
                                         </tr>
                                         <tr data-start="2026-05-26" data-end="2026-06-15"
-                                            style="border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.3s;"
+                                            style="border-bottom: 1px solid #f1f5f9; transition: background 0.3s;"
                                             onmouseover="this.style.background='rgba(255,255,255,0.05)'"
                                             onmouseout="this.style.background='transparent'">
-                                            <td style="padding: 16px; font-weight: 600; color: #fff;" class="t-col-1">Từ
+                                            <td style="padding: 16px; font-weight: 600; color: #0f172a;" class="t-col-1">Từ
                                                 26/05/26 đến hết 15/06/2026</td>
                                             <td
-                                                style="padding: 16px; color: #cbd5e1; font-weight: 600; white-space: nowrap;">
+                                                style="padding: 16px; color: #334155; font-weight: 600; white-space: nowrap;">
                                                 2.000 CHF</td>
                                             <td
-                                                style="padding: 16px; color: #cbd5e1; font-weight: 600; white-space: nowrap;">
+                                                style="padding: 16px; color: #334155; font-weight: 600; white-space: nowrap;">
                                                 900 CHF</td>
                                             <td style="padding: 16px;">
-                                                <div style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 4px;">
+                                                <div style="color: #475569; font-size: 0.85rem; margin-bottom: 4px;">
                                                     5.820 CHF</div>
                                                 <div
-                                                    style="color: #fff; font-weight: 700; font-size: 1.1rem; white-space: nowrap;">
+                                                    style="color: #0f172a; font-weight: 700; font-size: 1.1rem; white-space: nowrap;">
                                                     192.060.000</div>
                                             </td>
                                             <td style="padding: 16px;">
                                                 <div
-                                                    style="color: #4ade80; font-weight: 800; font-size: 1.2rem; white-space: nowrap;">
+                                                    style="color: #ab0e00; font-weight: 800; font-size: 1.2rem; white-space: nowrap;">
                                                     172.854.000</div>
                                             </td>
                                         </tr>
                                         <tr data-start="2026-06-16" data-end="2026-07-15"
-                                            style="border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.3s;"
+                                            style="border-bottom: 1px solid #f1f5f9; transition: background 0.3s;"
                                             onmouseover="this.style.background='rgba(255,255,255,0.05)'"
                                             onmouseout="this.style.background='transparent'">
-                                            <td style="padding: 16px; font-weight: 600; color: #fff;" class="t-col-1">Từ
+                                            <td style="padding: 16px; font-weight: 600; color: #0f172a;" class="t-col-1">Từ
                                                 16/06/26 đến hết 15/07/2026</td>
                                             <td
-                                                style="padding: 16px; color: #cbd5e1; font-weight: 600; white-space: nowrap;">
+                                                style="padding: 16px; color: #334155; font-weight: 600; white-space: nowrap;">
                                                 1.000 CHF</td>
                                             <td
-                                                style="padding: 16px; color: #cbd5e1; font-weight: 600; white-space: nowrap;">
+                                                style="padding: 16px; color: #334155; font-weight: 600; white-space: nowrap;">
                                                 500 CHF</td>
                                             <td style="padding: 16px;">
-                                                <div style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 4px;">
+                                                <div style="color: #475569; font-size: 0.85rem; margin-bottom: 4px;">
                                                     7.220 CHF</div>
                                                 <div
-                                                    style="color: #fff; font-weight: 700; font-size: 1.1rem; white-space: nowrap;">
+                                                    style="color: #0f172a; font-weight: 700; font-size: 1.1rem; white-space: nowrap;">
                                                     238.260.000</div>
                                             </td>
                                             <td style="padding: 16px;">
                                                 <div
-                                                    style="color: #4ade80; font-weight: 800; font-size: 1.2rem; white-space: nowrap;">
+                                                    style="color: #ab0e00; font-weight: 800; font-size: 1.2rem; white-space: nowrap;">
                                                     214.434.000</div>
                                             </td>
                                         </tr>
@@ -5099,7 +5253,7 @@
 
                             <div style="text-align: center; margin-bottom: 32px;">
                                 <button id="toggle-tuition-btn"
-                                    style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 8px 24px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center;"
+                                    style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #334155; padding: 8px 24px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center;"
                                     onmouseover="this.style.background='rgba(255,255,255,0.1)'"
                                     onmouseout="this.style.background='rgba(255,255,255,0.05)'">
                                     Xem thêm <svg width="16" height="16" style="margin-left:6px;" fill="none"
@@ -5184,7 +5338,7 @@
                                 <div
                                     style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 24px;">
                                     <h5
-                                        style="color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                                        style="color: #0f172a; font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
                                         <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#fca5a5"
                                             stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -5214,7 +5368,7 @@
                                 <div
                                     style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 24px;">
                                     <h5
-                                        style="color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                                        style="color: #0f172a; font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
                                         <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#fca5a5"
                                             stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -5225,18 +5379,18 @@
                                     <ul
                                         style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
                                         <li style="display: flex; align-items: flex-start; gap: 10px;">
-                                            <span style="color: #94a3b8; font-weight: 800;">-</span>
+                                            <span style="color: #475569; font-weight: 800;">-</span>
                                             <span style="font-size: 0.95rem; line-height: 1.5;">Phí chuyến đi Campus
                                                 không bắt buộc và có thể đăng ký bổ sung sau.</span>
                                         </li>
                                         <li style="display: flex; align-items: flex-start; gap: 10px;">
-                                            <span style="color: #94a3b8; font-weight: 800;">-</span>
+                                            <span style="color: #475569; font-weight: 800;">-</span>
                                             <span style="font-size: 0.95rem; line-height: 1.5;">Khóa 05 được áp dụng tỷ
                                                 giá 33.000 VNĐ/CHF, hợp đồng tư vấn được quy đổi thành tiền VNĐ.<br />
-                                                <span style="color: #94a3b8; display: block; margin-top: 4px;">+ Trường
+                                                <span style="color: #475569; display: block; margin-top: 4px;">+ Trường
                                                     hợp tỷ giá bán ra của Ngân hàng HD Bank tại thời điểm thanh toán cao
                                                     hơn 33.000 VNĐ/CHF, mức 33.000 VNĐ/CHF sẽ được áp dụng.</span>
-                                                <span style="color: #94a3b8; display: block; margin-top: 4px;">+ Trường
+                                                <span style="color: #475569; display: block; margin-top: 4px;">+ Trường
                                                     hợp tỷ giá thấp hơn 33.000 VNĐ/CHF, tỷ giá bán ra thực tế của HD
                                                     Bank tại thời điểm thanh toán sẽ được áp dụng.</span>
                                             </span>
@@ -6050,11 +6204,13 @@
         </div>
     </div>
 
-    <script src="script.js?v=1.1"></script>
+    <script src="script.js?v=1.2"></script>
     <script src="booking-modal.js?v=1.1"></script>
 
+    
+
     <!-- ═══════════════════════════════════════
-         MSc AI QUIZ POPUP
+         Swiss UMEF Program Orientation Quiz
     ═══════════════════════════════════════ -->
     <style>
         /* ── Overlay ── */
@@ -6066,12 +6222,13 @@
             align-items: center;
             justify-content: center;
             padding: 16px;
-            background: rgba(5, 11, 20, 0.78);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
+            background: rgba(5, 11, 20, 0.82);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.32s ease;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         .qz-overlay.qz-open {
@@ -6092,6 +6249,8 @@
             transform: translateY(24px) scale(0.97);
             transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
             opacity: 0;
+            color: #0f172a;
+            text-align: left;
         }
 
         .qz-overlay.qz-open .qz-modal {
@@ -6157,53 +6316,59 @@
         }
 
         .qz-header h2 {
-            margin: 0 0 6px;
-            font-size: clamp(1.15rem, 3vw, 1.45rem);
-            font-weight: 800;
+            font-size: clamp(1.3rem, 3.5vw, 1.65rem);
+            font-weight: 900;
+            margin: 0 0 8px;
             line-height: 1.25;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            border: none;
+            padding: 0;
         }
 
         .qz-header p {
             margin: 0;
-            font-size: 0.82rem;
+            font-size: 0.92rem;
             opacity: 0.85;
+            line-height: 1.4;
+            color: #ffffff;
         }
 
-        /* ── Progress bar ── */
+        /* ── Progress ── */
         .qz-progress-wrap {
-            padding: 20px 36px 0;
+            padding: 24px 36px 0;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
         }
 
         .qz-progress-bar {
             flex: 1;
-            height: 5px;
-            background: #f1f5f9;
+            height: 6px;
+            background: #e2e8f0;
             border-radius: 999px;
             overflow: hidden;
         }
 
         .qz-progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #ab0e00, #ef4444);
+            background: #ab0e00;
+            width: 0;
             border-radius: 999px;
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 20%;
+            transition: width 0.3s ease;
         }
 
         .qz-progress-label {
-            font-size: 11px;
+            font-size: 0.82rem;
             font-weight: 700;
-            color: #94a3b8;
-            min-width: 44px;
+            color: #64748b;
+            min-width: 32px;
             text-align: right;
         }
 
-        /* ── Q&A body ── */
+        /* ── Body ── */
         .qz-body {
-            padding: 24px 36px 32px;
+            padding: 24px 36px 36px;
         }
 
         .qz-question-wrap {
@@ -6212,125 +6377,102 @@
 
         .qz-question-wrap.qz-active {
             display: block;
+            animation: qzFadeIn 0.3s ease forwards;
+        }
+
+        @keyframes qzFadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .qz-q-number {
-            font-size: 11px;
+            font-size: 0.8rem;
             font-weight: 800;
             color: #ab0e00;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
             margin-bottom: 8px;
         }
 
         .qz-q-text {
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            font-weight: 700;
-            color: #111729;
-            line-height: 1.5;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #0f172a;
             margin: 0 0 20px;
+            line-height: 1.4;
         }
 
-        /* ── Answers grid ── */
         .qz-answers {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .qz-answer-btn {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            padding: 14px 18px;
             background: #f8fafc;
-            border: 2px solid #e2e8f0;
+            border: 1.5px solid #e2e8f0;
             border-radius: 14px;
-            cursor: pointer;
+            padding: 16px 20px;
             text-align: left;
-            font-family: inherit;
-            font-size: 0.88rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #334155;
-            line-height: 1.5;
-            transition: border-color 0.2s, background 0.2s, transform 0.15s, box-shadow 0.2s;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             width: 100%;
+            line-height: 1.4;
         }
 
         .qz-answer-btn:hover {
-            border-color: #ab0e00;
-            background: #fff5f5;
-            transform: translateX(3px);
-            box-shadow: 0 4px 16px rgba(171, 14, 0, 0.1);
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #0f172a;
+            transform: translateY(-1px);
         }
 
         .qz-answer-btn.qz-selected {
+            background: rgba(171, 14, 0, 0.04);
             border-color: #ab0e00;
-            background: linear-gradient(135deg, #fff5f5, #fff);
-            box-shadow: 0 4px 20px rgba(171, 14, 0, 0.15);
+            color: #ab0e00;
+            box-shadow: 0 0 0 1px #ab0e00;
         }
 
         .qz-answer-icon {
-            width: 28px;
-            height: 28px;
-            min-width: 28px;
-            border-radius: 8px;
-            background: #e2e8f0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #fff;
+            border: 1.5px solid #cbd5e1;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
-            font-weight: 900;
+            font-size: 11px;
+            font-weight: 800;
             color: #64748b;
-            transition: background 0.2s, color 0.2s;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .qz-answer-btn:hover .qz-answer-icon {
+            border-color: #94a3b8;
+            color: #334155;
         }
 
         .qz-answer-btn.qz-selected .qz-answer-icon {
             background: #ab0e00;
+            border-color: #ab0e00;
             color: #fff;
         }
 
-        /* ── Nav buttons ── */
-        .qz-nav {
-            display: none;
-            /* auto-advance replaces manual next button */
-        }
-
-        .qz-btn-next {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #ab0e00, #d91c0a);
-            color: #fff;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            font-family: inherit;
-            cursor: pointer;
-            transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 6px 20px rgba(171, 14, 0, 0.3);
-        }
-
-        .qz-btn-next:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-            box-shadow: 0 8px 24px rgba(171, 14, 0, 0.4);
-        }
-
-        .qz-btn-next:disabled {
-            opacity: 0.45;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        /* ── Result screen ── */
+        /* ── Result Screen ── */
         .qz-result {
             display: none;
-            padding: 36px;
+            padding: 48px 36px;
             text-align: center;
+            animation: qzFadeIn 0.4s ease forwards;
         }
 
         .qz-result.qz-active {
@@ -6338,68 +6480,46 @@
         }
 
         .qz-result-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-        }
-
-        .qz-result-icon--strategic {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-        }
-
-        .qz-result-icon--tech {
-            background: linear-gradient(135deg, #dbeafe, #93c5fd);
-        }
-
-        .qz-result-icon--hybrid {
-            background: linear-gradient(135deg, #f0fdf4, #86efac);
+            font-size: 4rem;
+            margin-bottom: 16px;
+            line-height: 1;
+            display: block;
         }
 
         .qz-result-group {
             display: inline-block;
-            padding: 4px 14px;
-            border-radius: 999px;
-            font-size: 10px;
-            font-weight: 900;
-            letter-spacing: 0.12em;
+            font-size: 0.72rem;
+            font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            letter-spacing: 0.08em;
+            padding: 6px 14px;
+            border-radius: 99px;
+            margin-bottom: 14px;
+            background: rgba(15, 23, 42, 0.06);
+            color: #475569;
         }
 
         .qz-result-group--strategic {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        .qz-result-group--tech {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-
-        .qz-result-group--hybrid {
-            background: #f0fdf4;
-            color: #166534;
+            background: rgba(171, 14, 0, 0.08);
+            color: #ab0e00;
         }
 
         .qz-result h3 {
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-size: 1.5rem;
             font-weight: 900;
-            color: #111729;
+            color: #0f172a;
             margin: 0 0 12px;
             line-height: 1.3;
+            border: none;
+            padding: 0;
         }
 
         .qz-result-msg {
-            font-size: 0.92rem;
+            font-size: 0.98rem;
+            line-height: 1.55;
             color: #475569;
-            line-height: 1.7;
-            max-width: 460px;
-            margin: 0 auto 24px;
+            max-width: 500px;
+            margin: 0 auto 28px;
         }
 
         .qz-result-cta {
@@ -6408,45 +6528,28 @@
             gap: 10px;
             padding: 14px 28px;
             border-radius: 14px;
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             font-weight: 800;
-            font-family: inherit;
             border: none;
             cursor: pointer;
             text-decoration: none;
             transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .qz-result-cta--strategic {
             background: linear-gradient(135deg, #ab0e00, #d91c0a);
-            color: #fff;
+            color: #fff !important;
             box-shadow: 0 6px 20px rgba(171, 14, 0, 0.3);
-        }
-
-        .qz-result-cta--tech {
-            background: linear-gradient(135deg, #1d4ed8, #3b82f6);
-            color: #fff;
-            box-shadow: 0 6px 20px rgba(29, 78, 216, 0.3);
-        }
-
-        .qz-result-cta--hybrid {
-            background: linear-gradient(135deg, #15803d, #22c55e);
-            color: #fff;
-            box-shadow: 0 6px 20px rgba(21, 128, 61, 0.3);
         }
 
         .qz-result-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+            box-shadow: 0 10px 28px rgba(171, 14, 0, 0.45);
         }
 
         .qz-result-restart {
             display: block;
-            margin-top: 14px;
+            margin: 18px auto 0;
             background: none;
             border: none;
-            font-family: inherit;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             color: #94a3b8;
             cursor: pointer;
             text-decoration: underline;
@@ -6455,20 +6558,6 @@
 
         .qz-result-restart:hover {
             color: #ab0e00;
-        }
-
-        /* scrollbar inside modal */
-        .qz-modal::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        .qz-modal::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .qz-modal::-webkit-scrollbar-thumb {
-            background: #e2e8f0;
-            border-radius: 10px;
         }
 
         @media (max-width: 480px) {
@@ -6485,12 +6574,12 @@
             }
 
             .qz-result {
-                padding: 28px 20px;
+                padding: 36px 20px;
             }
 
             .qz-answer-btn {
-                padding: 12px 14px;
-                font-size: 0.83rem;
+                padding: 14px 16px;
+                font-size: 0.88rem;
             }
         }
     </style>
@@ -6498,14 +6587,13 @@
     <!-- Quiz Popup HTML -->
     <div class="qz-overlay" id="qz-overlay" role="dialog" aria-modal="true" aria-labelledby="qz-modal-title">
         <div class="qz-modal" id="qz-modal">
-
             <button class="qz-close" id="qz-close" aria-label="Đóng">&#x2715;</button>
 
             <!-- Header -->
             <div class="qz-header">
-                <div class="qz-header-badge"><span></span> Trắc nghiệm định hướng</div>
-                <h2 id="qz-modal-title">Bạn phù hợp với MSc AI ở mức độ nào?</h2>
-                <p>Trả lời 5 câu hỏi ngắn - nhận kết quả ngay lập tức.</p>
+                <div class="qz-header-badge"><span></span> Định Hướng Sự Nghiệp</div>
+                <h2 id="qz-modal-title">Bạn phù hợp với chương trình nào?</h2>
+                <p>Trả lời 5 câu hỏi nhanh để tìm giải pháp học tập tối ưu từ Thụy Sĩ.</p>
             </div>
 
             <!-- Progress -->
@@ -6516,323 +6604,353 @@
                 <div class="qz-progress-label" id="qz-progress-label">1 / 5</div>
             </div>
 
-            <!-- Questions -->
+            <!-- Quiz Questions Container -->
             <div class="qz-body" id="qz-body">
-
-                <!-- Q1 -->
-                <div class="qz-question-wrap qz-active" id="qz-q-1">
-                    <div class="qz-q-number">Câu 1 / 5</div>
-                    <p class="qz-q-text">Mục tiêu sự nghiệp ưu tiên của bạn trong 2–3 năm tới?</p>
-                    <div class="qz-answers">
-                        <button class="qz-answer-btn" data-q="1" data-type="A">
-                            <span class="qz-answer-icon">1</span>
-                            Điều hành doanh nghiệp hoặc tối ưu hóa mô hình khởi nghiệp.
-                        </button>
-                        <button class="qz-answer-btn" data-q="1" data-type="B">
-                            <span class="qz-answer-icon">2</span>
-                            Dẫn dắt các dự án công nghệ và chuyển đổi số toàn diện.
-                        </button>
-                        <button class="qz-answer-btn" data-q="1" data-type="C">
-                            <span class="qz-answer-icon">3</span>
-                            Mở rộng mạng lưới quan hệ với cộng đồng lãnh đạo cấp cao.
-                        </button>
-                        <button class="qz-answer-btn" data-q="1" data-type="D">
-                            <span class="qz-answer-icon">4</span>
-                            Ứng dụng AI để bứt phá hiệu suất quản lý tổ chức.
-                        </button>
-                    </div>
-                    <div class="qz-nav">
-                        <button class="qz-btn-next" id="qz-next-1" disabled>Tiếp theo <svg width="16" height="16"
-                                fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
-                    </div>
-                </div>
-
-                <!-- Q2 -->
-                <div class="qz-question-wrap" id="qz-q-2">
-                    <div class="qz-q-number">Câu 2 / 5</div>
-                    <p class="qz-q-text">Kỹ năng nào cấp thiết nhất để nâng tầm vị thế của bạn?</p>
-                    <div class="qz-answers">
-                        <button class="qz-answer-btn" data-q="2" data-type="A">
-                            <span class="qz-answer-icon">1</span>
-                            Quản trị tài chính, nhân sự và chiến lược toàn cầu.
-                        </button>
-                        <button class="qz-answer-btn" data-q="2" data-type="B">
-                            <span class="qz-answer-icon">2</span>
-                            Phân tích dữ liệu và làm chủ các mô hình AI/Machine Learning.
-                        </button>
-                        <button class="qz-answer-btn" data-q="2" data-type="C">
-                            <span class="qz-answer-icon">3</span>
-                            Đàm phán chiến lược và xử lý các bài toán quản trị phức tạp.
-                        </button>
-                        <button class="qz-answer-btn" data-q="2" data-type="D">
-                            <span class="qz-answer-icon">4</span>
-                            Tư duy hệ thống và giải quyết vấn đề bằng công nghệ mới.
-                        </button>
-                    </div>
-                    <div class="qz-nav">
-                        <button class="qz-btn-next" id="qz-next-2" disabled>Tiếp theo <svg width="16" height="16"
-                                fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
-                    </div>
-                </div>
-
-                <!-- Q3 -->
-                <div class="qz-question-wrap" id="qz-q-3">
-                    <div class="qz-q-number">Câu 3 / 5</div>
-                    <p class="qz-q-text">Bạn cảm thấy hứng thú nhất khi thực hiện vai trò nào?</p>
-                    <div class="qz-answers">
-                        <button class="qz-answer-btn" data-q="3" data-type="A">
-                            <span class="qz-answer-icon">1</span>
-                            Truyền cảm hứng, dẫn dắt đội ngũ và phối hợp nguồn lực.
-                        </button>
-                        <button class="qz-answer-btn" data-q="3" data-type="B">
-                            <span class="qz-answer-icon">2</span>
-                            Khai phá dữ liệu để tìm ra các quy luật/giải pháp đột phá.
-                        </button>
-                        <button class="qz-answer-btn" data-q="3" data-type="C">
-                            <span class="qz-answer-icon">3</span>
-                            Tối ưu hóa mô hình vận hành và chuỗi giá trị doanh nghiệp.
-                        </button>
-                        <button class="qz-answer-btn" data-q="3" data-type="D">
-                            <span class="qz-answer-icon">4</span>
-                            Trải nghiệm và thực thi các công cụ tự động hóa thông minh.
-                        </button>
-                    </div>
-                    <div class="qz-nav">
-                        <button class="qz-btn-next" id="qz-next-3" disabled>Tiếp theo <svg width="16" height="16"
-                                fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
-                    </div>
-                </div>
-
-                <!-- Q4 -->
-                <div class="qz-question-wrap" id="qz-q-4">
-                    <div class="qz-q-number">Câu 4 / 5</div>
-                    <p class="qz-q-text">Phương pháp ưu tiên khi đối mặt với bài toán kinh doanh khó?</p>
-                    <div class="qz-answers">
-                        <button class="qz-answer-btn" data-q="4" data-type="A">
-                            <span class="qz-answer-icon">1</span>
-                            Dựa trên kinh nghiệm thực chiến và tầm nhìn thị trường.
-                        </button>
-                        <button class="qz-answer-btn" data-q="4" data-type="B">
-                            <span class="qz-answer-icon">2</span>
-                            Dựa trên các mô hình dự báo và phân tích số liệu khoa học.
-                        </button>
-                        <button class="qz-answer-btn" data-q="4" data-type="C">
-                            <span class="qz-answer-icon">3</span>
-                            Tham vấn hội đồng quản trị và các chuyên gia cố vấn.
-                        </button>
-                        <button class="qz-answer-btn" data-q="4" data-type="D">
-                            <span class="qz-answer-icon">4</span>
-                            Sử dụng AI để phân tích đa chiều và tìm phương án tối ưu.
-                        </button>
-                    </div>
-                    <div class="qz-nav">
-                        <button class="qz-btn-next" id="qz-next-4" disabled>Tiếp theo <svg width="16" height="16"
-                                fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
-                    </div>
-                </div>
-
-                <!-- Q5 -->
-                <div class="qz-question-wrap" id="qz-q-5">
-                    <div class="qz-q-number">Câu 5 / 5</div>
-                    <p class="qz-q-text">Giá trị lớn nhất bạn kỳ vọng từ chương trình Thạc sĩ?</p>
-                    <div class="qz-answers">
-                        <button class="qz-answer-btn" data-q="5" data-type="A">
-                            <span class="qz-answer-icon">1</span>
-                            Khẳng định vị thế lãnh đạo và thăng tiến cấp C-level.
-                        </button>
-                        <button class="qz-answer-btn" data-q="5" data-type="B">
-                            <span class="qz-answer-icon">2</span>
-                            Nắm vững công nghệ tương lai để dẫn đầu kỷ nguyên AI.
-                        </button>
-                        <button class="qz-answer-btn" data-q="5" data-type="C">
-                            <span class="qz-answer-icon">3</span>
-                            Kết nối và cộng tác kinh doanh với học viên cùng đẳng cấp.
-                        </button>
-                        <button class="qz-answer-btn" data-q="5" data-type="D">
-                            <span class="qz-answer-icon">4</span>
-                            Trực tiếp số hóa và thông minh hóa doanh nghiệp hiện tại.
-                        </button>
-                    </div>
-                    <div class="qz-nav">
-                        <button class="qz-btn-next" id="qz-next-5" disabled>Xem kết quả <svg width="16" height="16"
-                                fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
-                    </div>
-                </div>
-
-            </div><!-- /qz-body -->
+                <div id="qz-question-container"></div>
+            </div>
 
             <!-- Result screen -->
             <div class="qz-result" id="qz-result">
-                <div class="qz-result-icon" id="qz-result-icon"></div>
-                <div class="qz-result-group" id="qz-result-group"></div>
+                <div class="qz-result-icon" id="qz-result-icon">🎉</div>
+                <div class="qz-result-group qz-result-group--strategic" id="qz-result-group"></div>
                 <h3 id="qz-result-title"></h3>
                 <p class="qz-result-msg" id="qz-result-msg"></p>
-                <a href="#dang-ky" class="qz-result-cta" id="qz-result-cta" onclick="quizModal.close()"></a>
+                <a href="#dang-ky" class="qz-result-cta" id="qz-result-cta">Xem chi tiết</a>
                 <button class="qz-result-restart" id="qz-result-restart">↺ Làm lại từ đầu</button>
             </div>
-
         </div>
     </div>
 
+    <!-- ═══════════════════════════════════════
+         Swiss UMEF Program Orientation Quiz JS
+    ═══════════════════════════════════════ -->
     <script>
-        /* ─── MSc AI Quiz Modal ─── */
+        const CURRENT_PROGRAM = 'MSC_AI';
+        const PROGRAM_DETAILS = {
+            'EMBA': {
+                name: 'Executive MBA Thụy Sĩ',
+                url: 'emba.html',
+                desc: 'Chương trình Thạc sĩ Điều hành Cao cấp dành riêng cho Giám đốc, C-levels và Chủ doanh nghiệp.',
+                highlight: 'định hướng chiến lược vĩ mô và mở rộng mạng lưới quan hệ lãnh đạo cấp cao'
+            },
+            'MBA': {
+                name: 'MBA Thụy Sĩ chính quy',
+                url: 'mba.html',
+                desc: 'Chương trình Thạc sĩ Quản trị Kinh doanh trực tuyến linh hoạt dành cho Quản lý cấp trung và người đi làm.',
+                highlight: 'nâng cao năng lực quản trị toàn diện (Marketing, Tài chính, Nhân sự, Vận hành)'
+            },
+            'MBA_AI': {
+                name: 'MBA in AI Thụy Sĩ',
+                url: 'mbainai.html',
+                desc: 'Chương trình Thạc sĩ Quản trị chuyên ngành AI dành cho nhà quản lý dẫn dắt ứng dụng AI và chuyển đổi số.',
+                highlight: 'làm chủ tư duy quản trị kết hợp ứng dụng các công cụ AI hiện đại (no-code)'
+            },
+            'MSC_AI': {
+                name: 'MSc AI Thụy Sĩ',
+                url: 'mscai.html',
+                desc: 'Chương trình Thạc sĩ Khoa học về Trí tuệ Nhân tạo Ứng dụng dành cho nhà quản lý và lãnh đạo doanh nghiệp.',
+                highlight: 'hiểu, ứng dụng và quản trị AI ở cấp độ chiến lược'
+            },
+            'BBA': {
+                name: 'Top-up BBA Thụy Sĩ (12 tháng)',
+                url: 'bba.html',
+                desc: 'Chương trình liên thông Cử nhân Quản trị Kinh doanh dành cho người tốt nghiệp Cao đẳng, Trung cấp.',
+                highlight: 'tối ưu lộ trình nhận bằng Cử nhân Quốc tế chính quy từ Thụy Sĩ chỉ trong 12 tháng'
+            },
+            'FULL_BBA': {
+                name: 'Cử nhân BBA Thụy Sĩ (3 năm)',
+                url: 'fullbba.html',
+                desc: 'Chương trình Đại học Quản trị Kinh doanh chính quy dành cho học sinh tốt nghiệp THPT và người đi làm.',
+                highlight: 'tích lũy kiến thức kinh doanh quốc tế bài bản từ nền tảng và phát triển sự nghiệp vững chắc'
+            },
+            'DUAL_DBA': {
+                name: 'Dual DBA Pháp & Anh',
+                url: 'dual-dba.html',
+                desc: 'Chương trình Tiến sĩ song bằng danh giá cấp bởi ÉSTIAM Pháp và RB College Vương quốc Anh.',
+                highlight: 'nghiên cứu học thuật chuyên sâu và sở hữu song bằng Tiến sĩ DBA danh giá cấp từ Pháp & Anh'
+            }
+        };
+
+        const QUIZ_QUESTIONS = [
+            {
+                "question": "Mục tiêu thăng tiến lớn nhất của bạn trong 2 năm tới?",
+                "options": [
+                    {
+                        "text": "Trở thành nhà điều hành cấp cao (CEO/C-level) hoặc chủ doanh nghiệp lớn.",
+                        "scores": {"EMBA": 3, "DUAL_DBA": 1}
+                    },
+                    {
+                        "text": "Nâng tầm học thuật, thực hiện các nghiên cứu lớn và sở hữu học hàm Tiến sĩ.",
+                        "scores": {"DUAL_DBA": 5}
+                    },
+                    {
+                        "text": "Trở thành Quản lý dự án, Trưởng bộ phận hoặc Giám đốc chức năng.",
+                        "scores": {"MBA": 3}
+                    },
+                    {
+                        "text": "Trở thành chuyên gia dẫn dắt các dự án ứng dụng AI/Chuyển đổi số.",
+                        "scores": {"MBA_AI": 3, "MSC_AI": 2}
+                    },
+                    {
+                        "text": "Hoàn thành tấm bằng Cử nhân Quốc tế để mở rộng cơ hội thăng tiến.",
+                        "scores": {"BBA": 3, "FULL_BBA": 3}
+                    }
+                ]
+            },
+            {
+                "question": "Quỹ thời gian bạn có thể dành cho việc học mỗi tuần?",
+                "options": [
+                    {
+                        "text": "Rất hạn hẹp, cần lịch học tối ưu hoàn toàn cho lãnh đạo bận rộn.",
+                        "scores": {"EMBA": 3, "DUAL_DBA": 2}
+                    },
+                    {
+                        "text": "Khoảng 8-10 tiếng, muốn học trực tuyến linh hoạt kết hợp hỗ trợ tiếng Việt.",
+                        "scores": {"MBA": 3, "MBA_AI": 2}
+                    },
+                    {
+                        "text": "Tập trung học sâu về các công nghệ AI và mô hình kinh doanh số.",
+                        "scores": {"MBA_AI": 3, "MSC_AI": 2}
+                    },
+                    {
+                        "text": "Muốn học có lộ trình bài bản, từng bước tích lũy kiến thức từ cơ bản.",
+                        "scores": {"FULL_BBA": 3, "BBA": 2}
+                    }
+                ]
+            },
+            {
+                "question": "Bạn muốn tích lũy kiến thức quản trị theo hướng nào?",
+                "options": [
+                    {
+                        "text": "Quản trị vĩ mô, chiến lược ngoại giao toàn cầu và kết nối elite network.",
+                        "scores": {"EMBA": 3, "DUAL_DBA": 1}
+                    },
+                    {
+                        "text": "Nghiên cứu học thuật chuyên sâu và kiến tạo các tri thức quản trị mới ở cấp độ Tiến sĩ.",
+                        "scores": {"DUAL_DBA": 5}
+                    },
+                    {
+                        "text": "Kiến thức cốt lõi về Marketing, Tài chính, Nhân sự và Vận hành.",
+                        "scores": {"MBA": 3}
+                    },
+                    {
+                        "text": "Quản trị tích hợp AI, tối ưu hóa hiệu suất bằng công nghệ tự động hóa.",
+                        "scores": {"MBA_AI": 3}
+                    },
+                    {
+                        "text": "Kiến thức cơ bản về Quản trị Kinh doanh cấp độ đại học cử nhân.",
+                        "scores": {"FULL_BBA": 3, "BBA": 3}
+                    }
+                ]
+            },
+            {
+                "question": "Yêu cầu của bạn về mặt kỹ thuật/công nghệ trong chương trình học?",
+                "options": [
+                    {
+                        "text": "Không cần lập trình, chỉ cần hiểu tư duy quản lý công nghệ vĩ mô.",
+                        "scores": {"EMBA": 2, "MBA": 3, "DUAL_DBA": 3}
+                    },
+                    {
+                        "text": "Muốn ứng dụng thực tế các công cụ AI (Prompt Engineering, automation) vào quản lý.",
+                        "scores": {"MBA_AI": 3}
+                    },
+                    {
+                        "text": "Muốn học sâu về lập trình AI, phân tích dữ liệu và machine learning.",
+                        "scores": {"MSC_AI": 3}
+                    },
+                    {
+                        "text": "Học các kỹ năng số cơ bản và tin học văn phòng ứng dụng.",
+                        "scores": {"FULL_BBA": 3, "BBA": 2}
+                    }
+                ]
+            },
+            {
+                "question": "Điều kiện bằng cấp đầu vào hiện tại của bạn là gì?",
+                "options": [
+                    {
+                        "text": "Có bằng Đại học chính quy và nhiều năm kinh nghiệm quản lý cấp cao.",
+                        "scores": {"EMBA": 3, "MBA": 2}
+                    },
+                    {
+                        "text": "Đã tốt nghiệp Thạc sĩ và mong muốn nâng tầm học hàm.",
+                        "scores": {"DUAL_DBA": 5}
+                    },
+                    {
+                        "text": "Có bằng Đại học và đang làm quản lý cấp trung hoặc mong muốn làm quản lý.",
+                        "scores": {"MBA": 3, "MBA_AI": 2, "MSC_AI": 2}
+                    },
+                    {
+                        "text": "Tốt nghiệp Cao đẳng, Trung cấp muốn học liên thông thẳng lên Đại học.",
+                        "scores": {"BBA": 3}
+                    },
+                    {
+                        "text": "Tốt nghiệp THPT hoặc chưa có bằng Đại học/Cao đẳng.",
+                        "scores": {"FULL_BBA": 3}
+                    }
+                ]
+            }
+        ];
+
         const quizModal = (() => {
             const overlay = document.getElementById('qz-overlay');
-            const progress = document.getElementById('qz-progress');
+            const progress = document.getElementById('qz-progress') || document.getElementById('qz-progress-fill');
             const progLbl = document.getElementById('qz-progress-label');
+            const qContainer = document.getElementById('qz-question-container');
             const body = document.getElementById('qz-body');
             const resultEl = document.getElementById('qz-result');
+            const closeBtn = document.getElementById('qz-close');
+            const restartBtn = document.getElementById('qz-result-restart');
+            const ctaBtn = document.getElementById('qz-result-cta');
 
             const TOTAL = 5;
             let current = 1;
-            // answers[q] = type char ('A','B','C','D')
             const answers = {};
 
-            /* ─ helpers ─ */
-            function showQ(n) {
-                document.querySelectorAll('.qz-question-wrap').forEach(el => el.classList.remove('qz-active'));
-                const q = document.getElementById('qz-q-' + n);
-                if (q) q.classList.add('qz-active');
-                progress.style.width = (n / TOTAL * 100) + '%';
+            function renderQuestion(n) {
+                const qData = QUIZ_QUESTIONS[n - 1];
+                if (!qData) return;
+
+                let html = `
+                    <div class="qz-question-wrap qz-active">
+                        <div class="qz-q-number">Câu ${n} / ${TOTAL}</div>
+                        <p class="qz-q-text">${qData.question}</p>
+                        <div class="qz-answers">
+                `;
+
+                qData.options.forEach((opt, idx) => {
+                    const isSelected = answers[n] === idx;
+                    html += `
+                        <button type="button" class="qz-answer-btn ${isSelected ? 'qz-selected' : ''}" data-idx="${idx}">
+                            <span class="qz-answer-icon">${idx + 1}</span>
+                            ${opt.text}
+                        </button>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+                qContainer.innerHTML = html;
+                
+                if (progress) {
+                    progress.style.width = (n / TOTAL * 100) + '%';
+                }
                 progLbl.textContent = n + ' / ' + TOTAL;
             }
 
             function classify() {
-                let A = 0, B = 0, C = 0, D = 0;
-                for (let i = 1; i <= TOTAL; i++) {
-                    const t = answers[i];
-                    if (t === 'A') A++;
-                    else if (t === 'B') B++;
-                    else if (t === 'C') C++;
-                    else if (t === 'D') D++;
+                const scores = {
+                    'EMBA': 0,
+                    'MBA': 0,
+                    'MBA_AI': 0,
+                    'MSC_AI': 0,
+                    'BBA': 0,
+                    'FULL_BBA': 0,
+                    'DUAL_DBA': 0
+                };
+
+                for (let q = 1; q <= TOTAL; q++) {
+                    const selectedIdx = answers[q];
+                    const qData = QUIZ_QUESTIONS[q - 1];
+                    if (qData && selectedIdx !== undefined) {
+                        const optionScores = qData.options[selectedIdx].scores;
+                        for (const profile in optionScores) {
+                            scores[profile] += optionScores[profile];
+                        }
+                    }
                 }
 
-                const strategic = A + C;
-                const tech = B + D;
+                let bestProfile = CURRENT_PROGRAM;
+                let maxScore = -1;
 
-                if (strategic >= 4) return 'strategic';
-                else if (tech >= 4) return 'tech';
-                else return 'hybrid';
+                const profilesList = ['EMBA', 'MBA_AI', 'MBA', 'MSC_AI', 'BBA', 'FULL_BBA', 'DUAL_DBA'];
+                const index = profilesList.indexOf(CURRENT_PROGRAM);
+                if (index > -1) {
+                    profilesList.splice(index, 1);
+                    profilesList.unshift(CURRENT_PROGRAM);
+                }
+
+                profilesList.forEach(profile => {
+                    if (scores[profile] > maxScore) {
+                        maxScore = scores[profile];
+                        bestProfile = profile;
+                    }
+                });
+
+                return bestProfile;
             }
-
-            const RESULTS = {
-                strategic: {
-                    icon: '🏆',
-                    group: 'Nhà Quản Trị Chiến Lược',
-                    groupCls: 'qz-result-group--strategic',
-                    iconCls: 'qz-result-icon--strategic',
-                    title: 'Bạn là nhà điều hành bản lĩnh!',
-                    msg: 'Bạn sở hữu tư duy của một nhà điều hành bản lĩnh, tập trung vào con người và tầm nhìn dài hạn. Chương trình EMBA sẽ phù hợp hơn với định hướng của bạn.',
-                    cta: 'Khám phá chương trình EMBA →',
-                    ctaCls: 'qz-result-cta--strategic',
-                    action: () => { close(); window.location.href = 'emba.html'; }
-                },
-                tech: {
-                    icon: '🚀',
-                    group: 'Nhà Lãnh Đạo Công Nghệ',
-                    groupCls: 'qz-result-group--tech',
-                    iconCls: 'qz-result-icon--tech',
-                    title: 'Bạn là người tiên phong công nghệ!',
-                    msg: 'Bạn là người tiên phong, sẵn sàng dùng công nghệ và dữ liệu để tạo ra đột phá cho doanh nghiệp. MSc AI chính là bệ phóng hoàn hảo cho hành trình của bạn.',
-                    cta: 'Đăng ký tư vấn MSc AI ngay →',
-                    ctaCls: 'qz-result-cta--tech',
-                    action: () => { close(); const ob = document.querySelector('.bk-open-btn'); if (ob) ob.click(); }
-                },
-                hybrid: {
-                    icon: '⚡',
-                    group: 'Lãnh Đạo Đa Năng (Hybrid)',
-                    groupCls: 'qz-result-group--strategic',
-                    iconCls: 'qz-result-icon--strategic',
-                    title: 'Bạn là lãnh đạo đa năng hiếm có!',
-                    msg: 'Bạn có sự giao thoa hiếm có giữa bản lĩnh quản trị và tư duy công nghệ 4.0. Chương trình MBA sẽ phù hợp nhất với định hướng của bạn.',
-                    cta: 'Khám phá chương trình MBA →',
-                    ctaCls: 'qz-result-cta--strategic',
-                    action: () => { close(); window.location.href = 'index.html'; }
-                }
-            };
-
-            // store current action for CTA click
-            let currentAction = null;
 
             function showResult() {
                 const type = classify();
-                const r = RESULTS[type];
-
+                const matchedProg = PROGRAM_DETAILS[type];
+                
                 body.style.display = 'none';
-                document.querySelector('.qz-progress-wrap').style.display = 'none';
+                const progressWrap = document.querySelector('.qz-progress-wrap');
+                if (progressWrap) progressWrap.style.display = 'none';
 
-                const icon = document.getElementById('qz-result-icon');
-                const grp = document.getElementById('qz-result-group');
-                const title = document.getElementById('qz-result-title');
-                const msg = document.getElementById('qz-result-msg');
-                const cta = document.getElementById('qz-result-cta');
+                const iconEl = document.getElementById('qz-result-icon');
+                const grpEl = document.getElementById('qz-result-group');
+                const titleEl = document.getElementById('qz-result-title');
+                const msgEl = document.getElementById('qz-result-msg');
 
-                icon.textContent = r.icon;
-                icon.className = 'qz-result-icon ' + r.iconCls;
-                grp.textContent = r.group;
-                grp.className = 'qz-result-group ' + r.groupCls;
-                title.textContent = r.title;
-                msg.textContent = r.msg;
-                cta.textContent = r.cta;
-                cta.className = 'qz-result-cta ' + r.ctaCls;
-
-                // store action for this result type
-                currentAction = r.action;
+                if (type === CURRENT_PROGRAM) {
+                    iconEl.textContent = '🎉';
+                    grpEl.textContent = 'Kết quả: Rất phù hợp!';
+                    grpEl.className = 'qz-result-group qz-result-group--strategic';
+                    titleEl.textContent = `Bạn cực kỳ phù hợp với ${matchedProg.name}!`;
+                    msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
+                    ctaBtn.textContent = 'Đăng ký tư vấn ngay';
+                    ctaBtn.href = '#dang-ky';
+                    ctaBtn.onclick = function(e) {
+                        close();
+                        const bookingBtn = document.querySelector('.bk-open-btn');
+                        if (bookingBtn) {
+                            bookingBtn.click();
+                        } else {
+                            const formSection = document.getElementById('dang-ky');
+                            if (formSection) {
+                                formSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }
+                    };
+                } else {
+                    iconEl.textContent = '💡';
+                    grpEl.textContent = CURRENT_PROGRAM ? 'Gợi ý chương trình phù hợp hơn' : 'Gợi ý chương trình phù hợp';
+                    grpEl.className = 'qz-result-group';
+                    titleEl.textContent = CURRENT_PROGRAM ? `Bạn phù hợp hơn với ${matchedProg.name}!` : `Bạn phù hợp nhất với ${matchedProg.name}!`;
+                    msgEl.innerHTML = `Câu trả lời của bạn phản ánh nhu cầu tập trung vào <strong>${matchedProg.highlight}</strong>. Hãy tìm hiểu chương trình này để đạt hiệu quả cao nhất.`;
+                    ctaBtn.textContent = CURRENT_PROGRAM ? `Khám phá chương trình ${type} →` : `Khám phá ngay →`;
+                    ctaBtn.href = matchedProg.url;
+                    ctaBtn.onclick = function(e) {
+                        close();
+                    };
+                }
 
                 resultEl.classList.add('qz-active');
             }
 
-            /* ─ CTA click ─ */
-            document.getElementById('qz-result-cta').addEventListener('click', function (e) {
-                e.preventDefault();
-                if (currentAction) currentAction();
-            });
-
-            /* ─ event delegation for answer buttons - auto-advance ─ */
-            document.getElementById('qz-body').addEventListener('click', function (e) {
+            qContainer.addEventListener('click', function (e) {
                 const btn = e.target.closest('.qz-answer-btn');
                 if (!btn) return;
-                const q = parseInt(btn.dataset.q);
-                const type = btn.dataset.type;
 
-                // deselect siblings, mark selected
-                document.querySelectorAll('.qz-answer-btn[data-q="' + q + '"]').forEach(b => b.classList.remove('qz-selected'));
+                const idx = parseInt(btn.dataset.idx);
+                answers[current] = idx;
+
+                qContainer.querySelectorAll('.qz-answer-btn').forEach(b => b.classList.remove('qz-selected'));
                 btn.classList.add('qz-selected');
-                answers[q] = type;
 
-                // auto-advance after brief highlight
-                setTimeout(function () {
-                    if (q < TOTAL) {
-                        current = q + 1;
-                        showQ(current);
+                setTimeout(() => {
+                    if (current < TOTAL) {
+                        current++;
+                        renderQuestion(current);
                     } else {
                         showResult();
                     }
-                }, 350);
+                }, 250);
             });
 
-            /* ─ restart ─ */
-            document.getElementById('qz-result-restart').addEventListener('click', function () {
-                reset();
-            });
-
-            /* ─ close ─ */
-            document.getElementById('qz-close').addEventListener('click', close);
+            closeBtn.addEventListener('click', close);
             overlay.addEventListener('click', function (e) {
                 if (e.target === overlay) close();
             });
@@ -6840,15 +6958,16 @@
                 if (e.key === 'Escape') close();
             });
 
+            restartBtn.addEventListener('click', reset);
+
             function reset() {
                 current = 1;
-                currentAction = null;
                 for (let k in answers) delete answers[k];
-                document.querySelectorAll('.qz-answer-btn').forEach(b => b.classList.remove('qz-selected'));
                 body.style.display = '';
-                document.querySelector('.qz-progress-wrap').style.display = '';
+                const progressWrap = document.querySelector('.qz-progress-wrap');
+                if (progressWrap) progressWrap.style.display = '';
                 resultEl.classList.remove('qz-active');
-                showQ(1);
+                renderQuestion(1);
             }
 
             function open() {
@@ -6865,7 +6984,6 @@
             return { open, close };
         })();
     </script>
-
-</body>
+    </body>
 
 </html>

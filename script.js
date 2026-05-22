@@ -1078,12 +1078,45 @@
         });
     }
 
+    // Mobile dropdown navigation toggle
+    function initMobileDropdowns() {
+        const toggleBtn = document.querySelector('.mobile-dropdown-toggle');
+        const dropdown = document.querySelector('.mobile-dropdown');
+        if (toggleBtn && dropdown) {
+            toggleBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+                toggleBtn.setAttribute('aria-expanded', !isExpanded);
+                dropdown.classList.toggle('expanded');
+            });
+            // Also close when clicking a dropdown link
+            const links = dropdown.querySelectorAll('.mobile-dropdown-item');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    toggleBtn.setAttribute('aria-expanded', 'false');
+                    dropdown.classList.remove('expanded');
+                    // Close the mobile menu too
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const overlay = document.getElementById('mobile-overlay');
+                    const hamburger = document.getElementById('hamburger');
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('open');
+                        mobileMenu.setAttribute('aria-hidden', 'true');
+                    }
+                    if (overlay) overlay.classList.remove('open');
+                    if (hamburger) hamburger.classList.remove('active');
+                });
+            });
+        }
+    }
+
     // Initialize everything
     initBackToTop();
+    initMobileDropdowns();
     initCustomSelects();
     initScrollDots();
     window.addEventListener('resize', initScrollDots);
 
-    console.log('%cIDEAS × Swiss UMEF MBA 🎓', 'background:#ab0e00;color:#fff;padding:4px 12px;border-radius:4px;font-weight:700');
+    console.log('%cIDEAS × Swiss UMEF MBA [Portal]', 'background:#ab0e00;color:#fff;padding:4px 12px;border-radius:4px;font-weight:700');
 
 })();

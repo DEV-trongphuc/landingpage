@@ -1,7 +1,0 @@
-Line 378: // Tự động phân loại source và chuong_trinh theo pathname
-Line 379: let sourceVal = "Landing_MBA";
-Line 381: const path = window.location.pathname.toLowerCase();
-Line 382: if (path.includes("mscinai")) {
-Line 383: sourceVal = "Landing_MBA_AI";
-Line 385: } else if (path.includes("mscai")) {
-Line 391: } else if (path.includes("fullbba") || path.includes("bba")) {

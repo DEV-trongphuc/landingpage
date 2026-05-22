@@ -1,0 +1,1322 @@
+﻿diff --git a/mbainai.html b/mbainai.html
+index 4b061f7..7b53b1b 100644
+--- a/mbainai.html
++++ b/mbainai.html
+@@ -22,7 +22,7 @@
+         content="MBA in AI Thß╗Ñy S─⌐ Trß╗▒c Tuyß║┐n | Swiss UMEF ΓÇô Bß╗⌐t ph├í sß╗▒ nghiß╗çp trong 16-18 th├íng" />
+     <meta property="og:description"
+         content="Ch╞░╞íng tr├¼nh MBA in AI ch├¡nh quy cß║Ñp bß╗ƒi Swiss UMEF Thß╗Ñy S─⌐. Hß╗ìc 100% trß╗▒c tuyß║┐n, 16-18 th├íng, d├ánh cho ng╞░ß╗¥i muß╗æn th─âng tiß║┐n l├¬n vai tr├▓ quß║ún l├╜." />
+-    <meta property="og:image" content="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg" />
++    <meta property="og:image" content="https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp" />
+     <meta property="og:url" content="https://ideas.edu.vn/mba" />
+     <meta property="og:locale" content="vi_VN" />
+     <meta property="og:site_name" content="IDEAS" />
+@@ -32,7 +32,7 @@
+     <meta name="twitter:title" content="MBA in AI Thß╗Ñy S─⌐ Trß╗▒c Tuyß║┐n | Swiss UMEF" />
+     <meta name="twitter:description"
+         content="Ch╞░╞íng tr├¼nh MBA in AI ch├¡nh quy Thß╗Ñy S─⌐. Hß╗ìc 100% online. 16-18 th├íng. C├┤ng nhß║¡n quß╗æc tß║┐." />
+-    <meta name="twitter:image" content="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg" />
++    <meta name="twitter:image" content="https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp" />
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link rel="preconnect" href="https://ideas.edu.vn" />
+@@ -2601,6 +2601,96 @@
+                 padding: 14px 18px !important;
+             }
+         }
++    
++        /* ==========================================
++           MOBILE & VIEWPORT OPTIMIZATIONS
++           ========================================== */
++        @media (max-width: 1024px) {
++            .pain-cards {
++                display: flex !important;
++                flex-wrap: wrap !important;
++                justify-content: center !important;
++                gap: 16px !important;
++            }
++            .pain-cards > .pain-card-v2,
++            .pain-cards > div {
++                flex: 0 1 calc(33.333% - 12px) !important;
++                min-width: 250px !important;
++            }
++        }
++
++        @media (max-width: 768px) {
++            /* Tighten paddings */
++            section, 
++            .pricing-section, 
++            .cta-section,
++            .hero-section,
++            .ecosystem-section {
++                padding: 32px 12px !important;
++            }
++            .container {
++                padding-left: 12px !important;
++                padding-right: 12px !important;
++            }
++            .premium-policy-wrapper {
++                padding: 0 !important;
++            }
++            .premium-policy-wrapper > div {
++                padding: 24px 12px !important;
++                border-radius: 16px !important;
++            }
++            
++            /* Clamp titles */
++            h1, .hero-title {
++                font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
++            }
++            h2, .section-title {
++                font-size: clamp(1.6rem, 4.5vw, 1.9rem) !important;
++            }
++            h3, .pricing-title, .cta-headline {
++                font-size: clamp(1.4rem, 4vw, 1.7rem) !important;
++            }
++            
++            /* Pain cards on mobile */
++            .pain-cards {
++                display: flex !important;
++                flex-wrap: wrap !important;
++                justify-content: center !important;
++                gap: 12px !important;
++                grid-template-columns: none !important;
++            }
++            .pain-cards > .pain-card-v2,
++            .pain-cards > div {
++                flex: 0 1 calc(50% - 8px) !important;
++                min-width: 140px !important;
++                padding: 16px 12px !important;
++            }
++        }
++
++        @media (max-width: 480px) {
++            .pain-cards > .pain-card-v2,
++            .pain-cards > div {
++                flex: 0 1 100% !important;
++            }
++        }
++
++        /* Responsive Table style adjustments for light theme */
++        @media (max-width: 768px) {
++            .fee-table-responsive tr:not(.section-header) {
++                border-bottom: 1px solid #e2e8f0 !important;
++                background: #ffffff !important;
++            }
++            .fee-table-responsive tr:not(.section-header) td:first-child {
++                color: #0f172a !important;
++            }
++            .fee-table-responsive tr:not(.section-header) td:not(:first-child)::before {
++                color: #64748b !important;
++            }
++            .fee-table-responsive tr.total-row {
++                background: rgba(171, 14, 0, 0.05) !important;
++                border-top: 1.5px solid rgba(171, 14, 0, 0.1) !important;
++            }
++        }
+     </style>
+ 
+     <!-- Favicon -->
+@@ -2911,7 +3001,47 @@
+             <nav class="header-nav">
+                 <a href="#van-de" class="nav-link">Vß║Ñn ─æß╗ü</a>
+                 <a href="#giai-phap" class="nav-link">Giß║úi ph├íp</a>
+-                <a href="#chuong-trinh" class="nav-link">Ch╞░╞íng tr├¼nh</a>
++                <div class="nav-dropdown">
++  <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
++    Ch╞░╞íng tr├¼nh
++    <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
++      <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
++    </svg>
++  </a>
++  <div class="dropdown-menu-box">
++    <div class="dropdown-column">
++      <div class="dropdown-column-title">Thß║íc s─⌐</div>
++      <a href="mba.html" class="dropdown-item">
++        <div class="item-title">Online MBA</div>
++        <div class="item-desc">Thß║íc s─⌐ QTKD trß╗▒c tuyß║┐n Thß╗Ñy S─⌐</div>
++      </a>
++      <a href="emba.html" class="dropdown-item">
++        <div class="item-title">Executive MBA</div>
++        <div class="item-desc">Thß║íc s─⌐ ─æiß╗üu h├ánh cao cß║Ñp</div>
++      </a>
++      <a href="mscai.html" class="dropdown-item">
++        <div class="item-title">Master AI (MSc AI)</div>
++        <div class="item-desc">Thß║íc s─⌐ khoa hß╗ìc s├óu vß╗ü AI</div>
++      </a>
++      <a href="mbainai.html" class="dropdown-item">
++        <div class="item-title">MBA in AI</div>
++        <div class="item-desc">Quß║ún trß╗ï & ß╗⌐ng dß╗Ñng AI no-code</div>
++      </a>
++    </div>
++    <div class="dropdown-column-divider"></div>
++    <div class="dropdown-column">
++      <div class="dropdown-column-title">Cß╗¡ nh├ón</div>
++      <a href="bba.html" class="dropdown-item">
++        <div class="item-title">Top-up BBA</div>
++        <div class="item-desc">Li├¬n th├┤ng Cß╗¡ nh├ón 12 th├íng</div>
++      </a>
++      <a href="fullbba.html" class="dropdown-item">
++        <div class="item-title">Full BBA</div>
++        <div class="item-desc">Cß╗¡ nh├ón QTKD ch├¡nh quy 3 n─âm</div>
++      </a>
++    </div>
++  </div>
++</div>
+                 <a href="#giang-vien" class="nav-link">Giß║úng vi├¬n</a>
+                 <a href="#tuyen-sinh" class="nav-link">Tuyß╗ân sinh</a>
+                 <div style="display:flex;align-items:center;gap:8px;">
+@@ -2951,7 +3081,28 @@
+         </button>
+         <a href="#van-de" class="nav-link">Vß║Ñn ─æß╗ü</a>
+         <a href="#giai-phap" class="nav-link">Giß║úi ph├íp</a>
+-        <a href="#chuong-trinh" class="nav-link">Ch╞░╞íng tr├¼nh</a>
++        <div class="mobile-dropdown">
++  <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
++    Ch╞░╞íng tr├¼nh
++    <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
++      <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
++    </svg>
++  </button>
++  <div class="mobile-dropdown-content">
++    <div class="mobile-dropdown-section">
++      <div class="mobile-section-title">Thß║íc s─⌐</div>
++      <a href="mba.html" class="mobile-dropdown-item">Online MBA</a>
++      <a href="emba.html" class="mobile-dropdown-item">Executive MBA</a>
++      <a href="mscai.html" class="mobile-dropdown-item">Master AI (MSc AI)</a>
++      <a href="mbainai.html" class="mobile-dropdown-item">MBA in AI</a>
++    </div>
++    <div class="mobile-dropdown-section">
++      <div class="mobile-section-title">Cß╗¡ nh├ón</div>
++      <a href="bba.html" class="mobile-dropdown-item">Top-up BBA</a>
++      <a href="fullbba.html" class="mobile-dropdown-item">Full BBA</a>
++    </div>
++  </div>
++</div>
+         <a href="#giang-vien" class="nav-link">Giß║úng vi├¬n</a>
+         <a href="#tuyen-sinh" class="nav-link">Tuyß╗ân sinh</a>
+         <a href="#dang-ky" class="nav-cta">Nhß║¡n t╞░ vß║Ñn</a>
+@@ -3086,23 +3237,20 @@
+                         <span class="hero-hl-big ai-strong-hook"
+                             style="font-family: 'Space Grotesk', sans-serif; font-style: normal; font-weight: 800; color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); line-height: 1.3; letter-spacing: -0.03em; margin: 0; display: block; text-transform: uppercase;">
+                             <span
+-                                style="font-size: clamp(1.8rem, 4vw, 2.5rem); display: block; line-height: 1.2; margin-bottom: 4px;">AI
+-                                kh├┤ng c╞░ß╗¢p c├┤ng viß╗çc cß╗ºa bß║ín</span>
++                                style="font-size: clamp(1.8rem, 4vw, 2.5rem); display: block; line-height: 1.2; margin-bottom: 4px;">AI kh├┤ng thay thß║┐ nh├á quß║ún l├╜</span>
+                             <span
+-                                style="background: linear-gradient(90deg, #fecaca, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none; display: inline-block; padding-top: 0.15em; font-size: clamp(2.5rem, 6vw, 4.2rem); line-height: 1.2;">Ng╞░ß╗¥i
+-                                hiß╗âu AI th├¼ c├│</span>
++                                style="background: linear-gradient(90deg, #fecaca, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none; display: inline-block; padding-top: 0.15em; font-size: clamp(2.1rem, 5.5vw, 3.6rem); line-height: 1.2;">Nh├á quß║ún l├╜ biß║┐t d├╣ng AI sß║╜ thay thß║┐ <span style="white-space: nowrap;">phß║ºn c├▓n lß║íi</span></span>
+                         </span>
+                     </h1>
+ 
+                     <p
+                         style="font-size:1rem;font-weight:600;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;margin-top:0;">
+-                        MBA in AI l├á Thß║íc s─⌐ Quß║ún trß╗ï kinh doanh ß╗⌐ng dß╗Ñng AI thß╗▒c tiß╗àn trong doanh nghiß╗çp
++                        MBA in AI l├á Thß║íc s─⌐ Quß║ún trß╗ï Kinh doanh chuy├¬n s├óu vß╗ü ß╗⌐ng dß╗Ñng, thiß║┐t lß║¡p quy tr├¼nh v├á quß║ún trß╗ï bß║▒ng AI
+                     </p>
+ 
+                     <p class="hero-sub"
+                         style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.6; max-width: 600px;">
+-                        MBA in AI cß╗ºa <strong>Swiss UMEF</strong> ─æ╞░ß╗úc thiß║┐t kß║┐ d├ánh cho nh├á quß║ún l├╜ v├á l├únh ─æß║ío doanh
+-                        nghiß╗çp muß╗æn <strong>hiß╗âu - ß╗⌐ng dß╗Ñng - quß║ún trß╗ï AI</strong> ß╗ƒ cß║Ñp ─æß╗Ö chiß║┐n l╞░ß╗úc.
++                        MBA in AI cß╗ºa <strong>Swiss UMEF</strong> ─æ╞░ß╗úc thiß║┐t kß║┐ d├ánh cho chß╗º doanh nghiß╗çp, nh├á quß║ún trß╗ï v├á tr╞░ß╗ƒng bß╗Ö phß║¡n muß╗æn x├óy dß╗▒ng quy tr├¼nh tß╗▒ ─æß╗Öng h├│a, quß║ún trß╗ï rß╗ºi ro bß║úo mß║¡t dß╗» liß╗çu v├á n├óng cao hiß╗çu suß║Ñt doanh nghiß╗çp bß║▒ng AI.
+                     </p>
+ 
+                     <div class="hero-badges-row" aria-label="Th├┤ng tin nhanh vß╗ü ch╞░╞íng tr├¼nh">
+@@ -3235,7 +3383,7 @@
+                 <!-- RIGHT: Real photo -->
+                 <div class="hero-visual reveal-up">
+                     <div class="hero-photo-main">
+-                        <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg"
++                        <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp"
+                             alt="Lß╗à tß╗æt nghiß╗çp MBA in AI Swiss UMEF ΓÇô IDEAS Education" width="620" height="720"
+                             loading="eager" fetchpriority="high" />
+                         <!-- Floating stat badges -->
+@@ -3329,7 +3477,7 @@
+                                     stroke="currentColor" stroke-width="1.8">
+                                     <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                 </svg></div>
+-                            <p>AI ─æ╞░ß╗úc sß╗¡ dß╗Ñng rß╗¥i rß║íc, kh├┤ng gß║»n vß╗¢i <strong>hß╗ç thß╗æng vß║¡n h├ánh tß╗òng thß╗â</strong></p>
++                            <p><strong>R├▓ rß╗ë dß╗» liß╗çu nghi├¬m trß╗ìng:</strong> Nh├ón vi├¬n tß╗▒ ├╜ ─æ╞░a dß╗» liß╗çu nß╗Öi bß╗Ö, th├┤ng tin t├ái ch├¡nh hay b├¡ mß║¡t kinh doanh l├¬n c├íc AI c├┤ng cß╗Öng.</p>
+                         </div>
+                     </div>
+                     <div class="pain-card-v2 ai-neon-box">
+@@ -3341,7 +3489,7 @@
+                                     <line x1="12" y1="8" x2="12" y2="12" />
+                                     <line x1="12" y1="16" x2="12.01" y2="16" />
+                                 </svg></div>
+-                            <p>Kh├┤ng c├│ <strong>t╞░ duy chiß║┐n l╞░ß╗úc</strong> vß╗ü AI trong viß╗çc quß║ún l├╜ v├á ra quyß║┐t ─æß╗ïnh</p>
++                            <p><strong>─Éß╗æt tiß╗ün nh╞░ng kh├┤ng c├│ ROI:</strong> Mua bß║ún quyß╗ün phß║ºn mß╗üm AI ─æß║»t ─æß╗Å nh╞░ng nh├ón sß╗▒ kh├┤ng d├╣ng hiß╗çu quß║ú, l├úng ph├¡ ng├ón s├ích doanh nghiß╗çp.</p>
+                         </div>
+                     </div>
+                     <div class="pain-card-v2 ai-neon-box">
+@@ -3351,7 +3499,7 @@
+                                     stroke="currentColor" stroke-width="1.8">
+                                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                                 </svg></div>
+-                            <p>─Éß╗æt ng├ón s├ích v├áo AI nh╞░ng kh├┤ng tß║ío ra <strong>─æß║ºu ra kinh doanh</strong> r├╡ r├áng</p>
++                            <p><strong>Vß║¡n h├ánh thiß║┐u AI quy chuß║⌐n:</strong> Thiß║┐u c├íc quy tr├¼nh (SOPs) chuß║⌐n h├│a ─æß╗â t├¡ch hß╗úp AI v├áo c├┤ng viß╗çc h├áng ng├áy cß╗ºa c├íc ph├▓ng ban.</p>
+                         </div>
+                     </div>
+                     <div class="pain-card-v2 ai-neon-box">
+@@ -3364,7 +3512,7 @@
+                                     <line x1="12" y1="9" x2="12" y2="13" />
+                                     <line x1="12" y1="17" x2="12.01" y2="17" />
+                                 </svg></div>
+-                            <p>Vß║¡n h├ánh thiß║┐u kiß╗âm so├ít, g├óy <strong>rß╗ºi ro vß╗ü uy t├¡n, ph├íp l├╜ v├á t├ái ch├¡nh</strong></p>
++                            <p><strong>Bß║Ñt lß╗▒c tr╞░ß╗¢c ─æß╗æi thß╗º d├╣ng AI:</strong> Nh├¼n thß║Ñy ─æß╗æi thß╗º tß╗æi ╞░u h├│a chi ph├¡ v├á tß╗æc ─æß╗Ö bß║▒ng AI, c├▓n doanh nghiß╗çp m├¼nh vß║½n loay hoay thß╗¡ nghiß╗çm rß╗¥i rß║íc.</p>
+                         </div>
+                     </div>
+                     <div class="pain-card-v2 ai-neon-box">
+@@ -3792,7 +3940,7 @@
+                     </div>
+ 
+                     <div class="hero-cta" style="margin-top:28px">
+-                        <a href="#dang-ky" class="btn btn-primary" id="solution-cta">
++                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta" onclick="quizModal.open()">
+                             Nhß║¡n Brochure MBA in AI Swiss UMEF
+                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+@@ -4354,30 +4502,29 @@
+                             <div class="enroll-step enroll-step--done">
+                                 <div class="enroll-step-dot"></div>
+                                 <div class="enroll-step-content">
+-                                    <div class="enroll-step-date">30/11/2025</div>
++                                    <div class="enroll-step-date">Th├íng 07.2026</div>
+                                     <div class="enroll-step-label">Bß║»t ─æß║ºu tuyß╗ân sinh</div>
+                                 </div>
+                             </div>
+                             <div class="enroll-step enroll-step--active">
+                                 <div class="enroll-step-dot"></div>
+                                 <div class="enroll-step-content">
+-                                    <div class="enroll-step-date">17/04/2026</div>
+-                                    <div class="enroll-step-label">Dß╗▒ kiß║┐n chß╗æt kh├│a - <strong>Hß║ín cuß╗æi nß╗Öp hß╗ô
+-                                            s╞í</strong></div>
++                                    <div class="enroll-step-date">eAcademy (New)</div>
++                                    <div class="enroll-step-label">Hß╗ç thß╗æng hß╗ìc tß║¡p trß╗▒c tuyß║┐n mß╗¢i</div>
+                                 </div>
+                             </div>
+                             <div class="enroll-step">
+                                 <div class="enroll-step-dot"></div>
+                                 <div class="enroll-step-content">
+-                                    <div class="enroll-step-date">01/05/2026</div>
+-                                    <div class="enroll-step-label">Dß╗▒ kiß║┐n Orientation</div>
++                                    <div class="enroll-step-date">Dß╗▒ kiß║┐n Orientation</div>
++                                    <div class="enroll-step-label">H╞░ß╗¢ng dß║½n ph╞░╞íng ph├íp hß╗ìc tß║¡p</div>
+                                 </div>
+                             </div>
+                             <div class="enroll-step">
+                                 <div class="enroll-step-dot"></div>
+                                 <div class="enroll-step-content">
+-                                    <div class="enroll-step-date">05/05/2026</div>
+-                                    <div class="enroll-step-label">Nhß║¡p hß╗ìc m├┤n 01</div>
++                                    <div class="enroll-step-date">Dß╗▒ kiß║┐n khai giß║úng</div>
++                                    <div class="enroll-step-label">Bß║»t ─æß║ºu m├┤n hß╗ìc ─æß║ºu ti├¬n</div>
+                                 </div>
+                             </div>
+                         </div>
+@@ -6199,8 +6346,10 @@
+     <script src="script.js?v=1.1"></script>
+     <script src="booking-modal.js?v=1.1"></script>
+ 
++    
++
+     <!-- ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+-         MBA in AI QUIZ POPUP
++         Swiss UMEF Program Orientation Quiz
+     ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ -->
+     <style>
+         /* ΓöÇΓöÇ Overlay ΓöÇΓöÇ */
+@@ -6212,12 +6361,13 @@
+             align-items: center;
+             justify-content: center;
+             padding: 16px;
+-            background: rgba(5, 11, 20, 0.78);
+-            backdrop-filter: blur(6px);
+-            -webkit-backdrop-filter: blur(6px);
++            background: rgba(5, 11, 20, 0.82);
++            backdrop-filter: blur(8px);
++            -webkit-backdrop-filter: blur(8px);
+             opacity: 0;
+             pointer-events: none;
+             transition: opacity 0.32s ease;
++            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         }
+ 
+         .qz-overlay.qz-open {
+@@ -6238,6 +6388,8 @@
+             transform: translateY(24px) scale(0.97);
+             transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+             opacity: 0;
++            color: #0f172a;
++            text-align: left;
+         }
+ 
+         .qz-overlay.qz-open .qz-modal {
+@@ -6303,53 +6455,59 @@
+         }
+ 
+         .qz-header h2 {
+-            margin: 0 0 6px;
+-            font-size: clamp(1.15rem, 3vw, 1.45rem);
+-            font-weight: 800;
++            font-size: clamp(1.3rem, 3.5vw, 1.65rem);
++            font-weight: 900;
++            margin: 0 0 8px;
+             line-height: 1.25;
++            color: #ffffff;
++            letter-spacing: -0.5px;
++            border: none;
++            padding: 0;
+         }
+ 
+         .qz-header p {
+             margin: 0;
+-            font-size: 0.82rem;
++            font-size: 0.92rem;
+             opacity: 0.85;
++            line-height: 1.4;
++            color: #ffffff;
+         }
+ 
+-        /* ΓöÇΓöÇ Progress bar ΓöÇΓöÇ */
++        /* ΓöÇΓöÇ Progress ΓöÇΓöÇ */
+         .qz-progress-wrap {
+-            padding: 20px 36px 0;
++            padding: 24px 36px 0;
+             display: flex;
+             align-items: center;
+-            gap: 12px;
++            gap: 16px;
+         }
+ 
+         .qz-progress-bar {
+             flex: 1;
+-            height: 5px;
+-            background: #f1f5f9;
++            height: 6px;
++            background: #e2e8f0;
+             border-radius: 999px;
+             overflow: hidden;
+         }
+ 
+         .qz-progress-fill {
+             height: 100%;
+-            background: linear-gradient(90deg, #ab0e00, #ef4444);
++            background: #ab0e00;
++            width: 0;
+             border-radius: 999px;
+-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+-            width: 20%;
++            transition: width 0.3s ease;
+         }
+ 
+         .qz-progress-label {
+-            font-size: 11px;
++            font-size: 0.82rem;
+             font-weight: 700;
+-            color: #94a3b8;
+-            min-width: 44px;
++            color: #64748b;
++            min-width: 32px;
+             text-align: right;
+         }
+ 
+-        /* ΓöÇΓöÇ Q&A body ΓöÇΓöÇ */
++        /* ΓöÇΓöÇ Body ΓöÇΓöÇ */
+         .qz-body {
+-            padding: 24px 36px 32px;
++            padding: 24px 36px 36px;
+         }
+ 
+         .qz-question-wrap {
+@@ -6358,125 +6516,102 @@
+ 
+         .qz-question-wrap.qz-active {
+             display: block;
++            animation: qzFadeIn 0.3s ease forwards;
++        }
++
++        @keyframes qzFadeIn {
++            from { opacity: 0; transform: translateY(8px); }
++            to { opacity: 1; transform: translateY(0); }
+         }
+ 
+         .qz-q-number {
+-            font-size: 11px;
++            font-size: 0.8rem;
+             font-weight: 800;
+             color: #ab0e00;
+             text-transform: uppercase;
+-            letter-spacing: 0.1em;
++            letter-spacing: 0.05em;
+             margin-bottom: 8px;
+         }
+ 
+         .qz-q-text {
+-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+-            font-weight: 700;
+-            color: #111729;
+-            line-height: 1.5;
++            font-size: 1.15rem;
++            font-weight: 800;
++            color: #0f172a;
+             margin: 0 0 20px;
++            line-height: 1.4;
+         }
+ 
+-        /* ΓöÇΓöÇ Answers grid ΓöÇΓöÇ */
+         .qz-answers {
+             display: flex;
+             flex-direction: column;
+-            gap: 10px;
++            gap: 12px;
+         }
+ 
+         .qz-answer-btn {
+-            display: flex;
+-            align-items: flex-start;
+-            gap: 14px;
+-            padding: 14px 18px;
+             background: #f8fafc;
+-            border: 2px solid #e2e8f0;
++            border: 1.5px solid #e2e8f0;
+             border-radius: 14px;
+-            cursor: pointer;
++            padding: 16px 20px;
+             text-align: left;
+-            font-family: inherit;
+-            font-size: 0.88rem;
++            font-size: 0.95rem;
+             font-weight: 600;
+             color: #334155;
+-            line-height: 1.5;
+-            transition: border-color 0.2s, background 0.2s, transform 0.15s, box-shadow 0.2s;
++            cursor: pointer;
++            transition: all 0.2s ease;
++            display: flex;
++            align-items: center;
++            gap: 12px;
+             width: 100%;
++            line-height: 1.4;
+         }
+ 
+         .qz-answer-btn:hover {
+-            border-color: #ab0e00;
+-            background: #fff5f5;
+-            transform: translateX(3px);
+-            box-shadow: 0 4px 16px rgba(171, 14, 0, 0.1);
++            background: #f1f5f9;
++            border-color: #cbd5e1;
++            color: #0f172a;
++            transform: translateY(-1px);
+         }
+ 
+         .qz-answer-btn.qz-selected {
++            background: rgba(171, 14, 0, 0.04);
+             border-color: #ab0e00;
+-            background: linear-gradient(135deg, #fff5f5, #fff);
+-            box-shadow: 0 4px 20px rgba(171, 14, 0, 0.15);
++            color: #ab0e00;
++            box-shadow: 0 0 0 1px #ab0e00;
+         }
+ 
+         .qz-answer-icon {
+-            width: 28px;
+-            height: 28px;
+-            min-width: 28px;
+-            border-radius: 8px;
+-            background: #e2e8f0;
++            width: 24px;
++            height: 24px;
++            border-radius: 50%;
++            background: #fff;
++            border: 1.5px solid #cbd5e1;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+-            font-size: 12px;
+-            font-weight: 900;
++            font-size: 11px;
++            font-weight: 800;
+             color: #64748b;
+-            transition: background 0.2s, color 0.2s;
+-        }
+-
+-        .qz-answer-btn.qz-selected .qz-answer-icon {
+-            background: #ab0e00;
+-            color: #fff;
++            flex-shrink: 0;
++            transition: all 0.2s;
+         }
+ 
+-        /* ΓöÇΓöÇ Nav buttons ΓöÇΓöÇ */
+-        .qz-nav {
+-            display: none;
+-            /* auto-advance replaces manual next button */
++        .qz-answer-btn:hover .qz-answer-icon {
++            border-color: #94a3b8;
++            color: #334155;
+         }
+ 
+-        .qz-btn-next {
+-            display: flex;
+-            align-items: center;
+-            gap: 8px;
+-            background: linear-gradient(135deg, #ab0e00, #d91c0a);
++        .qz-answer-btn.qz-selected .qz-answer-icon {
++            background: #ab0e00;
++            border-color: #ab0e00;
+             color: #fff;
+-            border: none;
+-            padding: 12px 24px;
+-            border-radius: 12px;
+-            font-size: 0.9rem;
+-            font-weight: 700;
+-            font-family: inherit;
+-            cursor: pointer;
+-            transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+-            box-shadow: 0 6px 20px rgba(171, 14, 0, 0.3);
+-        }
+-
+-        .qz-btn-next:hover {
+-            opacity: 0.9;
+-            transform: translateY(-1px);
+-            box-shadow: 0 8px 24px rgba(171, 14, 0, 0.4);
+         }
+ 
+-        .qz-btn-next:disabled {
+-            opacity: 0.45;
+-            cursor: not-allowed;
+-            transform: none;
+-            box-shadow: none;
+-        }
+-
+-        /* ΓöÇΓöÇ Result screen ΓöÇΓöÇ */
++        /* ΓöÇΓöÇ Result Screen ΓöÇΓöÇ */
+         .qz-result {
+             display: none;
+-            padding: 36px;
++            padding: 48px 36px;
+             text-align: center;
++            animation: qzFadeIn 0.4s ease forwards;
+         }
+ 
+         .qz-result.qz-active {
+@@ -6484,68 +6619,46 @@
+         }
+ 
+         .qz-result-icon {
+-            width: 72px;
+-            height: 72px;
+-            border-radius: 50%;
+-            margin: 0 auto 20px;
+-            display: flex;
+-            align-items: center;
+-            justify-content: center;
+-            font-size: 32px;
+-        }
+-
+-        .qz-result-icon--strategic {
+-            background: linear-gradient(135deg, #fef3c7, #fde68a);
+-        }
+-
+-        .qz-result-icon--tech {
+-            background: linear-gradient(135deg, #dbeafe, #93c5fd);
+-        }
+-
+-        .qz-result-icon--hybrid {
+-            background: linear-gradient(135deg, #f0fdf4, #86efac);
++            font-size: 4rem;
++            margin-bottom: 16px;
++            line-height: 1;
++            display: block;
+         }
+ 
+         .qz-result-group {
+             display: inline-block;
+-            padding: 4px 14px;
+-            border-radius: 999px;
+-            font-size: 10px;
+-            font-weight: 900;
+-            letter-spacing: 0.12em;
++            font-size: 0.72rem;
++            font-weight: 800;
+             text-transform: uppercase;
+-            margin-bottom: 12px;
++            letter-spacing: 0.08em;
++            padding: 6px 14px;
++            border-radius: 99px;
++            margin-bottom: 14px;
++            background: rgba(15, 23, 42, 0.06);
++            color: #475569;
+         }
+ 
+         .qz-result-group--strategic {
+-            background: #fef3c7;
+-            color: #92400e;
+-        }
+-
+-        .qz-result-group--tech {
+-            background: #dbeafe;
+-            color: #1e40af;
+-        }
+-
+-        .qz-result-group--hybrid {
+-            background: #f0fdf4;
+-            color: #166534;
++            background: rgba(171, 14, 0, 0.08);
++            color: #ab0e00;
+         }
+ 
+         .qz-result h3 {
+-            font-size: clamp(1.2rem, 3vw, 1.6rem);
++            font-size: 1.5rem;
+             font-weight: 900;
+-            color: #111729;
++            color: #0f172a;
+             margin: 0 0 12px;
+             line-height: 1.3;
++            border: none;
++            padding: 0;
+         }
+ 
+         .qz-result-msg {
+-            font-size: 0.92rem;
++            font-size: 0.98rem;
++            line-height: 1.55;
+             color: #475569;
+-            line-height: 1.7;
+-            max-width: 460px;
+-            margin: 0 auto 24px;
++            max-width: 500px;
++            margin: 0 auto 28px;
+         }
+ 
+         .qz-result-cta {
+@@ -6554,45 +6667,28 @@
+             gap: 10px;
+             padding: 14px 28px;
+             border-radius: 14px;
+-            font-size: 0.92rem;
++            font-size: 0.95rem;
+             font-weight: 800;
+-            font-family: inherit;
+             border: none;
+             cursor: pointer;
+             text-decoration: none;
+             transition: transform 0.2s, box-shadow 0.2s;
+-        }
+-
+-        .qz-result-cta--strategic {
+             background: linear-gradient(135deg, #ab0e00, #d91c0a);
+-            color: #fff;
++            color: #fff !important;
+             box-shadow: 0 6px 20px rgba(171, 14, 0, 0.3);
+         }
+ 
+-        .qz-result-cta--tech {
+-            background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+-            color: #fff;
+-            box-shadow: 0 6px 20px rgba(29, 78, 216, 0.3);
+-        }
+-
+-        .qz-result-cta--hybrid {
+-            background: linear-gradient(135deg, #15803d, #22c55e);
+-            color: #fff;
+-            box-shadow: 0 6px 20px rgba(21, 128, 61, 0.3);
+-        }
+-
+         .qz-result-cta:hover {
+             transform: translateY(-2px);
+-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
++            box-shadow: 0 10px 28px rgba(171, 14, 0, 0.45);
+         }
+ 
+         .qz-result-restart {
+             display: block;
+-            margin-top: 14px;
++            margin: 18px auto 0;
+             background: none;
+             border: none;
+-            font-family: inherit;
+-            font-size: 0.82rem;
++            font-size: 0.85rem;
+             color: #94a3b8;
+             cursor: pointer;
+             text-decoration: underline;
+@@ -6603,20 +6699,6 @@
+             color: #ab0e00;
+         }
+ 
+-        /* scrollbar inside modal */
+-        .qz-modal::-webkit-scrollbar {
+-            width: 5px;
+-        }
+-
+-        .qz-modal::-webkit-scrollbar-track {
+-            background: transparent;
+-        }
+-
+-        .qz-modal::-webkit-scrollbar-thumb {
+-            background: #e2e8f0;
+-            border-radius: 10px;
+-        }
+-
+         @media (max-width: 480px) {
+             .qz-header {
+                 padding: 24px 20px 18px;
+@@ -6631,12 +6713,12 @@
+             }
+ 
+             .qz-result {
+-                padding: 28px 20px;
++                padding: 36px 20px;
+             }
+ 
+             .qz-answer-btn {
+-                padding: 12px 14px;
+-                font-size: 0.83rem;
++                padding: 14px 16px;
++                font-size: 0.88rem;
+             }
+         }
+     </style>
+@@ -6644,14 +6726,13 @@
+     <!-- Quiz Popup HTML -->
+     <div class="qz-overlay" id="qz-overlay" role="dialog" aria-modal="true" aria-labelledby="qz-modal-title">
+         <div class="qz-modal" id="qz-modal">
+-
+             <button class="qz-close" id="qz-close" aria-label="─É├│ng">&#x2715;</button>
+ 
+             <!-- Header -->
+             <div class="qz-header">
+-                <div class="qz-header-badge"><span></span> Trß║»c nghiß╗çm ─æß╗ïnh h╞░ß╗¢ng</div>
+-                <h2 id="qz-modal-title">Bß║ín ph├╣ hß╗úp vß╗¢i MBA in AI ß╗ƒ mß╗⌐c ─æß╗Ö n├áo?</h2>
+-                <p>Trß║ú lß╗¥i 5 c├óu hß╗Åi ngß║»n - nhß║¡n kß║┐t quß║ú ngay lß║¡p tß╗⌐c.</p>
++                <div class="qz-header-badge"><span></span> ─Éß╗ïnh H╞░ß╗¢ng Sß╗▒ Nghiß╗çp</div>
++                <h2 id="qz-modal-title">Bß║ín ph├╣ hß╗úp vß╗¢i ch╞░╞íng tr├¼nh n├áo?</h2>
++                <p>Trß║ú lß╗¥i 5 c├óu hß╗Åi nhanh ─æß╗â t├¼m giß║úi ph├íp hß╗ìc tß║¡p tß╗æi ╞░u tß╗½ Thß╗Ñy S─⌐.</p>
+             </div>
+ 
+             <!-- Progress -->
+@@ -6662,323 +6743,225 @@
+                 <div class="qz-progress-label" id="qz-progress-label">1 / 5</div>
+             </div>
+ 
+-            <!-- Questions -->
++            <!-- Quiz Questions Container -->
+             <div class="qz-body" id="qz-body">
+-
+-                <!-- Q1 -->
+-                <div class="qz-question-wrap qz-active" id="qz-q-1">
+-                    <div class="qz-q-number">C├óu 1 / 5</div>
+-                    <p class="qz-q-text">Mß╗Ñc ti├¬u sß╗▒ nghiß╗çp ╞░u ti├¬n cß╗ºa bß║ín trong 2ΓÇô3 n─âm tß╗¢i?</p>
+-                    <div class="qz-answers">
+-                        <button class="qz-answer-btn" data-q="1" data-type="A">
+-                            <span class="qz-answer-icon">1</span>
+-                            ─Éiß╗üu h├ánh doanh nghiß╗çp hoß║╖c tß╗æi ╞░u h├│a m├┤ h├¼nh khß╗ƒi nghiß╗çp.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="1" data-type="B">
+-                            <span class="qz-answer-icon">2</span>
+-                            Dß║½n dß║»t c├íc dß╗▒ ├ín c├┤ng nghß╗ç v├á chuyß╗ân ─æß╗òi sß╗æ to├án diß╗çn.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="1" data-type="C">
+-                            <span class="qz-answer-icon">3</span>
+-                            Mß╗ƒ rß╗Öng mß║íng l╞░ß╗¢i quan hß╗ç vß╗¢i cß╗Öng ─æß╗ông l├únh ─æß║ío cß║Ñp cao.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="1" data-type="D">
+-                            <span class="qz-answer-icon">4</span>
+-                            ß╗¿ng dß╗Ñng AI ─æß╗â bß╗⌐t ph├í hiß╗çu suß║Ñt quß║ún l├╜ tß╗ò chß╗⌐c.
+-                        </button>
+-                    </div>
+-                    <div class="qz-nav">
+-                        <button class="qz-btn-next" id="qz-next-1" disabled>Tiß║┐p theo <svg width="16" height="16"
+-                                fill="none" viewBox="0 0 24 24">
+-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+-                                    stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7" />
+-                            </svg></button>
+-                    </div>
+-                </div>
+-
+-                <!-- Q2 -->
+-                <div class="qz-question-wrap" id="qz-q-2">
+-                    <div class="qz-q-number">C├óu 2 / 5</div>
+-                    <p class="qz-q-text">Kß╗╣ n─âng n├áo cß║Ñp thiß║┐t nhß║Ñt ─æß╗â n├óng tß║ºm vß╗ï thß║┐ cß╗ºa bß║ín?</p>
+-                    <div class="qz-answers">
+-                        <button class="qz-answer-btn" data-q="2" data-type="A">
+-                            <span class="qz-answer-icon">1</span>
+-                            Quß║ún trß╗ï t├ái ch├¡nh, nh├ón sß╗▒ v├á chiß║┐n l╞░ß╗úc to├án cß║ºu.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="2" data-type="B">
+-                            <span class="qz-answer-icon">2</span>
+-                            Ph├ón t├¡ch dß╗» liß╗çu v├á l├ám chß╗º c├íc m├┤ h├¼nh AI/Machine Learning.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="2" data-type="C">
+-                            <span class="qz-answer-icon">3</span>
+-                            ─É├ám ph├ín chiß║┐n l╞░ß╗úc v├á xß╗¡ l├╜ c├íc b├ái to├ín quß║ún trß╗ï phß╗⌐c tß║íp.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="2" data-type="D">
+-                            <span class="qz-answer-icon">4</span>
+-                            T╞░ duy hß╗ç thß╗æng v├á giß║úi quyß║┐t vß║Ñn ─æß╗ü bß║▒ng c├┤ng nghß╗ç mß╗¢i.
+-                        </button>
+-                    </div>
+-                    <div class="qz-nav">
+-                        <button class="qz-btn-next" id="qz-next-2" disabled>Tiß║┐p theo <svg width="16" height="16"
+-                                fill="none" viewBox="0 0 24 24">
+-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+-                                    stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7" />
+-                            </svg></button>
+-                    </div>
+-                </div>
+-
+-                <!-- Q3 -->
+-                <div class="qz-question-wrap" id="qz-q-3">
+-                    <div class="qz-q-number">C├óu 3 / 5</div>
+-                    <p class="qz-q-text">Bß║ín cß║úm thß║Ñy hß╗⌐ng th├║ nhß║Ñt khi thß╗▒c hiß╗çn vai tr├▓ n├áo?</p>
+-                    <div class="qz-answers">
+-                        <button class="qz-answer-btn" data-q="3" data-type="A">
+-                            <span class="qz-answer-icon">1</span>
+-                            Truyß╗ün cß║úm hß╗⌐ng, dß║½n dß║»t ─æß╗Öi ng┼⌐ v├á phß╗æi hß╗úp nguß╗ôn lß╗▒c.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="3" data-type="B">
+-                            <span class="qz-answer-icon">2</span>
+-                            Khai ph├í dß╗» liß╗çu ─æß╗â t├¼m ra c├íc quy luß║¡t/giß║úi ph├íp ─æß╗Öt ph├í.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="3" data-type="C">
+-                            <span class="qz-answer-icon">3</span>
+-                            Tß╗æi ╞░u h├│a m├┤ h├¼nh vß║¡n h├ánh v├á chuß╗ùi gi├í trß╗ï doanh nghiß╗çp.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="3" data-type="D">
+-                            <span class="qz-answer-icon">4</span>
+-                            Trß║úi nghiß╗çm v├á thß╗▒c thi c├íc c├┤ng cß╗Ñ tß╗▒ ─æß╗Öng h├│a th├┤ng minh.
+-                        </button>
+-                    </div>
+-                    <div class="qz-nav">
+-                        <button class="qz-btn-next" id="qz-next-3" disabled>Tiß║┐p theo <svg width="16" height="16"
+-                                fill="none" viewBox="0 0 24 24">
+-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+-                                    stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7" />
+-                            </svg></button>
+-                    </div>
+-                </div>
+-
+-                <!-- Q4 -->
+-                <div class="qz-question-wrap" id="qz-q-4">
+-                    <div class="qz-q-number">C├óu 4 / 5</div>
+-                    <p class="qz-q-text">Ph╞░╞íng ph├íp ╞░u ti├¬n khi ─æß╗æi mß║╖t vß╗¢i b├ái to├ín kinh doanh kh├│?</p>
+-                    <div class="qz-answers">
+-                        <button class="qz-answer-btn" data-q="4" data-type="A">
+-                            <span class="qz-answer-icon">1</span>
+-                            Dß╗▒a tr├¬n kinh nghiß╗çm thß╗▒c chiß║┐n v├á tß║ºm nh├¼n thß╗ï tr╞░ß╗¥ng.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="4" data-type="B">
+-                            <span class="qz-answer-icon">2</span>
+-                            Dß╗▒a tr├¬n c├íc m├┤ h├¼nh dß╗▒ b├ío v├á ph├ón t├¡ch sß╗æ liß╗çu khoa hß╗ìc.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="4" data-type="C">
+-                            <span class="qz-answer-icon">3</span>
+-                            Tham vß║Ñn hß╗Öi ─æß╗ông quß║ún trß╗ï v├á c├íc chuy├¬n gia cß╗æ vß║Ñn.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="4" data-type="D">
+-                            <span class="qz-answer-icon">4</span>
+-                            Sß╗¡ dß╗Ñng AI ─æß╗â ph├ón t├¡ch ─æa chiß╗üu v├á t├¼m ph╞░╞íng ├ín tß╗æi ╞░u.
+-                        </button>
+-                    </div>
+-                    <div class="qz-nav">
+-                        <button class="qz-btn-next" id="qz-next-4" disabled>Tiß║┐p theo <svg width="16" height="16"
+-                                fill="none" viewBox="0 0 24 24">
+-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+-                                    stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7" />
+-                            </svg></button>
+-                    </div>
+-                </div>
+-
+-                <!-- Q5 -->
+-                <div class="qz-question-wrap" id="qz-q-5">
+-                    <div class="qz-q-number">C├óu 5 / 5</div>
+-                    <p class="qz-q-text">Gi├í trß╗ï lß╗¢n nhß║Ñt bß║ín kß╗│ vß╗ìng tß╗½ ch╞░╞íng tr├¼nh Thß║íc s─⌐?</p>
+-                    <div class="qz-answers">
+-                        <button class="qz-answer-btn" data-q="5" data-type="A">
+-                            <span class="qz-answer-icon">1</span>
+-                            Khß║│ng ─æß╗ïnh vß╗ï thß║┐ l├únh ─æß║ío v├á th─âng tiß║┐n cß║Ñp C-level.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="5" data-type="B">
+-                            <span class="qz-answer-icon">2</span>
+-                            Nß║»m vß╗»ng c├┤ng nghß╗ç t╞░╞íng lai ─æß╗â dß║½n ─æß║ºu kß╗╖ nguy├¬n AI.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="5" data-type="C">
+-                            <span class="qz-answer-icon">3</span>
+-                            Kß║┐t nß╗æi v├á cß╗Öng t├íc kinh doanh vß╗¢i hß╗ìc vi├¬n c├╣ng ─æß║│ng cß║Ñp.
+-                        </button>
+-                        <button class="qz-answer-btn" data-q="5" data-type="D">
+-                            <span class="qz-answer-icon">4</span>
+-                            Trß╗▒c tiß║┐p sß╗æ h├│a v├á th├┤ng minh h├│a doanh nghiß╗çp hiß╗çn tß║íi.
+-                        </button>
+-                    </div>
+-                    <div class="qz-nav">
+-                        <button class="qz-btn-next" id="qz-next-5" disabled>Xem kß║┐t quß║ú <svg width="16" height="16"
+-                                fill="none" viewBox="0 0 24 24">
+-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+-                                    stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7" />
+-                            </svg></button>
+-                    </div>
+-                </div>
+-
+-            </div><!-- /qz-body -->
++                <div id="qz-question-container"></div>
++            </div>
+ 
+             <!-- Result screen -->
+             <div class="qz-result" id="qz-result">
+-                <div class="qz-result-icon" id="qz-result-icon"></div>
+-                <div class="qz-result-group" id="qz-result-group"></div>
++                <div class="qz-result-icon" id="qz-result-icon">≡ƒÄë</div>
++                <div class="qz-result-group qz-result-group--strategic" id="qz-result-group"></div>
+                 <h3 id="qz-result-title"></h3>
+                 <p class="qz-result-msg" id="qz-result-msg"></p>
+-                <a href="#dang-ky" class="qz-result-cta" id="qz-result-cta" onclick="quizModal.close()"></a>
++                <a href="#dang-ky" class="qz-result-cta" id="qz-result-cta">Xem chi tiß║┐t</a>
+                 <button class="qz-result-restart" id="qz-result-restart">Γå║ L├ám lß║íi tß╗½ ─æß║ºu</button>
+             </div>
+-
+         </div>
+     </div>
+ 
++    <!-- ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
++         Swiss UMEF Program Orientation Quiz JS
++    ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ -->
+     <script>
+-        /* ΓöÇΓöÇΓöÇ MBA in AI Quiz Modal ΓöÇΓöÇΓöÇ */
++        const CURRENT_PROGRAM = "MBA_AI";
++        const PROGRAM_DETAILS = {
++            'EMBA': {
++                name: 'Executive MBA Thß╗Ñy S─⌐',
++                url: 'emba.html',
++                desc: 'Ch╞░╞íng tr├¼nh Thß║íc s─⌐ ─Éiß╗üu h├ánh Cao cß║Ñp d├ánh ri├¬ng cho Gi├ím ─æß╗æc, C-levels v├á Chß╗º doanh nghiß╗çp.',
++                highlight: '─æß╗ïnh h╞░ß╗¢ng chiß║┐n l╞░ß╗úc v─⌐ m├┤ v├á mß╗ƒ rß╗Öng mß║íng l╞░ß╗¢i quan hß╗ç l├únh ─æß║ío cß║Ñp cao'
++            },
++            'MBA': {
++                name: 'MBA Thß╗Ñy S─⌐ ch├¡nh quy',
++                url: 'mba.html',
++                desc: 'Ch╞░╞íng tr├¼nh Thß║íc s─⌐ Quß║ún trß╗ï Kinh doanh trß╗▒c tuyß║┐n linh hoß║ít d├ánh cho Quß║ún l├╜ cß║Ñp trung v├á ng╞░ß╗¥i ─æi l├ám.',
++                highlight: 'n├óng cao n─âng lß╗▒c quß║ún trß╗ï to├án diß╗çn (Marketing, T├ái ch├¡nh, Nh├ón sß╗▒, Vß║¡n h├ánh)'
++            },
++            'MBA_AI': {
++                name: 'MBA in AI Thß╗Ñy S─⌐',
++                url: 'mbainai.html',
++                desc: 'Ch╞░╞íng tr├¼nh Thß║íc s─⌐ Quß║ún trß╗ï chuy├¬n ng├ánh AI d├ánh cho nh├á quß║ún l├╜ dß║½n dß║»t ß╗⌐ng dß╗Ñng AI v├á chuyß╗ân ─æß╗òi sß╗æ.',
++                highlight: 'l├ám chß╗º t╞░ duy quß║ún trß╗ï kß║┐t hß╗úp ß╗⌐ng dß╗Ñng c├íc c├┤ng cß╗Ñ AI hiß╗çn ─æß║íi (no-code)'
++            },
++            'MSC_AI': {
++                name: 'MSc AI Thß╗Ñy S─⌐',
++                url: 'mscai.html',
++                desc: 'Ch╞░╞íng tr├¼nh Thß║íc s─⌐ Khoa hß╗ìc vß╗ü Tr├¡ tuß╗ç Nh├ón tß║ío ß╗¿ng dß╗Ñng d├ánh cho nh├á quß║ún l├╜ v├á l├únh ─æß║ío doanh nghiß╗çp.',
++                highlight: 'hiß╗âu, ß╗⌐ng dß╗Ñng v├á quß║ún trß╗ï AI ß╗ƒ cß║Ñp ─æß╗Ö chiß║┐n l╞░ß╗úc'
++            },
++            'BBA': {
++                name: 'Top-up BBA Thß╗Ñy S─⌐ (12 th├íng)',
++                url: 'bba.html',
++                desc: 'Ch╞░╞íng tr├¼nh li├¬n th├┤ng Cß╗¡ nh├ón Quß║ún trß╗ï Kinh doanh d├ánh cho ng╞░ß╗¥i tß╗æt nghiß╗çp Cao ─æß║│ng, Trung cß║Ñp.',
++                highlight: 'tß╗æi ╞░u lß╗Ö tr├¼nh nhß║¡n bß║▒ng Cß╗¡ nh├ón Quß╗æc tß║┐ ch├¡nh quy tß╗½ Thß╗Ñy S─⌐ chß╗ë trong 12 th├íng'
++            },
++            'FULL_BBA': {
++                name: 'Cß╗¡ nh├ón BBA Thß╗Ñy S─⌐ (3 n─âm)',
++                url: 'fullbba.html',
++                desc: 'Ch╞░╞íng tr├¼nh ─Éß║íi hß╗ìc Quß║ún trß╗ï Kinh doanh ch├¡nh quy d├ánh cho hß╗ìc sinh tß╗æt nghiß╗çp THPT v├á ng╞░ß╗¥i ─æi l├ám.',
++                highlight: 't├¡ch l┼⌐y kiß║┐n thß╗⌐c kinh doanh quß╗æc tß║┐ b├ái bß║ún tß╗½ nß╗ün tß║úng v├á ph├ít triß╗ân sß╗▒ nghiß╗çp vß╗»ng chß║»c'
++            }
++        };
++
++        const QUIZ_QUESTIONS = [{"question": "Mß╗⌐c ─æß╗Ö quan t├óm cß╗ºa bß║ín ─æß╗æi vß╗¢i viß╗çc ß╗⌐ng dß╗Ñng AI trong quß║ún l├╜?", "options": [{"text": "T├┤i muß╗æn x├óy dß╗▒ng chiß║┐n l╞░ß╗úc ß╗⌐ng dß╗Ñng AI tß╗òng thß╗â cho doanh nghiß╗çp m├á kh├┤ng cß║ºn code.", "scores": {"MBA_AI": 3}}, {"text": "T├┤i muß╗æn hß╗ìc lß║¡p tr├¼nh AI v├á tß╗▒ ph├ít triß╗ân c├íc m├┤ h├¼nh hß╗ìc m├íy.", "scores": {"MSC_AI": 3}}, {"text": "T├┤i chß╗ë muß╗æn hß╗ìc kiß║┐n thß╗⌐c quß║ún trß╗ï kinh doanh chung (MBA truyß╗ün thß╗æng).", "scores": {"MBA": 3, "EMBA": 2}}, {"text": "T├┤i cß║ºn hß╗ìc tß╗½ c╞í bß║ún ─æß║┐n n├óng cao vß╗ü quß║ún trß╗ï kinh doanh ß╗ƒ bß║¡c ─Éß║íi hß╗ìc.", "scores": {"FULL_BBA": 3, "BBA": 2}}]}, {"question": "Vai tr├▓ l├╜ t╞░ß╗ƒng cß╗ºa bß║ín trong mß╗Öt dß╗▒ ├ín chuyß╗ân ─æß╗òi sß╗æ l├á g├¼?", "options": [{"text": "Ng╞░ß╗¥i ra quyß║┐t ─æß╗ïnh ─æß║ºu t╞░, ─æß╗ïnh h╞░ß╗¢ng chiß║┐n l╞░ß╗úc AI cho tß╗ò chß╗⌐c.", "scores": {"MBA_AI": 3, "EMBA": 2}}, {"text": "Kß╗╣ s╞░ tr╞░ß╗ƒng, ng╞░ß╗¥i thiß║┐t kß║┐ kiß║┐n tr├║c hß╗ç thß╗æng v├á lß║¡p tr├¼nh m├┤ h├¼nh AI.", "scores": {"MSC_AI": 3}}, {"text": "Tr╞░ß╗ƒng nh├│m vß║¡n h├ánh, ─æiß╗üu phß╗æi nh├ón sß╗▒ ├íp dß╗Ñng quy tr├¼nh mß╗¢i.", "scores": {"MBA": 3}}, {"text": "Th├ánh vi├¬n tham gia hß╗ìc tß║¡p, trau dß╗ôi kß╗╣ n─âng chuy├¬n m├┤n c╞í bß║ún.", "scores": {"FULL_BBA": 3, "BBA": 2}}]}, {"question": "Bß║ín muß╗æn l├ám chß╗º kß╗╣ n─âng AI n├áo nhß║Ñt?", "options": [{"text": "Prompt Engineering, x├óy dß╗▒ng AI Agent, tß╗▒ ─æß╗Öng h├│a quy tr├¼nh kinh doanh (no-code).", "scores": {"MBA_AI": 3}}, {"text": "Python, Machine Learning, Deep Learning v├á tß╗æi ╞░u thuß║¡t to├ín AI.", "scores": {"MSC_AI": 3}}, {"text": "─Éß╗ìc hiß╗âu b├ío c├ío t├ái ch├¡nh v├á ph├ón t├¡ch dß╗» liß╗çu thß╗ï tr╞░ß╗¥ng c╞í bß║ún.", "scores": {"MBA": 3, "EMBA": 2}}, {"text": "Ph╞░╞íng ph├íp luß║¡n nghi├¬n cß╗⌐u v├á quß║ún trß╗ï hß╗ìc ─æß║íi c╞░╞íng.", "scores": {"FULL_BBA": 3, "BBA": 2}}]}, {"question": "─Éß╗æi t╞░ß╗úng bß║ín muß╗æn kß║┐t nß╗æi nhiß╗üu nhß║Ñt trong lß╗¢p hß╗ìc l├á ai?", "options": [{"text": "C├íc nh├á quß║ún l├╜ ─æi ─æß║ºu vß╗ü xu h╞░ß╗¢ng c├┤ng nghß╗ç v├á ─æß╗òi mß╗¢i s├íng tß║ío.", "scores": {"MBA_AI": 3}}, {"text": "C├íc chuy├¬n gia c├┤ng nghß╗ç th├┤ng tin, kß╗╣ s╞░ dß╗» liß╗çu v├á lß║¡p tr├¼nh vi├¬n.", "scores": {"MSC_AI": 3}}, {"text": "C├íc nh├á quß║ún l├╜ cß║Ñp cao, gi├ím ─æß╗æc ─æiß╗üu h├ánh tß╗½ nhiß╗üu ng├ánh nghß╗ü kh├íc nhau.", "scores": {"EMBA": 3}}, {"text": "Bß║ín b├¿ ─æß╗ông trang lß╗⌐a ─æß╗â c├╣ng chia sß║╗ kinh nghiß╗çm hß╗ìc tß║¡p ─æß║ºu ─æß╗¥i.", "scores": {"FULL_BBA": 3, "BBA": 2}}]}, {"question": "Nß╗ün tß║úng hß╗ìc vß║Ñn v├á kinh nghiß╗çm thß╗▒c chiß║┐n cß╗ºa bß║ín?", "options": [{"text": "Tß╗æt nghiß╗çp ─Éß║íi hß╗ìc, ─æang l├ám quß║ún l├╜ muß╗æn n├óng tß║ºm t╞░ duy quß║ún trß╗ï AI.", "scores": {"MBA_AI": 3}}, {"text": "D├ón IT/Kß╗╣ thuß║¡t c├│ bß║▒ng ─Éß║íi hß╗ìc muß╗æn n├óng cao chuy├¬n m├┤n s├óu vß╗ü AI.", "scores": {"MSC_AI": 3}}, {"text": "─É├ú c├│ bß║▒ng ─Éß║íi hß╗ìc v├á c├│ 5+ n─âm kinh nghiß╗çm quß║ún l├╜ ─æiß╗üu h├ánh cß║Ñp cao.", "scores": {"EMBA": 3}}, {"text": "Tß╗æt nghiß╗çp Cao ─æß║│ng/Trung cß║Ñp hoß║╖c THPT.", "scores": {"BBA": 3, "FULL_BBA": 3}}]}];
++
+         const quizModal = (() => {
+             const overlay = document.getElementById('qz-overlay');
+             const progress = document.getElementById('qz-progress');
+             const progLbl = document.getElementById('qz-progress-label');
++            const qContainer = document.getElementById('qz-question-container');
+             const body = document.getElementById('qz-body');
+             const resultEl = document.getElementById('qz-result');
++            const closeBtn = document.getElementById('qz-close');
++            const restartBtn = document.getElementById('qz-result-restart');
++            const ctaBtn = document.getElementById('qz-result-cta');
+ 
+             const TOTAL = 5;
+             let current = 1;
+-            // answers[q] = type char ('A','B','C','D')
+             const answers = {};
+ 
+-            /* ΓöÇ helpers ΓöÇ */
+-            function showQ(n) {
+-                document.querySelectorAll('.qz-question-wrap').forEach(el => el.classList.remove('qz-active'));
+-                const q = document.getElementById('qz-q-' + n);
+-                if (q) q.classList.add('qz-active');
++            function renderQuestion(n) {
++                const qData = QUIZ_QUESTIONS[n - 1];
++                if (!qData) return;
++
++                let html = `
++                    <div class="qz-question-wrap qz-active">
++                        <div class="qz-q-number">C├óu \${n} / \${TOTAL}</div>
++                        <p class="qz-q-text">\${qData.question}</p>
++                        <div class="qz-answers">
++                `;
++
++                qData.options.forEach((opt, idx) => {
++                    const isSelected = answers[n] === idx;
++                    html += `
++                        <button class="qz-answer-btn \${isSelected ? 'qz-selected' : ''}" data-idx="\${idx}">
++                            <span class="qz-answer-icon">\${idx + 1}</span>
++                            \${opt.text}
++                        </button>
++                    `;
++                });
++
++                html += `
++                        </div>
++                    </div>
++                `;
++                qContainer.innerHTML = html;
++                
+                 progress.style.width = (n / TOTAL * 100) + '%';
+                 progLbl.textContent = n + ' / ' + TOTAL;
+             }
+ 
+             function classify() {
+-                let A = 0, B = 0, C = 0, D = 0;
+-                for (let i = 1; i <= TOTAL; i++) {
+-                    const t = answers[i];
+-                    if (t === 'A') A++;
+-                    else if (t === 'B') B++;
+-                    else if (t === 'C') C++;
+-                    else if (t === 'D') D++;
++                const scores = {
++                    'EMBA': 0,
++                    'MBA': 0,
++                    'MBA_AI': 0,
++                    'MSC_AI': 0,
++                    'BBA': 0,
++                    'FULL_BBA': 0
++                };
++
++                for (let q = 1; q <= TOTAL; q++) {
++                    const selectedIdx = answers[q];
++                    const qData = QUIZ_QUESTIONS[q - 1];
++                    if (qData && selectedIdx !== undefined) {
++                        const optionScores = qData.options[selectedIdx].scores;
++                        for (const profile in optionScores) {
++                            scores[profile] += optionScores[profile];
++                        }
++                    }
+                 }
+ 
+-                const strategic = A + C;
+-                const tech = B + D;
+-
+-                if (strategic >= 4) return 'strategic';
+-                else if (tech >= 4) return 'tech';
+-                else return 'hybrid';
+-            }
++                let bestProfile = CURRENT_PROGRAM;
++                let maxScore = -1;
+ 
+-            const RESULTS = {
+-                strategic: {
+-                    icon: '≡ƒÅå',
+-                    group: 'Nh├á Quß║ún Trß╗ï Chiß║┐n L╞░ß╗úc',
+-                    groupCls: 'qz-result-group--strategic',
+-                    iconCls: 'qz-result-icon--strategic',
+-                    title: 'Bß║ín l├á nh├á ─æiß╗üu h├ánh bß║ún l─⌐nh!',
+-                    msg: 'Bß║ín sß╗ƒ hß╗»u t╞░ duy cß╗ºa mß╗Öt nh├á ─æiß╗üu h├ánh bß║ún l─⌐nh, tß║¡p trung v├áo con ng╞░ß╗¥i v├á tß║ºm nh├¼n d├ái hß║ín. Ch╞░╞íng tr├¼nh EMBA sß║╜ ph├╣ hß╗úp h╞ín vß╗¢i ─æß╗ïnh h╞░ß╗¢ng cß╗ºa bß║ín.',
+-                    cta: 'Kh├ím ph├í ch╞░╞íng tr├¼nh EMBA ΓåÆ',
+-                    ctaCls: 'qz-result-cta--strategic',
+-                    action: () => { close(); window.location.href = 'emba.html'; }
+-                },
+-                tech: {
+-                    icon: '≡ƒÜÇ',
+-                    group: 'Nh├á L├únh ─Éß║ío C├┤ng Nghß╗ç',
+-                    groupCls: 'qz-result-group--tech',
+-                    iconCls: 'qz-result-icon--tech',
+-                    title: 'Bß║ín l├á ng╞░ß╗¥i ti├¬n phong c├┤ng nghß╗ç!',
+-                    msg: 'Bß║ín l├á ng╞░ß╗¥i ti├¬n phong, sß║╡n s├áng d├╣ng c├┤ng nghß╗ç v├á dß╗» liß╗çu ─æß╗â tß║ío ra ─æß╗Öt ph├í cho doanh nghiß╗çp. MBA in AI ch├¡nh l├á bß╗ç ph├│ng ho├án hß║úo cho h├ánh tr├¼nh cß╗ºa bß║ín.',
+-                    cta: '─É─âng k├╜ t╞░ vß║Ñn MBA in AI ngay ΓåÆ',
+-                    ctaCls: 'qz-result-cta--tech',
+-                    action: () => { close(); const ob = document.querySelector('.bk-open-btn'); if (ob) ob.click(); }
+-                },
+-                hybrid: {
+-                    icon: 'ΓÜí',
+-                    group: 'L├únh ─Éß║ío ─Éa N─âng (Hybrid)',
+-                    groupCls: 'qz-result-group--strategic',
+-                    iconCls: 'qz-result-icon--strategic',
+-                    title: 'Bß║ín l├á l├únh ─æß║ío ─æa n─âng hiß║┐m c├│!',
+-                    msg: 'Bß║ín c├│ sß╗▒ giao thoa hiß║┐m c├│ giß╗»a bß║ún l─⌐nh quß║ún trß╗ï v├á t╞░ duy c├┤ng nghß╗ç 4.0. Ch╞░╞íng tr├¼nh MBA sß║╜ ph├╣ hß╗úp nhß║Ñt vß╗¢i ─æß╗ïnh h╞░ß╗¢ng cß╗ºa bß║ín.',
+-                    cta: 'Kh├ím ph├í ch╞░╞íng tr├¼nh MBA ΓåÆ',
+-                    ctaCls: 'qz-result-cta--strategic',
+-                    action: () => { close(); window.location.href = 'index.html'; }
++                const profilesList = ['EMBA', 'MBA_AI', 'MBA', 'MSC_AI', 'BBA', 'FULL_BBA'];
++                const index = profilesList.indexOf(CURRENT_PROGRAM);
++                if (index > -1) {
++                    profilesList.splice(index, 1);
++                    profilesList.unshift(CURRENT_PROGRAM);
+                 }
+-            };
+ 
+-            // store current action for CTA click
+-            let currentAction = null;
++                profilesList.forEach(profile => {
++                    if (scores[profile] > maxScore) {
++                        maxScore = scores[profile];
++                        bestProfile = profile;
++                    }
++                });
++
++                return bestProfile;
++            }
+ 
+             function showResult() {
+                 const type = classify();
+-                const r = RESULTS[type];
+-
++                const matchedProg = PROGRAM_DETAILS[type];
++                
+                 body.style.display = 'none';
+                 document.querySelector('.qz-progress-wrap').style.display = 'none';
+ 
+-                const icon = document.getElementById('qz-result-icon');
+-                const grp = document.getElementById('qz-result-group');
+-                const title = document.getElementById('qz-result-title');
+-                const msg = document.getElementById('qz-result-msg');
+-                const cta = document.getElementById('qz-result-cta');
+-
+-                icon.textContent = r.icon;
+-                icon.className = 'qz-result-icon ' + r.iconCls;
+-                grp.textContent = r.group;
+-                grp.className = 'qz-result-group ' + r.groupCls;
+-                title.textContent = r.title;
+-                msg.textContent = r.msg;
+-                cta.textContent = r.cta;
+-                cta.className = 'qz-result-cta ' + r.ctaCls;
+-
+-                // store action for this result type
+-                currentAction = r.action;
++                const iconEl = document.getElementById('qz-result-icon');
++                const grpEl = document.getElementById('qz-result-group');
++                const titleEl = document.getElementById('qz-result-title');
++                const msgEl = document.getElementById('qz-result-msg');
++
++                if (type === CURRENT_PROGRAM) {
++                    iconEl.textContent = '≡ƒÄë';
++                    grpEl.textContent = 'Kß║┐t quß║ú: Rß║Ñt ph├╣ hß╗úp!';
++                    grpEl.className = 'qz-result-group qz-result-group--strategic';
++                    titleEl.textContent = `Bß║ín cß╗▒c kß╗│ ph├╣ hß╗úp vß╗¢i \${matchedProg.name}!`;
++                    msgEl.innerHTML = `Lß╗▒a chß╗ìn cß╗ºa bß║ín ho├án to├án tr├╣ng khß╗¢p vß╗¢i ch╞░╞íng tr├¼nh hiß╗çn tß║íi. Ch╞░╞íng tr├¼nh gi├║p bß║ín <strong>\${matchedProg.highlight}</strong>.`;
++                    ctaBtn.textContent = '─É─âng k├╜ t╞░ vß║Ñn ngay';
++                    ctaBtn.href = '#dang-ky';
++                    ctaBtn.onclick = function(e) {
++                        close();
++                        const bookingBtn = document.querySelector('.bk-open-btn');
++                        if (bookingBtn) {
++                            bookingBtn.click();
++                        } else {
++                            const formSection = document.getElementById('dang-ky');
++                            if (formSection) {
++                                formSection.scrollIntoView({ behavior: 'smooth' });
++                            }
++                        }
++                    };
++                } else {
++                    iconEl.textContent = '≡ƒÆí';
++                    grpEl.textContent = 'Gß╗úi ├╜ ch╞░╞íng tr├¼nh ph├╣ hß╗úp h╞ín';
++                    grpEl.className = 'qz-result-group';
++                    titleEl.textContent = `Bß║ín ph├╣ hß╗úp h╞ín vß╗¢i \${matchedProg.name}!`;
++                    msgEl.innerHTML = `C├óu trß║ú lß╗¥i cß╗ºa bß║ín phß║ún ├ính nhu cß║ºu tß║¡p trung v├áo <strong>\${matchedProg.highlight}</strong>. H├úy t├¼m hiß╗âu ch╞░╞íng tr├¼nh n├áy ─æß╗â ─æß║ít hiß╗çu quß║ú cao nhß║Ñt.`;
++                    ctaBtn.textContent = `Kh├ím ph├í ch╞░╞íng tr├¼nh \${type} ΓåÆ`;
++                    ctaBtn.href = matchedProg.url;
++                    ctaBtn.onclick = function(e) {
++                        close();
++                    };
++                }
+ 
+                 resultEl.classList.add('qz-active');
+             }
+ 
+-            /* ΓöÇ CTA click ΓöÇ */
+-            document.getElementById('qz-result-cta').addEventListener('click', function (e) {
+-                e.preventDefault();
+-                if (currentAction) currentAction();
+-            });
+-
+-            /* ΓöÇ event delegation for answer buttons - auto-advance ΓöÇ */
+-            document.getElementById('qz-body').addEventListener('click', function (e) {
++            qContainer.addEventListener('click', function (e) {
+                 const btn = e.target.closest('.qz-answer-btn');
+                 if (!btn) return;
+-                const q = parseInt(btn.dataset.q);
+-                const type = btn.dataset.type;
+ 
+-                // deselect siblings, mark selected
+-                document.querySelectorAll('.qz-answer-btn[data-q="' + q + '"]').forEach(b => b.classList.remove('qz-selected'));
++                const idx = parseInt(btn.dataset.idx);
++                answers[current] = idx;
++
++                qContainer.querySelectorAll('.qz-answer-btn').forEach(b => b.classList.remove('qz-selected'));
+                 btn.classList.add('qz-selected');
+-                answers[q] = type;
+ 
+-                // auto-advance after brief highlight
+-                setTimeout(function () {
+-                    if (q < TOTAL) {
+-                        current = q + 1;
+-                        showQ(current);
++                setTimeout(() => {
++                    if (current < TOTAL) {
++                        current++;
++                        renderQuestion(current);
+                     } else {
+                         showResult();
+                     }
+-                }, 350);
+-            });
+-
+-            /* ΓöÇ restart ΓöÇ */
+-            document.getElementById('qz-result-restart').addEventListener('click', function () {
+-                reset();
++                }, 250);
+             });
+ 
+-            /* ΓöÇ close ΓöÇ */
+-            document.getElementById('qz-close').addEventListener('click', close);
++            closeBtn.addEventListener('click', close);
+             overlay.addEventListener('click', function (e) {
+                 if (e.target === overlay) close();
+             });
+@@ -6986,15 +6969,15 @@
+                 if (e.key === 'Escape') close();
+             });
+ 
++            restartBtn.addEventListener('click', reset);
++
+             function reset() {
+                 current = 1;
+-                currentAction = null;
+                 for (let k in answers) delete answers[k];
+-                document.querySelectorAll('.qz-answer-btn').forEach(b => b.classList.remove('qz-selected'));
+                 body.style.display = '';
+                 document.querySelector('.qz-progress-wrap').style.display = '';
+                 resultEl.classList.remove('qz-active');
+-                showQ(1);
++                renderQuestion(1);
+             }
+ 
+             function open() {
+@@ -7011,7 +6994,6 @@
+             return { open, close };
+         })();
+     </script>
+-
+-</body>
++    </body>
+ 
+ </html>
+\ No newline at end of file
