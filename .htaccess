@@ -6,6 +6,8 @@ RewriteEngine On
 RewriteRule ^mba/?$ /wp-content/new_public/LANDINGPAGE_MBA/index.html [L]
 RewriteRule ^mscai/?$ /wp-content/new_public/LANDINGPAGE_MBA/mscai.html [L]
 RewriteRule ^emba/?$ /wp-content/new_public/LANDINGPAGE_MBA/emba.html [L]
+RewriteRule ^bba/?$ /wp-content/new_public/LANDINGPAGE_MBA/bba.html [L]
+RewriteRule ^dat-lich/?$ /wp-content/new_public/LANDINGPAGE_MBA/dat-lich.html [L]
 
 # Route riêng cho landing xét duyệt (giữ nguyên rule cũ)
 RewriteRule ^xet-duyet-ho-so-truc-tuyen/?$ /wp-content/index.html [L]

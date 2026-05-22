@@ -441,10 +441,28 @@
             if (msgVal) noteParts.push(msgVal);
             const combinedNote = noteParts.join(' | ');
 
+            // Tự động phân loại source và chuong_trinh theo pathname
+            let sourceVal = "Landing_MBA";
             let chuongTrinhVal = "Online MBA";
-            if (window.location.pathname.includes("mscai")) chuongTrinhVal = "Online MSc AI";
-            else if (window.location.pathname.includes("emba")) chuongTrinhVal = "Online EMBA";
+            const path = window.location.pathname.toLowerCase();
+            if (path.includes("mbainai")) {
+                sourceVal = "Landing_MBA_AI";
+                chuongTrinhVal = "Online MBA in AI";
+            } else if (path.includes("mscinai") || path.includes("mscai")) {
+                sourceVal = "Landing_MSc_AI";
+                chuongTrinhVal = "Online MSc AI";
+            } else if (path.includes("emba")) {
+                sourceVal = "Landing_EMBA";
+                chuongTrinhVal = "Online EMBA";
+            } else if (path.includes("fullbba")) {
+                sourceVal = "Landing_BBA_Full";
+                chuongTrinhVal = "Online Full BBA";
+            } else if (path.includes("bba")) {
+                sourceVal = "Landing_BBA_Topup";
+                chuongTrinhVal = "Online Top-up BBA";
+            }
 
+            // Payload cũ cho API automation.ideas.edu.vn
             const payload = {
                 form_id: "3ebd9ef0f28f4d1bd0a4d56b089e1c25",
                 email: emailVal,
@@ -456,13 +474,51 @@
                 chuong_trinh: chuongTrinhVal
             };
 
-            fetch("https://automation.ideas.edu.vn/mail_api/forms.php?route=submit", {
+            // Payload mới cho Webhook open.domation.net
+            const webhookPayload = {
+                name: nameVal,
+                phone: phoneVal,
+                email: emailVal,
+                source: sourceVal,
+                type: "form_dang_ky",
+                hoc_van: eduVal,
+                tieng_anh: engVal,
+                nhu_cau: msgVal || "Tư vấn gấp",
+                chuong_trinh: chuongTrinhVal
+            };
+
+            // Trích xuất các tham số UTM và đẩy vào webhookPayload
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmParams = ['utm_campaign', 'utm_source', 'utm_medium', 'utm_content', 'utm_term'];
+            utmParams.forEach(param => {
+                const val = urlParams.get(param);
+                if (val) {
+                    webhookPayload[param] = val;
+                }
+            });
+
+            // Gửi dữ liệu song song qua cả 2 cổng
+            const p1 = fetch("https://automation.ideas.edu.vn/mail_api/forms.php?route=submit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload)
-            })
-                .then(res => res.json())
-                .then(result => {
+            });
+
+            const p2 = fetch("https://open.domation.net/sale_data/webhook.php?token=tok_kjhbs32a", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(webhookPayload)
+            });
+
+            Promise.allSettled([p1, p2])
+                .then(results => {
+                    // Xem xét log kết quả gửi nếu có lỗi
+                    results.forEach((res, index) => {
+                        if (res.status === 'rejected') {
+                            console.error(`Lỗi gửi form cổng ${index + 1}:`, res.reason);
+                        }
+                    });
+
                     form.style.display = 'none';
                     if (formSuccess) formSuccess.style.display = 'block';
                     if (formId === 'cta-form') {
@@ -477,8 +533,7 @@
                     }
                 })
                 .catch(err => {
-                    console.error('Lỗi gửi form tư vấn:', err);
-                    // Still show success to user on network error (graceful)
+                    console.error('Lỗi tổng thể submit form:', err);
                     form.style.display = 'none';
                     if (formSuccess) formSuccess.style.display = 'block';
                 })
@@ -665,10 +720,7 @@
             title: "Accreditation Council for Business Schools and Programs (ACBSP)",
             desc: "Là một tổ chức kiểm định chất lượng các trường và các chương trình đào tạo trong lĩnh vực kinh doanh được Bộ Giáo dục Hoa Kỳ công nhận. ACBSP áp dụng các tiêu chuẩn nghiêm ngặt về chương trình giảng dạy, đội ngũ giảng viên, cơ sở vật chất, kết quả học tập và liên kết với doanh nghiệp. ACBSP cũng là thành viên của Hội đồng Kiểm định Giáo dục Đại học (CHEA) và tham gia vào mạng lưới kiểm định giáo dục kinh doanh quốc tế (IACBE)."
         },
-        "vnnaric": {
-            title: "VN – Naric Bộ GD&DT Việt Nam",
-            desc: "Trung tâm Công nhận Văn bằng (VN-NARIC) là đơn vị trực thuộc Bộ Giáo dục và Đào tạo Việt Nam, có chức năng công nhận văn bằng, chứng chỉ giáo dục do cơ sở giáo dục nước ngoài cấp cho công dân Việt Nam. <br><br> Swiss UMEF vinh hạnh là 1 trong 14 trường tư thục tại Thụy Sĩ nằm trong danh sách Swissuniversities theo VN Narics – Trung tâm công nhận văn bằng của Bộ GD&DT, tuy nhiên các trường nằm trên hệ thống giáo dục chỉ mang tính chất xác thực tính minh bạch của trường, không đồng nghĩa với việc văn bằng chương trình do trường đào tạo được Bộ giáo dục và đào tạo Việt Nam công nhận."
-        }
+
     };
 
     const accredModal = document.getElementById('accred-modal');
@@ -941,7 +993,93 @@
         });
     }
 
+    /* ─── Back to Top Button ─── */
+    function initBackToTop() {
+        // Inject styles dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            .back-to-top-btn {
+                position: fixed;
+                bottom: 28px;
+                left: 50%;
+                transform: translate(-50%, 20px);
+                background: #0f295a;
+                color: #ffffff;
+                border: none;
+                border-radius: 9999px;
+                padding: 10px 22px;
+                font-size: 0.9rem;
+                font-weight: 700;
+                cursor: pointer;
+                box-shadow: 0 4px 16px rgba(15, 41, 90, 0.3);
+                z-index: 9999;
+                opacity: 0;
+                pointer-events: none;
+                transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                white-space: nowrap;
+            }
+            .back-to-top-btn.visible {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translate(-50%, 0);
+            }
+            .back-to-top-btn.visible:hover {
+                background-color: #ab0e00;
+                transform: translate(-50%, -4px);
+                box-shadow: 0 8px 24px rgba(171, 14, 0, 0.4);
+            }
+            .back-to-top-btn.visible:active {
+                transform: translate(-50%, 1px);
+            }
+            @media (max-width: 768px) {
+                .back-to-top-btn {
+                    bottom: 84px;
+                    padding: 8px 18px;
+                    font-size: 0.85rem;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Create the button element
+        const btn = document.createElement('button');
+        btn.className = 'back-to-top-btn';
+        btn.setAttribute('aria-label', 'Lên đầu trang');
+        btn.innerHTML = `
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+            <span>Lên đầu trang</span>
+        `;
+        document.body.appendChild(btn);
+
+        // Scroll listener to check depth
+        function checkScroll() {
+            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (scrollableHeight <= 0) return;
+            
+            const scrollPercent = window.scrollY / scrollableHeight;
+            if (scrollPercent >= 0.3) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', checkScroll, { passive: true });
+        
+        // Scroll to top on click
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // Initialize everything
+    initBackToTop();
     initCustomSelects();
     initScrollDots();
     window.addEventListener('resize', initScrollDots);

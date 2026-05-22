@@ -375,10 +375,39 @@
         const noteParts = [programVal, eduVal, engVal].filter(Boolean);
         const noteDatLich = noteParts.join(' | ');
 
+        // Tự động phân loại source và chuong_trinh theo pathname
+        let sourceVal = "Landing_MBA";
         let chuongTrinhVal = "Online MBA";
-        if (window.location.pathname.includes("mscai")) chuongTrinhVal = "Online MSc AI";
-        else if (window.location.pathname.includes("emba")) chuongTrinhVal = "Online EMBA";
+        const path = window.location.pathname.toLowerCase();
+        if (path.includes("mbainai")) {
+            sourceVal = "Landing_MBA_AI";
+            chuongTrinhVal = "Online MBA in AI";
+        } else if (path.includes("mscinai") || path.includes("mscai")) {
+            sourceVal = "Landing_MSc_AI";
+            chuongTrinhVal = "Online MSc AI";
+        } else if (path.includes("emba")) {
+            sourceVal = "Landing_EMBA";
+            chuongTrinhVal = "Online EMBA";
+        } else if (path.includes("fullbba")) {
+            sourceVal = "Landing_BBA_Full";
+            chuongTrinhVal = "Online Full BBA";
+        } else if (path.includes("bba")) {
+            sourceVal = "Landing_BBA_Topup";
+            chuongTrinhVal = "Online Top-up BBA";
+        }
 
+        // Nếu có chương trình cụ thể được chọn trong radio thì dùng
+        if (programVal) {
+            if (programVal === "MScAI" || programVal.startsWith("MSc AI")) chuongTrinhVal = "Online MSc AI";
+            else if (programVal === "MBA in AI" || programVal.startsWith("MBA in AI")) chuongTrinhVal = "Online MBA in AI";
+            else if (programVal === "EMBA") chuongTrinhVal = "Online EMBA";
+            else if (programVal === "TOPUP BBA" || programVal === "Top-up BBA") chuongTrinhVal = "Online Top-up BBA";
+            else if (programVal === "Full BBA") chuongTrinhVal = "Online Full BBA";
+            else if (programVal === "MBA") chuongTrinhVal = "Online MBA";
+            else chuongTrinhVal = `Online ${programVal}`;
+        }
+
+        // Payload cũ cho API automation.ideas.edu.vn
         const payload = {
             form_id: "4fe1eeb0570742a1fdde61af6fc0680c",
             email: emailVal,
@@ -389,26 +418,80 @@
             chuong_trinh_dat_lich: chuongTrinhVal
         };
 
+        // Payload mới cho Webhook open.domation.net
+        const webhookPayload = {
+            name: nameVal,
+            phone: phoneVal,
+            email: emailVal,
+            source: sourceVal,
+            type: "dat_lich_tu_van",
+            hoc_van: eduVal,
+            tieng_anh: engVal,
+            time_dat_lich: timeDatLich,
+            chuong_trinh: chuongTrinhVal,
+            nhu_cau: `Đặt lịch tư vấn: ${timeDatLich}`
+        };
+
+        // Trích xuất các tham số UTM và đẩy vào webhookPayload
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmParams = ['utm_campaign', 'utm_source', 'utm_medium', 'utm_content', 'utm_term'];
+        utmParams.forEach(param => {
+            const val = urlParams.get(param);
+            if (val) {
+                webhookPayload[param] = val;
+            }
+        });
+
         // Loading state
         confirmB.disabled = true;
         const origText = confirmB.innerHTML;
         confirmB.innerHTML = '<span>Đang gửi...</span>';
         confirmB.style.opacity = '0.7';
 
+        const p1 = fetch("https://automation.ideas.edu.vn/mail_api/forms.php?route=submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        const p2 = fetch("https://open.domation.net/sale_data/webhook.php?token=tok_kjhbs32a", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(webhookPayload)
+        });
+
         try {
-            await fetch("https://automation.ideas.edu.vn/mail_api/forms.php?route=submit", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
+            const results = await Promise.allSettled([p1, p2]);
+            results.forEach((res, index) => {
+                if (res.status === 'rejected') {
+                    console.error(`Lỗi gửi đặt lịch cổng ${index + 1}:`, res.reason);
+                }
             });
         } catch (err) {
-            console.error('Lỗi gửi đặt lịch:', err);
-            // Continue to success even on network error
+            console.error('Lỗi tổng thể submit đặt lịch:', err);
         } finally {
             confirmB.disabled = false;
             confirmB.innerHTML = origText;
             confirmB.style.opacity = '1';
         }
+
+        // --- Event Tracking ---
+        // 1. MailFlow Pro Tracking
+        if (window._mf_config && window._mf_config.property_id) {
+            console.log('Tracking conversion event for MailFlow...');
+            // Most trackers allow custom event triggers
+            if (typeof window.tracker !== 'undefined' && window.tracker.track) {
+                window.tracker.track('consultation_booked', payload);
+            }
+        }
+
+        // 2. Custom Browser Event (for GTM/FB Pixel/Ads)
+        window.dispatchEvent(new CustomEvent('booking_success', { 
+            detail: { ...payload, dateStr, timeStr } 
+        }));
+        
+        console.log('Event Sent: booking_success');
+        // -----------------------
 
         // Fill success screen
         const successName = document.getElementById('bk-success-name');
@@ -590,5 +673,9 @@
 
     /* ── Init ───────────────────────────── */
     goToStep(1);
-
+    // Initialize components if they are visible (standalone page use case)
+    if (modal) {
+        initCustomSelects();
+        initCalendar();
+    }
 })();

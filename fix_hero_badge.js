@@ -35,7 +35,6 @@ html = html.replace(
                             <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef4.png" alt="IACBE" class="accred-trigger" data-accred="iacbe" height="40" loading="lazy" />
                             <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png" alt="CHEA" class="accred-trigger" data-accred="chea" height="40" loading="lazy" />
                             <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png" alt="ACBSP" class="accred-trigger" data-accred="acbsp" height="40" loading="lazy" />
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg" alt="VN-Naric" class="accred-trigger" data-accred="vnnaric" height="40" loading="lazy" />
                         </div>
                     </div>
 

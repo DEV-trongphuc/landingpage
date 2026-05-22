@@ -1,0 +1,24 @@
+Matches in bba.html: 4
+Match 0: <ul class="curri-subjects">
+                            <li><span class="curri-dot"></span>Introduction to Management (Nhập môn Quản trị)</li>
+                            <li><span class="curri-dot"></span>Organisational Behaviour (Hành vi tổ chức)</li>
+                            <li><span class="curri-dot"></span>Introduction to Finance (Nhập môn Tài chính)</li>
+                        </ul>
+Match 1: <ul class="curri-subjects">
+                            <li><span class="curri-dot"></span>Global Marketing (Marketing toàn cầu)</li>
+                            <li><span class="curri-dot"></span>AI in Business (Trí tuệ nhân tạo trong kinh doanh)</li>
+                            <li><span class="curri-dot"></span>Management Information Systems (Hệ thống thông tin quản
+                                lý)</li>
+                        </ul>
+Match 2: <ul class="curri-subjects">
+                            <li><span class="curri-dot"></span>Project Management (Quản lý dự án)</li>
+                            <li><span class="curri-dot"></span>Total Quality Management (Quản lý chất lượng toàn diện)
+                            </li>
+                        </ul>
+Match 3: <ul class="curri-subjects">
+                            <li><span class="curri-dot"></span>Innovation &amp; Design Thinking (Đổi mới &amp; Tư duy
+                                thiết kế)</li>
+                            <li><span class="curri-dot"></span>Change Management (Quản trị sự thay đổi)</li>
+                            <li><span class="curri-dot"></span><strong>Capstone Project</strong> - Dự án tổng hợp cuối
+                                khoá</li>
+                        </ul>
