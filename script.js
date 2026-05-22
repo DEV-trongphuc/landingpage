@@ -1003,7 +1003,7 @@
                 bottom: 28px;
                 left: 50%;
                 transform: translate(-50%, 20px);
-                background: #0f295a;
+                background: #ab0e00;
                 color: #ffffff;
                 border: none;
                 border-radius: 9999px;
@@ -1011,7 +1011,7 @@
                 font-size: 0.9rem;
                 font-weight: 700;
                 cursor: pointer;
-                box-shadow: 0 4px 16px rgba(15, 41, 90, 0.3);
+                box-shadow: 0 4px 16px rgba(171, 14, 0, 0.3);
                 z-index: 9999;
                 opacity: 0;
                 pointer-events: none;
@@ -1028,7 +1028,7 @@
                 transform: translate(-50%, 0);
             }
             .back-to-top-btn.visible:hover {
-                background-color: #ab0e00;
+                background-color: #900c00;
                 transform: translate(-50%, -4px);
                 box-shadow: 0 8px 24px rgba(171, 14, 0, 0.4);
             }
