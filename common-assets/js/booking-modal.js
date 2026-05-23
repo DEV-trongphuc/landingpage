@@ -156,9 +156,12 @@
         setTimeout(() => { modal.style.display = 'none'; }, 350);
     }
 
-    // Handle multiple open buttons (header icon and FAB)
-    const openButtons = document.querySelectorAll('.bk-open-btn');
-    openButtons.forEach(btn => btn.addEventListener('click', openModal));
+    // Handle multiple open buttons (header icon and FAB, support dynamic buttons)
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.bk-open-btn')) {
+            openModal();
+        }
+    });
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (overlay) overlay.addEventListener('click', closeModal);
 

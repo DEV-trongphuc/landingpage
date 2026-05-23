@@ -64,7 +64,7 @@
     "offers": {
       "@type": "Offer",
       "category": "MBA",
-      "url": "https://ideas.edu.vn/mba-swiss-umef/"
+      "url": "https://ideas.edu.vn/mba"
     }
   }
   </script>
@@ -77,8 +77,8 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css?v=1.2" />
-    <link rel="stylesheet" href="booking-modal.css?v=1.1" />
+    <link rel="stylesheet" href="common-assets/css/style.css?v=1.2" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1.1" />
     <style>
         /* ═══════════════════════════════════════
            PROOF CARD - Premium 2-col design
@@ -1249,8 +1249,8 @@
             align-items: center;
             gap: 5px;
             padding: 6px 12px;
-            background: rgba(17, 23, 41, 0.85);
-            backdrop-filter: blur(10px);
+            background: #111729;
+            
             border-radius: 99px;
             font-size: 0.73rem;
             font-weight: 700;
@@ -1411,9 +1411,7 @@
             align-items: center;
             gap: 5px;
             padding: 4px 12px;
-            background: rgba(255, 255, 255, 0.18);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.15);
             border-radius: 99px;
             font-size: 0.72rem;
             font-weight: 800;
@@ -1503,9 +1501,7 @@
             text-align: center;
             padding: 13px 20px;
             border-radius: 12px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(4px);
-            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            background: #ffffff; border: 1.5px solid rgba(15, 23, 42, 0.25);
             color: #fff;
             font-weight: 800;
             font-size: 0.9rem;
@@ -1656,13 +1652,10 @@
         .sacom-pill {
             display: inline-block;
             padding: 4px 12px;
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 99px;
+            background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 99px;
             font-size: 0.75rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(4px);
         }
 
         @media (max-width: 640px) {
@@ -5249,8 +5242,8 @@
         </div>
     </div>
 
-    <script src="script.js?v=1.2"></script>
-    <script src="booking-modal.js?v=1.1"></script>
+    <script src="common-assets/js/script.js?v=1.2"></script>
+    <script src="common-assets/js/booking-modal.js?v=1.1"></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
@@ -5265,9 +5258,7 @@
             align-items: center;
             justify-content: center;
             padding: 16px;
-            background: rgba(5, 11, 20, 0.82);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: rgba(5, 11, 20, 0.95);
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.32s ease;
@@ -5716,119 +5707,95 @@
 
         const QUIZ_QUESTIONS = [
             {
-                "question": "Mục tiêu thăng tiến lớn nhất của bạn trong 2 năm tới?",
+                "question": "Trình độ học vấn cao nhất hiện tại của bạn là gì?",
                 "options": [
                     {
-                        "text": "Trở thành nhà điều hành cấp cao (CEO/C-level) hoặc chủ doanh nghiệp lớn.",
-                        "scores": {"EMBA": 3, "DUAL_DBA": 1}
+                        "text": "Đã tốt nghiệp Đại học chính quy chuyên ngành bất kỳ.",
+                        "scores": {"MBA": 5, "EMBA": 3, "MBA_AI": 3, "MSC_AI": 2}
                     },
                     {
-                        "text": "Nâng tầm học thuật, thực hiện các nghiên cứu lớn và sở hữu học hàm Tiến sĩ.",
+                        "text": "Đã tốt nghiệp Cao đẳng, Trung cấp muốn học liên thông nhanh.",
+                        "scores": {"BBA": 5}
+                    },
+                    {
+                        "text": "Tốt nghiệp THPT hoặc chưa hoàn thành Đại học.",
+                        "scores": {"FULL_BBA": 5}
+                    },
+                    {
+                        "text": "Đã có bằng Thạc sĩ và mong muốn nâng tầm học vị lên Tiến sĩ.",
                         "scores": {"DUAL_DBA": 5}
-                    },
-                    {
-                        "text": "Trở thành Quản lý dự án, Trưởng bộ phận hoặc Giám đốc chức năng.",
-                        "scores": {"MBA": 3}
-                    },
-                    {
-                        "text": "Trở thành chuyên gia dẫn dắt các dự án ứng dụng AI/Chuyển đổi số.",
-                        "scores": {"MBA_AI": 3, "MSC_AI": 2}
-                    },
-                    {
-                        "text": "Hoàn thành tấm bằng Cử nhân Quốc tế để mở rộng cơ hội thăng tiến.",
-                        "scores": {"BBA": 3, "FULL_BBA": 3}
                     }
                 ]
             },
             {
-                "question": "Quỹ thời gian bạn có thể dành cho việc học mỗi tuần?",
+                "question": "Vị trí công tác hiện tại và kinh nghiệm quản lý của bạn?",
                 "options": [
                     {
-                        "text": "Rất hạn hẹp, cần lịch học tối ưu hoàn toàn cho lãnh đạo bận rộn.",
-                        "scores": {"EMBA": 3, "DUAL_DBA": 2}
+                        "text": "Quản lý cấp trung, Trưởng nhóm/Trưởng bộ phận hoặc chuyên viên mong muốn thăng tiến.",
+                        "scores": {"MBA": 5, "MBA_AI": 3, "MSC_AI": 2}
                     },
                     {
-                        "text": "Khoảng 8-10 tiếng, muốn học trực tuyến linh hoạt kết hợp hỗ trợ tiếng Việt.",
-                        "scores": {"MBA": 3, "MBA_AI": 2}
+                        "text": "Giám đốc điều hành, C-level hoặc Chủ doanh nghiệp lớn lâu năm.",
+                        "scores": {"EMBA": 5, "DUAL_DBA": 3}
                     },
                     {
-                        "text": "Tập trung học sâu về các công nghệ AI và mô hình kinh doanh số.",
-                        "scores": {"MBA_AI": 3, "MSC_AI": 2}
-                    },
-                    {
-                        "text": "Muốn học có lộ trình bài bản, từng bước tích lũy kiến thức từ cơ bản.",
-                        "scores": {"FULL_BBA": 3, "BBA": 2}
+                        "text": "Nhân viên văn phòng, chưa có nhiều kinh nghiệm quản lý.",
+                        "scores": {"MBA": 3, "FULL_BBA": 2, "BBA": 2}
                     }
                 ]
             },
             {
-                "question": "Bạn muốn tích lũy kiến thức quản trị theo hướng nào?",
+                "question": "Mục tiêu lớn nhất của bạn khi tham gia chương trình Thạc sĩ quản trị?",
                 "options": [
                     {
-                        "text": "Quản trị vĩ mô, chiến lược ngoại giao toàn cầu và kết nối elite network.",
-                        "scores": {"EMBA": 3, "DUAL_DBA": 1}
+                        "text": "Nâng cao năng lực quản trị toàn diện và bài bản (tài chính, marketing, vận hành, nhân sự).",
+                        "scores": {"MBA": 5}
                     },
                     {
-                        "text": "Nghiên cứu học thuật chuyên sâu và kiến tạo các tri thức quản trị mới ở cấp độ Tiến sĩ.",
+                        "text": "Hoạch định chiến lược vĩ mô, quản trị sự thay đổi và kết nối mạng lưới lãnh đạo cấp cao.",
+                        "scores": {"EMBA": 5}
+                    },
+                    {
+                        "text": "Dẫn dắt chuyển đổi số và ứng dụng AI no-code để tối ưu hóa hiệu suất doanh nghiệp.",
+                        "scores": {"MBA_AI": 5}
+                    },
+                    {
+                        "text": "Nghiên cứu học thuật chuyên sâu và tạo lập tri thức mới giải quyết các vấn đề thực tiễn lớn.",
                         "scores": {"DUAL_DBA": 5}
-                    },
-                    {
-                        "text": "Kiến thức cốt lõi về Marketing, Tài chính, Nhân sự và Vận hành.",
-                        "scores": {"MBA": 3}
-                    },
-                    {
-                        "text": "Quản trị tích hợp AI, tối ưu hóa hiệu suất bằng công nghệ tự động hóa.",
-                        "scores": {"MBA_AI": 3}
-                    },
-                    {
-                        "text": "Kiến thức cơ bản về Quản trị Kinh doanh cấp độ đại học cử nhân.",
-                        "scores": {"FULL_BBA": 3, "BBA": 3}
                     }
                 ]
             },
             {
-                "question": "Yêu cầu của bạn về mặt kỹ thuật/công nghệ trong chương trình học?",
+                "question": "Bạn kỳ vọng mức độ tích hợp công nghệ và Trí tuệ nhân tạo (AI) trong khóa học thế nào?",
                 "options": [
                     {
-                        "text": "Không cần lập trình, chỉ cần hiểu tư duy quản lý công nghệ vĩ mô.",
-                        "scores": {"EMBA": 2, "MBA": 3, "DUAL_DBA": 3}
+                        "text": "Tập trung quản trị kinh doanh cốt lõi, không cần tích hợp sâu công nghệ.",
+                        "scores": {"MBA": 5, "EMBA": 4, "BBA": 4, "FULL_BBA": 4, "DUAL_DBA": 3}
                     },
                     {
-                        "text": "Muốn ứng dụng thực tế các công cụ AI (Prompt Engineering, automation) vào quản lý.",
-                        "scores": {"MBA_AI": 3}
+                        "text": "Muốn ứng dụng AI no-code thực tế (Prompt Engineering, automation) vào công việc quản lý hàng ngày.",
+                        "scores": {"MBA_AI": 5}
                     },
                     {
-                        "text": "Muốn học sâu về lập trình AI, phân tích dữ liệu và machine learning.",
-                        "scores": {"MSC_AI": 3}
-                    },
-                    {
-                        "text": "Học các kỹ năng số cơ bản và tin học văn phòng ứng dụng.",
-                        "scores": {"FULL_BBA": 3, "BBA": 2}
+                        "text": "Muốn học sâu kỹ thuật lập trình AI, phân tích dữ liệu và thuật toán máy học.",
+                        "scores": {"MSC_AI": 5}
                     }
                 ]
             },
             {
-                "question": "Điều kiện bằng cấp đầu vào hiện tại của bạn là gì?",
+                "question": "Quỹ thời gian và hình thức học tập bạn mong muốn nhất?",
                 "options": [
                     {
-                        "text": "Có bằng Đại học chính quy và nhiều năm kinh nghiệm quản lý cấp cao.",
-                        "scores": {"EMBA": 3, "MBA": 2}
+                        "text": "Học trực tuyến linh hoạt, lịch học tự chọn để tối ưu thời gian vừa học vừa làm.",
+                        "scores": {"MBA": 5, "MBA_AI": 4}
                     },
                     {
-                        "text": "Đã tốt nghiệp Thạc sĩ và mong muốn nâng tầm học hàm.",
+                        "text": "Lịch học linh hoạt được thiết kế riêng tối ưu tối đa cho lãnh đạo bận rộn.",
+                        "scores": {"EMBA": 5}
+                    },
+                    {
+                        "text": "Tham gia nghiên cứu học thuật cao cấp dưới sự hướng dẫn 1-1 của Giáo sư.",
                         "scores": {"DUAL_DBA": 5}
-                    },
-                    {
-                        "text": "Có bằng Đại học và đang làm quản lý cấp trung hoặc mong muốn làm quản lý.",
-                        "scores": {"MBA": 3, "MBA_AI": 2, "MSC_AI": 2}
-                    },
-                    {
-                        "text": "Tốt nghiệp Cao đẳng, Trung cấp muốn học liên thông thẳng lên Đại học.",
-                        "scores": {"BBA": 3}
-                    },
-                    {
-                        "text": "Tốt nghiệp THPT hoặc chưa có bằng Đại học/Cao đẳng.",
-                        "scores": {"FULL_BBA": 3}
                     }
                 ]
             }

@@ -36,8 +36,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css?v=1.2" />
-    <link rel="stylesheet" href="booking-modal.css?v=1.1" />
+    <link rel="stylesheet" href="common-assets/css/style.css?v=1.2" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1.1" />
     
     <!-- MailFlow Pro Tracker & AI Chat -->
     <script>
@@ -47,6 +47,36 @@
         };
     </script>
     <script src="https://automation.ideas.edu.vn/tracker.js" defer></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Song bằng Tiến sĩ Quản trị Kinh doanh (Dual DBA) – ÉSTIAM Pháp & RB College Anh",
+    "description": "Chương trình Tiến sĩ song bằng (Dual DBA) trực tuyến kết hợp Seminars tại Paris, dành cho các nhà nghiên cứu, lãnh đạo và chuyên gia cấp cao.",
+    "provider": [
+      {
+        "@type": "Organization",
+        "name": "ÉSTIAM – IDEAS",
+        "sameAs": "https://ideas.edu.vn"
+      },
+      {
+        "@type": "Organization",
+        "name": "RB College – IDEAS",
+        "sameAs": "https://ideas.edu.vn"
+      }
+    ],
+    "educationalLevel": "Doctorate",
+    "courseMode": "online",
+    "inLanguage": "vi",
+    "offers": {
+      "@type": "Offer",
+      "category": "DBA",
+      "url": "https://ideas.edu.vn/dual-dba"
+    }
+  }
+  </script>
 
     <style>
         /* Prevents Flash of Unstyled Dropdown (FOUC) */
@@ -618,8 +648,8 @@
         </div>
     </footer>
 
-    <script src="script.js?v=1.2"></script>
-    <script src="booking-modal.js?v=1.1"></script>
+    <script src="common-assets/js/script.js?v=1.2"></script>
+    <script src="common-assets/js/booking-modal.js?v=1.1"></script>
 
     <!-- Quiz Modal Orientation -->
     <style>
@@ -631,9 +661,7 @@
             align-items: center;
             justify-content: center;
             padding: 16px;
-            background: rgba(5, 11, 20, 0.82);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: rgba(5, 11, 20, 0.95);
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.32s ease;
@@ -1077,119 +1105,87 @@
 
         const QUIZ_QUESTIONS = [
             {
-                "question": "Mục tiêu thăng tiến lớn nhất của bạn trong 2 năm tới?",
+                "question": "Học vị cao nhất mà bạn đang hướng tới trong lộ trình học tập của mình là gì?",
                 "options": [
                     {
-                        "text": "Trở thành nhà điều hành cấp cao (CEO/C-level) hoặc chủ doanh nghiệp lớn.",
-                        "scores": {"EMBA": 3, "DUAL_DBA": 1}
-                    },
-                    {
-                        "text": "Nâng tầm học thuật, thực hiện các nghiên cứu lớn và sở hữu học hàm Tiến sĩ.",
+                        "text": "Học vị Tiến sĩ (Doctorate/DBA) - Học vị cao quý nhất trong quản trị kinh doanh.",
                         "scores": {"DUAL_DBA": 5}
                     },
                     {
-                        "text": "Trở thành Quản lý dự án, Trưởng bộ phận hoặc Giám đốc chức năng.",
-                        "scores": {"MBA": 3}
+                        "text": "Học vị Thạc sĩ (Master/MBA/MSc) - Nâng cao kỹ năng điều hành và quản trị thực tiễn.",
+                        "scores": {"EMBA": 4, "MBA": 4, "MBA_AI": 3, "MSC_AI": 3}
                     },
                     {
-                        "text": "Trở thành chuyên gia dẫn dắt các dự án ứng dụng AI/Chuyển đổi số.",
-                        "scores": {"MBA_AI": 3, "MSC_AI": 2}
-                    },
-                    {
-                        "text": "Hoàn thành tấm bằng Cử nhân Quốc tế để mở rộng cơ hội thăng tiến.",
-                        "scores": {"BBA": 3, "FULL_BBA": 3}
+                        "text": "Học vị Cử nhân (Bachelor/BBA) - Hoàn thiện bằng đại học.",
+                        "scores": {"BBA": 5, "FULL_BBA": 4}
                     }
                 ]
             },
             {
-                "question": "Quỹ thời gian bạn có thể dành cho việc học mỗi tuần?",
+                "question": "Yêu cầu bằng cấp đầu vào hiện tại của bạn có đáp ứng điều kiện học Tiến sĩ?",
                 "options": [
                     {
-                        "text": "Rất hạn hẹp, cần lịch học tối ưu hoàn toàn cho lãnh đạo bận rộn.",
-                        "scores": {"EMBA": 3, "DUAL_DBA": 2}
-                    },
-                    {
-                        "text": "Khoảng 8-10 tiếng, muốn học trực tuyến linh hoạt kết hợp hỗ trợ tiếng Việt.",
-                        "scores": {"MBA": 3, "MBA_AI": 2}
-                    },
-                    {
-                        "text": "Tập trung học sâu về các công nghệ AI và mô hình kinh doanh số.",
-                        "scores": {"MBA_AI": 3, "MSC_AI": 2}
-                    },
-                    {
-                        "text": "Muốn học có lộ trình bài bản, từng bước tích lũy kiến thức từ cơ bản.",
-                        "scores": {"FULL_BBA": 3, "BBA": 2}
-                    }
-                ]
-            },
-            {
-                "question": "Bạn muốn tích lũy kiến thức quản trị theo hướng nào?",
-                "options": [
-                    {
-                        "text": "Quản trị vĩ mô, chiến lược ngoại giao toàn cầu và kết nối elite network.",
-                        "scores": {"EMBA": 3, "DUAL_DBA": 1}
-                    },
-                    {
-                        "text": "Nghiên cứu học thuật chuyên sâu và kiến tạo các tri thức quản trị mới ở cấp độ Tiến sĩ.",
+                        "text": "Đã tốt nghiệp Thạc sĩ (hoặc tương đương) chuyên ngành bất kỳ.",
                         "scores": {"DUAL_DBA": 5}
                     },
                     {
-                        "text": "Kiến thức cốt lõi về Marketing, Tài chính, Nhân sự và Vận hành.",
-                        "scores": {"MBA": 3}
+                        "text": "Đã tốt nghiệp Đại học chính quy và có nhiều năm kinh nghiệm quản lý cấp cao.",
+                        "scores": {"EMBA": 4, "MBA": 4, "MBA_AI": 3, "DUAL_DBA": 2}
                     },
                     {
-                        "text": "Quản trị tích hợp AI, tối ưu hóa hiệu suất bằng công nghệ tự động hóa.",
-                        "scores": {"MBA_AI": 3}
-                    },
-                    {
-                        "text": "Kiến thức cơ bản về Quản trị Kinh doanh cấp độ đại học cử nhân.",
-                        "scores": {"FULL_BBA": 3, "BBA": 3}
+                        "text": "Tốt nghiệp Cao đẳng, Trung cấp hoặc THPT.",
+                        "scores": {"BBA": 5, "FULL_BBA": 5}
                     }
                 ]
             },
             {
-                "question": "Yêu cầu của bạn về mặt kỹ thuật/công nghệ trong chương trình học?",
+                "question": "Đầu ra và mục tiêu nghiên cứu lớn nhất của bạn là gì?",
                 "options": [
                     {
-                        "text": "Không cần lập trình, chỉ cần hiểu tư duy quản lý công nghệ vĩ mô.",
-                        "scores": {"EMBA": 2, "MBA": 3, "DUAL_DBA": 3}
-                    },
-                    {
-                        "text": "Muốn ứng dụng thực tế các công cụ AI (Prompt Engineering, automation) vào quản lý.",
-                        "scores": {"MBA_AI": 3}
-                    },
-                    {
-                        "text": "Muốn học sâu về lập trình AI, phân tích dữ liệu và machine learning.",
-                        "scores": {"MSC_AI": 3}
-                    },
-                    {
-                        "text": "Học các kỹ năng số cơ bản và tin học văn phòng ứng dụng.",
-                        "scores": {"FULL_BBA": 3, "BBA": 2}
-                    }
-                ]
-            },
-            {
-                "question": "Điều kiện bằng cấp đầu vào hiện tại của bạn là gì?",
-                "options": [
-                    {
-                        "text": "Có bằng Đại học chính quy và nhiều năm kinh nghiệm quản lý cấp cao.",
-                        "scores": {"EMBA": 3, "MBA": 2}
-                    },
-                    {
-                        "text": "Đã tốt nghiệp Thạc sĩ và mong muốn nâng tầm học hàm.",
+                        "text": "Thực hiện một luận án Tiến sĩ giải quyết vấn đề thực tiễn của doanh nghiệp và tham gia giảng dạy cao cấp.",
                         "scores": {"DUAL_DBA": 5}
                     },
                     {
-                        "text": "Có bằng Đại học và đang làm quản lý cấp trung hoặc mong muốn làm quản lý.",
-                        "scores": {"MBA": 3, "MBA_AI": 2, "MSC_AI": 2}
+                        "text": "Nâng cao năng lực điều hành thực chiến và kỹ năng hoạch định chiến lược kinh doanh.",
+                        "scores": {"EMBA": 5, "MBA": 4}
                     },
                     {
-                        "text": "Tốt nghiệp Cao đẳng, Trung cấp muốn học liên thông thẳng lên Đại học.",
-                        "scores": {"BBA": 3}
+                        "text": "Ứng dụng các giải pháp tự động hóa AI và chuyển đổi số vào doanh nghiệp.",
+                        "scores": {"MBA_AI": 5, "MSC_AI": 4}
+                    }
+                ]
+            },
+            {
+                "question": "Kinh nghiệm quản lý thực tế của bạn là bao nhiêu?",
+                "options": [
+                    {
+                        "text": "Trên 5-10 năm ở vị trí quản lý cấp cao, doanh chủ hoặc nhà tư vấn quản trị.",
+                        "scores": {"DUAL_DBA": 5, "EMBA": 4}
                     },
                     {
-                        "text": "Tốt nghiệp THPT hoặc chưa có bằng Đại học/Cao đẳng.",
-                        "scores": {"FULL_BBA": 3}
+                        "text": "Từ 2 đến 5 năm làm quản lý cấp trung hoặc giám sát dự án.",
+                        "scores": {"MBA": 5, "MBA_AI": 4, "MSC_AI": 3}
+                    },
+                    {
+                        "text": "Chưa có kinh nghiệm quản lý chuyên nghiệp.",
+                        "scores": {"FULL_BBA": 5, "BBA": 4}
+                    }
+                ]
+            },
+            {
+                "question": "Bạn mong muốn hình thức tương tác học tập như thế nào?",
+                "options": [
+                    {
+                        "text": "Được hướng dẫn 1-1 bởi Giáo sư hướng dẫn để phát triển đề tài luận án độc lập.",
+                        "scores": {"DUAL_DBA": 5}
+                    },
+                    {
+                        "text": "Học theo lớp chuyên đề trực tuyến thảo luận nhóm (case studies) định kỳ.",
+                        "scores": {"EMBA": 5, "MBA": 4, "MBA_AI": 4}
+                    },
+                    {
+                        "text": "Thực hành trực tiếp các dự án công nghệ, xử lý dữ liệu và AI.",
+                        "scores": {"MSC_AI": 5}
                     }
                 ]
             }

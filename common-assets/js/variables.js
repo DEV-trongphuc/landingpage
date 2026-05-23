@@ -13,300 +13,109 @@ const IDEAS_DATA = {
     linkedin_link: "https://www.linkedin.com/company/ideasinstitute/",
     tiktok_link: "https://www.tiktok.com/@ideas_institute",
     programmes: {
-        IDEAS01: {
+                IDEAS01: {
             benefits: [
-                "Chương trình học tập ưu việt, online linh hoạt cho người bận rộn, kiến thức có giá trị thực tiễn.",
-                "Viện IDEAS hỗ trợ: hệ thống IDEAS – LMS & lớp chuyên đề bổ trợ vào các ngày Chủ nhật, có hướng dẫn bài tập và đánh giá sơ bộ bài Final exam.",
-                "Chuyến đi dự lễ tốt nghiệp và nhận bằng tại trụ ở chính của trường – Paris Pháp, kết hợp cùng với chuyến tham quan các thành phố thủ đô lớn ở Châu Âu: Thụy Sĩ – Pháp – Bỉ – Hà Lan (các nước trong cùng 1 chuyến đi).",
-                "Chính sách hỗ trợ học phí linh hoạt cùng với các học bổng của trường Ascencia và quỹ học bổng từ Viện IDEAS.",
+                "Chương trình học tập Cử nhân chính quy 3 năm (180 ECTS) chất lượng cao từ Thụy Sĩ.",
+                "Học trực tuyến 100% linh hoạt trên platform hiện đại, phù hợp cho người đi làm và học sinh tốt nghiệp THPT.",
+                "Viện IDEAS hỗ trợ: hệ thống IDEAS - LMS, trợ lý AI học tập, các lớp chuyên đề bổ trợ cuối tuần.",
+                "Lễ tốt nghiệp trang trọng tại Geneva, Thụy Sĩ và cơ hội tham quan các nước châu Âu."
             ],
-            program_name_degree: "Global MBA",
+            program_name_degree: "Bachelor of Business Administration",
             program_benefits_degree: [
-                "Tấm bằng MBA danh giá được trao từ một trường kinh doanh lớn, danh tiếng và campus trãi dài rộng khắp thế giới.",
-                "Là cựu học viên của trường Ascencia Business School đánh dấu cột mốc quan trọng trên con đường phát triển.",
-                "Chính thức trở thành chuyên gia – phát triển các kỹ năng lãnh đạo cần thiết để thúc đẩy sự thay đổi tích cực trong lĩnh vực của bạn.",
+                "Tấm bằng Cử nhân chính quy chuẩn châu Âu được cấp bởi trường Đại học Swiss UMEF danh giá tại Thụy Sĩ.",
+                "Nền tảng kiến thức quản trị kinh doanh toàn diện và khả năng hội nhập quốc tế.",
+                "Cơ hội liên thông trực tiếp lên các chương trình Thạc sĩ (MBA, MSc AI) chuẩn quốc tế."
             ],
-            link_iframe:
-                "https://www.youtube.com/embed/Dc78ClToNRo?si=AO4hu9oSz7OoGbxd",
+            link_iframe: "https://www.youtube.com/embed/ZrLeuFGGXQI?si=0tiJvbnRDzwEyo3B",
             listImgs: [
-                "https://ideas.edu.vn/wp-content/uploads/2025/07/ltn7_2025-12.webp",
-                "https://ideas.edu.vn/wp-content/uploads/2025/07/126.webp",
-                "https://ideas.edu.vn/wp-content/uploads/2025/07/128.webp",
-                "https://ideas.edu.vn/wp-content/uploads/2025/07/130.webp",
-                "https://ideas.edu.vn/wp-content/uploads/2025/07/128.webp",
-                "https://ideas.edu.vn/wp-content/uploads/2024/06/asc17-6-2.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2024/06/asc17-6-4.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2024/04/NHP_1903-1-1.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2024/11/8X1A9328-1-1.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2025/03/8X1A8537.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2025/03/8X1A8638.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2025/03/8X1A8725.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2025/03/8X1A8841.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2025/03/8X1A9322.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg"
             ],
-            level: "MBA",
-            avatar:
-                "https://ideas.edu.vn/wp-content/uploads/2025/09/global-mba-1.png.webp",
-            name: "Global MBA",
+            level: "BBA",
+            avatar: "https://ideas.edu.vn/wp-content/uploads/2025/09/Logo-Swiss-UMEF.webp",
+            name: "Full BBA",
             highlight: [
                 "Trực tuyến 100%",
-                "MBA",
-                "Linh hoạt trên Platform của trường",
-                "2 buổi chuyên đề/môn (Chủ nhật)",
+                "BBA chính quy",
+                "36 tháng (3 năm)",
+                "180 ECTS"
             ],
-            school: "Ascencia Business School",
-            country: "Pháp",
-            subjects: "<b>75</b> tín chỉ ECTS - <b>12</b> môn và Capstone",
-            duration: "14-16 tháng",
-            tagline: "Là trường thành viên của tổ chức giáo dục College de Paris",
-            link: "/ascencia-global-mba",
+            school: "Swiss UMEF",
+            country: "Thụy Sĩ",
+            subjects: "<b>180</b> ECTS - <b>34</b> môn học và Luận văn tốt nghiệp",
+            duration: "36 tháng",
+            tagline: "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thụy Sĩ",
+            link: "/fullbba.html",
             experience: [
-                "Tốt nghiệp cử nhân",
-                "Tối thiểu 2 năm kinh nghiệm ở cấp độ quản lý",
-                "Tiếng Anh giao tiếp tốt hoặc bằng cấp tương đương IELTS 6.0",
+                "Tốt nghiệp THPT hoặc tương đương",
+                "Đạt yêu cầu xét tuyển hồ sơ của Hội đồng tuyển sinh",
+                "Tiếng Anh đạt chuẩn đầu vào hoặc tham gia phỏng vấn đánh giá năng lực"
             ],
-            test: {
-                high: [
-                    "Chương trình học tập, làm bài và nộp trên platform của trường, dựa trên tài liệu và hướng dẫn của Giáo sư.",
-                    "Thời gian học tập tự sắp xếp linh hoạt, hỗ trợ bởi các giảng viên Việt Nam trong quá trình học.",
-                    "Học phí linh hoạt chia nhỏ hoặc trả góp.",
-                ],
-            },
             fee_course: [
-                // {
-                //   name: "Standard",
-                //   icon: "https://ideas.edu.vn/wp-content/new_public/data_imgs/icon6.png",
-                //   price: "2.800 Euro",
-                //   benefits: [
-                //     "Tài khoản truy cập tài liệu học tập, môn học theo chương trình gốc của trường.",
-                //     "Hệ thống LMS lưu trữ record các lớp chuyên đề của môn học được Enroll, lưu file PDF tài liệu môn học, hướng dẫn bài Final exam.",
-                //     "Tham gia các buổi hướng dẫn tập trung của Viện đối với bài luận văn.",
-                //     "Học viên có thể tham gia buổi hướng dẫn luận văn của Viện IDEAS và đăng ký hỗ trợ qua hệ thống LMS tích hợp I-AI. Ngoài ra, có thể tham gia lớp chuyên đề (2.5 ngày/môn) và đăng ký đánh giá sơ bộ bài Final với phí: 100 Euro/môn, 300 Euro/Capstone.",
-                //   ],
-                // },
                 {
-                    name: "High Quality",
-                    icon: "https://ideas.edu.vn/wp-content/new_public/data_imgs/icon5.png",
-                    price: "7.000 Euro",
+                    name: "Standard",
+                    icon: "https://ideas.edu.vn/wp-content/new_public/data_imgs/icon6.png",
+                    price: "8.050 CHF (Trọn gói 3 năm)",
                     benefits: [
-                        "Bao gồm chương trình Standard",
-                        "Hệ thống LMS: ứng dụng I-AI để hỗ trợ trong quá trình học tập.",
-                        "Trợ lý chương trình nhắc deadline, hỗ trợ hệ thống, kết nối giảng viên qua Group Zalo/Email.",
-                        "Lớp chuyên đề: mỗi môn sẽ có 2,5 ngày Chủ nhật, được hướng dẫn bởi các Giảng viên của Viện IDEAS.",
-                        "Đánh giá sơ bộ bài Final: Được hội đồng chuyên môn của Viện IDEAS đánh giá, góp ý bài Final đã đi đúng hướng, tránh lạc đề, học viên nắm được điểm đánh giá sơ bộ và hạn chế được khả năng rớt môn.",
-                    ],
-                },
+                        "Học phí cơ bản đã áp dụng học bổng 80% từ quỹ hỗ trợ.",
+                        "Tài khoản học tập LMS gốc của Swiss UMEF.",
+                        "Hỗ trợ thủ tục nhập học và hồ sơ học viên tại Việt Nam."
+                    ]
+                }
             ],
-
-            description:
-                "Global MBA là một trong những chương trình nổi bật của Ascencia Business School, được thiết kế để phù hợp với những người muốn nâng cao kiến thức và kỹ năng quản lý quốc tế, phát triển sự nghiệp toàn cầu và mở rộng mạng lưới quan hệ.",
-            demographic: {
-                jobs: [
-                    {
-                        jobname: "Quản trị kinh doanh",
-                        percent: 30,
-                    },
-                    {
-                        jobname: "Ngân hàng",
-                        percent: 22,
-                    },
-                    {
-                        jobname: "Công nghệ thông tin",
-                        percent: 20,
-                    },
-                    {
-                        jobname: "Start-up",
-                        percent: 16,
-                    },
-                    {
-                        jobname: "Khác",
-                        percent: 12,
-                    },
-                ],
-                ages: [
-                    {
-                        jobname: "18 - 24",
-                        percent: 7,
-                    },
-                    {
-                        jobname: "25 - 30",
-                        percent: 27,
-                    },
-                    {
-                        jobname: "31 - 40",
-                        percent: 55,
-                    },
-                    {
-                        jobname: "41 - 50",
-                        percent: 10,
-                    },
-                    {
-                        jobname: "51+",
-                        percent: 1,
-                    },
-                ],
-            },
+            description: "Chương trình Cử nhân Quản trị Kinh doanh (Full BBA) 3 năm từ Swiss UMEF mang đến cho người học nền tảng kiến thức kinh doanh toàn diện chuẩn quốc tế, giúp mở rộng cơ hội sự nghiệp và chuẩn bị vững chắc cho bậc học cao hơn.",
             degree: {
-                front:
-                    "https://ideas.edu.vn/wp-content/uploads/2024/11/MBA-Ascencia-Diploma-EN-MOFA-1.webp",
-                back: "https://ideas.edu.vn/wp-content/uploads/2024/11/MBA-Ascencia-Diploma-EN-MOFA-2.webp",
+                front: "https://ideas.edu.vn/wp-content/uploads/2025/03/UMEF-EMBA-Degree-1.jpg",
+                back: "https://ideas.edu.vn/wp-content/uploads/2024/11/MBA-Ascencia-Diploma-EN-MOFA-2.webp"
             },
-            accreditation: [
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://www.collegedeparis.fr/wp-content/uploads/2021/07/qualiopirogne.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://www.collegedeparis.fr/wp-content/uploads/2021/06/fcomp-logo-site.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://www.collegedeparis.fr/wp-content/uploads/2021/06/fle-logo-site.png",
-                    link: "#",
-                },
-
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://www.collegedeparis.fr/wp-content/uploads/2021/06/erasmus-logo-site.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://www.collegedeparis.fr/wp-content/uploads/2021/06/fcomp-logo-site.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://www.collegedeparis.fr/wp-content/uploads/2021/06/bpi-logosite.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
-                    link: "#",
-                },
-            ],
             require: [
-                "Bằng cử nhân và bảng điểm",
-                "Sơ yếu lí lịch (CV)",
+                "Bằng tốt nghiệp THPT và học bạ THPT",
+                "Sơ yếu lý lịch (CV)",
                 "Thư động lực (Motivation Letter)",
-                "Ảnh hộ chiếu (4×6)",
-                "Passport",
-                "Tiếng anh tương đương IELTS 6.0 hoặc có thể phỏng vấn đầu vào với đại diện của trường tại Việt Nam",
-                "Application Form <a href='https://ideas.edu.vn/wp-content/uploads/2025/03/Application-Form-_-1.pdf' target='_blank' class='text_download'>(Download Here)</a>",
-            ],
-            faq: [
-                {
-                    q: "Tiếng anh nghe nói chưa tốt có thể theo học chương trình không?",
-                    a: "Có. Chương trình không yêu cầu học viên phải giỏi tiếng Anh giao tiếp, vì phần lớn nội dung học tập là đọc tài liệu, làm bài tập và viết luận. Tuy nhiên, học viên cần có khả năng đọc hiểu tiếng Anh ở mức khá để theo kịp chương trình. Ngoài ra, các lớp chuyên đề của Viện IDEAS chủ yếu chia sẻ bằng Tiếng việt sẽ hỗ trợ học viên nắm được bài tốt hơn.",
-                },
-                {
-                    q: "Nếu bận đi công tác không thể hoàn thành bài đúng hạn thì sao",
-                    a: "Chương trình Global MBA của Ascencia Business School được thiết kế linh hoạt để phù hợp với lịch trình bận rộn của học viên. Mỗi môn học đều có thời gian bài tập kéo dài 8 tuần và bài tập phân bổ giãn cách mỗi tuần. Deadline các bài tập thường vào lúc 16h Việt Nam. Học viên nắm được thông tin bài tập và deadline sẽ sắp xếp phù hợp. Trường hợp Học viên chưa thể hoàn thành đúng thời hạn sẽ được đăng ký <b>Resubmit</b> có tốn phí để được mở thêm 1 tuần nộp lại bài.",
-                },
-                {
-                    q: "Học viên có thể tham gia lễ tốt nghiệp tại Paris - Pháp không?",
-                    a: "Có. Học viên hoàn thành chương trình có thể đăng ký tham gia lễ tốt nghiệp tại Pháp, cùng với các học viên quốc tế khác của Ascencia Business School. Mỗi năm có 2 đợt Lễ Tốt nghiệp vào tháng 6 và tháng 12. Viện IDEAS sẽ thông báo đến học viên về lịch thông báo từ Trường để học viên đăng kí.",
-                },
+                "Ảnh hộ chiếu (4x6)",
+                "Passport còn hạn",
+                "Application Form của Swiss UMEF"
             ],
             this_subjects: [
-                {
-                    name: "7SMG01. Strategic Management, Competitiveness & Globalization",
-                    description:
-                        "Học cách xây dựng chiến lược marketing, định vị thương hiệu, nghiên cứu thị trường và quản lý khách hàng",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "7BSU01. Business Sustainability, Ethics and Social Responsibility",
-                    description:
-                        "Nâng cao kỹ năng quản lý nhân sự và phát triển tài năng trong tổ chức, giúp tối ưu hóa nguồn nhân lực",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "7BIS02. Managing a Contemporary Business Information System",
-                    description:
-                        "Khám phá các nguyên tắc khởi nghiệp và đổi mới sáng tạo để phát triển doanh nghiệp thành công",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "7FMG01. Financial Management Theory and Practice",
-                    description:
-                        "Nắm vững kiến thức tài chính doanh nghiệp, tối ưu hóa dòng tiền và chiến lược tài chính",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "7SCM01. Operations, Supply Chain and Project Management",
-                    description:
-                        "Cung cấp các nguyên tắc kế toán quan trọng giúp nhà quản lý đưa ra quyết định kinh doanh hiệu quả",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "7MTI02. The Management of Technology and Innovation",
-                    description:
-                        "Khám phá cách công nghệ số đang thay đổi mô hình kinh doanh và phương pháp quản lý",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "7MST01. Marketing Strategy",
-                    description:
-                        "Phát triển chiến lược kinh doanh toàn cầu, giúp doanh nghiệp mở rộng và cạnh tranh hiệu quả",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "7BAN02. Business Analytics, Data Analysis & Decision Making",
-                    description:
-                        "Học cách lập kế hoạch, thực hiện và kiểm soát dự án để đạt được mục tiêu kinh doanh",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "7HRM01. Strategic Human Resources Management",
-                    description:
-                        "Nghiên cứu hành vi tổ chức để cải thiện hiệu suất và môi trường làm việc",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "7MOD01. Managing Organizational Diversity",
-                    description:
-                        "Phát triển kỹ năng lãnh đạo để điều hành tổ chức một cách hiệu quả và truyền cảm hứng cho đội ngũ",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "7ELE01. Executive Leadership",
-                    description:
-                        "Hướng dẫn phương pháp nghiên cứu và viết luận văn thạc sĩ chuyên sâu",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "7MEC01. Managerial Economics",
-                    description:
-                        "Trang bị kỹ năng đàm phán kinh doanh để đạt được thỏa thuận có lợi nhất",
-                    link: "",
-                    credit: 5,
-                },
-                {
-                    name: "CAP. Capstone Project",
-                    description:
-                        "Hoàn thành luận văn MBA dựa trên nghiên cứu thực tế và ứng dụng kiến thức học được",
-                    link: "",
-                    credit: 15,
-                },
-            ],
+                { name: "Rhetoric and Composition", description: "Kỹ năng viết học thuật và trình bày văn bản chuyên nghiệp", credit: 5 },
+                { name: "Financial Mathematics", description: "Toán tài chính ứng dụng trong mô hình hóa kinh doanh", credit: 5 },
+                { name: "Introduction to Marketing", description: "Khái niệm và nguyên lý marketing căn bản", credit: 5 },
+                { name: "Economics", description: "Kinh tế học vi mô và vĩ mô nền tảng", credit: 5 },
+                { name: "Digital Marketing", description: "Ứng dụng công nghệ số vào tiếp thị và quảng cáo", credit: 5 },
+                { name: "Critical Thinking", description: "Tư duy phản biện và giải quyết vấn đề logic", credit: 5 },
+                { name: "Statistics Applied to Business", description: "Thống kê ứng dụng phân tích dữ liệu kinh doanh", credit: 5 },
+                { name: "Human Resource Management", description: "Quản trị nguồn nhân lực trong tổ chức", credit: 5 },
+                { name: "Corporate Finance", description: "Tài chính doanh nghiệp cơ bản và dòng tiền", credit: 5 },
+                { name: "International Business", description: "Kinh doanh quốc tế và các rào cản thương mại", credit: 5 },
+                { name: "Business Law", description: "Luật kinh doanh và các cam kết pháp lý", credit: 5 },
+                { name: "Communication Strategy", description: "Chiến lược truyền thông nội bộ và ngoại giao", credit: 5 },
+                { name: "Managerial Accounting", description: "Kế toán quản trị phục vụ ra quyết định nội bộ", credit: 5 },
+                { name: "International Management", description: "Quản trị đa quốc gia và điều hành chuỗi giá trị", credit: 5 },
+                { name: "Risk Management", description: "Quản trị rủi ro tài chính và vận hành", credit: 5 },
+                { name: "Entrepreneurship and Small Business Management", description: "Khởi nghiệp và quản lý doanh nghiệp nhỏ thực chiến", credit: 5 },
+                { name: "Business Negotiation", description: "Nghệ thuật đàm phán và thuyết phục trong kinh doanh", credit: 5 },
+                { name: "Purchasing and Supply Chain", description: "Quản trị mua hàng và chuỗi cung ứng toàn cầu", credit: 5 },
+                { name: "Leadership and Team Building", description: "Kỹ năng lãnh đạo và xây dựng đội ngũ hiệu quả", credit: 5 },
+                { name: "Marketing of Luxury Products", description: "Tiếp thị sản phẩm cao cấp và định vị phân khúc", credit: 5 },
+                { name: "Business Policy and Strategy", description: "Chính sách doanh nghiệp và quản trị chiến lược", credit: 5 },
+                { name: "Geopolitics and Geo-Economics", description: "Địa chính trị và địa kinh tế tác động toàn cầu", credit: 5 },
+                { name: "Sustainable Development", description: "Phát triển bền vững và trách nhiệm xã hội ESG", credit: 5 },
+                { name: "Thesis Methodology", description: "Phương pháp luận nghiên cứu khoa học viết khóa luận tốt nghiệp", credit: 5 },
+                { name: "Introduction to Management", description: "Nhập môn khoa học quản trị hiện đại", credit: 5 },
+                { name: "Global Marketing", description: "Marketing toàn cầu và thâm nhập thị trường quốc tế", credit: 5 },
+                { name: "Organizational Behaviour", description: "Hành vi tổ chức và văn hóa doanh nghiệp", credit: 5 },
+                { name: "Project Management and Decision Making", description: "Quản trị dự án và ra quyết định dựa trên dữ liệu", credit: 5 },
+                { name: "Introduction to Financial Accounting", description: "Kế toán tài chính cơ bản và báo cáo tài chính", credit: 5 },
+                { name: "Total Quality Management", description: "Quản trị chất lượng toàn diện trong doanh nghiệp", credit: 5 },
+                { name: "Innovation Management", description: "Quản trị đổi mới sáng tạo thúc đẩy tăng trưởng", credit: 5 },
+                { name: "Change Management", description: "Quản trị sự thay đổi và tái cấu trúc doanh nghiệp", credit: 5 },
+                { name: "Management Information Systems", description: "Hệ thống thông tin quản lý tối ưu hóa quy trình số", credit: 5 },
+                { name: "AI in Business", description: "Ứng dụng trí tuệ nhân tạo nâng cao năng suất kinh doanh", credit: 5 },
+                { name: "Dissertation", description: "Khóa luận tốt nghiệp cử nhân BBA nghiên cứu ứng dụng thực tế", credit: 15 }
+            ]
         },
-        IDEAS02: {
+IDEAS02: {
             benefits: [
                 "Bắt buộc các lớp học tương tác trực tuyến với giảng viên nước ngoài. Nâng cao khả năng, tự tin giao tiếp, trao đổi với Giáo sư và giải quyết các vấn đề thực tiễn trong doanh nghiệp.",
                 "Công nghệ chatbox I-AI hỗ trợ các nội dung phù hợp trong chương trình MBA online do Viện IDEAS quản lý. Trợ lý chương trình hỗ trợ nhắc nhở deadline bài tập, các vấn đề liên quan đến hệ thống, kết nối.",
@@ -1175,217 +984,98 @@ const IDEAS_DATA = {
                 },
             ],
         },
-        IDEAS05: {
+                IDEAS05: {
             benefits: [
-                "DBA không chỉ là một chương trình học thuật mà còn là một cơ hội để các chuyên gia trong lĩnh vực quản trị kinh doanh nghiên cứu và thảo luận về những vấn đề thực tế mà họ đang gặp phải trong lĩnh vực, ngành nghề đang kinh doanh. Từ đó đưa ra một mô hình hoặc một giải pháp có thể áp dụng trong phạm vi một lĩnh vực, một ngành nghề cụ thể.",
-                "Mục tiêu của chương trình DBA là phát triển những nhà lãnh đạo trong lĩnh vực kinh doanh có khả năng áp dụng kiến thức nghiên cứu vào thực tiễn, đồng thời góp phần vào sự phát triển của tri thức trong ngành.",
-                "Viện IDEAS hỗ trợ: hệ thống IDEAS – LMS & lớp chuyên đề bổ trợ vào các ngày Chủ nhật, có hướng dẫn bài tập và đánh giá sơ bộ bài Final exam.",
-                "Chuyến đi dự lễ tốt nghiệp và nhận bằng tại trụ ở chính của trường – Paris Pháp, kết hợp cùng với chuyến tham quan các thành phố thủ đô lớn ở Châu Âu: Thụy Sĩ – Pháp – Bỉ – Hà Lan (các nước trong cùng 1 chuyến đi).",
+                "Chương trình kết hợp độc đáo giữa quản trị kinh doanh hiện đại và ứng dụng AI no-code tiên phong.",
+                "Học trực tuyến linh hoạt 100%, giảng dạy bởi các giáo sư hàng đầu Thụy Sĩ và chuyên gia quốc tế.",
+                "Được hỗ trợ học bổng 70% học phí cơ bản từ quỹ hợp tác giáo dục của Swiss UMEF và Viện IDEAS.",
+                "Mạng lưới học viên là các nhà quản lý, lãnh đạo cấp cao trong kỷ nguyên số."
             ],
-            program_name_degree: "Executive DBA",
+            program_name_degree: "MBA in Artificial Intelligence",
             program_benefits_degree: [
-                "Tấm bằng DBA, cấp độ cao nhất của học vị, từ một trường kinh doanh lớn, danh tiếng và campus trãi dài rộng khắp thế giới.",
-                "Tân Tiến Sĩ của trường Ascencia Business School đánh dấu cột mốc cực kỳ quan trọng trên con đường phát triển.",
-                "Là một chuyên gia thực thụ có đầy đủ các kỹ năng lãnh đạo cần thiết để thúc đẩy sự thay đổi lớn trong lĩnh vực của bạn.",
+                "Bằng Thạc sĩ Quản trị Kinh doanh chuyên sâu AI chuẩn châu Âu từ Swiss UMEF Thụy Sĩ.",
+                "Làm chủ tư duy lãnh đạo chiến lược và năng lực điều hành các dự án chuyển đổi số dựa trên AI.",
+                "Không cần nền tảng kỹ thuật/code, tập trung vào ứng dụng thực tiễn của các mô hình AI."
             ],
-            link_iframe:
-                "https://www.youtube.com/embed/L2NjRsGCxmA?si=F5314uWJU-8-sZcp",
+            link_iframe: "https://www.youtube.com/embed/mB0mDrgjVNs?si=wP6X9bDGqVVR2R28",
             listImgs: [
-                "https://ideas.edu.vn/wp-content/uploads/2024/08/dba-1.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2024/08/DSC_1036.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2024/08/DSC_1039.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2024/08/DSC_1042.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2024/08/DSC_1054.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2024/08/DSC_1057.jpg",
-                "https://ideas.edu.vn/wp-content/uploads/2024/08/DSC_1061.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg"
             ],
-            level: "DBA",
-            avatar: "https://ideas.edu.vn/wp-content/uploads/2025/09/dba-01.png.webp",
-            name: "Executive DBA",
+            level: "MBA",
+            avatar: "https://ideas.edu.vn/wp-content/uploads/2025/09/mba_program_icon_1778123208188.png",
+            name: "MBA in AI",
             highlight: [
                 "Trực tuyến 100%",
-                "DBA",
-                "Nghiên cứu với cố vấn",
-                "2 buổi chuyên đề/môn (Chủ nhật)",
+                "MBA chuyên sâu AI",
+                "16-18 tháng",
+                "90 ECTS"
             ],
-            school: "Ascencia Business School",
-            country: "Pháp",
-
-            subjects: "<b>4</b> giai đoạn | <b>2.5 - 4</b> năm - 1 luận văn",
-            duration: "2.5 - 4 năm",
-            tagline: "Là trường thành viên của tổ chức giáo dục College de Paris",
-            link: "/ascencia-online-dba",
+            school: "Swiss UMEF",
+            country: "Thụy Sĩ",
+            subjects: "<b>90</b> ECTS - <b>12</b> môn học và Luận văn tốt nghiệp",
+            duration: "16-18 tháng",
+            tagline: "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thụy Sĩ",
+            link: "/mbainai.html",
             experience: [
-                "Tốt nghiệp Thạc sĩ hoặc Global MBA",
-                "Tiếng Anh giao tiếp tốt hoặc bằng cấp tương đương IELTS 6.0",
+                "Tốt nghiệp Đại học",
+                "Tối thiểu 3 năm kinh nghiệm làm việc",
+                "Tiếng Anh tương đương IELTS 6.0 hoặc đạt đánh giá phỏng vấn đầu vào"
             ],
-            // test: [
-            //   "Chương trình học tập, làm bài và nộp trên flatform của trường, dựa trên tài liệu và hướng dẫn của Giáo sư",
-            //   "Kiến thức quản trị chuyên sâu, kết hợp với case study thực tiễn",
-            //   "Thời gian học tập tự sắp xếp linh hoạt",
-            // ],
-            fee_plane: "4,400",
             fee_course: [
+                {
+                    name: "Standard",
+                    icon: "https://ideas.edu.vn/wp-content/new_public/data_imgs/icon6.png",
+                    price: "4.520 CHF",
+                    benefits: [
+                        "Bao gồm phí xét tuyển 150 CHF.",
+                        "Học phí Platform 3.870 CHF (đã giảm 70%).",
+                        "Phí hỗ trợ học vụ cơ bản IDEAS 500 CHF."
+                    ]
+                },
                 {
                     name: "High Quality",
                     icon: "https://ideas.edu.vn/wp-content/new_public/data_imgs/icon5.png",
-                    price: "11.900 Euro",
+                    price: "7.970 CHF",
                     benefits: [
-                        "Hệ thống sinh viên Quốc tế của College de Paris: <a target='_blank' href='https://online.cdp-global.org' class='text_link'>Online CDP Global</a>.",
-                        "Thư viện tài liệu nghiên cứu: <a target='_blank' href='https://login.ebsco.com/' class='text_link'>EBSCO</a>.",
-                        "Hệ thống LMS hỗ trợ: ứng dụng I-AI để hỗ trợ trong quá trình học tập.",
-                        "Thời gian nghiên cứu: 2.5 – 4 năm.",
-                        "Trợ lý chương trình nhắc deadline, hỗ trợ hệ thống, kết nối giảng viên qua Group Zalo/Email.",
-                        "Tự nghiên cứu với sự định hướng và hướng dẫn của Giáo sư.",
-
-                        "Đánh giá sơ bộ bài Final: Được hội đồng chuyên môn của Viện IDEAS đánh giá, góp ý bài Final đã đi đúng hướng, tránh lạc đề, học viên nắm được điểm đánh giá sơ bộ và hạn chế được khả năng rớt môn.",
-                    ],
-                },
+                        "Bao gồm toàn bộ quyền lợi của gói Standard.",
+                        "Lớp chuyên đề bổ trợ, Hướng dẫn luận văn 1:1 bởi chuyên gia Viện IDEAS.",
+                        "LMS IDEAS tích hợp trợ lý AI học tập.",
+                        "Phí Canton tốt nghiệp, Lãnh sự Thụy Sĩ & Hợp pháp hóa bằng (300 CHF)."
+                    ]
+                }
             ],
-
-            description:
-                "Chương trình Executive DBA là một chương trình nghiên cứu dành cho các chuyên gia cao cấp trong lĩnh vực quản trị kinh doanh. Khác với MBA (Master of Business Administration) – một chương trình chú trọng vào kiến thức tổng quát, DBA nhấn mạnh vào việc phát triển kiến thức và nghiên cứu chuyên sâu trong lĩnh vực quản lý",
-            demographic: {
-                jobs: [
-                    {
-                        jobname: "Quản trị kinh doanh",
-                        percent: 30,
-                    },
-                    {
-                        jobname: "Ngân hàng",
-                        percent: 22,
-                    },
-                    {
-                        jobname: "Công nghệ thông tin",
-                        percent: 20,
-                    },
-                    {
-                        jobname: "Start-up",
-                        percent: 16,
-                    },
-                    {
-                        jobname: "Khác",
-                        percent: 12,
-                    },
-                ],
-                ages: [
-                    {
-                        jobname: "18 - 24",
-                        percent: 7,
-                    },
-                    {
-                        jobname: "25 - 30",
-                        percent: 27,
-                    },
-                    {
-                        jobname: "31 - 40",
-                        percent: 55,
-                    },
-                    {
-                        jobname: "41 - 50",
-                        percent: 10,
-                    },
-                    {
-                        jobname: "51+",
-                        percent: 1,
-                    },
-                ],
-            },
+            description: "Chương trình MBA in AI từ Swiss UMEF là sự kết hợp tối ưu giữa lý thuyết quản trị kinh doanh truyền thống và các công nghệ AI ứng dụng thực chiến trong điều hành doanh nghiệp.",
             degree: {
-                front:
-                    "https://ideas.edu.vn/wp-content/uploads/2025/03/UMEF-EMBA-Degree-1.jpg",
-                back: "https://ideas.edu.vn/wp-content/uploads/2024/11/MBA-Ascencia-Diploma-EN-MOFA-2.webp",
+                front: "https://ideas.edu.vn/wp-content/uploads/2025/03/UMEF-EMBA-Degree-1.jpg",
+                back: "https://ideas.edu.vn/wp-content/uploads/2024/11/MBA-Ascencia-Diploma-EN-MOFA-2.webp"
             },
-            accreditation: [
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "http://www.collegedeparis.fr/wp-content/uploads/2021/06/fcomp-logo-site.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "http://www.collegedeparis.fr/wp-content/uploads/2021/06/fle-logo-site.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "http://www.collegedeparis.fr/wp-content/uploads/2021/07/qualiopirogne.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "http://www.collegedeparis.fr/wp-content/uploads/2021/06/erasmus-logo-site.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "http://www.collegedeparis.fr/wp-content/uploads/2021/06/fcomp-logo-site.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "http://www.collegedeparis.fr/wp-content/uploads/2021/06/bpi-logosite.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
-                    link: "#",
-                },
-            ],
             require: [
-                "Bằng và bảng điểm Thạc sĩ các chuyên ngành",
-                "Sơ yếu lí lịch (CV)",
+                "Bằng tốt nghiệp Đại học và bảng điểm",
+                "Sơ yếu lý lịch (CV) chi tiết kinh nghiệm",
                 "Thư động lực (Motivation Letter)",
-                "Ảnh hộ chiếu (4×6)",
-                "2 Thư giới thiệu",
-                "Chứng chỉ tiếng Anh",
-                "Passport",
-                "Tiếng anh tương đương IELTS 6.0 hoặc có thể phỏng vấn đầu vào với đại diện của trường tại Việt Nam",
-                "Application Form <a href='https://ideas.edu.vn/wp-content/uploads/2025/03/Application-Form-_-1.pdf' target='_blank' class='text_download'>(Download Here)</a>",
-            ],
-            faq: [
-                {
-                    q: "Chưa có kinh nghiệm nghiên cứu có thể theo học chương trình Executive DBA không?",
-                    a: "Có. Chương trình Executive DBA được thiết kế dành cho các nhà quản lý, lãnh đạo muốn nâng cao tư duy chiến lược và năng lực nghiên cứu ứng dụng trong kinh doanh. Viện IDEAS cung cấp hướng dẫn chi tiết về phương pháp nghiên cứu, giúp học viên từng bước xây dựng luận án DBA mà không cần nền tảng nghiên cứu trước đó.",
-                },
-                {
-                    q: "Nếu bận đi công tác không thể hoàn thành bài đúng hạn thì sao?",
-                    a: "Chương trình Executive DBA được thiết kế linh hoạt để phù hợp với lịch trình bận rộn của học viên. Mỗi môn học đều có thời gian nghiên cứu cùng với giáo viên cố vấn. Deadline các bài tập thường vào lúc buổi tối Việt Nam. Học viên nắm được thông tin bài tập và deadline sẽ sắp xếp phù hợp. Trường hợp Học viên chưa thể hoàn thành đúng thời hạn sẽ được đăng ký <b>Resubmit</b> có tốn phí để được mở thêm 1 tuần nộp lại bài. ",
-                },
-                {
-                    q: "Học viên có thể tham gia lễ tốt nghiệp tại Paris - Pháp không?",
-                    a: "Có. Học viên hoàn thành chương trình có thể đăng ký tham gia lễ tốt nghiệp tại Pháp, cùng với các học viên quốc tế khác của Ascencia Business School. Mỗi năm có 2 đợt Lễ Tốt nghiệp vào tháng 6 và tháng 12. Viện IDEAS sẽ thông báo đến học viên về lịch thông báo từ Trường để học viên đăng kí.",
-                },
+                "Ảnh hộ chiếu (4x6)",
+                "Passport còn hạn",
+                "Application Form của Swiss UMEF"
             ],
             this_subjects: [
-                {
-                    name: "Giai đoạn 1: Các modules cốt lõi",
-                    description:
-                        "<b>Khoảng 9 tháng</b> <br/> Giai đoạn nền tảng, rất quan trọng cho sự bắt đầu một lộ trình nghiên cứu. Giai đoạn này giúp Nghiên cưu sinh ôn lại những kiến thức nền tảng của môn học Research Methodology đối với chuyên ngành Business research. Kết thúc giai đoạn này, NCS được trang bị kiến thức và kỹ năng nghiên cứu, hiểu sâu và vững chắc các phương pháp nghiên cứu khoa học. <br/><i class='fa-solid fa-caret-right'></i> Học viên được cấp tài khoản trên hệ thống của Trường, có textbook để tham khảo nội dung <br/><i class='fa-solid fa-caret-right'></i> Có 6 buổi học tập trung, mỗi buổi 2 - 3 giờ. Ngôn ngữ: song ngữ, Giảng viên của Viện IDEAS <br/><i class='fa-solid fa-caret-right'></i> Ngoài 6 buổi chính thức và tập trung, nếu NCS nào có nhu cầu có thể đăng ký thêm những buổi phụ đạo 1-1. <br/><i class='fa-solid fa-caret-right'></i> Cuổi giai đoạn: nộp research proposal",
-                    link: "",
-                },
-                {
-                    name: "Giai đoạn 2: Lựa chọn Giáo sư hướng dẫn",
-                    description:
-                        "<b>Khoảng 3 tháng</b> <br/>  Lựa chọn giảng viên theo danh sách mà Viện IDEAS cung cấp, bao gồm giảng viên của Viện IDEAS và giảng viên là người nước ngoài của Trường Ascencia (Đối với cố vấn của Viện IDEAS đã được hỗ trợ 100% chi phí Đối với cố vấn của Trường ASC sẽ có phí riêng tùy vào mỗi Giảng viên ) <br/><i class='fa-solid fa-caret-right'></i> Học viên và giảng viên trao đổi lại với nhau về proposal, để hai bên cùng cân nhắc thay đổi, điều chỉnh, mở rộng hoặc thu hẹp phạm vi nghiên cứu. <br/><i class='fa-solid fa-caret-right'></i> Nếu xác định đề tài chưa phù hợp, ở giai đoạn này học viên được đăng kí điều chỉnh đề tài. <br/><i class='fa-solid fa-caret-right'></i> Cuối giai đoạn này, học viên đăng ký tên đề tài chính thức và kế hoạch nghiên cứu. Sau khi đăng ký chính thức thì không được phép thay đổi đề tài nghiên cứu, trừ trường hợp học lại từ đầu",
-                    link: "",
-                },
-                {
-                    name: "Giai đoạn 3: Nghiên cứu cùng với sự hướng dẫn trực tiếp (1-1)",
-                    description:
-                        "<b>Khoảng 18 tháng</b> <br/> Có 12 session, mỗi session kéo dài 6 tuần. <br/><i class='fa-solid fa-caret-right'></i> Cuối mỗi session cần có báo cáo tiến độ thực hiện bài viết.<br/><i class='fa-solid fa-caret-right'></i> Được gặp giảng viên tối đa 2 giờ/tháng <br/><i class='fa-solid fa-caret-right'></i> Cuối giai đoạn, học viên hoàn thành toàn bộ bài viết. Bài viết được đánh giá ĐẠT hoặc VIẾT LẠI <br/> *Nếu giai đoạn này, học viên muốn đổi đề tài sẽ quay ngược lại về giai đoạn 01 Bài Thesis hoàn chỉnh cần 50.000 từ, khoảng 200 – 250 trang (không bao gồm trang bìa)",
-                    link: "",
-                },
-                {
-                    name: "Giai đoạn 4: Bảo vệ luận văn tốt nghiệp",
-                    description:
-                        "<b>Khoảng 3 tháng</b> <br/> Nếu giai đoạn 3 được đánh giá ĐẠT, học viên được đăng ký bảo vệ và nộp file PPT",
-                    link: "",
-                },
-            ],
+                { name: "Marketing Management", description: "Quản trị tiếp thị chiến lược trong kỷ nguyên số" },
+                { name: "Human Capital and Talent Management", description: "Quản trị nguồn nhân lực và phát triển nhân tài" },
+                { name: "Entrepreneurship and Innovation", description: "Tinh thần khởi nghiệp và thúc đẩy đổi mới sáng tạo" },
+                { name: "Corporate Finance", description: "Tài chính doanh nghiệp và hoạch định nguồn vốn" },
+                { name: "Accounting for Managers", description: "Kế toán dành cho nhà quản lý phục vụ điều hành" },
+                { name: "Digital Transformation", description: "Chiến lược chuyển đổi số và quản lý thay đổi" },
+                { name: "Global Strategy", description: "Chiến lược kinh doanh toàn cầu trong môi trường biến động" },
+                { name: "Organizational Behaviour", description: "Hành vi tổ chức và tối ưu hóa hiệu suất đội ngũ" },
+                { name: "Leadership Development", description: "Phát triển năng lực lãnh đạo chiến lược" },
+                { name: "AI in Business Decision making", description: "Ra quyết định kinh doanh đột phá dựa trên dữ liệu & AI" },
+                { name: "Big Data Analysis", description: "Phân tích dữ liệu lớn định hướng chiến lược" },
+                { name: "Project Management", description: "Quản trị dự án chuyên nghiệp chuẩn quốc tế" },
+                { name: "Thesis", description: "Luận văn tốt nghiệp thạc sĩ nghiên cứu ứng dụng AI vào doanh nghiệp", credit: 18 }
+            ]
         },
-        IDEAS06: {
+IDEAS06: {
             pay_rule: `
        <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/icon2.png"/>
         <p><b>Thanh toán một lần hoặc chia thành 4 lần</b></p>
@@ -1893,7 +1583,7 @@ const IDEAS_DATA = {
             title: "Lễ tốt nghiệp",
             location: "Tp. Hồ Chí Minh",
             avatar:
-                "https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp",
+                "./assets/ltn27122025.webp",
             school: "Swiss UMEF",
             name: "MBA/EMBA",
             time: "27/12/2025",
@@ -1903,7 +1593,7 @@ const IDEAS_DATA = {
             title: "Lễ tốt nghiệp",
             location: "Geneva - Thụy Sĩ",
             avatar:
-                "https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.webp",
+                "./assets/ltnumef10202501.webp",
             school: "Swiss UMEF",
             name: "MBA/EMBA/MSc AI",
             time: "29/10/2025",
@@ -1912,17 +1602,17 @@ const IDEAS_DATA = {
         {
             title: "Lễ tốt nghiệp",
             location: "Eden Star Hotel - HCMC",
-            avatar: "https://ideas.edu.vn/wp-content/uploads/2025/07/ltn72025.webp",
+            avatar: "./assets/ltn72025.webp",
             school: "Ascencia Business School",
             name: "Global MBA - DBA",
             time: "26/07/2025",
-            link: "https://ideas.edu.vn/wp-content/uploads/2025/07/ltn72025.webp",
+            link: "./assets/ltn72025.webp",
         },
         {
             title: "Lễ tốt nghiệp",
             location: "Paris - Pháp",
             avatar:
-                "https://ideas.edu.vn/wp-content/uploads/2025/08/quangnon_cdp.webp",
+                "./assets/quangnon_cdp.webp",
             school: "Ascencia Business School",
             name: "Global MBA - DBA",
             time: "02/07/2025",
@@ -1932,7 +1622,7 @@ const IDEAS_DATA = {
             title: "Lễ tốt nghiệp",
             location: "Viện IDEAS - Việt Nam",
             avatar:
-                "https://ideas.edu.vn/wp-content/uploads/2024/11/8X1A9328-1-1.jpg",
+                "./assets/8X1A9328-1-1.jpg",
             school: "Ascencia Business School",
             name: "Global MBA - DBA",
             time: "23/11/2024",
