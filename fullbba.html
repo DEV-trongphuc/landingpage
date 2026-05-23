@@ -1466,7 +1466,7 @@
             border-radius: 99px;
             font-size: 0.72rem;
             font-weight: 800;
-            color: #fff;
+            color: #ab0e00;
             letter-spacing: 0.02em;
             margin-bottom: 20px;
             width: fit-content;
@@ -1553,23 +1553,47 @@
             padding: 13px 20px;
             border-radius: 12px;
             background: #ffffff; border: 1.5px solid rgba(15, 23, 42, 0.25);
-            color: #fff;
+            color: #ab0e00;
             font-weight: 800;
             font-size: 0.9rem;
             font-family: var(--font-sans);
             text-decoration: none;
-            transition: background 0.2s, transform 0.2s, border-color 0.2s;
+            transition: all 0.25s ease;
         }
 
         .pcv2-btn-featured:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.7);
-            transform: translateY(-1px);
+            background: #ab0e00;
+            border-color: #ffffff;
+            color: #ffffff;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 640px) {
             .pricing-grid-v2 {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* Hero CTA Buttons - Left Aligned on Desktop, Centered on Mobile */
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #hero-quiz-cta {
+            border-color: #ab0e00;
+            color: #ab0e00;
+            transition: all 0.25s ease;
+        }
+        #hero-quiz-cta:hover {
+            background: #ab0e00;
+            color: #ffffff;
+        }
+        @media (max-width: 1024px) {
+            .hero-cta {
+                justify-content: center;
             }
         }
 
@@ -2891,12 +2915,16 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:20px;">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="hero-main-cta" onclick="quizModal.open()">
-                            <span>Tìm hiểu chương trình Cử nhân Full BBA</span>
+                        <a href="javascript:void(0)" class="btn btn-primary" id="hero-main-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('hero-main-cta')">
+                            <span>Nhận Tư vấn lộ trình Full BBA</span>
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="btn btn-outline" id="hero-quiz-cta" onclick="quizModal.open()">
+                            <span>Đánh giá mức độ phù hợp</span>
+                            <i class="fa-solid fa-graduation-cap" style="font-size: 1rem;"></i>
                         </a>
                     </div>
 
@@ -3075,7 +3103,7 @@
                 </div>
 
                 <div class="section-cta reveal-up">
-                    <a href="javascript:void(0)" class="btn btn-primary" id="pain-cta" onclick="quizModal.open()">
+                    <a href="javascript:void(0)" class="btn btn-primary" id="pain-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('pain-cta')">
                         Tìm hiểu chương trình Full BBA
                         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -3270,7 +3298,7 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:28px">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta" onclick="quizModal.open()">
+                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('solution-cta')">
                             Nhận Brochure Full BBA Swiss UMEF
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -4759,6 +4787,24 @@
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
+                                <span>Bằng cấp Full BBA của Swiss UMEF có được công nhận quốc tế không?</span>
+                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                            </button>
+                            <div class="faq-content">
+                                <p>Có. Bằng Cử nhân do Swiss UMEF cấp được kiểm định quốc tế bởi IACBE (Mỹ), kiểm định liên bang Thụy Sĩ (Swiss Accreditation Council) và đạt chứng nhận chất lượng giáo dục EduQua của Geneva.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-trigger">
+                                <span>Học phí Full BBA là bao nhiêu và có hỗ trợ trả góp không?</span>
+                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                            </button>
+                            <div class="faq-content">
+                                <p>Học phí vô cùng tối ưu cho người đi làm nhờ các chính sách hỗ trợ và học bổng từ Viện IDEAS tại Việt Nam. Bạn có thể chọn trả góp 0% qua thẻ tín dụng liên kết của đối tác Sacombank để giảm bớt gánh nặng tài chính.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-trigger">
                                 <span>Yêu cầu đầu vào về trình độ tiếng Anh của chương trình Full BBA?</span>
                                 <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
@@ -5487,10 +5533,24 @@
 
         /* ── Header ── */
         .qz-header {
-            background: linear-gradient(135deg, #ab0e00 0%, #d91c0a 100%);
+            background: linear-gradient(135deg, #ab0e00 0%, #8b0a00 100%);
             padding: 32px 36px 24px;
             border-radius: 24px 24px 0 0;
             color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .qz-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(30%, 30%);
+            pointer-events: none;
         }
 
         .qz-header-badge {
@@ -6074,17 +6134,12 @@
                     titleEl.textContent = `Bạn cực kỳ phù hợp với ${matchedProg.name}!`;
                     msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
                     ctaBtn.textContent = 'Đăng ký tư vấn ngay';
-                    ctaBtn.href = '#dang-ky';
+                    ctaBtn.href = 'javascript:void(0)';
                     ctaBtn.onclick = function(e) {
+                        e.preventDefault();
                         close();
-                        const bookingBtn = document.querySelector('.bk-open-btn');
-                        if (bookingBtn) {
-                            bookingBtn.click();
-                        } else {
-                            const formSection = document.getElementById('dang-ky');
-                            if (formSection) {
-                                formSection.scrollIntoView({ behavior: 'smooth' });
-                            }
+                        if (typeof window.openRegModal === 'function') {
+                            window.openRegModal('quiz_result');
                         }
                     };
                 } else {

@@ -439,6 +439,10 @@
             if (eduVal) noteParts.push('Học vấn: ' + eduVal);
             if (engVal) noteParts.push('Tiếng Anh: ' + engVal);
             if (msgVal) noteParts.push(msgVal);
+            
+            const ctaSource = (formId === 'modal-cta-form') ? activeCtaSource : 'inline_form';
+            noteParts.push('CTA Source: ' + ctaSource);
+            
             const combinedNote = noteParts.join(' | ');
 
             // Tự động phân loại source và chuong_trinh theo pathname
@@ -460,6 +464,9 @@
             } else if (path.includes("bba")) {
                 sourceVal = "Landing_BBA_Topup";
                 chuongTrinhVal = "Online Top-up BBA";
+            } else if (path.includes("dual-dba") || path.includes("dba")) {
+                sourceVal = "Landing_Dual_DBA";
+                chuongTrinhVal = "Online Dual DBA";
             }
 
             // Payload cũ cho API automation.ideas.edu.vn
@@ -480,10 +487,10 @@
                 phone: phoneVal,
                 email: emailVal,
                 source: sourceVal,
-                type: "form_dang_ky",
+                type: (formId === 'modal-cta-form') ? "form_dang_ky_modal" : "form_dang_ky",
                 hoc_van: eduVal,
                 tieng_anh: engVal,
-                nhu_cau: msgVal || "Tư vấn gấp",
+                nhu_cau: (msgVal ? msgVal + " | " : "") + "Submit từ CTA: " + ctaSource,
                 chuong_trinh: chuongTrinhVal
             };
 
@@ -553,9 +560,16 @@
     const regModal = document.getElementById('reg-modal');
     const regClose = document.getElementById('reg-modal-close');
     const regOverlay = document.getElementById('reg-modal-overlay');
+    let activeCtaSource = 'unknown';
 
-    function openRegModal() {
+    function openRegModal(ctaSource) {
         if (!regModal) return;
+
+        if (ctaSource) {
+            activeCtaSource = ctaSource;
+        } else {
+            activeCtaSource = 'general_cta';
+        }
 
         // Reset form visibility in case it was submitted successfully before
         const modalForm = document.getElementById('modal-cta-form');
@@ -581,6 +595,9 @@
         }, 400);
     }
 
+    window.openRegModal = openRegModal;
+    window.closeRegModal = closeRegModal;
+
     if (regClose) regClose.addEventListener('click', closeRegModal);
     if (regOverlay) regOverlay.addEventListener('click', closeRegModal);
 
@@ -592,7 +609,8 @@
             // But let's follow user: "các CTA nhấp vào sẽ hiện popup"
             e.preventDefault();
             e.stopPropagation();
-            openRegModal();
+            const sourceId = cta.id || cta.getAttribute('data-cta') || 'general_dang_ky';
+            openRegModal(sourceId);
         });
     });
 

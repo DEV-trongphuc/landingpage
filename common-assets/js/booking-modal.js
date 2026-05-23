@@ -400,6 +400,9 @@
         } else if (path.includes("bba")) {
             sourceVal = "Landing_BBA_Topup";
             chuongTrinhVal = "Online Top-up BBA";
+        } else if (path.includes("dual-dba") || path.includes("dba")) {
+            sourceVal = "Landing_Dual_DBA";
+            chuongTrinhVal = "Online Dual DBA";
         }
 
         // Nếu có chương trình cụ thể được chọn trong radio thì dùng

@@ -97,6 +97,22 @@
           "@type": "Answer",
           "text": "Học viên học trực tuyến 100% qua video kết hợp các buổi thảo luận tình huống thực tế (Case study) được thiết kế linh hoạt, tối ưu riêng cho lãnh đạo bận rộn."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Bằng tốt nghiệp EMBA Swiss UMEF có ghi chữ 'Học trực tuyến' (Online) không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Không. Bằng tốt nghiệp do Swiss UMEF cấp hoàn toàn giống với bằng cấp trực tiếp tại Geneva, không ghi hình thức học trực tuyến."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Học phí EMBA là bao nhiêu và có chương trình hỗ trợ trả góp không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Học phí gói Standard là 3.120 CHF và High Quality là 5.120 CHF. Học viên được hỗ trợ trả góp học phí qua thẻ tín dụng Sacombank từ 12 - 24 tháng với lãi suất ưu đãi."
+        }
       }
     ]
   }
@@ -1477,7 +1493,7 @@
             border-radius: 99px;
             font-size: 0.72rem;
             font-weight: 800;
-            color: #fff;
+            color: #ab0e00;
             letter-spacing: 0.02em;
             margin-bottom: 20px;
             width: fit-content;
@@ -1564,23 +1580,47 @@
             padding: 13px 20px;
             border-radius: 12px;
             background: #ffffff; border: 1.5px solid rgba(15, 23, 42, 0.25);
-            color: #fff;
+            color: #ab0e00;
             font-weight: 800;
             font-size: 0.9rem;
             font-family: var(--font-sans);
             text-decoration: none;
-            transition: background 0.2s, transform 0.2s, border-color 0.2s;
+            transition: all 0.25s ease;
         }
 
         .pcv2-btn-featured:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.7);
-            transform: translateY(-1px);
+            background: #ab0e00;
+            border-color: #ffffff;
+            color: #ffffff;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 640px) {
             .pricing-grid-v2 {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* Hero CTA Buttons - Left Aligned on Desktop, Centered on Mobile */
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #hero-quiz-cta {
+            border-color: #ab0e00;
+            color: #ab0e00;
+            transition: all 0.25s ease;
+        }
+        #hero-quiz-cta:hover {
+            background: #ab0e00;
+            color: #ffffff;
+        }
+        @media (max-width: 1024px) {
+            .hero-cta {
+                justify-content: center;
             }
         }
 
@@ -2906,12 +2946,16 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:20px;">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="hero-main-cta" onclick="quizModal.open()">
+                        <a href="javascript:void(0)" class="btn btn-primary" id="hero-main-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('hero-main-cta')">
                             <span>Trao đổi lộ trình EMBA miễn phí 1:1</span>
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="btn btn-outline" id="hero-quiz-cta" onclick="quizModal.open()">
+                            <span>Đánh giá mức độ phù hợp</span>
+                            <i class="fa-solid fa-graduation-cap" style="font-size: 1rem;"></i>
                         </a>
                     </div>
 
@@ -3176,7 +3220,7 @@
                 </div>
 
                 <div class="section-cta reveal-up">
-                    <a href="javascript:void(0)" class="btn btn-primary" id="pain-cta" onclick="quizModal.open()">
+                    <a href="javascript:void(0)" class="btn btn-primary" id="pain-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('pain-cta')">
                         EMBA cho nhà lãnh đạo
                         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -3374,7 +3418,7 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:28px">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta" onclick="quizModal.open()">
+                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('solution-cta')">
                             Xem chi tiết lộ trình đào tạo EMBA Swiss UMEF
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -4628,7 +4672,7 @@
                         ĐỪNG BỎ LỠ CƠ HỘI NÂNG TẦM SỰ NGHIỆP VÀ DOANH NGHIỆP CỦA BẠN
                     </div>
 
-                    <ul class="cta-checklist" aria-label="Điểm nổi bật chương trình">
+                    <ul class="cta-checklist" aria-label="Điểm nổi bật chương trình" style="margin-top: 32px;">
                         <li>
                             <div class="cta-check-v2">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -4657,6 +4701,108 @@
                             <p>Hỗ trợ học thuật và đồng hành suốt quá trình học từ <strong>IDEAS</strong></p>
                         </li>
                     </ul>
+
+                    <style>
+                        .faq-accordion {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 12px;
+                            margin-top: 36px;
+                            margin-bottom: 24px;
+                        }
+                        .faq-item {
+                            background: #ffffff;
+                            border: 1px solid #e2e8f0;
+                            border-radius: 12px;
+                            overflow: hidden;
+                            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                        }
+                        .faq-item:hover {
+                            border-color: rgba(171, 14, 0, 0.25);
+                            background: rgba(171, 14, 0, 0.01);
+                        }
+                        .faq-trigger {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 16px 20px;
+                            background: none;
+                            border: none;
+                            font-family: var(--font-body), sans-serif;
+                            font-size: 0.92rem;
+                            font-weight: 600;
+                            color: #1e293b;
+                            text-align: left;
+                            cursor: pointer;
+                            transition: all 0.2s ease;
+                            outline: none;
+                        }
+                        .faq-trigger:hover {
+                            color: #ab0e00;
+                        }
+                        .faq-content {
+                            max-height: 0;
+                            overflow: hidden;
+                            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+                            padding: 0 20px;
+                            color: #475569;
+                            font-size: 0.86rem;
+                            line-height: 1.6;
+                        }
+                        .faq-content p {
+                            margin: 0 0 16px 0;
+                        }
+                    </style>
+
+                    <!-- FAQ Accordion -->
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button type="button" class="faq-trigger">
+                                <span>Sự khác biệt lớn nhất giữa MBA và EMBA?</span>
+                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                            </button>
+                            <div class="faq-content">
+                                <p>MBA tập trung vào nâng cao năng lực quản trị chức năng tổng quát (Marketing, Tài chính, Nhân sự, Vận hành) dành cho quản lý cấp trung. EMBA (Executive MBA) tập trung vào hoạch định chiến lược vĩ mô, quản trị sự thay đổi và kết nối mạng lưới doanh chủ, lãnh đạo cấp cao.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-trigger">
+                                <span>Điều kiện kinh nghiệm tối thiểu để ứng tuyển học EMBA?</span>
+                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                            </button>
+                            <div class="faq-content">
+                                <p>Ứng viên cần có bằng Đại học chính quy và từ 3-5 năm kinh nghiệm đảm nhiệm vị trí quản lý hoặc chủ doanh nghiệp.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-trigger">
+                                <span>Phương thức học của chương trình Executive MBA trực tuyến?</span>
+                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                            </button>
+                            <div class="faq-content">
+                                <p>Học viên học trực tuyến 100% qua video kết hợp các buổi thảo luận tình huống thực tế (Case study) được thiết kế linh hoạt, tối ưu riêng cho lãnh đạo bận rộn.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-trigger">
+                                <span>Bằng tốt nghiệp EMBA Swiss UMEF có ghi chữ 'Học trực tuyến' (Online) không?</span>
+                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                            </button>
+                            <div class="faq-content">
+                                <p>Không. Bằng tốt nghiệp do Swiss UMEF cấp hoàn toàn giống với bằng cấp trực tiếp tại Geneva, không ghi hình thức học trực tuyến.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-trigger">
+                                <span>Học phí EMBA là bao nhiêu và có chương trình hỗ trợ trả góp không?</span>
+                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                            </button>
+                            <div class="faq-content">
+                                <p>Học phí gói Standard là 3.120 CHF và High Quality là 5.120 CHF. Học viên được hỗ trợ trả góp học phí qua thẻ tín dụng Sacombank từ 12 - 24 tháng với lãi suất ưu đãi.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="cta-form-wrapper reveal-up" id="form-wrapper">
@@ -4768,45 +4914,7 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section class="faq-section reveal-up" id="faq" style="padding: 80px 0; background: #f8fafc;">
-            <div class="container-narrow" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
-                <div class="section-header" style="text-align: center; margin-bottom: 48px;">
-                    <span class="section-label" style="background: rgba(171, 14, 0, 0.08); color: #ab0e00; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 6px 14px; border-radius: 99px; display: inline-block; margin-bottom: 12px;">Hỏi & Đáp</span>
-                    <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #0f172a; margin: 0; line-height: 1.2;">Câu Hỏi Thường Gặp</h2>
-                </div>
-                
-                <div class="faq-accordion" style="display: flex; flex-direction: column; gap: 16px;">
-                    <div class="faq-item" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
-                        <button class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; font-size: 1.05rem; font-weight: 800; color: #0f172a; text-align: left; cursor: pointer; transition: all 0.2s;">
-                            <span>Sự khác biệt lớn nhất giữa MBA và EMBA?</span>
-                            <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; transition: transform 0.3s ease; color: #64748b;"></i>
-                        </button>
-                        <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0,1,0,1); padding: 0 24px; color: #475569; font-size: 0.95rem; line-height: 1.6;">
-                            <p style="margin: 0 0 20px 0;">MBA tập trung vào nâng cao năng lực quản trị chức năng tổng quát (Marketing, Tài chính, Nhân sự, Vận hành) dành cho quản lý cấp trung. EMBA (Executive MBA) tập trung vào hoạch định chiến lược vĩ mô, quản trị sự thay đổi và kết nối mạng lưới doanh chủ, lãnh đạo cấp cao.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
-                        <button class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; font-size: 1.05rem; font-weight: 800; color: #0f172a; text-align: left; cursor: pointer; transition: all 0.2s;">
-                            <span>Điều kiện kinh nghiệm tối thiểu để ứng tuyển học EMBA?</span>
-                            <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; transition: transform 0.3s ease; color: #64748b;"></i>
-                        </button>
-                        <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0,1,0,1); padding: 0 24px; color: #475569; font-size: 0.95rem; line-height: 1.6;">
-                            <p style="margin: 0 0 20px 0;">Ứng viên cần có bằng Đại học chính quy và từ 3-5 năm kinh nghiệm đảm nhiệm vị trí quản lý hoặc chủ doanh nghiệp.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
-                        <button class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; font-size: 1.05rem; font-weight: 800; color: #0f172a; text-align: left; cursor: pointer; transition: all 0.2s;">
-                            <span>Phương thức học của chương trình Executive MBA trực tuyến?</span>
-                            <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; transition: transform 0.3s ease; color: #64748b;"></i>
-                        </button>
-                        <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0,1,0,1); padding: 0 24px; color: #475569; font-size: 0.95rem; line-height: 1.6;">
-                            <p style="margin: 0 0 20px 0;">Học viên học trực tuyến 100% qua video kết hợp các buổi thảo luận tình huống thực tế (Case study) được thiết kế linh hoạt, tối ưu riêng cho lãnh đạo bận rộn.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
     </main>
 
@@ -5415,10 +5523,24 @@
 
         /* ── Header ── */
         .qz-header {
-            background: linear-gradient(135deg, #ab0e00 0%, #d91c0a 100%);
+            background: linear-gradient(135deg, #ab0e00 0%, #8b0a00 100%);
             padding: 32px 36px 24px;
             border-radius: 24px 24px 0 0;
             color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .qz-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(30%, 30%);
+            pointer-events: none;
         }
 
         .qz-header-badge {
@@ -6002,17 +6124,12 @@
                     titleEl.textContent = `Bạn cực kỳ phù hợp với ${matchedProg.name}!`;
                     msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
                     ctaBtn.textContent = 'Đăng ký tư vấn ngay';
-                    ctaBtn.href = '#dang-ky';
+                    ctaBtn.href = 'javascript:void(0)';
                     ctaBtn.onclick = function(e) {
+                        e.preventDefault();
                         close();
-                        const bookingBtn = document.querySelector('.bk-open-btn');
-                        if (bookingBtn) {
-                            bookingBtn.click();
-                        } else {
-                            const formSection = document.getElementById('dang-ky');
-                            if (formSection) {
-                                formSection.scrollIntoView({ behavior: 'smooth' });
-                            }
+                        if (typeof window.openRegModal === 'function') {
+                            window.openRegModal('quiz_result');
                         }
                     };
                 } else {
@@ -6111,6 +6228,14 @@
                     item.style.boxShadow = '0 10px 25px rgba(171, 14, 0, 0.05)';
                 }
             });
+        });
+
+        // Automatically open the first FAQ item on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const firstTrigger = document.querySelector('.faq-trigger');
+            if (firstTrigger) {
+                firstTrigger.click();
+            }
         });
     </script>
     </body>
