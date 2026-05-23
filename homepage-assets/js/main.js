@@ -565,6 +565,36 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // ── Add IDEAS Logo at the end of the tunnel ──
+        const logoGroup = new THREE.Group();
+        logoGroup.position.set(0, 0, -135);
+        logoGroup.name = "endLogoGroup";
+        
+        const logoWidth = 5.5;
+        const logoHeight = 5.5;
+        const logoGeo = new THREE.PlaneGeometry(logoWidth, logoHeight);
+        const logoTexture = textureLoader.load('assets/logo.png');
+        const logoMat = new THREE.MeshBasicMaterial({
+            map: logoTexture,
+            transparent: true,
+            side: THREE.DoubleSide
+        });
+        const logoMesh = new THREE.Mesh(logoGeo, logoMat);
+        logoGroup.add(logoMesh);
+        
+        const ringGeo = new THREE.RingGeometry(3.0, 3.2, 64);
+        const ringMat = new THREE.MeshBasicMaterial({
+            color: 0xd4af37, // Gold
+            side: THREE.DoubleSide,
+            transparent: true,
+            opacity: 0.6
+        });
+        const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+        ringMesh.name = "glowRing";
+        logoGroup.add(ringMesh);
+        
+        tunnelGroup.add(logoGroup);
+
         // Hide tunnel initially
         tunnelGroup.visible = false;
     }
@@ -821,6 +851,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Rotate tunnel slightly for helical drift effect
             starfield.rotation.z = time * 0.05;
             tunnelGroup.children[0].rotation.z = -time * 0.03;
+
+            // Rotate the end logo's gold ring
+            const logoGroup = tunnelGroup.getObjectByName("endLogoGroup");
+            if (logoGroup) {
+                const ring = logoGroup.getObjectByName("glowRing");
+                if (ring) {
+                    ring.rotation.z = time * 0.5;
+                }
+            }
         }
 
         // 2. Camera Easing Interpolation (LERP)
