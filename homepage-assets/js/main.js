@@ -591,8 +591,8 @@ document.addEventListener('DOMContentLoaded', () => {
         logoGroup.position.set(0, 0, -135);
         logoGroup.name = "endLogoGroup";
         
-        const logoWidth = 2.4;
-        const logoHeight = 2.4;
+        const logoWidth = 1.6;
+        const logoHeight = 1.6;
         const logoGeo = new THREE.PlaneGeometry(logoWidth, logoHeight);
         const logoMat = new THREE.MeshBasicMaterial({
             transparent: true,
@@ -601,7 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const logoMesh = new THREE.Mesh(logoGeo, logoMat);
         logoGroup.add(logoMesh);
         
-        const ringGeo = new THREE.RingGeometry(1.25, 1.35, 64);
+        const ringGeo = new THREE.RingGeometry(1.28, 1.32, 64);
         const ringMat = new THREE.MeshBasicMaterial({
             color: 0xd4af37, // Gold
             side: THREE.DoubleSide,
