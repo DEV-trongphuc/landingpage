@@ -844,7 +844,7 @@ abbr {
 }
 
 .hero-headline {
-  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-size: clamp(2.0rem, 4.5vw, 3.2rem);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.03em;
