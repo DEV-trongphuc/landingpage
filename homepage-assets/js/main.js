@@ -685,11 +685,16 @@ document.addEventListener('DOMContentLoaded', () => {
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
     }
 
-    function onCanvasClick() {
+    function onCanvasClick(event) {
         if (activeMode === 'explore') {
             if (hoveredNode) {
                 selectProgramNode(hoveredNode.userData.id);
             } else {
+                // If clicked inside HUD elements or modals, do not reset
+                if (event && (event.target.closest('#hud-layer') || event.target.closest('#compare-modal') || event.target.closest('#bk-modal'))) {
+                    return;
+                }
+
                 // If clicked empty space, reset
                 const leftPanel = document.getElementById('hud-panel-left');
                 const isLeftPanelHovered = leftPanel && leftPanel.matches(':hover');
@@ -1026,6 +1031,7 @@ document.addEventListener('DOMContentLoaded', () => {
             selectorContainer.addEventListener('click', (e) => {
                 const btn = e.target.closest('.quick-node-btn');
                 if (btn) {
+                    e.stopPropagation(); // Prevent bubbling to window click handler
                     const id = btn.getAttribute('data-id');
                     selectProgramNode(id);
                 }
