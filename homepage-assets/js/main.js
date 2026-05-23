@@ -195,24 +195,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const positions = new Float32Array(count * 3);
         const colors = new Float32Array(count * 3);
 
-        const palette = [
-            new THREE.Color(0xb31400), // Crimson
-            new THREE.Color(0xd4af37), // Gold
-            new THREE.Color(0xffffff), // White stars
-            new THREE.Color(0x94a3b8)  // Soft grey
-        ];
-
         for (let i = 0; i < count; i++) {
             // Distribute stars in space
             positions[i * 3] = (Math.random() - 0.5) * 85;
             positions[i * 3 + 1] = (Math.random() - 0.5) * 50;
             positions[i * 3 + 2] = (Math.random() - 0.5) * 85;
 
-            // Give stars a randomized elegant academic color
-            const clr = palette[Math.floor(Math.random() * palette.length)];
-            colors[i * 3] = clr.r;
-            colors[i * 3 + 1] = clr.g;
-            colors[i * 3 + 2] = clr.b;
+            // Pure white stars
+            colors[i * 3] = 1.0;
+            colors[i * 3 + 1] = 1.0;
+            colors[i * 3 + 2] = 1.0;
         }
 
         const geometry = new THREE.BufferGeometry();

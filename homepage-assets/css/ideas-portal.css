@@ -235,14 +235,15 @@ button {
 }
 
 .hud-nav-btn:hover {
-    color: var(--brand-crimson);
-    background: rgba(179, 20, 0, 0.05);
+    color: #ffffff;
+    background: rgba(171, 14, 0, 0.25);
 }
 
 .hud-nav-btn.active {
-    color: var(--brand-crimson);
-    background: var(--brand-crimson-glow);
-    border-color: rgba(179, 20, 0, 0.2);
+    color: #ffffff;
+    background: var(--brand-crimson);
+    border-color: var(--brand-crimson);
+    box-shadow: 0 4px 12px rgba(171, 14, 0, 0.3);
 }
 
 .hud-actions {
@@ -845,11 +846,16 @@ button {
     font-size: 0.9rem;
 }
 
+.mode-toggle-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
 .mode-toggle-btn.active {
-    background: var(--bg-secondary);
-    color: var(--brand-crimson);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(179, 20, 0, 0.2);
+    background: var(--brand-crimson);
+    color: var(--text-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--brand-crimson);
 }
 
 /* ==========================================================================

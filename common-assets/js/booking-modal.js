@@ -158,7 +158,10 @@
 
     // Handle multiple open buttons (header icon and FAB, support dynamic buttons)
     document.addEventListener('click', (e) => {
-        if (e.target.closest('.bk-open-btn')) {
+        if (e.target.closest('.bk-open-btn') || e.target.closest('#mf-teaser')) {
+            if (e.target.closest('#mf-teaser-close')) {
+                return;
+            }
             openModal();
         }
     });
