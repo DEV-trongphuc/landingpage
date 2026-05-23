@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Scene
         scene = new THREE.Scene();
-        scene.background = new THREE.Color(0xf8fafc); // Light background
+        scene.background = new THREE.Color(0x060913); // Dark background
 
         // Camera
         camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const palette = [
             new THREE.Color(0xb31400), // Crimson
             new THREE.Color(0xd4af37), // Gold
-            new THREE.Color(0x0f172a), // Navy
+            new THREE.Color(0xffffff), // White stars
             new THREE.Color(0x94a3b8)  // Soft grey
         ];
 

@@ -4,20 +4,20 @@
    DESIGN SYSTEM VARIABLES (LIGHT THEME + CRIMSON ACCENT)
    ========================================================================== */
 :root {
-    --bg-primary: #f8fafc;
-    --bg-secondary: #ffffff;
-    --brand-crimson: #b31400;
-    --brand-crimson-glow: rgba(179, 20, 0, 0.08);
+    --bg-primary: #060913;
+    --bg-secondary: #0d1222;
+    --brand-crimson: #ab0e00;
+    --brand-crimson-glow: rgba(171, 14, 0, 0.15);
     --brand-crimson-hover: #d9251c;
     
-    --text-main: #0f172a;
-    --text-muted: #334155;
-    --text-light: #64748b;
+    --text-main: #f8fafc;
+    --text-muted: #cbd5e1;
+    --text-light: #94a3b8;
     --text-white: #ffffff;
     
-    --hud-bg: #ffffff;
-    --hud-border: #ffd1cc;
-    --hud-shadow: 0 20px 48px rgba(15, 23, 42, 0.08), 0 4px 14px rgba(179, 20, 0, 0.04);
+    --hud-bg: rgba(13, 18, 34, 0.95);
+    --hud-border: rgba(171, 14, 0, 0.3);
+    --hud-shadow: 0 20px 48px rgba(0, 0, 0, 0.6), 0 4px 14px rgba(171, 14, 0, 0.18);
     
     --radius-sm: 8px;
     --radius-md: 16px;
@@ -85,7 +85,7 @@ button {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: #ffffff;
+    background: var(--bg-primary);
     z-index: 99999;
     display: flex;
     justify-content: center;
@@ -146,7 +146,7 @@ button {
     top: 0;
     width: 50%;
     height: 100%;
-    background: #ffffff;
+    background: var(--bg-primary);
     transition: transform 1s cubic-bezier(0.85, 0, 0.15, 1);
 }
 .loader-split-left {
@@ -377,10 +377,10 @@ button {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     margin-bottom: 24px;
-    background: rgba(15, 23, 42, 0.02);
+    background: rgba(255, 255, 255, 0.02);
     border-radius: var(--radius-md);
     padding: 16px;
-    border: 1px solid rgba(15, 23, 42, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .meta-item-box {
@@ -797,7 +797,7 @@ button {
 .quick-node-btn {
     padding: 10px 18px;
     background: var(--bg-secondary);
-    border: 1px solid rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-full);
     font-size: 0.8rem;
     font-weight: 700;
@@ -823,8 +823,8 @@ button {
 .mode-toggle-wrap {
     display: flex;
     align-items: center;
-    background: rgba(15, 23, 42, 0.03);
-    border: 1px solid rgba(15, 23, 42, 0.05);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-full);
     padding: 4px;
 }
@@ -848,8 +848,8 @@ button {
 .mode-toggle-btn.active {
     background: var(--bg-secondary);
     color: var(--brand-crimson);
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
-    border: 1px solid rgba(179, 20, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(179, 20, 0, 0.2);
 }
 
 /* ==========================================================================
@@ -1012,7 +1012,7 @@ button {
     border-radius: var(--radius-full);
     font-size: 0.75rem;
     font-weight: 800;
-    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     gap: 8px;
