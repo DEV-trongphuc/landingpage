@@ -570,19 +570,17 @@ document.addEventListener('DOMContentLoaded', () => {
         logoGroup.position.set(0, 0, -135);
         logoGroup.name = "endLogoGroup";
         
-        const logoWidth = 5.5;
-        const logoHeight = 5.5;
+        const logoWidth = 2.4;
+        const logoHeight = 2.4;
         const logoGeo = new THREE.PlaneGeometry(logoWidth, logoHeight);
-        const logoTexture = textureLoader.load('assets/logo.png');
         const logoMat = new THREE.MeshBasicMaterial({
-            map: logoTexture,
             transparent: true,
             side: THREE.DoubleSide
         });
         const logoMesh = new THREE.Mesh(logoGeo, logoMat);
         logoGroup.add(logoMesh);
         
-        const ringGeo = new THREE.RingGeometry(3.0, 3.2, 64);
+        const ringGeo = new THREE.RingGeometry(1.25, 1.35, 64);
         const ringMat = new THREE.MeshBasicMaterial({
             color: 0xd4af37, // Gold
             side: THREE.DoubleSide,
@@ -592,6 +590,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const ringMesh = new THREE.Mesh(ringGeo, ringMat);
         ringMesh.name = "glowRing";
         logoGroup.add(ringMesh);
+        
+        const logoTexture = textureLoader.load('assets/logo.png', (tex) => {
+            logoMat.map = tex;
+            logoMat.needsUpdate = true;
+            if (tex && tex.image) {
+                const aspect = tex.image.width / tex.image.height;
+                logoMesh.scale.set(aspect, 1, 1); // Avoid distortion
+                const ringScale = Math.max(1, aspect);
+                ringMesh.scale.set(ringScale, ringScale, 1);
+            }
+        });
         
         tunnelGroup.add(logoGroup);
 
