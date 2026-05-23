@@ -189,6 +189,23 @@ document.addEventListener('DOMContentLoaded', () => {
         animate();
     }
 
+    // Helper to generate a soft circular texture in-memory to avoid square particles
+    function createCircularParticleTexture() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 16;
+        canvas.height = 16;
+        const ctx = canvas.getContext('2d');
+        
+        const grad = ctx.createRadialGradient(8, 8, 0, 8, 8, 8);
+        grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+        grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+        
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 16, 16);
+        
+        return new THREE.CanvasTexture(canvas);
+    }
+
     // ── Build Academic Dust & Starfield ──
     function buildStarfield() {
         const count = 1200;
@@ -212,10 +229,12 @@ document.addEventListener('DOMContentLoaded', () => {
         geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
         const material = new THREE.PointsMaterial({
-            size: 0.16,
+            size: 0.24,
             vertexColors: true,
             transparent: true,
             opacity: 0.85,
+            map: createCircularParticleTexture(),
+            depthWrite: false,
             sizeAttenuation: true
         });
 
@@ -499,10 +518,12 @@ document.addEventListener('DOMContentLoaded', () => {
         helixGeom.setAttribute('color', new THREE.BufferAttribute(helixColors, 3));
         
         const helixMat = new THREE.PointsMaterial({
-            size: 0.22,
+            size: 0.32,
             vertexColors: true,
             transparent: true,
             opacity: 0.9,
+            map: createCircularParticleTexture(),
+            depthWrite: false,
             sizeAttenuation: true
         });
 

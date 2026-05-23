@@ -471,6 +471,11 @@ button {
     color: var(--text-muted);
 }
 
+.placeholder-details.hidden,
+.program-details-wrap.hidden {
+    display: none !important;
+}
+
 .placeholder-details i {
     font-size: 3rem;
     color: var(--brand-crimson);
@@ -1469,6 +1474,10 @@ button {
         display: none; /* Hide header buttons on mobile, rely on bottom bar and drawer */
     }
     
+    .hud-panel-left, .hud-panel-right {
+        padding: 16px;
+    }
+
     .hud-panel-left {
         top: 84px;
         left: 12px;
@@ -1495,6 +1504,65 @@ button {
     
     .hud-panel-right.hidden {
         transform: translateY(calc(100% + 100px));
+    }
+
+    .placeholder-details i {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .placeholder-details h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .placeholder-details p {
+        font-size: 0.8rem;
+        max-width: 240px;
+    }
+    
+    .program-details-header {
+        margin-bottom: 12px;
+    }
+    
+    .program-school-tag {
+        margin-bottom: 4px;
+        font-size: 0.7rem;
+    }
+    
+    .program-name-title {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+    }
+    
+    .program-tagline {
+        font-size: 0.82rem;
+        margin: 10px 0;
+        padding-left: 8px;
+    }
+    
+    .program-meta-grid {
+        margin-bottom: 16px;
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .program-section-title {
+        font-size: 0.88rem;
+        margin-bottom: 8px;
+    }
+    
+    .program-benefits-list {
+        margin-bottom: 16px;
+    }
+    
+    .program-benefits-list li {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+    
+    .program-details-wrap {
+        padding-bottom: 48px;
     }
     
     .hud-bottom-bar {
