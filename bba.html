@@ -2,7 +2,7 @@
 <html lang="vi" style="overflow-x: hidden;">
 
 <head>
-    <base href="/wp-content/new_public/LANDINGPAGE_MBA/" />
+    <!-- <base href="/wp-content/new_public/LANDINGPAGE_MBA/" /> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -69,7 +69,7 @@
   }
   </script>
 
-  <script type="application/ld+json">
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -1282,7 +1282,11 @@
             align-items: center;
             gap: 5px;
             padding: 6px 12px;
-            background: #111729; border-radius: 99px; font-size: 0.73rem; font-weight: 700; color: #ffffff;
+            background: #111729;
+            border-radius: 99px;
+            font-size: 0.73rem;
+            font-weight: 700;
+            color: #ffffff;
             white-space: nowrap;
             border: 1px solid rgba(255, 255, 255, 0.15);
             z-index: 10;
@@ -1439,7 +1443,8 @@
             align-items: center;
             gap: 5px;
             padding: 4px 12px;
-            background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.15);
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.15);
             border-radius: 99px;
             font-size: 0.72rem;
             font-weight: 800;
@@ -1529,7 +1534,8 @@
             text-align: center;
             padding: 13px 20px;
             border-radius: 12px;
-            background: #ffffff; border: 1.5px solid rgba(15, 23, 42, 0.25);
+            background: #ffffff;
+            border: 1.5px solid rgba(15, 23, 42, 0.25);
             color: #ab0e00;
             font-weight: 800;
             font-size: 0.9rem;
@@ -1559,15 +1565,18 @@
             justify-content: flex-start;
             align-items: center;
         }
+
         #hero-quiz-cta {
             border-color: #ab0e00;
             color: #ab0e00;
             transition: all 0.25s ease;
         }
+
         #hero-quiz-cta:hover {
             background: #ab0e00;
             color: #ffffff;
         }
+
         @media (max-width: 1024px) {
             .hero-cta {
                 justify-content: center;
@@ -1704,7 +1713,9 @@
         .sacom-pill {
             display: inline-block;
             padding: 4px 12px;
-            background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 99px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 99px;
             font-size: 0.75rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
@@ -2584,7 +2595,7 @@
                 font-size: 1.8rem !important;
             }
         }
-    
+
         /* ==========================================
            MOBILE & VIEWPORT OPTIMIZATIONS
            ========================================== */
@@ -2595,45 +2606,56 @@
                 justify-content: center !important;
                 gap: 16px !important;
             }
-            .pain-cards > .pain-card-v2,
-            .pain-cards > div {
+
+            .pain-cards>.pain-card-v2,
+            .pain-cards>div {
                 flex: 0 1 calc(33.333% - 12px) !important;
                 min-width: 250px !important;
             }
         }
 
         @media (max-width: 768px) {
+
             /* Tighten paddings */
-            section, 
-            .pricing-section, 
+            section,
+            .pricing-section,
             .cta-section,
             .hero-section,
             .ecosystem-section {
                 padding: 32px 12px !important;
             }
+
             .container {
                 padding-left: 12px !important;
                 padding-right: 12px !important;
             }
+
             .premium-policy-wrapper {
                 padding: 0 !important;
             }
-            .premium-policy-wrapper > div {
+
+            .premium-policy-wrapper>div {
                 padding: 24px 12px !important;
                 border-radius: 16px !important;
             }
-            
+
             /* Clamp titles */
-            h1, .hero-title {
+            h1,
+            .hero-title {
                 font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
             }
-            h2, .section-title {
+
+            h2,
+            .section-title {
                 font-size: clamp(1.6rem, 4.5vw, 1.9rem) !important;
             }
-            h3, .pricing-title, .cta-headline {
+
+            h3,
+            .pricing-title,
+            .cta-headline {
                 font-size: clamp(1.4rem, 4vw, 1.7rem) !important;
             }
-            
+
             /* Pain cards on mobile */
             .pain-cards {
                 display: flex !important;
@@ -2642,8 +2664,9 @@
                 gap: 12px !important;
                 grid-template-columns: none !important;
             }
-            .pain-cards > .pain-card-v2,
-            .pain-cards > div {
+
+            .pain-cards>.pain-card-v2,
+            .pain-cards>div {
                 flex: 0 1 calc(50% - 8px) !important;
                 min-width: 140px !important;
                 padding: 16px 12px !important;
@@ -2651,8 +2674,9 @@
         }
 
         @media (max-width: 480px) {
-            .pain-cards > .pain-card-v2,
-            .pain-cards > div {
+
+            .pain-cards>.pain-card-v2,
+            .pain-cards>div {
                 flex: 0 1 100% !important;
             }
         }
@@ -2663,12 +2687,15 @@
                 border-bottom: 1px solid #e2e8f0 !important;
                 background: #ffffff !important;
             }
+
             .fee-table-responsive tr:not(.section-header) td:first-child {
                 color: #0f172a !important;
             }
+
             .fee-table-responsive tr:not(.section-header) td:not(:first-child)::before {
                 color: #64748b !important;
             }
+
             .fee-table-responsive tr.total-row {
                 background: rgba(171, 14, 0, 0.05) !important;
                 border-top: 1.5px solid rgba(171, 14, 0, 0.1) !important;
@@ -2693,10 +2720,13 @@
                 <a href="#van-de" class="nav-link">Vấn đề</a>
                 <a href="#giai-phap" class="nav-link">Giải pháp</a>
                 <div class="nav-dropdown">
-                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-haspopup="true"
+                        aria-expanded="false">
                         Chương trình đào tạo
-                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </a>
                     <div class="dropdown-menu-box">
@@ -2779,8 +2809,10 @@
         <div class="mobile-dropdown">
             <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
                 Chương trình
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
                 </svg>
             </button>
             <div class="mobile-dropdown-content">
@@ -2795,7 +2827,9 @@
                     <div class="mobile-section-title">Cử nhân & Tiến sĩ</div>
                     <a href="bba.html" class="mobile-dropdown-item">Top-up BBA</a>
                     <a href="fullbba.html" class="mobile-dropdown-item">Full BBA</a>
-                    <a href="dual-dba.html" class="mobile-dropdown-item" style="margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">Dual DBA (Tiến sĩ)</a>
+                    <a href="dual-dba.html" class="mobile-dropdown-item"
+                        style="margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">Dual
+                        DBA (Tiến sĩ)</a>
                 </div>
             </div>
         </div>
@@ -2832,7 +2866,7 @@
                         nhưng vẫn không có cơ hội thăng tiến?
                     </div>
                     <h1 class="hero-headline" id="hero-headline" style="margin-top: 0; line-height: 1.2;">
-                        Liên Thông Cử Nhân Thụy Sĩ <br /> <span class="gradient-text">Top-up BBA (12 Tháng)</span>
+                        "Vì chưa có" <br /> <span class="gradient-text">bằng Cử Nhân </span>
                     </h1>
 
                     <p class="hero-sub">
@@ -2893,14 +2927,16 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:20px;">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="hero-main-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('hero-main-cta')">
+                        <a href="javascript:void(0)" class="btn btn-primary" id="hero-main-cta"
+                            onclick="if(typeof window.openRegModal === 'function') window.openRegModal('hero-main-cta')">
                             <span>Nhận Tư vấn lộ trình Top-up BBA</span>
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </a>
-                        <a href="javascript:void(0)" class="btn btn-outline" id="hero-quiz-cta" onclick="quizModal.open()">
+                        <a href="javascript:void(0)" class="btn btn-outline" id="hero-quiz-cta"
+                            onclick="quizModal.open()">
                             <span>Đánh giá mức độ phù hợp</span>
                             <i class="fa-solid fa-graduation-cap" style="font-size: 1rem;"></i>
                         </a>
@@ -3012,9 +3048,11 @@
                         <span class="pain-label-dot"></span>
                         VẤN ĐỀ
                     </div>
-                    <h2 class="pain-headline" id="pain-headline" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); line-height: 1.3;">
+                    <h2 class="pain-headline" id="pain-headline"
+                        style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); line-height: 1.3;">
                         Mỗi năm trôi qua mà bạn chưa hoàn thiện bằng Cử nhân,<br />
-                        <span class="pain-headline-accent">là thêm một năm cơ hội tốt hơn được trao cho người khác.</span>
+                        <span class="pain-headline-accent">là thêm một năm cơ hội tốt hơn được trao cho người
+                            khác.</span>
                     </h2>
                     <p class="pain-sub">Bạn có nhiều kinh nghiệm, hiểu rõ giá trị của bản thân, nhưng nhận ra nỗ lực của
                         mình vẫn chưa đủ để có bước tiến cao hơn.</p>
@@ -3081,7 +3119,8 @@
                 </div>
 
                 <div class="section-cta reveal-up">
-                    <a href="javascript:void(0)" class="btn btn-primary" id="pain-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('pain-cta')">
+                    <a href="javascript:void(0)" class="btn btn-primary" id="pain-cta"
+                        onclick="if(typeof window.openRegModal === 'function') window.openRegModal('pain-cta')">
                         Tìm hiểu chương trình Top-up BBA
                         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -3275,7 +3314,8 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:28px">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('solution-cta')">
+                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta"
+                            onclick="if(typeof window.openRegModal === 'function') window.openRegModal('solution-cta')">
                             Nhận Brochure Top-up BBA Swiss UMEF
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -4030,32 +4070,49 @@
         ══════════════════════════════════════════ -->
         <div class="pricing-section reveal-up" id="bang-gia" style="margin-top: 80px; margin-bottom: 80px;">
             <div class="section-label" style="margin: 0 auto 1.5rem; display: table;">HỌC PHÍ & LỘ TRÌNH TÀI CHÍNH</div>
-            <h3 class="pricing-title" style="text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #0f172a; margin-bottom: 32px; line-height: 1.2;">
+            <h3 class="pricing-title"
+                style="text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #0f172a; margin-bottom: 32px; line-height: 1.2;">
                 Cấu trúc học phí chương trình<br /><span style="color:#ab0e00">TOP-UP BBA</span>
             </h3>
 
-            <div class="premium-policy-wrapper" style="max-width: 900px; margin: 0 auto; position: relative; padding: 0 20px;">
+            <div class="premium-policy-wrapper"
+                style="max-width: 900px; margin: 0 auto; position: relative; padding: 0 20px;">
                 <!-- Glow effect -->
-                <div style="position: absolute; inset: -4px; background: linear-gradient(135deg, #ab0e00, #ff4c4c, #ab0e00); filter: blur(25px); opacity: 0.02; border-radius: 28px; z-index: 0;"></div>
-                
-                <div style="position: relative; background: #ffffff; border-radius: 24px; border: 1px solid #e2e8f0; padding: 48px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); z-index: 1; overflow: hidden; color: #334155;">
-                    
+                <div
+                    style="position: absolute; inset: -4px; background: linear-gradient(135deg, #ab0e00, #ff4c4c, #ab0e00); filter: blur(25px); opacity: 0.02; border-radius: 28px; z-index: 0;">
+                </div>
+
+                <div
+                    style="position: relative; background: #ffffff; border-radius: 24px; border: 1px solid #e2e8f0; padding: 48px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); z-index: 1; overflow: hidden; color: #334155;">
+
                     <!-- Header -->
-                    <div style="text-align: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 32px; margin-bottom: 32px;">
-                         <h4 style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; color: #ab0e00; margin-bottom: 16px; letter-spacing: -0.5px; color: #ab0e00;">CHÍNH SÁCH TUYỂN SINH & HỌC PHÍ</h4>
-                         <p style="font-size: 1.05rem; line-height: 1.6; max-width: 800px; margin: 0 auto; color: #475569; text-align: left;">
-                             Áp dụng đến hết ngày <strong style="color: #ab0e00;">01/06/2026</strong>.<br/>
-                             Áp dụng cho học viên hoàn tất đăng ký và thanh toán theo quy định trong thời gian trên.<br/><br/>
-                             <strong style="color: #0f172a;">Ghi chú nhập học:</strong><br/>
-                             <span style="display:inline-block; margin-top:8px;">● <strong>Để nhập học tháng 06/2026:</strong> Học viên phải hoàn tất hồ sơ và học phí trước ngày <strong style="color: #ab0e00;">25/05/2026</strong>.</span><br/>
-                             <span style="display:inline-block; margin-top:4px;">● <strong>Để nhập học tháng 07/2026:</strong> Học viên phải hoàn tất hồ sơ và học phí đến hết ngày <strong style="color: #ab0e00;">01/06/2026</strong> để được áp dụng chính sách này.</span>
-                         </p>
+                    <div
+                        style="text-align: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 32px; margin-bottom: 32px;">
+                        <h4
+                            style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; color: #ab0e00; margin-bottom: 16px; letter-spacing: -0.5px; color: #ab0e00;">
+                            CHÍNH SÁCH TUYỂN SINH & HỌC PHÍ</h4>
+                        <p
+                            style="font-size: 1.05rem; line-height: 1.6; max-width: 800px; margin: 0 auto; color: #475569; text-align: left;">
+                            Áp dụng đến hết ngày <strong style="color: #ab0e00;">01/06/2026</strong>.<br />
+                            Áp dụng cho học viên hoàn tất đăng ký và thanh toán theo quy định trong thời gian
+                            trên.<br /><br />
+                            <strong style="color: #0f172a;">Ghi chú nhập học:</strong><br />
+                            <span style="display:inline-block; margin-top:8px;">● <strong>Để nhập học tháng
+                                    06/2026:</strong> Học viên phải hoàn tất hồ sơ và học phí trước ngày <strong
+                                    style="color: #ab0e00;">25/05/2026</strong>.</span><br />
+                            <span style="display:inline-block; margin-top:4px;">● <strong>Để nhập học tháng
+                                    07/2026:</strong> Học viên phải hoàn tất hồ sơ và học phí đến hết ngày <strong
+                                    style="color: #ab0e00;">01/06/2026</strong> để được áp dụng chính sách này.</span>
+                        </p>
                     </div>
 
                     <!-- Note about UMEF payment -->
-                    <div style="margin-bottom: 24px; padding: 16px 20px; background: #f0f9ff; border-left: 4px solid #0284c7; border-radius: 8px;">
+                    <div
+                        style="margin-bottom: 24px; padding: 16px 20px; background: #f0f9ff; border-left: 4px solid #0284c7; border-radius: 8px;">
                         <p style="margin: 0; font-size: 0.95rem; color: #0369a1; line-height: 1.5;">
-                            <strong style="color: #0f172a;">Đối với học phí của Swiss UMEF:</strong> Học viên sẽ được yêu cầu thanh toán trực tiếp cho Trường thông qua các kênh thanh toán được thông báo trên Invoice mà Trường cung cấp.
+                            <strong style="color: #0f172a;">Đối với học phí của Swiss UMEF:</strong> Học viên sẽ được
+                            yêu cầu thanh toán trực tiếp cho Trường thông qua các kênh thanh toán được thông báo trên
+                            Invoice mà Trường cung cấp.
                         </p>
                     </div>
 
@@ -4063,42 +4120,76 @@
                     <div style="overflow-x: auto; margin-bottom: 32px;">
                         <table style="width: 100%; border-collapse: collapse; min-width: 600px; text-align: left;">
                             <thead>
-                                <tr style="background: rgba(171, 14, 0, 0.04); border-bottom: 1.5px solid rgba(171, 14, 0, 0.2);">
-                                    <th style="padding: 16px; font-weight: 800; color: #ab0e00; font-size: 0.95rem; text-transform: uppercase;">Chi tiết lệ phí/học phí</th>
-                                    <th style="padding: 16px; font-weight: 800; color: #ab0e00; font-size: 0.95rem; text-transform: uppercase; text-align: right;">Top Up (CHF)</th>
+                                <tr
+                                    style="background: rgba(171, 14, 0, 0.04); border-bottom: 1.5px solid rgba(171, 14, 0, 0.2);">
+                                    <th
+                                        style="padding: 16px; font-weight: 800; color: #ab0e00; font-size: 0.95rem; text-transform: uppercase;">
+                                        Chi tiết lệ phí/học phí</th>
+                                    <th
+                                        style="padding: 16px; font-weight: 800; color: #ab0e00; font-size: 0.95rem; text-transform: uppercase; text-align: right;">
+                                        Top Up (CHF)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <!-- UMEF Section -->
                                 <tr style="background: rgba(255,255,255,0.03); border-bottom: 1px solid #f1f5f9;">
-                                    <td colspan="2" style="padding: 12px 16px; font-weight: 800; color: #0369a1; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">I. Học phí - UMEF <span style="font-size:0.75rem; color: #64748b; font-weight: 500; text-transform: none; margin-left: 8px;">(Thanh toán trực tiếp cho UMEF)</span></td>
+                                    <td colspan="2"
+                                        style="padding: 12px 16px; font-weight: 800; color: #0369a1; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                                        I. Học phí - UMEF <span
+                                            style="font-size:0.75rem; color: #64748b; font-weight: 500; text-transform: none; margin-left: 8px;">(Thanh
+                                            toán trực tiếp cho UMEF)</span></td>
                                 </tr>
-                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;" onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'" onmouseout="this.style.background='transparent'">
-                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">Lệ phí hồ sơ*</td>
-                                    <td style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right;">150 CHF</td>
+                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;"
+                                    onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'"
+                                    onmouseout="this.style.background='transparent'">
+                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">Lệ
+                                        phí hồ sơ*</td>
+                                    <td style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right;">150
+                                        CHF</td>
                                 </tr>
-                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;" onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'" onmouseout="this.style.background='transparent'">
-                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">Học phí cơ bản (platform)*</td>
-                                    <td style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right;">2.300 CHF</td>
+                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;"
+                                    onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'"
+                                    onmouseout="this.style.background='transparent'">
+                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">Học
+                                        phí cơ bản (platform)*</td>
+                                    <td style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right;">
+                                        2.300 CHF</td>
                                 </tr>
-                                
+
                                 <!-- IDEAS Section -->
                                 <tr style="background: rgba(255,255,255,0.03); border-bottom: 1px solid #f1f5f9;">
-                                    <td colspan="2" style="padding: 12px 16px; font-weight: 800; color: #ab0e00; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">II. Phí hỗ trợ - IDEAS</td>
+                                    <td colspan="2"
+                                        style="padding: 12px 16px; font-weight: 800; color: #ab0e00; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                                        II. Phí hỗ trợ - IDEAS</td>
                                 </tr>
-                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;" onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'" onmouseout="this.style.background='transparent'">
-                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">Dịch vụ chung <span style="font-size:0.85rem; color: #475569; display: block; margin-top: 4px;">(Lớp chuyên đề, Hệ thống hỗ trợ)</span></td>
-                                    <td style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right; vertical-align: middle;">400 CHF</td>
+                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;"
+                                    onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'"
+                                    onmouseout="this.style.background='transparent'">
+                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">
+                                        Dịch vụ chung <span
+                                            style="font-size:0.85rem; color: #475569; display: block; margin-top: 4px;">(Lớp
+                                            chuyên đề, Hệ thống hỗ trợ)</span></td>
+                                    <td
+                                        style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right; vertical-align: middle;">
+                                        400 CHF</td>
                                 </tr>
-                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;" onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'" onmouseout="this.style.background='transparent'">
-                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">Canton & Lãnh sự & Tốt Nghiệp</td>
-                                    <td style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right;">200 CHF</td>
+                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;"
+                                    onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'"
+                                    onmouseout="this.style.background='transparent'">
+                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">
+                                        Canton & Lãnh sự & Tốt Nghiệp</td>
+                                    <td style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right;">200
+                                        CHF</td>
                                 </tr>
 
                                 <!-- Total -->
                                 <tr style="background: rgba(171, 14, 0, 0.15);">
-                                    <td style="padding: 20px 16px; font-weight: 900; color: #0f172a; font-size: 1.1rem; text-transform: uppercase;">Tổng cộng</td>
-                                    <td style="padding: 20px 16px; font-weight: 900; color: #ab0e00; font-size: 1.3rem; text-align: right;">3.050 CHF</td>
+                                    <td
+                                        style="padding: 20px 16px; font-weight: 900; color: #0f172a; font-size: 1.1rem; text-transform: uppercase;">
+                                        Tổng cộng</td>
+                                    <td
+                                        style="padding: 20px 16px; font-weight: 900; color: #ab0e00; font-size: 1.3rem; text-align: right;">
+                                        3.050 CHF</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -4106,10 +4197,13 @@
 
                     <!-- CTA -->
                     <div style="text-align: center;">
-                        <a href="#dang-ky" id="premium-cta-bba" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background: linear-gradient(135deg, #ab0e00, #ff4133); color: white !important; font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 12px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px -5px rgba(171, 14, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <a href="#dang-ky" id="premium-cta-bba"
+                            style="display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background: linear-gradient(135deg, #ab0e00, #ff4133); color: white !important; font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 12px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px -5px rgba(171, 14, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1);">
                             <span>Tư vấn hồ sơ ngay</span>
-                            <svg style="margin-left: 8px;" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            <svg style="margin-left: 8px;" width="20" height="20" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                                </path>
                             </svg>
                         </a>
                     </div>
@@ -4118,8 +4212,9 @@
                             transform: translateY(-2px);
                             box-shadow: 0 15px 35px -5px rgba(171, 14, 0, 0.6) !important;
                         }
+
                         @media (max-width: 640px) {
-                            .premium-policy-wrapper > div:nth-child(2) {
+                            .premium-policy-wrapper>div:nth-child(2) {
                                 padding: 32px 20px !important;
                             }
                         }
@@ -4194,6 +4289,7 @@
                             margin-top: 36px;
                             margin-bottom: 24px;
                         }
+
                         .faq-item {
                             background: #ffffff;
                             border: 1px solid #e2e8f0;
@@ -4201,10 +4297,12 @@
                             overflow: hidden;
                             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
                         }
+
                         .faq-item:hover {
                             border-color: rgba(171, 14, 0, 0.25);
                             background: rgba(171, 14, 0, 0.01);
                         }
+
                         .faq-trigger {
                             width: 100%;
                             display: flex;
@@ -4222,9 +4320,11 @@
                             transition: all 0.2s ease;
                             outline: none;
                         }
+
                         .faq-trigger:hover {
                             color: #ab0e00;
                         }
+
                         .faq-content {
                             max-height: 0;
                             overflow: hidden;
@@ -4234,6 +4334,7 @@
                             font-size: 0.86rem;
                             line-height: 1.6;
                         }
+
                         .faq-content p {
                             margin: 0 0 16px 0;
                         }
@@ -4244,46 +4345,61 @@
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Chương trình Top-up BBA Swiss UMEF phù hợp với những ai?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Thời gian hoàn thành chương trình liên thông Cử nhân (Top-up BBA) là 12 tháng, được thiết kế dành riêng cho người đã tốt nghiệp Cao đẳng, Trung cấp hoặc đang học dở chương trình Đại học muốn nhận bằng Cử nhân sớm để thăng tiến hoặc học tiếp lên Thạc sĩ.</p>
+                                <p>Thời gian hoàn thành chương trình liên thông Cử nhân (Top-up BBA) là 12 tháng, được
+                                    thiết kế dành riêng cho người đã tốt nghiệp Cao đẳng, Trung cấp hoặc đang học dở
+                                    chương trình Đại học muốn nhận bằng Cử nhân sớm để thăng tiến hoặc học tiếp lên Thạc
+                                    sĩ.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Bằng tốt nghiệp BBA Swiss UMEF có ghi chữ 'Học trực tuyến' (Online) không?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Không. Bằng tốt nghiệp Cử nhân Quản trị Kinh doanh do UMEF cấp hoàn toàn đồng nhất với bằng cấp trực tiếp tại Thụy Sĩ, không ghi hình thức học trực tuyến.</p>
+                                <p>Không. Bằng tốt nghiệp Cử nhân Quản trị Kinh doanh do UMEF cấp hoàn toàn đồng nhất
+                                    với bằng cấp trực tiếp tại Thụy Sĩ, không ghi hình thức học trực tuyến.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Bằng cấp BBA của Swiss UMEF có được công nhận quốc tế không?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Có. Bằng Cử nhân Quản trị Kinh doanh do Swiss UMEF Thụy Sĩ cấp được kiểm định quốc tế bởi IACBE (Mỹ), kiểm định liên bang Thụy Sĩ (Swiss Accreditation Council) và đạt chứng nhận chất lượng giáo dục EduQua của bang Geneva.</p>
+                                <p>Có. Bằng Cử nhân Quản trị Kinh doanh do Swiss UMEF Thụy Sĩ cấp được kiểm định quốc tế
+                                    bởi IACBE (Mỹ), kiểm định liên bang Thụy Sĩ (Swiss Accreditation Council) và đạt
+                                    chứng nhận chất lượng giáo dục EduQua của bang Geneva.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Chương trình BBA liên thông này có hỗ trợ trả góp học phí không?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Có. Chương trình liên kết với các ngân hàng lớn (như Sacombank) hỗ trợ trả góp học phí với lãi suất 0% từ 12 đến 24 tháng, giúp giảm thiểu áp lực tài chính cho học viên.</p>
+                                <p>Có. Chương trình liên kết với các ngân hàng lớn (như Sacombank) hỗ trợ trả góp học
+                                    phí với lãi suất 0% từ 12 đến 24 tháng, giúp giảm thiểu áp lực tài chính cho học
+                                    viên.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Học phí Top-up BBA Thụy Sĩ là bao nhiêu?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Học phí vô cùng tối ưu cho người đi làm nhờ các chính sách hỗ trợ và học bổng từ Viện IDEAS tại Việt Nam. Vui lòng liên hệ hotline 028 2244 2244 để nhận lộ trình chi phí chi tiết cập nhật.</p>
+                                <p>Học phí vô cùng tối ưu cho người đi làm nhờ các chính sách hỗ trợ và học bổng từ Viện
+                                    IDEAS tại Việt Nam. Vui lòng liên hệ hotline 028 2244 2244 để nhận lộ trình chi phí
+                                    chi tiết cập nhật.</p>
                             </div>
                         </div>
                     </div>
@@ -5014,6 +5130,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .qz-header::after {
             content: '';
             position: absolute;
@@ -5116,8 +5233,15 @@
         }
 
         @keyframes qzFadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .qz-q-number {
@@ -5412,19 +5536,19 @@
                 "options": [
                     {
                         "text": "Đã tốt nghiệp Cao đẳng, Trung cấp hoặc đang học dở Đại học và muốn nhận bằng Cử nhân sớm.",
-                        "scores": {"BBA": 5, "FULL_BBA": 1}
+                        "scores": { "BBA": 5, "FULL_BBA": 1 }
                     },
                     {
                         "text": "Mới tốt nghiệp THPT hoặc chưa từng học Cao đẳng/Đại học.",
-                        "scores": {"FULL_BBA": 5}
+                        "scores": { "FULL_BBA": 5 }
                     },
                     {
                         "text": "Đã có bằng Đại học chính quy và muốn học lên Thạc sĩ quản trị.",
-                        "scores": {"MBA": 4, "EMBA": 3, "MBA_AI": 3, "MSC_AI": 2}
+                        "scores": { "MBA": 4, "EMBA": 3, "MBA_AI": 3, "MSC_AI": 2 }
                     },
                     {
                         "text": "Đã tốt nghiệp Thạc sĩ và muốn nâng tầm học hàm lên Tiến sĩ.",
-                        "scores": {"DUAL_DBA": 5}
+                        "scores": { "DUAL_DBA": 5 }
                     }
                 ]
             },
@@ -5433,15 +5557,15 @@
                 "options": [
                     {
                         "text": "Tối ưu thời gian, muốn hoàn thành và lấy bằng trong 12 tháng (Top-up).",
-                        "scores": {"BBA": 5}
+                        "scores": { "BBA": 5 }
                     },
                     {
                         "text": "Học bài bản từ nền tảng đầu tiên trong vòng 3 năm (36 tháng).",
-                        "scores": {"FULL_BBA": 5}
+                        "scores": { "FULL_BBA": 5 }
                     },
                     {
                         "text": "Chỉ quan tâm đến học cao học (Thạc sĩ/Tiến sĩ) từ 1.5 đến 3 năm.",
-                        "scores": {"MBA": 3, "EMBA": 3, "DUAL_DBA": 3}
+                        "scores": { "MBA": 3, "EMBA": 3, "DUAL_DBA": 3 }
                     }
                 ]
             },
@@ -5450,19 +5574,19 @@
                 "options": [
                     {
                         "text": "Hoàn thiện nhanh bằng Đại học quốc tế để mở rộng cơ hội việc làm và thăng chức.",
-                        "scores": {"BBA": 5, "FULL_BBA": 2}
+                        "scores": { "BBA": 5, "FULL_BBA": 2 }
                     },
                     {
                         "text": "Trở thành Quản lý cấp trung, Giám đốc chức năng hoặc nâng cao năng lực quản trị toàn diện.",
-                        "scores": {"MBA": 5}
+                        "scores": { "MBA": 5 }
                     },
                     {
                         "text": "Trở thành nhà điều hành cấp cao (CEO/C-level) hoặc tối ưu chiến lược cho doanh nghiệp riêng.",
-                        "scores": {"EMBA": 5, "DUAL_DBA": 2}
+                        "scores": { "EMBA": 5, "DUAL_DBA": 2 }
                     },
                     {
                         "text": "Đóng vai trò chuyên gia hoặc nhà quản lý dẫn dắt ứng dụng công nghệ AI trong thời kỳ số hóa.",
-                        "scores": {"MBA_AI": 4, "MSC_AI": 4}
+                        "scores": { "MBA_AI": 4, "MSC_AI": 4 }
                     }
                 ]
             },
@@ -5471,15 +5595,15 @@
                 "options": [
                     {
                         "text": "Không cần thiết học AI sâu, chỉ cần tập trung kiến thức quản trị kinh doanh cốt lõi.",
-                        "scores": {"BBA": 4, "FULL_BBA": 4, "MBA": 4, "EMBA": 3}
+                        "scores": { "BBA": 4, "FULL_BBA": 4, "MBA": 4, "EMBA": 3 }
                     },
                     {
                         "text": "Muốn ứng dụng AI no-code/low-code để tăng gấp 3 hiệu suất làm việc và tối ưu quy trình.",
-                        "scores": {"MBA_AI": 5}
+                        "scores": { "MBA_AI": 5 }
                     },
                     {
                         "text": "Muốn học sâu về lập trình AI, kỹ thuật dữ liệu và machine learning.",
-                        "scores": {"MSC_AI": 5}
+                        "scores": { "MSC_AI": 5 }
                     }
                 ]
             },
@@ -5488,15 +5612,15 @@
                 "options": [
                     {
                         "text": "Đang đi làm bận rộn, muốn học online 100% linh hoạt để vừa học vừa làm.",
-                        "scores": {"BBA": 5, "MBA": 4, "MBA_AI": 4}
+                        "scores": { "BBA": 5, "MBA": 4, "MBA_AI": 4 }
                     },
                     {
                         "text": "Chưa đi làm hoặc mới đi làm, muốn học tập trung tích lũy kiến thức bài bản.",
-                        "scores": {"FULL_BBA": 5}
+                        "scores": { "FULL_BBA": 5 }
                     },
                     {
                         "text": "Là lãnh đạo cấp cao/chủ doanh nghiệp, cần chương trình học tối ưu quỹ thời gian cực kỳ bận rộn.",
-                        "scores": {"EMBA": 5, "DUAL_DBA": 3}
+                        "scores": { "EMBA": 5, "DUAL_DBA": 3 }
                     }
                 ]
             }
@@ -5543,7 +5667,7 @@
                     </div>
                 `;
                 qContainer.innerHTML = html;
-                
+
                 if (progress) {
                     progress.style.width = (n / TOTAL * 100) + '%';
                 }
@@ -5595,7 +5719,7 @@
             function showResult() {
                 const type = classify();
                 const matchedProg = PROGRAM_DETAILS[type];
-                
+
                 body.style.display = 'none';
                 const progressWrap = document.querySelector('.qz-progress-wrap');
                 if (progressWrap) progressWrap.style.display = 'none';
@@ -5613,7 +5737,7 @@
                     msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
                     ctaBtn.textContent = 'Đăng ký tư vấn ngay';
                     ctaBtn.href = 'javascript:void(0)';
-                    ctaBtn.onclick = function(e) {
+                    ctaBtn.onclick = function (e) {
                         e.preventDefault();
                         close();
                         if (typeof window.openRegModal === 'function') {
@@ -5628,7 +5752,7 @@
                     msgEl.innerHTML = `Câu trả lời của bạn phản ánh nhu cầu tập trung vào <strong>${matchedProg.highlight}</strong>. Hãy tìm hiểu chương trình này để đạt hiệu quả cao nhất.`;
                     ctaBtn.textContent = CURRENT_PROGRAM ? `Khám phá chương trình ${type} →` : `Khám phá ngay →`;
                     ctaBtn.href = matchedProg.url;
-                    ctaBtn.onclick = function(e) {
+                    ctaBtn.onclick = function (e) {
                         close();
                     };
                 }
@@ -5699,7 +5823,7 @@
                 const content = item.querySelector('.faq-content');
                 const icon = trigger.querySelector('.fa-chevron-down');
                 const isOpen = item.classList.contains('faq-open');
-                
+
                 document.querySelectorAll('.faq-item').forEach(el => {
                     el.classList.remove('faq-open');
                     el.querySelector('.faq-content').style.maxHeight = '0px';
@@ -5707,7 +5831,7 @@
                     el.style.borderColor = '#e2e8f0';
                     el.style.boxShadow = 'none';
                 });
-                
+
                 if (!isOpen) {
                     item.classList.add('faq-open');
                     content.style.maxHeight = content.scrollHeight + 40 + 'px';
@@ -5717,15 +5841,15 @@
                 }
             });
         });
- 
-         // Automatically open the first FAQ item on load
-         window.addEventListener('DOMContentLoaded', () => {
-             const firstTrigger = document.querySelector('.faq-trigger');
-             if (firstTrigger) {
-                 firstTrigger.click();
-             }
-         });
-     </script>
-     </body>
+
+        // Automatically open the first FAQ item on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const firstTrigger = document.querySelector('.faq-trigger');
+            if (firstTrigger) {
+                firstTrigger.click();
+            }
+        });
+    </script>
+</body>
 
 </html>
