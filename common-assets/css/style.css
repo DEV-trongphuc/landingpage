@@ -5676,8 +5676,13 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-headline {
 }
 
 @media (max-width: 768px) {
-  /* Dynamic Swipeable layout for Pain Cards, Giang Vien, and Co Van */
+  /* Central Swipeable Slider Rules */
   body .pain-section .pain-cards,
+  body .pain-cards,
+  body .competency-grid,
+  body #audience-cards-grid,
+  body .testimonials-grid,
+  body .gallery-mosaic,
   #giang-vien div[style*="display: grid"],
   #giang-vien div[style*="display:grid"],
   #co-van div[style*="display: grid"],
@@ -5699,6 +5704,11 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-headline {
   }
 
   body .pain-section .pain-cards::-webkit-scrollbar,
+  body .pain-cards::-webkit-scrollbar,
+  body .competency-grid::-webkit-scrollbar,
+  body #audience-cards-grid::-webkit-scrollbar,
+  body .testimonials-grid::-webkit-scrollbar,
+  body .gallery-mosaic::-webkit-scrollbar,
   #giang-vien div[style*="display: grid"]::-webkit-scrollbar,
   #giang-vien div[style*="display:grid"]::-webkit-scrollbar,
   #co-van div[style*="display: grid"]::-webkit-scrollbar,
@@ -5706,9 +5716,19 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-headline {
     display: none !important;
   }
 
-  /* Make children size consistently as swipeable cards */
+  /* Central Slider Card Size Rules */
   body .pain-section .pain-cards > .pain-card-v2,
   body .pain-section .pain-cards > div,
+  body .pain-cards > .pain-card-v2,
+  body .pain-cards > div,
+  body .competency-grid > .competency-card,
+  body .competency-grid > div,
+  body #audience-cards-grid > .audience-card,
+  body #audience-cards-grid > div,
+  body .testimonials-grid > .testi-card-v4,
+  body .testimonials-grid > div,
+  body .gallery-mosaic > .gallery-item,
+  body .gallery-mosaic > div,
   #giang-vien div[style*="display: grid"] > div,
   #giang-vien div[style*="display:grid"] > div,
   #co-van div[style*="display: grid"] > div,
@@ -5748,11 +5768,13 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-headline {
   }
 
   /* Dark Theme Contrast overrides for dot elements */
-  #giang-vien .scroll-dot {
+  #giang-vien .scroll-dot,
+  .pain-section .scroll-dot {
     background: rgba(255, 255, 255, 0.2) !important;
   }
 
-  #giang-vien .scroll-dot.active {
+  #giang-vien .scroll-dot.active,
+  .pain-section .scroll-dot.active {
     background: #fca5a5 !important;
   }
 
@@ -5784,6 +5806,11 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-headline {
 
 @media (max-width: 480px) {
   body .pain-section .pain-cards,
+  body .pain-cards,
+  body .competency-grid,
+  body #audience-cards-grid,
+  body .testimonials-grid,
+  body .gallery-mosaic,
   #giang-vien div[style*="display: grid"],
   #giang-vien div[style*="display:grid"],
   #co-van div[style*="display: grid"],

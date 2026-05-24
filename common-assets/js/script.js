@@ -878,8 +878,18 @@
         if (window.innerWidth <= 768) {
             const mobileGrids = [];
             
-            // Collect pain cards
-            document.querySelectorAll('.pain-cards').forEach(el => mobileGrids.push(el));
+            // Collect all potential card sliders
+            const selectors = [
+                '.pain-cards',
+                '.competency-grid',
+                '#audience-cards-grid',
+                '.testimonials-grid',
+                '.gallery-mosaic'
+            ];
+            
+            selectors.forEach(sel => {
+                document.querySelectorAll(sel).forEach(el => mobileGrids.push(el));
+            });
             
             // Collect grids in giang-vien and co-van
             document.querySelectorAll('#giang-vien, #co-van').forEach(section => {
@@ -893,6 +903,26 @@
 
             mobileGrids.forEach((grid, idx) => {
                 if (grid.dataset.sliderId) return; // avoid double init
+                
+                // Check if any existing scroll-dots container targets this element
+                let hasExistingDots = false;
+                document.querySelectorAll('.scroll-dots').forEach(dotsContainer => {
+                    const targetSel = dotsContainer.dataset.scrollTarget;
+                    if (targetSel) {
+                        try {
+                            if (grid.matches(targetSel) || grid.closest(targetSel) === grid) {
+                                hasExistingDots = true;
+                            }
+                        } catch (e) {
+                            // invalid selector handling
+                        }
+                    }
+                });
+                
+                if (hasExistingDots) {
+                    grid.dataset.sliderId = 'manual-slider';
+                    return;
+                }
                 
                 const id = `slider-target-${idx}`;
                 grid.dataset.sliderId = id;
@@ -1054,8 +1084,8 @@
             .back-to-top-btn {
                 position: fixed;
                 bottom: 28px;
-                left: 50%;
-                transform: translate(-50%, 20px);
+                left: 24px;
+                transform: translateY(20px);
                 background: #ab0e00;
                 color: #ffffff;
                 border: none;
@@ -1078,18 +1108,19 @@
             .back-to-top-btn.visible {
                 opacity: 1;
                 pointer-events: auto;
-                transform: translate(-50%, 0);
+                transform: translateY(0);
             }
             .back-to-top-btn.visible:hover {
                 background-color: #900c00;
-                transform: translate(-50%, -4px);
+                transform: translateY(-4px);
                 box-shadow: 0 8px 24px rgba(171, 14, 0, 0.4);
             }
             .back-to-top-btn.visible:active {
-                transform: translate(-50%, 1px);
+                transform: translateY(1px);
             }
             @media (max-width: 768px) {
                 .back-to-top-btn {
+                    left: 16px;
                     bottom: 84px;
                     padding: 8px 18px;
                     font-size: 0.85rem;
