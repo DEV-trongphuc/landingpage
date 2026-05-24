@@ -1455,55 +1455,218 @@ button {
 
 @media (max-width: 768px) {
     body, html {
-        overflow-y: auto; /* Allow scrolling on mobile if absolutely needed */
+        overflow-y: auto; /* Allow scrolling on mobile */
     }
     
     .hud-header {
         top: 12px;
         left: 12px;
         right: 12px;
-        padding: 0 16px;
+        padding: 0 12px;
         height: 60px;
+        border-radius: var(--radius-md);
     }
     
     .hud-logo img {
-        height: 28px;
+        height: 26px;
     }
     
     .hud-nav {
-        display: none; /* Hide header buttons on mobile, rely on bottom bar and drawer */
-    }
-    
-    .hud-panel-left, .hud-panel-right {
-        padding: 16px;
+        display: none; /* Hide header links, rely on directory cards */
     }
 
-    .hud-panel-left {
-        top: 84px;
-        left: 12px;
-        right: 12px;
-        bottom: 84px;
-        width: calc(100% - 24px);
+    .hud-actions {
+        gap: 8px;
+    }
+
+    .hud-actions button span {
+        display: none; /* Icon-only header buttons on mobile */
+    }
+
+    .hud-actions button i {
+        margin: 0 !important;
+        font-size: 0.95rem;
+    }
+
+    .hud-actions .btn-outline-crimson,
+    .hud-actions .btn-primary-crimson {
+        padding: 0;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50% !important;
+    }
+    
+    /* Dedicated Flat Directory for Mobile/Tablet */
+    .mobile-portal-directory {
+        display: block !important;
+        padding: 88px 12px 40px;
+        width: 100%;
+        min-height: 100vh;
+        box-sizing: border-box;
+        background: linear-gradient(180deg, #060913 0%, #0c0f1d 100%);
+        position: relative;
+        z-index: 5;
+    }
+
+    .mobile-directory-header {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .mobile-directory-header h2 {
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: var(--text-main);
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .mobile-directory-header p {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+    }
+
+    .mobile-directory-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    .mobile-program-card {
+        background: rgba(13, 18, 34, 0.7);
+        border: 1px solid var(--hud-border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--hud-shadow);
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: var(--transition-smooth);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mobile-program-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(ellipse at top right, rgba(179, 20, 0, 0.1), transparent 70%);
+        pointer-events: none;
+    }
+
+    .mobile-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-card-school {
+        font-size: 0.7rem;
+        font-weight: 800;
+        color: var(--brand-crimson);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    .mobile-card-country {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 3px 8px;
+        background: rgba(179, 20, 0, 0.08);
+        border: 1px solid rgba(179, 20, 0, 0.2);
+        border-radius: var(--radius-full);
+        font-size: 0.65rem;
+        font-weight: 700;
+        color: var(--text-muted);
+    }
+
+    .mobile-card-title {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--text-white);
+        line-height: 1.3;
+        margin: 0;
+    }
+
+    .mobile-card-tagline {
+        font-size: 0.76rem;
+        color: var(--text-muted);
+        line-height: 1.4;
+        font-style: italic;
+        border-left: 2px solid var(--brand-crimson);
+        padding-left: 8px;
+        margin: 2px 0;
+    }
+
+    .mobile-card-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .mobile-card-badge {
+        font-size: 0.65rem;
+        font-weight: 700;
+        color: var(--text-main);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 3px 6px;
+        border-radius: var(--radius-sm);
+    }
+
+    .mobile-card-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 4px;
+    }
+
+    .mobile-card-actions .btn-primary-crimson,
+    .mobile-card-actions .btn-glass-crimson {
+        flex: 1;
+        font-size: 0.75rem;
+        padding: 8px 12px;
+        justify-content: center;
+        border-radius: var(--radius-full);
+    }
+
+    /* Convert Side Panels to Bottom Sheets */
+    .hud-panel-left, .hud-panel-right {
+        top: auto !important;
+        bottom: 0 !important;
+        height: 75% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        border-radius: var(--radius-xl) var(--radius-xl) 0 0 !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+        padding: 24px 20px !important;
+        z-index: 2000 !important;
         transform: translateY(0);
-        z-index: 101;
     }
     
     .hud-panel-left.hidden {
-        transform: translateY(calc(100% + 100px));
-    }
-    
-    .hud-panel-right {
-        top: 84px;
-        left: 12px;
-        right: 12px;
-        bottom: 84px;
-        width: calc(100% - 24px);
-        transform: translateY(0);
-        z-index: 101;
+        transform: translateY(100%) !important;
     }
     
     .hud-panel-right.hidden {
-        transform: translateY(calc(100% + 100px));
+        transform: translateY(100%) !important;
     }
 
     .placeholder-details i {
@@ -1644,3 +1807,4 @@ button {
         padding: 16px 20px;
     }
 }
+

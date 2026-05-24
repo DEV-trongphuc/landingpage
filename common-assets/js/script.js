@@ -873,6 +873,41 @@
         stack.addEventListener('click', () => rotateStack('next'));
     }
 
+    /* ─── Mobile Sliders Dot Container Injection ─── */
+    function initMobileSliders() {
+        if (window.innerWidth <= 768) {
+            const mobileGrids = [];
+            
+            // Collect pain cards
+            document.querySelectorAll('.pain-cards').forEach(el => mobileGrids.push(el));
+            
+            // Collect grids in giang-vien and co-van
+            document.querySelectorAll('#giang-vien, #co-van').forEach(section => {
+                section.querySelectorAll('div').forEach(div => {
+                    const styleAttr = div.getAttribute('style') || '';
+                    if (styleAttr.includes('display:grid') || styleAttr.includes('display: grid') || div.style.display === 'grid') {
+                        mobileGrids.push(div);
+                    }
+                });
+            });
+
+            mobileGrids.forEach((grid, idx) => {
+                if (grid.dataset.sliderId) return; // avoid double init
+                
+                const id = `slider-target-${idx}`;
+                grid.dataset.sliderId = id;
+                grid.classList.add(id);
+
+                const dotsDiv = document.createElement('div');
+                dotsDiv.className = 'scroll-dots';
+                dotsDiv.dataset.scrollTarget = `.${id}`;
+                
+                // Append dots container right after the slider grid
+                grid.parentNode.insertBefore(dotsDiv, grid.nextSibling);
+            });
+        }
+    }
+
     /* ─── Horizontal Scroll Dots Management ─── */
     function initScrollDots() {
         const dotContainers = document.querySelectorAll('.scroll-dots');
@@ -1132,8 +1167,12 @@
     initBackToTop();
     initMobileDropdowns();
     initCustomSelects();
+    initMobileSliders();
     initScrollDots();
-    window.addEventListener('resize', initScrollDots);
+    window.addEventListener('resize', () => {
+        initMobileSliders();
+        initScrollDots();
+    });
 
     console.log('%cIDEAS × Swiss UMEF MBA [Portal]', 'background:#ab0e00;color:#fff;padding:4px 12px;border-radius:4px;font-weight:700');
 

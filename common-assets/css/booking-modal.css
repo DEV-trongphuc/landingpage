@@ -1017,39 +1017,85 @@
     .bk-modal {
         align-items: center;
         justify-content: center;
-        padding: 16px;
+        padding: 12px;
     }
 
     .bk-container {
         max-width: 100%;
         border-radius: 20px;
-        max-height: 92vh;
+        max-height: 94vh;
     }
 
     .bk-step {
-        padding: 20px 20px 28px;
+        padding: 16px 16px 24px;
+    }
+
+    .bk-step-header {
+        padding-right: 24px; /* Avoid overlap with close button */
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .bk-header-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        border-radius: 10px;
+    }
+
+    .bk-step-title {
+        font-size: 1.15rem;
     }
 
     .bk-progress {
-        padding: 20px 20px 0;
+        padding: 16px 16px 0;
+    }
+
+    .bk-steps-label {
+        gap: 4px;
+    }
+
+    .bk-step-lbl {
+        font-size: 0.65rem;
+        letter-spacing: 0.01em;
     }
 
     .bk-row-2 {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     .bk-program-grid {
         grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .bk-calendar-wrap {
+        padding: 10px 8px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+    }
+
+    .bk-cal-day {
+        font-size: 0.75rem;
+        border-radius: 6px;
     }
 
     .bk-time-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .bk-time-slot {
+        padding: 8px 4px;
+        font-size: 0.78rem;
     }
 
     .bk-summary-datetime {
         flex-direction: column;
         gap: 16px;
         align-items: flex-start;
+        padding: 18px 20px;
     }
 
     .bk-sum-divider {
@@ -1060,9 +1106,49 @@
 
     .bk-sum-person {
         padding: 16px 20px;
+        gap: 8px;
     }
 
     .bk-sum-note {
         padding: 12px 20px;
+    }
+}
+
+@media (max-width: 375px) {
+    .bk-steps-label {
+        font-size: 0.6rem;
+    }
+    
+    .bk-step-lbl[data-step="1"]::before { content: "1. "; }
+    .bk-step-lbl[data-step="2"]::before { content: "2. "; }
+    .bk-step-lbl[data-step="3"]::before { content: "3. "; }
+    
+    .bk-time-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on extremely small screens */
+    }
+
+    .bk-cal-grid {
+        gap: 2px;
+    }
+
+    .bk-cal-day {
+        font-size: 0.7rem;
+    }
+}
+
+/* Tactile Active States for Mobile */
+@media (hover: none) {
+    .bk-cal-day:active:not(.bk-cal-disabled):not(.bk-cal-empty) {
+        background: var(--clr-primary);
+        color: #fff;
+        transform: scale(0.92);
+    }
+    .bk-time-slot:active {
+        background: var(--clr-primary);
+        color: #fff;
+        transform: scale(0.95);
+    }
+    .bk-btn-next:active, .bk-btn-confirm:active, .bk-btn-done:active {
+        transform: scale(0.97);
     }
 }

@@ -16,6 +16,12 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://ideas.edu.vn/mba-in-ai" />
 
+    <!-- GEO Targeting -->
+    <meta name="geo.region" content="VN-SG" />
+    <meta name="geo.placename" content="Hồ Chí Minh" />
+    <meta name="geo.position" content="10.8125;106.6668" />
+    <meta name="ICBM" content="10.8125, 106.6668" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title"
@@ -48,29 +54,92 @@
     <script src="https://automation.ideas.edu.vn/tracker.js" defer></script>
     <!-- Structured Data -->
     <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "Thạc Sĩ Quản Trị Kinh Doanh Chuyên Ngành Trí Tuệ Nhân Tạo (MBA in AI) – Swiss UMEF",
-    "description": "Chương trình MBA in AI trực tuyến 100% do Swiss UMEF Thụy Sĩ cấp bằng, dành cho những ai muốn nâng tầm sự nghiệp.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Swiss UMEF – IDEAS",
-      "sameAs": "https://ideas.edu.vn"
-    },
-    "educationalLevel": "Graduate",
-    "timeRequired": "P16M",
-    "courseMode": "online",
-    "inLanguage": "vi",
-    "offers": {
-      "@type": "Offer",
-      "category": "MBA in AI",
-      "url": "https://ideas.edu.vn/mba-in-ai"
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Thạc Sĩ Quản Trị Kinh Doanh Chuyên Ngành Trí Tuệ Nhân Tạo (MBA in AI) – Swiss UMEF",
+      "description": "Chương trình MBA in AI trực tuyến 100% do Swiss UMEF Thụy Sĩ cấp bằng, quản trị kinh doanh tích hợp ứng dụng AI dạng no-code/low-code để nâng hiệu suất quản lý.",
+      "courseCode": "MBA-in-AI",
+      "educationalLevel": "Graduate",
+      "inLanguage": "vi",
+      "courseMode": "online",
+      "timeRequired": "P16M",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Viện IDEAS",
+        "alternateName": "IDEAS Institute",
+        "url": "https://ideas.edu.vn",
+        "logo": "https://ideas.edu.vn/wp-content/uploads/2026/01/Logo_15_nam.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Tầng 4, Tòa nhà Hải Âu, 39B Trường Sơn",
+          "addressLocality": "Phường 2, Quận Tân Bình",
+          "addressRegion": "Thành phố Hồ Chí Minh",
+          "postalCode": "700000",
+          "addressCountry": "VN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 10.8125,
+          "longitude": 106.6668
+        },
+        "telephone": "+842822442244"
+      },
+      "offers": {
+        "@type": "Offer",
+        "category": "MBA in AI",
+        "url": "https://ideas.edu.vn/mba-in-ai",
+        "priceCurrency": "CHF",
+        "eligibleRegion": {
+          "@type": "Place",
+          "name": "Vietnam"
+        },
+        "offeredBy": {
+          "@type": "EducationalOrganization",
+          "name": "Viện IDEAS",
+          "sameAs": "https://ideas.edu.vn"
+        }
+      }
     }
-  }
-  </script>
+    </script>
 
-  <script type="application/ld+json">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Viện IDEAS",
+      "alternateName": "IDEAS Institute",
+      "url": "https://ideas.edu.vn",
+      "logo": "https://ideas.edu.vn/wp-content/uploads/2026/01/Logo_15_nam.webp",
+      "description": "Viện IDEAS (IDEAS Institute) cung cấp các chương trình đào tạo quản trị doanh nghiệp, MBA, EMBA, DBA liên kết quốc tế uy tín tại Việt Nam.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Tầng 4, Tòa nhà Hải Âu, 39B Trường Sơn",
+        "addressLocality": "Phường 2, Quận Tân Bình",
+        "addressRegion": "Thành phố Hồ Chí Minh",
+        "postalCode": "700000",
+        "addressCountry": "VN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 10.8125,
+        "longitude": 106.6668
+      },
+      "telephone": "+842822442244",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+842822442244",
+        "contactType": "Admissions & Hotline",
+        "areaServed": "VN",
+        "availableLanguage": "Vietnamese"
+      },
+      "sameAs": [
+        "https://ideas.edu.vn"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -1307,7 +1376,7 @@
             gap: 5px;
             padding: 6px 12px;
             background: #111729;
-            
+
             border-radius: 99px;
             font-size: 0.73rem;
             font-weight: 700;
@@ -1468,7 +1537,8 @@
             align-items: center;
             gap: 5px;
             padding: 4px 12px;
-            background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.15);
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.15);
             border-radius: 99px;
             font-size: 0.72rem;
             font-weight: 800;
@@ -1558,7 +1628,8 @@
             text-align: center;
             padding: 13px 20px;
             border-radius: 12px;
-            background: #ffffff; border: 1.5px solid rgba(15, 23, 42, 0.25);
+            background: #ffffff;
+            border: 1.5px solid rgba(15, 23, 42, 0.25);
             color: #ab0e00;
             font-weight: 800;
             font-size: 0.9rem;
@@ -1588,6 +1659,7 @@
             justify-content: flex-start;
             align-items: center;
         }
+
         @media (max-width: 1024px) {
             .hero-cta {
                 justify-content: center;
@@ -1724,7 +1796,9 @@
         .sacom-pill {
             display: inline-block;
             padding: 4px 12px;
-            background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 99px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 99px;
             font-size: 0.75rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
@@ -2658,7 +2732,7 @@
                 padding: 14px 18px !important;
             }
         }
-    
+
         /* ==========================================
            MOBILE & VIEWPORT OPTIMIZATIONS
            ========================================== */
@@ -2669,45 +2743,56 @@
                 justify-content: center !important;
                 gap: 16px !important;
             }
-            .pain-cards > .pain-card-v2,
-            .pain-cards > div {
+
+            .pain-cards>.pain-card-v2,
+            .pain-cards>div {
                 flex: 0 1 calc(33.333% - 12px) !important;
                 min-width: 250px !important;
             }
         }
 
         @media (max-width: 768px) {
+
             /* Tighten paddings */
-            section, 
-            .pricing-section, 
+            section,
+            .pricing-section,
             .cta-section,
             .hero-section,
             .ecosystem-section {
                 padding: 32px 12px !important;
             }
+
             .container {
                 padding-left: 12px !important;
                 padding-right: 12px !important;
             }
+
             .premium-policy-wrapper {
                 padding: 0 !important;
             }
-            .premium-policy-wrapper > div {
+
+            .premium-policy-wrapper>div {
                 padding: 24px 12px !important;
                 border-radius: 16px !important;
             }
-            
+
             /* Clamp titles */
-            h1, .hero-title {
+            h1,
+            .hero-title {
                 font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
             }
-            h2, .section-title {
+
+            h2,
+            .section-title {
                 font-size: clamp(1.6rem, 4.5vw, 1.9rem) !important;
             }
-            h3, .pricing-title, .cta-headline {
+
+            h3,
+            .pricing-title,
+            .cta-headline {
                 font-size: clamp(1.4rem, 4vw, 1.7rem) !important;
             }
-            
+
             /* Pain cards on mobile */
             .pain-cards {
                 display: flex !important;
@@ -2716,8 +2801,9 @@
                 gap: 12px !important;
                 grid-template-columns: none !important;
             }
-            .pain-cards > .pain-card-v2,
-            .pain-cards > div {
+
+            .pain-cards>.pain-card-v2,
+            .pain-cards>div {
                 flex: 0 1 calc(50% - 8px) !important;
                 min-width: 140px !important;
                 padding: 16px 12px !important;
@@ -2725,8 +2811,9 @@
         }
 
         @media (max-width: 480px) {
-            .pain-cards > .pain-card-v2,
-            .pain-cards > div {
+
+            .pain-cards>.pain-card-v2,
+            .pain-cards>div {
                 flex: 0 1 100% !important;
             }
         }
@@ -2737,12 +2824,15 @@
                 border-bottom: 1px solid #e2e8f0 !important;
                 background: #ffffff !important;
             }
+
             .fee-table-responsive tr:not(.section-header) td:first-child {
                 color: #0f172a !important;
             }
+
             .fee-table-responsive tr:not(.section-header) td:not(:first-child)::before {
                 color: #64748b !important;
             }
+
             .fee-table-responsive tr.total-row {
                 background: rgba(171, 14, 0, 0.05) !important;
                 border-top: 1.5px solid rgba(171, 14, 0, 0.1) !important;
@@ -3059,10 +3149,13 @@
                 <a href="#van-de" class="nav-link">Vấn đề</a>
                 <a href="#giai-phap" class="nav-link">Giải pháp</a>
                 <div class="nav-dropdown">
-                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-haspopup="true"
+                        aria-expanded="false">
                         Chương trình đào tạo
-                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </a>
                     <div class="dropdown-menu-box">
@@ -3146,8 +3239,10 @@
         <div class="mobile-dropdown">
             <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
                 Chương trình
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
                 </svg>
             </button>
             <div class="mobile-dropdown-content">
@@ -3162,7 +3257,9 @@
                     <div class="mobile-section-title">Cử nhân & Tiến sĩ</div>
                     <a href="bba.html" class="mobile-dropdown-item">Top-up BBA</a>
                     <a href="fullbba.html" class="mobile-dropdown-item">Full BBA</a>
-                    <a href="dual-dba.html" class="mobile-dropdown-item" style="margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">Dual DBA (Tiến sĩ)</a>
+                    <a href="dual-dba.html" class="mobile-dropdown-item"
+                        style="margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">Dual
+                        DBA (Tiến sĩ)</a>
                 </div>
             </div>
         </div>
@@ -3300,20 +3397,18 @@
                         <span class="hero-hl-big ai-strong-hook"
                             style="font-family: 'Space Grotesk', sans-serif; font-style: normal; font-weight: 800; color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); line-height: 1.3; letter-spacing: -0.03em; margin: 0; display: block; text-transform: uppercase;">
                             <span
-                                style="font-size: clamp(1.4rem, 3.5vw, 2.0rem); display: block; line-height: 1.2; margin-bottom: 4px;">AI không thay thế nhà quản lý</span>
+                                style="font-size: clamp(1.4rem, 3.5vw, 2.0rem); display: block; line-height: 1.2; margin-bottom: 4px;">AI
+                                không thay thế nhà quản lý</span>
                             <span
-                                style="background: linear-gradient(90deg, #fecaca, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none; display: inline-block; padding-top: 0.15em; font-size: clamp(1.8rem, 4.8vw, 3.2rem); line-height: 1.25;">Nhà quản lý biết dùng AI <br>sẽ thay thế phần còn lại</span>
+                                style="background: linear-gradient(90deg, #ffffff, #fca5a5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none; display: inline-block; padding-top: 0.15em; font-size: clamp(1.8rem, 4.8vw, 3.2rem); line-height: 1.25;">Nhà
+                                quản lý biết dùng AI <br>sẽ thay thế phần còn lại</span>
                         </span>
                     </h1>
-
-                    <p
-                        style="font-size:1rem;font-weight:600;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;margin-top:0;">
-                        MBA in AI là Thạc sĩ Quản trị Kinh doanh chuyên sâu về ứng dụng, thiết lập quy trình và quản trị bằng AI
-                    </p>
-
                     <p class="hero-sub"
                         style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.6; max-width: 600px;">
-                        MBA in AI của <strong>Swiss UMEF</strong> được thiết kế dành cho chủ doanh nghiệp, nhà quản trị và trưởng bộ phận muốn xây dựng quy trình tự động hóa, quản trị rủi ro bảo mật dữ liệu và nâng cao hiệu suất doanh nghiệp bằng AI.
+                        MBA in AI của <strong>Swiss UMEF</strong> được thiết kế dành cho chủ doanh nghiệp, nhà quản trị
+                        và trưởng bộ phận muốn xây dựng quy trình tự động hóa, quản trị rủi ro bảo mật dữ liệu và nâng
+                        cao hiệu suất doanh nghiệp bằng AI.
                     </p>
 
                     <div class="hero-badges-row" aria-label="Thông tin nhanh về chương trình">
@@ -3403,14 +3498,20 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:20px;">
-                        <a href="javascript:void(0)" class="btn" id="hero-main-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('hero-main-cta')" style="background: #fff; color: #ab0e00; border: none; box-shadow: 0 8px 25px rgba(0,0,0,0.2); cursor:pointer; font-weight: 700; border-radius: 100px; display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; text-decoration: none;">
+                        <a href="javascript:void(0)" class="btn" id="hero-main-cta"
+                            onclick="if(typeof window.openRegModal === 'function') window.openRegModal('hero-main-cta')"
+                            style="background: #fff; color: #ab0e00; border: none; box-shadow: 0 8px 25px rgba(0,0,0,0.2); cursor:pointer; font-weight: 700; border-radius: 100px; display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; text-decoration: none;">
                             <span>Nhận Tư vấn lộ trình MBA in AI</span>
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </a>
-                        <a href="javascript:void(0)" class="btn btn-outline" id="hero-quiz-cta" onclick="quizModal.open()" style="border: 2px solid #fff; color: #fff; background: transparent; padding: 14px 28px; border-radius: 100px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s;" onmouseover="this.style.background='#fff';this.style.color='#ab0e00';" onmouseout="this.style.background='transparent';this.style.color='#fff';">
+                        <a href="javascript:void(0)" class="btn btn-outline" id="hero-quiz-cta"
+                            onclick="quizModal.open()"
+                            style="border: 2px solid #fff; color: #fff; background: transparent; padding: 14px 28px; border-radius: 100px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s;"
+                            onmouseover="this.style.background='#fff';this.style.color='#ab0e00';"
+                            onmouseout="this.style.background='transparent';this.style.color='#fff';">
                             <span>Đánh giá mức độ phù hợp</span>
                             <i class="fa-solid fa-graduation-cap" style="font-size: 1rem;"></i>
                         </a>
@@ -3542,7 +3643,8 @@
                                     stroke="currentColor" stroke-width="1.8">
                                     <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                                 </svg></div>
-                            <p><strong>Rò rỉ dữ liệu nghiêm trọng:</strong> Nhân viên tự ý đưa dữ liệu nội bộ, thông tin tài chính hay bí mật kinh doanh lên các AI công cộng.</p>
+                            <p><strong>Rò rỉ dữ liệu nghiêm trọng:</strong> Nhân viên tự ý đưa dữ liệu nội bộ, thông tin
+                                tài chính hay bí mật kinh doanh lên các AI công cộng.</p>
                         </div>
                     </div>
                     <div class="pain-card-v2 ai-neon-box">
@@ -3554,7 +3656,8 @@
                                     <line x1="12" y1="8" x2="12" y2="12" />
                                     <line x1="12" y1="16" x2="12.01" y2="16" />
                                 </svg></div>
-                            <p><strong>Đốt tiền nhưng không có ROI:</strong> Mua bản quyền phần mềm AI đắt đỏ nhưng nhân sự không dùng hiệu quả, lãng phí ngân sách doanh nghiệp.</p>
+                            <p><strong>Đốt tiền nhưng không có ROI:</strong> Mua bản quyền phần mềm AI đắt đỏ nhưng nhân
+                                sự không dùng hiệu quả, lãng phí ngân sách doanh nghiệp.</p>
                         </div>
                     </div>
                     <div class="pain-card-v2 ai-neon-box">
@@ -3564,7 +3667,8 @@
                                     stroke="currentColor" stroke-width="1.8">
                                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                                 </svg></div>
-                            <p><strong>Vận hành thiếu AI quy chuẩn:</strong> Thiếu các quy trình (SOPs) chuẩn hóa để tích hợp AI vào công việc hàng ngày của các phòng ban.</p>
+                            <p><strong>Vận hành thiếu AI quy chuẩn:</strong> Thiếu các quy trình (SOPs) chuẩn hóa để
+                                tích hợp AI vào công việc hàng ngày của các phòng ban.</p>
                         </div>
                     </div>
                     <div class="pain-card-v2 ai-neon-box">
@@ -3577,7 +3681,8 @@
                                     <line x1="12" y1="9" x2="12" y2="13" />
                                     <line x1="12" y1="17" x2="12.01" y2="17" />
                                 </svg></div>
-                            <p><strong>Bất lực trước đối thủ dùng AI:</strong> Nhìn thấy đối thủ tối ưu hóa chi phí và tốc độ bằng AI, còn doanh nghiệp mình vẫn loay hoay thử nghiệm rời rạc.</p>
+                            <p><strong>Bất lực trước đối thủ dùng AI:</strong> Nhìn thấy đối thủ tối ưu hóa chi phí và
+                                tốc độ bằng AI, còn doanh nghiệp mình vẫn loay hoay thử nghiệm rời rạc.</p>
                         </div>
                     </div>
                     <div class="pain-card-v2 ai-neon-box">
@@ -3729,7 +3834,9 @@
                 </div>
 
                 <div class="section-cta reveal-up">
-                    <a href="javascript:void(0)" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('pain-cta')" class="btn btn-primary" id="pain-cta">
+                    <a href="javascript:void(0)"
+                        onclick="if(typeof window.openRegModal === 'function') window.openRegModal('pain-cta')"
+                        class="btn btn-primary" id="pain-cta">
                         MBA in AI cho nhà lãnh đạo vươn tầm cao mới
                         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -3922,8 +4029,11 @@
                         </div>
                     </div>
                     <div style="text-align:center;padding:0 16px;" class="reveal-up">
-                        <a href="javascript:void(0)" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('target-cta')" class="btn btn-primary" id="target-cta"
-                            style="white-space:normal;text-align:center;line-height:1.4;">Đăng ký tư vấn ngay <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                        <a href="javascript:void(0)"
+                            onclick="if(typeof window.openRegModal === 'function') window.openRegModal('target-cta')"
+                            class="btn btn-primary" id="target-cta"
+                            style="white-space:normal;text-align:center;line-height:1.4;">Đăng ký tư vấn ngay <svg
+                                width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                             </svg></a>
@@ -4004,7 +4114,8 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:28px">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta" onclick="quizModal.open()">
+                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta"
+                            onclick="quizModal.open()">
                             Nhận Brochure MBA in AI Swiss UMEF
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -4196,7 +4307,8 @@
                             <li
                                 style="border-top: 1px dashed rgba(255,255,255,0.15); margin-top: 12px; padding-top: 12px; color: #fca5a5;">
                                 <span class="curri-dot" style="background: #fca5a5;"></span><strong>Thesis (Luận văn) -
-                                    18 ECTS</strong></li>
+                                    18 ECTS</strong>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -5776,6 +5888,7 @@
                             margin-top: 36px;
                             margin-bottom: 24px;
                         }
+
                         .faq-item {
                             background: #ffffff;
                             border: 1px solid #e2e8f0;
@@ -5783,10 +5896,12 @@
                             overflow: hidden;
                             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
                         }
+
                         .faq-item:hover {
                             border-color: rgba(171, 14, 0, 0.25);
                             background: rgba(171, 14, 0, 0.01);
                         }
+
                         .faq-trigger {
                             width: 100%;
                             display: flex;
@@ -5804,9 +5919,11 @@
                             transition: all 0.2s ease;
                             outline: none;
                         }
+
                         .faq-trigger:hover {
                             color: #ab0e00;
                         }
+
                         .faq-content {
                             max-height: 0;
                             overflow: hidden;
@@ -5816,6 +5933,7 @@
                             font-size: 0.86rem;
                             line-height: 1.6;
                         }
+
                         .faq-content p {
                             margin: 0 0 16px 0;
                         }
@@ -5826,46 +5944,63 @@
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>MBA in AI khác gì so với MSc AI (Thạc sĩ Khoa học AI)?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>MBA in AI là chương trình quản trị kinh doanh tích hợp ứng dụng AI dạng no-code/low-code để nâng hiệu suất quản lý. MSc AI (Master of Science in Applied AI) đi sâu hơn vào mặt kỹ thuật, lập trình thuật toán Python, Machine Learning và kỹ thuật dữ liệu lớn.</p>
+                                <p>MBA in AI là chương trình quản trị kinh doanh tích hợp ứng dụng AI dạng
+                                    no-code/low-code để nâng hiệu suất quản lý. MSc AI (Master of Science in Applied AI)
+                                    đi sâu hơn vào mặt kỹ thuật, lập trình thuật toán Python, Machine Learning và kỹ
+                                    thuật dữ liệu lớn.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Nhà quản lý không biết lập trình có học được MBA in AI không?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Có. Chương trình được thiết kế đặc thù không yêu cầu học viên phải biết lập trình hay viết mã code, tập trung vào Prompt Engineering, quy trình tự động hóa AI và tư duy chuyển đổi số doanh nghiệp.</p>
+                                <p>Có. Chương trình được thiết kế đặc thù không yêu cầu học viên phải biết lập trình hay
+                                    viết mã code, tập trung vào Prompt Engineering, quy trình tự động hóa AI và tư duy
+                                    chuyển đổi số doanh nghiệp.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Học phí chương trình MBA in AI Thụy Sĩ là bao nhiêu?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Chương trình có mức phí cạnh tranh cùng nhiều chính sách đóng học phí linh hoạt và hỗ trợ trả góp qua thẻ tín dụng Sacombank từ 12 - 24 tháng. Vui lòng liên hệ hotline 028 2244 2244 để nhận lộ trình chi phí chi tiết và ưu đãi học phí hiện hành.</p>
+                                <p>Chương trình có mức phí cạnh tranh cùng nhiều chính sách đóng học phí linh hoạt và hỗ
+                                    trợ trả góp qua thẻ tín dụng Sacombank từ 12 - 24 tháng. Vui lòng liên hệ hotline
+                                    028 2244 2244 để nhận lộ trình chi phí chi tiết và ưu đãi học phí hiện hành.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Bằng tốt nghiệp MBA in AI có ghi chữ 'Online' (Trực tuyến) không?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Không. Bằng Thạc sĩ do Swiss UMEF Thụy Sĩ cấp hoàn toàn đồng nhất về nội dung và giá trị pháp lý với chương trình học trực tiếp tại Geneva, không ghi hình thức trực tuyến trên bằng.</p>
+                                <p>Không. Bằng Thạc sĩ do Swiss UMEF Thụy Sĩ cấp hoàn toàn đồng nhất về nội dung và giá
+                                    trị pháp lý với chương trình học trực tiếp tại Geneva, không ghi hình thức trực
+                                    tuyến trên bằng.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
-                                <span>Bằng cấp MBA in AI của Swiss UMEF có được công nhận quốc tế và hợp pháp hóa lãnh sự không?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <span>Bằng cấp MBA in AI của Swiss UMEF có được công nhận quốc tế và hợp pháp hóa lãnh
+                                    sự không?</span>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Có. Bằng cấp được kiểm định quốc tế bởi IACBE (Mỹ), EduQua (Thụy Sĩ) và được hợp pháp hóa lãnh sự bởi Bộ Ngoại giao Thụy Sĩ/Đại sứ quán Việt Nam tại Thụy Sĩ để đảm bảo giá trị pháp lý quốc tế.</p>
+                                <p>Có. Bằng cấp được kiểm định quốc tế bởi IACBE (Mỹ), EduQua (Thụy Sĩ) và được hợp pháp
+                                    hóa lãnh sự bởi Bộ Ngoại giao Thụy Sĩ/Đại sứ quán Việt Nam tại Thụy Sĩ để đảm bảo
+                                    giá trị pháp lý quốc tế.</p>
                             </div>
                         </div>
                     </div>
@@ -6514,7 +6649,7 @@
     <script src="common-assets/js/script.js?v=1.2"></script>
     <script src="common-assets/js/booking-modal.js?v=1.1"></script>
 
-    
+
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
@@ -6598,6 +6733,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .qz-header::after {
             content: '';
             position: absolute;
@@ -6700,8 +6836,15 @@
         }
 
         @keyframes qzFadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .qz-q-number {
@@ -6996,15 +7139,15 @@
                 "options": [
                     {
                         "text": "Sử dụng các công cụ AI ứng dụng (ChatGPT, Claude, AI Automation) dạng no-code/low-code để tối ưu hóa năng suất vận hành.",
-                        "scores": {"MBA_AI": 5}
+                        "scores": { "MBA_AI": 5 }
                     },
                     {
                         "text": "Trực tiếp lập trình Python, huấn luyện mô hình học máy, xử lý kỹ thuật dữ liệu và giải thuật AI.",
-                        "scores": {"MSC_AI": 5}
+                        "scores": { "MSC_AI": 5 }
                     },
                     {
                         "text": "Chỉ học kỹ năng quản trị cốt lõi, không cần học chuyên sâu về AI.",
-                        "scores": {"MBA": 4, "EMBA": 4, "BBA": 3, "FULL_BBA": 3}
+                        "scores": { "MBA": 4, "EMBA": 4, "BBA": 3, "FULL_BBA": 3 }
                     }
                 ]
             },
@@ -7013,15 +7156,15 @@
                 "options": [
                     {
                         "text": "Không có nền tảng lập trình (hoặc sợ code), muốn dùng AI thông qua giao diện người dùng và Prompt.",
-                        "scores": {"MBA_AI": 5, "MBA": 3, "EMBA": 3}
+                        "scores": { "MBA_AI": 5, "MBA": 3, "EMBA": 3 }
                     },
                     {
                         "text": "Đã từng code hoặc sẵn lòng học toán học thuật toán, lập trình Python, xử lý dữ liệu.",
-                        "scores": {"MSC_AI": 5}
+                        "scores": { "MSC_AI": 5 }
                     },
                     {
                         "text": "Không quan tâm công nghệ thông tin, chỉ muốn tập trung phát triển kỹ năng mềm lãnh đạo.",
-                        "scores": {"MBA": 4, "EMBA": 4}
+                        "scores": { "MBA": 4, "EMBA": 4 }
                     }
                 ]
             },
@@ -7030,15 +7173,15 @@
                 "options": [
                     {
                         "text": "Đã tốt nghiệp Đại học chính quy và muốn học lên Thạc sĩ.",
-                        "scores": {"MBA_AI": 5, "MSC_AI": 4, "MBA": 4, "EMBA": 3}
+                        "scores": { "MBA_AI": 5, "MSC_AI": 4, "MBA": 4, "EMBA": 3 }
                     },
                     {
                         "text": "Tốt nghiệp Cao đẳng, Trung cấp muốn học liên thông cử nhân.",
-                        "scores": {"BBA": 5}
+                        "scores": { "BBA": 5 }
                     },
                     {
                         "text": "Đã tốt nghiệp Thạc sĩ và muốn học lên Tiến sĩ.",
-                        "scores": {"DUAL_DBA": 5}
+                        "scores": { "DUAL_DBA": 5 }
                     }
                 ]
             },
@@ -7047,15 +7190,15 @@
                 "options": [
                     {
                         "text": "Tăng hiệu suất làm việc lên gấp 3 lần bằng cách ứng dụng Prompt Engineering và các công cụ AI tự động hóa quy trình.",
-                        "scores": {"MBA_AI": 5}
+                        "scores": { "MBA_AI": 5 }
                     },
                     {
                         "text": "Trở thành chuyên gia công nghệ, làm chủ thiết kế hệ thống và mô hình học máy phức tạp.",
-                        "scores": {"MSC_AI": 5}
+                        "scores": { "MSC_AI": 5 }
                     },
                     {
                         "text": "Nắm vững kỹ năng cốt lõi quản trị kinh doanh chuẩn mực (Tài chính, Marketing, Nhân sự).",
-                        "scores": {"MBA": 5, "EMBA": 3}
+                        "scores": { "MBA": 5, "EMBA": 3 }
                     }
                 ]
             },
@@ -7064,15 +7207,15 @@
                 "options": [
                     {
                         "text": "Trở thành CEO, Giám đốc điều hành, Giám đốc chuyển đổi số hoặc quản lý bộ phận biết tận dụng sức mạnh AI.",
-                        "scores": {"MBA_AI": 5, "EMBA": 3}
+                        "scores": { "MBA_AI": 5, "EMBA": 3 }
                     },
                     {
                         "text": "Trở thành CTO, Trưởng bộ phận Dữ liệu (Chief Data Officer), hoặc chuyên gia phát triển AI chuyên nghiệp.",
-                        "scores": {"MSC_AI": 5}
+                        "scores": { "MSC_AI": 5 }
                     },
                     {
                         "text": "Trở thành Giám đốc cấp cao định hướng chiến lược vĩ mô và ngoại giao lớn.",
-                        "scores": {"EMBA": 5, "DUAL_DBA": 2}
+                        "scores": { "EMBA": 5, "DUAL_DBA": 2 }
                     }
                 ]
             }
@@ -7119,7 +7262,7 @@
                     </div>
                 `;
                 qContainer.innerHTML = html;
-                
+
                 if (progress) {
                     progress.style.width = (n / TOTAL * 100) + '%';
                 }
@@ -7171,7 +7314,7 @@
             function showResult() {
                 const type = classify();
                 const matchedProg = PROGRAM_DETAILS[type];
-                
+
                 body.style.display = 'none';
                 const progressWrap = document.querySelector('.qz-progress-wrap');
                 if (progressWrap) progressWrap.style.display = 'none';
@@ -7189,7 +7332,7 @@
                     msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
                     ctaBtn.textContent = 'Đăng ký tư vấn ngay';
                     ctaBtn.href = 'javascript:void(0)';
-                    ctaBtn.onclick = function(e) {
+                    ctaBtn.onclick = function (e) {
                         e.preventDefault();
                         close();
                         if (typeof window.openRegModal === 'function') {
@@ -7204,7 +7347,7 @@
                     msgEl.innerHTML = `Câu trả lời của bạn phản ánh nhu cầu tập trung vào <strong>${matchedProg.highlight}</strong>. Hãy tìm hiểu chương trình này để đạt hiệu quả cao nhất.`;
                     ctaBtn.textContent = CURRENT_PROGRAM ? `Khám phá chương trình ${type} →` : `Khám phá ngay →`;
                     ctaBtn.href = matchedProg.url;
-                    ctaBtn.onclick = function(e) {
+                    ctaBtn.onclick = function (e) {
                         close();
                     };
                 }
@@ -7275,7 +7418,7 @@
                 const content = item.querySelector('.faq-content');
                 const icon = trigger.querySelector('.fa-chevron-down');
                 const isOpen = item.classList.contains('faq-open');
-                
+
                 document.querySelectorAll('.faq-item').forEach(el => {
                     el.classList.remove('faq-open');
                     el.querySelector('.faq-content').style.maxHeight = '0px';
@@ -7283,7 +7426,7 @@
                     el.style.borderColor = '#e2e8f0';
                     el.style.boxShadow = 'none';
                 });
-                
+
                 if (!isOpen) {
                     item.classList.add('faq-open');
                     content.style.maxHeight = content.scrollHeight + 40 + 'px';
@@ -7302,6 +7445,6 @@
             }
         });
     </script>
-    </body>
+</body>
 
 </html>

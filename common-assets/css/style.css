@@ -5480,3 +5480,476 @@ abbr {
   color: #ffffff;
   box-shadow: 0 6px 20px rgba(171, 14, 0, 0.25);
 }
+
+/* ═══════════════════════════════════════════
+   GLOBAL RESPONSIVE OVERRIDES (MOBILE & TABLET)
+   ═══════════════════════════════════════════ */
+h1, h2, h3, h4, h5, h6, .section-title, .hero-headline {
+  word-wrap: break-word;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --section-py: 72px;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-py: 48px;
+    --radius-xl: 24px;
+    --radius-lg: 16px;
+    --radius-md: 12px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .section-title {
+    font-size: clamp(1.4rem, 5vw, 2.2rem) !important;
+    margin-bottom: 24px;
+  }
+  
+  .hero-headline {
+    font-size: clamp(1.6rem, 6vw, 2.5rem) !important;
+    margin-bottom: 16px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .btn-lg {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+
+  /* Swipeable pain points cards on mobile */
+  .pain-cards {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 16px !important;
+    padding: 4px 4px 16px 4px !important;
+    margin-bottom: 24px !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pain-cards::-webkit-scrollbar {
+    display: none !important;
+  }
+  .pain-cards > div {
+    flex: 0 0 280px !important;
+    scroll-snap-align: start !important;
+  }
+
+  /* Swipeable teachers cards on mobile */
+  .faculty-section div[style*="display: grid"] {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 16px !important;
+    padding: 4px 4px 16px 4px !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .faculty-section div[style*="display: grid"]::-webkit-scrollbar {
+    display: none !important;
+  }
+  .faculty-section div[style*="display: grid"] > div {
+    flex: 0 0 280px !important;
+    scroll-snap-align: start !important;
+  }
+
+  .proof-accred-logos {
+    gap: 20px !important;
+  }
+
+  .proof-accred-logos img {
+    height: 2.2rem !important;
+  }
+
+  /* Declutter hero visual on mobile/tablet */
+  .hero-photo-secondary,
+  .hero-float-badge {
+    display: none !important;
+  }
+
+  /* Ensure hero text layout is compact and readable */
+  .hero-headline span {
+    line-height: 1.2 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-py: 36px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+  }
+
+  .hero-badges-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .hero-accred-logos img {
+    height: 2.2rem;
+  }
+
+  .fixed-booking-fab {
+    right: 12px;
+    bottom: 72px;
+  }
+
+  .fab-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .program-portal-grid {
+    gap: 16px;
+  }
+
+  .card-content-wrap {
+    padding: 16px;
+  }
+
+  .program-fact-list {
+    margin-bottom: 16px;
+    padding-top: 12px;
+    gap: 8px;
+  }
+
+  .program-cta-btn {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .prog-tab-btn {
+    padding: 8px 16px;
+    font-size: 0.78rem;
+  }
+}
+
+/* Touch Device Tactile States */
+@media (hover: none) {
+  .btn:active,
+  .nav-cta:active,
+  .program-cta-btn:active,
+  .prog-tab-btn:active {
+    transform: scale(0.97) !important;
+    filter: brightness(0.95);
+  }
+  
+  .fab-button:active {
+    transform: scale(0.93) rotate(2deg);
+    background: var(--clr-primary);
+    color: #fff;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE SWIPEABLE CAROUSELS & SCROLL DOTS
+   ═══════════════════════════════════════════ */
+.scroll-dots {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Dynamic Swipeable layout for Pain Cards, Giang Vien, and Co Van */
+  body .pain-section .pain-cards,
+  #giang-vien div[style*="display: grid"],
+  #giang-vien div[style*="display:grid"],
+  #co-van div[style*="display: grid"],
+  #co-van div[style*="display:grid"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* CRITICAL FIX: prevent wrapping on mobile */
+    justify-content: flex-start !important; /* Start aligned from the left */
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 16px !important;
+    padding: 12px 16px 20px 16px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    margin-bottom: 8px !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch;
+    grid-template-columns: none !important;
+  }
+
+  body .pain-section .pain-cards::-webkit-scrollbar,
+  #giang-vien div[style*="display: grid"]::-webkit-scrollbar,
+  #giang-vien div[style*="display:grid"]::-webkit-scrollbar,
+  #co-van div[style*="display: grid"]::-webkit-scrollbar,
+  #co-van div[style*="display:grid"]::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Make children size consistently as swipeable cards */
+  body .pain-section .pain-cards > .pain-card-v2,
+  body .pain-section .pain-cards > div,
+  #giang-vien div[style*="display: grid"] > div,
+  #giang-vien div[style*="display:grid"] > div,
+  #co-van div[style*="display: grid"] > div,
+  #co-van div[style*="display:grid"] > div {
+    flex: 0 0 290px !important;
+    width: 290px !important;
+    max-width: 85vw !important;
+    scroll-snap-align: start !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Scroll Dots Indicator Bar */
+  .scroll-dots {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0 24px 0 !important;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .scroll-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(148, 163, 184, 0.3); /* Slate-400 opacity */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .scroll-dot.active {
+    background: #ef4444 !important; /* Crimson Red active */
+    width: 20px;
+    border-radius: 4px;
+  }
+
+  /* Dark Theme Contrast overrides for dot elements */
+  #giang-vien .scroll-dot {
+    background: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  #giang-vien .scroll-dot.active {
+    background: #fca5a5 !important;
+  }
+
+  /* Reduce horizontal and vertical padding of pricing cards on mobile */
+  body .pricing-card-new,
+  body .pricing-card-v2,
+  body .pricing-card,
+  body .cyber-pricing-card {
+    padding: 24px 16px !important;
+  }
+
+  body #bang-gia,
+  body .pricing-section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .pricing-grid-new {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .scholarship-banner-new {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body .pain-section .pain-cards,
+  #giang-vien div[style*="display: grid"],
+  #giang-vien div[style*="display:grid"],
+  #co-van div[style*="display: grid"],
+  #co-van div[style*="display:grid"] {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+  }
+}
+
+/* ─── NEW PRICING GRID & CARDS (BRIGHT THEME) ─── */
+.pricing-grid-new {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin: 48px auto;
+  align-items: stretch;
+  max-width: 960px;
+}
+
+.pricing-card-new {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.pricing-card-new:hover {
+  transform: translateY(-8px);
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+}
+
+.pricing-card-new.recommended-new {
+  border: 2.5px solid #ab0e00;
+  box-shadow: 0 20px 40px -15px rgba(171, 14, 0, 0.1);
+}
+
+.pricing-card-new.recommended-new:hover {
+  box-shadow: 0 25px 50px -12px rgba(171, 14, 0, 0.18);
+}
+
+.pricing-badge-new {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ab0e00;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(171, 14, 0, 0.3);
+}
+
+.pricing-price-box-new {
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  padding: 24px 0;
+  margin: 24px 0;
+}
+
+.pricing-features-new {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-grow: 1;
+}
+
+.pricing-features-new li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #334155;
+  text-align: left;
+}
+
+.pricing-features-new li.disabled-feat {
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.pricing-features-new li .check-icon-new {
+  color: #10b981;
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.pricing-features-new li .cross-icon-new {
+  color: #ef4444;
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.pricing-btn-new {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  font-weight: 700;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+}
+
+.pricing-btn-new.standard-btn-new {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+.pricing-btn-new.standard-btn-new:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.pricing-btn-new.recommended-btn-new {
+  background: #ab0e00;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(171, 14, 0, 0.3);
+}
+
+.pricing-btn-new.recommended-btn-new:hover {
+  background: #900c00;
+  box-shadow: 0 6px 20px rgba(171, 14, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.scholarship-banner-new {
+  background: linear-gradient(135deg, rgba(171, 14, 0, 0.04) 0%, rgba(255, 76, 76, 0.04) 100%);
+  border: 1.5px dashed rgba(171, 14, 0, 0.3);
+  border-radius: 20px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto 40px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(171, 14, 0, 0.02);
+}
+
+/* Prevent title wrapping on desktop/tablet */
+.nobrk-title {
+  display: inline-block;
+}
+@media (min-width: 481px) {
+  .nobrk-title {
+    white-space: nowrap;
+  }
+}
+
