@@ -2,7 +2,7 @@
 <html lang="vi" style="overflow-x: hidden;">
 
 <head>
-    <base href="/wp-content/new_public/LANDINGPAGE_MBA/" />
+    <!-- <base href="/wp-content/new_public/LANDINGPAGE_MBA/" /> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -138,7 +138,7 @@
     }
     </script>
 
-  <script type="application/ld+json">
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -1374,7 +1374,11 @@
             align-items: center;
             gap: 5px;
             padding: 6px 12px;
-            background: #111729; border-radius: 99px; font-size: 0.73rem; font-weight: 700; color: #ffffff;
+            background: #111729;
+            border-radius: 99px;
+            font-size: 0.73rem;
+            font-weight: 700;
+            color: #ffffff;
             white-space: nowrap;
             border: 1px solid rgba(255, 255, 255, 0.15);
             z-index: 10;
@@ -1531,7 +1535,8 @@
             align-items: center;
             gap: 5px;
             padding: 4px 12px;
-            background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.15);
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.15);
             border-radius: 99px;
             font-size: 0.72rem;
             font-weight: 800;
@@ -1621,7 +1626,8 @@
             text-align: center;
             padding: 13px 20px;
             border-radius: 12px;
-            background: #ffffff; border: 1.5px solid rgba(15, 23, 42, 0.25);
+            background: #ffffff;
+            border: 1.5px solid rgba(15, 23, 42, 0.25);
             color: #ab0e00;
             font-weight: 800;
             font-size: 0.9rem;
@@ -1651,6 +1657,7 @@
             justify-content: flex-start;
             align-items: center;
         }
+
         @media (max-width: 1024px) {
             .hero-cta {
                 justify-content: center;
@@ -1787,7 +1794,9 @@
         .sacom-pill {
             display: inline-block;
             padding: 4px 12px;
-            background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 99px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 99px;
             font-size: 0.75rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
@@ -2503,7 +2512,7 @@
             }
 
             /* Removed local mobile slider CSS - now inherited from style.css */
-            
+
             .proof-card-inner {
                 padding: 32px 20px;
             }
@@ -2567,39 +2576,49 @@
                 padding: 14px 18px !important;
             }
         }
-    
+
         /* ==========================================
            MOBILE & VIEWPORT OPTIMIZATIONS
            ========================================== */
         @media (max-width: 768px) {
+
             /* Tighten paddings */
-            section, 
-            .pricing-section, 
+            section,
+            .pricing-section,
             .cta-section,
             .hero-section,
             .ecosystem-section {
                 padding: 32px 12px !important;
             }
+
             .container {
                 padding-left: 12px !important;
                 padding-right: 12px !important;
             }
+
             .premium-policy-wrapper {
                 padding: 0 !important;
             }
-            .premium-policy-wrapper > div {
+
+            .premium-policy-wrapper>div {
                 padding: 24px 12px !important;
                 border-radius: 16px !important;
             }
-            
+
             /* Clamp titles */
-            h1, .hero-title {
+            h1,
+            .hero-title {
                 font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
             }
-            h2, .section-title {
+
+            h2,
+            .section-title {
                 font-size: clamp(1.6rem, 4.5vw, 1.9rem) !important;
             }
-            h3, .pricing-title, .cta-headline {
+
+            h3,
+            .pricing-title,
+            .cta-headline {
                 font-size: clamp(1.4rem, 4vw, 1.7rem) !important;
             }
         }
@@ -2610,12 +2629,15 @@
                 border-bottom: 1px solid #e2e8f0 !important;
                 background: #ffffff !important;
             }
+
             .fee-table-responsive tr:not(.section-header) td:first-child {
                 color: #0f172a !important;
             }
+
             .fee-table-responsive tr:not(.section-header) td:not(:first-child)::before {
                 color: #64748b !important;
             }
+
             .fee-table-responsive tr.total-row {
                 background: rgba(171, 14, 0, 0.05) !important;
                 border-top: 1.5px solid rgba(171, 14, 0, 0.1) !important;
@@ -2932,10 +2954,13 @@
                 <a href="#van-de" class="nav-link">Vấn đề</a>
                 <a href="#giai-phap" class="nav-link">Giải pháp</a>
                 <div class="nav-dropdown">
-                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-haspopup="true"
+                        aria-expanded="false">
                         Chương trình đào tạo
-                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </a>
                     <div class="dropdown-menu-box">
@@ -3018,8 +3043,10 @@
         <div class="mobile-dropdown">
             <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
                 Chương trình
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
                 </svg>
             </button>
             <div class="mobile-dropdown-content">
@@ -3034,7 +3061,9 @@
                     <div class="mobile-section-title">Cử nhân & Tiến sĩ</div>
                     <a href="bba.html" class="mobile-dropdown-item">Top-up BBA</a>
                     <a href="fullbba.html" class="mobile-dropdown-item">Full BBA</a>
-                    <a href="dual-dba.html" class="mobile-dropdown-item" style="margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">Dual DBA (Tiến sĩ)</a>
+                    <a href="dual-dba.html" class="mobile-dropdown-item"
+                        style="margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">Dual
+                        DBA (Tiến sĩ)</a>
                 </div>
             </div>
         </div>
@@ -3171,9 +3200,11 @@
                         <span class="hero-hl-big ai-strong-hook"
                             style="font-family: 'Space Grotesk', sans-serif; font-style: normal; font-weight: 800; color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); line-height: 1.3; letter-spacing: -0.03em; margin: 0; display: block; text-transform: uppercase;">
                             <span
-                                style="font-size: clamp(1.8rem, 4vw, 2.5rem); display: block; line-height: 1.2; margin-bottom: 4px;">AI không cướp công việc của bạn</span>
+                                style="font-size: clamp(1.8rem, 4vw, 2.5rem); display: block; line-height: 1.2; margin-bottom: 4px;">AI
+                                không cướp công việc của bạn</span>
                             <span
-                                style="background: linear-gradient(90deg, #ffffff, #fca5a5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none; display: inline-block; padding-top: 0.15em; font-size: clamp(2.5rem, 6vw, 4.2rem); line-height: 1.2;">Người hiểu AI thì có</span>
+                                style="background: linear-gradient(90deg, #ffffff, #fca5a5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none; display: inline-block; padding-top: 0.15em; font-size: clamp(2.5rem, 6vw, 4.2rem); line-height: 1.2;">Người
+                                hiểu AI thì có</span>
                         </span>
                     </h1>
 
@@ -3184,7 +3215,8 @@
 
                     <p class="hero-sub"
                         style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.6; max-width: 600px;">
-                        MSc AI của <strong>Swiss UMEF</strong> được thiết kế dành cho nhà quản lý và lãnh đạo doanh nghiệp muốn <strong>hiểu - ứng dụng - quản trị AI</strong> ở cấp độ chiến lược.
+                        MSc AI của <strong>Swiss UMEF</strong> được thiết kế dành cho nhà quản lý và lãnh đạo doanh
+                        nghiệp muốn <strong>hiểu - ứng dụng - quản trị AI</strong> ở cấp độ chiến lược.
                     </p>
 
                     <div class="hero-badges-row" aria-label="Thông tin nhanh về chương trình">
@@ -3274,14 +3306,20 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:20px;">
-                        <a href="javascript:void(0)" class="btn" id="hero-main-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('hero-main-cta')" style="background: #fff; color: #ab0e00; border: none; box-shadow: 0 8px 25px rgba(0,0,0,0.2); cursor:pointer; font-weight: 700; border-radius: 100px; display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; text-decoration: none;">
+                        <a href="javascript:void(0)" class="btn" id="hero-main-cta"
+                            onclick="if(typeof window.openRegModal === 'function') window.openRegModal('hero-main-cta')"
+                            style="background: #fff; color: #ab0e00; border: none; box-shadow: 0 8px 25px rgba(0,0,0,0.2); cursor:pointer; font-weight: 700; border-radius: 100px; display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; text-decoration: none;">
                             <span>Nhận Tư vấn lộ trình MSc AI</span>
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </a>
-                        <a href="javascript:void(0)" class="btn btn-outline" id="hero-quiz-cta" onclick="quizModal.open()" style="border: 2px solid #fff; color: #fff; background: transparent; padding: 14px 28px; border-radius: 100px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s;" onmouseover="this.style.background='#fff';this.style.color='#ab0e00';" onmouseout="this.style.background='transparent';this.style.color='#fff';">
+                        <a href="javascript:void(0)" class="btn btn-outline" id="hero-quiz-cta"
+                            onclick="quizModal.open()"
+                            style="border: 2px solid #fff; color: #fff; background: transparent; padding: 14px 28px; border-radius: 100px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s;"
+                            onmouseover="this.style.background='#fff';this.style.color='#ab0e00';"
+                            onmouseout="this.style.background='transparent';this.style.color='#fff';">
                             <span>Đánh giá mức độ phù hợp</span>
                             <i class="fa-solid fa-graduation-cap" style="font-size: 1rem;"></i>
                         </a>
@@ -3600,7 +3638,9 @@
                 </div>
 
                 <div class="section-cta reveal-up">
-                    <a href="javascript:void(0)" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('pain-cta')" class="btn btn-primary" id="pain-cta">
+                    <a href="javascript:void(0)"
+                        onclick="if(typeof window.openRegModal === 'function') window.openRegModal('pain-cta')"
+                        class="btn btn-primary" id="pain-cta">
                         MSc AI cho sự nghiệp bứt phá vươn tầm
                         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -3795,8 +3835,11 @@
                         </div>
                     </div>
                     <div style="text-align:center;padding:0 16px;" class="reveal-up">
-                        <a href="javascript:void(0)" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('target-cta')" class="btn btn-primary" id="target-cta"
-                            style="white-space:normal;text-align:center;line-height:1.4;">Đăng ký tư vấn ngay <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                        <a href="javascript:void(0)"
+                            onclick="if(typeof window.openRegModal === 'function') window.openRegModal('target-cta')"
+                            class="btn btn-primary" id="target-cta"
+                            style="white-space:normal;text-align:center;line-height:1.4;">Đăng ký tư vấn ngay <svg
+                                width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                             </svg></a>
@@ -3876,7 +3919,8 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:28px">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta" onclick="quizModal.open()">
+                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta"
+                            onclick="quizModal.open()">
                             Nhận Brochure MSc AI Swiss UMEF
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -5108,7 +5152,8 @@
                                             style="border-bottom: 1px solid #f1f5f9; transition: background 0.3s;"
                                             onmouseover="this.style.background='rgba(255,255,255,0.05)'"
                                             onmouseout="this.style.background='transparent'">
-                                            <td style="padding: 16px; font-weight: 600; color: #0f172a;" class="t-col-1">Từ
+                                            <td style="padding: 16px; font-weight: 600; color: #0f172a;"
+                                                class="t-col-1">Từ
                                                 08/05/26 đến hết 25/05/2026</td>
                                             <td
                                                 style="padding: 16px; color: #334155; font-weight: 600; white-space: nowrap;">
@@ -5133,7 +5178,8 @@
                                             style="border-bottom: 1px solid #f1f5f9; transition: background 0.3s;"
                                             onmouseover="this.style.background='rgba(255,255,255,0.05)'"
                                             onmouseout="this.style.background='transparent'">
-                                            <td style="padding: 16px; font-weight: 600; color: #0f172a;" class="t-col-1">Từ
+                                            <td style="padding: 16px; font-weight: 600; color: #0f172a;"
+                                                class="t-col-1">Từ
                                                 26/05/26 đến hết 15/06/2026</td>
                                             <td
                                                 style="padding: 16px; color: #334155; font-weight: 600; white-space: nowrap;">
@@ -5158,7 +5204,8 @@
                                             style="border-bottom: 1px solid #f1f5f9; transition: background 0.3s;"
                                             onmouseover="this.style.background='rgba(255,255,255,0.05)'"
                                             onmouseout="this.style.background='transparent'">
-                                            <td style="padding: 16px; font-weight: 600; color: #0f172a;" class="t-col-1">Từ
+                                            <td style="padding: 16px; font-weight: 600; color: #0f172a;"
+                                                class="t-col-1">Từ
                                                 16/06/26 đến hết 15/07/2026</td>
                                             <td
                                                 style="padding: 16px; color: #334155; font-weight: 600; white-space: nowrap;">
@@ -5505,6 +5552,7 @@
                             margin-top: 36px;
                             margin-bottom: 24px;
                         }
+
                         .faq-item {
                             background: #ffffff;
                             border: 1px solid #e2e8f0;
@@ -5512,10 +5560,12 @@
                             overflow: hidden;
                             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
                         }
+
                         .faq-item:hover {
                             border-color: rgba(171, 14, 0, 0.25);
                             background: rgba(171, 14, 0, 0.01);
                         }
+
                         .faq-trigger {
                             width: 100%;
                             display: flex;
@@ -5533,9 +5583,11 @@
                             transition: all 0.2s ease;
                             outline: none;
                         }
+
                         .faq-trigger:hover {
                             color: #ab0e00;
                         }
+
                         .faq-content {
                             max-height: 0;
                             overflow: hidden;
@@ -5545,6 +5597,7 @@
                             font-size: 0.86rem;
                             line-height: 1.6;
                         }
+
                         .faq-content p {
                             margin: 0 0 16px 0;
                         }
@@ -5555,46 +5608,58 @@
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Chương trình MSc AI yêu cầu nền tảng đầu vào như thế nào?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Chương trình dành cho ứng viên tốt nghiệp đại học ngành kinh tế, kỹ thuật, công nghệ thông tin hoặc có mong muốn học toán máy học, lập trình Python và kỹ thuật phân tích dữ liệu.</p>
+                                <p>Chương trình dành cho ứng viên tốt nghiệp đại học ngành kinh tế, kỹ thuật, công nghệ
+                                    thông tin hoặc có mong muốn học toán máy học, lập trình Python và kỹ thuật phân tích
+                                    dữ liệu.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Nội dung cốt lõi của Thạc sĩ Khoa học về Trí tuệ Nhân tạo Ứng dụng?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Học viên sẽ được trang bị kiến thức chuyên sâu về phân tích dữ liệu lớn (Big Data), lập trình thuật toán Machine Learning & Deep Learning, các giải pháp AI ứng dụng và quản trị dự án công nghệ ở vai trò CTO/Tech Lead.</p>
+                                <p>Học viên sẽ được trang bị kiến thức chuyên sâu về phân tích dữ liệu lớn (Big Data),
+                                    lập trình thuật toán Machine Learning & Deep Learning, các giải pháp AI ứng dụng và
+                                    quản trị dự án công nghệ ở vai trò CTO/Tech Lead.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Có các buổi thực hành dự án dữ liệu thực tế không?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Có. Xuyên suốt lộ trình, học viên sẽ trực tiếp thực hành và triển khai các bài lab hoặc các dự án dữ liệu thực tế dựa trên sự cố vấn từ các chuyên gia hàng đầu.</p>
+                                <p>Có. Xuyên suốt lộ trình, học viên sẽ trực tiếp thực hành và triển khai các bài lab
+                                    hoặc các dự án dữ liệu thực tế dựa trên sự cố vấn từ các chuyên gia hàng đầu.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Bằng tốt nghiệp MSc AI Thụy Sĩ có ghi chữ 'Online' không?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Không. Bằng tốt nghiệp do Swiss UMEF cấp đồng nhất hoàn toàn với bằng cấp trực tiếp tại Geneva, không ghi hình thức trực tuyến trên bằng.</p>
+                                <p>Không. Bằng tốt nghiệp do Swiss UMEF cấp đồng nhất hoàn toàn với bằng cấp trực tiếp
+                                    tại Geneva, không ghi hình thức trực tuyến trên bằng.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Học phí MSc AI là bao nhiêu và có hỗ trợ trả góp không?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Vui lòng liên hệ bộ phận tuyển sinh qua hotline 028 2244 2244 để nhận biểu phí cập nhật và chính sách trả góp 0% qua thẻ tín dụng đối tác Sacombank.</p>
+                                <p>Vui lòng liên hệ bộ phận tuyển sinh qua hotline 028 2244 2244 để nhận biểu phí cập
+                                    nhật và chính sách trả góp 0% qua thẻ tín dụng đối tác Sacombank.</p>
                             </div>
                         </div>
                     </div>
@@ -6243,7 +6308,7 @@
     <script src="common-assets/js/script.js?v=1.2"></script>
     <script src="common-assets/js/booking-modal.js?v=1.1"></script>
 
-    
+
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
@@ -6327,6 +6392,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .qz-header::after {
             content: '';
             position: absolute;
@@ -6429,8 +6495,15 @@
         }
 
         @keyframes qzFadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .qz-q-number {
@@ -6725,15 +6798,15 @@
                 "options": [
                     {
                         "text": "Lập trình Python, thiết lập giải thuật học máy (machine learning) và xây dựng kiến trúc dữ liệu.",
-                        "scores": {"MSC_AI": 5}
+                        "scores": { "MSC_AI": 5 }
                     },
                     {
                         "text": "Sử dụng các công cụ AI có sẵn dạng no-code/low-code để tối ưu hóa quy trình kinh doanh và tăng năng suất.",
-                        "scores": {"MBA_AI": 5}
+                        "scores": { "MBA_AI": 5 }
                     },
                     {
                         "text": "Chỉ quan tâm quản trị kinh doanh cốt lõi, không cần học chuyên sâu công nghệ.",
-                        "scores": {"MBA": 4, "EMBA": 4, "BBA": 3}
+                        "scores": { "MBA": 4, "EMBA": 4, "BBA": 3 }
                     }
                 ]
             },
@@ -6742,15 +6815,15 @@
                 "options": [
                     {
                         "text": "Đã có nền tảng công nghệ/lập trình (hoặc sẵn sàng học toán thuật toán, code Python, SQL).",
-                        "scores": {"MSC_AI": 5}
+                        "scores": { "MSC_AI": 5 }
                     },
                     {
                         "text": "Không biết lập trình và muốn học cách dùng các ứng dụng AI no-code kéo thả.",
-                        "scores": {"MBA_AI": 5, "MBA": 3}
+                        "scores": { "MBA_AI": 5, "MBA": 3 }
                     },
                     {
                         "text": "Muốn tập trung vào tư duy quản lý chiến lược và giao tiếp lãnh đạo.",
-                        "scores": {"EMBA": 5, "MBA": 4}
+                        "scores": { "EMBA": 5, "MBA": 4 }
                     }
                 ]
             },
@@ -6759,15 +6832,15 @@
                 "options": [
                     {
                         "text": "CTO, Trưởng bộ phận Dữ liệu, Chuyên gia phân tích dữ liệu lớn hoặc Kỹ sư AI.",
-                        "scores": {"MSC_AI": 5}
+                        "scores": { "MSC_AI": 5 }
                     },
                     {
                         "text": "CEO, Giám đốc chuyển đổi số, Quản lý dự án công nghệ hoặc trưởng bộ phận ứng dụng AI.",
-                        "scores": {"MBA_AI": 5}
+                        "scores": { "MBA_AI": 5 }
                     },
                     {
                         "text": "Doanh chủ, Giám đốc điều hành cấp cao điều hành chiến lược chung doanh nghiệp.",
-                        "scores": {"EMBA": 5, "DUAL_DBA": 2}
+                        "scores": { "EMBA": 5, "DUAL_DBA": 2 }
                     }
                 ]
             },
@@ -6776,15 +6849,15 @@
                 "options": [
                     {
                         "text": "Đã tốt nghiệp Đại học chính quy chuyên ngành bất kỳ.",
-                        "scores": {"MSC_AI": 5, "MBA_AI": 4, "MBA": 4, "EMBA": 3}
+                        "scores": { "MSC_AI": 5, "MBA_AI": 4, "MBA": 4, "EMBA": 3 }
                     },
                     {
                         "text": "Đã tốt nghiệp Cao đẳng, Trung cấp muốn học liên thông cử nhân.",
-                        "scores": {"BBA": 5}
+                        "scores": { "BBA": 5 }
                     },
                     {
                         "text": "Đã tốt nghiệp Thạc sĩ và muốn học lên Tiến sĩ.",
-                        "scores": {"DUAL_DBA": 5}
+                        "scores": { "DUAL_DBA": 5 }
                     }
                 ]
             },
@@ -6793,15 +6866,15 @@
                 "options": [
                     {
                         "text": "Học sâu về kỹ thuật, thực hành dự án dữ liệu thực tế và viết báo cáo khoa học định hướng ứng dụng kỹ thuật.",
-                        "scores": {"MSC_AI": 5}
+                        "scores": { "MSC_AI": 5 }
                     },
                     {
                         "text": "Học thông qua phân tích các ca kinh doanh thực chiến và các giải pháp quản lý.",
-                        "scores": {"MBA": 5, "MBA_AI": 4, "EMBA": 4}
+                        "scores": { "MBA": 5, "MBA_AI": 4, "EMBA": 4 }
                     },
                     {
                         "text": "Viết luận án Tiến sĩ giải quyết vấn đề kinh tế vĩ mô có Giáo sư hướng dẫn 1-1.",
-                        "scores": {"DUAL_DBA": 5}
+                        "scores": { "DUAL_DBA": 5 }
                     }
                 ]
             }
@@ -6848,7 +6921,7 @@
                     </div>
                 `;
                 qContainer.innerHTML = html;
-                
+
                 if (progress) {
                     progress.style.width = (n / TOTAL * 100) + '%';
                 }
@@ -6900,7 +6973,7 @@
             function showResult() {
                 const type = classify();
                 const matchedProg = PROGRAM_DETAILS[type];
-                
+
                 body.style.display = 'none';
                 const progressWrap = document.querySelector('.qz-progress-wrap');
                 if (progressWrap) progressWrap.style.display = 'none';
@@ -6918,7 +6991,7 @@
                     msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
                     ctaBtn.textContent = 'Đăng ký tư vấn ngay';
                     ctaBtn.href = 'javascript:void(0)';
-                    ctaBtn.onclick = function(e) {
+                    ctaBtn.onclick = function (e) {
                         e.preventDefault();
                         close();
                         if (typeof window.openRegModal === 'function') {
@@ -6933,7 +7006,7 @@
                     msgEl.innerHTML = `Câu trả lời của bạn phản ánh nhu cầu tập trung vào <strong>${matchedProg.highlight}</strong>. Hãy tìm hiểu chương trình này để đạt hiệu quả cao nhất.`;
                     ctaBtn.textContent = CURRENT_PROGRAM ? `Khám phá chương trình ${type} →` : `Khám phá ngay →`;
                     ctaBtn.href = matchedProg.url;
-                    ctaBtn.onclick = function(e) {
+                    ctaBtn.onclick = function (e) {
                         close();
                     };
                 }
@@ -7004,7 +7077,7 @@
                 const content = item.querySelector('.faq-content');
                 const icon = trigger.querySelector('.fa-chevron-down');
                 const isOpen = item.classList.contains('faq-open');
-                
+
                 document.querySelectorAll('.faq-item').forEach(el => {
                     el.classList.remove('faq-open');
                     el.querySelector('.faq-content').style.maxHeight = '0px';
@@ -7012,7 +7085,7 @@
                     el.style.borderColor = '#e2e8f0';
                     el.style.boxShadow = 'none';
                 });
-                
+
                 if (!isOpen) {
                     item.classList.add('faq-open');
                     content.style.maxHeight = content.scrollHeight + 40 + 'px';
@@ -7031,6 +7104,6 @@
             }
         });
     </script>
-    </body>
+</body>
 
 </html>

@@ -2,7 +2,7 @@
 <html lang="vi" style="overflow-x: hidden;">
 
 <head>
-    <base href="/wp-content/new_public/LANDINGPAGE_MBA/" />
+    <!-- <base href="/wp-content/new_public/LANDINGPAGE_MBA/" /> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -138,7 +138,7 @@
     }
     </script>
 
-  <script type="application/ld+json">
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -1397,7 +1397,7 @@
             gap: 5px;
             padding: 6px 12px;
             background: #111729;
-            
+
             border-radius: 99px;
             font-size: 0.73rem;
             font-weight: 700;
@@ -1558,7 +1558,8 @@
             align-items: center;
             gap: 5px;
             padding: 4px 12px;
-            background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.15);
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.15);
             border-radius: 99px;
             font-size: 0.72rem;
             font-weight: 800;
@@ -1648,7 +1649,8 @@
             text-align: center;
             padding: 13px 20px;
             border-radius: 12px;
-            background: #ffffff; border: 1.5px solid rgba(15, 23, 42, 0.25);
+            background: #ffffff;
+            border: 1.5px solid rgba(15, 23, 42, 0.25);
             color: #ab0e00;
             font-weight: 800;
             font-size: 0.9rem;
@@ -1678,15 +1680,18 @@
             justify-content: flex-start;
             align-items: center;
         }
+
         #hero-quiz-cta {
             border-color: #ab0e00;
             color: #ab0e00;
             transition: all 0.25s ease;
         }
+
         #hero-quiz-cta:hover {
             background: #ab0e00;
             color: #ffffff;
         }
+
         @media (max-width: 1024px) {
             .hero-cta {
                 justify-content: center;
@@ -1823,7 +1828,9 @@
         .sacom-pill {
             display: inline-block;
             padding: 4px 12px;
-            background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 99px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 99px;
             font-size: 0.75rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
@@ -2527,7 +2534,7 @@
             }
 
             /* Removed local mobile slider CSS - now inherited from style.css */
-            
+
             .proof-card-inner {
                 padding: 32px 20px;
             }
@@ -2575,39 +2582,49 @@
                 font-size: 1.8rem !important;
             }
         }
-    
+
         /* ==========================================
            MOBILE & VIEWPORT OPTIMIZATIONS
            ========================================== */
         @media (max-width: 768px) {
+
             /* Tighten paddings */
-            section, 
-            .pricing-section, 
+            section,
+            .pricing-section,
             .cta-section,
             .hero-section,
             .ecosystem-section {
                 padding: 32px 12px !important;
             }
+
             .container {
                 padding-left: 12px !important;
                 padding-right: 12px !important;
             }
+
             .premium-policy-wrapper {
                 padding: 0 !important;
             }
-            .premium-policy-wrapper > div {
+
+            .premium-policy-wrapper>div {
                 padding: 24px 12px !important;
                 border-radius: 16px !important;
             }
-            
+
             /* Clamp titles */
-            h1, .hero-title {
+            h1,
+            .hero-title {
                 font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
             }
-            h2, .section-title {
+
+            h2,
+            .section-title {
                 font-size: clamp(1.6rem, 4.5vw, 1.9rem) !important;
             }
-            h3, .pricing-title, .cta-headline {
+
+            h3,
+            .pricing-title,
+            .cta-headline {
                 font-size: clamp(1.4rem, 4vw, 1.7rem) !important;
             }
         }
@@ -2618,12 +2635,15 @@
                 border-bottom: 1px solid #e2e8f0 !important;
                 background: #ffffff !important;
             }
+
             .fee-table-responsive tr:not(.section-header) td:first-child {
                 color: #0f172a !important;
             }
+
             .fee-table-responsive tr:not(.section-header) td:not(:first-child)::before {
                 color: #64748b !important;
             }
+
             .fee-table-responsive tr.total-row {
                 background: rgba(171, 14, 0, 0.05) !important;
                 border-top: 1.5px solid rgba(171, 14, 0, 0.1) !important;
@@ -2648,10 +2668,13 @@
                 <a href="#van-de" class="nav-link">Vấn đề</a>
                 <a href="#giai-phap" class="nav-link">Giải pháp</a>
                 <div class="nav-dropdown">
-                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-haspopup="true"
+                        aria-expanded="false">
                         Chương trình đào tạo
-                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </a>
                     <div class="dropdown-menu-box">
@@ -2734,8 +2757,10 @@
         <div class="mobile-dropdown">
             <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
                 Chương trình
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
                 </svg>
             </button>
             <div class="mobile-dropdown-content">
@@ -2750,7 +2775,9 @@
                     <div class="mobile-section-title">Cử nhân & Tiến sĩ</div>
                     <a href="bba.html" class="mobile-dropdown-item">Top-up BBA</a>
                     <a href="fullbba.html" class="mobile-dropdown-item">Full BBA</a>
-                    <a href="dual-dba.html" class="mobile-dropdown-item" style="margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">Dual DBA (Tiến sĩ)</a>
+                    <a href="dual-dba.html" class="mobile-dropdown-item"
+                        style="margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">Dual
+                        DBA (Tiến sĩ)</a>
                 </div>
             </div>
         </div>
@@ -2850,14 +2877,16 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:20px;">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="hero-main-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('hero-main-cta')">
+                        <a href="javascript:void(0)" class="btn btn-primary" id="hero-main-cta"
+                            onclick="if(typeof window.openRegModal === 'function') window.openRegModal('hero-main-cta')">
                             <span>Trao đổi lộ trình EMBA miễn phí 1:1</span>
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </a>
-                        <a href="javascript:void(0)" class="btn btn-outline" id="hero-quiz-cta" onclick="quizModal.open()">
+                        <a href="javascript:void(0)" class="btn btn-outline" id="hero-quiz-cta"
+                            onclick="quizModal.open()">
                             <span>Đánh giá mức độ phù hợp</span>
                             <i class="fa-solid fa-graduation-cap" style="font-size: 1rem;"></i>
                         </a>
@@ -3065,8 +3094,8 @@
                         <div class="pain-stat-number">49<span>%</span> <span>nhân sự toàn cầu</span></div>
                         <div class="pain-stat-text">
                             <p>Đang đối mặt với <strong>FOBO</strong> (Fear Of
-                            Becoming Obsolete) - nỗi sợ bị tụt hậu khi không thể làm chủ AI để thích nghi với tốc độ
-                            thay đổi của thị trường.</p>
+                                Becoming Obsolete) - nỗi sợ bị tụt hậu khi không thể làm chủ AI để thích nghi với tốc độ
+                                thay đổi của thị trường.</p>
                             <p class="pain-stat-source">*Theo báo cáo Microsoft Work Trend Index</p>
                         </div>
                     </div>
@@ -3124,7 +3153,8 @@
                 </div>
 
                 <div class="section-cta reveal-up">
-                    <a href="javascript:void(0)" class="btn btn-primary" id="pain-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('pain-cta')">
+                    <a href="javascript:void(0)" class="btn btn-primary" id="pain-cta"
+                        onclick="if(typeof window.openRegModal === 'function') window.openRegModal('pain-cta')">
                         EMBA cho nhà lãnh đạo
                         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -3322,7 +3352,8 @@
                     </div>
 
                     <div class="hero-cta" style="margin-top:28px">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('solution-cta')">
+                        <a href="javascript:void(0)" class="btn btn-primary" id="solution-cta"
+                            onclick="if(typeof window.openRegModal === 'function') window.openRegModal('solution-cta')">
                             Xem chi tiết lộ trình đào tạo EMBA Swiss UMEF
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -4614,6 +4645,7 @@
                             margin-top: 36px;
                             margin-bottom: 24px;
                         }
+
                         .faq-item {
                             background: #ffffff;
                             border: 1px solid #e2e8f0;
@@ -4621,10 +4653,12 @@
                             overflow: hidden;
                             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
                         }
+
                         .faq-item:hover {
                             border-color: rgba(171, 14, 0, 0.25);
                             background: rgba(171, 14, 0, 0.01);
                         }
+
                         .faq-trigger {
                             width: 100%;
                             display: flex;
@@ -4642,9 +4676,11 @@
                             transition: all 0.2s ease;
                             outline: none;
                         }
+
                         .faq-trigger:hover {
                             color: #ab0e00;
                         }
+
                         .faq-content {
                             max-height: 0;
                             overflow: hidden;
@@ -4654,6 +4690,7 @@
                             font-size: 0.86rem;
                             line-height: 1.6;
                         }
+
                         .faq-content p {
                             margin: 0 0 16px 0;
                         }
@@ -4664,46 +4701,58 @@
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Sự khác biệt lớn nhất giữa MBA và EMBA?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>MBA tập trung vào nâng cao năng lực quản trị chức năng tổng quát (Marketing, Tài chính, Nhân sự, Vận hành) dành cho quản lý cấp trung. EMBA (Executive MBA) tập trung vào hoạch định chiến lược vĩ mô, quản trị sự thay đổi và kết nối mạng lưới doanh chủ, lãnh đạo cấp cao.</p>
+                                <p>MBA tập trung vào nâng cao năng lực quản trị chức năng tổng quát (Marketing, Tài
+                                    chính, Nhân sự, Vận hành) dành cho quản lý cấp trung. EMBA (Executive MBA) tập trung
+                                    vào hoạch định chiến lược vĩ mô, quản trị sự thay đổi và kết nối mạng lưới doanh
+                                    chủ, lãnh đạo cấp cao.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Điều kiện kinh nghiệm tối thiểu để ứng tuyển học EMBA?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Ứng viên cần có bằng Đại học chính quy và từ 3-5 năm kinh nghiệm đảm nhiệm vị trí quản lý hoặc chủ doanh nghiệp.</p>
+                                <p>Ứng viên cần có bằng Đại học chính quy và từ 3-5 năm kinh nghiệm đảm nhiệm vị trí
+                                    quản lý hoặc chủ doanh nghiệp.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Phương thức học của chương trình Executive MBA trực tuyến?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Học viên học trực tuyến 100% qua video kết hợp các buổi thảo luận tình huống thực tế (Case study) được thiết kế linh hoạt, tối ưu riêng cho lãnh đạo bận rộn.</p>
+                                <p>Học viên học trực tuyến 100% qua video kết hợp các buổi thảo luận tình huống thực tế
+                                    (Case study) được thiết kế linh hoạt, tối ưu riêng cho lãnh đạo bận rộn.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Bằng tốt nghiệp EMBA Swiss UMEF có ghi chữ 'Học trực tuyến' (Online) không?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Không. Bằng tốt nghiệp do Swiss UMEF cấp hoàn toàn giống với bằng cấp trực tiếp tại Geneva, không ghi hình thức học trực tuyến.</p>
+                                <p>Không. Bằng tốt nghiệp do Swiss UMEF cấp hoàn toàn giống với bằng cấp trực tiếp tại
+                                    Geneva, không ghi hình thức học trực tuyến.</p>
                             </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-trigger">
                                 <span>Học phí EMBA là bao nhiêu và có chương trình hỗ trợ trả góp không?</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
+                                <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>Học phí gói Standard là 3.120 CHF và High Quality là 5.120 CHF. Học viên được hỗ trợ trả góp học phí qua thẻ tín dụng Sacombank từ 12 - 24 tháng với lãi suất ưu đãi.</p>
+                                <p>Học phí gói Standard là 3.120 CHF và High Quality là 5.120 CHF. Học viên được hỗ trợ
+                                    trả góp học phí qua thẻ tín dụng Sacombank từ 12 - 24 tháng với lãi suất ưu đãi.</p>
                             </div>
                         </div>
                     </div>
@@ -5434,6 +5483,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .qz-header::after {
             content: '';
             position: absolute;
@@ -5536,8 +5586,15 @@
         }
 
         @keyframes qzFadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .qz-q-number {
@@ -5832,15 +5889,15 @@
                 "options": [
                     {
                         "text": "Là Giám đốc điều hành, C-level hoặc Chủ doanh nghiệp với trên 5 năm kinh nghiệm quản lý.",
-                        "scores": {"EMBA": 5, "DUAL_DBA": 3}
+                        "scores": { "EMBA": 5, "DUAL_DBA": 3 }
                     },
                     {
                         "text": "Là Quản lý cấp trung, Trưởng bộ phận với dưới 5 năm kinh nghiệm quản lý.",
-                        "scores": {"MBA": 5, "MBA_AI": 3, "MSC_AI": 2}
+                        "scores": { "MBA": 5, "MBA_AI": 3, "MSC_AI": 2 }
                     },
                     {
                         "text": "Chưa có kinh nghiệm quản lý, là chuyên viên hoặc đang hoàn thiện học vấn.",
-                        "scores": {"BBA": 5, "FULL_BBA": 4}
+                        "scores": { "BBA": 5, "FULL_BBA": 4 }
                     }
                 ]
             },
@@ -5849,19 +5906,19 @@
                 "options": [
                     {
                         "text": "Hoạch định chiến lược vĩ mô, quản trị sự thay đổi và kết nối mạng lưới tinh hoa (elite networking).",
-                        "scores": {"EMBA": 5}
+                        "scores": { "EMBA": 5 }
                     },
                     {
                         "text": "Nâng cao năng lực quản lý toàn diện (Marketing, Tài chính, Nhân sự, Vận hành) cấp trung thực tiễn.",
-                        "scores": {"MBA": 5}
+                        "scores": { "MBA": 5 }
                     },
                     {
                         "text": "Xây dựng tư duy quản trị tích hợp AI no-code để tăng hiệu quả vận hành doanh nghiệp riêng.",
-                        "scores": {"MBA_AI": 5}
+                        "scores": { "MBA_AI": 5 }
                     },
                     {
                         "text": "Thực hiện các công trình nghiên cứu khoa học lớn để đạt học vị Tiến sĩ.",
-                        "scores": {"DUAL_DBA": 5}
+                        "scores": { "DUAL_DBA": 5 }
                     }
                 ]
             },
@@ -5870,15 +5927,15 @@
                 "options": [
                     {
                         "text": "Đã tốt nghiệp Đại học chính quy chuyên ngành bất kỳ.",
-                        "scores": {"EMBA": 5, "MBA": 4, "MBA_AI": 4, "MSC_AI": 3}
+                        "scores": { "EMBA": 5, "MBA": 4, "MBA_AI": 4, "MSC_AI": 3 }
                     },
                     {
                         "text": "Đã tốt nghiệp Cao đẳng, Trung cấp muốn học liên thông cử nhân.",
-                        "scores": {"BBA": 5}
+                        "scores": { "BBA": 5 }
                     },
                     {
                         "text": "Đã tốt nghiệp Thạc sĩ và muốn học lên Tiến sĩ.",
-                        "scores": {"DUAL_DBA": 5}
+                        "scores": { "DUAL_DBA": 5 }
                     }
                 ]
             },
@@ -5887,15 +5944,15 @@
                 "options": [
                     {
                         "text": "Chỉ cần tư duy quản lý công nghệ vĩ mô, không cần học chuyên sâu kỹ thuật hay lập trình.",
-                        "scores": {"EMBA": 5, "MBA": 4, "DUAL_DBA": 3}
+                        "scores": { "EMBA": 5, "MBA": 4, "DUAL_DBA": 3 }
                     },
                     {
                         "text": "Muốn ứng dụng thực tế các công cụ AI (Prompt, automation) để tối ưu hóa hiệu suất điều hành.",
-                        "scores": {"MBA_AI": 5}
+                        "scores": { "MBA_AI": 5 }
                     },
                     {
                         "text": "Muốn học sâu thuật toán AI, phân tích dữ liệu kỹ thuật và Machine Learning.",
-                        "scores": {"MSC_AI": 5}
+                        "scores": { "MSC_AI": 5 }
                     }
                 ]
             },
@@ -5904,15 +5961,15 @@
                 "options": [
                     {
                         "text": "Lịch học linh hoạt tối đa được thiết kế riêng tối ưu hoàn toàn cho lãnh đạo bận rộn.",
-                        "scores": {"EMBA": 5}
+                        "scores": { "EMBA": 5 }
                     },
                     {
                         "text": "Học online theo tiến độ cá nhân linh hoạt và chủ động.",
-                        "scores": {"MBA": 5, "MBA_AI": 4}
+                        "scores": { "MBA": 5, "MBA_AI": 4 }
                     },
                     {
                         "text": "Nghiên cứu khoa học học thuật có sự hỗ trợ trực tiếp từ giáo sư hướng dẫn.",
-                        "scores": {"DUAL_DBA": 5}
+                        "scores": { "DUAL_DBA": 5 }
                     }
                 ]
             }
@@ -5959,7 +6016,7 @@
                     </div>
                 `;
                 qContainer.innerHTML = html;
-                
+
                 if (progress) {
                     progress.style.width = (n / TOTAL * 100) + '%';
                 }
@@ -6011,7 +6068,7 @@
             function showResult() {
                 const type = classify();
                 const matchedProg = PROGRAM_DETAILS[type];
-                
+
                 body.style.display = 'none';
                 const progressWrap = document.querySelector('.qz-progress-wrap');
                 if (progressWrap) progressWrap.style.display = 'none';
@@ -6029,7 +6086,7 @@
                     msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
                     ctaBtn.textContent = 'Đăng ký tư vấn ngay';
                     ctaBtn.href = 'javascript:void(0)';
-                    ctaBtn.onclick = function(e) {
+                    ctaBtn.onclick = function (e) {
                         e.preventDefault();
                         close();
                         if (typeof window.openRegModal === 'function') {
@@ -6044,7 +6101,7 @@
                     msgEl.innerHTML = `Câu trả lời của bạn phản ánh nhu cầu tập trung vào <strong>${matchedProg.highlight}</strong>. Hãy tìm hiểu chương trình này để đạt hiệu quả cao nhất.`;
                     ctaBtn.textContent = CURRENT_PROGRAM ? `Khám phá chương trình ${type} →` : `Khám phá ngay →`;
                     ctaBtn.href = matchedProg.url;
-                    ctaBtn.onclick = function(e) {
+                    ctaBtn.onclick = function (e) {
                         close();
                     };
                 }
@@ -6115,7 +6172,7 @@
                 const content = item.querySelector('.faq-content');
                 const icon = trigger.querySelector('.fa-chevron-down');
                 const isOpen = item.classList.contains('faq-open');
-                
+
                 document.querySelectorAll('.faq-item').forEach(el => {
                     el.classList.remove('faq-open');
                     el.querySelector('.faq-content').style.maxHeight = '0px';
@@ -6123,7 +6180,7 @@
                     el.style.borderColor = '#e2e8f0';
                     el.style.boxShadow = 'none';
                 });
-                
+
                 if (!isOpen) {
                     item.classList.add('faq-open');
                     content.style.maxHeight = content.scrollHeight + 40 + 'px';
@@ -6142,6 +6199,6 @@
             }
         });
     </script>
-    </body>
+</body>
 
 </html>
