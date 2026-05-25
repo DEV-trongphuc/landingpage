@@ -1,0 +1,17 @@
+dual-dba.html:13: content="Chương trình Tiến sĩ song bằng (Dual DBA) chính quy cấp bởi ÉSTIAM (Pháp) & RB College (Anh). Học trực tuyến kết hợp Seminars tại Paris, cố vấn 1-1." />
+dual-dba.html:176: "name": "Tiến sĩ DBA trực tuyến có giáo sư hướng dẫn riêng không?",
+dual-dba.html:179: "text": "Có. Mỗi nghiên cứu sinh sẽ được ghép cặp cố vấn 1-1 với một Giáo sư hướng dẫn khoa học để phát triển luận án nghiên cứu giải quyết bài toán thực tế của doanh nghiệp."
+dual-dba.html:195: "text": "Thời gian học tiêu chuẩn là 3 năm. Nghiên cứu sinh sẽ hoàn thành các học phần phương pháp luận nghiên cứu ở năm đầu, sau đó nghiên cứu độc lập dưới sự hướng dẫn 1-1 của Giáo sư để phát triển luận án và tham gia các kỳ Seminar/bảo vệ chính thức tại Paris."
+dual-dba.html:2862: </svg></span><span>Cố vấn 1-1 chuyên sâu</span></div>
+dual-dba.html:2972: <div class="float-label">Cố vấn chuyên sâu</div>
+dual-dba.html:3057: <p>Thiếu sự <strong>cố vấn khoa học 1-1 chuyên sâu</strong> từ các Giáo sư quốc tế đầu ngành</p>
+dual-dba.html:3098: <p>Báo cáo rằng họ muốn sở hữu học vị cao nhất (Doctorate/DBA) nhằm <strong>khẳng định uy tín cá nhân</strong>, nâng cao năng lực hoạch định vĩ mô và mở rộng cơ hội cố vấn chiến lược toàn cầu.</p>
+dual-dba.html:3136: <p>Cố vấn và nghiên cứu đồng hành 1-1 giúp gia tăng tỷ lệ hoàn thành luận án đúng tiến độ.</p>
+dual-dba.html:3320: <span class="sol-v2-stat-lbl">Cố vấn chuyên sâu</span>
+dual-dba.html:5955: "text": "Nghiên cứu khoa học học thuật có sự hỗ trợ trực tiếp từ giáo sư hướng dẫn.",
+emba.html:5971: "text": "Nghiên cứu khoa học học thuật có sự hỗ trợ trực tiếp từ giáo sư hướng dẫn.",
+mba.html:5900: "text": "Tham gia nghiên cứu học thuật cao cấp dưới sự hướng dẫn 1-1 của Giáo sư.",
+mbainai.html:4457: chuyên gia cố vấn khởi nghiệp và phát triển năng lực lãnh đạo.</p>
+mscai.html:167: "text": "Có. Xuyên suốt lộ trình, học viên sẽ trực tiếp thực hành và triển khai các bài lab hoặc các dự án dữ liệu thực tế dựa trên sự cố vấn từ các chuyên gia hàng đầu."
+mscai.html:5640: hoặc các dự án dữ liệu thực tế dựa trên sự cố vấn từ các chuyên gia hàng đầu.</p>
+mscai.html:6876: "text": "Viết luận án Tiến sĩ giải quyết vấn đề kinh tế vĩ mô có Giáo sư hướng dẫn 1-1.",

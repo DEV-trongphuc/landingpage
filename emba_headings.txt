@@ -1,0 +1,88 @@
+<h1 class="hero-headline" id="hero-headline" style="margin-top: 0; line-height: 1.2;">
+                        <span class="gradient-text">"Điểm nghẽn"</span><br /> của doanh nghiệp
+                    </h1> -> "Điểm nghẽn" của doanh nghiệp
+<h2 class="pain-headline" id="pain-headline">
+                        Là người chịu trách nhiệm cho mọi<br />
+                        <span class="pain-headline-accent">quyết định quan trọng nhất</span>
+                    </h2> -> Là người chịu trách nhiệm cho mọi quyết định quan trọng nhất
+<h2 class="section-title reveal-up" id="audience-headline" style="text-align:center">
+                    Dựa trên số liệu thực tế<br />
+                    <span class="gradient-text">học viên EMBA IDEAS</span>
+                </h2> -> Dựa trên số liệu thực tế học viên EMBA IDEAS
+<h2 class="section-title" id="solution-headline" style="margin-bottom:16px">
+                        Nâng cấp tư duy lãnh đạo ngay hôm nay với<br />
+                        <span class="gradient-text">EMBA Swiss UMEF</span>
+                    </h2> -> Nâng cấp tư duy lãnh đạo ngay hôm nay với EMBA Swiss UMEF
+<h2 class="section-title reveal-up" id="competency-headline"
+                        style="text-align: center; margin-bottom: 48px;">
+                        Trang bị năng lực điều hành cần phải có của lãnh đạo<br />
+                        <span class="gradient-text">trong kỷ nguyên số</span>
+                    </h2> -> Trang bị năng lực điều hành cần phải có của lãnh đạo trong kỷ nguyên số
+<h3 class="comp-title">Tư duy định hướng chiến lược</h3> -> Tư duy định hướng chiến lược
+<h3 class="comp-title">Ra quyết định dựa trên dữ liệu</h3> -> Ra quyết định dựa trên dữ liệu
+<h3 class="comp-title">Điều hành trong bối cảnh chuyển đổi</h3> -> Điều hành trong bối cảnh chuyển đổi
+<h3 class="comp-title">Quản trị con người trong tổ chức</h3> -> Quản trị con người trong tổ chức
+<h2 class="section-title reveal-up" id="curriculum-headline">
+                    10 môn học chuyên sâu<br />
+                    <span class="gradient-text">tập trung vào giải quyết tình huống thực tế (60 ECTS)</span>
+                </h2> -> 10 môn học chuyên sâu tập trung vào giải quyết tình huống thực tế (60 ECTS)
+<h3 class="ecosystem-title">Hệ sinh thái học tập toàn diện<br /><span class="eco-title-accent">luôn
+                            đồng hành cùng bạn</span></h3> -> Hệ sinh thái học tập toàn diệnluôn đồng hành cùng bạn
+<h4 class="eco-card-v2-title">IDEAS-LMS</h4> -> IDEAS-LMS
+<h4 class="eco-card-v2-title">IDEAS AI Platform</h4> -> IDEAS AI Platform
+<h4 class="eco-card-v2-title">Cengage</h4> -> Cengage
+<h4 class="eco-card-v2-title">Lớp chuyên đề bổ trợ với giảng viên Việt Nam</h4> -> Lớp chuyên đề bổ trợ với giảng viên Việt Nam
+<h2 class="section-title" id="enroll-headline">
+                            Khoá học mới<br />
+                            <span class="gradient-text">đang mở đăng ký</span>
+                        </h2> -> Khoá học mới đang mở đăng ký
+<h3 class="apply-title">Điều kiện &amp; quy trình<br />4 bước đơn giản</h3> -> Điều kiện &amp; quy trình4 bước đơn giản
+<h2 class="section-title" id="trip-headline">
+                            Chuyến đi trải nghiệm<br />
+                            <span class="gradient-text">&amp; Lễ Tốt Nghiệp tại Thụy Sĩ</span>
+                        </h2> -> Chuyến đi trải nghiệm &amp; Lễ Tốt Nghiệp tại Thụy Sĩ
+<h2 class="section-title reveal-up" id="proof-headline">
+                    Swiss UMEF – Đại học tư thục đầu tiên tại Geneva đạt<br />
+                    <span class="gradient-text">kiểm định Liên bang Thụy Sĩ – SAC</span>
+                </h2> -> Swiss UMEF – Đại học tư thục đầu tiên tại Geneva đạt kiểm định Liên bang Thụy Sĩ – SAC
+<h3 class="proof-card-headline">
+                                <a href="https://www.swiss-umef.ch/en/classements" target="_blank"
+                                    rel="noopener noreferrer" class="proof-qs-logo-link" title="View QS Rankings">
+                                    <img decoding="async"
+                                        src="https://ideas.edu.vn/wp-content/uploads/2025/10/qs-1.webp"
+                                        alt="QS Stars logo" class="proof-qs-logo" loading="lazy" />
+                                </a>
+                                <span class="proof-card-headline-text">
+                                    Văn bằng quốc tế<br />
+                                    <span class="proof-headline-accent">5 QS Stars</span>
+                                </span>
+                            </h3> -> Văn bằng quốc tế 5 QS Stars
+<h2 class="section-title" style="font-size: 1.8rem;">Hệ thống <em>Kiểm định &amp; Công
+                                    nhận</em>
+                                quốc tế</h2> -> Hệ thống Kiểm định &amp; Công nhận quốc tế
+<h2 class="section-title reveal-up" id="gallery-headline">
+                    Hơn 2502 học viên đã tốt nghiệp<br />
+                    <span class="gradient-text">Swiss UMEF cùng IDEAS</span>
+                </h2> -> Hơn 2502 học viên đã tốt nghiệp Swiss UMEF cùng IDEAS
+<h3 class="testimonials-title" id="testimonials-headline">Học viên nói gì về chương trình</h3> -> Học viên nói gì về chương trình
+<h4 class="testi-v4-name">Nguyễn Thanh Bình</h4> -> Nguyễn Thanh Bình
+<h4 class="testi-v4-name">Nguyễn Huỳnh Phương</h4> -> Nguyễn Huỳnh Phương
+<h4 class="testi-v4-name">Nguyễn Thị Hà Miên</h4> -> Nguyễn Thị Hà Miên
+<h3 class="pricing-title"
+                        style="text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #0f172a; margin-bottom: 12px; line-height: 1.2;">
+                        Lựa chọn hình thức học<br /><span style="color:#ab0e00">EMBA Swiss UMEF</span></h3> -> Lựa chọn hình thức họcEMBA Swiss UMEF
+<h2 class="cta-headline" id="cta-headline">
+                        Những quyết định lớn của doanh nghiệp<br />
+                        <span class="cta-gradient underline-highlight">cần một tư duy lãnh đạo đủ tầm.</span>
+                    </h2> -> Những quyết định lớn của doanh nghiệp cần một tư duy lãnh đạo đủ tầm.
+<h3>Khởi đầu hành trình<br><span class="gradient-text">EMBA Thụy Sĩ</span></h3> -> Khởi đầu hành trìnhEMBA Thụy Sĩ
+<h3>Đăng ký thành công!</h3> -> Đăng ký thành công!
+<h3 class="accred-modal-title" id="accred-title">---</h3> -> ---
+<h3>Khởi đầu hành trình <br><span class="gradient-text">EMBA Thụy Sĩ</span></h3> -> Khởi đầu hành trình EMBA Thụy Sĩ
+<h3>Gửi thông tin thành công!</h3> -> Gửi thông tin thành công!
+<h2 class="bk-step-title" id="bk-title">Thông tin của bạn</h2> -> Thông tin của bạn
+<h2 class="bk-step-title">Chọn ngày &amp; giờ</h2> -> Chọn ngày &amp; giờ
+<h2 class="bk-step-title">Xác nhận lịch hẹn</h2> -> Xác nhận lịch hẹn
+<h2 class="bk-success-title">Đặt lịch thành công!</h2> -> Đặt lịch thành công!
+<h2 id="qz-modal-title">Bạn phù hợp với chương trình nào?</h2> -> Bạn phù hợp với chương trình nào?
+<h3 id="qz-result-title"></h3> -> 

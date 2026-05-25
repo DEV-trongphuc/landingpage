@@ -1,0 +1,22 @@
+MATCH NEAR Vinh:
+ta-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[7][self::DIV]/*[1][self::UL]/*[1][self::LI]/*[1][self::P]/*[1][self::SPAN]/*[1][self::IMG]" loading="lazy" decoding="async"
+                          src="https://ideas.edu.vn/wp-content/uploads/2025/10/White-and-Blue-Modern-Business-Zoom-Virtual-Background-6.webp"
+                        />
+                        Ts. Phạm Quang Vinh
+                      </span>
+                    </p>
+                    <p>
+                      <span
+                        ><b>Tiến sĩ Quản Trị Kinh Doanh</b> <br />
+                        Có hơn 25 năm kinh nghiệm trong lĩnh vực Marketing và
+                        Bảo hiểm <br />
+                        Nhà sáng lập &#8211; Viện trưởng Viện IDEAS
+                      </span>
+                    </p>
+                  </li>
+                  <li class="active">
+                    <p>
+                      <span class="subject_item_span">
+                        <img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[7][self::DIV]/*[1][self::UL]/*[2][self::LI]/*[1][self::P]/*[1][self::SPAN]/*[1][self::IMG]" loading="lazy" decoding="async"
+                          src="https://ideas.edu.vn/wp-content/uploads/2025/10/White-and-Blue-Modern-Business
+--------------------------------------------------

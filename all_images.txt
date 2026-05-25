@@ -1,0 +1,110 @@
+<img height="1" width="1" style="display:none"
+
+src="https://www.facebook.com/tr?id=661260709828887&ev=PageView&noscript=1"
+
+/>
+<img data-od-xpath="/HTML/BODY/HEADER[@class=&apos;ideas_header&apos;]/*[2][self::DIV]/*[2][self::DIV]/*[1][self::A]/*[1][self::IMG]"
+
+          src="/wp-content/uploads/2026/01/Logo_15_nam.webp"
+
+        />
+<img data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::A]/*[1][self::IMG]" decoding="async"
+                    class="program_avatar"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShSoIjIIW_XlfCq3nbCxt--s3zt2lxrO74_A&#038;s"
+                  />
+<img data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::A]/*[2][self::IMG]" decoding="async"
+                    class="program_avatar"
+                    src="https://ideas.edu.vn/wp-content/uploads/2025/10/rbcollege_logo.webp"
+                  />
+<img data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[1][self::IMG]" decoding="async"
+                src="https://ideas.edu.vn/wp-content/uploads/2025/10/Dual-DBA.webp"
+              />
+<img
+                  data-od-added-loading=""
+                  data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::IMG]"
+                  loading="lazy"
+                  decoding="async"
+                  src="https://ideas.edu.vn/wp-content/uploads/2025/03/ShareImage-1.jpg"
+                />
+<img
+                    data-od-added-loading=""
+                    data-od-xpath="/HTML/BODY/ARTICLE[@id='post-6373']/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::IMG]"
+                    loading="lazy"
+                    decoding="async"
+                    class="wes_logo"
+                    src="https://ideas.edu.vn/wp-content/uploads/2025/03/estiam.png"
+                  />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[7][self::DIV]/*[1][self::IMG]" loading="lazy" decoding="async"
+                  class="ideas_degree"
+                  src="https://ideas.edu.vn/wp-content/uploads/2025/03/UMEF-EMBA-Degree-2025.png"
+                />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[7][self::DIV]/*[2][self::IMG]" loading="lazy" decoding="async"
+                  class="ideas_degree"
+                  src="https://ideas.edu.vn/wp-content/uploads/2025/10/RB-DBA-2.webp"
+                />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[5][self::DIV]/*[1][self::UL]/*[1][self::LI]/*[1][self::P]/*[1][self::SPAN]/*[1][self::IMG]" loading="lazy" decoding="async"
+                          src="https://ideas.edu.vn/wp-content/uploads/2025/10/White-and-Blue-Modern-Business-Zoom-Virtual-Background-3.webp"
+                        />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[5][self::DIV]/*[1][self::UL]/*[2][self::LI]/*[1][self::P]/*[1][self::SPAN]/*[1][self::IMG]" loading="lazy" decoding="async"
+                          src="https://ideas.edu.vn/wp-content/uploads/2025/10/White-and-Blue-Modern-Business-Zoom-Virtual-Background-2.webp"
+                        />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[5][self::DIV]/*[1][self::UL]/*[3][self::LI]/*[1][self::P]/*[1][self::SPAN]/*[1][self::IMG]" loading="lazy" decoding="async"
+                          src="https://ideas.edu.vn/wp-content/uploads/2025/10/White-and-Blue-Modern-Business-Zoom-Virtual-Background-1.webp"
+                        />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[7][self::DIV]/*[1][self::UL]/*[1][self::LI]/*[1][self::P]/*[1][self::SPAN]/*[1][self::IMG]" loading="lazy" decoding="async"
+                          src="https://ideas.edu.vn/wp-content/uploads/2025/10/White-and-Blue-Modern-Business-Zoom-Virtual-Background-6.webp"
+                        />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[7][self::DIV]/*[1][self::UL]/*[2][self::LI]/*[1][self::P]/*[1][self::SPAN]/*[1][self::IMG]" loading="lazy" decoding="async"
+                          src="https://ideas.edu.vn/wp-content/uploads/2025/10/White-and-Blue-Modern-Business-Zoom-Virtual-Background-5.webp"
+                        />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[7][self::DIV]/*[1][self::UL]/*[3][self::LI]/*[1][self::P]/*[1][self::SPAN]/*[1][self::IMG]" loading="lazy" decoding="async"
+                          src="https://ideas.edu.vn/wp-content/uploads/2025/10/White-and-Blue-Modern-Business-Zoom-Virtual-Background-4.webp"
+                        />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[6][self::DIV]/*[1][self::DIV]/*[3][self::DIV]/*[1][self::DIV]/*[1][self::IMG]" loading="lazy" decoding="async"
+                src="https://ideas.edu.vn/wp-content/new_public/data_imgs/icon4.png"
+              />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[6][self::DIV]/*[1][self::DIV]/*[3][self::DIV]/*[2][self::DIV]/*[1][self::IMG]" loading="lazy" decoding="async"
+                src="https://ideas.edu.vn/wp-content/new_public/data_imgs/icon1.png"
+              />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[6][self::DIV]/*[1][self::DIV]/*[3][self::DIV]/*[3][self::DIV]/*[1][self::IMG]" loading="lazy" decoding="async"
+                src="https://ideas.edu.vn/wp-content/new_public/data_imgs/icon3.png"
+              />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[6][self::DIV]/*[1][self::DIV]/*[3][self::DIV]/*[4][self::DIV]/*[1][self::IMG]" loading="lazy" decoding="async"
+                src="https://ideas.edu.vn/wp-content/new_public/data_imgs/icon2.png"
+              />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/ARTICLE[@id=&apos;post-8289&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[7][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[1][self::IMG]" loading="lazy" decoding="async"
+                src="https://ideas.edu.vn/wp-content/new_public/data_imgs/AI.png"
+              />
+<img data-od-added-fetchpriority data-od-xpath="/HTML/BODY/DIV[@id=&apos;compare&apos;]/*[3][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::IMG]" fetchpriority="low" src="#" />
+<img data-od-added-fetchpriority data-od-xpath="/HTML/BODY/DIV[@id=&apos;compare&apos;]/*[3][self::DIV]/*[3][self::DIV]/*[1][self::DIV]/*[1][self::IMG]" fetchpriority="low" src="#" />
+<img data-od-xpath="/HTML/BODY/DIV[@id=&apos;test&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[1][self::IMG]"
+
+            src="https://ideas.edu.vn/wp-content/new_public/data_imgs/ideas-02.png"
+
+          />
+<img data-od-xpath="/HTML/BODY/DIV[@class=&apos;ideas_popup_event&apos;]/*[2][self::DIV]/*[1][self::IMG]"
+
+          class="order0"
+
+          alt="Swiss UMEF hợp tác IDEAS đưa chương trình Thạc sĩ Thụy Sĩ đến Việt Nam"
+
+          src="https://ideas.edu.vn/wp-content/uploads/2026/05/Kien-tao-1.webp"
+
+        />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/DIV[@class=&apos;ideas_footer&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::IMG]" loading="lazy"
+
+            src="https://ideas.edu.vn/wp-content/uploads/2025/06/Log_ideas_w.png"
+
+          />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/DIV[@class=&apos;ideas_footer&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::DIV]/*[5][self::A]/*[1][self::I]/*[1][self::IMG]" loading="lazy"
+
+                  src="https://hidosport.vn/wp-content/uploads/2023/09/zalo-icon.png"
+
+                />
+<img data-od-added-loading data-od-xpath="/HTML/BODY/DIV[@class=&apos;ideas_footer&apos;]/*[1][self::DIV]/*[5][self::DIV]/*[1][self::A]/*[1][self::IMG]" loading="lazy"
+
+              src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=dc41cd4b-8163-4a8c-aee1-e3b1b7ad5643"
+
+              alt="DMCA.com Protection Status"
+
+          />

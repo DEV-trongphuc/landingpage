@@ -1,0 +1,13 @@
+91: "priceCurrency": "CHF",
+180: "name": "Học phí EMBA là bao nhiêu và có chương trình hỗ trợ trả góp không?",
+183: "text": "Học phí gói Standard là 3.120 CHF và High Quality là 5.120 CHF. Học viên được hỗ trợ trả góp học phí qua thẻ tín dụng Sacombank từ 12 - 24 tháng với lãi suất ưu đãi."
+3716: <strong>Thanh toán học phí &amp; nhập học</strong>
+4389: <div class="section-label" style="margin: 0 auto 1.5rem; display: table;">HỌC PHÍ</div>
+4395: PHÍ THÁNG 5: Áp dụng đến hết ngày 01/06/2026 (Tỷ giá 33.000 VNĐ/CHF)</p>
+4411: 3.120 <span style="font-size:1rem;font-weight:700;opacity:0.85;">CHF</span></div>
+4476: 5.120 <span style="font-size:1rem;font-weight:700;opacity:0.6;">CHF</span></div>
+4550: <p class="sacom-sub">Thanh toán học phí linh hoạt qua thẻ tín dụng Sacombank Visa - lãi
+4749: <span>Học phí EMBA là bao nhiêu và có chương trình hỗ trợ trả góp không?</span>
+4754: <p>Học phí gói Standard là 3.120 CHF và High Quality là 5.120 CHF. Học viên được hỗ trợ
+4755: trả góp học phí qua thẻ tín dụng Sacombank từ 12 - 24 tháng với lãi suất ưu đãi.</p>
+4813: placeholder="Ví dụ: Tôi muốn tìm hiểu về lộ trình học phí và thời gian khai giảng..."
