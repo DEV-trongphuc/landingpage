@@ -6,6 +6,15 @@
 (function () {
     'use strict';
 
+    function lockScroll() {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+    }
+    function unlockScroll() {
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+    }
+
     /* ── State ─────────────────────────────────── */
     const state = {
         currentStep: 1,
@@ -142,7 +151,7 @@
             modal.classList.add('bk-open');
             modal.setAttribute('aria-hidden', 'false');
         });
-        document.body.style.overflow = 'hidden';
+        lockScroll();
         initCalendar();
         initCustomSelects(); // init dropdowns each time (idempotent)
     }
@@ -151,7 +160,7 @@
         if (!modal) return;
         modal.classList.remove('bk-open');
         modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        unlockScroll();
         closeAllCustomSelects();
         setTimeout(() => { modal.style.display = 'none'; }, 350);
     }
@@ -220,7 +229,7 @@
             if (regModal) {
                 regModal.classList.remove('active');
                 regModal.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
+                unlockScroll();
             }
             openModal();
             prefillBookingForm({

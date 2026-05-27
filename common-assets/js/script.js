@@ -6,6 +6,17 @@
 (function () {
     'use strict';
 
+    function lockScroll() {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+    }
+    function unlockScroll() {
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+    }
+    window.lockScroll = lockScroll;
+    window.unlockScroll = unlockScroll;
+
     /* ─── Smooth-scroll anchor links ─── */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -581,7 +592,7 @@
         setTimeout(() => {
             regModal.classList.add('open');
             regModal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
+            lockScroll();
         }, 10);
     }
 
@@ -591,7 +602,7 @@
         regModal.setAttribute('aria-hidden', 'true');
         setTimeout(() => {
             regModal.style.display = 'none';
-            document.body.style.overflow = '';
+            unlockScroll();
         }, 400);
     }
 
@@ -684,14 +695,14 @@
         lightboxImg.src = src;
         lightboxImg.alt = alt || '';
         lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        lockScroll();
         if (lightboxClose) lightboxClose.focus();
     }
 
     function closeLightbox() {
         if (!lightbox) return;
         lightbox.classList.remove('open');
-        document.body.style.overflow = '';
+        unlockScroll();
         if (lightboxImg) lightboxImg.src = '';
     }
 
@@ -756,14 +767,14 @@
 
         accredModal.classList.add('open');
         accredModal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
+        lockScroll();
     }
 
     function closeAccredModal() {
         if (!accredModal) return;
         accredModal.classList.remove('open');
         accredModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        unlockScroll();
     }
 
     document.querySelectorAll('.accred-trigger').forEach(trigger => {
@@ -1348,7 +1359,9 @@ function openTourModal() {
     const modal = document.getElementById('tour-modal');
     if (!modal) return;
     modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    if (typeof window.lockScroll === 'function') {
+        window.lockScroll();
+    }
     capitalsSequenceStarted = false;
     setTimeout(() => {
         modal.classList.add('open');
@@ -1360,7 +1373,9 @@ function closeTourModal() {
     const modal = document.getElementById('tour-modal');
     if (!modal) return;
     modal.classList.remove('open');
-    document.body.style.overflow = '';
+    if (typeof window.unlockScroll === 'function') {
+        window.unlockScroll();
+    }
     
     const video = document.getElementById('tour-video-el');
     if (video) video.pause();
