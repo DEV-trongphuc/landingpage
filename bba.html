@@ -179,7 +179,7 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="common-assets/css/style.css?v=1.2" />
+    <link rel="stylesheet" href="common-assets/css/style.css?v=2.0" />
     <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1.1" />
     <style>
         /* ═══════════════════════════════════════
@@ -3697,7 +3697,7 @@
                                 <div class="proof-degree-glow"></div>
                                 <div class="proof-degree-frame">
                                     <img decoding="async"
-                                        src="https://vtci.edu.vn/wp-content/uploads/2025/07/bba-degree.jpg"
+                                        src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7191978013846_36a81ec39301d05fedaf6d4cd0293f9c-1.webp"
                                         alt="Mẫu bằng BBA Swiss UMEF" loading="lazy" class="proof-degree-img" />
                                     <div class="proof-degree-shimmer"></div>
                                 </div>
@@ -3728,8 +3728,20 @@
                         </div>
                     </div>
 
-                    <!-- NEW INTEGRATED ACCREDITATION AREA WITHIN CARD -->
-                    <div class="proof-card-accred">
+                    <!-- Toggle Button for Accreditation -->
+                    <div style="text-align: center; margin-top: 24px; margin-bottom: 24px;">
+                        <button id="accred-toggle-btn" class="toggle-pill-btn" onclick="toggleAccredSection()">
+                            <span id="accred-toggle-btn-text">Các kiểm định Quốc tế</span>
+                            <span class="toggle-pill-icon-container">
+                                <svg id="accred-toggle-btn-icon" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div id="accred-expandable-content" class="accred-expandable">
+                        <div class="proof-card-accred">
                         <div class="accred-feature-content">
                             <img decoding="async"
                                 src="https://ideas.edu.vn/wp-content/uploads/2023/07/Logo-Swiss-UMEF.webp"
@@ -3809,13 +3821,9 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Integrated CTA -->
-                    <div class="combined-cta-wrap">
-                        <a href="#dang-ky" class="btn btn-primary">
-                            <span>Xem mẫu bằng BBA Swiss UMEF</span>
-                        </a>
                     </div>
+
+
                 </div>
             </div>
         </section>
@@ -4946,7 +4954,7 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.js?v=1.2"></script>
+    <script src="common-assets/js/script.js?v=2.0"></script>
     <script src="common-assets/js/booking-modal.js?v=1.1"></script>
 
     <!-- ═══════════════════════════════════════

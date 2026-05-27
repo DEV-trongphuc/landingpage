@@ -201,7 +201,7 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="common-assets/css/style.css?v=1.2" />
+    <link rel="stylesheet" href="common-assets/css/style.css?v=2.0" />
     <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1.1" />
     <style>
         /* ═══════════════════════════════════════
@@ -3733,14 +3733,18 @@
      ══════════════════════════════════════════ -->
         <section class="trip-section" id="chuyen-di" aria-labelledby="trip-headline">
             <div class="container">
-                <div class="trip-inner reveal-up">
-                    <div class="trip-content">
-                        <div class="section-label">ĐIỂM NHẤN ĐẶC BIỆT</div>
-                        <h2 class="section-title" id="trip-headline">
-                            Chuyến đi học thuật Seminars<br />
+                <div class="reveal-up" style="text-align: center; margin-bottom: 40px;">
+                    <div class="section-label">ĐIỂM NHẤN ĐẶC BIỆT</div>
+                    <h2 class="section-title" id="trip-headline" style="margin-bottom: 0;">
+                        Chuyến đi học thuật Seminars<br />
                             <span class="gradient-text">&amp; Lễ Tốt Nghiệp tại Paris, Pháp</span>
-                        </h2>
-                        <p class="trip-desc">Trong lộ trình song bằng DBA, nghiên cứu sinh có cơ hội trực tiếp trải
+                    </h2>
+                </div>
+                
+                <div id="trip-expandable-content" class="trip-expandable">
+                    <div class="trip-inner">
+                        <div class="trip-content">
+                            <p class="trip-desc">Trong lộ trình song bằng DBA, nghiên cứu sinh có cơ hội trực tiếp trải
                             nghiệm môi trường học thuật châu Âu qua các kỳ Seminars chuyên sâu và tham dự Lễ tốt nghiệp
                             trang trọng tại thủ đô <strong>Paris, Pháp</strong>.</p>
                         <ul class="trip-highlights">
@@ -3773,15 +3777,14 @@
                                 Trải nghiệm văn hóa, mở rộng tầm nhìn toàn cầu tại trung tâm học thuật thế giới.
                             </li>
                         </ul>
-                        <a href="#dang-ky" class="btn btn-primary" id="trip-cta">
-                            Tìm hiểu thêm về Seminars tại Paris
-                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+                        <a href="javascript:void(0)" class="trip-cta-premium" id="trip-cta">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8 5v14l11-7z"></path>
                             </svg>
+                            <span>KHÁM PHÁ HÀNH TRÌNH</span>
                         </a>
-                    </div>
-                    <div class="trip-photo">
+                        </div>
+                        <div class="trip-photo">
                         <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/05/Kien-tao-2.webp"
                             alt="Hội thảo khoa học và Seminars Tiến sĩ tại Paris – IDEAS Education" loading="lazy"
                             width="560" height="420" />
@@ -3796,6 +3799,7 @@
                             Paris, France
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </section>
@@ -3994,8 +3998,20 @@
                         </div>
                     </div>
 
-                    <!-- NEW INTEGRATED ACCREDITATION AREA WITHIN CARD -->
-                    <div class="proof-card-accred">
+                    <!-- Toggle Button for Accreditation -->
+                    <div style="text-align: center; margin-top: 24px; margin-bottom: 24px;">
+                        <button id="accred-toggle-btn" class="toggle-pill-btn" onclick="toggleAccredSection()">
+                            <span id="accred-toggle-btn-text">Các kiểm định Quốc tế</span>
+                            <span class="toggle-pill-icon-container">
+                                <svg id="accred-toggle-btn-icon" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div id="accred-expandable-content" class="accred-expandable">
+                        <div class="proof-card-accred">
                         <div class="accred-feature-content">
                             <h2 class="section-title" style="font-size: 1.8rem;">Kiểm định &amp; <em>Công nhận</em> quốc
                                 tế</h2>
@@ -4029,13 +4045,9 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Integrated CTA -->
-                    <div class="combined-cta-wrap">
-                        <a href="#dang-ky" class="btn btn-primary">
-                            <span>Tư vấn Kiểm định - Bằng cấp</span>
-                        </a>
                     </div>
+
+
                 </div>
             </div>
         </section>
@@ -5129,19 +5141,19 @@
                         <label>Chương trình quan tâm <span class="bk-required">*</span></label>
                         <div class="bk-program-grid" id="bk-program-grid">
                             <label class="bk-program-card">
-                                <input type="radio" name="bk-program" value="EMBA Standard" />
+                                <input type="radio" name="bk-program" value="Standard DBA" />
                                 <div class="bk-program-inner">
                                     <div class="bk-program-icon">📘</div>
-                                    <div class="bk-program-name">EMBA Standard</div>
-                                    <div class="bk-program-desc">Linh hoạt, tự học theo lịch</div>
+                                    <div class="bk-program-name">Standard DBA</div>
+                                    <div class="bk-program-desc">Tự học có hướng dẫn, 3 Seminars tại Paris</div>
                                 </div>
                             </label>
                             <label class="bk-program-card">
-                                <input type="radio" name="bk-program" value="EMBA High Quality" />
+                                <input type="radio" name="bk-program" value="High Quality DBA" />
                                 <div class="bk-program-inner">
                                     <div class="bk-program-icon">🎓</div>
-                                    <div class="bk-program-name">EMBA High Quality</div>
-                                    <div class="bk-program-desc">Zoom trực tiếp với GV quốc tế</div>
+                                    <div class="bk-program-name">High Quality DBA</div>
+                                    <div class="bk-program-desc">Cố vấn 1-1 với Giáo sư, Seminars tại Paris</div>
                                 </div>
                             </label>
                             <label class="bk-program-card">
@@ -5402,7 +5414,245 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.js?v=1.2"></script>
+    <!-- Tour Itinerary Modal -->
+    <div class="tour-modal" id="tour-modal" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+        <div class="tour-modal-overlay" id="tour-modal-overlay"></div>
+        <div class="tour-modal-container">
+            <button class="tour-modal-close" id="tour-modal-close" aria-label="Close modal">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="tour-modal-content" id="tour-modal-scrollable">
+                <!-- Hero Header -->
+                <div class="tour-modal-hero">
+                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg" class="tour-hero-img" alt="Hero" />
+                    <div class="tour-hero-overlay"></div>
+                    <div class="tour-hero-text">
+                        <span class="tour-hero-badge">Beyond Education</span>
+                        <h2 class="tour-hero-title">THE GRAND <br> <span class="accent-red">EXPERIENCE</span></h2>
+                        <p class="tour-hero-desc">"Trải nghiệm khoảnh khắc tự hào khi nhận bằng trực tiếp tại Geneva, kết hợp hành trình khám phá Pháp - Ý - Thụy Sĩ sang trọng bậc nhất."</p>
+                    </div>
+                </div>
+                
+                <div class="tour-modal-body">
+                    <!-- Narrative Sections -->
+                    <div class="tour-narrative-section tour-reveal">
+                        <div class="tour-narrative-content">
+                            <h4 class="tour-narrative-title">Khởi đầu từ khát vọng</h4>
+                            <p class="tour-narrative-desc">Hành trình bắt đầu từ sân bay Tân Sơn Nhất, mang theo hoài bão vươn ra thế giới của những nhà quản trị tương lai.</p>
+                        </div>
+                        <div class="tour-narrative-media">
+                            <div class="tour-media-frame"><img src="https://media.istockphoto.com/id/1145422105/vi/anh/th%C3%A1p-eiffel-nh%C3%ACn-t%E1%BB%AB-tr%C3%AAn-cao-paris.jpg?s=170667a&w=0&k=20&c=vmgwD_mOzopjMDJ01Fn899Diap00-C2Sajsp6HMTM0=" alt="" /></div>
+                        </div>
+                    </div>
+
+                    <div class="tour-narrative-section reverse tour-reveal">
+                        <div class="tour-narrative-content">
+                            <h4 class="tour-narrative-title">Paris: Bản giao hương nghệ thuật</h4>
+                            <p class="tour-narrative-desc">Đắm mình trong không gian kiến trúc cổ điển tại tháp Eiffel và bảo tàng Louvre, nơi nghệ thuật và lịch sử hòa quyện tạo nên cảm hứng học thuật bất tận.</p>
+                        </div>
+                        <div class="tour-narrative-media">
+                            <div class="tour-media-frame">
+                                <div class="tour-media-grid">
+                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7160675663665_468905c8dc1042f7e599a5fa3a8f1ed9.webp" class="tour-grid-item" alt="" />
+                                    <div class="tour-grid-col">
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7164481025616_560707f2aa2aafd233d48c437e9f8f97.webp" class="tour-grid-item" alt="" />
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7164481040450_4b614db3edbdab67e16b438a78aae22e.webp" class="tour-grid-item" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-narrative-section tour-reveal">
+                        <div class="tour-narrative-content">
+                            <h4 class="tour-narrative-title">Milan: Tinh hoa phong cách Ý</h4>
+                            <p class="tour-narrative-desc">Khám phá kinh đô thời trang thế giới với nhà thờ Duomo kỳ vĩ, cảm nhận sự tinh tế trong quản trị và thiết kế từ những thương hiệu xa xỉ bậc nhất.</p>
+                        </div>
+                        <div class="tour-narrative-media">
+                            <div class="tour-media-frame">
+                                <div class="tour-media-grid">
+                                    <img src="https://ik.imagekit.io/tvlk/blog/2023/06/du-lich-milan-5.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" class="tour-grid-item" alt="" />
+                                    <div class="tour-grid-col">
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7165248219347_f41fb7373b9329a9855e97e6e9691a7c.webp" class="tour-grid-item" alt="" />
+                                        <img src="https://ik.imagekit.io/tvlk/blog/2023/06/du-lich-milan-5.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" class="tour-grid-item" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-narrative-section reverse tour-reveal">
+                        <div class="tour-narrative-content">
+                            <h4 class="tour-narrative-title">Geneva: Tầm vóc ngoại giao quốc tế</h4>
+                            <span class="tour-narrative-subtitle">WTO • UNESCO • VIETNAM EMBASSY</span>
+                            <p class="tour-narrative-desc">Tham quan trụ sở các tổ chức liên chính phủ (WTO/UNESCO), thăm Đại sứ quán Việt Nam tại Geneva và kết nối với các doanh nghiệp Thụy Sĩ hàng đầu.</p>
+                        </div>
+                        <div class="tour-narrative-media">
+                            <div class="tour-media-frame">
+                                <div class="tour-media-grid">
+                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-9.jpg" class="tour-grid-item" alt="" />
+                                    <div class="tour-grid-col">
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-8.jpg" class="tour-grid-item" alt="" />
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-9.jpg" class="tour-grid-item" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-narrative-section tour-reveal">
+                        <div class="tour-narrative-content">
+                            <h4 class="tour-narrative-title">Swiss UMEF: Kết nối trí tuệ toàn cầu</h4>
+                            <p class="tour-narrative-desc">Trực tiếp ghé thăm khuôn viên trường, dự giờ và giao lưu cùng các Giáo sư đầu ngành cùng bạn bè quốc tế đến từ khắp nơi trên thế giới.</p>
+                        </div>
+                        <div class="tour-narrative-media">
+                            <div class="tour-media-frame">
+                                <div class="tour-media-grid">
+                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-2.jpg" class="tour-grid-item" alt="" />
+                                    <div class="tour-grid-col">
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-4.jpg" class="tour-grid-item" alt="" />
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-2.jpg" class="tour-grid-item" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-narrative-section reverse tour-reveal">
+                        <div class="tour-narrative-content">
+                            <h4 class="tour-narrative-title">CHẠM ĐỈNH TUYẾT VĨNH CỬU TITLIS</h4>
+                            <p class="tour-narrative-desc">Trải nghiệm cáp treo xoay 360 độ lên đỉnh Mount Titlis hùng vĩ, tận hưởng cảm giác tự do và thành công giữa thiên nhiên tuyệt mỹ của Thụy Sĩ.</p>
+                        </div>
+                        <div class="tour-narrative-media">
+                            <div class="tour-media-frame">
+                                <div class="tour-media-grid">
+                                    <img src="https://eurotravel.com.vn/wp-content/uploads/2024/07/Titlis-Paranoma.jpeg" class="tour-grid-item" alt="" />
+                                    <div class="tour-grid-col">
+                                        <img src="https://dulichphuonghoang.vn/upload/images/1(3).png" class="tour-grid-item" alt="" />
+                                        <img src="https://eurotravel.com.vn/wp-content/uploads/2024/07/Titlis-Paranoma.jpeg" class="tour-grid-item" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Capitals Section -->
+                    <div class="tour-capitals-section" id="tour-capitals-section">
+                        <h4 class="tour-narrative-title">NHỮNG KINH ĐÔ TRÁNG LỆ</h4>
+                        <span class="tour-narrative-subtitle">PARIS • BRUSSELS • AMSTERDAM • GENEVA</span>
+                        
+                        <div class="tour-capitals-grid">
+                            <div class="tour-capital-card" data-idx="0">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/paris.webp" alt="Paris" />
+                                <div class="tour-capital-overlay"></div>
+                                <div class="tour-capital-badge">Premium Destination</div>
+                                <div class="tour-capital-info">
+                                    <div class="tour-capital-line"></div>
+                                    <h5 class="tour-capital-name">Paris</h5>
+                                    <p class="tour-capital-desc">Kinh đô ánh sáng</p>
+                                </div>
+                            </div>
+                            <div class="tour-capital-card offset" data-idx="1">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/Brussels.webp" alt="Brussels" />
+                                <div class="tour-capital-overlay"></div>
+                                <div class="tour-capital-badge">Premium Destination</div>
+                                <div class="tour-capital-info">
+                                    <div class="tour-capital-line"></div>
+                                    <h5 class="tour-capital-name">Brussels</h5>
+                                    <p class="tour-capital-desc">Trái tim chính trị Châu Âu</p>
+                                </div>
+                            </div>
+                            <div class="tour-capital-card" data-idx="2">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/amsterdam.webp" alt="Amsterdam" />
+                                <div class="tour-capital-overlay"></div>
+                                <div class="tour-capital-badge">Premium Destination</div>
+                                <div class="tour-capital-info">
+                                    <div class="tour-capital-line"></div>
+                                    <h5 class="tour-capital-name">Amsterdam</h5>
+                                    <p class="tour-capital-desc">Thành phố Tự do</p>
+                                </div>
+                            </div>
+                            <div class="tour-capital-card offset" data-idx="3">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/geneva.webp" alt="Geneva" />
+                                <div class="tour-capital-overlay"></div>
+                                <div class="tour-capital-badge">Premium Destination</div>
+                                <div class="tour-capital-info">
+                                    <div class="tour-capital-line"></div>
+                                    <h5 class="tour-capital-name">Geneva</h5>
+                                    <p class="tour-capital-desc">Trung tâm Tài chính</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tour-capitals-footer">
+                            <p class="tour-capitals-footer-tag">European Grand Tour Legacy</p>
+                            <p class="tour-capitals-footer-text">Hành trình đưa bạn đi qua những biểu tượng quyền lực và văn hóa rực rỡ nhất của Lục địa già.</p>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Video & Images Showcase -->
+                    <div class="tour-highlight-section tour-reveal">
+                        <div class="tour-highlight-dots"></div>
+                        <div class="tour-highlight-badge">
+                            <div class="tour-highlight-line"></div>
+                            <span class="tour-highlight-tag">Excellence Highlight</span>
+                            <div class="tour-highlight-line"></div>
+                        </div>
+                        <h3 class="tour-highlight-title">KHOẢNH KHẮC VINH QUANG</h3>
+                        <p class="tour-highlight-desc">Lễ tốt nghiệp trọng thể tại lâu đài Château d’Aïre - nơi những nỗ lực học thuật được vinh danh trong không gian cổ kính và sang trọng bậc nhất Thụy Sĩ.</p>
+                        
+                        <div class="tour-video-container" id="tour-video-container">
+                            <video id="tour-video-el" src="https://ideas.edu.vn/wp-content/uploads/2025/12/1220.mp4" muted playsinline class="tour-video-player"></video>
+                            <div class="tour-video-controls">
+                                <button class="tour-video-play-btn" id="tour-video-play-btn">
+                                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                                </button>
+                                <button class="tour-video-mute-btn" id="tour-video-mute-btn">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.87.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5V9l-1.73-1.73L4.27 3zm10.73 7l-2-2v4l2-2z" /></svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="tour-images-fallback" id="tour-images-fallback" style="display: none;">
+                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-6.jpg" alt="" /><div class="tour-fallback-overlay"></div></div>
+                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-10.jpg" alt="" /><div class="tour-fallback-overlay"></div></div>
+                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-11.jpg" alt="" /><div class="tour-fallback-overlay"></div></div>
+                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.webp" alt="" /><div class="tour-fallback-overlay"></div></div>
+                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.webp" alt="" /><div class="tour-fallback-overlay"></div></div>
+                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.webp" alt="" /><div class="tour-fallback-overlay"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="tour-modal-footer tour-reveal">
+                        <div class="tour-footer-divider"></div>
+                        <h5 class="tour-footer-motto">Where Knowledge Meets the World</h5>
+                        
+                        <div class="tour-footer-btn-wrap" style="flex-direction: column; align-items: center; gap: 1.5rem; margin-bottom: 6rem;">
+                            <button onclick="openBookingModalFromTour()" class="tour-footer-btn">
+                                <span>Tham gia hành trình vinh quang</span>
+                                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </button>
+                            <button onclick="closeTourModal()" class="tour-footer-btn-secondary" style="background: none; border: none; color: #64748b; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; cursor: pointer; text-decoration: underline;">
+                                Đóng hành trình
+                            </button>
+                        </div>
+
+                        <div class="tour-footer-logos">
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2023/07/Logo-Swiss-UMEF.webp" alt="Swiss UMEF" />
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/06/log_ideas.png" alt="Ideas Institute" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="common-assets/js/script.js?v=2.0"></script>
     <script src="common-assets/js/booking-modal.js?v=1.1"></script>
 
     <!-- ═══════════════════════════════════════

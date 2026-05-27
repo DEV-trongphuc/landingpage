@@ -1218,3 +1218,260 @@
     console.log('%cIDEAS × Swiss UMEF MBA [Portal]', 'background:#ab0e00;color:#fff;padding:4px 12px;border-radius:4px;font-weight:700');
 
 })();
+
+// Global toggle functions for expandable sections (accreditation and graduation trip)
+function toggleAccredSection() {
+    const content = document.getElementById('accred-expandable-content');
+    const btn = document.getElementById('accred-toggle-btn');
+    const btnText = document.getElementById('accred-toggle-btn-text');
+    const btnIcon = document.getElementById('accred-toggle-btn-icon');
+    
+    if (!content || !btnText) return;
+    
+    // Store original text if not already done
+    let originalText = btnText.getAttribute('data-original-text');
+    if (!originalText) {
+        originalText = btnText.textContent.trim();
+        btnText.setAttribute('data-original-text', originalText);
+    }
+    
+    if (content.classList.contains('is-open')) {
+        content.classList.remove('is-open');
+        btnText.textContent = originalText;
+        if (btnIcon) btnIcon.style.transform = 'rotate(0deg)';
+    } else {
+        content.classList.add('is-open');
+        btnText.textContent = 'Thu gọn thông tin';
+        if (btnIcon) btnIcon.style.transform = 'rotate(180deg)';
+    }
+}
+
+function toggleTripSection() {
+    const content = document.getElementById('trip-expandable-content');
+    const btn = document.getElementById('trip-toggle-btn');
+    const btnText = document.getElementById('trip-toggle-btn-text');
+    const btnIcon = document.getElementById('trip-toggle-btn-icon');
+    
+    if (!content || !btnText) return;
+    
+    // Store original text if not already done
+    let originalText = btnText.getAttribute('data-original-text');
+    if (!originalText) {
+        originalText = btnText.textContent.trim();
+        btnText.setAttribute('data-original-text', originalText);
+    }
+    
+    if (content.classList.contains('is-open')) {
+        content.classList.remove('is-open');
+        btnText.textContent = originalText;
+        if (btnIcon) btnIcon.style.transform = 'rotate(0deg)';
+    } else {
+        content.classList.add('is-open');
+        btnText.textContent = 'Thu gọn thông tin';
+        if (btnIcon) btnIcon.style.transform = 'rotate(180deg)';
+    }
+}
+
+// --- Europe Tour Itinerary Modal JS ---
+let capitalsSequenceStarted = false;
+
+function initTourModalSequence() {
+    const modalScrollable = document.getElementById('tour-modal-scrollable');
+    if (!modalScrollable) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                
+                // Capitals showcase sequence
+                if (entry.target.id === 'tour-capitals-section' && !capitalsSequenceStarted) {
+                    capitalsSequenceStarted = true;
+                    startCapitalsSequence(entry.target);
+                }
+                
+                // Video container reveal
+                if (entry.target.id === 'tour-video-container') {
+                    const video = document.getElementById('tour-video-el');
+                    if (video) {
+                        video.play().catch(e => console.log('Autoplay blocked'));
+                    }
+                }
+            }
+        });
+    }, {
+        threshold: 0.15,
+        root: modalScrollable
+    });
+    
+    modalScrollable.querySelectorAll('.tour-reveal').forEach(el => observer.observe(el));
+    const capitalsSec = document.getElementById('tour-capitals-section');
+    if (capitalsSec) observer.observe(capitalsSec);
+    const videoCont = document.getElementById('tour-video-container');
+    if (videoCont) observer.observe(videoCont);
+}
+
+function startCapitalsSequence(section) {
+    const cards = section.querySelectorAll('.tour-capital-card');
+    const footer = section.querySelector('.tour-capitals-footer');
+    let step = 0;
+    
+    function nextStep() {
+        step++;
+        if (step <= cards.length) {
+            cards.forEach((card, idx) => {
+                const cardStep = idx + 1;
+                if (cardStep === step) {
+                    card.classList.add('is-visible');
+                    card.classList.add('is-focused');
+                } else {
+                    card.classList.remove('is-focused');
+                    if (cardStep < step) {
+                        card.classList.add('is-previous');
+                    }
+                }
+            });
+            setTimeout(nextStep, 1000);
+        } else {
+            cards.forEach(card => {
+                card.classList.remove('is-focused');
+                card.classList.remove('is-previous');
+                card.classList.add('is-all-active');
+            });
+            if (footer) footer.classList.add('is-visible');
+        }
+    }
+    nextStep();
+}
+
+function openTourModal() {
+    const modal = document.getElementById('tour-modal');
+    if (!modal) return;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    capitalsSequenceStarted = false;
+    setTimeout(() => {
+        modal.classList.add('open');
+        initTourModalSequence();
+    }, 10);
+}
+
+function closeTourModal() {
+    const modal = document.getElementById('tour-modal');
+    if (!modal) return;
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    
+    const video = document.getElementById('tour-video-el');
+    if (video) video.pause();
+    
+    setTimeout(() => {
+        modal.style.display = 'none';
+        // Reset states
+        const videoContainer = document.getElementById('tour-video-container');
+        const fallbackGrid = document.getElementById('tour-images-fallback');
+        if (videoContainer) {
+            videoContainer.style.display = 'block';
+            videoContainer.style.opacity = '1';
+            videoContainer.style.transform = 'scale(1)';
+        }
+        if (fallbackGrid) {
+            fallbackGrid.style.display = 'none';
+            fallbackGrid.classList.remove('is-visible');
+        }
+        const capitalsSec = document.getElementById('tour-capitals-section');
+        if (capitalsSec) {
+            capitalsSec.querySelectorAll('.tour-capital-card').forEach(card => {
+                card.classList.remove('is-visible', 'is-focused', 'is-previous', 'is-all-active');
+            });
+            const footer = capitalsSec.querySelector('.tour-capitals-footer');
+            if (footer) footer.classList.remove('is-visible');
+        }
+        const revealItems = document.getElementById('tour-modal-scrollable').querySelectorAll('.tour-reveal');
+        revealItems.forEach(item => item.classList.remove('is-visible'));
+    }, 500);
+}
+
+function openBookingModalFromTour() {
+    closeTourModal();
+    setTimeout(() => {
+        if (typeof window.openRegModal === 'function') {
+            window.openRegModal('tour_footer_cta');
+        }
+    }, 300);
+}
+
+// Attach event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    // Hook click to all elements with id="trip-cta"
+    document.querySelectorAll('#trip-cta').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openTourModal();
+        });
+    });
+    
+    const closeBtn = document.getElementById('tour-modal-close');
+    const overlay = document.getElementById('tour-modal-overlay');
+    if (closeBtn) closeBtn.addEventListener('click', closeTourModal);
+    if (overlay) overlay.addEventListener('click', closeTourModal);
+    
+    // Video player handlers
+    const video = document.getElementById('tour-video-el');
+    const playBtn = document.getElementById('tour-video-play-btn');
+    const muteBtn = document.getElementById('tour-video-mute-btn');
+    const videoContainer = document.getElementById('tour-video-container');
+    const fallbackGrid = document.getElementById('tour-images-fallback');
+    
+    if (video) {
+        video.addEventListener('ended', () => {
+            if (videoContainer) {
+                videoContainer.style.opacity = '0';
+                videoContainer.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    videoContainer.style.display = 'none';
+                    if (fallbackGrid) {
+                        fallbackGrid.style.display = 'grid';
+                        setTimeout(() => {
+                            fallbackGrid.classList.add('is-visible');
+                        }, 50);
+                    }
+                }, 800);
+            }
+        });
+        
+        if (playBtn) {
+            playBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (video.paused) {
+                    video.play().catch(err => console.log(err));
+                    playBtn.innerHTML = '<svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" /></svg>';
+                } else {
+                    video.pause();
+                    playBtn.innerHTML = '<svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>';
+                }
+            });
+        }
+        
+        if (muteBtn) {
+            muteBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                video.muted = !video.muted;
+                if (video.muted) {
+                    muteBtn.innerHTML = '<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.87.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5V9l-1.73-1.73L4.27 3zm10.73 7l-2-2v4l2-2z" /></svg>';
+                } else {
+                    muteBtn.innerHTML = '<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M14 8.83v6.34L17.17 12 14 8.83zM12 4L7.03 9H3v6h4l5 5V4z" /></svg>';
+                }
+            });
+        }
+    }
+});
+
+// Also hook general escape key to close tour modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeTourModal();
+    }
+});
+
