@@ -810,6 +810,7 @@
             isAnimating = true;
 
             const cards = [...stack.querySelectorAll('.accred-stack-card')];
+            const numCards = cards.length;
 
             if (direction === 'next') {
                 const topCard = stack.querySelector('.pos-1');
@@ -823,20 +824,23 @@
                 setTimeout(() => {
                     // Update classes after it's out
                     cards.forEach(card => {
-                        if (card.classList.contains('pos-1')) {
-                            card.classList.remove('pos-1');
-                            card.classList.add('pos-3');
+                        let currentPos = 1;
+                        for (let i = 1; i <= numCards; i++) {
+                            if (card.classList.contains(`pos-${i}`)) {
+                                currentPos = i;
+                                card.classList.remove(`pos-${i}`);
+                                break;
+                            }
+                        }
+                        let nextPos = currentPos === 1 ? numCards : currentPos - 1;
+                        card.classList.add(`pos-${nextPos}`);
+
+                        if (currentPos === 1) {
                             // Reset position/opacity for bottom state
                             card.style.transition = 'none';
                             card.style.transform = '';
                             card.style.opacity = '';
                             card.style.zIndex = '';
-                        } else if (card.classList.contains('pos-2')) {
-                            card.classList.remove('pos-2');
-                            card.classList.add('pos-1');
-                        } else if (card.classList.contains('pos-3')) {
-                            card.classList.remove('pos-3');
-                            card.classList.add('pos-2');
                         }
                     });
 
@@ -847,7 +851,7 @@
                 }, 500);
             } else {
                 // Previous: swing IN from the left (Bottom to Top)
-                const backCard = stack.querySelector('.pos-3');
+                const backCard = stack.querySelector(`.pos-${numCards}`);
                 backCard.style.transition = 'none';
                 backCard.style.transform = 'translateX(-120%) rotate(-15deg) translateZ(100px)';
                 backCard.style.opacity = '0';
@@ -856,15 +860,18 @@
                 setTimeout(() => {
                     backCard.style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
                     cards.forEach(card => {
-                        if (card.classList.contains('pos-1')) {
-                            card.classList.remove('pos-1');
-                            card.classList.add('pos-2');
-                        } else if (card.classList.contains('pos-2')) {
-                            card.classList.remove('pos-2');
-                            card.classList.add('pos-3');
-                        } else if (card.classList.contains('pos-3')) {
-                            card.classList.remove('pos-3');
-                            card.classList.add('pos-1');
+                        let currentPos = 1;
+                        for (let i = 1; i <= numCards; i++) {
+                            if (card.classList.contains(`pos-${i}`)) {
+                                currentPos = i;
+                                card.classList.remove(`pos-${i}`);
+                                break;
+                            }
+                        }
+                        let nextPos = currentPos === numCards ? 1 : currentPos + 1;
+                        card.classList.add(`pos-${nextPos}`);
+
+                        if (currentPos === numCards) {
                             card.style.transform = '';
                             card.style.opacity = '';
                             card.style.zIndex = '';
@@ -1359,6 +1366,10 @@ function openTourModal() {
     const modal = document.getElementById('tour-modal');
     if (!modal) return;
     modal.style.display = 'flex';
+    const modalScrollable = document.getElementById('tour-modal-scrollable');
+    if (modalScrollable) {
+        modalScrollable.scrollTop = 0;
+    }
     if (typeof window.lockScroll === 'function') {
         window.lockScroll();
     }
@@ -1382,6 +1393,12 @@ function closeTourModal() {
     
     setTimeout(() => {
         modal.style.display = 'none';
+        
+        const modalScrollable = document.getElementById('tour-modal-scrollable');
+        if (modalScrollable) {
+            modalScrollable.scrollTop = 0;
+        }
+
         // Reset states
         const videoContainer = document.getElementById('tour-video-container');
         const fallbackGrid = document.getElementById('tour-images-fallback');
@@ -1525,6 +1542,9 @@ document.addEventListener('keydown', (e) => {
     }
 
     function initSmoothScroll() {
+        // Disable CSS smooth scroll to prevent double-smoothing/jitter conflict with JS
+        document.documentElement.style.scrollBehavior = 'auto';
+
         window.addEventListener('wheel', (e) => {
             // Detect trackpads and smooth wheel mice (Precision trackpads use float values or have horizontal movement)
             const isTrackpad = e.deltaX !== 0 || (e.deltaY !== 0 && (e.deltaY % 1 !== 0 || Math.abs(e.deltaY) < 15));
@@ -1537,14 +1557,27 @@ document.addEventListener('keydown', (e) => {
 
             e.preventDefault();
 
+            const actualScroll = container === document.documentElement || container === document.scrollingElement
+                ? window.scrollY
+                : container.scrollTop;
+
             let state = scrollContainers.get(container);
             if (!state) {
                 state = {
-                    target: container === document.documentElement || container === document.scrollingElement ? window.scrollY : container.scrollTop,
-                    current: container === document.documentElement || container === document.scrollingElement ? window.scrollY : container.scrollTop,
+                    target: actualScroll,
+                    current: actualScroll,
                     animating: false
                 };
                 scrollContainers.set(container, state);
+            } else {
+                const diff = Math.abs(actualScroll - state.current);
+                if (!state.animating || diff > 10) {
+                    state.target = actualScroll;
+                    state.current = actualScroll;
+                    if (diff > 10) {
+                        state.animating = false;
+                    }
+                }
             }
 
             // Accumulate target scroll (scroll speed multiplier can be customized, 1.1 makes it feel responsive)
@@ -1617,5 +1650,7 @@ document.addEventListener('keydown', (e) => {
         initSmoothScroll();
     }
 })();
+
+
 
 

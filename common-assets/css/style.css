@@ -69,7 +69,7 @@
 }
 
 html {
-  scroll-behavior: auto;
+  scroll-behavior: auto; /* Changed from smooth to resolve conflict with JS smooth scroll */
   font-size: 16px;
   overflow-x: hidden;
 }
@@ -4459,6 +4459,13 @@ abbr {
   opacity: 0.7;
 }
 
+.accred-stack-card.pos-4 {
+  /* Deep Back */
+  z-index: 0;
+  transform: translateZ(-240px) translateY(105px) rotate(24deg) translateX(45px);
+  opacity: 0.5;
+}
+
 /* Exit/Flip Animation */
 
 .accred-stack-controls {
@@ -6936,10 +6943,10 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-headline {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   border: none;
-  border-radius: 100px;
+  border-radius: 16px;
   cursor: pointer;
-  box-shadow: var(--shadow-red);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(171, 14, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
   text-decoration: none;
@@ -6955,17 +6962,17 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-headline {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.4),
     transparent
   );
-  transition: 0.5s;
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .trip-cta-premium:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 36px rgba(171, 14, 0, 0.35);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(171, 14, 0, 0.5), inset 0 0 0 1.5px rgba(255, 255, 255, 0.35);
   color: #fff;
-  filter: brightness(1.08);
+  filter: brightness(1.1);
 }
 
 .trip-cta-premium:hover::before {
@@ -6973,15 +6980,34 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-headline {
 }
 
 .trip-cta-premium:active {
-  transform: translateY(0);
+  transform: translateY(-1px) scale(0.99);
 }
 
 .trip-cta-premium svg {
   transition: transform 0.3s ease;
 }
 
+@keyframes planeTakeOff {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  45% {
+    transform: translate(24px, -24px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-24px, 24px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
 .trip-cta-premium:hover svg {
-  transform: scale(1.2);
+  animation: planeTakeOff 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 /* Gallery Header Flex Layout with CTA */
@@ -7012,4 +7038,9 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-headline {
   .gallery-header-right {
     padding-bottom: 12px;
   }
+}
+
+/* Temporarily hide testimonials section on all landing pages */
+.testimonials-section {
+  display: none !important;
 }

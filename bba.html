@@ -2,7 +2,7 @@
 <html lang="vi" style="overflow-x: hidden;">
 
 <head>
-    <!-- <base href="/wp-content/new_public/LANDINGPAGE_MBA/" /> -->
+    <base href="/wp-content/new_public/LANDINGPAGE_MBA/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -179,8 +179,8 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="common-assets/css/style.css?v=4.2" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1.1" />
+    <link rel="stylesheet" href="common-assets/css/style.css?v=1780287697703" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780287697703" />
     <style>
         /* ═══════════════════════════════════════
            PROOF CARD - Premium 2-col design
@@ -1754,7 +1754,7 @@
         .sacom-headline {
             font-size: 1.25rem;
             font-weight: 800;
-            color: #0f172a;
+            color: #fff;
             margin-bottom: 6px;
             line-height: 1.3;
         }
@@ -3807,13 +3807,13 @@
 
                                     <div class="accred-stack-card pos-3">
                                         <img decoding="async"
-                                            src="https://vtci.edu.vn/wp-content/uploads/2025/08/SGS_eduQua_2021_CHGE_000771_FR-1.png"
+                                            src="https://ideas.edu.vn/wp-content/uploads/2026/06/sac.webp"
                                             alt="SAC Certificate">
                                     </div>
                                     <div class="accred-stack-card pos-2">
                                         <img decoding="async"
-                                            src="https://vtci.edu.vn/wp-content/uploads/2025/08/5158dd02-aad4-411e-9917-2cf1e287dc1d.png"
-                                            alt="IACBE Certificate">
+                                            src="https://ideas.edu.vn/wp-content/uploads/2026/06/sgs.webp"
+                                            alt="SGS Certificate">
                                     </div>
                                     <div class="accred-stack-card pos-1">
                                         <img decoding="async"
@@ -3834,11 +3834,7 @@
             </div>
         </section>
 
-
-
-
         <!-- ══════════════════════════════════════════
-
          SECTION: GRADUATION GALLERY
      ══════════════════════════════════════════ -->
         <section class="gallery-section" id="hinh-anh" aria-labelledby="gallery-headline">
@@ -3850,7 +3846,8 @@
                             Hơn 2502 học viên đã tốt nghiệp<br />
                             <span class="gradient-text">Swiss UMEF cùng IDEAS</span>
                         </h2>
-                        <p class="gallery-subtitle" style="margin-bottom: 0;">Những <em>khoảnh khắc đáng nhớ</em> trong hành trình chinh
+                        <p class="gallery-subtitle" style="margin-bottom: 0;">Những <em>khoảnh khắc đáng nhớ</em> trong
+                            hành trình chinh
                             phục
                             <br /> bằng <strong>Cử nhân BBA Thụy Sĩ</strong> của học viên <strong>IDEAS</strong>
                         </p>
@@ -3956,28 +3953,6 @@
                             </div>
                         </a>
                     </div>
-                    <!-- Graduate stats strip -->
-                    <!-- <div class="grad-stats-strip reveal-up" aria-label="Thống kê học viên tốt nghiệp">
-                        <div class="grad-stat-item">
-                            <span class="grad-stat-val">2502+</span>
-                            <span class="grad-stat-lbl">Học viên tốt nghiệp</span>
-                        </div>
-                        <div class="grad-stat-divider" aria-hidden="true"></div>
-                        <div class="grad-stat-item">
-                            <span class="grad-stat-val">15</span>
-                            <span class="grad-stat-lbl">Năm đào tạo MBA</span>
-                        </div>
-                        <div class="grad-stat-divider" aria-hidden="true"></div>
-                        <div class="grad-stat-item">
-                            <span class="grad-stat-val">94%</span>
-                            <span class="grad-stat-lbl">Hài lòng chương trình</span>
-                        </div>
-                        <div class="grad-stat-divider" aria-hidden="true"></div>
-                        <div class="grad-stat-item">
-                            <span class="grad-stat-val">3</span>
-                            <span class="grad-stat-lbl">Khóa tốt nghiệp tại Thụy Sĩ</span>
-                        </div>
-                    </div> -->
                 </div>
                 <div class="scroll-dots" data-scroll-target=".gallery-mosaic"></div>
             </div>
@@ -3989,166 +3964,303 @@
             <img decoding="async" src="" alt="" id="lightbox-img" />
         </div>
 
-        <!-- ══════════════════════════════════════════
-         SECTION 5: BENEFIT
-    ══════════════════════════════════════════ -->
+        <div class="pricing-section reveal-up" id="bang-gia" style="margin-top: 80px; margin-bottom: 24px;">
+            <style>
+                .pricing-card-new {
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 24px;
+                    padding: 40px 32px;
+                    display: flex;
+                    flex-direction: column;
+                    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+                    position: relative;
+                }
 
+                .pricing-card-new:hover {
+                    transform: translateY(-8px);
+                    border-color: #cbd5e1;
+                    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+                }
 
-        <!-- ══════════════════════════════════════════
-             SECTION PRICING BBA
-        ══════════════════════════════════════════ -->
-        <div class="pricing-section reveal-up" id="bang-gia" style="margin-top: 80px; margin-bottom: 80px;">
+                .pricing-card-new.recommended-new {
+                    border: 2.5px solid #ab0e00;
+                    box-shadow: 0 20px 40px -15px rgba(171, 14, 0, 0.1);
+                }
+
+                .pricing-card-new.recommended-new:hover {
+                    box-shadow: 0 25px 50px -12px rgba(171, 14, 0, 0.18);
+                }
+
+                .pricing-badge-new {
+                    position: absolute;
+                    top: -14px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: #ab0e00;
+                    color: #ffffff;
+                    font-size: 0.75rem;
+                    font-weight: 800;
+                    padding: 6px 16px;
+                    border-radius: 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    box-shadow: 0 4px 10px rgba(171, 14, 0, 0.3);
+                }
+
+                .pricing-price-box-new {
+                    border-top: 1px solid #f1f5f9;
+                    border-bottom: 1px solid #f1f5f9;
+                    padding: 24px 0;
+                    margin: 24px 0;
+                }
+
+                .pricing-features-new {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0 0 28px 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+                    flex-grow: 1;
+                }
+
+                .pricing-features-new li {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    font-size: 0.95rem;
+                    line-height: 1.4;
+                    color: #334155;
+                    text-align: left;
+                }
+
+                .pricing-btn-new {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 16px 28px;
+                    background: #ab0e00;
+                    color: white !important;
+                    font-size: 1.1rem;
+                    font-weight: 800;
+                    text-decoration: none;
+                    border-radius: 16px;
+                    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                    box-shadow: 0 8px 20px rgba(171, 14, 0, 0.25);
+                    border: none;
+                }
+
+                .pricing-btn-new:hover {
+                    background: #900c00;
+                    transform: translateY(-2px);
+                    box-shadow: 0 12px 28px rgba(171, 14, 0, 0.35);
+                }
+            </style>
+
             <div class="section-label" style="margin: 0 auto 1.5rem; display: table;">HỌC PHÍ & LỘ TRÌNH TÀI CHÍNH</div>
             <h3 class="pricing-title"
-                style="text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #0f172a; margin-bottom: 32px; line-height: 1.2;">
-                Cấu trúc học phí chương trình<br /><span style="color:#ab0e00">TOP-UP BBA</span>
+                style="text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #0f172a; margin-bottom: 12px; line-height: 1.2;">
+                Cấu trúc học phí chương trình<br /><span style="color:#ab0e00">LIÊN THÔNG CỬ NHÂN (TOP-UP BBA)</span>
             </h3>
 
-            <div class="premium-policy-wrapper"
-                style="max-width: 900px; margin: 0 auto; position: relative; padding: 0 20px;">
-                <!-- Glow effect -->
+            <!-- Scholarship Banner -->
+            <div class="scholarship-banner-new">
                 <div
-                    style="position: absolute; inset: -4px; background: linear-gradient(135deg, #ab0e00, #ff4c4c, #ab0e00); filter: blur(25px); opacity: 0.02; border-radius: 28px; z-index: 0;">
+                    style="background: #ab0e00; color: #fff; font-size: 0.85rem; font-weight: 800; padding: 8px 16px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">
+                    Học bổng hỗ trợ
                 </div>
+                <div style="font-size: 0.95rem; color: #334155; line-height: 1.6; text-align: left;">
+                    Swiss UMEF tài trợ đặc biệt <strong>77% Học phí liên thông (Platform)</strong> trị giá
+                    <strong>10.450 CHF (~344.850.000đ)</strong>. Học phí gốc 13.500 CHF giảm còn <strong>3.050
+                        CHF</strong>.
+                </div>
+            </div>
 
-                <div
-                    style="position: relative; background: #ffffff; border-radius: 24px; border: 1px solid #e2e8f0; padding: 48px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); z-index: 1; overflow: hidden; color: #334155;">
+            <div class="premium-policy-wrapper"
+                style="max-width: 650px; margin: 0 auto; position: relative; padding: 0 20px;">
 
-                    <!-- Header -->
-                    <div
-                        style="text-align: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 32px; margin-bottom: 32px;">
+                <div class="pricing-card-new recommended-new"
+                    style="border-radius: 32px; padding: 48px 36px 40px; text-align: center; overflow: hidden; color: #334155; z-index: 1;">
+
+                    <div style="margin-bottom: 24px; text-align: center; margin-top: 4px;">
+                        <span
+                            style="background: rgba(171, 14, 0, 0.08); color: #ab0e00; font-size: 0.75rem; font-weight: 700; padding: 6px 12px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 16px;">
+                            HỌC TẠI VIỆT NAM
+                        </span>
                         <h4
-                            style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; color: #ab0e00; margin-bottom: 16px; letter-spacing: -0.5px; color: #ab0e00;">
-                            CHÍNH SÁCH TUYỂN SINH & HỌC PHÍ</h4>
-                        <p
-                            style="font-size: 1.05rem; line-height: 1.6; max-width: 800px; margin: 0 auto; color: #475569; text-align: left;">
-                            Áp dụng đến hết ngày <strong style="color: #ab0e00;">01/06/2026</strong>.<br />
-                            Áp dụng cho học viên hoàn tất đăng ký và thanh toán theo quy định trong thời gian
-                            trên.<br /><br />
-                            <strong style="color: #0f172a;">Ghi chú nhập học:</strong><br />
-                            <span style="display:inline-block; margin-top:8px;">● <strong>Để nhập học tháng
-                                    06/2026:</strong> Học viên phải hoàn tất hồ sơ và học phí trước ngày <strong
-                                    style="color: #ab0e00;">25/05/2026</strong>.</span><br />
-                            <span style="display:inline-block; margin-top:4px;">● <strong>Để nhập học tháng
-                                    07/2026:</strong> Học viên phải hoàn tất hồ sơ và học phí đến hết ngày <strong
-                                    style="color: #ab0e00;">01/06/2026</strong> để được áp dụng chính sách này.</span>
+                            style="font-size: 1.8rem; font-weight: 900; color: #0f172a; margin: 0 0 8px 0; text-transform: none; letter-spacing: -0.5px;">
+                            Liên thông Cử Nhân
+                        </h4>
+                        <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin: 0;">
+                            Lộ trình học tập liên thông Cử nhân Quản trị Kinh doanh (12 tháng).
                         </p>
                     </div>
 
-                    <!-- Note about UMEF payment -->
-                    <div
-                        style="margin-bottom: 24px; padding: 16px 20px; background: #f0f9ff; border-left: 4px solid #0284c7; border-radius: 8px;">
-                        <p style="margin: 0; font-size: 0.95rem; color: #0369a1; line-height: 1.5;">
-                            <strong style="color: #0f172a;">Đối với học phí của Swiss UMEF:</strong> Học viên sẽ được
-                            yêu cầu thanh toán trực tiếp cho Trường thông qua các kênh thanh toán được thông báo trên
-                            Invoice mà Trường cung cấp.
-                        </p>
+                    <!-- Price Section -->
+                    <div class="pricing-price-box-new" style="text-align: center;">
+                        <div style="display: flex; align-items: baseline; gap: 6px; justify-content: center;">
+                            <span
+                                style="font-size: 3.2rem; font-weight: 900; color: #ab0e00; line-height: 1;">3.050</span>
+                            <span style="font-size: 1.4rem; font-weight: 800; color: #ab0e00;">CHF</span>
+                        </div>
+                        <div style="font-size: 1.5rem; font-weight: 900; color: #0f172a; margin-top: 6px;">~100.650.000đ
+                        </div>
+                        <div style="font-size: 0.9rem; color: #94a3b8; text-decoration: line-through; margin-top: 4px;">
+                            Học phí gốc: 13.500 CHF
+                        </div>
                     </div>
 
-                    <!-- Table -->
-                    <div style="overflow-x: auto; margin-bottom: 32px;">
-                        <table style="width: 100%; border-collapse: collapse; min-width: 600px; text-align: left;">
-                            <thead>
-                                <tr
-                                    style="background: rgba(171, 14, 0, 0.04); border-bottom: 1.5px solid rgba(171, 14, 0, 0.2);">
-                                    <th
-                                        style="padding: 16px; font-weight: 800; color: #ab0e00; font-size: 0.95rem; text-transform: uppercase;">
-                                        Chi tiết lệ phí/học phí</th>
-                                    <th
-                                        style="padding: 16px; font-weight: 800; color: #ab0e00; font-size: 0.95rem; text-transform: uppercase; text-align: right;">
-                                        Top Up (CHF)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- UMEF Section -->
-                                <tr style="background: rgba(255,255,255,0.03); border-bottom: 1px solid #f1f5f9;">
-                                    <td colspan="2"
-                                        style="padding: 12px 16px; font-weight: 800; color: #0369a1; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                                        I. Học phí - UMEF <span
-                                            style="font-size:0.75rem; color: #64748b; font-weight: 500; text-transform: none; margin-left: 8px;">(Thanh
-                                            toán trực tiếp cho UMEF)</span></td>
-                                </tr>
-                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;"
-                                    onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'"
-                                    onmouseout="this.style.background='transparent'">
-                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">Lệ
-                                        phí hồ sơ*</td>
-                                    <td style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right;">150
-                                        CHF</td>
-                                </tr>
-                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;"
-                                    onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'"
-                                    onmouseout="this.style.background='transparent'">
-                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">Học
-                                        phí cơ bản (platform)*</td>
-                                    <td style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right;">
-                                        2.300 CHF</td>
-                                </tr>
-
-                                <!-- IDEAS Section -->
-                                <tr style="background: rgba(255,255,255,0.03); border-bottom: 1px solid #f1f5f9;">
-                                    <td colspan="2"
-                                        style="padding: 12px 16px; font-weight: 800; color: #ab0e00; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                                        II. Phí hỗ trợ - IDEAS</td>
-                                </tr>
-                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;"
-                                    onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'"
-                                    onmouseout="this.style.background='transparent'">
-                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">
-                                        Dịch vụ chung <span
-                                            style="font-size:0.85rem; color: #475569; display: block; margin-top: 4px;">(Lớp
-                                            chuyên đề, Hệ thống hỗ trợ)</span></td>
-                                    <td
-                                        style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right; vertical-align: middle;">
-                                        400 CHF</td>
-                                </tr>
-                                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;"
-                                    onmouseover="this.style.background='rgba(171, 14, 0, 0.015)'"
-                                    onmouseout="this.style.background='transparent'">
-                                    <td style="padding: 16px; font-weight: 500; color: #334155; padding-left: 32px;">
-                                        Canton & Lãnh sự & Tốt Nghiệp</td>
-                                    <td style="padding: 16px; font-weight: 700; color: #0f172a; text-align: right;">200
-                                        CHF</td>
-                                </tr>
-
-                                <!-- Total -->
-                                <tr style="background: rgba(171, 14, 0, 0.15);">
-                                    <td
-                                        style="padding: 20px 16px; font-weight: 900; color: #0f172a; font-size: 1.1rem; text-transform: uppercase;">
-                                        Tổng cộng</td>
-                                    <td
-                                        style="padding: 20px 16px; font-weight: 900; color: #ab0e00; font-size: 1.3rem; text-align: right;">
-                                        3.050 CHF</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- CTA -->
-                    <div style="text-align: center;">
-                        <a href="#dang-ky" id="premium-cta-bba"
-                            style="display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background: linear-gradient(135deg, #ab0e00, #ff4133); color: white !important; font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 12px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 25px -5px rgba(171, 14, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1);">
-                            <span>Tư vấn hồ sơ ngay</span>
-                            <svg style="margin-left: 8px;" width="20" height="20" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3">
-                                </path>
+                    <!-- Highlights with Circle-Check -->
+                    <ul class="pricing-features-new" style="margin-bottom: 24px;">
+                        <li>
+                            <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+                                    fill="rgba(16, 185, 129, 0.1)"></circle>
+                                <polyline points="8 12 11 15 16 9" stroke="currentColor" stroke-width="2.5"></polyline>
                             </svg>
+                            <span>Học phí platform, chuyên đề, hệ thống hỗ trợ từ Swiss UMEF &amp; IDEAS.</span>
+                        </li>
+                        <li>
+                            <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+                                    fill="rgba(16, 185, 129, 0.1)"></circle>
+                                <polyline points="8 12 11 15 16 9" stroke="currentColor" stroke-width="2.5"></polyline>
+                            </svg>
+                            <span>Đã bao gồm phí Canton, hợp pháp hoá lãnh sự &amp; lễ tốt nghiệp.</span>
+                        </li>
+                        <li>
+                            <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+                                    fill="rgba(16, 185, 129, 0.1)"></circle>
+                                <polyline points="8 12 11 15 16 9" stroke="currentColor" stroke-width="2.5"></polyline>
+                            </svg>
+                            <span>Cam kết không phát sinh bất kỳ khoản phụ phí dịch vụ nào khác.</span>
+                        </li>
+                    </ul>
+
+                    <!-- Toggle Show More -->
+                    <div style="margin-bottom: 32px;">
+                        <button class="toggle-details-btn" onclick="toggleTuitionDetails()"
+                            style="background: none; border: none; color: #ab0e00; font-size: 0.92rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; text-decoration: underline; padding: 4px 8px;">
+                            <span id="toggle-details-text">Xem chi tiết các khoản phí</span>
+                            <svg id="toggle-details-icon" style="transition: transform 0.3s;" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+
+                        <!-- Expandable Details Table -->
+                        <div id="tuition-details-container"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; text-align: left; margin-top: 16px;">
+                            <div style="border-top: 1px dashed #cbd5e1; padding-top: 16px;">
+                                <table
+                                    style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: #475569;">
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                                            <td style="padding: 10px 0; font-weight: 600;">Lệ phí hồ sơ xét tuyển</td>
+                                            <td
+                                                style="padding: 10px 0; text-align: right; font-weight: 700; color: #0f172a;">
+                                                150 CHF</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                                            <td style="padding: 10px 0; font-weight: 600;">Học phí platform (UMEF) *
+                                            </td>
+                                            <td
+                                                style="padding: 10px 0; text-align: right; font-weight: 700; color: #0f172a;">
+                                                2.300 CHF</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                                            <td style="padding: 10px 0; font-weight: 600;">Phí dịch vụ hỗ trợ (IDEAS)
+                                            </td>
+                                            <td
+                                                style="padding: 10px 0; text-align: right; font-weight: 700; color: #0f172a;">
+                                                400 CHF</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                                            <td style="padding: 10px 0; font-weight: 600;">Canton & Lãnh sự & Lễ tốt
+                                                nghiệp</td>
+                                            <td
+                                                style="padding: 10px 0; text-align: right; font-weight: 700; color: #0f172a;">
+                                                200 CHF</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div
+                                    style="margin-top: 12px; padding: 12px; background: #f8fafc; border-radius: 8px; font-size: 0.8rem; color: #64748b; line-height: 1.4;">
+                                    * <strong>Ghi chú:</strong> Học viên thanh toán học phí Platform trực tiếp cho Swiss
+                                    UMEF qua thông tin Invoice của trường. Phí dịch vụ chung và lễ tốt nghiệp đóng tại
+                                    Việt Nam.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div style="text-align: center;">
+                        <a href="#dang-ky" id="premium-cta-bba" class="pricing-btn-new">
+                            <span>Đăng ký Top-up BBA</span>
                         </a>
                     </div>
-                    <style>
-                        #premium-cta-bba:hover {
-                            transform: translateY(-2px);
-                            box-shadow: 0 15px 35px -5px rgba(171, 14, 0, 0.6) !important;
-                        }
-
-                        @media (max-width: 640px) {
-                            .premium-policy-wrapper>div:nth-child(2) {
-                                padding: 32px 20px !important;
-                            }
-                        }
-                    </style>
                 </div>
+
+                <!-- Sacombank Installment Banner -->
+                <div class="sacom-banner" aria-label="Hỗ trợ trả góp Sacombank"
+                    style="max-width: 650px; margin: 24px auto 0;">
+                    <div class="sacom-left">
+                        <div class="sacom-cards">
+                            <img decoding="async"
+                                src="https://www.sacombank.com.vn/content/dam/sacombank/images/the-new/the-tin-dung/Visa%20Credit%20Plantinum%20Cashback_contactless-01.png"
+                                alt="Sacombank Visa Platinum Cashback" class="sacom-card-img sacom-card-back"
+                                loading="lazy" />
+                            <img decoding="async"
+                                src="https://www.sacombank.com.vn/content/dam/sacombank/images/the-new/the-tin-dung/Visa%20Credit%20Signature_contactless-01.png"
+                                alt="Sacombank Visa Signature" class="sacom-card-img sacom-card-front" loading="lazy" />
+                        </div>
+                        <div class="sacom-logo-area">
+                            <div class="sacom-logo-text">SACOMBANK</div>
+                            <div class="sacom-tag">Đối tác tài chính</div>
+                        </div>
+                    </div>
+                    <div class="sacom-right">
+                        <div class="sacom-headline" style="color: #fff; text-align: left;">Hỗ trợ trả góp <span
+                                class="sacom-highlight">12 – 24 tháng</span></div>
+                        <p class="sacom-sub" style="text-align: left; color: rgba(255, 255, 255, 0.8);">Thanh toán học
+                            phí linh hoạt qua thẻ tín dụng Sacombank Visa - lãi suất ưu đãi, không cần thế chấp</p>
+                        <div class="sacom-pills">
+                            <span class="sacom-pill">✓ Duyệt nhanh</span>
+                            <span class="sacom-pill">✓ Không thế chấp</span>
+                            <span class="sacom-pill">✓ Lãi suất ưu đãi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function toggleTuitionDetails() {
+                        const container = document.getElementById('tuition-details-container');
+                        const text = document.getElementById('toggle-details-text');
+                        const icon = document.getElementById('toggle-details-icon');
+
+                        if (container.style.maxHeight === '0px' || container.style.maxHeight === '') {
+                            container.style.maxHeight = container.scrollHeight + 'px';
+                            text.textContent = 'Thu gọn chi tiết';
+                            icon.style.transform = 'rotate(180deg)';
+                        } else {
+                            container.style.maxHeight = '0px';
+                            text.textContent = 'Xem chi tiết các khoản phí';
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                </script>
             </div>
         </div>
 
@@ -4974,8 +5086,8 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.js?v=4.2"></script>
-    <script src="common-assets/js/booking-modal.js?v=4.0"></script>
+    <script src="common-assets/js/script.js?v=1780287697703"></script>
+    <script src="common-assets/js/booking-modal.js?v=1780287697703"></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
@@ -5813,8 +5925,7 @@
                         </div>
                         <div class="tour-narrative-media">
                             <div class="tour-media-frame"><img
-                                    src="https://media.istockphoto.com/id/1145422105/vi/anh/th%C3%A1p-eiffel-nh%C3%ACn-t%E1%BB%AB-tr%C3%AAn-cao-paris.jpg?s=170667a&w=0&k=20&c=vmgwD_mOzopjMDJ01Fn899Diqap00-C2Sajsp6HMTM0="
-                                    alt="" /></div>
+                                    src="https://ideas.edu.vn/wp-content/uploads/2026/06/hcmc.webp" alt="" /></div>
                         </div>
                     </div>
 
