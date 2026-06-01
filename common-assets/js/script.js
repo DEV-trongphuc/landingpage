@@ -1490,3 +1490,132 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+/* ─── Precision Trackpad-Aware Smooth Scroll ─── */
+(function () {
+    if (typeof window === 'undefined') return;
+
+    const scrollContainers = new Map();
+
+    function findScrollableParent(el, deltaY) {
+        while (el && el !== document.body && el !== document.documentElement) {
+            const style = window.getComputedStyle(el);
+            const overflowY = style.overflowY || style.overflow || '';
+            const isScrollable = overflowY === 'auto' || overflowY === 'scroll';
+
+            if (isScrollable && el.scrollHeight > el.clientHeight) {
+                const canScrollDown = deltaY > 0 && el.scrollTop + el.clientHeight < el.scrollHeight - 1;
+                const canScrollUp = deltaY < 0 && el.scrollTop > 1;
+                if (canScrollDown || canScrollUp) {
+                    return el;
+                }
+            }
+            el = el.parentElement;
+        }
+
+        // Fallback to scrolling element (documentElement / body)
+        const docEl = document.scrollingElement || document.documentElement;
+        if (docEl.scrollHeight > docEl.clientHeight) {
+            const canScrollDown = deltaY > 0 && window.scrollY + window.innerHeight < docEl.scrollHeight - 1;
+            const canScrollUp = deltaY < 0 && window.scrollY > 1;
+            if (canScrollDown || canScrollUp) {
+                return docEl;
+            }
+        }
+        return null;
+    }
+
+    function initSmoothScroll() {
+        window.addEventListener('wheel', (e) => {
+            // Detect trackpads and smooth wheel mice (Precision trackpads use float values or have horizontal movement)
+            const isTrackpad = e.deltaX !== 0 || (e.deltaY !== 0 && (e.deltaY % 1 !== 0 || Math.abs(e.deltaY) < 15));
+            if (isTrackpad) {
+                return; // Let native trackpad inertia handle it
+            }
+
+            const container = findScrollableParent(e.target, e.deltaY);
+            if (!container) return;
+
+            e.preventDefault();
+
+            let state = scrollContainers.get(container);
+            if (!state) {
+                state = {
+                    target: container === document.documentElement || container === document.scrollingElement ? window.scrollY : container.scrollTop,
+                    current: container === document.documentElement || container === document.scrollingElement ? window.scrollY : container.scrollTop,
+                    animating: false
+                };
+                scrollContainers.set(container, state);
+            }
+
+            // Accumulate target scroll (scroll speed multiplier can be customized, 1.1 makes it feel responsive)
+            const maxScroll = container === document.documentElement || container === document.scrollingElement
+                ? container.scrollHeight - window.innerHeight
+                : container.scrollHeight - container.clientHeight;
+
+            state.target = Math.max(0, Math.min(maxScroll, state.target + e.deltaY * 1.1));
+
+            if (!state.animating) {
+                state.animating = true;
+
+                const animate = () => {
+                    const s = scrollContainers.get(container);
+                    if (!s) return;
+
+                    // Linear interpolation (lerp) easing factor
+                    // 0.075 is a sweet spot for premium, smooth decelerating momentum scrolling
+                    s.current += (s.target - s.current) * 0.075;
+
+                    if (container === document.documentElement || container === document.scrollingElement) {
+                        window.scrollTo(0, Math.round(s.current));
+                    } else {
+                        container.scrollTop = Math.round(s.current);
+                    }
+
+                    if (Math.abs(s.target - s.current) > 0.5) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        s.current = s.target;
+                        if (container === document.documentElement || container === document.scrollingElement) {
+                            window.scrollTo(0, s.target);
+                        } else {
+                            container.scrollTop = s.target;
+                        }
+                        s.animating = false;
+                    }
+                };
+
+                requestAnimationFrame(animate);
+            }
+        }, { passive: false });
+
+        // Sync state if scrolled by dragging scrollbar or programmatic scroll
+        document.addEventListener('scroll', (e) => {
+            const target = e.target;
+            if (!target || target === document || target === document.documentElement || target === document.body) {
+                const docEl = document.scrollingElement || document.documentElement;
+                const state = scrollContainers.get(docEl);
+                if (state && !state.animating) {
+                    state.current = window.scrollY;
+                    state.target = window.scrollY;
+                }
+                return;
+            }
+
+            if (target instanceof HTMLElement) {
+                const state = scrollContainers.get(target);
+                if (state && !state.animating) {
+                    state.current = target.scrollTop;
+                    state.target = target.scrollTop;
+                }
+            }
+        }, { capture: true, passive: true });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSmoothScroll);
+    } else {
+        initSmoothScroll();
+    }
+})();
+
+
