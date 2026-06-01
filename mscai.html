@@ -195,8 +195,8 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="common-assets/css/style.css?v=1780287697719" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780287697719" />
+    <link rel="stylesheet" href="common-assets/css/style.css?v=1780289292930" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780289292930" />
     <style>
         /* ═══════════════════════════════════════
            PROOF CARD - Premium 2-col design
@@ -3003,6 +3003,7 @@
                     </div>
                 </div>
                 <a href="#tuyen-sinh" class="nav-link">Tuyển sinh</a>
+                <a href="#bang-gia" class="nav-link">Học phí</a>
                 <div style="display:flex;align-items:center;gap:8px;">
                     <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
                     <button class="bk-open-btn" aria-label="Mở form đặt lịch tư vấn"
@@ -3068,6 +3069,7 @@
             </div>
         </div>
         <a href="#tuyen-sinh" class="nav-link">Tuyển sinh</a>
+        <a href="#bang-gia" class="nav-link">Học phí</a>
         <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
     </div>
 
@@ -5051,9 +5053,10 @@
                             Học bổng hỗ trợ
                         </div>
                         <div style="font-size: 0.95rem; color: #334155; line-height: 1.6; text-align: left;">
-                            Swiss UMEF &amp; Viện IDEAS tài trợ đặc biệt lên đến <strong>3.900 CHF
+                            Swiss UMEF &amp; Viện IDEAS tài trợ đặc biệt lên đến <strong id="banner-sponsor-val">3.900
+                                CHF
                                 (~128.700.000đ)</strong> cho các học viên nhập học sớm. Học phí còn lại chỉ từ
-                            <strong>4.820 CHF</strong>.
+                            <strong id="banner-price-val">4.820 CHF</strong>.
                         </div>
                     </div>
 
@@ -5156,7 +5159,7 @@
                                     style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; text-align: left; margin-top: 24px; border-top: 1px dashed #cbd5e1; padding-top: 24px;">
 
                                     <!-- 1. Bảng thời gian áp dụng chi tiết (tính theo ngày) -->
-                                    <div style="margin-bottom: 24px;">
+                                    <div style="margin-bottom: 24px; display: none;">
                                         <h5
                                             style="color: #0f172a; font-size: 0.95rem; font-weight: 800; margin-top: 0; margin-bottom: 12px;">
                                             1. BIỂU PHÍ THEO THỜI GIAN ĐĂNG KÝ</h5>
@@ -5220,7 +5223,7 @@
                                     <div style="margin-bottom: 24px;">
                                         <h5
                                             style="color: #0f172a; font-size: 0.95rem; font-weight: 800; margin-top: 0; margin-bottom: 12px;">
-                                            2. LỘ TRÌNH ĐÓNG PHÍ (02 ĐỢT)</h5>
+                                            1. LỘ TRÌNH ĐÓNG PHÍ (02 ĐỢT)</h5>
                                         <div style="background: #f8fafc; border-radius: 12px; padding: 16px;">
                                             <table
                                                 style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: #475569;">
@@ -5312,9 +5315,9 @@
                                     today.setHours(0, 0, 0, 0);
 
                                     const tiers = [
-                                        { start: "2026-05-08", end: "2026-05-25", chf: "4.820", vnd: "159.060.000", discount: "143.154.000", inst1: "3.900 CHF", inst2: "920 CHF" },
-                                        { start: "2026-05-26", end: "2026-06-15", chf: "5.820", vnd: "192.060.000", discount: "172.854.000", inst1: "3.900 CHF", inst2: "1.920 CHF" },
-                                        { start: "2026-06-16", end: "2026-07-15", chf: "7.220", vnd: "238.260.000", discount: "214.434.000", inst1: "3.900 CHF", inst2: "3.320 CHF" }
+                                        { start: "2026-05-08", end: "2026-05-25", chf: "4.820", vnd: "159.060.000", discount: "143.154.000", inst1: "3.900 CHF", inst2: "920 CHF", sponsorChf: "3.900", sponsorVnd: "128.700.000" },
+                                        { start: "2026-05-26", end: "2026-06-15", chf: "5.820", vnd: "192.060.000", discount: "172.854.000", inst1: "3.900 CHF", inst2: "1.920 CHF", sponsorChf: "2.900", sponsorVnd: "95.700.000" },
+                                        { start: "2026-06-16", end: "2026-07-15", chf: "7.220", vnd: "238.260.000", discount: "214.434.000", inst1: "3.900 CHF", inst2: "3.320 CHF", sponsorChf: "1.500", sponsorVnd: "49.500.000" }
                                     ];
 
                                     let activeIndex = -1;
@@ -5335,6 +5338,15 @@
 
                                     document.getElementById("inst-1-val").innerText = activeTier.inst1;
                                     document.getElementById("inst-2-val").innerText = activeTier.inst2;
+
+                                    const bannerSponsor = document.getElementById("banner-sponsor-val");
+                                    const bannerPrice = document.getElementById("banner-price-val");
+                                    if (bannerSponsor) {
+                                        bannerSponsor.innerHTML = `${activeTier.sponsorChf} CHF (~${activeTier.sponsorVnd}đ)`;
+                                    }
+                                    if (bannerPrice) {
+                                        bannerPrice.innerText = `${activeTier.chf} CHF`;
+                                    }
 
                                     const tbody = document.getElementById("tuition-table-rows");
                                     if (tbody) {
@@ -6587,8 +6599,8 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.js?v=1780287697719"></script>
-    <script src="common-assets/js/booking-modal.js?v=1780287697719"></script>
+    <script src="common-assets/js/script.js?v=1780289292930"></script>
+    <script src="common-assets/js/booking-modal.js?v=1780289292930"></script>
 
 
 
