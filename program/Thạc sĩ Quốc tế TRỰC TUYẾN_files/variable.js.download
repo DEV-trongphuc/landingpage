@@ -183,11 +183,6 @@ const IDEAS_DATA = {
                     logo: "https://www.collegedeparis.fr/wp-content/uploads/2021/06/bpi-logosite.png",
                     link: "#",
                 },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
-                    link: "#",
-                },
             ],
             require: [
                 "Bằng cử nhân và bảng điểm",
@@ -479,11 +474,6 @@ const IDEAS_DATA = {
                 {
                     name: "Kiểm định trường UMEF",
                     logo: "https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png",
-                    link: "#",
-                },
-                {
-                    name: "Kiểm định trường UMEF",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
                     link: "#",
                 },
                 {
@@ -784,11 +774,6 @@ const IDEAS_DATA = {
                 },
                 {
                     name: "Công nhận và Kiểm định",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
                     logo: "https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png",
                     link: "#",
                 },
@@ -1045,11 +1030,6 @@ const IDEAS_DATA = {
                 {
                     name: "Công nhận và Kiểm định",
                     logo: "https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
                     link: "#",
                 },
                 {
@@ -1325,11 +1305,6 @@ const IDEAS_DATA = {
                 {
                     name: "Công nhận và Kiểm định",
                     logo: "http://www.collegedeparis.fr/wp-content/uploads/2021/06/bpi-logosite.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
                     link: "#",
                 },
             ],
@@ -1772,11 +1747,6 @@ const IDEAS_DATA = {
                 {
                     name: "Công nhận và Kiểm định",
                     logo: "https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
                     link: "#",
                 },
                 {

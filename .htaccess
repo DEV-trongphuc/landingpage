@@ -2,7 +2,10 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# /mba → landing page MBA
+# Redirect direct access to .html files to their clean URLs
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^/?wp-content/new_public/LANDINGPAGE_MBA/(mba|mscai|emba|bba|fullbba|mbainai|dual-dba|dat-lich)\.html$ /$1 [R=301,L,NC]
+
 RewriteRule ^mba/?$ /wp-content/new_public/LANDINGPAGE_MBA/mba.html [L]
 RewriteRule ^mscai/?$ /wp-content/new_public/LANDINGPAGE_MBA/mscai.html [L]
 RewriteRule ^emba/?$ /wp-content/new_public/LANDINGPAGE_MBA/emba.html [L]
@@ -28,4 +31,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
+
 # END WordPress

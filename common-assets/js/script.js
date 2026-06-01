@@ -1138,20 +1138,20 @@
             }
             @media (max-width: 768px) {
                 .back-to-top-btn {
-                    left: 16px;
-                    bottom: 84px;
+                    left: 50%;
+                    bottom: 24px;
                     padding: 8px 18px;
                     font-size: 0.85rem;
-                    transform: translateY(20px);
+                    transform: translateX(-50%) translateY(20px);
                 }
                 .back-to-top-btn.visible {
-                    transform: translateY(0);
+                    transform: translateX(-50%) translateY(0);
                 }
                 .back-to-top-btn.visible:hover {
-                    transform: translateY(-4px);
+                    transform: translateX(-50%) translateY(-4px);
                 }
                 .back-to-top-btn.visible:active {
-                    transform: translateY(1px);
+                    transform: translateX(-50%) translateY(1px);
                 }
             }
         `;

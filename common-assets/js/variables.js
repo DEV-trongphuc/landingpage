@@ -13,16 +13,16 @@ const IDEAS_DATA = {
     linkedin_link: "https://www.linkedin.com/company/ideasinstitute/",
     tiktok_link: "https://www.tiktok.com/@ideas_institute",
     programmes: {
-                IDEAS01: {
+        IDEAS01: {
             benefits: [
                 "Chương trình học tập Cử nhân chính quy 3 năm (180 ECTS) chất lượng cao từ Thụy Sĩ.",
                 "Học trực tuyến 100% linh hoạt trên platform hiện đại, phù hợp cho người đi làm và học sinh tốt nghiệp THPT.",
                 "Viện IDEAS hỗ trợ: hệ thống IDEAS - LMS, trợ lý AI học tập, các lớp chuyên đề bổ trợ cuối tuần.",
-                "Lễ tốt nghiệp trang trọng tại Geneva, Thụy Sĩ và cơ hội tham quan các nước châu Âu."
+                "Lễ tốt nghiệp trang trọng tại Geneva, Thụy Sĩ và cơ hội tham quan các nước Châu Âu."
             ],
             program_name_degree: "Bachelor of Business Administration",
             program_benefits_degree: [
-                "Tấm bằng Cử nhân chính quy chuẩn châu Âu được cấp bởi trường Đại học Swiss UMEF danh giá tại Thụy Sĩ.",
+                "Tấm bằng Cử nhân chính quy chuẩn Châu Âu được cấp bởi trường Đại học Swiss UMEF danh giá tại Thụy Sĩ.",
                 "Nền tảng kiến thức quản trị kinh doanh toàn diện và khả năng hội nhập quốc tế.",
                 "Cơ hội liên thông trực tiếp lên các chương trình Thạc sĩ (MBA, MSc AI) chuẩn quốc tế."
             ],
@@ -115,7 +115,7 @@ const IDEAS_DATA = {
                 { name: "Dissertation", description: "Khóa luận tốt nghiệp cử nhân BBA nghiên cứu ứng dụng thực tế", credit: 15 }
             ]
         },
-IDEAS02: {
+        IDEAS02: {
             benefits: [
                 "Bắt buộc các lớp học tương tác trực tuyến với giảng viên nước ngoài. Nâng cao khả năng, tự tin giao tiếp, trao đổi với Giáo sư và giải quyết các vấn đề thực tiễn trong doanh nghiệp.",
                 "Công nghệ chatbox I-AI hỗ trợ các nội dung phù hợp trong chương trình MBA online do Viện IDEAS quản lý. Trợ lý chương trình hỗ trợ nhắc nhở deadline bài tập, các vấn đề liên quan đến hệ thống, kết nối.",
@@ -288,11 +288,6 @@ IDEAS02: {
                 {
                     name: "Kiểm định trường UMEF",
                     logo: "https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png",
-                    link: "#",
-                },
-                {
-                    name: "Kiểm định trường UMEF",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
                     link: "#",
                 },
                 {
@@ -593,11 +588,6 @@ IDEAS02: {
                 },
                 {
                     name: "Công nhận và Kiểm định",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
                     logo: "https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png",
                     link: "#",
                 },
@@ -858,11 +848,6 @@ IDEAS02: {
                 },
                 {
                     name: "Công nhận và Kiểm định",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
                     logo: "https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png",
                     link: "#",
                 },
@@ -984,7 +969,7 @@ IDEAS02: {
                 },
             ],
         },
-                IDEAS05: {
+        IDEAS05: {
             benefits: [
                 "Chương trình kết hợp độc đáo giữa quản trị kinh doanh hiện đại và ứng dụng AI no-code tiên phong.",
                 "Học trực tuyến linh hoạt 100%, giảng dạy bởi các giáo sư hàng đầu Thụy Sĩ và chuyên gia quốc tế.",
@@ -993,7 +978,7 @@ IDEAS02: {
             ],
             program_name_degree: "MBA in Artificial Intelligence",
             program_benefits_degree: [
-                "Bằng Thạc sĩ Quản trị Kinh doanh chuyên sâu AI chuẩn châu Âu từ Swiss UMEF Thụy Sĩ.",
+                "Bằng Thạc sĩ Quản trị Kinh doanh chuyên sâu AI chuẩn Châu Âu từ Swiss UMEF Thụy Sĩ.",
                 "Làm chủ tư duy lãnh đạo chiến lược và năng lực điều hành các dự án chuyển đổi số dựa trên AI.",
                 "Không cần nền tảng kỹ thuật/code, tập trung vào ứng dụng thực tiễn của các mô hình AI."
             ],
@@ -1075,7 +1060,7 @@ IDEAS02: {
                 { name: "Thesis", description: "Luận văn tốt nghiệp thạc sĩ nghiên cứu ứng dụng AI vào doanh nghiệp", credit: 18 }
             ]
         },
-IDEAS06: {
+        IDEAS06: {
             pay_rule: `
        <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/icon2.png"/>
         <p><b>Thanh toán một lần hoặc chia thành 4 lần</b></p>
@@ -1462,11 +1447,6 @@ IDEAS06: {
                 {
                     name: "Công nhận và Kiểm định",
                     logo: "https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png",
-                    link: "#",
-                },
-                {
-                    name: "Công nhận và Kiểm định",
-                    logo: "https://ideas.edu.vn/wp-content/uploads/2023/12/vnanric.jpg",
                     link: "#",
                 },
                 {
