@@ -179,8 +179,8 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="common-assets/css/style.css?v=1780289292919" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780289292919" />
+    <link rel="stylesheet" href="common-assets/css/style.css?v=1780289292922" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780289292922" />
     <style>
         /* ═══════════════════════════════════════
            PROOF CARD - Premium 2-col design
@@ -3414,7 +3414,7 @@
                         <rect x="2" y="3" width="20" height="14" rx="2" />
                         <polyline points="8 21 12 17 16 21" />
                     </svg>
-                    <span>Toàn bộ môn học được triển khai trên hệ thống <strong>LMS Powered by Moodle</strong> - hỗ trợ
+                    <span>Toàn bộ môn học được triển khai trên hệ thống <strong>eAcademy Swiss UMEF</strong> - hỗ trợ
                         video, tài liệu, bài tập &amp; thi trực tuyến.</span>
                 </div>
 
@@ -3448,14 +3448,13 @@
                         <div class="eco-card-v2-icon eco-card-v2-icon--logo"
                             style="--icon-clr:#ef4444;--icon-bg:rgba(255,255,255,0.95)">
                             <img decoding="async"
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/1280px-Moodle-logo.svg.png"
-                                alt="Moodle logo" style="width:68px;height:auto;object-fit:contain;" loading="lazy" />
+                                src="https://ideas.edu.vn/wp-content/uploads/2023/07/Logo-Swiss-UMEF.webp"
+                                alt="eAcademy logo" style="width:50px;height:auto;object-fit:contain;" loading="lazy" />
                         </div>
                         <div class="eco-card-v2-body">
                             <div class="eco-card-v2-num">01</div>
-                            <h4 class="eco-card-v2-title">IDEAS-LMS</h4>
-                            <p class="eco-card-v2-desc">Nền tảng học tập trực tuyến hiện đại, cho phép truy cập bài
-                                giảng 24/7 và chủ động học tập mọi lúc, mọi nơi.</p>
+                            <h4 class="eco-card-v2-title">eAcademy Swiss UMEF</h4>
+                            <p class="eco-card-v2-desc">Hệ thống eAcademy của Swiss UMEF, hỗ trợ học tập trực tuyến hiện đại, truy cập bài giảng 24/7.</p>
                         </div>
                     </article>
 
@@ -3592,7 +3591,7 @@
                                 <span class="apply-step-num">04</span>
                                 <div>
                                     <strong>Thanh toán học phí &amp; nhập học</strong>
-                                    <p>Hỗ trợ trả góp 12–24 tháng qua Sacombank. Nhận tài khoản LMS và bắt đầu học.
+                                    <p>Hỗ trợ trả góp 12–24 tháng qua Sacombank. Nhận tài khoản eAcademy và bắt đầu học.
                                     </p>
                                 </div>
                             </li>
@@ -5088,8 +5087,8 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.js?v=1780289292919"></script>
-    <script src="common-assets/js/booking-modal.js?v=1780289292919"></script>
+    <script src="common-assets/js/script.js?v=1780289292922"></script>
+    <script src="common-assets/js/booking-modal.js?v=1780289292922"></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
@@ -5858,8 +5857,14 @@
         })();
     </script>
 
-    <!-- FAQ Control Script -->
+        <!-- FAQ Control Script -->
     <script>
+        function updateFAQHeights() {
+            document.querySelectorAll('.faq-item.faq-open .faq-content').forEach(content => {
+                content.style.maxHeight = content.scrollHeight + 40 + 'px';
+            });
+        }
+
         document.querySelectorAll('.faq-trigger').forEach(trigger => {
             trigger.addEventListener('click', () => {
                 const item = trigger.parentElement;
@@ -5892,6 +5897,12 @@
                 firstTrigger.click();
             }
         });
+
+        // Recalculate heights when fonts are loaded or window is resized
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(updateFAQHeights);
+        }
+        window.addEventListener('resize', updateFAQHeights);
     </script>
 
     <!-- Tour Itinerary Modal -->

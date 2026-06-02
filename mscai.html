@@ -195,8 +195,8 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="common-assets/css/style.css?v=1780289292932" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780289292932" />
+    <link rel="stylesheet" href="common-assets/css/style.css?v=1780289292935" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780289292935" />
     <style>
         /* ═══════════════════════════════════════
            PROOF CARD - Premium 2-col design
@@ -6599,8 +6599,8 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.js?v=1780289292932"></script>
-    <script src="common-assets/js/booking-modal.js?v=1780289292932"></script>
+    <script src="common-assets/js/script.js?v=1780289292935"></script>
+    <script src="common-assets/js/booking-modal.js?v=1780289292935"></script>
 
 
 
@@ -7363,8 +7363,14 @@
         })();
     </script>
 
-    <!-- FAQ Control Script -->
+        <!-- FAQ Control Script -->
     <script>
+        function updateFAQHeights() {
+            document.querySelectorAll('.faq-item.faq-open .faq-content').forEach(content => {
+                content.style.maxHeight = content.scrollHeight + 40 + 'px';
+            });
+        }
+
         document.querySelectorAll('.faq-trigger').forEach(trigger => {
             trigger.addEventListener('click', () => {
                 const item = trigger.parentElement;
@@ -7397,6 +7403,12 @@
                 firstTrigger.click();
             }
         });
+
+        // Recalculate heights when fonts are loaded or window is resized
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(updateFAQHeights);
+        }
+        window.addEventListener('resize', updateFAQHeights);
     </script>
 
 </body>

@@ -2621,6 +2621,171 @@
                 border-top: 1.5px solid rgba(171, 14, 0, 0.1) !important;
             }
         }
+
+        /* ═══════════════════════════════════════
+           CURRICULUM TABS
+        ═══════════════════════════════════════ */
+        .curri-tabs-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin: 32px auto 40px;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .curri-tab-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #f8fafc;
+            border: 1.5px solid #e2e8f0;
+            padding: 12px 28px;
+            border-radius: 100px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #475569;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(17, 23, 41, 0.03);
+        }
+
+        .curri-tab-btn .tab-num {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.2rem;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .curri-tab-btn:hover {
+            color: #111729;
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .curri-tab-btn.active {
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 4px 14px rgba(17, 23, 41, 0.15);
+        }
+
+        .curri-tab-btn[data-tab="year-1"].active {
+            background: linear-gradient(135deg, #111729 0%, #1e2d4a 100%);
+        }
+
+        .curri-tab-btn[data-tab="year-2"].active {
+            background: linear-gradient(135deg, #1a2440 0%, #0f3460 100%);
+        }
+
+        .curri-tab-btn[data-tab="year-3"].active {
+            background: linear-gradient(135deg, #ab0e00 0%, #8b0a00 100%);
+            box-shadow: 0 4px 14px rgba(171, 14, 0, 0.25);
+        }
+
+        .curri-tab-btn.active .tab-num {
+            opacity: 1;
+        }
+
+        .curri-tab-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cbd5e1;
+            flex-shrink: 0;
+        }
+
+        .BBA-grid {
+            display: block !important;
+        }
+
+        .curri-pillar {
+            display: none;
+        }
+
+        .curri-pillar.active {
+            display: block;
+            max-width: 960px;
+            margin: 0 auto;
+            animation: fadeInCurri 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .curri-pillar-header {
+            padding: 24px 40px;
+        }
+
+        .curri-pillar-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .curri-subjects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px 28px;
+            padding: 32px 40px;
+        }
+
+        .curri-subjects li {
+            font-size: 0.95rem;
+        }
+
+        @keyframes fadeInCurri {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .curri-pillar-header {
+                padding: 20px 24px;
+            }
+
+            .curri-subjects {
+                grid-template-columns: 1fr;
+                padding: 24px;
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .curri-tabs-nav {
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding: 8px 24px;
+                gap: 12px;
+                scrollbar-width: none;
+                margin: 20px auto 28px;
+            }
+
+            .curri-tabs-nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            .curri-tab-btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .curri-tab-btn .tab-num {
+                font-size: 1rem;
+            }
+
+            .curri-tab-btn .tab-label-sub {
+                display: none;
+            }
+        }
     </style>
 
     <!-- Favicon -->
@@ -3359,9 +3524,37 @@
                     ECTS) chính quy trực tuyến được phân bổ trong 3 năm học với lộ trình rõ ràng, bài bản từ các môn học
                     nền tảng đến chuyên sâu và hoàn tất luận văn.</p>
 
+                <!-- Curriculum Tabs Navigation -->
+                <div class="curri-tabs-nav reveal-up">
+                    <button class="curri-tab-btn active" data-tab="year-1">
+                        <span class="tab-num">I</span>
+                        <span class="tab-label">Năm 1<span class="tab-label-sub">: Nền tảng</span></span>
+                    </button>
+                    <div class="curri-tab-connector">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                    <button class="curri-tab-btn" data-tab="year-2">
+                        <span class="tab-num">II</span>
+                        <span class="tab-label">Năm 2<span class="tab-label-sub">: Cốt lõi</span></span>
+                    </button>
+                    <div class="curri-tab-connector">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                    <button class="curri-tab-btn" data-tab="year-3">
+                        <span class="tab-num">III</span>
+                        <span class="tab-label">Năm 3<span class="tab-label-sub">: Chuyên sâu</span></span>
+                    </button>
+                </div>
+
                 <div class="curriculum-grid BBA-grid reveal-up">
                     <!-- Year 1 -->
-                    <div class="curri-pillar">
+                    <div class="curri-pillar active" id="year-1">
                         <div class="curri-pillar-header">
                             <span class="curri-pillar-num">I</span>
                             <span class="curri-pillar-title">Năm 1: Nền tảng (Foundation)</span>
@@ -3382,7 +3575,7 @@
                         </ul>
                     </div>
                     <!-- Year 2 -->
-                    <div class="curri-pillar">
+                    <div class="curri-pillar" id="year-2">
                         <div class="curri-pillar-header">
                             <span class="curri-pillar-num">II</span>
                             <span class="curri-pillar-title">Năm 2: Quản trị cốt lõi (Core)</span>
@@ -3403,7 +3596,7 @@
                         </ul>
                     </div>
                     <!-- Year 3 -->
-                    <div class="curri-pillar">
+                    <div class="curri-pillar" id="year-3">
                         <div class="curri-pillar-header">
                             <span class="curri-pillar-num">III</span>
                             <span class="curri-pillar-title">Năm 3: Chuyên sâu & Luận văn</span>
@@ -3425,13 +3618,40 @@
                     </div>
                 </div>
 
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const tabBtns = document.querySelectorAll('.curri-tab-btn');
+                        const pillars = document.querySelectorAll('.BBA-grid .curri-pillar');
+
+                        tabBtns.forEach(btn => {
+                            btn.addEventListener('click', function () {
+                                // Remove active class from all buttons
+                                tabBtns.forEach(b => b.classList.remove('active'));
+                                // Add active class to clicked button
+                                this.classList.add('active');
+
+                                const targetTab = this.getAttribute('data-tab');
+
+                                // Show the active pillar and hide others
+                                pillars.forEach(pillar => {
+                                    if (pillar.id === targetTab) {
+                                        pillar.classList.add('active');
+                                    } else {
+                                        pillar.classList.remove('active');
+                                    }
+                                });
+                            });
+                        });
+                    });
+                </script>
+
                 <div class="curri-lms-note reveal-up">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <rect x="2" y="3" width="20" height="14" rx="2" />
                         <polyline points="8 21 12 17 16 21" />
                     </svg>
-                    <span>Toàn bộ môn học được triển khai trên hệ thống <strong>LMS Powered by Moodle</strong> - hỗ trợ
+                    <span>Toàn bộ môn học được triển khai trên hệ thống <strong>eAcademy Swiss UMEF</strong> - hỗ trợ
                         video, tài liệu, bài tập &amp; thi trực tuyến.</span>
                 </div>
 
@@ -3465,14 +3685,14 @@
                         <div class="eco-card-v2-icon eco-card-v2-icon--logo"
                             style="--icon-clr:#ef4444;--icon-bg:rgba(255,255,255,0.95)">
                             <img decoding="async"
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/1280px-Moodle-logo.svg.png"
-                                alt="Moodle logo" style="width:68px;height:auto;object-fit:contain;" loading="lazy" />
+                                src="https://ideas.edu.vn/wp-content/uploads/2023/07/Logo-Swiss-UMEF.webp"
+                                alt="eAcademy logo" style="width:50px;height:auto;object-fit:contain;" loading="lazy" />
                         </div>
                         <div class="eco-card-v2-body">
                             <div class="eco-card-v2-num">01</div>
-                            <h4 class="eco-card-v2-title">IDEAS-LMS</h4>
-                            <p class="eco-card-v2-desc">Nền tảng học tập trực tuyến hiện đại, cho phép truy cập bài
-                                giảng 24/7 và chủ động học tập mọi lúc, mọi nơi.</p>
+                            <h4 class="eco-card-v2-title">eAcademy Swiss UMEF</h4>
+                            <p class="eco-card-v2-desc">Hệ thống eAcademy của Swiss UMEF, hỗ trợ học tập trực tuyến hiện
+                                đại, truy cập bài giảng 24/7.</p>
                         </div>
                     </article>
 
@@ -3576,8 +3796,9 @@
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
                             <span><strong>Hoàn thành Trung học phổ thông</strong> (hoặc sinh viên các trường Trung cấp,
-                                Cao đẳng, Đại học chưa có bằng chính thức) &amp; có <strong>tiếng Anh đầu vào IELTS 6.0
-                                    hoặc tương đương</strong> (hoặc phỏng vấn đánh giá năng lực ngoại ngữ đầu
+                                Cao đẳng, Đại học chưa có bằng chính thức) &amp; có <strong>tiếng Anh IELTS 6.0
+                                    hoặc tương đương</strong> (không có chứng chỉ sẽ có thể phỏng vấn đánh giá năng lực
+                                ngoại ngữ đầu
                                 vào)</span>
                         </div>
                         <ol class="apply-steps">
@@ -3609,7 +3830,7 @@
                                 <span class="apply-step-num">04</span>
                                 <div>
                                     <strong>Thanh toán học phí &amp; nhập học</strong>
-                                    <p>Hỗ trợ trả góp 12–24 tháng qua Sacombank. Nhận tài khoản LMS và bắt đầu học.
+                                    <p>Hỗ trợ trả góp 12–24 tháng qua Sacombank. Nhận tài khoản eAcademy và bắt đầu học.
                                     </p>
                                 </div>
                             </li>
