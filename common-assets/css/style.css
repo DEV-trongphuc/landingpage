@@ -8750,3 +8750,107 @@ html.lenis {
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   GRAND AUDIT — Performance · Contrast · Mobile Polish
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── GPU acceleration for VN ceremony modal ── */
+.vn-ceremony-container {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ── Contrast: dark section text ≥ #94a3b8 ── */
+.ecosystem-section p,
+.eco-card-v2-desc,
+.eco-card p {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+.ecosystem-section h4,
+.eco-card h4,
+.eco-card-v2-title {
+  color: rgba(255, 255, 255, 0.96) !important;
+}
+.pain-section p:not(.section-label),
+.pain-card p,
+.pain-card-desc {
+  color: #cbd5e1 !important;
+}
+.pain-section h4,
+.pain-card-title {
+  color: #f1f5f9 !important;
+}
+
+/* ── Booking modal mobile sticky footer ── */
+@media (max-width: 640px) {
+  .bk-modal-footer,
+  .bk-footer-actions {
+    position: sticky !important;
+    bottom: 0 !important;
+    background: #fff !important;
+    padding: 12px 16px !important;
+    border-top: 1px solid #e2e8f0 !important;
+    z-index: 20 !important;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.06) !important;
+  }
+}
+
+/* ── Hero mobile: ultra-clean padding ── */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 88px !important;
+    padding-bottom: 28px !important;
+    min-height: auto !important;
+  }
+  .hero-cta {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .hero-cta .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .info-badge {
+    text-align: center !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* ── Tour modal footer sticky on mobile ── */
+@media (max-width: 768px) {
+  .tour-modal-footer .tour-footer-btn-wrap {
+    position: sticky !important;
+    bottom: 0 !important;
+    background: var(--clr-dark, #0f172a) !important;
+    padding: 16px !important;
+    margin-bottom: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    z-index: 10 !important;
+    gap: 12px !important;
+  }
+  .tour-footer-btn {
+    padding: 14px 24px !important;
+    font-size: 0.92rem !important;
+  }
+}
+
+/* ── Scrollbar polish for modals ── */
+.vn-ceremony-content::-webkit-scrollbar,
+.bk-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.vn-ceremony-content::-webkit-scrollbar-track,
+.bk-modal-body::-webkit-scrollbar-track {
+  background: #f8fafc;
+  border-radius: 99px;
+}
+.vn-ceremony-content::-webkit-scrollbar-thumb,
+.bk-modal-body::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 99px;
+}
+.vn-ceremony-content::-webkit-scrollbar-thumb:hover,
+.bk-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
