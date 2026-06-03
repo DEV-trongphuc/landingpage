@@ -4,7 +4,7 @@
 <head>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-    <base href="/wp-content/new_public/LANDINGPAGE_MBA/" />
+    <!-- <base href="/wp-content/new_public/LANDINGPAGE_MBA/" /> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -2616,18 +2616,21 @@
             /* Clamp titles */
             h1,
             .hero-title {
-                font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
+                font-size: clamp(1.6rem, 5vw, 2.0rem) !important;
+                line-height: 1.25 !important;
             }
 
             h2,
             .section-title {
-                font-size: clamp(1.6rem, 4.5vw, 1.9rem) !important;
+                font-size: clamp(1.2rem, 4.5vw, 1.55rem) !important;
+                line-height: 1.25 !important;
             }
 
             h3,
             .pricing-title,
             .cta-headline {
-                font-size: clamp(1.4rem, 4vw, 1.7rem) !important;
+                font-size: clamp(1.1rem, 4vw, 1.35rem) !important;
+                line-height: 1.3 !important;
             }
         }
 
@@ -2662,7 +2665,9 @@
     <header class="ideas_header" id="site-header">
         <div class="container header-inner">
             <a href="https://ideas.edu.vn/" class="logo" aria-label="Trang chủ IDEAS">
-                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/01/Logo_15_nam.webp" alt="Logo IDEAS Education - 15 năm thành lập" width="60" height="60" loading="eager" fetchpriority="high">
+                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp"
+                    alt="Logo IDEAS Education - 15 năm thành lập" width="60" height="60" loading="eager"
+                    fetchpriority="high">
             </a>
             <nav class="header-nav">
                 <a href="#van-de" class="nav-link">Vấn đề</a>
@@ -2681,42 +2686,77 @@
                         <div class="dropdown-column">
                             <div class="dropdown-column-title">Thạc sĩ</div>
                             <a href="/mba" class="dropdown-item">
-                                <div class="item-title">Online MBA</div>
-                                <div class="item-desc">Thạc sĩ QTKD trực tuyến Thụy Sĩ</div>
+                                <img class="item-avatar"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/09/online-mba-1.png.webp"
+                                    alt="Online MBA" decoding="async" />
+                                <div class="item-content">
+                                    <div class="item-title">Online MBA</div>
+                                    <div class="item-desc">Thạc sĩ QTKD trực tuyến Thụy Sĩ</div>
+                                </div>
                             </a>
                             <a href="/emba" class="dropdown-item">
-                                <div class="item-title">Executive MBA</div>
-                                <div class="item-desc">Thạc sĩ điều hành cao cấp</div>
+                                <img class="item-avatar"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/09/emba.png.webp"
+                                    alt="Executive MBA" decoding="async" />
+                                <div class="item-content">
+                                    <div class="item-title">Executive MBA</div>
+                                    <div class="item-desc">Thạc sĩ điều hành cao cấp</div>
+                                </div>
                             </a>
                             <a href="/mscai" class="dropdown-item">
-                                <div class="item-title">Master AI (MSc AI)</div>
-                                <div class="item-desc">Thạc sĩ khoa học sâu về AI</div>
+                                <img class="item-avatar"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/09/mscai.png.webp" alt="Master AI"
+                                    loading="lazy" decoding="async" />
+                                <div class="item-content">
+                                    <div class="item-title">Master AI (MSc AI)</div>
+                                    <div class="item-desc">Thạc sĩ khoa học sâu về AI</div>
+                                </div>
                             </a>
                             <a href="/mbainai" class="dropdown-item">
-                                <div class="item-title">MBA in AI</div>
-                                <div class="item-desc">Quản trị & ứng dụng AI no-code</div>
+                                <img class="item-avatar"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2026/06/mba_in_ai.webp" alt="MBA in AI"
+                                    loading="lazy" decoding="async" />
+                                <div class="item-content">
+                                    <div class="item-title">MBA in AI</div>
+                                    <div class="item-desc">Quản trị & ứng dụng AI no-code</div>
+                                </div>
                             </a>
                         </div>
                         <div class="dropdown-column-divider"></div>
                         <div class="dropdown-column">
                             <div class="dropdown-column-title">Cử nhân</div>
                             <a href="/bba" class="dropdown-item">
-                                <div class="item-title">Top-up BBA</div>
-                                <div class="item-desc">Liên thông Cử nhân 12 tháng</div>
+                                <img class="item-avatar"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2026/02/TOPUP.webp" alt="Top-up BBA"
+                                    loading="lazy" decoding="async" />
+                                <div class="item-content">
+                                    <div class="item-title">Top-up BBA</div>
+                                    <div class="item-desc">Liên thông Cử nhân 12 tháng</div>
+                                </div>
                             </a>
                             <a href="/fullbba" class="dropdown-item">
-                                <div class="item-title">Full BBA</div>
-                                <div class="item-desc">Cử nhân QTKD chính quy 3 năm</div>
+                                <img class="item-avatar"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2026/06/online_bba.webp" alt="Full BBA"
+                                    loading="lazy" decoding="async" />
+                                <div class="item-content">
+                                    <div class="item-title">Full BBA</div>
+                                    <div class="item-desc">Cử nhân QTKD chính quy 3 năm</div>
+                                </div>
                             </a>
                             <div class="dropdown-column-title" style="margin-top: 16px;">Tiến sĩ</div>
                             <a href="/dual-dba-estiam-rb" class="dropdown-item">
-                                <div class="item-title">Dual DBA</div>
-                                <div class="item-desc">Tiến sĩ song bằng Pháp & Anh</div>
+                                <img class="item-avatar"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/10/Dual-DBA.webp" alt="Dual DBA"
+                                    loading="lazy" decoding="async" />
+                                <div class="item-content">
+                                    <div class="item-title">Dual DBA</div>
+                                    <div class="item-desc">Tiến sĩ song bằng Pháp & Anh</div>
+                                </div>
                             </a>
                         </div>
                     </div>
                 </div>
-                <a href="#tuyen-sinh" class="nav-link">Tuyển sinh</a>
+                <a href="#tuyen-sinh" class="nav-link">Uy tín</a>
                 <a href="#bang-gia" class="nav-link">Học phí</a>
                 <div style="display:flex;align-items:center;gap:8px;">
                     <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
@@ -2767,22 +2807,70 @@
             <div class="mobile-dropdown-content">
                 <div class="mobile-dropdown-section">
                     <div class="mobile-section-title">Thạc sĩ</div>
-                    <a href="/mba" class="mobile-dropdown-item">Online MBA</a>
-                    <a href="/emba" class="mobile-dropdown-item">Executive MBA</a>
-                    <a href="/mscai" class="mobile-dropdown-item">Master AI (MSc AI)</a>
-                    <a href="/mbainai" class="mobile-dropdown-item">MBA in AI</a>
+                    <a href="/mba" class="mobile-dropdown-item">
+                        <img class="item-avatar"
+                            src="https://ideas.edu.vn/wp-content/uploads/2025/09/online-mba-1.png.webp" alt="Online MBA"
+                            loading="lazy" decoding="async" />
+                        <div class="item-content">
+                            <div class="item-title">Online MBA</div>
+                            <div class="item-desc">Thạc sĩ QTKD trực tuyến Thụy Sĩ</div>
+                        </div>
+                    </a>
+                    <a href="/emba" class="mobile-dropdown-item">
+                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2025/09/emba.png.webp"
+                            alt="Executive MBA" loading="lazy" decoding="async" />
+                        <div class="item-content">
+                            <div class="item-title">Executive MBA</div>
+                            <div class="item-desc">Thạc sĩ điều hành cao cấp</div>
+                        </div>
+                    </a>
+                    <a href="/mscai" class="mobile-dropdown-item">
+                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2025/09/mscai.png.webp"
+                            alt="Master AI" loading="lazy" decoding="async" />
+                        <div class="item-content">
+                            <div class="item-title">Master AI (MSc AI)</div>
+                            <div class="item-desc">Thạc sĩ khoa học sâu về AI</div>
+                        </div>
+                    </a>
+                    <a href="/mbainai" class="mobile-dropdown-item">
+                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2026/06/mba_in_ai.webp"
+                            alt="MBA in AI" loading="lazy" decoding="async" />
+                        <div class="item-content">
+                            <div class="item-title">MBA in AI</div>
+                            <div class="item-desc">Quản trị & ứng dụng AI no-code</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="mobile-dropdown-section">
-                    <div class="mobile-section-title">Cử nhân</div>
-                    <a href="/bba" class="mobile-dropdown-item">Top-up BBA</a>
-                    <a href="/fullbba" class="mobile-dropdown-item">Full BBA</a>
-                    <a href="/dual-dba-estiam-rb" class="mobile-dropdown-item"
-                        style="margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">Dual
-                        DBA (Tiến sĩ)</a>
+                    <div class="mobile-section-title">Cử nhân &amp; Tiến sĩ</div>
+                    <a href="/bba" class="mobile-dropdown-item">
+                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2026/02/TOPUP.webp"
+                            alt="Top-up BBA" loading="lazy" decoding="async" />
+                        <div class="item-content">
+                            <div class="item-title">Top-up BBA</div>
+                            <div class="item-desc">Liên thông Cử nhân 12 tháng</div>
+                        </div>
+                    </a>
+                    <a href="/fullbba" class="mobile-dropdown-item">
+                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2026/06/online_bba.webp"
+                            alt="Full BBA" loading="lazy" decoding="async" />
+                        <div class="item-content">
+                            <div class="item-title">Full BBA</div>
+                            <div class="item-desc">Cử nhân QTKD chính quy 3 năm</div>
+                        </div>
+                    </a>
+                    <a href="/dual-dba-estiam-rb" class="mobile-dropdown-item">
+                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2025/10/Dual-DBA.webp"
+                            alt="Dual DBA" loading="lazy" decoding="async" />
+                        <div class="item-content">
+                            <div class="item-title">Dual DBA</div>
+                            <div class="item-desc">Tiến sĩ song bằng Pháp & Anh</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
-        <a href="#tuyen-sinh" class="nav-link">Tuyển sinh</a>
+        <a href="#tuyen-sinh" class="nav-link">Uy tín</a>
         <a href="#bang-gia" class="nav-link">Học phí</a>
         <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
     </div>
@@ -2859,13 +2947,19 @@
                     <div class="hero-accred-strip" aria-label="Các tổ chức kiểm định">
                         <span class="hero-accred-label">Được kiểm định &amp; công nhận bởi</span>
                         <div class="hero-accred-logos">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/10/qs-1.webp" alt="QS Stars" class="accred-trigger" data-accred="qs" height="40" />
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef1.png" alt="Swiss Accreditation" class="accred-trigger" data-accred="sac" height="40" />
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef3.png" alt="Eduqua" class="accred-trigger" data-accred="eduqua" height="40" loading="lazy" />
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef4.png" alt="IACBE" class="accred-trigger" data-accred="iacbe" height="40" loading="lazy" />
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png" alt="CHEA" class="accred-trigger" data-accred="chea" height="40" loading="lazy" />
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png" alt="ACBSP" class="accred-trigger" data-accred="acbsp" height="40" loading="lazy" />
-                            
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/10/qs-1.webp"
+                                alt="QS Stars" class="accred-trigger" data-accred="qs" height="40" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef1.png"
+                                alt="Swiss Accreditation" class="accred-trigger" data-accred="sac" height="40" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef3.png"
+                                alt="Eduqua" class="accred-trigger" data-accred="eduqua" height="40" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef4.png"
+                                alt="IACBE" class="accred-trigger" data-accred="iacbe" height="40" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png"
+                                alt="CHEA" class="accred-trigger" data-accred="chea" height="40" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png"
+                                alt="ACBSP" class="accred-trigger" data-accred="acbsp" height="40" loading="lazy" />
+
                         </div>
                     </div>
 
@@ -2887,12 +2981,25 @@
 
                     <div class="hero-social-proof">
                         <div class="avatars" aria-hidden="true">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/casc1.jpg" alt="Học viên EMBA Swiss UMEF 1" class="avatar av1" loading="lazy" width="40" height="40">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/huynhphuong.jpg" alt="Học viên EMBA Swiss UMEF 2" class="avatar av2" loading="lazy" width="40" height="40">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/hamien.jpg" alt="Học viên EMBA Swiss UMEF 3" class="avatar av3" loading="lazy" width="40" height="40">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/cumef.jpg" alt="Học viên EMBA Swiss UMEF 4" class="avatar av4" loading="lazy" width="40" height="40">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/casc2.jpg" alt="Học viên EMBA Swiss UMEF 5" class="avatar av5" loading="lazy" width="40" height="40">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/chu_hoang_thai.jpg" alt="Học viên EMBA Swiss UMEF 6" class="avatar av6" loading="lazy" width="40" height="40">
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/casc1.jpg"
+                                alt="Học viên EMBA Swiss UMEF 1" class="avatar av1" loading="lazy" width="40"
+                                height="40">
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/huynhphuong.jpg"
+                                alt="Học viên EMBA Swiss UMEF 2" class="avatar av2" loading="lazy" width="40"
+                                height="40">
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/hamien.jpg"
+                                alt="Học viên EMBA Swiss UMEF 3" class="avatar av3" loading="lazy" width="40"
+                                height="40">
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/cumef.jpg"
+                                alt="Học viên EMBA Swiss UMEF 4" class="avatar av4" loading="lazy" width="40"
+                                height="40">
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/casc2.jpg"
+                                alt="Học viên EMBA Swiss UMEF 5" class="avatar av5" loading="lazy" width="40"
+                                height="40">
+                            <img decoding="async"
+                                src="https://ideas.edu.vn/wp-content/uploads/2025/02/chu_hoang_thai.jpg"
+                                alt="Học viên EMBA Swiss UMEF 6" class="avatar av6" loading="lazy" width="40"
+                                height="40">
                         </div>
                         <p><strong>2502+</strong> học viên Việt Nam Tốt nghiệp các chương trình Swiss UMEF cùng IDEAS
                         </p>
@@ -2950,7 +3057,8 @@
                     </div>
                     <!-- Stacked secondary photo -->
                     <div class="hero-photo-secondary">
-                        <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6777.jpg" alt="Học viên EMBA Swiss UMEF nhận bằng" width="200" height="160" loading="lazy" />
+                        <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6777.jpg"
+                            alt="Học viên EMBA Swiss UMEF nhận bằng" width="200" height="160" loading="lazy" />
                     </div>
                 </div>
             </div>
@@ -3347,7 +3455,9 @@
                     <div class="sol-photo-grid">
                         <!-- Main large photo -->
                         <div class="sol-photo-main">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/03/image-1-1.png" alt="Học viên EMBA Swiss UMEF học trực tuyến trên máy tính" loading="lazy" width="500" height="350" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/03/image-1-1.png"
+                                alt="Học viên EMBA Swiss UMEF học trực tuyến trên máy tính" loading="lazy" width="500"
+                                height="350" />
                             <div class="sol-photo-badge sol-badge-tl">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2.5" aria-hidden="true">
@@ -3359,10 +3469,15 @@
                         <!-- Bottom row: 2 smaller photos -->
                         <div class="sol-photo-row">
                             <div class="sol-photo-sm">
-                                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2024/10/461779815_852230670439635_3180438795963466960_n.jpg" alt="Lớp học EMBA trực tuyến qua Zoom" loading="lazy" width="240" height="180" />
+                                <img decoding="async"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2024/10/461779815_852230670439635_3180438795963466960_n.jpg"
+                                    alt="Lớp học EMBA trực tuyến qua Zoom" loading="lazy" width="240" height="180" />
                             </div>
                             <div class="sol-photo-sm sol-photo-sm-accent">
-                                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/03/buoihuongdan.jpg" alt="Buổi lễ khai giảng và hướng dẫn học viên EMBA Swiss UMEF" loading="lazy" width="240" height="180" />
+                                <img decoding="async"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/03/buoihuongdan.jpg"
+                                    alt="Buổi lễ khai giảng và hướng dẫn học viên EMBA Swiss UMEF" loading="lazy"
+                                    width="240" height="180" />
                                 <div class="sol-photo-badge sol-badge-br">
                                     <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
                                         aria-hidden="true">
@@ -3543,7 +3658,9 @@
                     <article class="eco-card-v2">
                         <div class="eco-card-v2-icon eco-card-v2-icon--logo"
                             style="--icon-clr:#ef4444;--icon-bg:rgba(255,255,255,0.95)">
-                            <img decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/1280px-Moodle-logo.svg.png" alt="Moodle logo" style="width:68px;height:auto;object-fit:contain;" />
+                            <img decoding="async"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Moodle-logo.svg/1280px-Moodle-logo.svg.png"
+                                alt="Moodle logo" style="width:68px;height:auto;object-fit:contain;" />
                         </div>
                         <div class="eco-card-v2-body">
                             <div class="eco-card-v2-num">01</div>
@@ -3556,7 +3673,8 @@
                     <article class="eco-card-v2">
                         <div class="eco-card-v2-icon eco-card-v2-icon--logo"
                             style="--icon-clr:#a78bfa;--icon-bg:rgba(255,255,255,0.95)">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/02/Buffet-AI-R.webp" alt="IDEAS AI Platform logo" style="width:68px;height:auto;object-fit:contain;" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/02/Buffet-AI-R.webp"
+                                alt="IDEAS AI Platform logo" style="width:68px;height:auto;object-fit:contain;" />
                         </div>
                         <div class="eco-card-v2-body">
                             <div class="eco-card-v2-num">02</div>
@@ -3569,7 +3687,9 @@
                     <article class="eco-card-v2">
                         <div class="eco-card-v2-icon eco-card-v2-icon--logo"
                             style="--icon-clr:#34d399;--icon-bg:rgba(255,255,255,0.95)">
-                            <img decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Cengage-logo.svg/1280px-Cengage-logo.svg.png" alt="Cengage logo" style="width:68px;height:auto;object-fit:contain;" />
+                            <img decoding="async"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Cengage-logo.svg/1280px-Cengage-logo.svg.png"
+                                alt="Cengage logo" style="width:68px;height:auto;object-fit:contain;" />
                         </div>
                         <div class="eco-card-v2-body">
                             <div class="eco-card-v2-num">03</div>
@@ -3582,7 +3702,8 @@
                     <article class="eco-card-v2">
                         <div class="eco-card-v2-icon eco-card-v2-icon--logo"
                             style="--icon-clr:#34d399;--icon-bg:rgba(255,255,255,0.95)">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/06/log_ideas.png" alt="Chuyên đề" style="width:68px;height:auto;object-fit:contain;" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/06/log_ideas.png"
+                                alt="Chuyên đề" style="width:68px;height:auto;object-fit:contain;" loading="lazy" />
                         </div>
                         <div class="eco-card-v2-body">
                             <div class="eco-card-v2-num">04</div>
@@ -3591,6 +3712,107 @@
                                 ngành giúp kết nối kiến thức EMBA với thực tiễn doanh nghiệp.</p>
                         </div>
                     </article>
+                </div>
+
+                <!-- Chuỗi Workshop & Chuyên đề bổ trợ -->
+                <div class="eco-workshops"
+                    style="margin-top: 56px; border-top: 1.5px dashed rgba(171, 14, 0, 0.15); padding-top: 48px;">
+                    <div style="text-align: center; max-width: 720px; margin: 0 auto 36px;">
+                        <h4 style="font-size: 1.35rem; font-weight: 800; color: var(--clr-text); margin-bottom: 8px;">
+                            IDEAS - Việt Nam và các buổi <span class="gradient-text">Workshop &amp; Chuyên đề</span>
+                        </h4>
+                        <p style="color: var(--clr-text-muted); font-size: 0.9rem; line-height: 1.5;">
+                            IDEAS đồng hành và hỗ trợ học viên tận tình suốt quá trình học tập thông qua các buổi học
+                            Online chuyên sâu và Seminar Offline gặp gỡ trực tiếp.
+                        </p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <div class="workshop-tabs-nav" role="tablist">
+                            <button type="button" class="workshop-tab-btn active" role="tab" aria-selected="true"
+                                data-tab="tab-online">Chuyên đề Online (Bổ trợ)</button>
+                            <button type="button" class="workshop-tab-btn" role="tab" aria-selected="false"
+                                data-tab="tab-offline">Seminar Offline (Giao lưu)</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab 1: Online Workshops -->
+                    <div class="workshop-tab-content active" id="tab-online" role="tabpanel">
+                        <div class="workshop-grid">
+                            <div class="workshop-card">
+                                <img decoding="async" class="workshop-card-img"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/06/WORSHOP-29-6-SIZE-16_9.png"
+                                    alt="Workshop Online 1" loading="lazy" />
+                                <div class="workshop-card-body">
+                                    <span class="workshop-card-tag">Online Workshop</span>
+                                    <h4 class="workshop-card-title">Chuyên đề Online bổ trợ</h4>
+                                    <p class="workshop-card-desc">Các buổi chia sẻ kiến thức trực tuyến định kỳ giúp
+                                        củng cố lý thuyết và ứng dụng thực tiễn.</p>
+                                </div>
+                            </div>
+                            <div class="workshop-card">
+                                <img decoding="async" class="workshop-card-img"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/05/IDEAS-TALK-25-5-1.png.webp"
+                                    alt="Workshop Online 2" loading="lazy" />
+                                <div class="workshop-card-body">
+                                    <span class="workshop-card-tag">Online Seminar</span>
+                                    <h4 class="workshop-card-title">Tọa đàm học thuật trực tuyến</h4>
+                                    <p class="workshop-card-desc">Giao lưu và thảo luận chuyên sâu cùng các giảng viên
+                                        và chuyên gia hàng đầu.</p>
+                                </div>
+                            </div>
+                            <div class="workshop-card">
+                                <img decoding="async" class="workshop-card-img"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/04/ws-16-9.png"
+                                    alt="Workshop Online 3" loading="lazy" />
+                                <div class="workshop-card-body">
+                                    <span class="workshop-card-tag">Online Support</span>
+                                    <h4 class="workshop-card-title">Hướng dẫn học tập trực tuyến</h4>
+                                    <p class="workshop-card-desc">Hỗ trợ giải đáp thắc mắc, hướng dẫn phương pháp làm
+                                        bài luận và đề án tốt nghiệp.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Offline Seminars -->
+                    <div class="workshop-tab-content" id="tab-offline" role="tabpanel">
+                        <div class="workshop-grid">
+                            <div class="workshop-card">
+                                <img decoding="async" class="workshop-card-img"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/08/wsoff16_8.jpg"
+                                    alt="Workshop Offline 1" loading="lazy" />
+                                <div class="workshop-card-body">
+                                    <span class="workshop-card-tag">Offline Seminar</span>
+                                    <h4 class="workshop-card-title">Hội thảo trực tiếp</h4>
+                                    <p class="workshop-card-desc">Các buổi chuyên đề trực tiếp tại học xá nhằm thảo luận
+                                        và chia sẻ kinh nghiệm thực tiễn.</p>
+                                </div>
+                            </div>
+                            <div class="workshop-card">
+                                <img decoding="async" class="workshop-card-img"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/03/workshopAI.jpg"
+                                    alt="Workshop Offline 2" loading="lazy" />
+                                <div class="workshop-card-body">
+                                    <span class="workshop-card-tag">Offline Network</span>
+                                    <h4 class="workshop-card-title">Giao lưu &amp; Kết nối</h4>
+                                    <p class="workshop-card-desc">Cơ hội gặp gỡ, mở rộng mạng lưới quan hệ và kết nối
+                                        cộng đồng học viên thực tế.</p>
+                                </div>
+                            </div>
+                            <div class="workshop-card">
+                                <img decoding="async" class="workshop-card-img"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2024/03/Hoi-thao-MBA-50-5.jpg"
+                                    alt="Workshop Offline 3" loading="lazy" />
+                                <div class="workshop-card-body">
+                                    <span class="workshop-card-tag">Offline Workshop</span>
+                                    <h4 class="workshop-card-title">Workshop thực chiến</h4>
+                                    <p class="workshop-card-desc">Thực hành và giải quyết các bài toán quản trị doanh
+                                        nghiệp cùng chuyên gia.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -3698,8 +3920,8 @@
             <div class="container">
                 <div class="section-label reveal-up">UY TÍN &amp; CHỨNG NHẬN</div>
                 <h2 class="section-title reveal-up" id="proof-headline">
-                    Swiss UMEF – Đại học tư thục đầu tiên tại Geneva đạt<br />
-                    <span class="gradient-text">kiểm định Liên bang Thụy Sĩ – SAC</span>
+                    Swiss UMEF: Đại học tư thục đầu tiên tại Geneva<br />
+                    <span class="gradient-text">đạt Kiểm định Liên bang cao nhất Thụy Sĩ (SAC)</span>
                 </h2>
 
                 <!-- PROOF CARD - Premium 2-col design -->
@@ -3717,24 +3939,28 @@
                                     <span class="proof-cert-pulse-ring"></span>
                                     <span class="proof-cert-pulse-dot"></span>
                                 </span>
-                                Kiểm định chính thức từ Thụy Sĩ
+                                Công nhận chính thức bởi Hội đồng Giáo dục Thụy Sĩ
                             </div>
 
                             <!-- Headline -->
                             <h3 class="proof-card-headline">
-                                <a href="https://www.swiss-umef.ch/en/classements" target="_blank"
-                                    rel="noopener noreferrer" class="proof-qs-logo-link" title="View QS Rankings">
-                                    <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/10/qs-1.webp" alt="QS Stars logo" class="proof-qs-logo" />
+                                <a href="https://www.swiss-umef.ch/en/accreditation" target="_blank"
+                                    rel="noopener noreferrer" class="proof-qs-logo-link"
+                                    title="Swiss Accreditation Council">
+                                    <img decoding="async"
+                                        src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef1.png"
+                                        alt="SAC logo" class="proof-qs-logo" />
                                 </a>
                                 <span class="proof-card-headline-text">
-                                    Văn bằng quốc tế<br />
-                                    <span class="proof-headline-accent">5 QS Stars</span>
+                                    Đại học đầu tiên tại Geneva<br />
+                                    <span class="proof-headline-accent">đạt Kiểm định Liên bang SAC</span>
                                 </span>
                             </h3>
 
                             <!-- Quote -->
                             <p class="proof-card-quote">
-                                Tự tin quản lý và dẫn dắt doanh nghiệp toàn cầu
+                                Swiss UMEF là Đại học tư thục đầu tiên tại Geneva đạt Kiểm định Liên bang cao nhất Thụy
+                                Sĩ (SAC) - công nhận chính thức vị thế đào tạo chuẩn quốc gia Thụy Sĩ.
                             </p>
 
                             <!-- Checklist -->
@@ -3784,7 +4010,9 @@
                             <div class="proof-degree-wrap">
                                 <div class="proof-degree-glow"></div>
                                 <div class="proof-degree-frame">
-                                    <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7191978013846_36a81ec39301d05fedaf6d4cd0293f9c-1.webp" alt="Mẫu bằng EMBA Swiss UMEF" loading="lazy" class="proof-degree-img" />
+                                    <img decoding="async"
+                                        src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7191978013846_36a81ec39301d05fedaf6d4cd0293f9c-1.webp"
+                                        alt="Mẫu bằng EMBA Swiss UMEF" loading="lazy" class="proof-degree-img" />
                                     <div class="proof-degree-shimmer"></div>
                                 </div>
                                 <div class="proof-degree-badge">Bản mẫu văn bằng EMBA chính thức</div>
@@ -3796,13 +4024,19 @@
                     <div class="proof-accred-strip">
                         <p class="proof-accred-label">Hệ thống thành viên &amp; đối tác kiểm định</p>
                         <div class="proof-accred-logos">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/10/qs-1.webp" alt="QS Stars" title="Click to view details" class="accred-trigger" data-accred="qs" loading="lazy" />
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef1.png" alt="Swiss Accreditation Council" title="Click to view details" class="accred-trigger" data-accred="sac" loading="lazy" />
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef3.png" alt="Eduqua" title="Click to view details" class="accred-trigger" data-accred="eduqua" loading="lazy" />
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef4.png" alt="IACBE" title="Click to view details" class="accred-trigger" data-accred="iacbe" loading="lazy" />
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png" alt="CHEA" title="Click to view details" class="accred-trigger" data-accred="chea" loading="lazy" />
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png" alt="ACBSP" title="Click to view details" class="accred-trigger" data-accred="acbsp" loading="lazy" />
-                            
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef1.png"
+                                alt="Swiss Accreditation" class="accred-trigger" data-accred="sac" height="40"
+                                loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png"
+                                alt="CHEA" class="accred-trigger" data-accred="chea" height="40" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef4.png"
+                                alt="IACBE" class="accred-trigger" data-accred="iacbe" height="40" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png"
+                                alt="ACBSP" class="accred-trigger" data-accred="acbsp" height="40" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef3.png"
+                                alt="Eduqua" class="accred-trigger" data-accred="eduqua" height="40" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/10/qs-1.webp"
+                                alt="QS Stars" class="accred-trigger" data-accred="qs" height="40" loading="lazy" />
                         </div>
                     </div>
 
@@ -3822,7 +4056,10 @@
                     <div id="accred-expandable-content" class="accred-expandable">
                         <div class="proof-card-accred">
                             <div class="accred-feature-content">
-                                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2023/07/Logo-Swiss-UMEF.webp" alt="Swiss UMEF Logo" class="accred-school-logo" width="160" style="margin-bottom: 20px;">
+                                <img decoding="async"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2023/07/Logo-Swiss-UMEF.webp"
+                                    alt="Swiss UMEF Logo" class="accred-school-logo" width="160"
+                                    style="margin-bottom: 20px;">
                                 <h2 class="section-title" style="font-size: 1.8rem;">Hệ thống <em>Kiểm định &amp; Công
                                         nhận</em>
                                     quốc tế</h2>
@@ -3881,13 +4118,19 @@
                                 <div class="accred-stack" id="accred-stack" title="Click để lật xem các chứng chỉ">
 
                                     <div class="accred-stack-card pos-3">
-                                        <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/06/sac.webp" alt="SAC Certificate" loading="lazy">
+                                        <img decoding="async"
+                                            src="https://ideas.edu.vn/wp-content/uploads/2026/06/sac.webp"
+                                            alt="SAC Certificate" loading="lazy">
                                     </div>
                                     <div class="accred-stack-card pos-2">
-                                        <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/06/sgs.webp" alt="SGS Certificate" loading="lazy">
+                                        <img decoding="async"
+                                            src="https://ideas.edu.vn/wp-content/uploads/2026/06/sgs.webp"
+                                            alt="SGS Certificate" loading="lazy">
                                     </div>
                                     <div class="accred-stack-card pos-1">
-                                        <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/10/QSStarsCertificateSwissUMEF-1-1-1-1.webp" alt="QS Stars Certificate" loading="lazy">
+                                        <img decoding="async"
+                                            src="https://ideas.edu.vn/wp-content/uploads/2025/10/QSStarsCertificateSwissUMEF-1-1-1-1.webp"
+                                            alt="QS Stars Certificate" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="accred-stack-controls">
@@ -3943,7 +4186,9 @@
                             class="lightbox-trigger"
                             data-img="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg"
                             aria-label="Xem ảnh lễ tốt nghiệp">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg" alt="Lễ tốt nghiệp EMBA Swiss UMEF – IDEAS Education" loading="lazy" />
+                            <img decoding="async"
+                                src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg"
+                                alt="Lễ tốt nghiệp EMBA Swiss UMEF – IDEAS Education" loading="lazy" />
                             <div class="gallery-overlay">
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -3960,7 +4205,8 @@
                         <a href="https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg" class="lightbox-trigger"
                             data-img="https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg"
                             aria-label="Xem ảnh học viên">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg" alt="Học viên EMBA Swiss UMEF tại lễ tốt nghiệp" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg"
+                                alt="Học viên EMBA Swiss UMEF tại lễ tốt nghiệp" loading="lazy" />
                             <div class="gallery-overlay">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -3976,7 +4222,8 @@
                         <a href="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg" class="lightbox-trigger"
                             data-img="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg"
                             aria-label="Xem ảnh buổi lễ">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg" alt="Buổi lễ trao bằng EMBA Swiss UMEF" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg"
+                                alt="Buổi lễ trao bằng EMBA Swiss UMEF" loading="lazy" />
                             <div class="gallery-overlay">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -3992,7 +4239,8 @@
                         <a href="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6740.jpg" class="lightbox-trigger"
                             data-img="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6740.jpg"
                             aria-label="Xem ảnh học viên nhận bằng">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6740.jpg" alt="Học viên nhận bằng EMBA Swiss UMEF" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6740.jpg"
+                                alt="Học viên nhận bằng EMBA Swiss UMEF" loading="lazy" />
                             <div class="gallery-overlay">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -4008,7 +4256,8 @@
                         <a href="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6777.jpg" class="lightbox-trigger"
                             data-img="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6777.jpg"
                             aria-label="Xem ảnh kỷ niệm tốt nghiệp">
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6777.jpg" alt="Kỷ niệm tốt nghiệp EMBA Swiss UMEF – IDEAS" loading="lazy" />
+                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6777.jpg"
+                                alt="Kỷ niệm tốt nghiệp EMBA Swiss UMEF – IDEAS" loading="lazy" />
                             <div class="gallery-overlay">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -4074,7 +4323,9 @@
                                 <div class="testi-v4-avatar-wrap">
                                     <div class="testi-v4-avatar-glow"></div>
                                     <div class="testi-v4-avatar">
-                                        <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/casc1.jpg" alt="Nguyễn Thanh Bình" loading="lazy">
+                                        <img decoding="async"
+                                            src="https://ideas.edu.vn/wp-content/uploads/2025/02/casc1.jpg"
+                                            alt="Nguyễn Thanh Bình" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="testi-v4-meta">
@@ -4141,7 +4392,9 @@
                                 <div class="testi-v4-avatar-wrap">
                                     <div class="testi-v4-avatar-glow"></div>
                                     <div class="testi-v4-avatar">
-                                        <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/huynhphuong.jpg" alt="Nguyễn Huỳnh Phương" loading="lazy">
+                                        <img decoding="async"
+                                            src="https://ideas.edu.vn/wp-content/uploads/2025/02/huynhphuong.jpg"
+                                            alt="Nguyễn Huỳnh Phương" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="testi-v4-meta">
@@ -4208,7 +4461,9 @@
                                 <div class="testi-v4-avatar-wrap">
                                     <div class="testi-v4-avatar-glow"></div>
                                     <div class="testi-v4-avatar">
-                                        <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/02/hamien.jpg" alt="Nguyễn Thị Hà Miên" loading="lazy">
+                                        <img decoding="async"
+                                            src="https://ideas.edu.vn/wp-content/uploads/2025/02/hamien.jpg"
+                                            alt="Nguyễn Thị Hà Miên" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="testi-v4-meta">
@@ -4415,8 +4670,14 @@
                     <div class="sacom-banner" aria-label="Hỗ trợ trả góp Sacombank">
                         <div class="sacom-left">
                             <div class="sacom-cards">
-                                <img decoding="async" src="https://www.sacombank.com.vn/content/dam/sacombank/images/the-new/the-tin-dung/Visa%20Credit%20Plantinum%20Cashback_contactless-01.png" alt="Sacombank Visa Platinum Cashback" class="sacom-card-img sacom-card-back" loading="lazy" />
-                                <img decoding="async" src="https://www.sacombank.com.vn/content/dam/sacombank/images/the-new/the-tin-dung/Visa%20Credit%20Signature_contactless-01.png" alt="Sacombank Visa Signature" class="sacom-card-img sacom-card-front" loading="lazy" />
+                                <img decoding="async"
+                                    src="https://www.sacombank.com.vn/content/dam/sacombank/images/the-new/the-tin-dung/Visa%20Credit%20Plantinum%20Cashback_contactless-01.png"
+                                    alt="Sacombank Visa Platinum Cashback" class="sacom-card-img sacom-card-back"
+                                    loading="lazy" />
+                                <img decoding="async"
+                                    src="https://www.sacombank.com.vn/content/dam/sacombank/images/the-new/the-tin-dung/Visa%20Credit%20Signature_contactless-01.png"
+                                    alt="Sacombank Visa Signature" class="sacom-card-img sacom-card-front"
+                                    loading="lazy" />
                             </div>
                             <div class="sacom-logo-area">
                                 <div class="sacom-logo-text">SACOMBANK</div>
@@ -4710,7 +4971,9 @@
                             <div class="modal-zalo-row">
                                 <a href="https://zalo.me/3857867121882640296" target="_blank" class="modal-zalo-btn"
                                     aria-label="Chat Zalo với IDEAS">
-                                    <img decoding="async" src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1714776582486" alt="Zalo Logo IDEAS" width="20" height="20">
+                                    <img decoding="async"
+                                        src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1714776582486"
+                                        alt="Zalo Logo IDEAS" width="20" height="20">
                                     <span>Chat Zalo với IDEAS</span>
                                 </a>
                                 <button type="button" class="modal-booking-btn" id="cta-open-booking"
@@ -4847,7 +5110,9 @@
                         <div class="modal-zalo-row">
                             <a href="https://zalo.me/3857867121882640296" target="_blank" class="modal-zalo-btn"
                                 aria-label="Chat Zalo với IDEAS">
-                                <img decoding="async" src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1714776582486" alt="Zalo Logo IDEAS" width="20" height="20">
+                                <img decoding="async"
+                                    src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1714776582486"
+                                    alt="Zalo Logo IDEAS" width="20" height="20">
                                 <span>Chat Zalo với IDEAS</span>
                             </a>
                             <button type="button" class="modal-booking-btn" id="modal-open-booking"
@@ -5286,7 +5551,8 @@
             <div class="tour-modal-content" id="tour-modal-scrollable">
                 <!-- Hero Header -->
                 <div class="tour-modal-hero">
-                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg" class="tour-hero-img" alt="Hero" decoding="async" />
+                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg" class="tour-hero-img"
+                        alt="Hero" decoding="async" />
                     <div class="tour-hero-overlay"></div>
                     <div class="tour-hero-text">
                         <span class="tour-hero-badge">Beyond Education</span>
@@ -5305,7 +5571,9 @@
                                 bão vươn ra thế giới của những nhà quản trị tương lai.</p>
                         </div>
                         <div class="tour-narrative-media">
-                            <div class="tour-media-frame"><img src="https://ideas.edu.vn/wp-content/uploads/2026/06/hcmc.webp" alt="" loading="lazy" decoding="async" /></div>
+                            <div class="tour-media-frame"><img
+                                    src="https://ideas.edu.vn/wp-content/uploads/2026/06/hcmc.webp" alt=""
+                                    loading="lazy" decoding="async" /></div>
                         </div>
                     </div>
 
@@ -5319,10 +5587,13 @@
                         <div class="tour-narrative-media">
                             <div class="tour-media-frame">
                                 <div class="tour-media-grid">
-                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7160675663665_468905c8dc1042f7e599a5fa3a8f1ed9.webp" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7160675663665_468905c8dc1042f7e599a5fa3a8f1ed9.webp"
+                                        class="tour-grid-item" alt="" loading="lazy" decoding="async" />
                                     <div class="tour-grid-col">
-                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7164481025616_560707f2aa2aafd233d48c437e9f8f97.webp" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
-                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7164481040450_4b614db3edbdab67e16b438a78aae22e.webp" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7164481025616_560707f2aa2aafd233d48c437e9f8f97.webp"
+                                            class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7164481040450_4b614db3edbdab67e16b438a78aae22e.webp"
+                                            class="tour-grid-item" alt="" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
                             </div>
@@ -5338,10 +5609,13 @@
                         <div class="tour-narrative-media">
                             <div class="tour-media-frame">
                                 <div class="tour-media-grid">
-                                    <img src="https://ik.imagekit.io/tvlk/blog/2023/06/du-lich-milan-5.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                    <img src="https://ik.imagekit.io/tvlk/blog/2023/06/du-lich-milan-5.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2"
+                                        class="tour-grid-item" alt="" loading="lazy" decoding="async" />
                                     <div class="tour-grid-col">
-                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7165248219347_f41fb7373b9329a9855e97e6e9691a7c.webp" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
-                                        <img src="https://ik.imagekit.io/tvlk/blog/2023/06/du-lich-milan-5.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/z7165248219347_f41fb7373b9329a9855e97e6e9691a7c.webp"
+                                            class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                        <img src="https://ik.imagekit.io/tvlk/blog/2023/06/du-lich-milan-5.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2"
+                                            class="tour-grid-item" alt="" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
                             </div>
@@ -5359,10 +5633,13 @@
                         <div class="tour-narrative-media">
                             <div class="tour-media-frame">
                                 <div class="tour-media-grid">
-                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-9.jpg" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-9.jpg"
+                                        class="tour-grid-item" alt="" loading="lazy" decoding="async" />
                                     <div class="tour-grid-col">
-                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-8.jpg" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
-                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-9.jpg" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-8.jpg"
+                                            class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-9.jpg"
+                                            class="tour-grid-item" alt="" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
                             </div>
@@ -5378,10 +5655,13 @@
                         <div class="tour-narrative-media">
                             <div class="tour-media-frame">
                                 <div class="tour-media-grid">
-                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-2.jpg" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-2.jpg"
+                                        class="tour-grid-item" alt="" loading="lazy" decoding="async" />
                                     <div class="tour-grid-col">
-                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-4.jpg" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
-                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-2.jpg" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-4.jpg"
+                                            class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-2.jpg"
+                                            class="tour-grid-item" alt="" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
                             </div>
@@ -5397,10 +5677,13 @@
                         <div class="tour-narrative-media">
                             <div class="tour-media-frame">
                                 <div class="tour-media-grid">
-                                    <img src="https://eurotravel.com.vn/wp-content/uploads/2024/07/Titlis-Paranoma.jpeg" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                    <img src="https://eurotravel.com.vn/wp-content/uploads/2024/07/Titlis-Paranoma.jpeg"
+                                        class="tour-grid-item" alt="" loading="lazy" decoding="async" />
                                     <div class="tour-grid-col">
-                                        <img src="https://dulichphuonghoang.vn/upload/images/1(3).png" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
-                                        <img src="https://eurotravel.com.vn/wp-content/uploads/2024/07/Titlis-Paranoma.jpeg" class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                        <img src="https://dulichphuonghoang.vn/upload/images/1(3).png"
+                                            class="tour-grid-item" alt="" loading="lazy" decoding="async" />
+                                        <img src="https://eurotravel.com.vn/wp-content/uploads/2024/07/Titlis-Paranoma.jpeg"
+                                            class="tour-grid-item" alt="" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
                             </div>
@@ -5414,7 +5697,8 @@
 
                         <div class="tour-capitals-grid">
                             <div class="tour-capital-card" data-idx="0">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/paris.webp" alt="Paris" loading="lazy" decoding="async" />
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/paris.webp" alt="Paris"
+                                    loading="lazy" decoding="async" />
                                 <div class="tour-capital-overlay"></div>
                                 <div class="tour-capital-badge">Premium Destination</div>
                                 <div class="tour-capital-info">
@@ -5424,7 +5708,8 @@
                                 </div>
                             </div>
                             <div class="tour-capital-card offset" data-idx="1">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/Brussels.webp" alt="Brussels" loading="lazy" decoding="async" />
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/Brussels.webp" alt="Brussels"
+                                    loading="lazy" decoding="async" />
                                 <div class="tour-capital-overlay"></div>
                                 <div class="tour-capital-badge">Premium Destination</div>
                                 <div class="tour-capital-info">
@@ -5434,7 +5719,8 @@
                                 </div>
                             </div>
                             <div class="tour-capital-card" data-idx="2">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/amsterdam.webp" alt="Amsterdam" loading="lazy" decoding="async" />
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/amsterdam.webp"
+                                    alt="Amsterdam" loading="lazy" decoding="async" />
                                 <div class="tour-capital-overlay"></div>
                                 <div class="tour-capital-badge">Premium Destination</div>
                                 <div class="tour-capital-info">
@@ -5444,7 +5730,8 @@
                                 </div>
                             </div>
                             <div class="tour-capital-card offset" data-idx="3">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/geneva.webp" alt="Geneva" loading="lazy" decoding="async" />
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/geneva.webp" alt="Geneva"
+                                    loading="lazy" decoding="async" />
                                 <div class="tour-capital-overlay"></div>
                                 <div class="tour-capital-badge">Premium Destination</div>
                                 <div class="tour-capital-info">
@@ -5493,22 +5780,34 @@
                         </div>
 
                         <div class="tour-images-fallback" id="tour-images-fallback" style="display: none;">
-                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-6.jpg" alt="" loading="lazy" decoding="async" />
+                            <div class="tour-fallback-card"><img
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-6.jpg" alt=""
+                                    loading="lazy" decoding="async" />
                                 <div class="tour-fallback-overlay"></div>
                             </div>
-                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-10.jpg" alt="" loading="lazy" decoding="async" />
+                            <div class="tour-fallback-card"><img
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-10.jpg" alt=""
+                                    loading="lazy" decoding="async" />
                                 <div class="tour-fallback-overlay"></div>
                             </div>
-                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-11.jpg" alt="" loading="lazy" decoding="async" />
+                            <div class="tour-fallback-card"><img
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/05/umef-tour52025-11.jpg" alt=""
+                                    loading="lazy" decoding="async" />
                                 <div class="tour-fallback-overlay"></div>
                             </div>
-                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.webp" alt="" loading="lazy" decoding="async" />
+                            <div class="tour-fallback-card"><img
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.webp" alt=""
+                                    loading="lazy" decoding="async" />
                                 <div class="tour-fallback-overlay"></div>
                             </div>
-                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.webp" alt="" loading="lazy" decoding="async" />
+                            <div class="tour-fallback-card"><img
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.webp" alt=""
+                                    loading="lazy" decoding="async" />
                                 <div class="tour-fallback-overlay"></div>
                             </div>
-                            <div class="tour-fallback-card"><img src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.webp" alt="" loading="lazy" decoding="async" />
+                            <div class="tour-fallback-card"><img
+                                    src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.webp" alt=""
+                                    loading="lazy" decoding="async" />
                                 <div class="tour-fallback-overlay"></div>
                             </div>
                         </div>
@@ -5536,8 +5835,10 @@
                         </div>
 
                         <div class="tour-footer-logos">
-                            <img src="https://ideas.edu.vn/wp-content/uploads/2023/07/Logo-Swiss-UMEF.webp" alt="Swiss UMEF" decoding="async" />
-                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/06/log_ideas.png" alt="Ideas Institute" loading="lazy" decoding="async" />
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2023/07/Logo-Swiss-UMEF.webp"
+                                alt="Swiss UMEF" decoding="async" />
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/06/log_ideas.png"
+                                alt="Ideas Institute" loading="lazy" decoding="async" />
                         </div>
                     </div>
                 </div>
@@ -6311,7 +6612,7 @@
         })();
     </script>
 
-        <!-- FAQ Control Script -->
+    <!-- FAQ Control Script -->
     <script>
         function updateFAQHeights() {
             document.querySelectorAll('.faq-item.faq-open .faq-content').forEach(content => {
