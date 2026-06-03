@@ -72,7 +72,16 @@
         }
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    let isScrollThrottled = false;
+    window.addEventListener('scroll', () => {
+        if (!isScrollThrottled) {
+            isScrollThrottled = true;
+            requestAnimationFrame(() => {
+                onScroll();
+                isScrollThrottled = false;
+            });
+        }
+    }, { passive: true });
     onScroll(); // run once on load
 
     /* ─── Mobile Menu ─── */
@@ -445,10 +454,29 @@
 
             const msgVal = msgEl ? msgEl.value.trim() : '';
 
+            const getSelectText = (el) => {
+                if (!el) return '';
+                const val = el.value;
+                if (!val) return '';
+                if (el.selectedIndex >= 0) return el.options[el.selectedIndex].text;
+                const mapping = {
+                    'bachelor': 'Cử nhân',
+                    'master': 'Thạc sĩ',
+                    'other': 'Khác',
+                    'below-5.0': 'Dưới IELTS 5.0',
+                    '5.0-5.5': 'IELTS 5.0 - 5.5',
+                    '6.0-plus': 'IELTS 6.0+'
+                };
+                return mapping[val] || val;
+            };
+
+            const eduText = getSelectText(eduEl);
+            const engText = getSelectText(engEl);
+
             // Gộp học vấn + tiếng Anh vào note
             const noteParts = [];
-            if (eduVal) noteParts.push('Học vấn: ' + eduVal);
-            if (engVal) noteParts.push('Tiếng Anh: ' + engVal);
+            if (eduText) noteParts.push('Học vấn: ' + eduText);
+            if (engText) noteParts.push('Tiếng Anh: ' + engText);
             if (msgVal) noteParts.push(msgVal);
             
             const ctaSource = (formId === 'modal-cta-form') ? activeCtaSource : 'inline_form';
@@ -486,8 +514,8 @@
                 email: emailVal,
                 firstName: nameVal,
                 phoneNumber: phoneVal,
-                hoc_van: eduVal,
-                tieng_anh: engVal,
+                hoc_van: eduText || eduVal,
+                tieng_anh: engText || engVal,
                 khach_note: combinedNote,
                 chuong_trinh: chuongTrinhVal
             };
@@ -499,8 +527,8 @@
                 email: emailVal,
                 source: sourceVal,
                 type: (formId === 'modal-cta-form') ? "form_dang_ky_modal" : "form_dang_ky",
-                hoc_van: eduVal,
-                tieng_anh: engVal,
+                hoc_van: eduText || eduVal,
+                tieng_anh: engText || engVal,
                 nhu_cau: (msgVal ? msgVal + " | " : "") + "Submit từ CTA: " + ctaSource,
                 chuong_trinh: chuongTrinhVal
             };
@@ -549,6 +577,9 @@
                             form_type: formId === 'modal-cta-form' ? 'modal' : 'inline'
                         });
                     }
+                    if (typeof gtag_report_conversion === 'function') {
+                        gtag_report_conversion();
+                    }
                 })
                 .catch(err => {
                     console.error('Lỗi tổng thể submit form:', err);
@@ -576,11 +607,29 @@
     function openRegModal(ctaSource) {
         if (!regModal) return;
 
+        let resolvedSource = 'general_cta';
         if (ctaSource) {
-            activeCtaSource = ctaSource;
-        } else {
-            activeCtaSource = 'general_cta';
+            if (typeof ctaSource === 'object' && ctaSource.innerText) {
+                resolvedSource = ctaSource.innerText.replace(/\s+/g, ' ').trim();
+            } else if (typeof ctaSource === 'string') {
+                let el = document.getElementById(ctaSource) || 
+                         document.querySelector('.' + ctaSource) || 
+                         document.querySelector(`[data-cta="${ctaSource}"]`);
+                
+                if (!el && ctaSource === 'tour_footer_cta') {
+                    el = document.querySelector('.tour-footer-btn');
+                }
+                
+                if (el && el.innerText) {
+                    resolvedSource = el.innerText.replace(/\s+/g, ' ').trim();
+                } else {
+                    resolvedSource = ctaSource;
+                }
+            } else {
+                resolvedSource = String(ctaSource);
+            }
         }
+        activeCtaSource = resolvedSource;
 
         // Reset form visibility in case it was submitted successfully before
         const modalForm = document.getElementById('modal-cta-form');
@@ -620,8 +669,7 @@
             // But let's follow user: "các CTA nhấp vào sẽ hiện popup"
             e.preventDefault();
             e.stopPropagation();
-            const sourceId = cta.id || cta.getAttribute('data-cta') || 'general_dang_ky';
-            openRegModal(sourceId);
+            openRegModal(cta);
         });
     });
 
@@ -1113,7 +1161,7 @@
                 font-weight: 700;
                 cursor: pointer;
                 box-shadow: 0 4px 16px rgba(171, 14, 0, 0.3);
-                z-index: 9999;
+                z-index: 99;
                 opacity: 0;
                 pointer-events: none;
                 transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, background-color 0.2s ease, box-shadow 0.2s ease;
@@ -1182,7 +1230,16 @@
             }
         }
 
-        window.addEventListener('scroll', checkScroll, { passive: true });
+        let isBackToTopThrottled = false;
+        window.addEventListener('scroll', () => {
+            if (!isBackToTopThrottled) {
+                isBackToTopThrottled = true;
+                requestAnimationFrame(() => {
+                    checkScroll();
+                    isBackToTopThrottled = false;
+                });
+            }
+        }, { passive: true });
         
         // Scroll to top on click
         btn.addEventListener('click', () => {
@@ -1424,11 +1481,11 @@ function closeTourModal() {
     }, 500);
 }
 
-function openBookingModalFromTour() {
+function openBookingModalFromTour(btn) {
     closeTourModal();
     setTimeout(() => {
         if (typeof window.openRegModal === 'function') {
-            window.openRegModal('tour_footer_cta');
+            window.openRegModal(btn || 'tour_footer_cta');
         }
     }, 300);
 }
@@ -1507,147 +1564,305 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-/* ─── Precision Trackpad-Aware Smooth Scroll ─── */
-(function () {
-    if (typeof window === 'undefined') return;
+// Remnants of old custom smooth scroll removed to allow native compositor-level smooth scrolling
 
-    const scrollContainers = new Map();
+    /* ─── DYNAMIC DEGREE FLIPPING MODAL ─── */
+    function initDegreeModal() {
+        const wraps = document.querySelectorAll('.proof-degree-wrap');
+        if (wraps.length === 0) return;
 
-    function findScrollableParent(el, deltaY) {
-        while (el && el !== document.body && el !== document.documentElement) {
-            const style = window.getComputedStyle(el);
-            const overflowY = style.overflowY || style.overflow || '';
-            const isScrollable = overflowY === 'auto' || overflowY === 'scroll';
+        // Set cursor to pointer for the wrap to indicate clickability
+        wraps.forEach(w => {
+            w.style.cursor = 'pointer';
+        });
 
-            if (isScrollable && el.scrollHeight > el.clientHeight) {
-                const canScrollDown = deltaY > 0 && el.scrollTop + el.clientHeight < el.scrollHeight - 1;
-                const canScrollUp = deltaY < 0 && el.scrollTop > 1;
-                if (canScrollDown || canScrollUp) {
-                    return el;
+        // Create modal HTML dynamically
+        const modalHtml = `
+            <div class="degree-modal" id="degree-modal" role="dialog" aria-modal="true" aria-label="Xem mẫu văn bằng">
+                <div class="degree-modal-overlay" id="degree-modal-overlay"></div>
+                <div class="degree-modal-container">
+                    <button class="degree-modal-close" id="degree-modal-close" aria-label="Đóng">✕</button>
+                    <div class="degree-card-container" id="degree-card-container">
+                        <div class="degree-card-inner" id="degree-card-inner">
+                            <div class="degree-card-front">
+                                <img id="degree-modal-img-front" src="" alt="Mặt trước văn bằng" />
+                            </div>
+                            <div class="degree-card-back">
+                                <img id="degree-modal-img-back" src="https://ideas.edu.vn/wp-content/uploads/2025/11/Sample_page-0002.webp" alt="Mặt sau văn bằng" />
+                            </div>
+                        </div>
+                    </div>
+                    <button class="degree-modal-flip-btn" id="degree-modal-flip-btn">
+                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="margin-right: 6px; vertical-align: middle;">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5" />
+                        </svg>
+                        <span id="degree-modal-flip-text">Lật mặt sau</span>
+                    </button>
+                    <div class="degree-modal-hint">Bấm vào văn bằng hoặc nút lật để xem mặt trước/sau</div>
+                </div>
+            </div>
+        `;
+
+        // Append modal to body
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = modalHtml.trim();
+        const modalEl = tempDiv.firstChild;
+        document.body.appendChild(modalEl);
+
+        const overlay = document.getElementById('degree-modal-overlay');
+        const closeBtn = document.getElementById('degree-modal-close');
+        const cardContainer = document.getElementById('degree-card-container');
+        const cardInner = document.getElementById('degree-card-inner');
+        const flipBtn = document.getElementById('degree-modal-flip-btn');
+        const flipText = document.getElementById('degree-modal-flip-text');
+        const imgFront = document.getElementById('degree-modal-img-front');
+
+        function openModal(src) {
+            imgFront.src = src;
+            cardInner.classList.remove('flipped');
+            flipText.textContent = 'Lật mặt sau';
+            modalEl.classList.add('open');
+            lockScroll();
+        }
+
+        function closeModal() {
+            modalEl.classList.remove('open');
+            unlockScroll();
+        }
+
+        function toggleFlip() {
+            const isFlipped = cardInner.classList.toggle('flipped');
+            flipText.textContent = isFlipped ? 'Lật mặt trước' : 'Lật mặt sau';
+        }
+
+        // Add click listener to wraps
+        wraps.forEach(w => {
+            w.addEventListener('click', (e) => {
+                // Prevent trigger other default behaviors
+                e.preventDefault();
+                const img = w.querySelector('.proof-degree-img');
+                if (img) {
+                    openModal(img.src);
                 }
-            }
-            el = el.parentElement;
-        }
+            });
+        });
 
-        // Fallback to scrolling element (documentElement / body)
-        const docEl = document.scrollingElement || document.documentElement;
-        if (docEl.scrollHeight > docEl.clientHeight) {
-            const canScrollDown = deltaY > 0 && window.scrollY + window.innerHeight < docEl.scrollHeight - 1;
-            const canScrollUp = deltaY < 0 && window.scrollY > 1;
-            if (canScrollDown || canScrollUp) {
-                return docEl;
+        // Close listeners
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+
+        // Flip listeners
+        cardContainer.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFlip();
+        });
+        flipBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFlip();
+        });
+
+        // Escape key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalEl.classList.contains('open')) {
+                closeModal();
             }
-        }
-        return null;
+        });
     }
 
-    function initSmoothScroll() {
-        // Disable CSS smooth scroll to prevent double-smoothing/jitter conflict with JS
-        document.documentElement.style.scrollBehavior = 'auto';
+    /* ─── Scroll Spy – Highlight Active Nav Link ─── */
+    function initScrollSpy() {
+        const spySections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.header-nav .nav-link[href^="#"], .mobile-menu .nav-link[href^="#"]');
 
-        window.addEventListener('wheel', (e) => {
-            // Detect trackpads and smooth wheel mice (Precision trackpads use float values or have horizontal movement)
-            const isTrackpad = e.deltaX !== 0 || (e.deltaY !== 0 && (e.deltaY % 1 !== 0 || Math.abs(e.deltaY) < 15));
-            if (isTrackpad) {
-                return; // Let native trackpad inertia handle it
-            }
-
-            const container = findScrollableParent(e.target, e.deltaY);
-            if (!container) return;
-
-            e.preventDefault();
-
-            const actualScroll = container === document.documentElement || container === document.scrollingElement
-                ? window.scrollY
-                : container.scrollTop;
-
-            let state = scrollContainers.get(container);
-            if (!state) {
-                state = {
-                    target: actualScroll,
-                    current: actualScroll,
-                    animating: false
-                };
-                scrollContainers.set(container, state);
-            } else {
-                const diff = Math.abs(actualScroll - state.current);
-                if (!state.animating || diff > 10) {
-                    state.target = actualScroll;
-                    state.current = actualScroll;
-                    if (diff > 10) {
-                        state.animating = false;
+        if ('IntersectionObserver' in window && spySections.length > 0) {
+            const spyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            const href = link.getAttribute('href');
+                            const isActive = href === '#' + id;
+                            link.classList.toggle('active', isActive);
+                        });
                     }
-                }
+                });
+            }, {
+                rootMargin: '-30% 0px -60% 0px' // Trigger active state when section takes up the middle part of viewport
+            });
+
+            spySections.forEach(section => spyObserver.observe(section));
+        }
+    }
+
+    /* ─── Workshop Tabs Switcher ─── */
+    function initWorkshopTabs() {
+        const tabBtns = document.querySelectorAll('.workshop-tab-btn');
+        const tabContents = document.querySelectorAll('.workshop-tab-content');
+
+        if (tabBtns.length === 0 || tabContents.length === 0) return;
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.dataset.tab;
+
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                btn.classList.add('active');
+                const targetContent = document.getElementById(targetTab);
+                if (targetContent) targetContent.classList.add('active');
+            });
+        });
+    }
+
+    /* ─── VIETNAM GRADUATION CEREMONY MODAL ─── */
+    function initVnGradModal() {
+        const triggers = document.querySelectorAll('#vn-graduation-trigger');
+        if (triggers.length === 0) return;
+
+        const modalHtml = `
+            <div class="vn-grad-modal" id="vn-grad-modal" role="dialog" aria-modal="true" aria-label="Lễ tốt nghiệp tại Việt Nam">
+                <div class="vn-grad-overlay" id="vn-grad-overlay"></div>
+                <div class="vn-grad-container">
+                    <button class="vn-grad-close" id="vn-grad-close" aria-label="Đóng">✕</button>
+                    <div class="vn-grad-header">
+                        <span class="vn-grad-badge">HÀNH TRÌNH TỐT NGHIỆP</span>
+                        <h3>Lễ Tốt Nghiệp tại Việt Nam</h3>
+                        <p>Đừng lo nếu bạn không đi Thụy Sĩ thì IDEAS cùng trường tổ chức Lễ tốt nghiệp tại Việt Nam. Hãy xem qua các Lễ tốt nghiệp nổi bật đã diễn ra:</p>
+                    </div>
+                    <div class="vn-grad-grid">
+                        <div class="vn-grad-card">
+                            <div class="vn-grad-img-wrap">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp" alt="Lễ tốt nghiệp MBA/EMBA">
+                                <span class="vn-grad-date">27/12/2025</span>
+                                <a class="vn-grad-play-btn" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN" target="_blank" aria-label="Xem video">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="vn-grad-info">
+                                <h4>Lễ tốt nghiệp MBA/EMBA</h4>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-graduation-cap"></i> Chương trình: <strong>MBA/EMBA</strong></p>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-earth-oceania"></i> Trường: <strong>Swiss UMEF</strong></p>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-location-dot"></i> Địa điểm: <strong>Tp. Hồ Chí Minh</strong></p>
+                            </div>
+                        </div>
+                        <div class="vn-grad-card">
+                            <div class="vn-grad-img-wrap">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/07/ltn72025.webp" alt="Lễ tốt nghiệp Global MBA - DBA">
+                                <span class="vn-grad-date">26/07/2025</span>
+                                <a class="vn-grad-play-btn" href="https://ideas.edu.vn/wp-content/uploads/2025/07/ltn72025.webp" target="_blank" aria-label="Xem ảnh">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="vn-grad-info">
+                                <h4>Lễ tốt nghiệp Global MBA - DBA</h4>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-graduation-cap"></i> Chương trình: <strong>Global MBA - DBA</strong></p>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-earth-oceania"></i> Trường: <strong>Ascencia Business School</strong></p>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-location-dot"></i> Địa điểm: <strong>Eden Star Hotel - HCMC</strong></p>
+                            </div>
+                        </div>
+                        <div class="vn-grad-card">
+                            <div class="vn-grad-img-wrap">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2024/11/8X1A9328-1-1.jpg" alt="Lễ tốt nghiệp Global MBA - DBA">
+                                <span class="vn-grad-date">23/11/2024</span>
+                                <a class="vn-grad-play-btn" href="https://youtu.be/hmVxOq5jkeM?si=gR-YOgFi2KQJftr9" target="_blank" aria-label="Xem video">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="vn-grad-info">
+                                <h4>Lễ tốt nghiệp Global MBA - DBA</h4>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-graduation-cap"></i> Chương trình: <strong>Global MBA - DBA</strong></p>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-earth-oceania"></i> Trường: <strong>Ascencia Business School</strong></p>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-location-dot"></i> Địa điểm: <strong>Viện IDEAS - Việt Nam</strong></p>
+                            </div>
+                        </div>
+                        <div class="vn-grad-card">
+                            <div class="vn-grad-img-wrap">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2024/10/Totnghiepumef.jpg" alt="Lễ tốt nghiệp EMBA & Online MBA">
+                                <span class="vn-grad-date">26/10/2024</span>
+                                <a class="vn-grad-play-btn" href="https://youtu.be/fBf5YcaMxDY?si=eJDfqKWc4HxT_TmS" target="_blank" aria-label="Xem video">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="vn-grad-info">
+                                <h4>Lễ tốt nghiệp EMBA & Online MBA</h4>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-graduation-cap"></i> Chương trình: <strong>EMBA &amp; Online MBA</strong></p>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-earth-oceania"></i> Trường: <strong>Swiss UMEF</strong></p>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-location-dot"></i> Địa điểm: <strong>Viện IDEAS - Việt Nam</strong></p>
+                            </div>
+                        </div>
+                        <div class="vn-grad-card">
+                            <div class="vn-grad-img-wrap">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2024/01/416256674_837845658141991_5379123310787471174_n.jpg" alt="Lễ tốt nghiệp Global MBA - DBA">
+                                <span class="vn-grad-date">06/01/2024</span>
+                                <a class="vn-grad-play-btn" href="https://youtu.be/Dc78ClToNRo?si=kfg00KZ6gYpOWwTI" target="_blank" aria-label="Xem video">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="vn-grad-info">
+                                <h4>Lễ tốt nghiệp Global MBA - DBA</h4>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-graduation-cap"></i> Chương trình: <strong>Global MBA - DBA</strong></p>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-earth-oceania"></i> Trường: <strong>Ascencia Business School</strong></p>
+                                <p class="vn-grad-meta"><i class="fa-solid fa-location-dot"></i> Địa điểm: <strong>Viện IDEAS - Việt Nam</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = modalHtml.trim();
+        const modalEl = tempDiv.firstChild;
+        document.body.appendChild(modalEl);
+
+        const overlay = document.getElementById('vn-grad-overlay');
+        const closeBtn = document.getElementById('vn-grad-close');
+
+        function openModal() {
+            modalEl.classList.add('open');
+            if (typeof lockScroll === 'function') {
+                lockScroll();
             }
+        }
 
-            // Accumulate target scroll (scroll speed multiplier can be customized, 1.1 makes it feel responsive)
-            const maxScroll = container === document.documentElement || container === document.scrollingElement
-                ? container.scrollHeight - window.innerHeight
-                : container.scrollHeight - container.clientHeight;
-
-            state.target = Math.max(0, Math.min(maxScroll, state.target + e.deltaY * 1.1));
-
-            if (!state.animating) {
-                state.animating = true;
-
-                const animate = () => {
-                    const s = scrollContainers.get(container);
-                    if (!s) return;
-
-                    // Linear interpolation (lerp) easing factor
-                    // 0.075 is a sweet spot for premium, smooth decelerating momentum scrolling
-                    s.current += (s.target - s.current) * 0.075;
-
-                    if (container === document.documentElement || container === document.scrollingElement) {
-                        window.scrollTo(0, Math.round(s.current));
-                    } else {
-                        container.scrollTop = Math.round(s.current);
-                    }
-
-                    if (Math.abs(s.target - s.current) > 0.5) {
-                        requestAnimationFrame(animate);
-                    } else {
-                        s.current = s.target;
-                        if (container === document.documentElement || container === document.scrollingElement) {
-                            window.scrollTo(0, s.target);
-                        } else {
-                            container.scrollTop = s.target;
-                        }
-                        s.animating = false;
-                    }
-                };
-
-                requestAnimationFrame(animate);
+        function closeModal() {
+            modalEl.classList.remove('open');
+            if (typeof unlockScroll === 'function') {
+                unlockScroll();
             }
-        }, { passive: false });
+        }
 
-        // Sync state if scrolled by dragging scrollbar or programmatic scroll
-        document.addEventListener('scroll', (e) => {
-            const target = e.target;
-            if (!target || target === document || target === document.documentElement || target === document.body) {
-                const docEl = document.scrollingElement || document.documentElement;
-                const state = scrollContainers.get(docEl);
-                if (state && !state.animating) {
-                    state.current = window.scrollY;
-                    state.target = window.scrollY;
-                }
-                return;
-            }
+        triggers.forEach(t => {
+            t.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openModal();
+            });
+        });
 
-            if (target instanceof HTMLElement) {
-                const state = scrollContainers.get(target);
-                if (state && !state.animating) {
-                    state.current = target.scrollTop;
-                    state.target = target.scrollTop;
-                }
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (overlay) overlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalEl.classList.contains('open')) {
+                closeModal();
             }
-        }, { capture: true, passive: true });
+        });
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initSmoothScroll);
+        document.addEventListener('DOMContentLoaded', () => {
+            initDegreeModal();
+            initVnGradModal();
+            initScrollSpy();
+            initWorkshopTabs();
+        });
     } else {
-        initSmoothScroll();
+        initDegreeModal();
+        initVnGradModal();
+        initScrollSpy();
+        initWorkshopTabs();
     }
 })();
 

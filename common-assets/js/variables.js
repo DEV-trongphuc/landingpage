@@ -45,7 +45,7 @@ const IDEAS_DATA = {
             country: "Thụy Sĩ",
             subjects: "<b>180</b> ECTS - <b>34</b> môn học và Luận văn tốt nghiệp",
             duration: "36 tháng",
-            tagline: "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thụy Sĩ",
+            tagline: "Swiss UMEF: Đại học tư thục đầu tiên tại Geneva đạt Kiểm định Liên bang cao nhất Thụy Sĩ (SAC) - công nhận chính thức bởi Hội đồng Giáo dục Thụy Sĩ",
             link: "/fullbba.html",
             experience: [
                 "Tốt nghiệp THPT hoặc tương đương",
@@ -181,7 +181,7 @@ const IDEAS_DATA = {
                 "2 buổi chuyên đề/môn (Chủ nhật)",
             ],
             tagline:
-                "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thuỵ Sĩ - Swiss Accreditation Council",
+                "Swiss UMEF: Đại học tư thục đầu tiên tại Geneva đạt Kiểm định Liên bang cao nhất Thụy Sĩ (SAC) - công nhận chính thức bởi Hội đồng Giáo dục Thụy Sĩ",
             link: "/swiss-umef-online-mba",
             description:
                 "Chương trình MBA Online phù hợp cho người bận rộn. Bằng cấp được công nhận bởi Hội đồng Kiểm định Liên bang Thụy Sĩ, đảm bảo giá trị quốc tế, mang đến kiến thức thực tiễn và cập nhật theo xu hướng kinh doanh toàn cầu.",
@@ -478,7 +478,7 @@ const IDEAS_DATA = {
                 "2 buổi chuyên đề/môn (Chủ nhật)",
             ],
             tagline:
-                "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thuỵ Sĩ - Swiss Accreditation Council",
+                "Swiss UMEF: Đại học tư thục đầu tiên tại Geneva đạt Kiểm định Liên bang cao nhất Thụy Sĩ (SAC) - công nhận chính thức bởi Hội đồng Giáo dục Thụy Sĩ",
             link: "/swiss-umef-executive-mba",
             description:
                 "Chương trình EMBA Online phù hợp cho người bận rộn. Bằng cấp được công nhận bởi Hội đồng Kiểm định Liên bang Thụy Sĩ, đảm bảo giá trị quốc tế, mang đến kiến thức thực tiễn và cập nhật theo xu hướng kinh doanh toàn cầu.",
@@ -747,7 +747,7 @@ const IDEAS_DATA = {
                 "2 buổi chuyên đề/môn (Chủ nhật)",
             ],
             tagline:
-                "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thuỵ Sĩ - Swiss Accreditation Council",
+                "Swiss UMEF: Đại học tư thục đầu tiên tại Geneva đạt Kiểm định Liên bang cao nhất Thụy Sĩ (SAC) - công nhận chính thức bởi Hội đồng Giáo dục Thụy Sĩ",
             link: "/swiss-umef-msc-ai",
             description:
                 "Chương trình AI được thiết kế đặc biệt cho những nhà quản trị kinh doanh, những người muốn khám phá và khai thác tiềm năng của trí tuệ nhân tạo trong quản lý doanh nghiệp",
@@ -1001,7 +1001,7 @@ const IDEAS_DATA = {
             country: "Thụy Sĩ",
             subjects: "<b>90</b> ECTS - <b>12</b> môn học và Luận văn tốt nghiệp",
             duration: "16-18 tháng",
-            tagline: "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thụy Sĩ",
+            tagline: "Swiss UMEF: Đại học tư thục đầu tiên tại Geneva đạt Kiểm định Liên bang cao nhất Thụy Sĩ (SAC) - công nhận chính thức bởi Hội đồng Giáo dục Thụy Sĩ",
             link: "/mbainai.html",
             experience: [
                 "Tốt nghiệp Đại học",
@@ -1311,8 +1311,8 @@ const IDEAS_DATA = {
                 "https://ideas.edu.vn/wp-content/uploads/2025/03/NHP_4840.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/03/NHP_4799.jpg",
             ],
-            level: "MBA",
-            avatar: "https://ideas.edu.vn/wp-content/uploads/2025/09/emba.png.webp",
+            level: "BBA",
+            avatar: "https://ideas.edu.vn/wp-content/uploads/2026/02/TOPUP.webp",
             name: "TOP-UP BBA",
             school: "Swiss UMEF",
             subjects: "<b>60</b> tín chỉ ECTS - <b>10</b> môn và capstone",
@@ -1343,7 +1343,7 @@ const IDEAS_DATA = {
                 "2 buổi chuyên đề/môn (Chủ nhật)",
             ],
             tagline:
-                "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thuỵ Sĩ - Swiss Accreditation Council",
+                "Swiss UMEF: Đại học tư thục đầu tiên tại Geneva đạt Kiểm định Liên bang cao nhất Thụy Sĩ (SAC) - công nhận chính thức bởi Hội đồng Giáo dục Thụy Sĩ",
             link: "/swiss-umef-executive-mba",
             description:
                 "Chương trình liên thông lên Cử nhân trong 1 năm đào tạo liên thông trực tuyến Cử nhân Quản trị Kinh doanh, đừng để tấm bằng Cử nhân là rào cản trước mọi con đường thăng tiến của bạn!",
@@ -1395,7 +1395,7 @@ const IDEAS_DATA = {
             },
             degree: {
                 back: "https://ideas.edu.vn/wp-content/uploads/2025/11/Sample_page-0002.webp",
-                front: "https://vtci.edu.vn/wp-content/uploads/2025/07/bba-degree.jpg",
+                front: "https://ideas.edu.vn/wp-content/uploads/2026/06/bba-degree.webp",
                 transcript:
                     "https://ideas.edu.vn/wp-content/uploads/2025/11/Sample_page-0003.webp",
             },

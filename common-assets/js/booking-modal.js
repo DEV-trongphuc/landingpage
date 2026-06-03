@@ -387,7 +387,29 @@
         // note_dat_lich: program + optional education/english
         const eduVal = eduEl ? eduEl.value : '';
         const engVal = engEl ? engEl.value : '';
-        const noteParts = [programVal, eduVal, engVal].filter(Boolean);
+
+        const getSelectText = (el) => {
+            if (!el) return '';
+            const val = el.value;
+            if (!val) return '';
+            if (el.selectedIndex >= 0) return el.options[el.selectedIndex].text;
+            const mapping = {
+                'highschool': 'THPT',
+                'college': 'Cao đẳng',
+                'bachelor': 'Cử nhân',
+                'master': 'Thạc sĩ',
+                'other': 'Khác',
+                'below-5.0': 'Dưới IELTS 5.0',
+                '5.0-5.5': 'IELTS 5.0 - 5.5',
+                '6.0-plus': 'IELTS 6.0+'
+            };
+            return mapping[val] || val;
+        };
+
+        const eduText = getSelectText(eduEl);
+        const engText = getSelectText(engEl);
+
+        const noteParts = [programVal, eduText || eduVal, engText || engVal].filter(Boolean);
         const noteDatLich = noteParts.join(' | ');
 
         // Tự động phân loại source và chuong_trinh theo pathname
@@ -443,8 +465,8 @@
             email: emailVal,
             source: sourceVal,
             type: "dat_lich_tu_van",
-            hoc_van: eduVal,
-            tieng_anh: engVal,
+            hoc_van: eduText || eduVal,
+            tieng_anh: engText || engVal,
             time_dat_lich: timeDatLich,
             chuong_trinh: chuongTrinhVal,
             nhu_cau: `Đặt lịch tư vấn: ${timeDatLich}`
@@ -509,6 +531,9 @@
         }));
         
         console.log('Event Sent: booking_success');
+        if (typeof gtag_report_conversion === 'function') {
+            gtag_report_conversion();
+        }
         // -----------------------
 
         // Fill success screen
