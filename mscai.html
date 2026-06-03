@@ -2139,7 +2139,7 @@
             width: 100vw;
             margin-left: calc(-50vw + 50%);
             margin-bottom: 0 !important;
-            padding: 150px calc(50vw - 50%) 150px !important;
+            padding: clamp(64px, 10vw, 150px) calc(50vw - 50%) clamp(64px, 10vw, 150px) !important;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-bottom: none;
             overflow: hidden;
@@ -7423,87 +7423,87 @@
 
         const QUIZ_QUESTIONS = [
             {
-                "question": "Mong muốn làm việc thực tế của bạn với công nghệ Trí tuệ nhân tạo (AI) là gì?",
+                "question": "Điều gì đang thực sự cản trở bước thăng tiến của bạn ngay lúc này?",
                 "options": [
                     {
-                        "text": "Lập trình Python, thiết lập giải thuật học máy (machine learning) và xây dựng kiến trúc dữ liệu.",
-                        "scores": { "MSC_AI": 5 }
+                        "text": "Tôi làm kỹ thuật giỏi — nhưng không được thăng lên vai trò lãnh đạo vì thiếu bằng quản lý và tư duy chiến lược.",
+                        "scores": { "MSC_AI": 5, "MBA_AI": 3 }
                     },
                     {
-                        "text": "Sử dụng các công cụ AI có sẵn dạng no-code/low-code để tối ưu hóa quy trình kinh doanh và tăng năng suất.",
-                        "scores": { "MBA_AI": 5 }
+                        "text": "Tôi đang quản lý team nhưng thiếu framework ra quyết định bài bản — mọi thứ đang chạy theo cảm tính.",
+                        "scores": { "MBA": 5, "EMBA": 4, "MBA_AI": 3 }
                     },
                     {
-                        "text": "Chỉ quan tâm quản trị kinh doanh cốt lõi, không cần học chuyên sâu công nghệ.",
-                        "scores": { "MBA": 4, "EMBA": 4, "BBA": 3 }
+                        "text": "Bằng cấp trong nước không được nhà tuyển dụng quốc tế hoặc đối tác nước ngoài công nhận.",
+                        "scores": { "MSC_AI": 4, "MBA": 4, "BBA": 3, "FULL_BBA": 3 }
                     }
                 ]
             },
             {
-                "question": "Nền tảng toán học hoặc lập trình hiện tại của bạn?",
+                "question": "Trong 18 tháng tới, bạn muốn đạt được điều gì cụ thể nhất?",
                 "options": [
                     {
-                        "text": "Đã có nền tảng công nghệ/lập trình (hoặc sẵn sàng học toán thuật toán, code Python, SQL).",
+                        "text": "Lên được vị trí CTO, Tech Lead hoặc AI Architect — và có đủ bằng cấp quốc tế để chứng minh năng lực.",
                         "scores": { "MSC_AI": 5 }
                     },
                     {
-                        "text": "Không biết lập trình và muốn học cách dùng các ứng dụng AI no-code kéo thả.",
+                        "text": "Dẫn dắt dự án chuyển đổi số hoặc ứng dụng AI cho doanh nghiệp mà không cần biết lập trình sâu.",
+                        "scores": { "MBA_AI": 5, "MBA": 2 }
+                    },
+                    {
+                        "text": "Tự tin điều hành chiến lược hoặc mở rộng kinh doanh với bằng MBA quốc tế.",
+                        "scores": { "EMBA": 5, "MBA": 5 }
+                    }
+                ]
+            },
+            {
+                "question": "Khi ngồi trong cuộc họp với sếp hoặc đối tác nước ngoài, bạn cảm thấy điều gì?",
+                "options": [
+                    {
+                        "text": "Tôi hiểu kỹ thuật hơn ai hết — nhưng không được mời vào bàn quyết định chiến lược vì thiếu tầm lãnh đạo.",
+                        "scores": { "MSC_AI": 5, "MBA_AI": 2 }
+                    },
+                    {
+                        "text": "Tôi quản lý được con người — nhưng phần phân tích dữ liệu khiến tôi bị lép vế.",
                         "scores": { "MBA_AI": 5, "MBA": 3 }
                     },
                     {
-                        "text": "Muốn tập trung vào tư duy quản lý chiến lược và giao tiếp lãnh đạo.",
-                        "scores": { "EMBA": 5, "MBA": 4 }
+                        "text": "Tôi có kinh nghiệm dày dạn nhưng thiếu bằng cấp quốc tế khiến vị thế bị giảm.",
+                        "scores": { "EMBA": 5, "MBA": 4, "DUAL_DBA": 3 }
                     }
                 ]
             },
             {
-                "question": "Vị trí công việc mục tiêu của bạn sau tốt nghiệp là gì?",
+                "question": "Nền tảng của bạn với AI và công nghệ hiện tại như thế nào?",
                 "options": [
                     {
-                        "text": "CTO, Trưởng bộ phận Dữ liệu, Chuyên gia phân tích dữ liệu lớn hoặc Kỹ sư AI.",
+                        "text": "Đã biết code (Python, SQL hoặc tương đương) — muốn học Machine Learning và AI ứng dụng thực tế.",
                         "scores": { "MSC_AI": 5 }
                     },
                     {
-                        "text": "CEO, Giám đốc chuyển đổi số, Quản lý dự án công nghệ hoặc trưởng bộ phận ứng dụng AI.",
-                        "scores": { "MBA_AI": 5 }
+                        "text": "Không biết lập trình nhưng muốn ứng dụng AI bằng công cụ no-code vào công việc quản lý.",
+                        "scores": { "MBA_AI": 5, "MBA": 2 }
                     },
                     {
-                        "text": "Doanh chủ, Giám đốc điều hành cấp cao điều hành chiến lược chung doanh nghiệp.",
-                        "scores": { "EMBA": 5, "DUAL_DBA": 2 }
+                        "text": "Muốn tập trung vào chiến lược kinh doanh — AI chỉ là một phần trong bức tranh lớn.",
+                        "scores": { "MBA": 4, "EMBA": 5 }
                     }
                 ]
             },
             {
-                "question": "Trình độ học vấn cao nhất hiện tại của bạn là gì?",
+                "question": "Tiêu chí QUAN TRỌNG NHẤT khi bạn chọn chương trình học là gì?",
                 "options": [
                     {
-                        "text": "Đã tốt nghiệp Đại học  chuyên ngành bất kỳ.",
-                        "scores": { "MSC_AI": 5, "MBA_AI": 4, "MBA": 4, "EMBA": 3 }
+                        "text": "Học thực chiến với dự án dữ liệu thật — bằng được công nhận tại 190+ quốc gia.",
+                        "scores": { "MSC_AI": 5, "MBA_AI": 2 }
                     },
                     {
-                        "text": "Đã tốt nghiệp Cao đẳng, Trung cấp muốn học liên thông cử nhân.",
-                        "scores": { "BBA": 5 }
+                        "text": "Học linh hoạt 100% online, không ảnh hưởng công việc — hỗ trợ trả góp 0% lãi suất.",
+                        "scores": { "MBA": 5, "MBA_AI": 4, "EMBA": 3, "BBA": 3 }
                     },
                     {
-                        "text": "Đã tốt nghiệp Thạc sĩ và muốn học lên Tiến sĩ.",
-                        "scores": { "DUAL_DBA": 5 }
-                    }
-                ]
-            },
-            {
-                "question": "Phương thức học tập và nghiên cứu nào phù hợp nhất với bạn?",
-                "options": [
-                    {
-                        "text": "Học sâu về kỹ thuật, thực hành dự án dữ liệu thực tế và viết báo cáo khoa học định hướng ứng dụng kỹ thuật.",
-                        "scores": { "MSC_AI": 5 }
-                    },
-                    {
-                        "text": "Học thông qua phân tích các ca kinh doanh thực chiến và các giải pháp quản lý.",
-                        "scores": { "MBA": 5, "MBA_AI": 4, "EMBA": 4 }
-                    },
-                    {
-                        "text": "Viết luận án Tiến sĩ giải quyết vấn đề kinh tế vĩ mô có Giáo sư hướng dẫn 1-1.",
-                        "scores": { "DUAL_DBA": 5 }
+                        "text": "Xây dựng network với lãnh đạo cấp cao — được cộng đồng alumni hỗ trợ suốt sự nghiệp.",
+                        "scores": { "EMBA": 5, "DUAL_DBA": 4, "MBA": 3 }
                     }
                 ]
             }

@@ -8854,3 +8854,68 @@ html.lenis {
 .bk-modal-body::-webkit-scrollbar-thumb:hover {
   background: #cbd5e1;
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   FINAL MOBILE UX POLISH — Grand unified fix
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. Hero headline: no word break */
+.hero-headline,.hero-hl-big,.hero-hl-small{overflow-wrap:break-word;word-break:normal;hyphens:none;}
+
+/* 2. Pain section: compact + no lồi lõm */
+@media (max-width: 640px) {
+  .pain-cards,.pain-grid{gap:12px !important;}
+  .pain-card-v2,.ai-neon-box{padding:20px 16px !important;border-radius:14px !important;}
+  .pain-bottom-row{flex-direction:column !important;gap:16px !important;}
+  .pain-stat-card{padding:24px 20px !important;}
+  .pain-trends{padding:20px !important;}
+  .pain-warning-v2{padding:16px 18px !important;flex-direction:row !important;align-items:flex-start !important;}
+}
+
+/* 3. Gallery header: row on mobile */
+@media (max-width: 640px) {
+  .gallery-header-wrap{flex-direction:column !important;align-items:flex-start !important;gap:16px !important;}
+  .gallery-header-right{flex-direction:row !important;flex-wrap:wrap !important;gap:10px !important;width:100% !important;}
+  .trip-cta-premium,.vn-ceremony-open-btn{flex:1 1 auto !important;justify-content:center !important;white-space:nowrap !important;font-size:0.78rem !important;padding:10px 12px !important;}
+}
+
+/* 4. Sol-stat grid: 2-col small screen */
+@media (max-width: 480px) {
+  .sol-stats-grid,.solution-stats{grid-template-columns:1fr 1fr !important;gap:12px !important;}
+  .sol-stat{padding:24px 16px 20px !important;}
+  .sol-stat-value{font-size:2.2rem !important;}
+  .testi-card-v4{border-radius:16px !important;}
+  .testi-v4-header,.testi-v4-body,.testi-v4-footer{padding:16px !important;}
+  .testi-v4-text{font-size:13px !important;line-height:1.65 !important;}
+}
+
+/* 5. Ecosystem mobile spacing */
+@media (max-width: 640px) {
+  .ecosystem-section{padding-top:56px !important;padding-bottom:56px !important;}
+  .eco-header{margin-bottom:32px !important;}
+}
+
+/* 6. Tablet 769-1024px grid polish */
+@media (min-width:769px) and (max-width:1024px) {
+  .sol-v2-wrap,.enroll-inner{gap:36px !important;}
+  .proof-card-inner{gap:32px !important;padding:40px 36px !important;}
+  .testimonials-grid{grid-template-columns:repeat(2,1fr) !important;gap:20px !important;}
+}
+
+/* 7. CTA button full-width stacking mobile */
+@media (max-width: 480px) {
+  .section-cta,.cta-actions{display:flex !important;flex-direction:column !important;align-items:stretch !important;gap:12px !important;}
+  .section-cta .btn,.cta-actions .btn{width:100% !important;justify-content:center !important;text-align:center !important;}
+}
+
+/* 8. Hero badges: 2-col grid */
+@media (max-width: 480px) {
+  .hero-badges-row{grid-template-columns:1fr 1fr !important;gap:6px !important;}
+  .info-badge{font-size:0.7rem !important;padding:5px 8px !important;text-align:center !important;line-height:1.3 !important;gap:4px !important;}
+}
+
+/* 9. Proof card tablet safe padding */
+@media (max-width: 900px) {
+  .proof-card-inner{padding:28px 20px !important;gap:24px !important;}
+}
