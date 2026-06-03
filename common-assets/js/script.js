@@ -1864,7 +1864,6 @@ document.addEventListener('keydown', (e) => {
         initScrollSpy();
         initWorkshopTabs();
     }
-})();
 
 
 
