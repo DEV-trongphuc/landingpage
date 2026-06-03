@@ -714,8 +714,31 @@
         return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
     }
 
+    function replaceEmojisWithIcons() {
+        const iconContainers = document.querySelectorAll('.bk-program-icon');
+        const svgMap = {
+            '📘': '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
+            '🎓': '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>',
+            '💡': '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6M10 22h4"></path></svg>',
+            '👔': '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>',
+            '🤖': '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="12" y1="3" x2="12" y2="9"></line></svg>',
+            '📚': '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><path d="M6 6h10M6 10h10M6 14h10"></path></svg>'
+        };
+
+        iconContainers.forEach(container => {
+            const text = container.textContent.trim();
+            if (svgMap[text]) {
+                container.innerHTML = svgMap[text];
+            }
+        });
+    }
+
     /* ── Init ───────────────────────────── */
     goToStep(1);
+    replaceEmojisWithIcons();
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', replaceEmojisWithIcons);
+    }
     // Initialize components if they are visible (standalone page use case)
     if (modal) {
         initCustomSelects();
