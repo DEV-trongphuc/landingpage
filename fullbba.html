@@ -2791,6 +2791,174 @@
                 display: none;
             }
         }
+
+        /* ═══════════════════════════════════════
+           UI/UX MOBILE & TABLET OPTIMIZATIONS
+        ═══════════════════════════════════════ */
+        @media (max-width: 768px) {
+            /* Hero section badges layout */
+            .hero-badges-row {
+                gap: 8px !important;
+                margin-bottom: 20px !important;
+            }
+            .hero-badges-row .info-badge {
+                padding: 8px 12px !important;
+                font-size: 0.75rem !important;
+                border-radius: 8px !important;
+            }
+            
+            /* Hero section CTA buttons */
+            .hero-cta {
+                flex-direction: column !important;
+                gap: 12px !important;
+                width: 100% !important;
+            }
+            .hero-cta .btn {
+                width: 100% !important;
+                max-width: 320px !important;
+                padding: 12px 20px !important;
+                font-size: 0.92rem !important;
+                justify-content: center !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Accreditation strip on mobile */
+            .hero-accred-strip {
+                padding: 12px 16px !important;
+                gap: 8px !important;
+            }
+            .hero-accred-logos {
+                gap: 12px !important;
+            }
+            .hero-accred-logos img {
+                height: 1.8rem !important;
+            }
+            
+            /* Spacing for sections on mobile */
+            section {
+                padding-top: 48px !important;
+                padding-bottom: 48px !important;
+            }
+            
+            /* Proof section degree sample alignment */
+            .proof-degree-wrap {
+                margin-top: 12px !important;
+                max-width: 260px !important;
+            }
+            .proof-degree-badge {
+                font-size: 8px !important;
+                padding: 6px 14px !important;
+                bottom: -15px !important;
+            }
+            
+            /* Testimonials spacing */
+            .testimonials-title {
+                margin-bottom: 24px !important;
+            }
+            
+            /* Sacombank banner details & spacing */
+            .sacom-banner {
+                padding: 16px 20px !important;
+                gap: 16px !important;
+            }
+            .sacom-headline {
+                font-size: 1rem !important;
+            }
+            .sacom-sub {
+                font-size: 0.8rem !important;
+                line-height: 1.45 !important;
+                margin-bottom: 12px !important;
+            }
+            .sacom-pill {
+                padding: 3px 10px !important;
+                font-size: 0.7rem !important;
+            }
+
+            /* Align and optimize padding on pricing card */
+            .pricing-card-premium {
+                padding: 24px 20px !important;
+                border-radius: 24px !important;
+            }
+            .pricing-card-premium-content {
+                gap: 24px !important;
+            }
+            .pricing-card-premium-right {
+                padding-top: 24px !important;
+                margin-top: 0 !important;
+            }
+            /* Optimize button sizing on mobile/tablet */
+            #premium-cta-bba {
+                padding: 12px 24px !important;
+                font-size: 0.95rem !important;
+                border-radius: 12px !important;
+                max-width: 100% !important;
+            }
+            /* Center headings and align spacing */
+            .pricing-title {
+                margin-bottom: 20px !important;
+            }
+            .scholarship-banner-new {
+                gap: 16px !important;
+                padding: 16px !important;
+                border-radius: 16px !important;
+            }
+            .scholarship-banner-new div:first-child {
+                width: 70px !important;
+                height: 70px !important;
+            }
+            .scholarship-banner-new div:first-child span {
+                font-size: 1.4rem !important;
+            }
+            .scholarship-banner-new div:last-child {
+                font-size: 0.92rem !important;
+            }
+        }
+
+        /* ── Mobile Compact Layout Audit ── */
+        @media (max-width: 480px) {
+            .pricing-card-premium {
+                padding: 20px 16px !important;
+            }
+            .pricing-card-premium-left h4 {
+                font-size: 1.4rem !important;
+            }
+            .pricing-card-premium-right {
+                padding-top: 20px !important;
+            }
+            .pricing-card-premium-right span[style*="font-size: 3rem"] {
+                font-size: 2.2rem !important;
+            }
+            .scholarship-banner-new {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                padding: 16px !important;
+            }
+            .scholarship-banner-new div:first-child {
+                width: 60px !important;
+                height: 60px !important;
+            }
+            .scholarship-banner-new div:last-child {
+                text-align: center !important;
+            }
+        }
+
+        /* High contrast overrides for body p !important from style.css in dark sections */
+        .pain-section p, 
+        .pain-section .pain-sub,
+        .pain-card-v2 p {
+            color: #cbd5e1 !important;
+        }
+        .ecosystem-section p,
+        .eco-card-v2-desc {
+            color: rgba(255, 255, 255, 0.65) !important;
+        }
+        .sacom-sub {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        .sacom-tag {
+            color: rgba(255, 255, 255, 0.85) !important;
+        }
     </style>
 
     <!-- Favicon -->
@@ -4521,7 +4689,7 @@
             </div>
 
             <div class="premium-policy-wrapper"
-                style="max-width: 960px; margin: 0 auto; position: relative; padding: 0 20px;">
+                style="max-width: 980px; margin: 0 auto; position: relative; padding: 0 20px;">
 
                 <!-- Premium Tuition Card -->
                 <div class="pricing-card-premium"
@@ -4731,18 +4899,11 @@
                         </div>
                     </div>
 
-                    <!-- CTA Button -->
-                    <div style="text-align: center;">
-                        <a href="#dang-ky" id="premium-cta-bba"
-                            style="display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 28px; background: #ab0e00; color: white !important; font-size: 1.1rem; font-weight: 800; text-decoration: none; border-radius: 16px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 8px 20px rgba(171, 14, 0, 0.25); border: none;">
-                            <span>Đăng ký tư vấn lộ trình</span>
-                        </a>
-                    </div>
                 </div>
 
                 <!-- Sacombank Installment Banner -->
                 <div class="sacom-banner" aria-label="Hỗ trợ trả góp Sacombank"
-                    style="max-width: 650px; margin: 24px auto 0;">
+                    style="max-width: 980px; margin: 24px auto 48px;">
                     <div class="sacom-left">
                         <div class="sacom-cards">
                             <img decoding="async"
@@ -4773,7 +4934,7 @@
 
                 <!-- Payment Notes -->
                 <div
-                    style="max-width: 650px; margin: 24px auto 0; display: flex; flex-direction: column; gap: 16px; text-align: left;">
+                    style="max-width: 980px; margin: 24px auto 0; display: flex; flex-direction: column; gap: 16px; text-align: left;">
                     <div style="background: #f0f9ff; border-radius: 16px; padding: 20px; box-sizing: border-box;">
                         <h5 style="margin: 0 0 6px 0; font-size: 0.95rem; font-weight: 800; color: #0369a1;">Phương thức
                             nộp học phí</h5>

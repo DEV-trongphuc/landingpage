@@ -8252,3 +8252,23 @@ html.lenis {
     font-size: 16px !important;
   }
 }
+
+/* ═══════════════════════════════════════
+   GLOBAL CONTRAST & RESPONSIVE UX AUDIT
+   Fixing high contrast for dark sections and
+   mobile/tablet alignment globally.
+═══════════════════════════════════════ */
+.sacom-sub {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.sacom-tag {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+.pain-section .pain-sub,
+.pain-card-v2 p {
+  color: #cbd5e1 !important;
+}
+.ecosystem-section .ecosystem-sub,
+.eco-card-v2-desc {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
