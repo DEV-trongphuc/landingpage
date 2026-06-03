@@ -8674,14 +8674,14 @@ html.lenis {
   }
 
   .modal-form {
-    padding: 16px 16px 115px !important;
+    padding: 16px 16px 150px !important;
     /* spacing for sticky footer */
     position: relative !important;
   }
 
   #modal-form-submit-btn {
     position: sticky !important;
-    bottom: 50px !important;
+    bottom: 85px !important;
     z-index: 10 !important;
     margin-top: 16px !important;
     box-shadow: 0 -8px 20px #ffffff, var(--shadow-red) !important;
@@ -9365,9 +9365,7 @@ html.lenis {
    ═══════════════════════════════════════════════════════════ */
 
 /* info-badge on dark/colored hero background → glass white */
-.hero .info-badge,
-.hero-bg+* .info-badge,
-section.hero .info-badge {
+.hero-dark .info-badge {
   background: rgba(255, 255, 255, 0.12) !important;
   border-color: rgba(255, 255, 255, 0.25) !important;
   color: #ffffff !important;
@@ -9376,34 +9374,31 @@ section.hero .info-badge {
   -webkit-backdrop-filter: blur(8px);
 }
 
-.hero .info-badge:hover {
+.hero-dark .info-badge:hover {
   background: rgba(255, 255, 255, 0.2) !important;
   border-color: rgba(255, 255, 255, 0.4) !important;
   transform: translateY(-1px);
 }
 
-.hero .info-badge .icon,
-.hero .info-badge .icon svg {
+.hero-dark .info-badge .icon,
+.hero-dark .info-badge .icon svg {
   color: rgba(255, 255, 255, 0.9) !important;
   stroke: rgba(255, 255, 255, 0.9) !important;
 }
 
 /* hero-accred-strip on colored/dark hero bg → glass dark */
-.hero .hero-accred-strip,
-section.hero .hero-accred-strip {
+.hero-dark .hero-accred-strip {
   background: rgba(0, 0, 0, 0.22) !important;
   border-color: rgba(255, 255, 255, 0.15) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
-.hero .hero-accred-label,
-section.hero .hero-accred-label {
+.hero-dark .hero-accred-label {
   color: rgba(255, 255, 255, 0.7) !important;
 }
 
-.hero .hero-accred-logos img,
-section.hero .hero-accred-logos img {
+.hero-dark .hero-accred-logos img {
   filter: brightness(0) invert(1) opacity(0.85) !important;
 }
 
