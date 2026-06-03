@@ -201,8 +201,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Oswald:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="common-assets/css/style.css?v=1780512612161" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780512612161" />
+    <link rel="stylesheet" href="common-assets/css/style.css?v=1780513650878" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780513650878" />
     <style>
         /* ═══════════════════════════════════════
            PROOF CARD - Premium 2-col design
@@ -5776,7 +5776,7 @@
     ═══════════════════════════════════════ -->
     <div class="bk-modal" id="bk-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="bk-title">
         <div class="bk-overlay" id="bk-overlay"></div>
-        <div class="bk-container" role="document">
+        <div class="bk-container" data-lenis-prevent role="document">
 
             <!-- Close -->
             <button class="bk-close" id="bk-close" aria-label="Đóng modal">
@@ -6174,7 +6174,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
-            <div class="tour-modal-content" id="tour-modal-scrollable">
+            <div class="tour-modal-content" id="tour-modal-scrollable" data-lenis-prevent>
                 <!-- Hero Header -->
                 <div class="tour-modal-hero">
                     <img src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg" class="tour-hero-img"
@@ -6472,8 +6472,8 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.js?v=1780512612161" defer></script>
-    <script src="common-assets/js/booking-modal.js?v=1780512612161" defer></script>
+    <script src="common-assets/js/script.js?v=1780513650878" defer></script>
+    <script src="common-assets/js/booking-modal.js?v=1780513650878" defer></script>
 
 
 
@@ -6874,7 +6874,7 @@
 
     <!-- Quiz Popup HTML -->
     <div class="qz-overlay" id="qz-overlay" role="dialog" aria-modal="true" aria-labelledby="qz-modal-title">
-        <div class="qz-modal" id="qz-modal">
+        <div class="qz-modal" id="qz-modal" data-lenis-prevent>
             <button class="qz-close" id="qz-close" aria-label="Đóng">&#x2715;</button>
 
             <!-- Header -->
@@ -7329,7 +7329,7 @@
     <!-- VN GRADUATION CEREMONY MODAL -->
     <div class="vn-ceremony-modal" id="vn-ceremony-modal" role="dialog" aria-modal="true" aria-label="Lễ tốt nghiệp tại Việt Nam">
         <div class="vn-ceremony-overlay" id="vn-ceremony-overlay"></div>
-        <div class="vn-ceremony-container">
+        <div class="vn-ceremony-container" data-lenis-prevent>
             <div class="vn-ceremony-header">
                 <h2 class="vn-ceremony-title">
                     <svg width="22" height="22" fill="none" stroke="#ab0e00" stroke-width="2" viewBox="0 0 24 24" style="display:inline-block;vertical-align:middle;margin-right:8px;">
@@ -7343,88 +7343,101 @@
                     </svg>
                 </button>
             </div>
-            <div class="vn-ceremony-content">
+            <div class="vn-ceremony-content" data-lenis-prevent>
                 <p style="color:#64748b;font-size:0.9rem;margin-bottom:28px;line-height:1.6;">
                     Những buổi lễ trao bằng <strong>Swiss UMEF</strong> được tổ chức định kỳ tại Thành phố Hồ Chí Minh — nơi học viên chính thức nhận <em>bằng thạc sĩ quốc tế</em> sau hành trình chinh phục chương trình.
                 </p>
                 <div class="vn-timeline">
+<!-- Event 1: 21/04/2026 -->
+                    <div class="vn-timeline-item">
+                        <div class="vn-timeline-badge"></div>
+                        <div class="vn-timeline-date">21/04/2026</div>
+                        <div class="vn-card">
+                            <div class="vn-card-img-wrap">
+                                <img decoding="async"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2026/04/recap_growverth.webp"
+                                    alt="IDEAS x GrowthVerse 2026" loading="lazy">
+                            </div>
+                            <div class="vn-card-info">
+                                <a href="https://www.facebook.com/share/p/18FBbmmySq/"
+                                    target="_blank" rel="noopener" class="vn-card-title">IDEAS x GrowthVerse 2026</a>
+                                <div class="vn-card-meta">
+                                    <p><i class="fa-solid fa-graduation-cap"></i> IDEAS &mdash; Swiss UMEF</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> SIHUB - Hồ Chí Minh</p>
+                                </div>
+                                <a href="https://www.facebook.com/share/p/18FBbmmySq/"
+                                    target="_blank" rel="noopener" class="vn-card-play"
+                                    aria-label="Xem chi tiết">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2: 27/12/2025 -->
                     <div class="vn-timeline-item">
                         <div class="vn-timeline-badge"></div>
                         <div class="vn-timeline-date">27/12/2025</div>
                         <div class="vn-card">
                             <div class="vn-card-img-wrap">
-                                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp" alt="Lễ tốt nghiệp MBA/EMBA 27/12/2025" loading="lazy">
+                                <img decoding="async"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp"
+                                    alt="Lễ tốt nghiệp 27/12/2025" loading="lazy">
                             </div>
                             <div class="vn-card-info">
-                                <a href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN" target="_blank" rel="noopener" class="vn-card-title">Lễ Tốt Nghiệp Khoá MBA/EMBA</a>
+                                <a href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN"
+                                    target="_blank" rel="noopener" class="vn-card-title">Lễ tốt nghiệp 27/12/2025</a>
                                 <div class="vn-card-meta">
-                                    <p><i class="fa-solid fa-graduation-cap"></i> MBA / EMBA &mdash; Swiss UMEF</p>
+                                    <p><i class="fa-solid fa-graduation-cap"></i> MBA/EMBA &mdash; Swiss UMEF</p>
                                     <p><i class="fa-solid fa-location-dot"></i> Tp. Hồ Chí Minh</p>
                                 </div>
-                                <a href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN" target="_blank" rel="noopener" class="vn-card-play" aria-label="Xem ảnh lễ tốt nghiệp">
-                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                                <a href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN"
+                                    target="_blank" rel="noopener" class="vn-card-play"
+                                    aria-label="Xem chi tiết">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
                                 </a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Event 3: 26/10/2024 -->
                     <div class="vn-timeline-item">
                         <div class="vn-timeline-badge"></div>
-                        <div class="vn-timeline-date">10/2025</div>
+                        <div class="vn-timeline-date">26/10/2024</div>
                         <div class="vn-card">
                             <div class="vn-card-img-wrap">
-                                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg" alt="Lễ tốt nghiệp 10/2025" loading="lazy">
+                                <img decoding="async"
+                                    src="https://ideas.edu.vn/wp-content/uploads/2024/10/Totnghiepumef.jpg"
+                                    alt="Lễ tốt nghiệp 26/10/2024" loading="lazy">
                             </div>
                             <div class="vn-card-info">
-                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-title">Lễ Tốt Nghiệp Khoá MBA in AI</a>
+                                <a href="https://www.youtube.com/watch?si=eJDfqKWc4HxT_TmS&v=fBf5YcaMxDY&feature=youtu.be"
+                                    target="_blank" rel="noopener" class="vn-card-title">Lễ tốt nghiệp 26/10/2024</a>
                                 <div class="vn-card-meta">
-                                    <p><i class="fa-solid fa-graduation-cap"></i> MBA in AI &mdash; Swiss UMEF</p>
-                                    <p><i class="fa-solid fa-location-dot"></i> Tp. Hồ Chí Minh</p>
+                                    <p><i class="fa-solid fa-graduation-cap"></i> Swiss UMEF &mdash; MBA/EMBA</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> Viện IDEAS</p>
                                 </div>
-                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-play" aria-label="Xem ảnh">
-                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                                <a href="https://www.youtube.com/watch?si=eJDfqKWc4HxT_TmS&v=fBf5YcaMxDY&feature=youtu.be"
+                                    target="_blank" rel="noopener" class="vn-card-play"
+                                    aria-label="Xem chi tiết">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="vn-timeline-item">
-                        <div class="vn-timeline-badge"></div>
-                        <div class="vn-timeline-date">16/07/2024</div>
-                        <div class="vn-card">
-                            <div class="vn-card-img-wrap">
-                                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg" alt="Lễ tốt nghiệp Khoá 26" loading="lazy">
-                            </div>
-                            <div class="vn-card-info">
-                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-title">Lễ Tốt Nghiệp Khoá 26</a>
-                                <div class="vn-card-meta">
-                                    <p><i class="fa-solid fa-graduation-cap"></i> MBA / EMBA &mdash; Swiss UMEF</p>
-                                    <p><i class="fa-solid fa-location-dot"></i> Tp. Hồ Chí Minh</p>
-                                </div>
-                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-play" aria-label="Xem ảnh">
-                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="vn-timeline-item">
-                        <div class="vn-timeline-badge"></div>
-                        <div class="vn-timeline-date">02/03/2024</div>
-                        <div class="vn-card">
-                            <div class="vn-card-img-wrap">
-                                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6740.jpg" alt="Lễ tốt nghiệp Khoá 25" loading="lazy">
-                            </div>
-                            <div class="vn-card-info">
-                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-title">Lễ Tốt Nghiệp Khoá 25</a>
-                                <div class="vn-card-meta">
-                                    <p><i class="fa-solid fa-graduation-cap"></i> MBA / EMBA &mdash; Swiss UMEF</p>
-                                    <p><i class="fa-solid fa-location-dot"></i> Tp. Hồ Chí Minh</p>
-                                </div>
-                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-play" aria-label="Xem ảnh">
-                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+</div>
                 <div style="position:sticky;bottom:0;background:#fff;padding:16px 0 0;margin-top:32px;border-top:1px solid #f1f5f9;display:flex;gap:12px;justify-content:center;">
                     <button onclick="closeVNCeremonyModal();setTimeout(()=>document.querySelector('.bk-open-btn')?.click(),200);" style="background:linear-gradient(135deg,#8c1000,#c41e00);color:#fff;border:none;padding:13px 28px;border-radius:50px;font-size:0.9rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(171,14,0,0.28);">
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>

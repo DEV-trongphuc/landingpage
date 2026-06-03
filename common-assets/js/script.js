@@ -8,14 +8,12 @@
 
     function lockScroll() {
         document.body.style.overflow = 'hidden';
-        document.documentElement.style.overflow = 'hidden';
         if (window.lenis) {
             window.lenis.stop();
         }
     }
     function unlockScroll() {
         document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
         if (window.lenis) {
             window.lenis.start();
         }
@@ -1760,125 +1758,103 @@ document.addEventListener('keydown', (e) => {
             const modalHtml = `
                 <div class="vn-ceremony-modal" id="vn-ceremony-modal" role="dialog" aria-modal="true" aria-label="Lễ tốt nghiệp tại Việt Nam">
                     <div class="vn-ceremony-overlay" id="vn-ceremony-overlay"></div>
-                    <div class="vn-ceremony-container">
+                    <div class="vn-ceremony-container" data-lenis-prevent>
                         <div class="vn-ceremony-header">
                             <h3 class="vn-ceremony-title">Hành trình tốt nghiệp tại <span>Việt Nam</span></h3>
                             <button class="vn-ceremony-close" id="vn-ceremony-close" aria-label="Đóng modal">✕</button>
                         </div>
-                        <div class="vn-ceremony-content">
+                        <div class="vn-ceremony-content" data-lenis-prevent>
                             <div class="vn-timeline">
-                                
-                                <!-- Item 1 -->
+<!-- Event 1: 21/04/2026 -->
                                 <div class="vn-timeline-item">
-                                    <div class="vn-timeline-badge"></div>
-                                    <span class="vn-timeline-date">27/12/2025</span>
-                                    <div class="vn-card">
-                                        <div class="vn-card-img-wrap">
-                                            <img src="https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp" alt="Lễ tốt nghiệp MBA/EMBA Swiss UMEF" loading="lazy" decoding="async">
-                                        </div>
-                                        <div class="vn-card-info">
-                                            <a class="vn-card-title" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN" target="_blank">Lễ tốt nghiệp MBA/EMBA</a>
-                                            <div class="vn-card-meta">
-                                                <p><i class="fa-solid fa-earth-oceania"></i> MBA/EMBA</p>
-                                                <p><i class="fa-solid fa-graduation-cap"></i> Swiss UMEF</p>
-                                                <p><i class="fa-solid fa-location-dot"></i> Tp. Hồ Chí Minh</p>
-                                            </div>
-                                            <a title="Xem thêm" class="vn-card-play" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN" target="_blank">
-                                                <i class="fa-solid fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="vn-timeline-badge"></div>
+                                <div class="vn-timeline-date">21/04/2026</div>
+                                <div class="vn-card">
+                                <div class="vn-card-img-wrap">
+                                <img decoding="async"
+                                src="https://ideas.edu.vn/wp-content/uploads/2026/04/recap_growverth.webp"
+                                alt="IDEAS x GrowthVerse 2026" loading="lazy">
+                                </div>
+                                <div class="vn-card-info">
+                                <a href="https://www.facebook.com/share/p/18FBbmmySq/"
+                                target="_blank" rel="noopener" class="vn-card-title">IDEAS x GrowthVerse 2026</a>
+                                <div class="vn-card-meta">
+                                <p><i class="fa-solid fa-graduation-cap"></i> IDEAS &mdash; Swiss UMEF</p>
+                                <p><i class="fa-solid fa-location-dot"></i> SIHUB - Hồ Chí Minh</p>
+                                </div>
+                                <a href="https://www.facebook.com/share/p/18FBbmmySq/"
+                                target="_blank" rel="noopener" class="vn-card-play"
+                                aria-label="Xem chi tiết">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                </a>
+                                </div>
+                                </div>
                                 </div>
 
-                                <!-- Item 2 -->
+                                <!-- Event 2: 27/12/2025 -->
                                 <div class="vn-timeline-item">
-                                    <div class="vn-timeline-badge"></div>
-                                    <span class="vn-timeline-date">26/07/2025</span>
-                                    <div class="vn-card">
-                                        <div class="vn-card-img-wrap">
-                                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/07/ltn72025.webp" alt="Lễ tốt nghiệp Global MBA - DBA Ascencia" loading="lazy" decoding="async">
-                                        </div>
-                                        <div class="vn-card-info">
-                                            <a class="vn-card-title" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid02D6QV6Lwqbk6PWN3ToipRQJ3jV9AkFV9FcnAqQwsdf9wVBdNkHr5bHWaKPJtGojf2l?locale=vi_VN" target="_blank">Lễ tốt nghiệp Global MBA - DBA</a>
-                                            <div class="vn-card-meta">
-                                                <p><i class="fa-solid fa-earth-oceania"></i> Global MBA - DBA</p>
-                                                <p><i class="fa-solid fa-graduation-cap"></i> Ascencia Business School</p>
-                                                <p><i class="fa-solid fa-location-dot"></i> Eden Star Hotel- Hồ Chí Minh</p>
-                                            </div>
-                                            <a title="Xem thêm" class="vn-card-play" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid02D6QV6Lwqbk6PWN3ToipRQJ3jV9AkFV9FcnAqQwsdf9wVBdNkHr5bHWaKPJtGojf2l?locale=vi_VN" target="_blank">
-                                                <i class="fa-solid fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="vn-timeline-badge"></div>
+                                <div class="vn-timeline-date">27/12/2025</div>
+                                <div class="vn-card">
+                                <div class="vn-card-img-wrap">
+                                <img decoding="async"
+                                src="https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp"
+                                alt="Lễ tốt nghiệp 27/12/2025" loading="lazy">
+                                </div>
+                                <div class="vn-card-info">
+                                <a href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN"
+                                target="_blank" rel="noopener" class="vn-card-title">Lễ tốt nghiệp 27/12/2025</a>
+                                <div class="vn-card-meta">
+                                <p><i class="fa-solid fa-graduation-cap"></i> MBA/EMBA &mdash; Swiss UMEF</p>
+                                <p><i class="fa-solid fa-location-dot"></i> Tp. Hồ Chí Minh</p>
+                                </div>
+                                <a href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN"
+                                target="_blank" rel="noopener" class="vn-card-play"
+                                aria-label="Xem chi tiết">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                </a>
+                                </div>
+                                </div>
                                 </div>
 
-                                <!-- Item 3 -->
+                                <!-- Event 3: 26/10/2024 -->
                                 <div class="vn-timeline-item">
-                                    <div class="vn-timeline-badge"></div>
-                                    <span class="vn-timeline-date">23/11/2024</span>
-                                    <div class="vn-card">
-                                        <div class="vn-card-img-wrap">
-                                            <img src="https://ideas.edu.vn/wp-content/uploads/2024/11/8X1A9328-1-1.jpg" alt="Lễ tốt nghiệp Global MBA Ascencia" loading="lazy" decoding="async">
-                                        </div>
-                                        <div class="vn-card-info">
-                                            <a class="vn-card-title" href="https://www.youtube.com/watch?si=gR-YOgFi2KQJftr9&amp;v=hmVxOq5jkeM&amp;feature=youtu.be" target="_blank">Lễ tốt nghiệp Global MBA</a>
-                                            <div class="vn-card-meta">
-                                                <p><i class="fa-solid fa-earth-oceania"></i> Global MBA</p>
-                                                <p><i class="fa-solid fa-graduation-cap"></i> Ascencia Business School</p>
-                                                <p><i class="fa-solid fa-location-dot"></i> Viện IDEAS</p>
-                                            </div>
-                                            <a title="Xem thêm" class="vn-card-play" href="https://www.youtube.com/watch?si=gR-YOgFi2KQJftr9&amp;v=hmVxOq5jkeM&amp;feature=youtu.be" target="_blank">
-                                                <i class="fa-solid fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="vn-timeline-badge"></div>
+                                <div class="vn-timeline-date">26/10/2024</div>
+                                <div class="vn-card">
+                                <div class="vn-card-img-wrap">
+                                <img decoding="async"
+                                src="https://ideas.edu.vn/wp-content/uploads/2024/10/Totnghiepumef.jpg"
+                                alt="Lễ tốt nghiệp 26/10/2024" loading="lazy">
                                 </div>
-
-                                <!-- Item 4 -->
-                                <div class="vn-timeline-item">
-                                    <div class="vn-timeline-badge"></div>
-                                    <span class="vn-timeline-date">26/10/2024</span>
-                                    <div class="vn-card">
-                                        <div class="vn-card-img-wrap">
-                                            <img src="https://ideas.edu.vn/wp-content/uploads/2024/10/Totnghiepumef.jpg" alt="Lễ tốt nghiệp MBA/EMBA Swiss UMEF" loading="lazy" decoding="async">
-                                        </div>
-                                        <div class="vn-card-info">
-                                            <a class="vn-card-title" href="https://www.youtube.com/watch?si=eJDfqKWc4HxT_TmS&amp;v=fBf5YcaMxDY&amp;feature=youtu.be" target="_blank">Lễ tốt nghiệp MBA/EMBA</a>
-                                            <div class="vn-card-meta">
-                                                <p><i class="fa-solid fa-earth-oceania"></i> MBA/EMBA</p>
-                                                <p><i class="fa-solid fa-graduation-cap"></i> Swiss UMEF</p>
-                                                <p><i class="fa-solid fa-location-dot"></i> Viện IDEAS</p>
-                                            </div>
-                                            <a title="Xem thêm" class="vn-card-play" href="https://www.youtube.com/watch?si=eJDfqKWc4HxT_TmS&amp;v=fBf5YcaMxDY&amp;feature=youtu.be" target="_blank">
-                                                <i class="fa-solid fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="vn-card-info">
+                                <a href="https://www.youtube.com/watch?si=eJDfqKWc4HxT_TmS&v=fBf5YcaMxDY&feature=youtu.be"
+                                target="_blank" rel="noopener" class="vn-card-title">Lễ tốt nghiệp 26/10/2024</a>
+                                <div class="vn-card-meta">
+                                <p><i class="fa-solid fa-graduation-cap"></i> Swiss UMEF &mdash; MBA/EMBA</p>
+                                <p><i class="fa-solid fa-location-dot"></i> Viện IDEAS</p>
                                 </div>
-
-                                <!-- Item 5 -->
-                                <div class="vn-timeline-item">
-                                    <div class="vn-timeline-badge"></div>
-                                    <span class="vn-timeline-date">06/01/2024</span>
-                                    <div class="vn-card">
-                                        <div class="vn-card-img-wrap">
-                                            <img src="https://ideas.edu.vn/wp-content/uploads/2024/01/416256674_837845658141991_5379123310787471174_n.jpg" alt="Lễ tốt nghiệp Global MBA/DBA Ascencia" loading="lazy" decoding="async">
-                                        </div>
-                                        <div class="vn-card-info">
-                                            <a class="vn-card-title" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid02uRUWP7AE5ithsMRnvDcKhgLRUS5JTJzWofcoFQsnXPQPTtG9WogjihFvAPHLrNNKl" target="_blank">Lễ tốt nghiệp Global MBA/DBA</a>
-                                            <div class="vn-card-meta">
-                                                <p><i class="fa-solid fa-earth-oceania"></i> Global MBA/DBA</p>
-                                                <p><i class="fa-solid fa-graduation-cap"></i> Ascencia Business School</p>
-                                                <p><i class="fa-solid fa-location-dot"></i> Viện IDEAS</p>
-                                            </div>
-                                            <a title="Xem thêm" class="vn-card-play" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid02uRUWP7AE5ithsMRnvDcKhgLRUS5JTJzWofcoFQsnXPQPTtG9WogjihFvAPHLrNNKl" target="_blank">
-                                                <i class="fa-solid fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                                <a href="https://www.youtube.com/watch?si=eJDfqKWc4HxT_TmS&v=fBf5YcaMxDY&feature=youtu.be"
+                                target="_blank" rel="noopener" class="vn-card-play"
+                                aria-label="Xem chi tiết">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                </a>
                                 </div>
-
-                            </div>
+                                </div>
+                                </div>
+                                </div>
                         </div>
                     </div>
                 </div>

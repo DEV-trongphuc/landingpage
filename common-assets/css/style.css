@@ -8839,6 +8839,7 @@ html.lenis {
   padding: 32px;
   overflow-y: auto;
   flex: 1;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Timeline Layout */

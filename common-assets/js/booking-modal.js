@@ -8,11 +8,15 @@
 
     function lockScroll() {
         document.body.style.overflow = 'hidden';
-        document.documentElement.style.overflow = 'hidden';
+        if (window.lenis) {
+            window.lenis.stop();
+        }
     }
     function unlockScroll() {
         document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
+        if (window.lenis) {
+            window.lenis.start();
+        }
     }
 
     /* ── State ─────────────────────────────────── */
