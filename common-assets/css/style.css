@@ -8919,3 +8919,122 @@ html.lenis {
 @media (max-width: 900px) {
   .proof-card-inner{padding:28px 20px !important;gap:24px !important;}
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   HERO SECTION — Dark/colored bg badge & accred strip fixes
+   ═══════════════════════════════════════════════════════════ */
+
+/* info-badge on dark/colored hero background → glass white */
+.hero .info-badge,
+.hero-bg + * .info-badge,
+section.hero .info-badge {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero .info-badge:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-1px);
+}
+
+.hero .info-badge .icon,
+.hero .info-badge .icon svg {
+  color: rgba(255, 255, 255, 0.9) !important;
+  stroke: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* hero-accred-strip on colored/dark hero bg → glass dark */
+.hero .hero-accred-strip,
+section.hero .hero-accred-strip {
+  background: rgba(0, 0, 0, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero .hero-accred-label,
+section.hero .hero-accred-label {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.hero .hero-accred-logos img,
+section.hero .hero-accred-logos img {
+  filter: brightness(0) invert(1) opacity(0.85) !important;
+}
+
+/* hero badges row: 2-col grid on mobile (no gaps) */
+@media (max-width: 540px) {
+  .hero-badges-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+  .hero .info-badge {
+    justify-content: center !important;
+    padding: 8px 10px !important;
+    font-size: 0.72rem !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   PAIN CARDS — Mobile layout tightening
+   ═══════════════════════════════════════════════════════════ */
+
+/* Pain card inline CSS override: prevent unequal heights via flex stretch */
+.pain-cards {
+  align-items: stretch !important;
+}
+
+/* Force equal height cards with consistent internal padding */
+@media (max-width: 640px) {
+  .pain-cards {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+  /* Use 1-col for very small screens to avoid text overflow */
+  .pain-card-v2 {
+    padding: 18px 14px 16px !important;
+    border-radius: 14px !important;
+    gap: 10px !important;
+    min-height: 0 !important;
+    border-color: rgba(255,255,255,0.12) !important;
+  }
+  .pain-card-num {
+    font-size: 10px !important;
+  }
+  .pain-card-icon {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+  }
+  .pain-card-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .pain-card-body p {
+    font-size: 0.75rem !important;
+    line-height: 1.45 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .pain-cards {
+    grid-template-columns: 1fr !important;
+  }
+  .pain-card-v2 {
+    flex-direction: row !important;
+    padding: 14px !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+  }
+  .pain-card-icon {
+    flex-shrink: 0 !important;
+  }
+}
