@@ -4172,19 +4172,26 @@
                         </p>
                     </div>
                     <div class="gallery-header-right">
-                        <a href="javascript:void(0)" class="trip-cta-premium" id="trip-cta">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
-                                style="margin-right: 8px;">
-                                <path
-                                    d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L14 19v-5.5l8 2.5z" />
+                        <button class="ceremony-card-btn swiss-btn" onclick="openTourModal()">
+                            <svg class="flag-icon" width="18" height="18" viewBox="0 0 18 18">
+                                <circle cx="9" cy="9" r="9" fill="#d52b1e"/>
+                                <rect x="7.5" y="4" width="3" height="10" fill="#ffffff"/>
+                                <rect x="4" y="7.5" width="10" height="3" fill="#ffffff"/>
                             </svg>
-                            <span>KHÁM PHÁ HÀNH TRÌNH</span>
-                        </a>
-                        <button class="vn-ceremony-open-btn" onclick="openVNCeremonyModal()">
-                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <div class="btn-text">
+                                <span class="label">Lễ Tốt Nghiệp</span>
+                                <span class="title">Thụy Sĩ</span>
+                            </div>
+                        </button>
+                        <button class="ceremony-card-btn vn-btn" onclick="openVNCeremonyModal()">
+                            <svg class="flag-icon" width="18" height="18" viewBox="0 0 18 18">
+                                <circle cx="9" cy="9" r="9" fill="#da251d"/>
+                                <polygon points="9,4.5 9.9,7.5 13,7.5 10.5,9.3 11.4,12.3 9,10.5 6.6,12.3 7.5,9.3 5,7.5 8.1,7.5" fill="#ffff00"/>
                             </svg>
-                            <span>Tham d&#7921; L&#7877; t&#7841;i Vi&#7879;t Nam</span>
+                            <div class="btn-text">
+                                <span class="label">Lễ Tốt Nghiệp</span>
+                                <span class="title">Tại Việt Nam</span>
+                            </div>
                         </button>
                     </div>
                 </div>
@@ -4929,6 +4936,8 @@
                                 <label for="education">Trình độ học vấn *</label>
                                 <select id="education" name="education" required>
                                     <option value="">-- Chọn trình độ --</option>
+                                    <option value="highschool">THPT</option>
+                                    <option value="college">Cao đẳng</option>
                                     <option value="bachelor">Cử nhân</option>
                                     <option value="master">Thạc sĩ</option>
                                     <option value="other">Khác</option>
@@ -5070,9 +5079,11 @@
                             <label for="modal-education">Trình độ học vấn *</label>
                             <select id="modal-education" name="education" required>
                                 <option value="">-- Chọn trình độ --</option>
+                                <option value="highschool">THPT</option>
+                                <option value="college">Cao đẳng</option>
                                 <option value="bachelor">Cử nhân</option>
                                 <option value="master">Thạc sĩ</option>
-                                <option value="other">Khác</option>
+                                <option value="other">Khác</option>
                             </select>
                             <span class="form-error" id="modal-education-error"></span>
                         </div>
@@ -5243,7 +5254,7 @@
                             <div class="bk-select-wrap">
                                 <select id="bk-edu" name="bk-edu" required>
                                     <option value="">-- Chọn trình độ --</option>
-                                    <option value="highschool">THPT / Trung cấp</option>
+                                    <option value="highschool">THPT</option>
                                     <option value="college">Cao đẳng</option>
                                     <option value="bachelor">Cử nhân</option>
                                     <option value="master">Thạc sĩ</option>
@@ -6666,7 +6677,7 @@
     <script>
         // Only initialize Lenis on desktop/tablet to avoid weird native scroll friction on mobile touch
         if (window.innerWidth > 768) {
-            const lenis = new Lenis({
+            window.lenis = new Lenis({
                 duration: 1.2,
                 easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
                 direction: 'vertical',
@@ -6685,7 +6696,7 @@
             requestAnimationFrame(raf);
 
             // Integrate Lenis with custom anchor link scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            document.querySelectorAll('a[href^="#"]:not([href="#dang-ky"])').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const targetAttr = this.getAttribute('href');
@@ -6725,8 +6736,28 @@
         </div>
     </div>
     <script>
-        function openVNCeremonyModal(){var m=document.getElementById('vn-ceremony-modal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
-        function closeVNCeremonyModal(){var m=document.getElementById('vn-ceremony-modal');if(m){m.classList.remove('open');document.body.style.overflow='';}}
+        function openVNCeremonyModal() {
+            var m = document.getElementById('vn-ceremony-modal');
+            if (m) {
+                m.classList.add('open');
+                if (typeof window.lockScroll === 'function') {
+                    window.lockScroll();
+                } else {
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+        }
+        function closeVNCeremonyModal() {
+            var m = document.getElementById('vn-ceremony-modal');
+            if (m) {
+                m.classList.remove('open');
+                if (typeof window.unlockScroll === 'function') {
+                    window.unlockScroll();
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+        }
         document.getElementById('vn-ceremony-overlay')?.addEventListener('click',closeVNCeremonyModal);
         document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('vn-ceremony-modal')?.classList.contains('open'))closeVNCeremonyModal();});
     </script>

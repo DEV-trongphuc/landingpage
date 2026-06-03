@@ -9125,3 +9125,107 @@ h3.section-title {
   gap: 10px !important;
   flex-shrink: 0 !important;
 }
+
+
+/* ---------------------------------------------------- */
+/* Redesigned Ceremony Flag Card Buttons                */
+/* ---------------------------------------------------- */
+.ceremony-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  text-align: left;
+  min-width: 175px;
+}
+
+.ceremony-card-btn .flag-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+  display: block;
+}
+
+.ceremony-card-btn .btn-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.ceremony-card-btn .btn-text .label {
+  font-size: 0.62rem;
+  color: #64748b !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.ceremony-card-btn .btn-text .title {
+  font-size: 0.82rem;
+  color: #0f172a !important;
+  font-weight: 850;
+}
+
+/* Hover styles with brand accent colors */
+.ceremony-card-btn.swiss-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(213, 43, 30, 0.45);
+  box-shadow: 0 6px 16px rgba(213, 43, 30, 0.1);
+  background: #fff8f8;
+}
+
+.ceremony-card-btn.vn-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(218, 37, 29, 0.45);
+  box-shadow: 0 6px 16px rgba(218, 37, 29, 0.1);
+  background: #fffdf5;
+}
+
+/* Touch scrolling behavior override for the timeline */
+.vn-ceremony-content {
+  -webkit-overflow-scrolling: touch !important;
+  overflow-y: auto !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-header-right {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .ceremony-card-btn {
+    flex: 1 1 calc(50% - 4px) !important;
+    min-width: 140px !important;
+    padding: 8px 12px !important;
+    gap: 8px !important;
+    border-radius: 12px !important;
+  }
+  .ceremony-card-btn .flag-icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .ceremony-card-btn .btn-text .label {
+    font-size: 0.58rem !important;
+  }
+  .ceremony-card-btn .btn-text .title {
+    font-size: 0.76rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ceremony-card-btn {
+    flex: 1 1 100% !important;
+    min-width: 100% !important;
+  }
+}
