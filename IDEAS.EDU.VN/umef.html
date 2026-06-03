@@ -1,0 +1,990 @@
+<style>
+    /* ===== SWISS UMEF PAGE ===== */
+
+    /* HERO */
+    .umef_hero {
+        width: 100%;
+        min-height: 80vh;
+        background: linear-gradient(135deg, #1a0305 0%, #6b0000 50%, #ab0e00 100%);
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 8rem;
+    }
+
+    .umef_hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .umef_hero_grid {
+        max-width: 1300px;
+        margin: 0 auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7rem;
+        align-items: center;
+        z-index: 2;
+        position: relative;
+    }
+
+    .umef_hero_left {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .umef_hero_badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 6px 1.8rem;
+        border-radius: 50rem;
+        font-size: 1.4rem;
+        color: #ffd4d4;
+        width: fit-content;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .umef_hero_logo {
+        height: 8rem;
+        object-fit: contain;
+        margin-bottom: 1rem;
+        filter: brightness(0) invert(1);
+    }
+
+    .umef_hero_left h1 {
+        font-size: 5rem;
+        font-weight: 900;
+        line-height: 1.15;
+        padding: 0 !important;
+        color: white;
+    }
+
+    .umef_hero_left h1 span {
+        background: linear-gradient(90deg, #ffd4d4, #ffd4d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .umef_hero_left p {
+        font-size: 1.75rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.9;
+        font-weight: 300;
+    }
+
+    .umef_hero_stats {
+        display: flex;
+        gap: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .umef_stat_item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .umef_stat_num {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #ffb3b0;
+    }
+
+    .umef_stat_label {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.55);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .umef_hero_btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        color: #ab0e00 !important;
+        padding: 1.3rem 3.2rem;
+        border-radius: 50rem;
+        font-weight: 800;
+        font-size: 1.6rem;
+        width: fit-content;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 8px 30px rgba(171, 14, 0, 0.35);
+    }
+
+    .umef_hero_btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 40px rgba(171, 14, 0, 0.5);
+    }
+
+    .umef_hero_right {
+        position: relative;
+    }
+
+    .umef_hero_img_main {
+        width: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+        height: 52rem;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        display: block;
+    }
+
+    .umef_hero_img_float {
+        position: absolute;
+        bottom: -3rem;
+        left: -3rem;
+        width: 22rem;
+        height: 16rem;
+        border-radius: 14px;
+        object-fit: cover;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+        border: 3px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .umef_hero_badge_float {
+        position: absolute;
+        top: 2rem;
+        right: -1.5rem;
+        background: white;
+        border-radius: 12px;
+        padding: 1.2rem 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #1a0305;
+        white-space: nowrap;
+    }
+
+    .umef_hero_badge_float i {
+        color: #ffd4d4;
+        font-size: 1.8rem;
+    }
+
+    /* SECTION WRAPPER */
+    .umef_section {
+        width: 100%;
+        padding: 8rem 0;
+    }
+
+    .umef_section_light {
+        background: #f8f9fc;
+    }
+
+    .umef_section_dark {
+        background: linear-gradient(180deg, #fafafa 0%, #f4f0ef 100%);
+    }
+
+    .umef_inner {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 4rem;
+    }
+
+    .umef_section_head {
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+
+    .umef_label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #ffedec;
+        color: #ab0e00;
+        border: 1px solid rgba(171, 14, 0, 0.2);
+        padding: 5px 1.5rem;
+        border-radius: 50rem;
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .umef_section_head h2 {
+        font-size: 4rem;
+        font-weight: 900;
+        padding: 0.5rem 0 !important;
+        color: #1a0305;
+    }
+
+    .umef_section_head h2 span {
+        color: #ab0e00;
+    }
+
+    .umef_section_head p {
+        font-size: 1.7rem;
+        color: #667;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    /* INTRO 2-COL */
+    .umef_intro_grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 6rem;
+        align-items: center;
+    }
+
+    .umef_intro_text h2 {
+        font-size: 4rem;
+        font-weight: 900;
+        padding: 0.5rem 0 2rem !important;
+        color: #1a0305;
+    }
+
+    .umef_intro_text h2 span {
+        color: #ab0e00;
+    }
+
+    .umef_intro_text p {
+        font-size: 1.65rem;
+        color: #445;
+        line-height: 2;
+        margin-bottom: 2rem;
+    }
+
+    .umef_link_web {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #ab0e00;
+        font-weight: 700;
+        font-size: 1.55rem;
+        border-bottom: 2px solid #ab0e00;
+        padding-bottom: 2px;
+        transition: 0.2s;
+        text-decoration: none;
+    }
+
+    .umef_link_web:hover {
+        gap: 14px;
+        opacity: 0.8;
+    }
+
+    .umef_intro_imgs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 28rem 20rem;
+        gap: 1.4rem;
+    }
+
+    .umef_intro_imgs img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 14px;
+        display: block;
+        transition: 0.4s;
+    }
+
+    .umef_intro_imgs img:hover {
+        transform: scale(1.02);
+    }
+
+    .umef_intro_imgs img:nth-child(1) {
+        grid-row: span 2;
+        grid-column: 1;
+        height: 100%;
+        border-radius: 14px;
+    }
+
+    .umef_map_link {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin-top: 2rem;
+        padding: 1.2rem 2rem;
+        background: #ffedec;
+        border-radius: 10px;
+        color: #ab0e00;
+        font-size: 1.45rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+        width: fit-content;
+    }
+
+    .umef_map_link:hover {
+        background: #ab0e00;
+        color: white;
+    }
+
+    /* NEWS CARDS (highlight posts) */
+    .umef_news_grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .umef_news_card {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: 0.35s ease;
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid #f0eded;
+        border-top: 3px solid #ab0e00;
+    }
+
+    .umef_news_card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 40px rgba(171, 14, 0, 0.14);
+    }
+
+    .umef_news_card_img {
+        width: 100%;
+        height: 14rem;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .umef_news_card_img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: 0.4s;
+    }
+
+    .umef_news_card:hover .umef_news_card_img img {
+        transform: scale(1.06);
+    }
+
+    .umef_news_card_body {
+        padding: 1.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex: 1;
+    }
+
+    .umef_news_card_tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #ffedec;
+        color: #ab0e00;
+        font-size: 1.25rem;
+        font-weight: 600;
+        padding: 3px 1rem;
+        border-radius: 50rem;
+        width: fit-content;
+    }
+
+    .umef_news_card_body b {
+        font-size: 1.55rem;
+        color: #1a0305;
+        line-height: 1.55;
+        font-weight: 700;
+    }
+
+    .umef_news_card_body span {
+        font-size: 1.35rem;
+        color: #778;
+        line-height: 1.7;
+    }
+
+    .umef_news_card_read {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #ab0e00;
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin-top: auto;
+        padding-top: 1rem;
+        border-top: 1px solid #f5f0f0;
+        transition: 0.2s;
+    }
+
+    .umef_news_card:hover .umef_news_card_read {
+        gap: 10px;
+    }
+
+    /* ACCREDITATION GRID */
+    .umef_accred_grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    .umef_accred_card {
+        background: white;
+        border-radius: 16px;
+        padding: 2.8rem 2.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        border: 1px solid #eef0f6;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .umef_accred_card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(171, 14, 0, 0.1);
+        border-color: rgba(171, 14, 0, 0.25);
+    }
+
+    .umef_accred_card img {
+        height: 6rem;
+        width: auto;
+        max-width: 14rem;
+        object-fit: contain;
+    }
+
+    .umef_accred_card h3 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: #6b0000;
+    }
+
+    .umef_accred_card p {
+        font-size: 1.4rem;
+        color: #667;
+        line-height: 1.8;
+        flex: 1;
+    }
+
+    /* PARTNER LOGOS */
+    .umef_partners {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 0;
+    }
+
+    .umef_partners a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 2.5rem;
+        background: white;
+        border: 1px solid rgba(171, 14, 0, 0.15);
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+    .umef_partners a:hover {
+        border-color: #ab0e00;
+        box-shadow: 0 4px 18px rgba(171, 14, 0, 0.1);
+    }
+
+    .umef_partners img {
+        height: 4.5rem;
+        width: auto;
+        max-width: 14rem;
+        object-fit: contain;
+        transition: 0.3s;
+    }
+
+    .umef_partners a:hover img {
+        filter: grayscale(0%);
+    }
+
+    /* CERT SECTION – dark navy */
+    .umef_cert_section {
+        width: 100%;
+        background: linear-gradient(135deg, #1a0305 0%, #6b0000 60%, #ab0e00 100%);
+        padding: 8rem 0;
+        position: relative;
+        overflow: hidden;
+        color: white;
+    }
+
+    .umef_cert_section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .umef_cert_grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 7rem;
+        align-items: center;
+    }
+
+    .umef_cert_left {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .umef_cert_left .umef_label {
+        background: rgba(171, 14, 0, 0.12);
+        color: #ffd4d4;
+        border-color: rgba(255, 212, 212, 0.25);
+    }
+
+    .umef_cert_left h2 {
+        font-size: 4rem;
+        font-weight: 900;
+        color: white;
+        padding: 0 !important;
+    }
+
+    .umef_cert_left h2 span {
+        color: #ffd4d4;
+    }
+
+    .umef_cert_list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+    }
+
+    .umef_cert_item {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 2.6rem;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        font-size: 1.85rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.9);
+        transition: 0.3s;
+    }
+
+    .umef_cert_item:hover {
+        background: rgba(171, 14, 0, 0.12);
+        border-color: rgba(171, 14, 0, 0.4);
+    }
+
+    .umef_cert_item i {
+        color: #ffd4d4;
+        font-size: 2.1rem;
+        width: 2.5rem;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .umef_cert_commit {
+        padding: 2rem 2.5rem;
+        background: rgba(171, 14, 0, 0.1);
+        border: 1px solid rgba(171, 14, 0, 0.25);
+        border-radius: 12px;
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.8;
+        margin-top: 1rem;
+    }
+
+    .umef_cert_commit b {
+        color: #ffd4d4;
+    }
+
+    /* Cert swiper override */
+    .swiper-container2.home {
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .swiper-container2.home .swiper-slide {
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .swiper-container2.home .swiper-slide img {
+        width: 100% !important;
+        height: 48rem !important;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+
+    /* TESTIMONIALS / VIDEO */
+    .umef_videos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        margin-top: 3rem;
+    }
+
+    .umef_video_wrap {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.12);
+        aspect-ratio: 16/9;
+        position: relative;
+    }
+
+    .umef_video_wrap iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        position: absolute;
+        inset: 0;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1099px) {
+        .umef_hero {
+            padding: 5rem 3rem;
+        }
+
+        .umef_hero_grid {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .umef_hero_img_float {
+            display: none;
+        }
+
+        .umef_intro_grid {
+            grid-template-columns: 1fr;
+        }
+
+        .umef_intro_imgs {
+            grid-template-rows: auto;
+        }
+
+        .umef_intro_imgs img:nth-child(1) {
+            grid-row: span 1;
+            height: 30rem;
+        }
+
+        .umef_accred_grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .umef_cert_grid {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .umef_inner {
+            padding: 0 2rem;
+        }
+
+        .umef_news_grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 680px) {
+        .umef_hero_left h1 {
+            font-size: 3.5rem;
+        }
+
+        .umef_accred_grid {
+            grid-template-columns: 1fr;
+        }
+
+        .umef_videos {
+            grid-template-columns: 1fr;
+        }
+
+        .umef_intro_imgs {
+            grid-template-columns: 1fr;
+        }
+
+        .umef_intro_imgs img:nth-child(1) {
+            grid-row: span 1;
+        }
+    }
+</style>
+
+<main class="ideas_main school" style="gap:0">
+
+    <!-- ===== HERO ===== -->
+    <section class="umef_hero">
+        <div class="umef_hero_grid">
+            <div class="umef_hero_left">
+                <div class="umef_hero_badge"><i class="fa-solid fa-university"></i> Đối tác chiến lược IDEAS</div>
+                <h1>Đại học tư thục <span>đầu tiên tại Geneva</span> đạt kiểm định Liên Bang cao nhất</h1>
+                <p>Swiss UMEF – thành lập 1984, được công nhận bởi SAC (Swiss Accreditation Council), có mặt trong danh
+                    sách
+                    Swissuniversities theo VN-NARIC Bộ GD&ĐT Việt Nam.</p>
+                <div class="umef_hero_stats">
+                    <div class="umef_stat_item">
+                        <span class="umef_stat_num">1984</span>
+                        <span class="umef_stat_label">Thành lập</span>
+                    </div>
+                    <div class="umef_stat_item">
+                        <span class="umef_stat_num">6+</span>
+                        <span class="umef_stat_label">Kiểm định quốc tế</span>
+                    </div>
+                    <div class="umef_stat_item">
+                        <span class="umef_stat_num">5 ★</span>
+                        <span class="umef_stat_label">QS Stars Overall</span>
+                    </div>
+                </div>
+                <a href="https://www.swiss-umef.ch/" target="_blank" class="umef_hero_btn">
+                    <i class="fa-solid fa-globe"></i> Truy cập swiss-umef.ch
+                </a>
+            </div>
+            <div class="umef_hero_right">
+                <img class="umef_hero_img_main"
+                    src="https://ideas.edu.vn/wp-content/uploads/2025/03/PIX_7701-Olivier-Gay-Perret-Pixipop.jpg"
+                    alt="Swiss UMEF Campus" />
+                <img class="umef_hero_img_float" src="https://ideas.edu.vn/wp-content/uploads/2025/03/Campus3.jpg"
+                    alt="Swiss UMEF Geneva" />
+                <div class="umef_hero_badge_float">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Geneva, Switzerland
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INTRO + IMAGES ===== -->
+    <section class="umef_section">
+        <div class="umef_inner">
+            <div class="umef_intro_grid">
+                <div class="umef_intro_text">
+                    <div class="umef_label"><i class="fa-solid fa-landmark"></i> Giới thiệu trường</div>
+                    <h2>Swiss UMEF – <span>Chất lượng Thụy Sĩ</span>, đẳng cấp quốc tế</h2>
+                    <p>Được thành lập từ năm 1984, Swiss UMEF là Đại học tư thục đầu tiên tại Geneva được công nhận bởi
+                        Cơ quan
+                        Kiểm định Liên bang cao nhất ở Thụy Sĩ (SAC). Trường vinh hạnh là một trong 14 trường tư thục
+                        Thụy Sĩ nằm
+                        trong danh sách Swissuniversities theo VN-NARIC.</p>
+                    <p>Đồng thời giữ vững các công nhận và kiểm định Giáo dục bởi các tổ chức uy tín quốc tế như
+                        <strong>ACBSP,
+                            CHEA, EduQua, IACBE</strong> – khẳng định chất lượng đào tạo đỉnh cao.
+                    </p>
+                    <a href="https://www.swiss-umef.ch/" target="_blank" class="umef_link_web">
+                        <i class="fa-solid fa-globe"></i> swiss-umef.ch <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="https://maps.app.goo.gl/6h37PB27CrLHpRWFA" target="_blank" class="umef_map_link"
+                        style="margin-top:1.5rem">
+                        <i class="fa-solid fa-location-dot"></i> 187 Route d'Aïre 1219 Aïre – Geneva, Switzerland
+                    </a>
+
+                    <!-- NEWS CARDS -->
+                    <div class="umef_news_grid">
+                        <a class="umef_news_card" href="https://www.facebook.com/share/p/1CHpxdmHUS/" target="_blank">
+                            <div class="umef_news_card_img">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/08/btc_umef.webp"
+                                    alt="Bộ Tài Chính" />
+                            </div>
+                            <div class="umef_news_card_body">
+                                <div class="umef_news_card_tag"><i class="fa-solid fa-newspaper"></i> Tin tức</div>
+                                <b>Phái đoàn Bộ Tài Chính Việt Nam ghé thăm Swiss UMEF</b>
+                                <span>Ngày 30/07/2025, Swiss UMEF vinh dự đón tiếp phái đoàn từ Bộ Tài Chính Việt
+                                    Nam.</span>
+                                <div class="umef_news_card_read">Xem thêm <i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </a>
+                        <a class="umef_news_card"
+                            href="https://ideas.edu.vn/tin-tuc-moi/toa-dam-xay-dung-va-van-hanh-trung-tam-tai-chinh-quoc-te-mo-ra-co-hoi-nghe-nghiep-voi-bang-cap-chuan-thuy-si.html"
+                            target="_blank">
+                            <div class="umef_news_card_img">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/08/unnamed.webp" alt="Tọa đàm" />
+                            </div>
+                            <div class="umef_news_card_body">
+                                <div class="umef_news_card_tag"><i class="fa-solid fa-newspaper"></i> Sự kiện</div>
+                                <b>Chủ tịch Quốc hội dự Tọa đàm Xây dựng Trung tâm tài chính quốc tế</b>
+                                <span>Diễn đàn Kinh tế Thụy Sĩ – Việt Nam (SVEF) ngày 28/07/2025.</span>
+                                <div class="umef_news_card_read">Xem thêm <i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CAMPUS IMAGES MOSAIC -->
+                <div class="umef_intro_imgs">
+                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/PIX_7666-Olivier-Gay-Perret-Pixipop.jpg"
+                        alt="Swiss UMEF Campus" />
+                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/PIX_7485-Olivier-Gay-Perret-Pixipop-1.jpg"
+                        alt="Swiss UMEF Hall" />
+                    <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/2023-12-15.jpg" alt="Swiss UMEF Event" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ACCREDITATION GRID ===== -->
+    <section class="umef_section umef_section_dark">
+        <div class="umef_inner">
+            <div class="umef_section_head">
+                <div class="umef_label"><i class="fa-solid fa-stamp"></i> Kiểm định & Công nhận</div>
+                <h2>Các Tổ Chức <span>Kiểm Định</span> Uy Tín</h2>
+                <p>Swiss UMEF được kiểm định và công nhận bởi 6 tổ chức uy tín hàng đầu thế giới, đảm bảo chất lượng đào
+                    tạo
+                    và giá trị bằng cấp quốc tế.</p>
+            </div>
+            <div class="umef_accred_grid">
+                <!-- SAC Card First! -->
+                <div class="umef_accred_card sac-highlight">
+                    <img src="assets/kdumef1.png" alt="SAC" />
+                    <h3>Swiss Accreditation Council (SAC)</h3>
+                    <p>Cơ quan kiểm định liên bang cao nhất Thụy Sĩ. SWISS UMEF là tổ chức giáo dục tư nhân đầu tiên tại Geneva được SAC công nhận.</p>
+                </div>
+                <div class="umef_accred_card">
+                    <img src="assets/qs-1.webp" alt="QS Stars" />
+                    <h3>QS Stars ⭐ 5 Stars Overall</h3>
+                    <p>Xếp hạng "5 Stars Overall" bởi Quacquarelli Symonds (QS) – hệ thống đánh giá đại học uy tín nhất thế giới, ghi nhận xuất sắc toàn diện về giảng dạy, tuyển dụng, học trực tuyến...</p>
+                </div>
+                <div class="umef_accred_card">
+                    <img src="assets/kdumef3.png" alt="EduQua" />
+                    <h3>SGS – EduQua</h3>
+                    <p>Nhãn chất lượng Thụy Sĩ được Chính phủ công nhận, đánh giá theo 6 tiêu chuẩn: mục tiêu, cung cấp khóa học, tư vấn, giảng viên, quản lý chất lượng và nguồn lực.</p>
+                </div>
+                <div class="umef_accred_card">
+                    <img src="assets/kdumef5.png" alt="CHEA" />
+                    <h3>Council for Higher Education Accreditation (CHEA) Hoa Kỳ</h3>
+                    <p>Hội đồng kiểm định giáo dục đại học hàng đầu Hoa Kỳ. Giám sát chất lượng và công nhận các tổ chức kiểm định uy tín, đảm bảo tiêu chuẩn giáo dục đại học cao nhất.</p>
+                </div>
+                <div class="umef_accred_card">
+                    <img src="assets/kdumef2.png" alt="ACBSP" />
+                    <h3>ACBSP – Business Schools</h3>
+                    <p>Tổ chức kiểm định chất lượng trường kinh doanh được Bộ Giáo dục Hoa Kỳ công nhận, áp dụng tiêu chuẩn nghiêm ngặt về chương trình, giảng viên và kết quả học tập.</p>
+                </div>
+                <div class="umef_accred_card">
+                    <img src="assets/kdumef4.png" alt="IACBE" />
+                    <h3>IACBE – Business Education</h3>
+                    <p>Kiểm định các chương trình BBA, MBA và DBA của Swiss UMEF. IACBE chuyên về đánh giá kết quả đầu ra và chất lượng giáo dục kinh doanh quốc tế.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CERT DARK SECTION ===== -->
+    <section class="umef_cert_section">
+        <div class="umef_inner" style="position:relative;z-index:2;">
+            <div class="umef_cert_grid">
+                <div class="umef_cert_left">
+                    <div class="umef_label"><i class="fa-solid fa-certificate"></i> Chứng nhận</div>
+                    <h2>Swiss UMEF –<br><span>Đảm bảo chất lượng</span> toàn diện</h2>
+                    <div class="umef_cert_list">
+                        <div class="umef_cert_item"><i class="fa-solid fa-star"></i> QS Stars 5 Stars Overall</div>
+                        <div class="umef_cert_item"><i class="fa-solid fa-shield-halved"></i> Swiss Accreditation
+                            Council (SAC)
+                        </div>
+                        <div class="umef_cert_item"><i class="fa-solid fa-award"></i> SGS - EduQua</div>
+                        <div class="umef_cert_item"><i class="fa-solid fa-graduation-cap"></i> Accreditation Council for
+                            Business
+                            Schools &amp; Programs</div>
+                        <div class="umef_cert_item"><i class="fa-solid fa-globe"></i> International Accreditation
+                            Council for
+                            Business Education</div>
+                    </div>
+                    <div class="umef_cert_commit">
+                        <b>IDEAS cam kết:</b> Tất cả trường và chương trình đối tác đều đã được kiểm định – chứng nhận
+                        đầy đủ. Học
+                        viên hoàn toàn yên tâm về tính hợp pháp, giá trị bằng cấp và uy tín quốc tế.
+                    </div>
+                </div>
+                <div class="umef_cert_swiper swiper-container2 home">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/10/QSStarsCertificateSwissUMEF-1-1-1-1.webp"
+                                alt="QS Certificate" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://vtci.edu.vn/wp-content/uploads/2025/08/SGS_eduQua_2021_CHGE_000771_FR-1.png"
+                                alt="EduQua Certificate" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://vtci.edu.vn/wp-content/uploads/2025/08/5158dd02-aad4-411e-9917-2cf1e287dc1d.png"
+                                alt="Certificate" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://vtci.edu.vn/wp-content/uploads/2025/08/dc6aaa71-80c1-4aa5-941c-31ac297f6c33.png"
+                                alt="Certificate" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://vtci.edu.vn/wp-content/uploads/2025/08/ACBSP-Swiss-UMEF-Accreditation-Certificate-2023.pdf-1.jpg"
+                                alt="ACBSP Certificate" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="particles-js"></div>
+    </section>
+
+    <!-- ===== TESTIMONIAL VIDEOS ===== -->
+    <section class="umef_section">
+        <div class="umef_inner">
+            <div class="umef_section_head">
+                <div class="umef_label"><i class="fa-solid fa-quote-left"></i> Cảm nhận học viên</div>
+                <h2>Chia Sẻ <span>Thực Tế</span></h2>
+                <p>Lắng nghe học viên IDEAS chia sẻ trải nghiệm học tập tại Swiss UMEF – Geneva, Thụy Sĩ</p>
+            </div>
+            <div class="umef_videos">
+                <div class="umef_video_wrap">
+                    <iframe src="https://www.youtube.com/embed/uahEcE84M2s?si=xEb47BqsyAb9KgKT"
+                        title="Cảm nhận học viên UMEF 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="umef_video_wrap">
+                    <iframe src="https://www.youtube.com/embed/z8PpCgGmBs8?si=A9fFuVYxm1WscW7q"
+                        title="Cảm nhận học viên UMEF 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+<script>
+    var swiper2 = new Swiper(".swiper-container2", {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        loop: true,
+        speed: 600,
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        observer: true,
+        observeParents: true,
+    });
+    try {
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 40, density: { enable: true, value_area: 800 } },
+                color: { value: "#ff9a9e" },
+                shape: { type: "circle" },
+                opacity: { value: 0.25, random: true },
+                size: { value: 2.5, random: true },
+                line_linked: { enable: true, distance: 150, color: "#ff9a9e", opacity: 0.2, width: 1 },
+                move: { enable: true, speed: 1.5, direction: "none", random: true, out_mode: "out" },
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "grab" }, resize: true },
+                modes: { grab: { distance: 200, line_linked: { opacity: 0.5 } } },
+            },
+            retina_detect: true,
+        });
+    } catch (e) { }
+</script>

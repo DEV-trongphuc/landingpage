@@ -1,0 +1,1125 @@
+<div class="ideas_main">
+    <div class="ideas_box ideas_news_page">
+        <!-- Add a wrapper that ensures column layout -->
+        <div class="ideas_news_container">
+            <h1 class="mgt5 ideas_text_title">
+                <div class="ideas_text">IDEAS <b class="main_clr">NEWS</b></div>
+                <p>
+                    <i class="fa-solid fa-newspaper main_clr"></i>
+                    Bản tin <b class="main_clr">- Sự kiện</b>
+                </p>
+            </h1>
+
+            <!-- Search Box -->
+            <div class="ideas_news_search_wrapper">
+                <div class="ideas_search_container">
+                    <div class="ideas_search_box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="ideas_news_search" placeholder="Tìm kiếm bài viết..." autocomplete="off">
+                        <span class="ideas_search_loader" style="display: none;"><i
+                                class="fa-solid fa-spinner fa-spin"></i></span>
+                    </div>
+                    <!-- Search Dropdown Modal -->
+                    <div class="ideas_search_dropdown" id="ideas_search_dropdown" style="display: none;">
+                        <div class="ideas_search_results"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured News Section (Only for page 1, no search) -->
+            <div class="ideas_featured_news" id="ideas_featured_news">
+                <!-- Injected via JS -->
+            </div>
+
+            <!-- News Grid Container -->
+            <div class="ideas_news_grid" id="ideas_news_grid">
+                <!-- Skeletons will be injected here during load -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="ideas_pagination" id="ideas_pagination">
+                <!-- Pagination buttons will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Fix the ideas_box flex issue */
+        .ideas_box.ideas_news_page {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .ideas_news_container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Modern Premium CSS for News Page */
+        .ideas_news_search_wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0 50px 0;
+            padding: 0 15px;
+            width: 100%;
+        }
+
+        .ideas_search_container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .ideas_search_box {
+            position: relative;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(139, 0, 0, 0.08);
+            border: 1px solid rgba(139, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            padding: 5px 20px;
+            z-index: 101;
+        }
+
+        .ideas_search_box:focus-within {
+            box-shadow: 0 15px 40px rgba(139, 0, 0, 0.15);
+            transform: translateY(-2px);
+            border-color: rgba(139, 0, 0, 0.3);
+        }
+
+        .ideas_search_box i.fa-magnifying-glass {
+            color: var(--mainClr, #ab0e00);
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        .ideas_search_box input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 15px 0;
+            font-size: 1.1rem;
+            color: #333;
+            outline: none;
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .ideas_search_loader {
+            color: var(--mainClr, #ab0e00);
+            font-size: 1.2rem;
+            margin-left: 15px;
+        }
+
+        /* Search Dropdown */
+        .ideas_search_dropdown {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 100;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ideas_search_results {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .ideas_search_item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .ideas_search_item:hover {
+            background: #f9f9f9;
+        }
+
+        .ideas_search_item_thumb {
+            width: 80px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .ideas_search_item_thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ideas_search_item_info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ideas_search_item_title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.3;
+        }
+
+        .ideas_search_item_date {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .ideas_search_more {
+            padding: 15px;
+            text-align: center;
+            background: #fcfcfc;
+            color: var(--mainClr, #ab0e00);
+            font-weight: 600;
+            cursor: pointer;
+            border-top: 1px solid #f0f0f0;
+            transition: background 0.3s ease;
+        }
+
+        .ideas_search_more:hover {
+            background: #f0f0f0;
+        }
+
+        .ideas_search_empty {
+            padding: 20px;
+            text-align: center;
+            color: #888;
+        }
+
+        /* --- Featured News Magazine Layout --- */
+        .ideas_featured_news {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 992px) {
+            .ideas_featured_news {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+
+        .featured_main_card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            min-height: 450px;
+            display: flex;
+            align-items: flex-end;
+            text-decoration: none;
+        }
+
+        .featured_main_card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        }
+
+        .featured_main_card:hover img {
+            transform: scale(1.05);
+        }
+
+        .featured_main_card .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+            z-index: 2;
+        }
+
+        .featured_main_content {
+            position: relative;
+            z-index: 3;
+            padding: 40px;
+            color: white;
+            width: 100%;
+        }
+
+        .featured_badge {
+            background: var(--mainClr, #ab0e00);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .featured_main_title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            color: white !important;
+        }
+
+        .featured_main_excerpt {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .featured_side_list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .featured_side_item {
+            display: flex;
+            gap: 15px;
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            height: 136px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .featured_side_item:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--mainClr, #ab0e00);
+        }
+
+        .featured_side_thumb {
+            width: 110px;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .featured_side_thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured_side_info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured_side_date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .featured_side_title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #222;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+
+        .featured_side_item:hover .featured_side_title {
+            color: var(--mainClr, #ab0e00);
+        }
+
+        /* Grid Layout */
+        .ideas_news_grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* Standard Card Design */
+        .ideas_news_card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            height: 100%;
+            position: relative;
+        }
+
+        .ideas_news_card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--mainClr, #ab0e00);
+            transition: width 0.4s ease;
+        }
+
+        .ideas_news_card:hover::after {
+            width: 100%;
+        }
+
+        .ideas_news_card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(171, 14, 0, 0.1);
+        }
+
+        .ideas_news_thumb {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ideas_news_thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .ideas_news_card:hover .ideas_news_thumb img {
+            transform: scale(1.08);
+        }
+
+        .ideas_news_date {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--mainClr, #ab0e00);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ideas_news_content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .ideas_news_title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+
+        .ideas_news_card:hover .ideas_news_title {
+            color: var(--mainClr, #ab0e00);
+        }
+
+        .ideas_news_excerpt {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .ideas_news_readmore {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--mainClr, #ab0e00);
+            font-size: 0.95rem;
+            margin-top: auto;
+        }
+
+        .ideas_news_readmore i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .ideas_news_card:hover .ideas_news_readmore i {
+            transform: translateX(5px);
+        }
+
+        /* Pagination */
+        .ideas_pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .ideas_page_btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: white;
+            color: #333;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .ideas_page_btn:hover {
+            background: #f8f9fa;
+            color: var(--mainClr, #ab0e00);
+            border-color: var(--mainClr, #ab0e00);
+            transform: translateY(-2px);
+        }
+
+        .ideas_page_btn.active {
+            background: var(--mainClr, #ab0e00);
+            color: white;
+            border: none;
+            box-shadow: 0 5px 15px rgba(171, 14, 0, 0.3);
+            pointer-events: none;
+        }
+
+        .ideas_page_btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .ideas_no_results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 50px 0;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Skeletons */
+        .ideas_skeleton {
+            background: #f0f0f0;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .sk_card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 420px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+
+        .sk_thumb {
+            height: 220px;
+            width: 100%;
+        }
+
+        .sk_content {
+            padding: 25px;
+            flex: 1;
+        }
+
+        .sk_title {
+            height: 24px;
+            width: 80%;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .sk_text {
+            height: 16px;
+            width: 100%;
+            margin-bottom: 8px;
+            border-radius: 4px;
+        }
+
+        .sk_text.short {
+            width: 60%;
+        }
+
+        /* Magazine Skeletons */
+        .sk_featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .sk_feat_main {
+            border-radius: 20px;
+            height: 450px;
+        }
+
+        .sk_feat_side {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sk_feat_side_item {
+            height: 136px;
+            border-radius: 15px;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .ideas_text_title {
+                font-size: 3rem !important;
+            }
+
+            .ideas_text_title p {
+                font-size: 1.6rem;
+            }
+
+            .ideas_news_search_wrapper {
+                margin: 20px 0 30px 0;
+            }
+
+            .ideas_search_box {
+                padding: 5px 15px;
+            }
+
+            .ideas_search_box input {
+                font-size: 1rem;
+                padding: 10px 0;
+            }
+
+            .ideas_featured_news {
+                gap: 15px;
+                margin-bottom: 30px;
+            }
+
+            .featured_main_card {
+                min-height: 350px;
+                border-radius: 12px;
+            }
+
+            .featured_main_content {
+                padding: 20px;
+            }
+
+            .featured_main_title {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            .featured_main_excerpt {
+                font-size: 0.95rem;
+                -webkit-line-clamp: 2;
+            }
+
+            .featured_badge {
+                padding: 4px 10px;
+                font-size: 0.75rem;
+                margin-bottom: 10px;
+            }
+
+            .featured_side_list {
+                gap: 15px;
+            }
+
+            .featured_side_item {
+                height: auto;
+                padding: 10px;
+                gap: 12px;
+                border-radius: 12px;
+            }
+
+            .featured_side_thumb {
+                width: 100px;
+                height: 80px;
+                border-radius: 6px;
+            }
+
+            .featured_side_title {
+                font-size: 1rem;
+            }
+
+            .featured_side_date {
+                font-size: 0.75rem;
+            }
+
+            .ideas_news_grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 20px;
+            }
+
+            .ideas_news_card {
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                border-radius: 12px;
+            }
+
+            .ideas_news_thumb {
+                height: 200px;
+            }
+
+            .ideas_news_content {
+                padding: 20px;
+            }
+
+            .ideas_news_title {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+
+            .ideas_news_excerpt {
+                font-size: 0.95rem;
+                margin-bottom: 15px;
+            }
+
+            .ideas_news_date {
+                font-size: 0.8rem;
+                padding: 4px 10px;
+            }
+
+            .ideas_pagination {
+                gap: 5px;
+                margin-top: 30px;
+            }
+
+            .ideas_page_btn {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+
+            .sk_card {
+                height: 380px;
+            }
+
+            .sk_thumb {
+                height: 200px;
+            }
+
+            .sk_feat_main {
+                height: 350px;
+            }
+
+            .sk_feat_side_item {
+                height: 100px;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const grid = document.getElementById("ideas_news_grid");
+            const featuredContainer = document.getElementById("ideas_featured_news");
+            const paginationContainer = document.getElementById("ideas_pagination");
+            const searchInput = document.getElementById("ideas_news_search");
+            const searchLoader = document.querySelector(".ideas_search_loader");
+            const searchDropdown = document.getElementById("ideas_search_dropdown");
+
+            let currentPage = 1;
+            let currentSearchQuery = "";
+            let totalPages = 1;
+            let searchTimeout = null;
+
+            // WordPress API base URL
+            const API_BASE = "https://ideas.edu.vn/wp-json/wp/v2/posts";
+            const PER_PAGE = 12;
+
+            // Extract image from post securely
+            const getPostImage = (post) => {
+                let thumb = 'https://ideas.edu.vn/wp-content/uploads/2025/07/ideas_side2.webp';
+                if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+                    const mediaDetails = post._embedded['wp:featuredmedia'][0].media_details;
+                    if (mediaDetails && mediaDetails.sizes && mediaDetails.sizes.medium_large) {
+                        thumb = mediaDetails.sizes.medium_large.source_url;
+                    } else {
+                        thumb = post._embedded['wp:featuredmedia'][0].source_url;
+                    }
+                }
+                return thumb;
+            };
+
+            // Function to generate skeletons
+            const renderSkeletons = (isFirstPageAndNoSearch) => {
+                let gridHtml = "";
+                featuredContainer.style.display = "none";
+                featuredContainer.innerHTML = "";
+
+                if (isFirstPageAndNoSearch) {
+                    featuredContainer.style.display = "grid";
+                    featuredContainer.innerHTML = `
+                        <div class="ideas_skeleton sk_feat_main"></div>
+                        <div class="sk_feat_side">
+                            <div class="ideas_skeleton sk_feat_side_item"></div>
+                            <div class="ideas_skeleton sk_feat_side_item"></div>
+                            <div class="ideas_skeleton sk_feat_side_item"></div>
+                        </div>
+                    `;
+                    for (let i = 0; i < (PER_PAGE - 4); i++) {
+                        gridHtml += `
+                            <div class="sk_card">
+                                <div class="ideas_skeleton sk_thumb"></div>
+                                <div class="sk_content">
+                                    <div class="ideas_skeleton sk_title"></div>
+                                    <div class="ideas_skeleton sk_text"></div>
+                                    <div class="ideas_skeleton sk_text"></div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                } else {
+                    for (let i = 0; i < PER_PAGE; i++) {
+                        gridHtml += `
+                            <div class="sk_card">
+                                <div class="ideas_skeleton sk_thumb"></div>
+                                <div class="sk_content">
+                                    <div class="ideas_skeleton sk_title"></div>
+                                    <div class="ideas_skeleton sk_text"></div>
+                                    <div class="ideas_skeleton sk_text"></div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+                grid.innerHTML = gridHtml;
+            };
+
+            // Fetch and render posts for main view
+            const fetchPosts = async (page = 1, search = "") => {
+                const isFirstPageAndNoSearch = (page === 1 && !search);
+                renderSkeletons(isFirstPageAndNoSearch);
+
+                try {
+                    let url = `${API_BASE}?_embed&per_page=${PER_PAGE}&page=${page}&_fields=id,date,title,link,excerpt,_links,_embedded`;
+                    if (search) {
+                        url += `&search=${encodeURIComponent(search)}`;
+                    }
+
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        if (response.status === 400) {
+                            grid.innerHTML = `<div class="ideas_no_results">Không có bài viết nào ở trang này.</div>`;
+                            paginationContainer.innerHTML = "";
+                            featuredContainer.style.display = "none";
+                            return;
+                        }
+                        throw new Error("Failed to fetch posts");
+                    }
+
+                    totalPages = parseInt(response.headers.get("X-WP-TotalPages")) || 1;
+                    const posts = await response.json();
+
+                    if (posts.length === 0) {
+                        grid.innerHTML = `<div class="ideas_no_results">Không tìm thấy bài viết nào phù hợp.</div>`;
+                        paginationContainer.innerHTML = "";
+                        featuredContainer.style.display = "none";
+                    } else {
+                        if (isFirstPageAndNoSearch && posts.length >= 4) {
+                            renderMagazineLayout(posts);
+                        } else {
+                            featuredContainer.style.display = "none";
+                            renderGridOnly(posts);
+                        }
+                        renderPagination(page, totalPages);
+                    }
+                } catch (error) {
+                    console.error("Error fetching posts:", error);
+                    grid.innerHTML = `<div class="ideas_no_results">Đã xảy ra lỗi khi tải bài viết. Vui lòng thử lại sau.</div>`;
+                    featuredContainer.style.display = "none";
+                }
+            };
+
+            // Fetch search results for dropdown
+            const fetchSearchResults = async (query) => {
+                searchLoader.style.display = "inline-block";
+                try {
+                    const url = `${API_BASE}?_embed&per_page=5&search=${encodeURIComponent(query)}&_fields=id,date,title,link,excerpt,_links,_embedded`;
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error("Search failed");
+
+                    const totalPosts = parseInt(response.headers.get("X-WP-Total")) || 0;
+                    const posts = await response.json();
+
+                    renderSearchDropdown(posts, query, totalPosts);
+                } catch (error) {
+                    console.error("Search error:", error);
+                    searchDropdown.innerHTML = `<div class="ideas_search_results"><div class="ideas_search_empty">Đã xảy ra lỗi khi tìm kiếm.</div></div>`;
+                    searchDropdown.style.display = "flex";
+                } finally {
+                    searchLoader.style.display = "none";
+                }
+            };
+
+            // Render Search Dropdown
+            const renderSearchDropdown = (posts, query, totalPosts) => {
+                if (posts.length === 0) {
+                    searchDropdown.innerHTML = `<div class="ideas_search_results"><div class="ideas_search_empty">Không tìm thấy kết quả nào cho "${query}".</div></div>`;
+                    searchDropdown.style.display = "flex";
+                    return;
+                }
+
+                let html = `<div class="ideas_search_results">`;
+                posts.forEach(post => {
+                    const title = post.title.rendered;
+                    const link = post.link;
+                    const date = new Date(post.date).toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                    const thumb = getPostImage(post);
+
+                    html += `
+                        <a href="${link}" class="ideas_search_item" target="_blank">
+                            <div class="ideas_search_item_thumb">
+                                <img src="${thumb}" alt="${title}">
+                            </div>
+                            <div class="ideas_search_item_info">
+                                <div class="ideas_search_item_title">${title}</div>
+                                <div class="ideas_search_item_date">${date}</div>
+                            </div>
+                        </a>
+                    `;
+                });
+                html += `</div>`;
+
+                if (totalPosts > 5) {
+                    html += `<div class="ideas_search_more" onclick="showAllResults('${query.replace(/'/g, "\\'")}')">Xem tất cả ${totalPosts} kết quả cho "${query}" <i class="fa-solid fa-arrow-right"></i></div>`;
+                }
+
+                searchDropdown.innerHTML = html;
+                searchDropdown.style.display = "flex";
+            };
+
+            // Global function to show all results from dropdown
+            window.showAllResults = (query) => {
+                searchDropdown.style.display = "none";
+                searchInput.value = query;
+                currentSearchQuery = query;
+                currentPage = 1;
+                fetchPosts(1, query);
+                document.querySelector(".ideas_text_title").scrollIntoView({ behavior: 'smooth', block: 'start' });
+            };
+
+            // Render Magazine Layout
+            const renderMagazineLayout = (posts) => {
+                const mainPost = posts[0];
+                const sidePosts = posts.slice(1, 4);
+                const gridPosts = posts.slice(4);
+
+                featuredContainer.style.display = "grid";
+
+                const mTitle = mainPost.title.rendered;
+                const mExcerpt = mainPost.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 150) + "...";
+                const mImg = getPostImage(mainPost);
+
+                let featHtml = `
+                    <a href="${mainPost.link}" class="featured_main_card" target="_blank">
+                        <img src="${mImg}" alt="${mTitle}">
+                        <div class="overlay"></div>
+                        <div class="featured_main_content">
+                            <span class="featured_badge">Tin mới nhất</span>
+                            <h2 class="featured_main_title">${mTitle}</h2>
+                            <p class="featured_main_excerpt">${mExcerpt}</p>
+                        </div>
+                    </a>
+                    <div class="featured_side_list">
+                `;
+
+                sidePosts.forEach(post => {
+                    const sTitle = post.title.rendered;
+                    const sDate = new Date(post.date).toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                    const sImg = getPostImage(post);
+
+                    featHtml += `
+                        <a href="${post.link}" class="featured_side_item" target="_blank">
+                            <div class="featured_side_thumb">
+                                <img src="${sImg}" alt="${sTitle}" loading="lazy">
+                            </div>
+                            <div class="featured_side_info">
+                                <div class="featured_side_date">${sDate}</div>
+                                <h3 class="featured_side_title">${sTitle}</h3>
+                            </div>
+                        </a>
+                    `;
+                });
+
+                featHtml += `</div>`;
+                featuredContainer.innerHTML = featHtml;
+
+                renderGridOnly(gridPosts);
+            };
+
+            // Render Grid
+            const renderGridOnly = (posts) => {
+                grid.innerHTML = posts.map(post => {
+                    const title = post.title.rendered;
+                    const link = post.link;
+                    const excerpt = post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 120) + "...";
+                    const date = new Date(post.date).toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                    const thumb = getPostImage(post);
+
+                    return `
+                        <a href="${link}" class="ideas_news_card" target="_blank">
+                            <div class="ideas_news_thumb">
+                                <img src="${thumb}" alt="${title}" loading="lazy">
+                                <span class="ideas_news_date">${date}</span>
+                            </div>
+                            <div class="ideas_news_content">
+                                <h3 class="ideas_news_title">${title}</h3>
+                                <p class="ideas_news_excerpt">${excerpt}</p>
+                                <span class="ideas_news_readmore">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    `;
+                }).join("");
+            };
+
+            // Render Pagination
+            const renderPagination = (current, total) => {
+                if (total <= 1) {
+                    paginationContainer.innerHTML = "";
+                    return;
+                }
+
+                let html = "";
+
+                html += `<button class="ideas_page_btn" data-page="${current - 1}" ${current === 1 ? 'disabled' : ''}><i class="fa-solid fa-angle-left"></i></button>`;
+
+                let startPage = Math.max(1, current - 1);
+                let endPage = Math.min(total, current + 1);
+
+                if (current === 1) endPage = Math.min(total, 3);
+                if (current === total) startPage = Math.max(1, total - 2);
+
+                if (startPage > 1) {
+                    html += `<button class="ideas_page_btn" data-page="1">1</button>`;
+                    if (startPage > 2) html += `<span style="color:#999;">...</span>`;
+                }
+
+                for (let i = startPage; i <= endPage; i++) {
+                    html += `<button class="ideas_page_btn ${i === current ? 'active' : ''}" data-page="${i}">${i}</button>`;
+                }
+
+                if (endPage < total) {
+                    if (endPage < total - 1) html += `<span style="color:#999;">...</span>`;
+                    html += `<button class="ideas_page_btn" data-page="${total}">${total}</button>`;
+                }
+
+                html += `<button class="ideas_page_btn" data-page="${current + 1}" ${current === total ? 'disabled' : ''}><i class="fa-solid fa-angle-right"></i></button>`;
+
+                paginationContainer.innerHTML = html;
+            };
+
+            // Listeners
+            paginationContainer.addEventListener("click", (e) => {
+                const btn = e.target.closest(".ideas_page_btn");
+                if (!btn || btn.disabled || btn.classList.contains("active")) return;
+
+                const newPage = parseInt(btn.getAttribute("data-page"));
+                if (newPage && newPage !== currentPage) {
+                    currentPage = newPage;
+                    fetchPosts(currentPage, currentSearchQuery);
+                    document.querySelector(".ideas_text_title").scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+
+            searchInput.addEventListener("input", (e) => {
+                clearTimeout(searchTimeout);
+                const query = e.target.value.trim();
+
+                if (!query) {
+                    searchDropdown.style.display = "none";
+                    if (currentSearchQuery !== "") {
+                        currentSearchQuery = "";
+                        currentPage = 1;
+                        fetchPosts(1, "");
+                    }
+                    return;
+                }
+
+                searchTimeout = setTimeout(() => {
+                    fetchSearchResults(query);
+                }, 500);
+            });
+
+            // Close dropdown if clicking outside
+            document.addEventListener("click", (e) => {
+                if (!e.target.closest(".ideas_search_container")) {
+                    searchDropdown.style.display = "none";
+                }
+            });
+
+            // Re-open dropdown when clicking search input if it has value
+            searchInput.addEventListener("focus", () => {
+                if (searchInput.value.trim() && searchDropdown.innerHTML !== "") {
+                    searchDropdown.style.display = "flex";
+                }
+            });
+
+            // Initial Fetch
+            fetchPosts(currentPage, currentSearchQuery);
+        });
+    </script>
+</div>
