@@ -8223,3 +8223,29 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-headline {
   will-change: transform, opacity;
   transform: translateZ(0);
 }
+
+/* Global Smooth Scroll & Inertia Scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix iOS auto-zoom on form focus */
+@media (max-width: 768px) {
+  .form-group input,
+  .form-group select,
+  .form-group textarea,
+  .booking-form input,
+  .booking-form select,
+  .booking-form textarea,
+  .bk-form input,
+  .bk-form select,
+  .bk-form textarea,
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
