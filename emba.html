@@ -6335,91 +6335,87 @@
 
         const QUIZ_QUESTIONS = [
             {
-                "question": "Vị thế quản lý hiện tại và số năm kinh nghiệm thực chiến của bạn?",
+                "question": "Điều gì đang thực sự làm bạn trăn trở nhất trong vai trò lãnh đạo hiện tại?",
                 "options": [
                     {
-                        "text": "Là Giám đốc điều hành, C-level hoặc Chủ doanh nghiệp với trên 5 năm kinh nghiệm quản lý.",
+                        "text": "Tôi điều hành doanh nghiệp bằng kinh nghiệm — nhưng thiếu framework chiến lược bài bản để đưa ra quyết định lớn.",
+                        "scores": { "EMBA": 5, "MBA": 3 }
+                    },
+                    {
+                        "text": "Đối tác và khách hàng quốc tế nhìn tôi thiếu tin tưởng vì tôi không có bằng cấp quốc tế tương xứng.",
                         "scores": { "EMBA": 5, "DUAL_DBA": 3 }
                     },
                     {
-                        "text": "Là Quản lý cấp trung, Trưởng bộ phận với dưới 5 năm kinh nghiệm quản lý.",
-                        "scores": { "MBA": 5, "MBA_AI": 3, "MSC_AI": 2 }
-                    },
-                    {
-                        "text": "Chưa có kinh nghiệm quản lý, là chuyên viên hoặc đang hoàn thiện học vấn.",
-                        "scores": { "BBA": 5, "FULL_BBA": 4 }
+                        "text": "Tôi cần thay đổi tư duy quản trị và làm mới bản thân để dẫn dắt doanh nghiệp vượt qua giai đoạn tăng trưởng tiếp theo.",
+                        "scores": { "EMBA": 4, "MBA": 4, "DUAL_DBA": 3 }
                     }
                 ]
             },
             {
-                "question": "Kỳ vọng lớn nhất của bạn đối với một chương trình Thạc sĩ điều hành?",
+                "question": "Khi ngồi trong hội đồng quản trị hoặc đàm phán với đối tác nước ngoài, điều nào khiến bạn chưa hài lòng?",
                 "options": [
                     {
-                        "text": "Hoạch định chiến lược vĩ mô, quản trị sự thay đổi và kết nối mạng lưới tinh hoa (elite networking).",
+                        "text": "Tôi giỏi thực chiến nhưng không tự tin trình bày chiến lược theo framework quốc tế được đối tác công nhận.",
                         "scores": { "EMBA": 5 }
                     },
                     {
-                        "text": "Nâng cao năng lực quản lý toàn diện (Marketing, Tài chính, Nhân sự, Vận hành) cấp trung thực tiễn.",
-                        "scores": { "MBA": 5 }
+                        "text": "Tôi thiếu mạng lưới lãnh đạo cấp cao đa ngành để mở rộng cơ hội hợp tác và đầu tư.",
+                        "scores": { "EMBA": 5, "DUAL_DBA": 2 }
                     },
                     {
-                        "text": "Xây dựng tư duy quản trị tích hợp AI no-code để tăng hiệu quả vận hành doanh nghiệp riêng.",
-                        "scores": { "MBA_AI": 5 }
-                    },
-                    {
-                        "text": "Thực hiện các công trình nghiên cứu khoa học lớn để đạt học vị Tiến sĩ.",
-                        "scores": { "DUAL_DBA": 5 }
+                        "text": "Team của tôi chưa ứng dụng được AI và dữ liệu để đưa ra quyết định nhanh hơn đối thủ.",
+                        "scores": { "MBA_AI": 5, "EMBA": 2 }
                     }
                 ]
             },
             {
-                "question": "Trình độ học vấn cao nhất hiện tại của bạn là gì?",
+                "question": "Bạn mô tả vai trò hiện tại và trải nghiệm lãnh đạo của mình như thế nào?",
                 "options": [
                     {
-                        "text": "Đã tốt nghiệp Đại học  chuyên ngành bất kỳ.",
-                        "scores": { "EMBA": 5, "MBA": 4, "MBA_AI": 4, "MSC_AI": 3 }
-                    },
-                    {
-                        "text": "Đã tốt nghiệp Cao đẳng, Trung cấp muốn học liên thông cử nhân.",
-                        "scores": { "BBA": 5 }
-                    },
-                    {
-                        "text": "Đã tốt nghiệp Thạc sĩ và muốn học lên Tiến sĩ.",
-                        "scores": { "DUAL_DBA": 5 }
-                    }
-                ]
-            },
-            {
-                "question": "Bạn muốn chương trình học tiếp cận công nghệ Trí tuệ nhân tạo (AI) ở góc độ nào?",
-                "options": [
-                    {
-                        "text": "Chỉ cần tư duy quản lý công nghệ vĩ mô, không cần học chuyên sâu kỹ thuật hay lập trình.",
-                        "scores": { "EMBA": 5, "MBA": 4, "DUAL_DBA": 3 }
-                    },
-                    {
-                        "text": "Muốn ứng dụng thực tế các công cụ AI (Prompt, automation) để tối ưu hóa hiệu suất điều hành.",
-                        "scores": { "MBA_AI": 5 }
-                    },
-                    {
-                        "text": "Muốn học sâu thuật toán AI, phân tích dữ liệu kỹ thuật và Machine Learning.",
-                        "scores": { "MSC_AI": 5 }
-                    }
-                ]
-            },
-            {
-                "question": "Lịch trình học tập mong muốn của bạn thế nào?",
-                "options": [
-                    {
-                        "text": "Lịch học linh hoạt tối đa được thiết kế riêng tối ưu hoàn toàn cho lãnh đạo bận rộn.",
+                        "text": "CEO / Giám đốc điều hành / Chủ doanh nghiệp với 8+ năm kinh nghiệm quản lý cấp cao.",
                         "scores": { "EMBA": 5 }
                     },
                     {
-                        "text": "Học online theo tiến độ cá nhân linh hoạt và chủ động.",
-                        "scores": { "MBA": 5, "MBA_AI": 4 }
+                        "text": "Giám đốc bộ phận / Director với 5-8 năm kinh nghiệm, đang hướng đến C-level.",
+                        "scores": { "EMBA": 4, "MBA": 4 }
                     },
                     {
-                        "text": "Nghiên cứu khoa học học thuật có sự hỗ trợ trực tiếp từ giáo sư hướng dẫn.",
-                        "scores": { "DUAL_DBA": 5 }
+                        "text": "Manager / Trưởng nhóm đang xây dựng nền tảng để tiến lên lãnh đạo cấp cao.",
+                        "scores": { "MBA": 5, "MBA_AI": 3 }
+                    }
+                ]
+            },
+            {
+                "question": "Mục tiêu chiến lược 2-3 năm tới của bạn là gì?",
+                "options": [
+                    {
+                        "text": "Mở rộng doanh nghiệp ra thị trường khu vực ASEAN hoặc quốc tế — cần uy tín và network toàn cầu.",
+                        "scores": { "EMBA": 5, "DUAL_DBA": 3 }
+                    },
+                    {
+                        "text": "Chuyển đổi mô hình kinh doanh để dẫn đầu trong kỷ nguyên AI và số hoá.",
+                        "scores": { "EMBA": 4, "MBA_AI": 4 }
+                    },
+                    {
+                        "text": "Xây dựng đội ngũ lãnh đạo kế thừa và chuẩn hoá hệ thống quản trị doanh nghiệp.",
+                        "scores": { "EMBA": 5, "MBA": 3 }
+                    }
+                ]
+            },
+            {
+                "question": "Điều bạn coi là GIÁ TRỊ LỚN NHẤT từ chương trình EMBA?",
+                "options": [
+                    {
+                        "text": "Mạng lưới C-level đa ngành — cơ hội hợp tác, đầu tư và học hỏi từ lãnh đạo ngang tầm.",
+                        "scores": { "EMBA": 5, "DUAL_DBA": 3 }
+                    },
+                    {
+                        "text": "Bằng Executive MBA Thụy Sĩ — được công nhận quốc tế, nâng vị thế khi làm việc với đối tác nước ngoài.",
+                        "scores": { "EMBA": 5, "MBA": 3 }
+                    },
+                    {
+                        "text": "Framework chiến lược và tư duy lãnh đạo mới — áp dụng ngay vào quyết định điều hành thực tế.",
+                        "scores": { "EMBA": 5, "MBA": 4 }
                     }
                 ]
             }
@@ -6530,11 +6526,11 @@
 
                 if (type === CURRENT_PROGRAM) {
                     iconEl.textContent = '🎉';
-                    grpEl.textContent = 'Kết quả: Rất phù hợp!';
+                    grpEl.textContent = 'Xác nhận: Đây chính là chương trình dành cho bạn!';
                     grpEl.className = 'qz-result-group qz-result-group--strategic';
                     titleEl.textContent = `Bạn cực kỳ phù hợp với ${matchedProg.name}!`;
                     msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
-                    ctaBtn.textContent = 'Đăng ký tư vấn ngay';
+                    ctaBtn.textContent = 'Nhận lộ trình cá nhân hoá — Miễn phí';
                     ctaBtn.href = 'javascript:void(0)';
                     ctaBtn.onclick = function (e) {
                         e.preventDefault();

@@ -6338,95 +6338,87 @@
 
         const QUIZ_QUESTIONS = [
             {
-                "question": "Trình độ học vấn cao nhất hiện tại của bạn là gì?",
+                "question": "Điều nào đang thực sự cản trở con đường thăng tiến của bạn?",
                 "options": [
                     {
-                        "text": "Đã tốt nghiệp Đại học  chuyên ngành bất kỳ.",
-                        "scores": { "MBA": 5, "EMBA": 3, "MBA_AI": 3, "MSC_AI": 2 }
+                        "text": "Tôi đang là Manager nhưng thiếu framework quản trị bài bản — mọi quyết định vẫn còn theo cảm tính.",
+                        "scores": { "MBA": 5, "MBA_AI": 3 }
                     },
                     {
-                        "text": "Đã tốt nghiệp Cao đẳng, Trung cấp muốn học liên thông nhanh.",
-                        "scores": { "BBA": 5 }
+                        "text": "Tôi điều hành doanh nghiệp lâu năm nhưng thiếu tầm nhìn chiến lược vĩ mô và network lãnh đạo cấp cao.",
+                        "scores": { "EMBA": 5, "DUAL_DBA": 2 }
                     },
                     {
-                        "text": "Tốt nghiệp THPT hoặc chưa hoàn thành Đại học.",
-                        "scores": { "FULL_BBA": 5 }
-                    },
-                    {
-                        "text": "Đã có bằng Thạc sĩ và mong muốn nâng tầm học vị lên Tiến sĩ.",
-                        "scores": { "DUAL_DBA": 5 }
+                        "text": "Bằng cấp trong nước không được đối tác và nhà tuyển dụng quốc tế công nhận — tôi bị thiệt thòi khi cạnh tranh.",
+                        "scores": { "MBA": 4, "EMBA": 3, "BBA": 4, "FULL_BBA": 3 }
                     }
                 ]
             },
             {
-                "question": "Vị trí công tác hiện tại và kinh nghiệm quản lý của bạn?",
+                "question": "Khi ngồi trong cuộc họp chiến lược với ban lãnh đạo, điều gì khiến bạn không tự tin nhất?",
                 "options": [
                     {
-                        "text": "Quản lý cấp trung, Trưởng nhóm/Trưởng bộ phận hoặc chuyên viên mong muốn thăng tiến.",
-                        "scores": { "MBA": 5, "MBA_AI": 3, "MSC_AI": 2 }
-                    },
-                    {
-                        "text": "Giám đốc điều hành, C-level hoặc Chủ doanh nghiệp lớn lâu năm.",
-                        "scores": { "EMBA": 5, "DUAL_DBA": 3 }
-                    },
-                    {
-                        "text": "Nhân viên văn phòng, chưa có nhiều kinh nghiệm quản lý.",
-                        "scores": { "MBA": 3, "FULL_BBA": 2, "BBA": 2 }
-                    }
-                ]
-            },
-            {
-                "question": "Mục tiêu lớn nhất của bạn khi tham gia chương trình Thạc sĩ quản trị?",
-                "options": [
-                    {
-                        "text": "Nâng cao năng lực quản trị toàn diện và bài bản (tài chính, marketing, vận hành, nhân sự).",
+                        "text": "Tôi không có đủ kiến thức về tài chính, marketing, vận hành để tham gia thảo luận chiến lược tổng thể.",
                         "scores": { "MBA": 5 }
                     },
                     {
-                        "text": "Hoạch định chiến lược vĩ mô, quản trị sự thay đổi và kết nối mạng lưới lãnh đạo cấp cao.",
-                        "scores": { "EMBA": 5 }
+                        "text": "Tôi thiếu dữ liệu và công cụ để ra quyết định nhanh — trong khi đối thủ đã dùng AI để phân tích.",
+                        "scores": { "MBA_AI": 5, "MBA": 3 }
                     },
                     {
-                        "text": "Dẫn dắt chuyển đổi số và ứng dụng AI no-code để tối ưu hóa hiệu suất doanh nghiệp.",
-                        "scores": { "MBA_AI": 5 }
-                    },
-                    {
-                        "text": "Nghiên cứu học thuật chuyên sâu và tạo lập tri thức mới giải quyết các vấn đề thực tiễn lớn.",
-                        "scores": { "DUAL_DBA": 5 }
+                        "text": "Tôi chưa có bằng cấp quốc tế để khẳng định vị thế khi ngồi ngang hàng với lãnh đạo nước ngoài.",
+                        "scores": { "EMBA": 5, "MBA": 3 }
                     }
                 ]
             },
             {
-                "question": "Bạn kỳ vọng mức độ tích hợp công nghệ và Trí tuệ nhân tạo (AI) trong khóa học thế nào?",
+                "question": "Trong 18 tháng tới, bạn muốn đạt được điều gì cụ thể nhất?",
                 "options": [
                     {
-                        "text": "Tập trung quản trị kinh doanh cốt lõi, không cần tích hợp sâu công nghệ.",
-                        "scores": { "MBA": 5, "EMBA": 4, "BBA": 4, "FULL_BBA": 4, "DUAL_DBA": 3 }
+                        "text": "Lên Director/CEO — với bằng MBA quốc tế để chứng minh năng lực và tăng thu nhập đáng kể.",
+                        "scores": { "MBA": 5 }
                     },
                     {
-                        "text": "Muốn ứng dụng AI no-code thực tế (Prompt Engineering, automation) vào công việc quản lý hàng ngày.",
-                        "scores": { "MBA_AI": 5 }
+                        "text": "Làm chủ ứng dụng AI vào quản lý để vượt trội so với đồng nghiệp và tạo lợi thế cạnh tranh cho team.",
+                        "scores": { "MBA_AI": 5, "MBA": 2 }
                     },
                     {
-                        "text": "Muốn học sâu kỹ thuật lập trình AI, phân tích dữ liệu và thuật toán máy học.",
-                        "scores": { "MSC_AI": 5 }
+                        "text": "Xây dựng network C-level và tư duy chiến lược vĩ mô để điều hành doanh nghiệp ở tầm cao hơn.",
+                        "scores": { "EMBA": 5, "DUAL_DBA": 3 }
                     }
                 ]
             },
             {
-                "question": "Quỹ thời gian và hình thức học tập bạn mong muốn nhất?",
+                "question": "Trình độ học vấn và kinh nghiệm lãnh đạo hiện tại của bạn?",
                 "options": [
                     {
-                        "text": "Học trực tuyến linh hoạt, lịch học tự chọn để tối ưu thời gian vừa học vừa làm.",
+                        "text": "Tốt nghiệp Đại học, đang là quản lý cấp trung hoặc chuyên viên muốn thăng tiến lên lãnh đạo.",
+                        "scores": { "MBA": 5, "MBA_AI": 4, "MSC_AI": 2 }
+                    },
+                    {
+                        "text": "Đã là Giám đốc / C-level / Chủ doanh nghiệp với 10+ năm kinh nghiệm thực chiến.",
+                        "scores": { "EMBA": 5, "DUAL_DBA": 3 }
+                    },
+                    {
+                        "text": "Tốt nghiệp Cao đẳng / Trung cấp, muốn liên thông để có bằng cử nhân quốc tế.",
+                        "scores": { "BBA": 5 }
+                    }
+                ]
+            },
+            {
+                "question": "Điều bạn coi là tiêu chí QUAN TRỌNG NHẤT khi chọn chương trình?",
+                "options": [
+                    {
+                        "text": "Học online linh hoạt 100% — không nghỉ việc, không gián đoạn thu nhập, hỗ trợ trả góp 0% lãi suất.",
                         "scores": { "MBA": 5, "MBA_AI": 4 }
                     },
                     {
-                        "text": "Lịch học linh hoạt được thiết kế riêng tối ưu tối đa cho lãnh đạo bận rộn.",
-                        "scores": { "EMBA": 5 }
+                        "text": "Bằng được công nhận quốc tế, không ghi 'Online' — giá trị ngang bằng học trực tiếp tại châu Âu.",
+                        "scores": { "MBA": 4, "EMBA": 4, "MSC_AI": 3 }
                     },
                     {
-                        "text": "Tham gia nghiên cứu học thuật cao cấp dưới sự hướng dẫn 1-1 của Giáo sư.",
-                        "scores": { "DUAL_DBA": 5 }
+                        "text": "Cộng đồng alumni lãnh đạo — network C-level, cơ hội hợp tác kinh doanh sau tốt nghiệp.",
+                        "scores": { "EMBA": 5, "DUAL_DBA": 4, "MBA": 2 }
                     }
                 ]
             }
@@ -6537,11 +6529,11 @@
 
                 if (type === CURRENT_PROGRAM) {
                     iconEl.textContent = '🎉';
-                    grpEl.textContent = 'Kết quả: Rất phù hợp!';
+                    grpEl.textContent = 'Xác nhận: Đây chính là chương trình dành cho bạn!';
                     grpEl.className = 'qz-result-group qz-result-group--strategic';
                     titleEl.textContent = `Bạn cực kỳ phù hợp với ${matchedProg.name}!`;
                     msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
-                    ctaBtn.textContent = 'Đăng ký tư vấn ngay';
+                    ctaBtn.textContent = 'Nhận lộ trình cá nhân hoá — Miễn phí';
                     ctaBtn.href = 'javascript:void(0)';
                     ctaBtn.onclick = function (e) {
                         e.preventDefault();

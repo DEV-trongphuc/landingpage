@@ -5987,9 +5987,15 @@
 
                 <div class="cta-form-wrapper reveal-up" id="form-wrapper">
                     <div class="form-header">
-                        <div class="form-header-badge">NHẬN TƯ VẤN 1:1</div>
-                        <h3>Khởi đầu hành trình<br><span class="gradient-text">MSc AI Thụy Sĩ</span></h3>
-                        <p>Chuyên viên sẽ liên hệ với bạn trong vòng 24h làm việc để tư vấn lộ trình phù hợp.</p>
+                        <div class="form-header-badge">TƯ VẤN CÁ NHÂN HOÁ — MIỄN PHÍ</div>
+                        <h3>Nhận lộ trình học<br><span class="gradient-text">MSc AI Thụy Sĩ</span> của bạn</h3>
+                        <p>Chuyên viên phân tích hồ sơ và thiết kế <strong>lộ trình học riêng cho bạn</strong> trong 24h.</p>
+                        <!-- Alumni social proof -->
+                        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+                            <div style="display:flex;align-items:center;gap:7px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:10px;padding:8px 12px;flex:1;min-width:120px;"><svg width="15" height="15" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg><div><div style="font-size:1rem;font-weight:900;color:#0f172a;line-height:1;">+42%</div><div style="font-size:0.65rem;color:#475569;">Thu nhập sau TN</div></div></div>
+                            <div style="display:flex;align-items:center;gap:7px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:10px;padding:8px 12px;flex:1;min-width:120px;"><svg width="15" height="15" fill="none" stroke="#3b82f6" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg><div><div style="font-size:1rem;font-weight:900;color:#0f172a;line-height:1;">190+</div><div style="font-size:0.65rem;color:#475569;">Quốc gia công nhận</div></div></div>
+                            <div style="display:flex;align-items:center;gap:7px;background:rgba(171,14,0,0.06);border:1px solid rgba(171,14,0,0.15);border-radius:10px;padding:8px 12px;flex:1;min-width:120px;"><svg width="15" height="15" fill="none" stroke="#ab0e00" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><div><div style="font-size:1rem;font-weight:900;color:#0f172a;line-height:1;">2,500+</div><div style="font-size:0.65rem;color:#475569;">Học viên IDEAS</div></div></div>
+                        </div>
                     </div>
 
                     <form class="cta-form" id="cta-form" novalidate aria-label="Form đăng ký tư vấn MSc AI">
@@ -7614,11 +7620,11 @@
 
                 if (type === CURRENT_PROGRAM) {
                     iconEl.textContent = '🎉';
-                    grpEl.textContent = 'Kết quả: Rất phù hợp!';
+                    grpEl.textContent = 'Xác nhận: Đây chính là chương trình dành cho bạn!';
                     grpEl.className = 'qz-result-group qz-result-group--strategic';
                     titleEl.textContent = `Bạn cực kỳ phù hợp với ${matchedProg.name}!`;
                     msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
-                    ctaBtn.textContent = 'Đăng ký tư vấn ngay';
+                    ctaBtn.textContent = 'Nhận lộ trình cá nhân hoá — Miễn phí';
                     ctaBtn.href = 'javascript:void(0)';
                     ctaBtn.onclick = function (e) {
                         e.preventDefault();

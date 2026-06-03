@@ -5867,95 +5867,87 @@
 
         const QUIZ_QUESTIONS = [
             {
-                "question": "Trình độ học vấn hiện tại của bạn là gì?",
+                "question": "Điều gì đang thực sự cản trở cơ hội việc làm của bạn?",
                 "options": [
                     {
-                        "text": "Đã tốt nghiệp Cao đẳng, Trung cấp hoặc đang học dở Đại học và muốn nhận bằng Cử nhân sớm.",
-                        "scores": { "BBA": 5, "FULL_BBA": 1 }
-                    },
-                    {
-                        "text": "Mới tốt nghiệp THPT hoặc chưa từng học Cao đẳng/Đại học.",
-                        "scores": { "FULL_BBA": 5 }
-                    },
-                    {
-                        "text": "Đã có bằng Đại học  và muốn học lên Thạc sĩ quản trị.",
-                        "scores": { "MBA": 4, "EMBA": 3, "MBA_AI": 3, "MSC_AI": 2 }
-                    },
-                    {
-                        "text": "Đã tốt nghiệp Thạc sĩ và muốn nâng tầm học hàm lên Tiến sĩ.",
-                        "scores": { "DUAL_DBA": 5 }
-                    }
-                ]
-            },
-            {
-                "question": "Bạn muốn chương trình học của mình kéo dài bao lâu để lấy bằng Cử nhân?",
-                "options": [
-                    {
-                        "text": "Tối ưu thời gian, muốn hoàn thành và lấy bằng trong 12 tháng (Top-up).",
+                        "text": "CV của tôi bị loại sớm vì chỉ có bằng Cao đẳng/Trung cấp — nhà tuyển dụng ưu tiên bằng Đại học.",
                         "scores": { "BBA": 5 }
                     },
                     {
-                        "text": "Học bài bản từ nền tảng đầu tiên trong vòng 3 năm (36 tháng).",
+                        "text": "Tôi không thể apply vào các công ty FDI hoặc nước ngoài vì bằng của tôi không được quốc tế công nhận.",
+                        "scores": { "BBA": 5, "FULL_BBA": 3 }
+                    },
+                    {
+                        "text": "Tôi muốn thăng tiến lên quản lý nhưng thiếu nền tảng quản trị kinh doanh bài bản.",
+                        "scores": { "BBA": 4, "MBA": 3 }
+                    }
+                ]
+            },
+            {
+                "question": "Trình độ học vấn hiện tại của bạn là gì?",
+                "options": [
+                    {
+                        "text": "Đã tốt nghiệp Cao đẳng hoặc Trung cấp và muốn liên thông lên Cử nhân chỉ trong 12 tháng.",
+                        "scores": { "BBA": 5 }
+                    },
+                    {
+                        "text": "Đang học hoặc đã tốt nghiệp Đại học trong nước và muốn bổ sung bằng quốc tế.",
+                        "scores": { "MBA": 3, "BBA": 2 }
+                    },
+                    {
+                        "text": "Tốt nghiệp THPT và muốn học Đại học bài bản 3 năm từ đầu.",
                         "scores": { "FULL_BBA": 5 }
-                    },
-                    {
-                        "text": "Chỉ quan tâm đến học cao học (Thạc sĩ/Tiến sĩ) từ 1.5 đến 3 năm.",
-                        "scores": { "MBA": 3, "EMBA": 3, "DUAL_DBA": 3 }
                     }
                 ]
             },
             {
-                "question": "Mục tiêu thăng tiến lớn nhất của bạn trong 2 năm tới là gì?",
+                "question": "Bạn muốn đạt được điều gì sau khi có bằng Cử nhân Quốc tế Thụy Sĩ?",
                 "options": [
                     {
-                        "text": "Hoàn thiện nhanh bằng Đại học quốc tế để mở rộng cơ hội việc làm và thăng chức.",
-                        "scores": { "BBA": 5, "FULL_BBA": 2 }
+                        "text": "Xin vào các công ty lớn, FDI hoặc multinational với mức lương tốt hơn đáng kể.",
+                        "scores": { "BBA": 5 }
                     },
                     {
-                        "text": "Trở thành Quản lý cấp trung, Giám đốc chức năng hoặc nâng cao năng lực quản trị toàn diện.",
-                        "scores": { "MBA": 5 }
+                        "text": "Tiếp tục học lên Thạc sĩ MBA để mở rộng cơ hội thăng tiến quản lý.",
+                        "scores": { "BBA": 4, "MBA": 4 }
                     },
                     {
-                        "text": "Trở thành nhà điều hành cấp cao (CEO/C-level) hoặc tối ưu chiến lược cho doanh nghiệp riêng.",
-                        "scores": { "EMBA": 5, "DUAL_DBA": 2 }
-                    },
-                    {
-                        "text": "Đóng vai trò chuyên gia hoặc nhà quản lý dẫn dắt ứng dụng công nghệ AI trong thời kỳ số hóa.",
-                        "scores": { "MBA_AI": 4, "MSC_AI": 4 }
+                        "text": "Tự tin hơn khi giao tiếp với đối tác nước ngoài và phát triển sự nghiệp ở môi trường quốc tế.",
+                        "scores": { "BBA": 5 }
                     }
                 ]
             },
             {
-                "question": "Bạn có nhu cầu tiếp cận công nghệ Trí tuệ nhân tạo (AI) trong chương trình học thế nào?",
+                "question": "Bạn có thể dành bao nhiêu thời gian học mỗi tuần?",
                 "options": [
                     {
-                        "text": "Không cần thiết học AI sâu, chỉ cần tập trung kiến thức quản trị kinh doanh cốt lõi.",
-                        "scores": { "BBA": 4, "FULL_BBA": 4, "MBA": 4, "EMBA": 3 }
+                        "text": "5-8 giờ/tuần — vừa học vừa làm, học online hoàn toàn để không gián đoạn công việc.",
+                        "scores": { "BBA": 5, "MBA": 4 }
                     },
                     {
-                        "text": "Muốn ứng dụng AI no-code/low-code để tăng gấp 3 hiệu suất làm việc và tối ưu quy trình.",
-                        "scores": { "MBA_AI": 5 }
+                        "text": "10-15 giờ/tuần — tôi nghiêm túc và sẵn sàng đầu tư thời gian để hoàn thành nhanh.",
+                        "scores": { "BBA": 5, "FULL_BBA": 3 }
                     },
                     {
-                        "text": "Muốn học sâu về lập trình AI, kỹ thuật dữ liệu và machine learning.",
-                        "scores": { "MSC_AI": 5 }
+                        "text": "Dưới 5 giờ/tuần — tôi rất bận và cần lộ trình tối ưu, linh hoạt tối đa.",
+                        "scores": { "BBA": 4 }
                     }
                 ]
             },
             {
-                "question": "Kinh nghiệm làm việc thực tế và quỹ thời gian học tập mong muốn của bạn?",
+                "question": "Điều quan trọng NHẤT với bạn khi chọn chương trình BBA Thụy Sĩ là gì?",
                 "options": [
                     {
-                        "text": "Đang đi làm bận rộn, muốn học online 100% linh hoạt để vừa học vừa làm.",
-                        "scores": { "BBA": 5, "MBA": 4, "MBA_AI": 4 }
+                        "text": "Chỉ cần 12 tháng để có bằng Cử nhân Quốc tế — nhanh, gọn, không mất thêm 3-4 năm.",
+                        "scores": { "BBA": 5 }
                     },
                     {
-                        "text": "Chưa đi làm hoặc mới đi làm, muốn học tập trung tích lũy kiến thức bài bản.",
-                        "scores": { "FULL_BBA": 5 }
+                        "text": "Bằng Swiss UMEF được công nhận tại 190+ quốc gia, không ghi hình thức online — giá trị ngang bằng học trực tiếp.",
+                        "scores": { "BBA": 5, "FULL_BBA": 3 }
                     },
                     {
-                        "text": "Là lãnh đạo cấp cao/chủ doanh nghiệp, cần chương trình học tối ưu quỹ thời gian cực kỳ bận rộn.",
-                        "scores": { "EMBA": 5, "DUAL_DBA": 3 }
+                        "text": "Chi phí hợp lý, hỗ trợ trả góp 0% lãi suất qua Sacombank — không gánh nặng tài chính.",
+                        "scores": { "BBA": 5, "FULL_BBA": 4 }
                     }
                 ]
             }
@@ -6066,11 +6058,11 @@
 
                 if (type === CURRENT_PROGRAM) {
                     iconEl.textContent = '🎉';
-                    grpEl.textContent = 'Kết quả: Rất phù hợp!';
+                    grpEl.textContent = 'Xác nhận: Đây chính là chương trình dành cho bạn!';
                     grpEl.className = 'qz-result-group qz-result-group--strategic';
                     titleEl.textContent = `Bạn cực kỳ phù hợp với ${matchedProg.name}!`;
                     msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
-                    ctaBtn.textContent = 'Đăng ký tư vấn ngay';
+                    ctaBtn.textContent = 'Nhận lộ trình cá nhân hoá — Miễn phí';
                     ctaBtn.href = 'javascript:void(0)';
                     ctaBtn.onclick = function (e) {
                         e.preventDefault();

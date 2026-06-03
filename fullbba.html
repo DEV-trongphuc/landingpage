@@ -6306,91 +6306,87 @@
 
         const QUIZ_QUESTIONS = [
             {
-                "question": "Bạn đã tốt nghiệp Trung học phổ thông (THPT) hoặc tương đương chưa?",
+                "question": "Điều gì khiến bạn muốn có bằng Đại học Quốc tế ngay bây giờ?",
                 "options": [
                     {
-                        "text": "Đã tốt nghiệp THPT và muốn bắt đầu học Đại học từ đầu.",
+                        "text": "Tôi muốn được nhà tuyển dụng FDI/nước ngoài công nhận và có cơ hội việc làm tốt hơn ngay từ đầu.",
+                        "scores": { "FULL_BBA": 5, "BBA": 3 }
+                    },
+                    {
+                        "text": "Tôi muốn xây dựng nền tảng kiến thức kinh doanh quốc tế bài bản để tự tin khởi nghiệp hoặc thăng tiến.",
                         "scores": { "FULL_BBA": 5 }
                     },
                     {
-                        "text": "Đã tốt nghiệp Cao đẳng, Trung cấp muốn học liên thông nhanh lên Đại học.",
-                        "scores": { "BBA": 5 }
-                    },
-                    {
-                        "text": "Đã tốt nghiệp Đại học  và muốn học lên trình độ Thạc sĩ.",
-                        "scores": { "MBA": 4, "EMBA": 3, "MBA_AI": 3, "MSC_AI": 2 }
-                    },
-                    {
-                        "text": "Đã có bằng Thạc sĩ và muốn làm nghiên cứu sinh Tiến sĩ.",
-                        "scores": { "DUAL_DBA": 5 }
+                        "text": "Bằng Đại học trong nước không đủ uy tín để apply học bổng hoặc tiếp tục học ở nước ngoài.",
+                        "scores": { "FULL_BBA": 5, "BBA": 4 }
                     }
                 ]
             },
             {
-                "question": "Bạn muốn chương trình học Cử nhân của mình kéo dài bao lâu?",
+                "question": "Trình độ học vấn hiện tại của bạn là gì?",
                 "options": [
                     {
-                        "text": "Học bài bản tích lũy kiến thức từ nền tảng đầu tiên trong vòng 3 năm (36 tháng).",
+                        "text": "Đã tốt nghiệp THPT hoặc đang là sinh viên năm 1-2 Đại học trong nước.",
                         "scores": { "FULL_BBA": 5 }
                     },
                     {
-                        "text": "Muốn học liên thông rút ngắn thời gian và lấy bằng cử nhân trong 12 tháng (Top-up).",
+                        "text": "Đã tốt nghiệp Cao đẳng hoặc Trung cấp — muốn liên thông nhanh lên Cử nhân.",
                         "scores": { "BBA": 5 }
                     },
                     {
-                        "text": "Chỉ quan tâm đến học cao học (Thạc sĩ/Tiến sĩ) từ 16 - 18 tháng.",
-                        "scores": { "MBA": 3, "EMBA": 3, "DUAL_DBA": 3 }
+                        "text": "Đã có bằng Đại học và muốn học thêm bằng quốc tế hoặc nâng trình độ.",
+                        "scores": { "MBA": 4, "BBA": 2 }
                     }
                 ]
             },
             {
-                "question": "Kinh nghiệm làm việc thực tế hiện tại của bạn là bao nhiêu?",
+                "question": "Sau 3 năm tốt nghiệp BBA Thụy Sĩ, bạn hình dung mình sẽ làm gì?",
                 "options": [
                     {
-                        "text": "Chưa có kinh nghiệm hoặc dưới 2 năm kinh nghiệm.",
+                        "text": "Làm việc tại công ty đa quốc gia hoặc tập đoàn nước ngoài với mức lương cạnh tranh.",
                         "scores": { "FULL_BBA": 5 }
                     },
                     {
-                        "text": "Đã có trên 2 năm kinh nghiệm làm việc và đã có bằng Trung cấp/Cao đẳng.",
-                        "scores": { "BBA": 5 }
+                        "text": "Khởi nghiệp hoặc tham gia quản lý doanh nghiệp gia đình với nền tảng quốc tế.",
+                        "scores": { "FULL_BBA": 5 }
                     },
                     {
-                        "text": "Đã có nhiều năm đi làm và hiện đang là quản lý cấp trung hoặc cấp cao.",
-                        "scores": { "MBA": 4, "EMBA": 5, "MBA_AI": 4 }
+                        "text": "Tiếp tục học lên MBA hoặc thạc sĩ ở nước ngoài — BBA là bước đệm.",
+                        "scores": { "FULL_BBA": 4, "MBA": 3 }
                     }
                 ]
             },
             {
-                "question": "Định hướng và định dạng học tập bạn mong muốn nhất?",
+                "question": "Điều gì quan trọng nhất với bạn trong môi trường học tập?",
                 "options": [
                     {
-                        "text": "Học từng bước tích lũy kiến thức kinh tế, marketing, quản lý bài bản cấp độ Đại học.",
-                        "scores": { "FULL_BBA": 5, "BBA": 2 }
+                        "text": "Học online linh hoạt — vừa học vừa đi làm thêm, không bị gò bó lịch cố định.",
+                        "scores": { "FULL_BBA": 5, "BBA": 5 }
                     },
                     {
-                        "text": "Tập trung nâng cao năng lực quản trị, giải quyết các ca case study thực chiến quản lý doanh nghiệp.",
-                        "scores": { "MBA": 5, "EMBA": 4 }
+                        "text": "Nội dung học gắn với thực tế kinh doanh — không chỉ lý thuyết sách giáo khoa.",
+                        "scores": { "FULL_BBA": 5 }
                     },
                     {
-                        "text": "Tìm kiếm định hướng ứng dụng AI no-code tối ưu hóa hiệu quả kinh doanh.",
-                        "scores": { "MBA_AI": 5 }
+                        "text": "Có cộng đồng sinh viên đa dạng để giao lưu, kết nối và học hỏi lẫn nhau.",
+                        "scores": { "FULL_BBA": 4, "EMBA": 3 }
                     }
                 ]
             },
             {
-                "question": "Kỳ vọng của bạn về mức độ tiếp cận công nghệ thông tin/lập trình?",
+                "question": "Điều bạn coi là GIÁ TRỊ LỚN NHẤT từ bằng BBA Swiss UMEF?",
                 "options": [
                     {
-                        "text": "Chỉ học kỹ năng quản trị kinh doanh cốt lõi, không cần code hay công nghệ phức tạp.",
-                        "scores": { "FULL_BBA": 4, "BBA": 4, "MBA": 4, "EMBA": 4, "DUAL_DBA": 3 }
+                        "text": "Được công nhận tại 190+ quốc gia — mở cửa thị trường lao động quốc tế ngay sau tốt nghiệp.",
+                        "scores": { "FULL_BBA": 5, "BBA": 4 }
                     },
                     {
-                        "text": "Muốn ứng dụng các công cụ AI (như ChatGPT, Claude, Automation) dạng no-code vào vận hành.",
-                        "scores": { "MBA_AI": 5 }
+                        "text": "Không ghi 'Online' trên bằng — giá trị ngang bằng học tại Geneva, uy tín với mọi nhà tuyển dụng.",
+                        "scores": { "FULL_BBA": 5, "BBA": 5 }
                     },
                     {
-                        "text": "Muốn học sâu về lập trình Python, Machine Learning và Khoa học dữ liệu.",
-                        "scores": { "MSC_AI": 5 }
+                        "text": "Chi phí hợp lý nhất trong các chương trình quốc tế — hỗ trợ trả góp 0% lãi suất qua Sacombank.",
+                        "scores": { "FULL_BBA": 5, "BBA": 5 }
                     }
                 ]
             }
@@ -6501,11 +6497,11 @@
 
                 if (type === CURRENT_PROGRAM) {
                     iconEl.textContent = '🎉';
-                    grpEl.textContent = 'Kết quả: Rất phù hợp!';
+                    grpEl.textContent = 'Xác nhận: Đây chính là chương trình dành cho bạn!';
                     grpEl.className = 'qz-result-group qz-result-group--strategic';
                     titleEl.textContent = `Bạn cực kỳ phù hợp với ${matchedProg.name}!`;
                     msgEl.innerHTML = `Lựa chọn của bạn hoàn toàn trùng khớp với chương trình hiện tại. Chương trình giúp bạn <strong>${matchedProg.highlight}</strong>.`;
-                    ctaBtn.textContent = 'Đăng ký tư vấn ngay';
+                    ctaBtn.textContent = 'Nhận lộ trình cá nhân hoá — Miễn phí';
                     ctaBtn.href = 'javascript:void(0)';
                     ctaBtn.onclick = function (e) {
                         e.preventDefault();
