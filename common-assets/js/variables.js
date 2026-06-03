@@ -15,14 +15,14 @@ const IDEAS_DATA = {
     programmes: {
         IDEAS01: {
             benefits: [
-                "Chương trình học tập Cử nhân chính quy 3 năm (180 ECTS) chất lượng cao từ Thụy Sĩ.",
+                "Chương trình học tập Cử nhân  3 năm (180 ECTS) chất lượng cao từ Thụy Sĩ.",
                 "Học trực tuyến 100% linh hoạt trên platform hiện đại, phù hợp cho người đi làm và học sinh tốt nghiệp THPT.",
                 "Viện IDEAS hỗ trợ: hệ thống IDEAS - LMS, trợ lý AI học tập, các lớp chuyên đề bổ trợ cuối tuần.",
                 "Lễ tốt nghiệp trang trọng tại Geneva, Thụy Sĩ và cơ hội tham quan các nước Châu Âu."
             ],
             program_name_degree: "Bachelor of Business Administration",
             program_benefits_degree: [
-                "Tấm bằng Cử nhân chính quy chuẩn Châu Âu được cấp bởi trường Đại học Swiss UMEF danh giá tại Thụy Sĩ.",
+                "Tấm bằng Cử nhân  chuẩn Châu Âu được cấp bởi trường Đại học Swiss UMEF danh giá tại Thụy Sĩ.",
                 "Nền tảng kiến thức quản trị kinh doanh toàn diện và khả năng hội nhập quốc tế.",
                 "Cơ hội liên thông trực tiếp lên các chương trình Thạc sĩ (MBA, MSc AI) chuẩn quốc tế."
             ],
@@ -37,7 +37,7 @@ const IDEAS_DATA = {
             name: "Full BBA",
             highlight: [
                 "Trực tuyến 100%",
-                "BBA chính quy",
+                "BBA ",
                 "36 tháng (3 năm)",
                 "180 ECTS"
             ],

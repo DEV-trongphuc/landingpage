@@ -8272,3 +8272,69 @@ html.lenis {
 .eco-card-v2-desc {
   color: rgba(255, 255, 255, 0.65) !important;
 }
+
+/* Proof Section Tick Design Override (Image 3) */
+.proof-check-icon {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  background: linear-gradient(135deg, #ab0e00, #800a00) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(171, 14, 0, 0.3) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.proof-check-icon svg {
+  width: 12px !important;
+  height: 12px !important;
+  color: #ffffff !important;
+}
+
+/* White Sample Degree Text Fix (Image 4) */
+.proof-degree-badge {
+  color: #ffffff !important;
+}
+
+/* Zalo Icon Scale Protection on Mobile */
+.modal-zalo-btn img {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain !important;
+  aspect-ratio: 1/1 !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 540px) {
+  .modal-zalo-btn img {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+/* Responsive UI/UX Spacing Optimizations (Gọn gàng & Tinh tế) */
+@media (max-width: 768px) {
+  section,
+  .pricing-section,
+  .cta-section,
+  .hero-section,
+  .ecosystem-section {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+  
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal-zalo-btn,
+  .modal-booking-btn {
+    font-size: 0.7rem !important;
+    padding: 8px 6px !important;
+    gap: 4px !important;
+  }
+}

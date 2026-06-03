@@ -1,4 +1,4 @@
-dual-dba.html:13: content="Chương trình Tiến sĩ song bằng (Dual DBA) chính quy cấp bởi ÉSTIAM (Pháp) & RB College (Anh). Học trực tuyến kết hợp Seminars tại Paris, cố vấn 1-1." />
+dual-dba.html:13: content="Chương trình Tiến sĩ song bằng (Dual DBA)  cấp bởi ÉSTIAM (Pháp) & RB College (Anh). Học trực tuyến kết hợp Seminars tại Paris, cố vấn 1-1." />
 dual-dba.html:176: "name": "Tiến sĩ DBA trực tuyến có giáo sư hướng dẫn riêng không?",
 dual-dba.html:179: "text": "Có. Mỗi nghiên cứu sinh sẽ được ghép cặp cố vấn 1-1 với một Giáo sư hướng dẫn khoa học để phát triển luận án nghiên cứu giải quyết bài toán thực tế của doanh nghiệp."
 dual-dba.html:195: "text": "Thời gian học tiêu chuẩn là 3 năm. Nghiên cứu sinh sẽ hoàn thành các học phần phương pháp luận nghiên cứu ở năm đầu, sau đó nghiên cứu độc lập dưới sự hướng dẫn 1-1 của Giáo sư để phát triển luận án và tham gia các kỳ Seminar/bảo vệ chính thức tại Paris."
