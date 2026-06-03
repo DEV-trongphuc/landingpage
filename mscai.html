@@ -4931,7 +4931,7 @@
                             </svg>
                             <span>KHÁM PHÁ HÀNH TRÌNH</span>
                         </a>
-                        <button class="vn-ceremony-open-btn" id="vn-ceremony-open-btn" onclick="openVNCeremonyModal()">
+                        <button class="vn-ceremony-open-btn" id="vn-ceremony-open-btn" onclick="openVNCeremonyModal()" title="Tham dự Lễ tốt nghiệp tại Việt Nam" aria-label="Tham dự Lễ tốt nghiệp tại Việt Nam">
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
@@ -7916,16 +7916,17 @@
                 </div>
                 <!-- / Timeline -->
 
-                <!-- Sticky Footer CTA -->
-                <div style="position:sticky;bottom:0;background:#fff;padding:16px 0 0;margin-top:32px;border-top:1px solid #f1f5f9;display:flex;gap:12px;justify-content:center;">
-                    <button onclick="closeVNCeremonyModal();setTimeout(()=>document.querySelector('.bk-open-btn')?.click(),200);" style="background:linear-gradient(135deg,#8c1000,#c41e00);color:#fff;border:none;padding:13px 28px;border-radius:50px;font-size:0.9rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;box-shadow:0 8px 24px rgba(171,14,0,0.28);">
-                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        Đăng ký tham dự lễ
-                    </button>
-                    <button onclick="closeVNCeremonyModal()" style="background:transparent;border:1.5px solid #e2e8f0;color:#64748b;padding:13px 22px;border-radius:50px;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.3s;">
-                        Đóng
-                    </button>
-                </div>
+            </div><!-- /vn-ceremony-content -->
+
+            <!-- Sticky Footer CTA — outside scroll area -->
+            <div style="background:#fff;padding:14px 24px;border-top:1px solid #f1f5f9;display:flex;gap:10px;align-items:center;justify-content:center;border-radius:0 0 24px 24px;flex-shrink:0;">
+                <button onclick="closeVNCeremonyModal();setTimeout(()=>document.querySelector('.bk-open-btn')?.click(),200);" style="background:linear-gradient(135deg,#8c1000,#c41e00);color:#fff;border:none;padding:13px 28px;border-radius:50px;font-size:0.9rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;box-shadow:0 8px 24px rgba(171,14,0,0.28);">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    Đăng ký tham dự lễ
+                </button>
+                <button onclick="closeVNCeremonyModal()" title="Đóng" aria-label="Đóng" style="width:42px;height:42px;background:transparent;border:1.5px solid #e2e8f0;color:#64748b;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s;flex-shrink:0;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
             </div>
         </div>
     </div>

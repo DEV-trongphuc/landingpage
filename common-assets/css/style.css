@@ -9038,3 +9038,90 @@ section.hero .hero-accred-logos img {
     flex-shrink: 0 !important;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   MODAL SCROLL FIX + SECTION TITLE + GALLERY BUTTONS
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. Modal scroll: content scrolls, sticky footer stays visible */
+.vn-ceremony-container {
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.vn-ceremony-content {
+  flex: 1 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  /* Ensure scrollbar is visible on webkit */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(171,14,0,0.3) transparent;
+}
+
+.vn-ceremony-content::-webkit-scrollbar {
+  width: 4px;
+}
+.vn-ceremony-content::-webkit-scrollbar-thumb {
+  background: rgba(171,14,0,0.3);
+  border-radius: 99px;
+}
+
+/* 2. Section titles: max 2 lines, use clamp to keep on fewer lines */
+.section-title,
+.solution-title,
+.sol-title,
+.gallery-header h2,
+.proof-title,
+.testimonials-title,
+.pain-title,
+.eco-section-title,
+.cta-headline,
+h2.section-title,
+h3.section-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.25;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  white-space: normal;
+}
+
+/* Pain section titles in particular */
+.pain-section .section-title,
+.sol-section .section-title {
+  font-size: clamp(1.6rem, 4vw, 2.6rem) !important;
+}
+
+/* 3. Gallery header: KHÁM PHÁ pill + THAM DỰ round icon */
+.vn-ceremony-open-btn {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.vn-ceremony-open-btn span {
+  display: none !important;
+}
+
+.vn-ceremony-open-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Gallery header layout fix */
+.gallery-header-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
+}
