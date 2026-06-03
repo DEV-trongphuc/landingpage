@@ -510,6 +510,17 @@
 .bk-program-icon {
     font-size: 1.5rem;
     margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ab0e00;
+}
+
+.bk-program-icon svg {
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+    display: block;
 }
 
 .bk-program-name {
@@ -1111,6 +1122,31 @@
 
     .bk-sum-note {
         padding: 12px 20px;
+    }
+
+    #bk-next-1 {
+        position: sticky !important;
+        bottom: 0 !important;
+        z-index: 5 !important;
+        box-shadow: 0 -8px 20px #ffffff, 0 8px 24px rgba(139, 12, 0, 0.3) !important;
+    }
+    
+    #bk-step-1 .bk-form {
+        padding-bottom: 60px !important;
+    }
+
+    #bk-step-3 .bk-step-actions {
+        position: sticky !important;
+        bottom: 0 !important;
+        background: #ffffff !important;
+        padding: 12px 0 16px !important;
+        margin-top: 16px !important;
+        border-top: 1px solid #f1f5f9 !important;
+        z-index: 5 !important;
+    }
+    
+    #bk-step-3 {
+        padding-bottom: 60px !important;
     }
 }
 

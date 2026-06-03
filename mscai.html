@@ -197,7 +197,7 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="common-assets/css/style.css?v=1780492874154" />
+    <link rel="stylesheet" href="common-assets/css/style.css?v=17804928sss74154" />
     <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780492874154" />
     <style>
         /* ═══════════════════════════════════════
@@ -4931,6 +4931,12 @@
                             </svg>
                             <span>KHÁM PHÁ HÀNH TRÌNH</span>
                         </a>
+                        <button class="vn-ceremony-open-btn" id="vn-ceremony-open-btn" onclick="openVNCeremonyModal()">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>Tham dự Lễ tại Việt Nam</span>
+                        </button>
                     </div>
                 </div>
 
@@ -5277,441 +5283,435 @@
             </div>
         </section>
 
-                <!-- Ecosystem -->
+        <!-- Ecosystem -->
 
 
-                <!-- Pricing -->
+        <!-- Pricing -->
 
-                <div class="pricing-section reveal-up" id="bang-gia">
-                    <div class="section-label" style="margin: 0 auto 1.5rem; display: table;">HỌC PHÍ & LỘ TRÌNH TÀI
-                        CHÍNH</div>
-                    <h3 class="pricing-title"
-                        style="text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #0f172a; margin-bottom: 32px; line-height: 1.2;">
-                        Đầu tư thông minh cho<br /><span style="color:#ab0e00">Tương lai Quản trị Công nghệ</span>
-                    </h3>
+        <div class="pricing-section reveal-up" id="bang-gia">
+            <div class="section-label" style="margin: 0 auto 1.5rem; display: table;">HỌC PHÍ & LỘ TRÌNH TÀI
+                CHÍNH</div>
+            <h3 class="pricing-title"
+                style="text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #0f172a; margin-bottom: 32px; line-height: 1.2;">
+                Đầu tư thông minh cho<br /><span style="color:#ab0e00">Tương lai Quản trị Công nghệ</span>
+            </h3>
 
-                    <!-- Scholarship Banner -->
-                    <div class="scholarship-banner-new" style="max-width: 980px; margin: 0 auto 24px; box-sizing: border-box;">
-                        <div
-                            style="background: #ab0e00; color: #fff; font-size: 0.85rem; font-weight: 800; padding: 8px 16px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">
-                            Học bổng hỗ trợ
+            <!-- Scholarship Banner -->
+            <div class="scholarship-banner-new" style="max-width: 980px; margin: 0 auto 24px; box-sizing: border-box;">
+                <div
+                    style="background: #ab0e00; color: #fff; font-size: 0.85rem; font-weight: 800; padding: 8px 16px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">
+                    Học bổng hỗ trợ
+                </div>
+                <div style="font-size: 0.95rem; color: #334155; line-height: 1.6; text-align: left;">
+                    Swiss UMEF &amp; Viện IDEAS tài trợ đặc biệt lên đến <strong id="banner-sponsor-val">3.900
+                        CHF
+                        (~128.700.000đ)</strong> cho các học viên nhập học sớm. Học phí còn lại chỉ từ
+                    <strong id="banner-price-val">4.820 CHF</strong>.
+                </div>
+            </div>
+
+            <style>
+                .pricing-card-premium {
+                    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                }
+
+                .pricing-card-premium:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 25px 50px -12px rgba(171, 14, 0, 0.18) !important;
+                }
+
+                #premium-cta-mscai:hover {
+                    background: #900c00 !important;
+                    transform: translateY(-2px);
+                    box-shadow: 0 12px 28px rgba(171, 14, 0, 0.35) !important;
+                }
+
+                @media (min-width: 769px) {
+                    .pricing-card-premium-content {
+                        display: flex;
+                        gap: 40px;
+                        align-items: stretch;
+                    }
+
+                    .pricing-card-premium-left {
+                        flex: 1.2;
+                        text-align: left !important;
+                    }
+
+                    .pricing-card-premium-right {
+                        flex: 0.8;
+                        border-left: 1px solid #e2e8f0;
+                        padding-left: 40px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        text-align: right !important;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .pricing-card-premium-content {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 32px;
+                    }
+
+                    .pricing-card-premium-left {
+                        text-align: left !important;
+                    }
+
+                    .pricing-card-premium-right {
+                        text-align: center !important;
+                        border-top: 1px dashed #e2e8f0;
+                        padding-top: 32px;
+                        margin-top: 8px;
+                    }
+
+                    .pricing-card-premium-right div {
+                        text-align: center !important;
+                    }
+
+                    .pricing-card-premium-right div div {
+                        justify-content: center !important;
+                    }
+                }
+            </style>
+            <div class="premium-policy-wrapper"
+                style="max-width: 980px; margin: 0 auto; position: relative; padding: 0 20px;">
+
+                <!-- Premium Tuition Card -->
+                <div class="pricing-card-premium"
+                    style="position: relative; background: #ffffff; border: 2.5px solid #ab0e00; border-radius: 32px; box-shadow: 0 20px 40px -15px rgba(171, 14, 0, 0.1); padding: 40px 32px; overflow: hidden; color: #334155; z-index: 1;">
+
+                    <div class="pricing-card-premium-content">
+                        <!-- Left Column -->
+                        <div class="pricing-card-premium-left">
+                            <!-- Title -->
+                            <div style="margin-bottom: 24px; margin-top: 4px;">
+                                <span
+                                    style="background: rgba(171, 14, 0, 0.08); color: #ab0e00; font-size: 0.75rem; font-weight: 700; padding: 6px 12px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 16px;">
+                                    HỌC TRỰC TUYẾN 100%
+                                </span>
+                                <h4
+                                    style="font-size: 1.8rem; font-weight: 900; color: #0f172a; margin: 0 0 8px 0; text-transform: none; letter-spacing: -0.5px;">
+                                    MSc in AI
+                                </h4>
+                                <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin: 0;">
+                                    Thạc sĩ Khoa học về Trí tuệ Nhân tạo Ứng dụng (18 tháng).
+                                </p>
+                            </div>
+
+                            <!-- Highlights with Circle-Check -->
+                            <ul class="pricing-features-new" style="margin-bottom: 24px; padding: 0; list-style: none;">
+                                <li
+                                    style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 0.95rem; line-height: 1.4; color: #334155; text-align: left;">
+                                    <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+                                            fill="rgba(16, 185, 129, 0.1)"></circle>
+                                        <polyline points="8 12 11 15 16 9" stroke="currentColor" stroke-width="2.5">
+                                        </polyline>
+                                    </svg>
+                                    <span>Học phí platform, tài liệu chuyên đề, hệ thống hỗ trợ từ Swiss UMEF
+                                        &amp;
+                                        IDEAS.</span>
+                                </li>
+                                <li
+                                    style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 0.95rem; line-height: 1.4; color: #334155; text-align: left;">
+                                    <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+                                            fill="rgba(16, 185, 129, 0.1)"></circle>
+                                        <polyline points="8 12 11 15 16 9" stroke="currentColor" stroke-width="2.5">
+                                        </polyline>
+                                    </svg>
+                                    <span>Đã bao gồm phí Canton tốt nghiệp, Lãnh sự Thụy Sĩ &amp; Hợp pháp hóa
+                                        bằng.</span>
+                                </li>
+                                <li
+                                    style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 0.95rem; line-height: 1.4; color: #334155; text-align: left;">
+                                    <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+                                            fill="rgba(16, 185, 129, 0.1)"></circle>
+                                        <polyline points="8 12 11 15 16 9" stroke="currentColor" stroke-width="2.5">
+                                        </polyline>
+                                    </svg>
+                                    <span>Cam kết không phát sinh bất kỳ khoản phụ phí dịch vụ nào khác.</span>
+                                </li>
+                            </ul>
                         </div>
-                        <div style="font-size: 0.95rem; color: #334155; line-height: 1.6; text-align: left;">
-                            Swiss UMEF &amp; Viện IDEAS tài trợ đặc biệt lên đến <strong id="banner-sponsor-val">3.900
-                                CHF
-                                (~128.700.000đ)</strong> cho các học viên nhập học sớm. Học phí còn lại chỉ từ
-                            <strong id="banner-price-val">4.820 CHF</strong>.
+
+                        <!-- Right Column -->
+                        <div class="pricing-card-premium-right">
+                            <!-- Price Section -->
+                            <div style="margin-bottom: 24px;">
+                                <span
+                                    style="display: block; font-size: 0.8rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">HỌC
+                                    PHÍ</span>
+                                <div
+                                    style="display: flex; align-items: baseline; gap: 4px; justify-content: flex-end; margin-bottom: 2px;">
+                                    <span id="card-price-chf"
+                                        style="font-size: 3rem; font-weight: 900; color: #ab0e00; line-height: 1;">5.820</span>
+                                    <span style="font-size: 1.3rem; font-weight: 800; color: #ab0e00;">CHF</span>
+                                </div>
+                                <p id="card-price-vnd"
+                                    style="margin: 0; font-size: 1.35rem; color: #0f172a; font-weight: 900; margin-bottom: 12px;">
+                                    ~192.060.000đ
+                                </p>
+                                <p style="margin: 0; font-size: 0.85rem; color: #64748b; line-height: 1.5;">
+                                    Đóng 1 lần (Giảm 10%): <strong id="card-price-discounted-val"
+                                        style="color: #ab0e00; font-weight: 800;">172.854.000đ</strong>
+                                </p>
+                                <p
+                                    style="margin: 4px 0 0 0; font-size: 0.8rem; color: #94a3b8; text-decoration: line-through;">
+                                    Học phí gốc: 8.720 CHF
+                                </p>
+                            </div>
+
+                            <!-- CTA Button -->
+                            <div style="text-align: center; margin-top: auto; width: 100%;">
+                                <a href="#dang-ky" id="premium-cta-mscai"
+                                    style="display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 16px 28px; background: #ab0e00; color: white !important; font-size: 1.1rem; font-weight: 800; text-decoration: none; border-radius: 16px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 8px 20px rgba(171, 14, 0, 0.25); border: none;">
+                                    <span>Tư vấn Học phí & ưu đãi</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <style>
-                        .pricing-card-premium {
-                            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-                        }
+                    <!-- Toggle Show More -->
+                    <div style="margin-bottom: 24px; margin-top: 24px;">
+                        <button class="toggle-details-btn" onclick="toggleTuitionDetails()"
+                            style="background: none; border: none; color: #ab0e00; font-size: 0.92rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; text-decoration: underline; padding: 4px 8px;">
+                            <span id="toggle-details-text">Xem chi tiết lộ trình đóng phí</span>
+                            <svg id="toggle-details-icon" style="transition: transform 0.3s;" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
 
-                        .pricing-card-premium:hover {
-                            transform: translateY(-8px);
-                            box-shadow: 0 25px 50px -12px rgba(171, 14, 0, 0.18) !important;
-                        }
+                        <!-- Expandable Details -->
+                        <div id="tuition-details-container"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; text-align: left; margin-top: 24px; border-top: 1px dashed #cbd5e1; padding-top: 24px;">
 
-                        #premium-cta-mscai:hover {
-                            background: #900c00 !important;
-                            transform: translateY(-2px);
-                            box-shadow: 0 12px 28px rgba(171, 14, 0, 0.35) !important;
-                        }
+                            <!-- 1. Bảng thời gian áp dụng chi tiết (tính theo ngày) -->
+                            <div style="margin-bottom: 24px; display: none;">
+                                <h5
+                                    style="color: #0f172a; font-size: 0.95rem; font-weight: 800; margin-top: 0; margin-bottom: 12px;">
+                                    1. BIỂU PHÍ THEO THỜI GIAN ĐĂNG KÝ</h5>
+                                <div style="overflow-x: auto;">
+                                    <table
+                                        style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: #475569; min-width: 500px;">
+                                        <thead>
+                                            <tr
+                                                style="background: rgba(171, 14, 0, 0.04); border-bottom: 1px solid rgba(171, 14, 0, 0.1);">
+                                                <th
+                                                    style="padding: 10px; font-weight: 700; text-align: left; color: #ab0e00;">
+                                                    Thời gian áp dụng</th>
+                                                <th
+                                                    style="padding: 10px; font-weight: 700; text-align: right; color: #ab0e00;">
+                                                    Học phí còn lại</th>
+                                                <th
+                                                    style="padding: 10px; font-weight: 700; text-align: right; color: #ab0e00;">
+                                                    Đóng 1 lần (Dis 10%)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tuition-table-rows">
+                                            <tr data-start="2026-05-08" data-end="2026-05-25"
+                                                style="border-bottom: 1px solid #f1f5f9;">
+                                                <td style="padding: 10px; font-weight: 600;" class="t-col-1">Từ
+                                                    08/05/26 đến hết 25/05/2026</td>
+                                                <td
+                                                    style="padding: 10px; text-align: right; font-weight: 700; color: #0f172a;">
+                                                    4.820 CHF (~159.060.000đ)</td>
+                                                <td
+                                                    style="padding: 10px; text-align: right; font-weight: 700; color: #ab0e00;">
+                                                    143.154.000đ</td>
+                                            </tr>
+                                            <tr data-start="2026-05-26" data-end="2026-06-15"
+                                                style="border-bottom: 1px solid #f1f5f9;">
+                                                <td style="padding: 10px; font-weight: 600;" class="t-col-1">Từ
+                                                    26/05/26 đến hết 15/06/2026</td>
+                                                <td
+                                                    style="padding: 10px; text-align: right; font-weight: 700; color: #0f172a;">
+                                                    5.820 CHF (~192.060.000đ)</td>
+                                                <td
+                                                    style="padding: 10px; text-align: right; font-weight: 700; color: #ab0e00;">
+                                                    172.854.000đ</td>
+                                            </tr>
+                                            <tr data-start="2026-06-16" data-end="2026-07-15"
+                                                style="border-bottom: 1px solid #f1f5f9;">
+                                                <td style="padding: 10px; font-weight: 600;" class="t-col-1">Từ
+                                                    16/06/26 đến hết 15/07/2026</td>
+                                                <td
+                                                    style="padding: 10px; text-align: right; font-weight: 700; color: #0f172a;">
+                                                    7.220 CHF (~238.260.000đ)</td>
+                                                <td
+                                                    style="padding: 10px; text-align: right; font-weight: 700; color: #ab0e00;">
+                                                    214.434.000đ</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
-                        @media (min-width: 769px) {
-                            .pricing-card-premium-content {
-                                display: flex;
-                                gap: 40px;
-                                align-items: stretch;
-                            }
-
-                            .pricing-card-premium-left {
-                                flex: 1.2;
-                                text-align: left !important;
-                            }
-
-                            .pricing-card-premium-right {
-                                flex: 0.8;
-                                border-left: 1px solid #e2e8f0;
-                                padding-left: 40px;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-between;
-                                text-align: right !important;
-                            }
-                        }
-
-                        @media (max-width: 768px) {
-                            .pricing-card-premium-content {
-                                display: flex;
-                                flex-direction: column;
-                                gap: 32px;
-                            }
-
-                            .pricing-card-premium-left {
-                                text-align: left !important;
-                            }
-
-                            .pricing-card-premium-right {
-                                text-align: center !important;
-                                border-top: 1px dashed #e2e8f0;
-                                padding-top: 32px;
-                                margin-top: 8px;
-                            }
-
-                            .pricing-card-premium-right div {
-                                text-align: center !important;
-                            }
-
-                            .pricing-card-premium-right div div {
-                                justify-content: center !important;
-                            }
-                        }
-                    </style>
-                    <div class="premium-policy-wrapper"
-                        style="max-width: 980px; margin: 0 auto; position: relative; padding: 0 20px;">
-
-                        <!-- Premium Tuition Card -->
-                        <div class="pricing-card-premium"
-                            style="position: relative; background: #ffffff; border: 2.5px solid #ab0e00; border-radius: 32px; box-shadow: 0 20px 40px -15px rgba(171, 14, 0, 0.1); padding: 40px 32px; overflow: hidden; color: #334155; z-index: 1;">
-
-                            <div class="pricing-card-premium-content">
-                                <!-- Left Column -->
-                                <div class="pricing-card-premium-left">
-                                    <!-- Title -->
-                                    <div style="margin-bottom: 24px; margin-top: 4px;">
-                                        <span
-                                            style="background: rgba(171, 14, 0, 0.08); color: #ab0e00; font-size: 0.75rem; font-weight: 700; padding: 6px 12px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 16px;">
-                                            HỌC TRỰC TUYẾN 100%
-                                        </span>
-                                        <h4
-                                            style="font-size: 1.8rem; font-weight: 900; color: #0f172a; margin: 0 0 8px 0; text-transform: none; letter-spacing: -0.5px;">
-                                            MSc in AI
-                                        </h4>
-                                        <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin: 0;">
-                                            Thạc sĩ Khoa học về Trí tuệ Nhân tạo Ứng dụng (18 tháng).
-                                        </p>
+                            <!-- 2. Lộ trình đóng phí 2 đợt -->
+                            <div style="margin-bottom: 24px;">
+                                <h5
+                                    style="color: #0f172a; font-size: 0.95rem; font-weight: 800; margin-top: 0; margin-bottom: 12px;">
+                                    1. LỘ TRÌNH ĐÓNG PHÍ (02 ĐỢT)</h5>
+                                <div style="background: #f8fafc; border-radius: 12px; padding: 16px;">
+                                    <table
+                                        style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: #475569;">
+                                        <tbody>
+                                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                                <td style="padding: 8px 0; font-weight: 600; color: #334155;">
+                                                    Đợt 1 (Khi nhập học)</td>
+                                                <td style="padding: 8px 0; text-align: right; font-weight: 700; color: #0f172a;"
+                                                    id="inst-1-val">3.900 CHF</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0; font-weight: 600; color: #334155;">
+                                                    Đợt 2 (Sau 5 tháng)</td>
+                                                <td style="padding: 8px 0; text-align: right; font-weight: 700; color: #0f172a;"
+                                                    id="inst-2-val">1.920 CHF</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div
+                                        style="font-size: 0.78rem; color: #64748b; line-height: 1.4; margin-top: 10px;">
+                                        * <em>Ghi chú: Lộ trình đóng phí trên được tính dựa trên mức học phí
+                                            hiện hành của đợt nhập học hiện tại.</em>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <!-- Highlights with Circle-Check -->
-                                    <ul class="pricing-features-new"
-                                        style="margin-bottom: 24px; padding: 0; list-style: none;">
-                                        <li
-                                            style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 0.95rem; line-height: 1.4; color: #334155; text-align: left;">
-                                            <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18"
-                                                height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
-                                                    fill="rgba(16, 185, 129, 0.1)"></circle>
-                                                <polyline points="8 12 11 15 16 9" stroke="currentColor"
-                                                    stroke-width="2.5">
-                                                </polyline>
-                                            </svg>
-                                            <span>Học phí platform, tài liệu chuyên đề, hệ thống hỗ trợ từ Swiss UMEF
-                                                &amp;
-                                                IDEAS.</span>
+                            <!-- 3. Quy định thanh toán & Lưu ý -->
+                            <div style="display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px;">
+                                <!-- Payment terms -->
+                                <div style="background: #f8fafc; border-radius: 12px; padding: 16px;">
+                                    <h5
+                                        style="color: #0f172a; font-size: 0.9rem; font-weight: 800; margin-top: 0; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                                        Quy định thanh toán
+                                    </h5>
+                                    <ul
+                                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; line-height: 1.4; color: #475569;">
+                                        <li style="display: flex; align-items: flex-start; gap: 6px;">
+                                            <span style="color: #ab0e00;">●</span>
+                                            <span>Trường hợp đóng 1 lần, được áp dụng giảm thêm
+                                                <strong>10%</strong> trên học phí sau chính sách, không bao gồm
+                                                chuyến đi.</span>
                                         </li>
-                                        <li
-                                            style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 0.95rem; line-height: 1.4; color: #334155; text-align: left;">
-                                            <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18"
-                                                height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
-                                                    fill="rgba(16, 185, 129, 0.1)"></circle>
-                                                <polyline points="8 12 11 15 16 9" stroke="currentColor"
-                                                    stroke-width="2.5">
-                                                </polyline>
-                                            </svg>
-                                            <span>Đã bao gồm phí Canton tốt nghiệp, Lãnh sự Thụy Sĩ &amp; Hợp pháp hóa
-                                                bằng.</span>
-                                        </li>
-                                        <li
-                                            style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 0.95rem; line-height: 1.4; color: #334155; text-align: left;">
-                                            <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18"
-                                                height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
-                                                    fill="rgba(16, 185, 129, 0.1)"></circle>
-                                                <polyline points="8 12 11 15 16 9" stroke="currentColor"
-                                                    stroke-width="2.5">
-                                                </polyline>
-                                            </svg>
-                                            <span>Cam kết không phát sinh bất kỳ khoản phụ phí dịch vụ nào khác.</span>
+                                        <li style="display: flex; align-items: flex-start; gap: 6px;">
+                                            <span style="color: #ab0e00;">●</span>
+                                            <span>Trường hợp không đóng 1 lần, học phí được chia làm <strong>02
+                                                    đợt</strong> thanh toán, mỗi đợt cách nhau 05 tháng.</span>
                                         </li>
                                     </ul>
                                 </div>
 
-                                <!-- Right Column -->
-                                <div class="pricing-card-premium-right">
-                                    <!-- Price Section -->
-                                    <div style="margin-bottom: 24px;">
-                                        <span
-                                            style="display: block; font-size: 0.8rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">HỌC
-                                            PHÍ</span>
-                                        <div
-                                            style="display: flex; align-items: baseline; gap: 4px; justify-content: flex-end; margin-bottom: 2px;">
-                                            <span id="card-price-chf"
-                                                style="font-size: 3rem; font-weight: 900; color: #ab0e00; line-height: 1;">5.820</span>
-                                            <span
-                                                style="font-size: 1.3rem; font-weight: 800; color: #ab0e00;">CHF</span>
-                                        </div>
-                                        <p id="card-price-vnd"
-                                            style="margin: 0; font-size: 1.35rem; color: #0f172a; font-weight: 900; margin-bottom: 12px;">
-                                            ~192.060.000đ
-                                        </p>
-                                        <p style="margin: 0; font-size: 0.85rem; color: #64748b; line-height: 1.5;">
-                                            Đóng 1 lần (Giảm 10%): <strong id="card-price-discounted-val"
-                                                style="color: #ab0e00; font-weight: 800;">172.854.000đ</strong>
-                                        </p>
-                                        <p
-                                            style="margin: 4px 0 0 0; font-size: 0.8rem; color: #94a3b8; text-decoration: line-through;">
-                                            Học phí gốc: 8.720 CHF
-                                        </p>
-                                    </div>
-
-                                    <!-- CTA Button -->
-                                    <div style="text-align: center; margin-top: auto; width: 100%;">
-                                        <a href="#dang-ky" id="premium-cta-mscai"
-                                            style="display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 16px 28px; background: #ab0e00; color: white !important; font-size: 1.1rem; font-weight: 800; text-decoration: none; border-radius: 16px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 8px 20px rgba(171, 14, 0, 0.25); border: none;">
-                                            <span>Tư vấn Học phí & ưu đãi</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Toggle Show More -->
-                            <div style="margin-bottom: 24px; margin-top: 24px;">
-                                <button class="toggle-details-btn" onclick="toggleTuitionDetails()"
-                                    style="background: none; border: none; color: #ab0e00; font-size: 0.92rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; text-decoration: underline; padding: 4px 8px;">
-                                    <span id="toggle-details-text">Xem chi tiết lộ trình đóng phí</span>
-                                    <svg id="toggle-details-icon" style="transition: transform 0.3s;" width="14"
-                                        height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9" />
-                                    </svg>
-                                </button>
-
-                                <!-- Expandable Details -->
-                                <div id="tuition-details-container"
-                                    style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; text-align: left; margin-top: 24px; border-top: 1px dashed #cbd5e1; padding-top: 24px;">
-
-                                    <!-- 1. Bảng thời gian áp dụng chi tiết (tính theo ngày) -->
-                                    <div style="margin-bottom: 24px; display: none;">
-                                        <h5
-                                            style="color: #0f172a; font-size: 0.95rem; font-weight: 800; margin-top: 0; margin-bottom: 12px;">
-                                            1. BIỂU PHÍ THEO THỜI GIAN ĐĂNG KÝ</h5>
-                                        <div style="overflow-x: auto;">
-                                            <table
-                                                style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: #475569; min-width: 500px;">
-                                                <thead>
-                                                    <tr
-                                                        style="background: rgba(171, 14, 0, 0.04); border-bottom: 1px solid rgba(171, 14, 0, 0.1);">
-                                                        <th
-                                                            style="padding: 10px; font-weight: 700; text-align: left; color: #ab0e00;">
-                                                            Thời gian áp dụng</th>
-                                                        <th
-                                                            style="padding: 10px; font-weight: 700; text-align: right; color: #ab0e00;">
-                                                            Học phí còn lại</th>
-                                                        <th
-                                                            style="padding: 10px; font-weight: 700; text-align: right; color: #ab0e00;">
-                                                            Đóng 1 lần (Dis 10%)</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="tuition-table-rows">
-                                                    <tr data-start="2026-05-08" data-end="2026-05-25"
-                                                        style="border-bottom: 1px solid #f1f5f9;">
-                                                        <td style="padding: 10px; font-weight: 600;" class="t-col-1">Từ
-                                                            08/05/26 đến hết 25/05/2026</td>
-                                                        <td
-                                                            style="padding: 10px; text-align: right; font-weight: 700; color: #0f172a;">
-                                                            4.820 CHF (~159.060.000đ)</td>
-                                                        <td
-                                                            style="padding: 10px; text-align: right; font-weight: 700; color: #ab0e00;">
-                                                            143.154.000đ</td>
-                                                    </tr>
-                                                    <tr data-start="2026-05-26" data-end="2026-06-15"
-                                                        style="border-bottom: 1px solid #f1f5f9;">
-                                                        <td style="padding: 10px; font-weight: 600;" class="t-col-1">Từ
-                                                            26/05/26 đến hết 15/06/2026</td>
-                                                        <td
-                                                            style="padding: 10px; text-align: right; font-weight: 700; color: #0f172a;">
-                                                            5.820 CHF (~192.060.000đ)</td>
-                                                        <td
-                                                            style="padding: 10px; text-align: right; font-weight: 700; color: #ab0e00;">
-                                                            172.854.000đ</td>
-                                                    </tr>
-                                                    <tr data-start="2026-06-16" data-end="2026-07-15"
-                                                        style="border-bottom: 1px solid #f1f5f9;">
-                                                        <td style="padding: 10px; font-weight: 600;" class="t-col-1">Từ
-                                                            16/06/26 đến hết 15/07/2026</td>
-                                                        <td
-                                                            style="padding: 10px; text-align: right; font-weight: 700; color: #0f172a;">
-                                                            7.220 CHF (~238.260.000đ)</td>
-                                                        <td
-                                                            style="padding: 10px; text-align: right; font-weight: 700; color: #ab0e00;">
-                                                            214.434.000đ</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    <!-- 2. Lộ trình đóng phí 2 đợt -->
-                                    <div style="margin-bottom: 24px;">
-                                        <h5
-                                            style="color: #0f172a; font-size: 0.95rem; font-weight: 800; margin-top: 0; margin-bottom: 12px;">
-                                            1. LỘ TRÌNH ĐÓNG PHÍ (02 ĐỢT)</h5>
-                                        <div style="background: #f8fafc; border-radius: 12px; padding: 16px;">
-                                            <table
-                                                style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: #475569;">
-                                                <tbody>
-                                                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                                                        <td style="padding: 8px 0; font-weight: 600; color: #334155;">
-                                                            Đợt 1 (Khi nhập học)</td>
-                                                        <td style="padding: 8px 0; text-align: right; font-weight: 700; color: #0f172a;"
-                                                            id="inst-1-val">3.900 CHF</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="padding: 8px 0; font-weight: 600; color: #334155;">
-                                                            Đợt 2 (Sau 5 tháng)</td>
-                                                        <td style="padding: 8px 0; text-align: right; font-weight: 700; color: #0f172a;"
-                                                            id="inst-2-val">1.920 CHF</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div
-                                                style="font-size: 0.78rem; color: #64748b; line-height: 1.4; margin-top: 10px;">
-                                                * <em>Ghi chú: Lộ trình đóng phí trên được tính dựa trên mức học phí
-                                                    hiện hành của đợt nhập học hiện tại.</em>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- 3. Quy định thanh toán & Lưu ý -->
-                                    <div
-                                        style="display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px;">
-                                        <!-- Payment terms -->
-                                        <div style="background: #f8fafc; border-radius: 12px; padding: 16px;">
-                                            <h5
-                                                style="color: #0f172a; font-size: 0.9rem; font-weight: 800; margin-top: 0; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
-                                                Quy định thanh toán
-                                            </h5>
-                                            <ul
-                                                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; line-height: 1.4; color: #475569;">
-                                                <li style="display: flex; align-items: flex-start; gap: 6px;">
-                                                    <span style="color: #ab0e00;">●</span>
-                                                    <span>Trường hợp đóng 1 lần, được áp dụng giảm thêm
-                                                        <strong>10%</strong> trên học phí sau chính sách, không bao gồm
-                                                        chuyến đi.</span>
-                                                </li>
-                                                <li style="display: flex; align-items: flex-start; gap: 6px;">
-                                                    <span style="color: #ab0e00;">●</span>
-                                                    <span>Trường hợp không đóng 1 lần, học phí được chia làm <strong>02
-                                                            đợt</strong> thanh toán, mỗi đợt cách nhau 05 tháng.</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <!-- Notes -->
-                                        <div style="background: #f8fafc; border-radius: 12px; padding: 16px;">
-                                            <h5
-                                                style="color: #0f172a; font-size: 0.9rem; font-weight: 800; margin-top: 0; margin-bottom: 10px;">
-                                                Lưu ý quan trọng</h5>
-                                            <ul
-                                                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; line-height: 1.4; color: #475569;">
-                                                <li style="display: flex; align-items: flex-start; gap: 6px;">
-                                                    <span>-</span>
-                                                    <span>Phí chuyến đi Campus không bắt buộc và có thể đăng ký bổ sung
-                                                        sau.</span>
-                                                </li>
-                                                <li style="display: flex; align-items: flex-start; gap: 6px;">
-                                                    <span>-</span>
-                                                    <span>Khóa 05 được áp dụng tỷ giá cố định 33.000 VNĐ/CHF. Nếu tỷ giá
-                                                        thực tế HD Bank cao hơn 33.000 VNĐ/CHF thì áp dụng 33.000
-                                                        VNĐ/CHF. Nếu thấp hơn thì áp dụng tỷ giá thực tế.</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                <!-- Notes -->
+                                <div style="background: #f8fafc; border-radius: 12px; padding: 16px;">
+                                    <h5
+                                        style="color: #0f172a; font-size: 0.9rem; font-weight: 800; margin-top: 0; margin-bottom: 10px;">
+                                        Lưu ý quan trọng</h5>
+                                    <ul
+                                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; line-height: 1.4; color: #475569;">
+                                        <li style="display: flex; align-items: flex-start; gap: 6px;">
+                                            <span>-</span>
+                                            <span>Phí chuyến đi Campus không bắt buộc và có thể đăng ký bổ sung
+                                                sau.</span>
+                                        </li>
+                                        <li style="display: flex; align-items: flex-start; gap: 6px;">
+                                            <span>-</span>
+                                            <span>Khóa 05 được áp dụng tỷ giá cố định 33.000 VNĐ/CHF. Nếu tỷ giá
+                                                thực tế HD Bank cao hơn 33.000 VNĐ/CHF thì áp dụng 33.000
+                                                VNĐ/CHF. Nếu thấp hơn thì áp dụng tỷ giá thực tế.</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <script>
-                            document.addEventListener("DOMContentLoaded", function () {
-                                const today = new Date();
-                                today.setHours(0, 0, 0, 0);
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
 
-                                const tiers = [
-                                    { start: "2026-05-08", end: "2026-05-25", chf: "4.820", vnd: "159.060.000", discount: "143.154.000", inst1: "3.900 CHF", inst2: "920 CHF", sponsorChf: "3.900", sponsorVnd: "128.700.000" },
-                                    { start: "2026-05-26", end: "2026-06-15", chf: "5.820", vnd: "192.060.000", discount: "172.854.000", inst1: "3.900 CHF", inst2: "1.920 CHF", sponsorChf: "2.900", sponsorVnd: "95.700.000" },
-                                    { start: "2026-06-16", end: "2026-07-15", chf: "7.220", vnd: "238.260.000", discount: "214.434.000", inst1: "3.900 CHF", inst2: "3.320 CHF", sponsorChf: "1.500", sponsorVnd: "49.500.000" }
-                                ];
+                        const tiers = [
+                            { start: "2026-05-08", end: "2026-05-25", chf: "4.820", vnd: "159.060.000", discount: "143.154.000", inst1: "3.900 CHF", inst2: "920 CHF", sponsorChf: "3.900", sponsorVnd: "128.700.000" },
+                            { start: "2026-05-26", end: "2026-06-15", chf: "5.820", vnd: "192.060.000", discount: "172.854.000", inst1: "3.900 CHF", inst2: "1.920 CHF", sponsorChf: "2.900", sponsorVnd: "95.700.000" },
+                            { start: "2026-06-16", end: "2026-07-15", chf: "7.220", vnd: "238.260.000", discount: "214.434.000", inst1: "3.900 CHF", inst2: "3.320 CHF", sponsorChf: "1.500", sponsorVnd: "49.500.000" }
+                        ];
 
-                                let activeIndex = -1;
-                                for (let i = 0; i < tiers.length; i++) {
-                                    const end = new Date(tiers[i].end);
-                                    if (today <= end) {
-                                        activeIndex = i;
-                                        break;
-                                    }
-                                }
-                                if (activeIndex === -1) activeIndex = tiers.length - 1;
+                        let activeIndex = -1;
+                        for (let i = 0; i < tiers.length; i++) {
+                            const end = new Date(tiers[i].end);
+                            if (today <= end) {
+                                activeIndex = i;
+                                break;
+                            }
+                        }
+                        if (activeIndex === -1) activeIndex = tiers.length - 1;
 
-                                const activeTier = tiers[activeIndex];
+                        const activeTier = tiers[activeIndex];
 
-                                document.getElementById("card-price-chf").innerText = activeTier.chf;
-                                document.getElementById("card-price-vnd").innerText = "~" + activeTier.vnd + "đ";
-                                document.getElementById("card-price-discounted-val").innerText = activeTier.discount + "đ";
+                        document.getElementById("card-price-chf").innerText = activeTier.chf;
+                        document.getElementById("card-price-vnd").innerText = "~" + activeTier.vnd + "đ";
+                        document.getElementById("card-price-discounted-val").innerText = activeTier.discount + "đ";
 
-                                document.getElementById("inst-1-val").innerText = activeTier.inst1;
-                                document.getElementById("inst-2-val").innerText = activeTier.inst2;
+                        document.getElementById("inst-1-val").innerText = activeTier.inst1;
+                        document.getElementById("inst-2-val").innerText = activeTier.inst2;
 
-                                const bannerSponsor = document.getElementById("banner-sponsor-val");
-                                const bannerPrice = document.getElementById("banner-price-val");
-                                if (bannerSponsor) {
-                                    bannerSponsor.innerHTML = `${activeTier.sponsorChf} CHF (~${activeTier.sponsorVnd}đ)`;
-                                }
-                                if (bannerPrice) {
-                                    bannerPrice.innerText = `${activeTier.chf} CHF`;
-                                }
+                        const bannerSponsor = document.getElementById("banner-sponsor-val");
+                        const bannerPrice = document.getElementById("banner-price-val");
+                        if (bannerSponsor) {
+                            bannerSponsor.innerHTML = `${activeTier.sponsorChf} CHF (~${activeTier.sponsorVnd}đ)`;
+                        }
+                        if (bannerPrice) {
+                            bannerPrice.innerText = `${activeTier.chf} CHF`;
+                        }
 
-                                const tbody = document.getElementById("tuition-table-rows");
-                                if (tbody) {
-                                    const rows = tbody.querySelectorAll("tr");
-                                    rows.forEach((row, index) => {
-                                        const end = new Date(row.getAttribute("data-end"));
-                                        const col1 = row.querySelector('.t-col-1');
-                                        if (today > end) {
-                                            row.style.opacity = "0.4";
-                                            if (col1) col1.style.textDecoration = "line-through";
-                                        } else if (index === activeIndex) {
-                                            row.style.background = "rgba(171, 14, 0, 0.05)";
-                                            row.style.fontWeight = "700";
-                                            row.style.borderLeft = "4px solid #ab0e00";
-                                        }
-                                    });
+                        const tbody = document.getElementById("tuition-table-rows");
+                        if (tbody) {
+                            const rows = tbody.querySelectorAll("tr");
+                            rows.forEach((row, index) => {
+                                const end = new Date(row.getAttribute("data-end"));
+                                const col1 = row.querySelector('.t-col-1');
+                                if (today > end) {
+                                    row.style.opacity = "0.4";
+                                    if (col1) col1.style.textDecoration = "line-through";
+                                } else if (index === activeIndex) {
+                                    row.style.background = "rgba(171, 14, 0, 0.05)";
+                                    row.style.fontWeight = "700";
+                                    row.style.borderLeft = "4px solid #ab0e00";
                                 }
                             });
+                        }
+                    });
 
-                            function toggleTuitionDetails() {
-                                const container = document.getElementById("tuition-details-container");
-                                const btnText = document.getElementById("toggle-details-text");
-                                const btnIcon = document.getElementById("toggle-details-icon");
+                    function toggleTuitionDetails() {
+                        const container = document.getElementById("tuition-details-container");
+                        const btnText = document.getElementById("toggle-details-text");
+                        const btnIcon = document.getElementById("toggle-details-icon");
 
-                                if (container.style.maxHeight === "0px" || !container.style.maxHeight) {
-                                    container.style.maxHeight = "1200px";
-                                    btnText.innerText = "Thu gọn lộ trình đóng phí";
-                                    btnIcon.style.transform = "rotate(180deg)";
-                                } else {
-                                    container.style.maxHeight = "0px";
-                                    btnText.innerText = "Xem chi tiết lộ trình đóng phí";
-                                    btnIcon.style.transform = "rotate(0deg)";
-                                }
-                            }
-                        </script>
+                        if (container.style.maxHeight === "0px" || !container.style.maxHeight) {
+                            container.style.maxHeight = "1200px";
+                            btnText.innerText = "Thu gọn lộ trình đóng phí";
+                            btnIcon.style.transform = "rotate(180deg)";
+                        } else {
+                            container.style.maxHeight = "0px";
+                            btnText.innerText = "Xem chi tiết lộ trình đóng phí";
+                            btnIcon.style.transform = "rotate(0deg)";
+                        }
+                    }
+                </script>
                 <style>
                     #premium-cta {
                         display: flex;
@@ -5764,7 +5764,8 @@
                 </style>
 
                 <!-- Sacombank installment banner -->
-                <div class="sacom-banner" aria-label="Hỗ trợ trả góp Sacombank" style="max-width: 980px; margin: 24px auto 48px;">
+                <div class="sacom-banner" aria-label="Hỗ trợ trả góp Sacombank"
+                    style="max-width: 980px; margin: 24px auto 48px;">
                     <div class="sacom-left">
                         <div class="sacom-cards">
                             <img decoding="async"
@@ -5794,7 +5795,7 @@
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
 
 
         <!-- ══════════════════════════════════════════
@@ -7785,6 +7786,167 @@
                 });
             });
         }
+    </script>
+
+    <!-- VN GRADUATION CEREMONY MODAL -->
+    <div class="vn-ceremony-modal" id="vn-ceremony-modal" role="dialog" aria-modal="true" aria-label="Lễ tốt nghiệp tại Việt Nam">
+        <div class="vn-ceremony-overlay" id="vn-ceremony-overlay"></div>
+        <div class="vn-ceremony-container">
+            <div class="vn-ceremony-header">
+                <h2 class="vn-ceremony-title">
+                    <svg width="22" height="22" fill="none" stroke="#ab0e00" stroke-width="2" viewBox="0 0 24 24" style="display:inline-block;vertical-align:middle;margin-right:8px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Lễ Tốt Nghiệp tại <span>Việt Nam</span>
+                </h2>
+                <button class="vn-ceremony-close" onclick="closeVNCeremonyModal()" aria-label="Đóng">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="vn-ceremony-content">
+                <p style="color:#64748b;font-size:0.9rem;margin-bottom:28px;line-height:1.6;">
+                    Những buổi lễ trao bằng <strong>Swiss UMEF</strong> được tổ chức định kỳ tại Thành phố Hồ Chí Minh — nơi học viên chính thức nhận <em>bằng thạc sĩ quốc tế</em> sau hành trình chinh phục chương trình.
+                </p>
+
+                <!-- Timeline -->
+                <div class="vn-timeline">
+
+                    <!-- Event 1: 27/12/2025 -->
+                    <div class="vn-timeline-item">
+                        <div class="vn-timeline-badge"></div>
+                        <div class="vn-timeline-date">27/12/2025</div>
+                        <div class="vn-card">
+                            <div class="vn-card-img-wrap">
+                                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp" alt="Lễ tốt nghiệp MBA/EMBA 27/12/2025" loading="lazy">
+                            </div>
+                            <div class="vn-card-info">
+                                <a href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN" target="_blank" rel="noopener" class="vn-card-title">Lễ Tốt Nghiệp Khoá MBA/EMBA</a>
+                                <div class="vn-card-meta">
+                                    <p><i class="fa-solid fa-graduation-cap"></i> MBA / EMBA &mdash; Swiss UMEF</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> Tp. Hồ Chí Minh</p>
+                                </div>
+                                <a href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN" target="_blank" rel="noopener" class="vn-card-play" aria-label="Xem ảnh lễ tốt nghiệp">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2: 10/2025 -->
+                    <div class="vn-timeline-item">
+                        <div class="vn-timeline-badge"></div>
+                        <div class="vn-timeline-date">10/2025</div>
+                        <div class="vn-card">
+                            <div class="vn-card-img-wrap">
+                                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg" alt="Lễ tốt nghiệp 10/2025" loading="lazy">
+                            </div>
+                            <div class="vn-card-info">
+                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-title">Lễ Tốt Nghiệp Khoá MBA/EMBA</a>
+                                <div class="vn-card-meta">
+                                    <p><i class="fa-solid fa-graduation-cap"></i> MBA / EMBA &mdash; Swiss UMEF</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> Tp. Hồ Chí Minh</p>
+                                </div>
+                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-play" aria-label="Xem ảnh">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3: 16/07/2024 -->
+                    <div class="vn-timeline-item">
+                        <div class="vn-timeline-badge"></div>
+                        <div class="vn-timeline-date">16/07/2024</div>
+                        <div class="vn-card">
+                            <div class="vn-card-img-wrap">
+                                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg" alt="Lễ tốt nghiệp Khoá 26" loading="lazy">
+                            </div>
+                            <div class="vn-card-info">
+                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-title">Lễ Tốt Nghiệp Khoá 26</a>
+                                <div class="vn-card-meta">
+                                    <p><i class="fa-solid fa-graduation-cap"></i> MBA / EMBA &mdash; Swiss UMEF</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> Tp. Hồ Chí Minh</p>
+                                </div>
+                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-play" aria-label="Xem ảnh">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 4: 02/03/2024 -->
+                    <div class="vn-timeline-item">
+                        <div class="vn-timeline-badge"></div>
+                        <div class="vn-timeline-date">02/03/2024</div>
+                        <div class="vn-card">
+                            <div class="vn-card-img-wrap">
+                                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6740.jpg" alt="Lễ tốt nghiệp Khoá 25" loading="lazy">
+                            </div>
+                            <div class="vn-card-info">
+                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-title">Lễ Tốt Nghiệp Khoá 25</a>
+                                <div class="vn-card-meta">
+                                    <p><i class="fa-solid fa-graduation-cap"></i> MBA / EMBA &mdash; Swiss UMEF</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> Tp. Hồ Chí Minh</p>
+                                </div>
+                                <a href="https://www.facebook.com/ideas.edu.vn" target="_blank" rel="noopener" class="vn-card-play" aria-label="Xem ảnh">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- / Timeline -->
+
+                <!-- Sticky Footer CTA -->
+                <div style="position:sticky;bottom:0;background:#fff;padding:16px 0 0;margin-top:32px;border-top:1px solid #f1f5f9;display:flex;gap:12px;justify-content:center;">
+                    <button onclick="closeVNCeremonyModal();setTimeout(()=>document.querySelector('.bk-open-btn')?.click(),200);" style="background:linear-gradient(135deg,#8c1000,#c41e00);color:#fff;border:none;padding:13px 28px;border-radius:50px;font-size:0.9rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;box-shadow:0 8px 24px rgba(171,14,0,0.28);">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        Đăng ký tham dự lễ
+                    </button>
+                    <button onclick="closeVNCeremonyModal()" style="background:transparent;border:1.5px solid #e2e8f0;color:#64748b;padding:13px 22px;border-radius:50px;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.3s;">
+                        Đóng
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openVNCeremonyModal() {
+            const modal = document.getElementById('vn-ceremony-modal');
+            if (modal) {
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        function closeVNCeremonyModal() {
+            const modal = document.getElementById('vn-ceremony-modal');
+            if (modal) {
+                modal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+        // Close on overlay click
+        document.getElementById('vn-ceremony-overlay')?.addEventListener('click', closeVNCeremonyModal);
+        // Close on Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('vn-ceremony-modal')?.classList.contains('open')) {
+                closeVNCeremonyModal();
+            }
+        });
     </script>
 
 </body>

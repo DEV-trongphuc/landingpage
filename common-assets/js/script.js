@@ -1717,107 +1717,174 @@ document.addEventListener('keydown', (e) => {
 
     /* ─── VIETNAM GRADUATION CEREMONY MODAL ─── */
     function initVnGradModal() {
-        const triggers = document.querySelectorAll('#vn-graduation-trigger');
-        if (triggers.length === 0) return;
+        // Load FontAwesome dynamically if not present
+        if (!document.querySelector('link[href*="font-awesome"]')) {
+            const fontAwesomeLink = document.createElement('link');
+            fontAwesomeLink.rel = 'stylesheet';
+            fontAwesomeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+            document.head.appendChild(fontAwesomeLink);
+        }
 
-        const modalHtml = `
-            <div class="vn-grad-modal" id="vn-grad-modal" role="dialog" aria-modal="true" aria-label="Lễ tốt nghiệp tại Việt Nam">
-                <div class="vn-grad-overlay" id="vn-grad-overlay"></div>
-                <div class="vn-grad-container">
-                    <button class="vn-grad-close" id="vn-grad-close" aria-label="Đóng">✕</button>
-                    <div class="vn-grad-header">
-                        <span class="vn-grad-badge">HÀNH TRÌNH TỐT NGHIỆP</span>
-                        <h3>Lễ Tốt Nghiệp tại Việt Nam</h3>
-                        <p>Đừng lo nếu bạn không đi Thụy Sĩ thì IDEAS cùng trường tổ chức Lễ tốt nghiệp tại Việt Nam. Hãy xem qua các Lễ tốt nghiệp nổi bật đã diễn ra:</p>
-                    </div>
-                    <div class="vn-grad-grid">
-                        <div class="vn-grad-card">
-                            <div class="vn-grad-img-wrap">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp" alt="Lễ tốt nghiệp MBA/EMBA">
-                                <span class="vn-grad-date">27/12/2025</span>
-                                <a class="vn-grad-play-btn" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN" target="_blank" aria-label="Xem video">
-                                    <i class="fa-solid fa-play"></i>
-                                </a>
-                            </div>
-                            <div class="vn-grad-info">
-                                <h4>Lễ tốt nghiệp MBA/EMBA</h4>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-graduation-cap"></i> Chương trình: <strong>MBA/EMBA</strong></p>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-earth-oceania"></i> Trường: <strong>Swiss UMEF</strong></p>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-location-dot"></i> Địa điểm: <strong>Tp. Hồ Chí Minh</strong></p>
-                            </div>
+        // Dynamically inject the trigger button in the Tour Modal footer
+        const tourFooterBtnWrap = document.querySelector('.tour-footer-btn-wrap');
+        if (!tourFooterBtnWrap) return;
+
+        // Check if trigger button already exists
+        let trigger = document.getElementById('vn-graduation-trigger');
+        if (!trigger) {
+            trigger = document.createElement('button');
+            trigger.id = 'vn-graduation-trigger';
+            trigger.className = 'tour-vn-ceremony-btn';
+            trigger.innerHTML = `
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Tham dự Lễ tại Việt Nam</span>
+            `;
+            // Insert it before the secondary close button
+            const closeBtnSecondary = tourFooterBtnWrap.querySelector('.tour-footer-btn-secondary');
+            if (closeBtnSecondary) {
+                tourFooterBtnWrap.insertBefore(trigger, closeBtnSecondary);
+            } else {
+                tourFooterBtnWrap.appendChild(trigger);
+            }
+        }
+
+        // Check if modal already exists to prevent duplicate appending
+        let modalEl = document.getElementById('vn-ceremony-modal');
+        if (!modalEl) {
+            const modalHtml = `
+                <div class="vn-ceremony-modal" id="vn-ceremony-modal" role="dialog" aria-modal="true" aria-label="Lễ tốt nghiệp tại Việt Nam">
+                    <div class="vn-ceremony-overlay" id="vn-ceremony-overlay"></div>
+                    <div class="vn-ceremony-container">
+                        <div class="vn-ceremony-header">
+                            <h3 class="vn-ceremony-title">Hành trình tốt nghiệp tại <span>Việt Nam</span></h3>
+                            <button class="vn-ceremony-close" id="vn-ceremony-close" aria-label="Đóng modal">✕</button>
                         </div>
-                        <div class="vn-grad-card">
-                            <div class="vn-grad-img-wrap">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/07/ltn72025.webp" alt="Lễ tốt nghiệp Global MBA - DBA">
-                                <span class="vn-grad-date">26/07/2025</span>
-                                <a class="vn-grad-play-btn" href="https://ideas.edu.vn/wp-content/uploads/2025/07/ltn72025.webp" target="_blank" aria-label="Xem ảnh">
-                                    <i class="fa-solid fa-play"></i>
-                                </a>
-                            </div>
-                            <div class="vn-grad-info">
-                                <h4>Lễ tốt nghiệp Global MBA - DBA</h4>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-graduation-cap"></i> Chương trình: <strong>Global MBA - DBA</strong></p>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-earth-oceania"></i> Trường: <strong>Ascencia Business School</strong></p>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-location-dot"></i> Địa điểm: <strong>Eden Star Hotel - HCMC</strong></p>
-                            </div>
-                        </div>
-                        <div class="vn-grad-card">
-                            <div class="vn-grad-img-wrap">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2024/11/8X1A9328-1-1.jpg" alt="Lễ tốt nghiệp Global MBA - DBA">
-                                <span class="vn-grad-date">23/11/2024</span>
-                                <a class="vn-grad-play-btn" href="https://youtu.be/hmVxOq5jkeM?si=gR-YOgFi2KQJftr9" target="_blank" aria-label="Xem video">
-                                    <i class="fa-solid fa-play"></i>
-                                </a>
-                            </div>
-                            <div class="vn-grad-info">
-                                <h4>Lễ tốt nghiệp Global MBA - DBA</h4>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-graduation-cap"></i> Chương trình: <strong>Global MBA - DBA</strong></p>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-earth-oceania"></i> Trường: <strong>Ascencia Business School</strong></p>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-location-dot"></i> Địa điểm: <strong>Viện IDEAS - Việt Nam</strong></p>
-                            </div>
-                        </div>
-                        <div class="vn-grad-card">
-                            <div class="vn-grad-img-wrap">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2024/10/Totnghiepumef.jpg" alt="Lễ tốt nghiệp EMBA & Online MBA">
-                                <span class="vn-grad-date">26/10/2024</span>
-                                <a class="vn-grad-play-btn" href="https://youtu.be/fBf5YcaMxDY?si=eJDfqKWc4HxT_TmS" target="_blank" aria-label="Xem video">
-                                    <i class="fa-solid fa-play"></i>
-                                </a>
-                            </div>
-                            <div class="vn-grad-info">
-                                <h4>Lễ tốt nghiệp EMBA & Online MBA</h4>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-graduation-cap"></i> Chương trình: <strong>EMBA &amp; Online MBA</strong></p>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-earth-oceania"></i> Trường: <strong>Swiss UMEF</strong></p>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-location-dot"></i> Địa điểm: <strong>Viện IDEAS - Việt Nam</strong></p>
-                            </div>
-                        </div>
-                        <div class="vn-grad-card">
-                            <div class="vn-grad-img-wrap">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2024/01/416256674_837845658141991_5379123310787471174_n.jpg" alt="Lễ tốt nghiệp Global MBA - DBA">
-                                <span class="vn-grad-date">06/01/2024</span>
-                                <a class="vn-grad-play-btn" href="https://youtu.be/Dc78ClToNRo?si=kfg00KZ6gYpOWwTI" target="_blank" aria-label="Xem video">
-                                    <i class="fa-solid fa-play"></i>
-                                </a>
-                            </div>
-                            <div class="vn-grad-info">
-                                <h4>Lễ tốt nghiệp Global MBA - DBA</h4>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-graduation-cap"></i> Chương trình: <strong>Global MBA - DBA</strong></p>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-earth-oceania"></i> Trường: <strong>Ascencia Business School</strong></p>
-                                <p class="vn-grad-meta"><i class="fa-solid fa-location-dot"></i> Địa điểm: <strong>Viện IDEAS - Việt Nam</strong></p>
+                        <div class="vn-ceremony-content">
+                            <div class="vn-timeline">
+                                
+                                <!-- Item 1 -->
+                                <div class="vn-timeline-item">
+                                    <div class="vn-timeline-badge"></div>
+                                    <span class="vn-timeline-date">27/12/2025</span>
+                                    <div class="vn-card">
+                                        <div class="vn-card-img-wrap">
+                                            <img src="https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp" alt="Lễ tốt nghiệp MBA/EMBA Swiss UMEF" loading="lazy" decoding="async">
+                                        </div>
+                                        <div class="vn-card-info">
+                                            <a class="vn-card-title" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN" target="_blank">Lễ tốt nghiệp MBA/EMBA</a>
+                                            <div class="vn-card-meta">
+                                                <p><i class="fa-solid fa-earth-oceania"></i> MBA/EMBA</p>
+                                                <p><i class="fa-solid fa-graduation-cap"></i> Swiss UMEF</p>
+                                                <p><i class="fa-solid fa-location-dot"></i> Tp. Hồ Chí Minh</p>
+                                            </div>
+                                            <a title="Xem thêm" class="vn-card-play" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid034nzCDGcFVfz54M62b4Yod9iJ3mMx2eVNMXB33PpDeDSw6Xw1cZsH4oucpX2TogDcl?locale=vi_VN" target="_blank">
+                                                <i class="fa-solid fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Item 2 -->
+                                <div class="vn-timeline-item">
+                                    <div class="vn-timeline-badge"></div>
+                                    <span class="vn-timeline-date">26/07/2025</span>
+                                    <div class="vn-card">
+                                        <div class="vn-card-img-wrap">
+                                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/07/ltn72025.webp" alt="Lễ tốt nghiệp Global MBA - DBA Ascencia" loading="lazy" decoding="async">
+                                        </div>
+                                        <div class="vn-card-info">
+                                            <a class="vn-card-title" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid02D6QV6Lwqbk6PWN3ToipRQJ3jV9AkFV9FcnAqQwsdf9wVBdNkHr5bHWaKPJtGojf2l?locale=vi_VN" target="_blank">Lễ tốt nghiệp Global MBA - DBA</a>
+                                            <div class="vn-card-meta">
+                                                <p><i class="fa-solid fa-earth-oceania"></i> Global MBA - DBA</p>
+                                                <p><i class="fa-solid fa-graduation-cap"></i> Ascencia Business School</p>
+                                                <p><i class="fa-solid fa-location-dot"></i> Eden Star Hotel- Hồ Chí Minh</p>
+                                            </div>
+                                            <a title="Xem thêm" class="vn-card-play" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid02D6QV6Lwqbk6PWN3ToipRQJ3jV9AkFV9FcnAqQwsdf9wVBdNkHr5bHWaKPJtGojf2l?locale=vi_VN" target="_blank">
+                                                <i class="fa-solid fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Item 3 -->
+                                <div class="vn-timeline-item">
+                                    <div class="vn-timeline-badge"></div>
+                                    <span class="vn-timeline-date">23/11/2024</span>
+                                    <div class="vn-card">
+                                        <div class="vn-card-img-wrap">
+                                            <img src="https://ideas.edu.vn/wp-content/uploads/2024/11/8X1A9328-1-1.jpg" alt="Lễ tốt nghiệp Global MBA Ascencia" loading="lazy" decoding="async">
+                                        </div>
+                                        <div class="vn-card-info">
+                                            <a class="vn-card-title" href="https://www.youtube.com/watch?si=gR-YOgFi2KQJftr9&amp;v=hmVxOq5jkeM&amp;feature=youtu.be" target="_blank">Lễ tốt nghiệp Global MBA</a>
+                                            <div class="vn-card-meta">
+                                                <p><i class="fa-solid fa-earth-oceania"></i> Global MBA</p>
+                                                <p><i class="fa-solid fa-graduation-cap"></i> Ascencia Business School</p>
+                                                <p><i class="fa-solid fa-location-dot"></i> Viện IDEAS</p>
+                                            </div>
+                                            <a title="Xem thêm" class="vn-card-play" href="https://www.youtube.com/watch?si=gR-YOgFi2KQJftr9&amp;v=hmVxOq5jkeM&amp;feature=youtu.be" target="_blank">
+                                                <i class="fa-solid fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Item 4 -->
+                                <div class="vn-timeline-item">
+                                    <div class="vn-timeline-badge"></div>
+                                    <span class="vn-timeline-date">26/10/2024</span>
+                                    <div class="vn-card">
+                                        <div class="vn-card-img-wrap">
+                                            <img src="https://ideas.edu.vn/wp-content/uploads/2024/10/Totnghiepumef.jpg" alt="Lễ tốt nghiệp MBA/EMBA Swiss UMEF" loading="lazy" decoding="async">
+                                        </div>
+                                        <div class="vn-card-info">
+                                            <a class="vn-card-title" href="https://www.youtube.com/watch?si=eJDfqKWc4HxT_TmS&amp;v=fBf5YcaMxDY&amp;feature=youtu.be" target="_blank">Lễ tốt nghiệp MBA/EMBA</a>
+                                            <div class="vn-card-meta">
+                                                <p><i class="fa-solid fa-earth-oceania"></i> MBA/EMBA</p>
+                                                <p><i class="fa-solid fa-graduation-cap"></i> Swiss UMEF</p>
+                                                <p><i class="fa-solid fa-location-dot"></i> Viện IDEAS</p>
+                                            </div>
+                                            <a title="Xem thêm" class="vn-card-play" href="https://www.youtube.com/watch?si=eJDfqKWc4HxT_TmS&amp;v=fBf5YcaMxDY&amp;feature=youtu.be" target="_blank">
+                                                <i class="fa-solid fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Item 5 -->
+                                <div class="vn-timeline-item">
+                                    <div class="vn-timeline-badge"></div>
+                                    <span class="vn-timeline-date">06/01/2024</span>
+                                    <div class="vn-card">
+                                        <div class="vn-card-img-wrap">
+                                            <img src="https://ideas.edu.vn/wp-content/uploads/2024/01/416256674_837845658141991_5379123310787471174_n.jpg" alt="Lễ tốt nghiệp Global MBA/DBA Ascencia" loading="lazy" decoding="async">
+                                        </div>
+                                        <div class="vn-card-info">
+                                            <a class="vn-card-title" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid02uRUWP7AE5ithsMRnvDcKhgLRUS5JTJzWofcoFQsnXPQPTtG9WogjihFvAPHLrNNKl" target="_blank">Lễ tốt nghiệp Global MBA/DBA</a>
+                                            <div class="vn-card-meta">
+                                                <p><i class="fa-solid fa-earth-oceania"></i> Global MBA/DBA</p>
+                                                <p><i class="fa-solid fa-graduation-cap"></i> Ascencia Business School</p>
+                                                <p><i class="fa-solid fa-location-dot"></i> Viện IDEAS</p>
+                                            </div>
+                                            <a title="Xem thêm" class="vn-card-play" href="https://www.facebook.com/ideas.edu.vn/posts/pfbid02uRUWP7AE5ithsMRnvDcKhgLRUS5JTJzWofcoFQsnXPQPTtG9WogjihFvAPHLrNNKl" target="_blank">
+                                                <i class="fa-solid fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        `;
+            `;
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = modalHtml.trim();
+            modalEl = tempDiv.firstChild;
+            document.body.appendChild(modalEl);
+        }
 
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = modalHtml.trim();
-        const modalEl = tempDiv.firstChild;
-        document.body.appendChild(modalEl);
-
-        const overlay = document.getElementById('vn-grad-overlay');
-        const closeBtn = document.getElementById('vn-grad-close');
+        const overlay = modalEl.querySelector('#vn-ceremony-overlay');
+        const closeBtn = modalEl.querySelector('#vn-ceremony-close');
 
         function openModal() {
             modalEl.classList.add('open');
@@ -1833,12 +1900,10 @@ document.addEventListener('keydown', (e) => {
             }
         }
 
-        triggers.forEach(t => {
-            t.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                openModal();
-            });
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openModal();
         });
 
         if (closeBtn) closeBtn.addEventListener('click', closeModal);
