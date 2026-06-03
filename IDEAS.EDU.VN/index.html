@@ -25,35 +25,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Event snippet for Đăng ký conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <!-- Event snippet for ĐK GG Ads conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKV7LKNLLH"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-QKV7LKNLLH');
-    </script>
-    <!-- Event snippet for Submit Form conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script>
-        function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof (url) != 'undefined') {
-                    window.location = url;
-                }
-            };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-11205917800/l_6GCO2FkLEaEOj4st8p',
-                'event_callback': callback
-            });
-            return false;
-        }
-    </script>
+    
 
 
     <meta name="google-site-verification" content="JkHhr84-vyQjT4H-jSQUTD0tJ0hHFaHRz5fuZq8l6Vg" />
@@ -92,6 +64,33 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://ideas.edu.vn/wp-content/uploads/2026/04/baner-vuong.webp" />
     <link rel="stylesheet" href="main.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKV7LKNLLH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QKV7LKNLLH');
+        gtag('config', 'AW-11205917800');
+    </script>
+
+    <!-- Event snippet for SUBMIT FORM conversion page -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-11205917800/mdXJCOTL-bccEOj4st8p',
+                'value': 1.0,
+                'currency': 'VND',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
 </head>
 
 <body>
@@ -109,7 +108,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             <i class="fa-solid fa-bars"></i>
             <div class="ideas_logo">
                 <a href="/">
-                    <img src="/wp-content/uploads/2026/01/Logo_15_nam.webp" />
+                    <img src="/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp" />
                 </a>
             </div>
             <div class="ideas_header_right">
@@ -180,37 +179,58 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                             <div class="dropdown-column">
                                 <div class="dropdown-column-title">Thạc sĩ</div>
                                 <a href="/mba" class="dropdown-item">
-                                    <div class="item-title">Online MBA</div>
-                                    <div class="item-desc">Thạc sĩ QTKD trực tuyến Thụy Sĩ</div>
+                                    <img class="item-avatar" src="/wp-content/uploads/2025/09/emba.png.webp" alt="Online MBA" />
+                                    <div class="item-content">
+                                        <div class="item-title">Online MBA</div>
+                                        <div class="item-desc">Thạc sĩ QTKD trực tuyến Thụy Sĩ</div>
+                                    </div>
                                 </a>
                                 <a href="/emba" class="dropdown-item">
-                                    <div class="item-title">Executive MBA</div>
-                                    <div class="item-desc">Thạc sĩ điều hành cao cấp</div>
+                                    <img class="item-avatar" src="/wp-content/uploads/2025/09/emba.png.webp" alt="Executive MBA" />
+                                    <div class="item-content">
+                                        <div class="item-title">Executive MBA</div>
+                                        <div class="item-desc">Thạc sĩ điều hành cao cấp</div>
+                                    </div>
                                 </a>
                                 <a href="/mscai" class="dropdown-item">
-                                    <div class="item-title">Master AI (MSc AI)</div>
-                                    <div class="item-desc">Thạc sĩ khoa học sâu về AI</div>
+                                    <img class="item-avatar" src="/wp-content/uploads/2025/09/emba.png.webp" alt="Master AI" />
+                                    <div class="item-content">
+                                        <div class="item-title">Master AI (MSc AI)</div>
+                                        <div class="item-desc">Thạc sĩ khoa học sâu về AI</div>
+                                    </div>
                                 </a>
                                 <a href="/mbainai" class="dropdown-item">
-                                    <div class="item-title">MBA in AI</div>
-                                    <div class="item-desc">Quản trị & ứng dụng AI no-code</div>
+                                    <img class="item-avatar" src="/wp-content/uploads/2026/06/mba_in_ai.webp" alt="MBA in AI" />
+                                    <div class="item-content">
+                                        <div class="item-title">MBA in AI</div>
+                                        <div class="item-desc">Quản trị & ứng dụng AI no-code</div>
+                                    </div>
                                 </a>
                             </div>
                             <div class="dropdown-column-divider"></div>
                             <div class="dropdown-column">
                                 <div class="dropdown-column-title">Cử nhân</div>
                                 <a href="/bba" class="dropdown-item">
-                                    <div class="item-title">Top-up BBA</div>
-                                    <div class="item-desc">Liên thông Cử nhân 12 tháng</div>
+                                    <img class="item-avatar" src="/wp-content/uploads/2025/09/emba.png.webp" alt="Top-up BBA" />
+                                    <div class="item-content">
+                                        <div class="item-title">Top-up BBA</div>
+                                        <div class="item-desc">Liên thông Cử nhân 12 tháng</div>
+                                    </div>
                                 </a>
                                 <a href="/fullbba" class="dropdown-item">
-                                    <div class="item-title">Full BBA</div>
-                                    <div class="item-desc">Cử nhân QTKD chính quy 3 năm</div>
+                                    <img class="item-avatar" src="/wp-content/uploads/2026/06/online_bba.webp" alt="Full BBA" />
+                                    <div class="item-content">
+                                        <div class="item-title">Full BBA</div>
+                                        <div class="item-desc">Cử nhân QTKD chính quy 3 năm</div>
+                                    </div>
                                 </a>
                                 <div class="dropdown-column-title" style="margin-top: 16px;">Tiến sĩ</div>
                                 <a href="/dual-dba" class="dropdown-item">
-                                    <div class="item-title">Dual DBA</div>
-                                    <div class="item-desc">Tiến sĩ song bằng Pháp & Anh</div>
+                                    <img class="item-avatar" src="/wp-content/uploads/2025/09/emba.png.webp" alt="Dual DBA" />
+                                    <div class="item-content">
+                                        <div class="item-title">Dual DBA</div>
+                                        <div class="item-desc">Tiến sĩ song bằng Pháp & Anh</div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -281,7 +301,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     </li>
                 </ul>
                 <div class="ideas_menu_btns">
-                    <a class="main_btn" href="https://us02web.zoom.us/j/85782743071" target="_blank"><i class="fa-solid fa-video"></i> <span>Tham gia ngay</span></a>
+                    <a class="main_btn" onclick="showWebinarForm()"><i class="fa-solid fa-headset"></i> <span>Đăng
+                            ký</span></a>
                 </div>
             </div>
         </div>
@@ -891,35 +912,62 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <div class="ideas_form ideas_form_webinar">
         <i class="fa-solid fa-xmark ideas_form_close" onclick="closeWebinarForm()"></i>
         <div class="ideas_form_header">
-            <h2><i class="fa-solid fa-video"></i> Đăng ký Webinar</h2>
-            <p>Vui lòng điền thông tin để tham gia trực tuyến</p>
+            <h2><i class="fa-solid fa-graduation-cap"></i> ĐĂNG KÝ TƯ VẤN</h2>
+            <p>Nhận lộ trình và thông tin học bổng chi tiết trong vòng 24h</p>
         </div>
         <form id="webinar_form">
             <label>
-                <span><i class="fa-solid fa-signature"></i> Họ tên</span>
+                <span><i class="fa-solid fa-signature"></i> Họ tên *</span>
                 <input id="webinar_name" required placeholder="Nhập họ và tên" />
             </label>
             <div class="ideas_form_flex">
                 <div>
-                    <span><i class="fa-solid fa-envelope"></i> Email</span>
+                    <span><i class="fa-solid fa-envelope"></i> Email *</span>
                     <input id="webinar_email" type="email" required placeholder="example@gmail.com" />
                 </div>
                 <div>
-                    <span><i class="fa-solid fa-phone"></i> Số điện thoại</span>
+                    <span><i class="fa-solid fa-phone"></i> Số điện thoại *</span>
                     <input id="webinar_phone" type="tel" required placeholder="090..." />
                 </div>
             </div>
+            <div class="ideas_form_flex">
+                <div>
+                    <span><i class="fa-solid fa-user-graduate"></i> Học vấn *</span>
+                    <select id="webinar_education" required>
+                        <option value="" disabled selected hidden>Chọn trình độ</option>
+                        <option value="Đại học">Đại học / Sau đại học</option>
+                        <option value="Cao đẳng">Cao đẳng</option>
+                        <option value="Trung cấp">Trung cấp / THPT</option>
+                    </select>
+                </div>
+                <div>
+                    <span><i class="fa-solid fa-language"></i> Tiếng Anh *</span>
+                    <select id="webinar_english" required>
+                        <option value="" disabled selected hidden>Chọn trình độ</option>
+                        <option value="Tốt">Tốt (đọc tài liệu, giao tiếp)</option>
+                        <option value="Khá">Khá (giao tiếp cơ bản)</option>
+                        <option value="Cơ bản">Cơ bản / Chưa có</option>
+                    </select>
+                </div>
+            </div>
             <label>
-                <span><i class="fa-solid fa-user-tag"></i> Bạn là:</span>
-                <select id="webinar_type" required>
-                    <option value="" disabled selected hidden>Chọn đối tượng</option>
-                    <option value="Khách">Khách</option>
-                    <option value="Học viên">Học viên</option>
-                    <option value="Cựu học viên">Cựu học viên</option>
-                    <option value="Khác">Khác</option>
+                <span><i class="fa-solid fa-book-open"></i> Chương trình quan tâm *</span>
+                <select id="webinar_program" required>
+                    <option value="" disabled selected hidden>Chọn chương trình học</option>
+                    <option value="Online MBA">Thạc sĩ Quản trị Kinh doanh (Online MBA)</option>
+                    <option value="Online EMBA">Thạc sĩ Điều hành Cao cấp (Executive MBA)</option>
+                    <option value="Online MSc AI">Thạc sĩ Khoa học Trí tuệ Nhân tạo (MSc AI)</option>
+                    <option value="Online MBA in AI">Thạc sĩ Quản trị chuyên ngành AI (MBA in AI)</option>
+                    <option value="Online Top-up BBA">Cử nhân Quản trị Kinh doanh (Top-up BBA)</option>
+                    <option value="Online Full BBA">Cử nhân Quản trị Kinh doanh (Full BBA)</option>
+                    <option value="Online Dual DBA">Tiến sĩ Quản trị Kinh doanh (Dual DBA)</option>
                 </select>
             </label>
-            <button type="button" class="ideas_form_submit" onclick="submitToMailFlow()">Đăng ký tham gia</button>
+            <label>
+                <span><i class="fa-solid fa-comment-dots"></i> Nội dung cần tư vấn thêm</span>
+                <textarea id="webinar_message" placeholder="Ví dụ: Tôi muốn hỏi về học bổng, thời gian học..." rows="2"></textarea>
+            </label>
+            <button type="button" class="ideas_form_submit" onclick="submitToMailFlow()">Đăng ký nhận tư vấn</button>
             <span class="ideas_submit_alert">Khi đăng ký bạn đã đồng ý với <a href="/dieu-khoan-su-dung"
                     target="_blank">điều khoản sử dụng</a> của
                 <b>IDEAS </b></span>
@@ -1065,10 +1113,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </div>
             <div>
                 <h5>Chương trình</h5>
-                <a href="/swiss-umef-online-mba"><i class="fa-solid fa-angles-right"></i> Online MBA</a>
-                <a href="/swiss-umef-executive-mba"><i class="fa-solid fa-angles-right"></i> Executive MBA</a>
+                <a href="/mba"><i class="fa-solid fa-angles-right"></i> Online MBA</a>
+                <a href="/emba"><i class="fa-solid fa-angles-right"></i> Executive MBA</a>
                 <a href="/ascencia-global-mba"><i class="fa-solid fa-angles-right"></i> Global MBA</a>
-                <a href="/swiss-umef-msc-ai"><i class="fa-solid fa-angles-right"></i> MSc AI</a>
+                <a href="/mscai"><i class="fa-solid fa-angles-right"></i> MSc AI</a>
                 <a href="/dual-dba-estiam-rb"><i class="fa-solid fa-angles-right"></i> Dual DBA</a>
             </div>
             <div>

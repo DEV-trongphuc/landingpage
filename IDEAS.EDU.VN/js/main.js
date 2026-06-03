@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
         box.innerHTML = Object.values(IDEAS_DATA.programmes)
             .filter(course => course.level === level)
             .map(course => `
-                <div class="ideas_course">
+                <div class="ideas_course" onclick="if (!event.target.closest('a')) window.location.href='${course.link}';">
                   <img src="${course.avatar}" alt="${course.name}">
                   <div class="ideas_course_info">
                     <p>${course.name}</p>

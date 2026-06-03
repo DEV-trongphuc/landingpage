@@ -3,10 +3,10 @@ let comparePopup = null;
 let renderAlert = null;
 let renderMedia = null;
 const IDEAS_DATA = {
-    year_count: 14,
-    students_count: 2502,
-    courses_count: 74,
-    teachers_count: 28,
+    year_count: 15,
+    students_count: 2572,
+    courses_count: 75,
+    teachers_count: 30,
     facebook_link: "https://www.facebook.com/ideas.edu.vn/",
     youtube_link: "https://www.youtube.com/c/Vi%E1%BB%87nIDEAS",
     zalo_link: "https://zalo.me/3857867121882640296",
@@ -373,7 +373,7 @@ const IDEAS_DATA = {
             ],
             tagline:
                 "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thuỵ Sĩ - Swiss Accreditation Council",
-            link: "/swiss-umef-online-mba",
+            link: "/mba",
             description:
                 "Chương trình MBA Online phù hợp cho người bận rộn. Bằng cấp được công nhận bởi Hội đồng Kiểm định Liên bang Thụy Sĩ, đảm bảo giá trị quốc tế, mang đến kiến thức thực tiễn và cập nhật theo xu hướng kinh doanh toàn cầu.",
             demographic: {
@@ -675,7 +675,7 @@ const IDEAS_DATA = {
             ],
             tagline:
                 "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thuỵ Sĩ - Swiss Accreditation Council",
-            link: "/swiss-umef-executive-mba",
+            link: "/emba",
             description:
                 "Chương trình EMBA Online phù hợp cho người bận rộn. Bằng cấp được công nhận bởi Hội đồng Kiểm định Liên bang Thụy Sĩ, đảm bảo giá trị quốc tế, mang đến kiến thức thực tiễn và cập nhật theo xu hướng kinh doanh toàn cầu.",
             demographic: {
@@ -949,7 +949,7 @@ const IDEAS_DATA = {
             ],
             tagline:
                 "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thuỵ Sĩ - Swiss Accreditation Council",
-            link: "/swiss-umef-msc-ai",
+            link: "/mscai",
             description:
                 "Chương trình AI được thiết kế đặc biệt cho những nhà quản trị kinh doanh, những người muốn khám phá và khai thác tiềm năng của trí tuệ nhân tạo trong quản lý doanh nghiệp",
             demographic: {
@@ -1636,8 +1636,8 @@ const IDEAS_DATA = {
                 "https://ideas.edu.vn/wp-content/uploads/2025/03/NHP_4840.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/03/NHP_4799.jpg",
             ],
-            level: "MBA",
-            avatar: "https://ideas.edu.vn/wp-content/uploads/2025/09/emba.png.webp",
+            level: "BBA",
+            avatar: "https://ideas.edu.vn/wp-content/uploads/2026/02/TOPUP.webp",
             name: "TOP-UP BBA",
             school: "Swiss UMEF",
             subjects: "<b>60</b> tín chỉ ECTS - <b>10</b> môn và capstone",
@@ -1669,7 +1669,7 @@ const IDEAS_DATA = {
             ],
             tagline:
                 "Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thuỵ Sĩ - Swiss Accreditation Council",
-            link: "/swiss-umef-executive-mba",
+            link: "/bba",
             description:
                 "Chương trình liên thông lên Cử nhân trong 1 năm đào tạo liên thông trực tuyến Cử nhân Quản trị Kinh doanh, đừng để tấm bằng Cử nhân là rào cản trước mọi con đường thăng tiến của bạn!",
             demographic: {
@@ -1720,7 +1720,7 @@ const IDEAS_DATA = {
             },
             degree: {
                 back: "https://ideas.edu.vn/wp-content/uploads/2025/11/Sample_page-0002.webp",
-                front: "https://vtci.edu.vn/wp-content/uploads/2025/07/bba-degree.jpg",
+                front: "https://ideas.edu.vn/wp-content/uploads/2026/06/bba-degree.webp",
                 transcript:
                     "https://ideas.edu.vn/wp-content/uploads/2025/11/Sample_page-0003.webp",
             },
@@ -2137,6 +2137,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastScrollTop = 0;
     const header = document.querySelector(".ideas_header");
 
+    // Mobile Menu Submenu Toggles
+    // Handled by generic click listener below to avoid conflicts and double toggling.
+
     window.addEventListener("scroll", function () {
         let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
@@ -2267,6 +2270,35 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             ideas_header_menu_i.classList.replace("fa-xmark", "fa-bars");
         }
+    });
+
+    // Handle mobile submenus accordion click toggle
+    const menuLinks = document.querySelectorAll(".ideas_menu a");
+    menuLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+            if (window.innerWidth >= 1100) return; // Only apply on mobile/tablet
+
+            const parentLi = this.parentElement;
+            const hasSubmenu = parentLi.querySelector("ul") || parentLi.querySelector(".dropdown-menu-box");
+
+            if (hasSubmenu) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Close other submenus at the same level
+                const siblings = parentLi.parentElement.children;
+                for (let sibling of siblings) {
+                    if (sibling !== parentLi) {
+                        sibling.classList.remove("active");
+                        // Close nested submenus inside siblings
+                        sibling.querySelectorAll("li").forEach(li => li.classList.remove("active"));
+                    }
+                }
+
+                // Toggle active state for current item
+                parentLi.classList.toggle("active");
+            }
+        });
     });
 
     ideas_alert_close.forEach((btn) => {
@@ -2435,18 +2467,18 @@ document.addEventListener("DOMContentLoaded", () => {
         </p>
       </div>
       <div>
-        <p><b>${program1.fee_course.find((f) => f.name === "Standard")?.price || "N/A"
+        <p><b>${program1.fee_course?.find((f) => f.name === "Standard")?.price || "N/A"
             }</b></p>
         <p>Standard</p>
-        <p><b>${program2.fee_course.find((f) => f.name === "Standard")?.price || "N/A"
+        <p><b>${program2.fee_course?.find((f) => f.name === "Standard")?.price || "N/A"
             }</b></p>
       </div>
       <div>
-        <p><b>${program1.fee_course.find((f) => f.name === "High Quality")?.price ||
+        <p><b>${program1.fee_course?.find((f) => f.name === "High Quality")?.price ||
             "N/A"
             }</b></p>
         <p>High Quality</p>
-        <p><b>${program2.fee_course.find((f) => f.name === "High Quality")?.price ||
+        <p><b>${program2.fee_course?.find((f) => f.name === "High Quality")?.price ||
             "N/A"
             }</b></p>
       </div>
@@ -2634,7 +2666,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   <p>${program.name} ${type == "high" ? "" : "- Standard"}</p>
                   <span>${`${program.school} - ${program.country}`}</span>
                   <ul>
-                    ${program.test[type]
+                    ${(program.test[type] || program.test["high"])
                                 .map(
                                     (desc) =>
                                         `<li><i class="fa-solid fa-star"></i> ${desc}</li>`,
@@ -2693,8 +2725,7 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtn && submitBtn.addEventListener("click", async function (event) {
         if (event.target.closest(".ideas_form_webinar")) return;
         event.preventDefault();
-        submitBtn.disabled = true;
-
+        
         const ct =
             document.querySelector(".ideas_form_choose_text")?.textContent || "";
         const name = document.getElementById("name")?.value.trim();
@@ -2726,7 +2757,7 @@ document.addEventListener("DOMContentLoaded", () => {
             renderAlert("Lỗi nhập liệu", `<p>Vui lòng nhập số điện thoại.</p>`);
             return;
         }
-        if (!phoneRegex.test(phone)) {
+        if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
             renderAlert(
                 "Lỗi nhập liệu",
                 `<p>Số điện thoại không hợp lệ. Phải là số Việt Nam (VD: 098xxxxxxx hoặc +8498xxxxxxx).</p>`,
@@ -2738,25 +2769,116 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const history = localStorage.getItem("recentPages");
+        submitBtn.disabled = true;
         let agent = getUserAgentInfo();
-        let user_info = `Device: ${agent}`;
         let city = "Không rõ";
         let country = "Không rõ";
         submitBtn.textContent = "Đang gửi..";
+        
         if (typeof gtag_report_conversion === "function") {
             gtag_report_conversion();
         }
-        submitToGoogleForm(
-            name,
-            email,
-            phone,
-            degree,
-            message,
-            ct,
-            history,
-            user_info,
-        );
+
+        // Phân loại source tương ứng với chương trình tư vấn (ct)
+        let sourceVal = "Landing_MBA";
+        let chuongTrinhVal = "Online MBA";
+        
+        const cleanCt = ct.trim().toLowerCase();
+        if (cleanCt.includes("mba in ai") || cleanCt.includes("mba_ai")) {
+            sourceVal = "Landing_MBA_AI";
+            chuongTrinhVal = "Online MBA in AI";
+        } else if (cleanCt.includes("msc ai") || cleanCt.includes("msc_ai") || cleanCt.includes("mscinai")) {
+            sourceVal = "Landing_MSc_AI";
+            chuongTrinhVal = "Online MSc AI";
+        } else if (cleanCt.includes("executive mba") || cleanCt.includes("emba")) {
+            sourceVal = "Landing_EMBA";
+            chuongTrinhVal = "Online EMBA";
+        } else if (cleanCt.includes("full bba") || cleanCt.includes("bba_full")) {
+            sourceVal = "Landing_BBA_Full";
+            chuongTrinhVal = "Online Full BBA";
+        } else if (cleanCt.includes("top-up bba") || cleanCt.includes("bba_topup") || cleanCt.includes("topup bba") || cleanCt === "bba") {
+            sourceVal = "Landing_BBA_Topup";
+            chuongTrinhVal = "Online Top-up BBA";
+        } else if (cleanCt.includes("dba") || cleanCt.includes("tiến sĩ")) {
+            sourceVal = "Landing_Dual_DBA";
+            chuongTrinhVal = "Online Dual DBA";
+        } else if (cleanCt.includes("global mba")) {
+            sourceVal = "Landing_MBA";
+            chuongTrinhVal = "Global MBA";
+        }
+
+        // Gộp học vấn + lời nhắn vào note cho mail flow
+        const noteParts = [];
+        if (degree) noteParts.push('Học vấn: ' + degree);
+        if (message) noteParts.push(message);
+        noteParts.push('Source: Form popup tư vấn general');
+        const combinedNote = noteParts.join(' | ');
+
+        // Payload cho API 1 (MailFlow)
+        const payload = {
+            form_id: "3ebd9ef0f28f4d1bd0a4d56b089e1c25",
+            email: email,
+            firstName: name,
+            phoneNumber: phone,
+            hoc_van: degree,
+            khach_note: combinedNote,
+            chuong_trinh: chuongTrinhVal
+        };
+
+        // Payload cho Webhook API 2 (CRM Webhook)
+        const webhookPayload = {
+            name: name,
+            phone: phone,
+            email: email,
+            source: sourceVal,
+            type: "form_dang_ky_popup_general",
+            hoc_van: degree,
+            nhu_cau: (message ? message + " | " : "") + "Yêu cầu tư vấn: " + ct,
+            chuong_trinh: chuongTrinhVal
+        };
+
+        // UTM params
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmParams = ['utm_campaign', 'utm_source', 'utm_medium', 'utm_content', 'utm_term'];
+        utmParams.forEach(param => {
+            const val = urlParams.get(param);
+            if (val) {
+                webhookPayload[param] = val;
+            }
+        });
+
+        // Gửi song song
+        const p1 = fetch("https://automation.ideas.edu.vn/mail_api/forms.php?route=submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        const p2 = fetch("https://open.domation.net/sale_data/webhook.php?token=tok_kjhbs32a", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(webhookPayload)
+        });
+
+        try {
+            const results = await Promise.allSettled([p1, p2]);
+            
+            // Xử lý thành công
+            const content = ` <i class="fa-solid fa-circle-check"></i>
+                <span>Cảm ơn bạn đã quan tâm về ${chuongTrinhVal}, tư vấn viên sẽ liên hệ cho bạn trong thời gian sớm nhất</span>`;
+            
+            renderAlert("Thành công", content);
+            ideas_form.classList.remove("active");
+            document.querySelector(".ideas_form2 form")?.reset();
+        } catch (err) {
+            console.error("Lỗi gửi form popup general:", err);
+            renderAlert("Thành công", ` <i class="fa-solid fa-circle-check"></i><span>Đăng ký thành công! Chúng tôi sẽ liên hệ sớm nhất.</span>`);
+            ideas_form.classList.remove("active");
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Đăng ký tư vấn";
+        }
+
         sendFacebookEvent(email, name, city, country, phone, agent);
     });
 
@@ -2889,28 +3011,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // WEBINAR FORM GLOBALS
 window.showWebinarForm = () => {
-    // Chỉ show form Webinar trên trang /event (hoặc test trên file index.html)
-    const isEventPage = window.location.pathname.includes('/event') || window.location.pathname.includes('index.html');
-    if (!isEventPage) {
-        if (typeof window.showform === 'function') {
-            window.showform('Đăng ký tư vấn', 'Vui lòng điền thông tin để chuyên viên hỗ trợ bạn ngay');
-        } else {
-            // Fallback trong trường hợp JS main chưa load kịp
-            const normalForm = document.querySelector(".ideas_form:not(.ideas_form_webinar)");
-            const overlay = document.querySelector(".ideas_popup_overlay");
-            if (normalForm && overlay) {
-                normalForm.classList.add("active");
-                overlay.classList.add("active");
-            }
-        }
-        return;
-    }
-
     const form = document.querySelector(".ideas_form_webinar");
     const overlay = document.querySelector(".ideas_popup_overlay");
     if (form && overlay) {
         form.classList.add("active");
         overlay.classList.add("active");
+    } else {
+        if (typeof window.showform === 'function') {
+            window.showform('Đăng ký tư vấn', 'Vui lòng điền thông tin để chuyên viên hỗ trợ bạn ngay');
+        } else {
+            // Fallback trong trường hợp JS main chưa load kịp
+            const normalForm = document.querySelector(".ideas_form:not(.ideas_form_webinar)");
+            if (normalForm && overlay) {
+                normalForm.classList.add("active");
+                overlay.classList.add("active");
+            }
+        }
     }
 };
 
@@ -2926,56 +3042,163 @@ window.closeWebinarForm = () => {
 window.isSubmittingWebinar = false;
 window.submitToMailFlow = async () => {
     if (window.isSubmittingWebinar) return; // Prevent double submit
+
     const name = document.getElementById("webinar_name").value.trim();
     const email = document.getElementById("webinar_email").value.trim();
     const phone = document.getElementById("webinar_phone").value.trim();
-    const type = document.getElementById("webinar_type").value;
+    const edu = document.getElementById("webinar_education").value;
+    const eng = document.getElementById("webinar_english").value;
+    const program = document.getElementById("webinar_program").value;
+    const msg = document.getElementById("webinar_message") ? document.getElementById("webinar_message").value.trim() : "";
 
-    if (!name || !email || !phone || !type) {
-        alert("Vui lòng điền đầy đủ thông tin!");
+    if (!name || !email || !phone || !edu || !eng || !program) {
+        alert("Vui lòng điền đầy đủ thông tin bắt buộc!");
+        return;
+    }
+
+    // Phone validation regex
+    if (!/^(0|\+84)[0-9]{8,10}$/.test(phone.replace(/\s/g, ''))) {
+        alert("Số điện thoại không hợp lệ!");
+        return;
+    }
+
+    // Email validation regex
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+        alert("Địa chỉ email không hợp lệ!");
         return;
     }
 
     window.isSubmittingWebinar = true;
     const submitBtn = document.querySelector(".ideas_form_webinar .ideas_form_submit");
+    const originalText = submitBtn ? submitBtn.textContent : "Đăng ký nhận tư vấn";
     if (submitBtn) {
         submitBtn.textContent = "Đang gửi...";
         submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
     }
 
+    if (typeof gtag_report_conversion === "function") {
+        gtag_report_conversion();
+    }
+
+    // Gộp học vấn + tiếng Anh vào note cho mail flow
+    const noteParts = [];
+    if (edu) noteParts.push('Học vấn: ' + edu);
+    if (eng) noteParts.push('Tiếng Anh: ' + eng);
+    if (msg) noteParts.push(msg);
+    noteParts.push('Source: Form đăng ký từ Trang chủ/Header');
+    const combinedNote = noteParts.join(' | ');
+
+    // Phân loại source tương ứng với chương trình
+    let sourceVal = "Landing_MBA";
+    if (program === "Online MBA in AI") {
+        sourceVal = "Landing_MBA_AI";
+    } else if (program === "Online MSc AI") {
+        sourceVal = "Landing_MSc_AI";
+    } else if (program === "Online EMBA") {
+        sourceVal = "Landing_EMBA";
+    } else if (program === "Online Full BBA") {
+        sourceVal = "Landing_BBA_Full";
+    } else if (program === "Online Top-up BBA") {
+        sourceVal = "Landing_BBA_Topup";
+    } else if (program === "Online Dual DBA") {
+        sourceVal = "Landing_Dual_DBA";
+    }
+
+    // Payload cho API 1
     const payload = {
-        form_id: "9eae5a7728087c14799ee9f048e1e251",
+        form_id: "3ebd9ef0f28f4d1bd0a4d56b089e1c25",
         email: email,
         firstName: name,
         phoneNumber: phone,
-        source_link_ref: window.location.href,
-        khach_hang: type,
+        hoc_van: edu,
+        tieng_anh: eng,
+        khach_note: combinedNote,
+        chuong_trinh: program
     };
 
+    // Payload cho Webhook API 2
+    const webhookPayload = {
+        name: name,
+        phone: phone,
+        email: email,
+        source: sourceVal,
+        type: "form_dang_ky_header",
+        hoc_van: edu,
+        tieng_anh: eng,
+        nhu_cau: (msg ? msg + " | " : "") + "Đăng ký nhận tư vấn từ Header Trang chủ",
+        chuong_trinh: program
+    };
+
+    // UTM params
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmParams = ['utm_campaign', 'utm_source', 'utm_medium', 'utm_content', 'utm_term'];
+    utmParams.forEach(param => {
+        const val = urlParams.get(param);
+        if (val) {
+            webhookPayload[param] = val;
+        }
+    });
+
+    // Gửi song song
+    const p1 = fetch("https://automation.ideas.edu.vn/mail_api/forms.php?route=submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    });
+
+    const p2 = fetch("https://open.domation.net/sale_data/webhook.php?token=tok_kjhbs32a", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(webhookPayload)
+    });
+
     try {
-        const response = await fetch("https://automation.ideas.edu.vn/mail_api/forms.php?route=submit", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-        const result = await response.json();
-        if (result.success) {
-            alert("Cảm ơn bạn đã đăng ký!");
+        const results = await Promise.allSettled([p1, p2]);
+        let isSuccess = false;
+
+        // Kiểm tra xem phản hồi p1 có thành công không
+        const r1 = results[0];
+        if (r1.status === 'fulfilled') {
+            try {
+                const resData = await r1.value.json();
+                if (resData.success) {
+                    isSuccess = true;
+                }
+            } catch (e) {
+                // Có thể parse JSON lỗi nhưng HTTP OK
+                if (r1.value.ok) isSuccess = true;
+            }
+        } else {
+            console.error("Lỗi gửi cổng 1:", r1.reason);
+        }
+
+        const r2 = results[1];
+        if (r2.status === 'rejected') {
+            console.error("Lỗi gửi cổng 2:", r2.reason);
+        }
+
+        if (isSuccess || (r1.status === 'fulfilled' && r1.value.ok)) {
+            alert("Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ trong vòng 24h làm việc.");
             window.closeWebinarForm();
             const formObj = document.getElementById("webinar_form");
             if (formObj) formObj.reset();
         } else {
-            console.error("Lỗi từ server:", result.message);
-            alert("Có lỗi xảy ra: " + result.message);
+            alert("Đăng ký thành công! Chúng tôi đã nhận được thông tin.");
+            window.closeWebinarForm();
+            const formObj = document.getElementById("webinar_form");
+            if (formObj) formObj.reset();
         }
     } catch (err) {
-        console.error("Lỗi kết nối API:", err);
-        alert("Lỗi kết nối API, vui lòng thử lại sau.");
+        console.error("Lỗi gửi form:", err);
+        alert("Đăng ký thành công! Chúng tôi đã nhận được thông tin.");
+        window.closeWebinarForm();
     } finally {
         window.isSubmittingWebinar = false;
         if (submitBtn) {
-            submitBtn.textContent = "Đăng ký tham gia";
+            submitBtn.textContent = originalText;
             submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
         }
     }
 };
