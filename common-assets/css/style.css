@@ -78,8 +78,8 @@ body {
   background: var(--clr-bg);
   color: var(--clr-text);
   line-height: 1.7;
-  overflow: visible;
-  /* Prevents duplicate scrollbars */
+  overflow-x: hidden;
+  /* Prevents duplicate scrollbars and overflow horizontal */
 }
 
 img {
@@ -1949,11 +1949,13 @@ abbr {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: none;
+  border: 7px solid transparent;
   cursor: pointer;
   background: rgba(171, 14, 0, 0.2);
   transition: var(--transition);
   padding: 0;
+  box-sizing: content-box;
+  background-clip: padding-box;
 }
 
 .dot.active {
@@ -5856,6 +5858,9 @@ h6,
     /* Slate-400 opacity */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    box-sizing: content-box;
+    border: 8px solid transparent;
+    background-clip: padding-box;
   }
 
   .scroll-dot.active {
@@ -7981,8 +7986,8 @@ h6,
 
   /* Button Audit - Tighter and elegant */
   .btn {
-    padding: 8px 14px !important;
-    font-size: 0.78rem !important;
+    padding: 11px 18px !important;
+    font-size: 0.82rem !important;
     gap: 6px !important;
     border-radius: 50px !important;
   }
@@ -9748,4 +9753,95 @@ h3.section-title {
 .info-badge .icon svg {
   color: var(--clr-primary) !important;
   stroke: var(--clr-primary) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE NESTED PADDING & ACCREDITATION ENHANCEMENTS
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. Global scroll horizontal prevention */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+}
+
+/* 2. Container mobile padding 5px */
+@media (max-width: 768px) {
+  body .container {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+}
+
+/* 3. Section nested padding elimination on mobile */
+@media (max-width: 768px) {
+  body section,
+  body .pricing-section,
+  body .cta-section,
+  body .hero-section,
+  body .ecosystem-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* 4. Proof Card mobile spacing optimization */
+@media (max-width: 768px) {
+  body .proof-card-inner {
+    padding: 24px 10px !important;
+    gap: 16px !important;
+  }
+  body .proof-card-accred {
+    padding: 24px 10px !important;
+    gap: 20px !important;
+  }
+}
+
+/* 5. SAC Accreditation Logo mobile enlargement (80% width) */
+@media (max-width: 768px) {
+  body .proof-qs-logo-link {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-bottom: 12px !important;
+  }
+  body .proof-qs-logo {
+    width: 80% !important;
+    max-width: 180px !important;
+    height: auto !important;
+  }
+  body .proof-card-headline {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+}
+
+/* 6. High Contrast for Featured Pricing Card Bullet Points */
+body .pcv2-featured .pcv2-features li {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* 7. Tighten padding for stats grid on solution-section to avoid rớt dòng */
+@media (max-width: 640px) {
+  body .sol-v2-stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+  body .sol-v2-stat {
+    padding: 10px 8px !important;
+    gap: 6px !important;
+  }
+  body .sol-v2-stat-val {
+    font-size: 1rem !important;
+  }
+  body .sol-v2-stat-lbl {
+    font-size: 0.72rem !important;
+  }
+}
+@media (max-width: 400px) {
+  body .sol-v2-stats {
+    grid-template-columns: 1fr !important;
+  }
 }
