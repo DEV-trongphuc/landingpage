@@ -2,6 +2,10 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
+# Route relative asset paths from the root to the physical LANDINGPAGE_MBA directory
+RewriteCond %{REQUEST_URI} !^/wp-content/new_public/LANDINGPAGE_MBA/
+RewriteRule (?:^|/)(common-assets|homepage-assets|assets)/(.*)$ /wp-content/new_public/LANDINGPAGE_MBA/$1/$2 [L,NC]
+
 # Redirect direct access to .html files to their clean URLs
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^/?wp-content/new_public/LANDINGPAGE_MBA/(mba|mscai|emba|bba|fullbba|mbainai|dual-dba|dat-lich)\.html$ /$1 [R=301,L,NC]

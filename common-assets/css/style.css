@@ -5000,7 +5000,7 @@ abbr {
   }
 
   .form-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .modal-form-header {
@@ -5082,9 +5082,9 @@ abbr {
     gap: 12px;
   }
 
-  /* Stack form-row to 1 column */
+  /* Keep form-row as 2 columns on mobile */
   .modal-form .form-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
 
@@ -8684,6 +8684,9 @@ html.lenis {
     bottom: 85px !important;
     z-index: 10 !important;
     margin-top: 16px !important;
+    width: 100% !important;
+    padding: 15px 30px !important;
+    font-size: 1.02rem !important;
     box-shadow: 0 -8px 20px #ffffff, var(--shadow-red) !important;
   }
 
@@ -9719,4 +9722,29 @@ h3.section-title {
     padding: 15px 30px !important;
     font-size: 1.02rem !important;
   }
+}
+
+/* Accreditation logos desktop layout protection - prevent wrapping and reduce size */
+@media (min-width: 769px) {
+  .hero-accred-logos {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 14px !important;
+  }
+  .hero-accred-logos img {
+    height: 2.4rem !important;
+  }
+}
+
+/* Solution section headline size standard for exactly 2-line rendering on desktop */
+#solution-headline {
+  font-size: clamp(1.4rem, 2.2vw, 1.95rem) !important;
+  line-height: 1.25 !important;
+}
+
+/* Ensure primary brand color for badge icons on light pages (desktop & mobile) */
+.info-badge .icon,
+.info-badge .icon svg {
+  color: var(--clr-primary) !important;
+  stroke: var(--clr-primary) !important;
 }
