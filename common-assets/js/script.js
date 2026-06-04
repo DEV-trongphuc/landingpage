@@ -565,7 +565,7 @@
                 phone: phoneVal,
                 email: emailVal,
                 source: sourceVal,
-                type: (formId === 'modal-cta-form') ? "form_dang_ky_modal" : "form_dang_ky",
+                type: (formId === 'modal-cta-form') ? ctaSource : "form_dang_ky",
                 hoc_van: eduText || eduVal,
                 tieng_anh: engText || engVal,
                 nhu_cau: (msgVal ? msgVal + " | " : "") + "Submit từ CTA: " + ctaSource,
@@ -1661,9 +1661,24 @@ document.addEventListener('keydown', (e) => {
         const flipBtn = document.getElementById('degree-modal-flip-btn');
         const flipText = document.getElementById('degree-modal-flip-text');
         const imgFront = document.getElementById('degree-modal-img-front');
+        const imgBack = document.getElementById('degree-modal-img-back');
 
-        function openModal(src) {
+        function openModal(src, customBack) {
             imgFront.src = src;
+
+            let backSrc = customBack;
+            if (!backSrc) {
+                backSrc = 'https://ideas.edu.vn/wp-content/uploads/2025/11/Sample_page-0002.webp'; // Default Swiss UMEF back
+                if (src.includes('RB-DBA') || src.includes('Estiam') || src.includes('RB-College')) {
+                    backSrc = 'https://ideas.edu.vn/wp-content/uploads/2025/10/RB-DBA-2.webp';
+                } else if (src.includes('Ascencia')) {
+                    backSrc = 'https://ideas.edu.vn/wp-content/uploads/2024/11/MBA-Ascencia-Diploma-EN-MOFA-2.webp';
+                }
+            }
+            if (imgBack) {
+                imgBack.src = backSrc;
+            }
+
             cardInner.classList.remove('flipped');
             flipText.textContent = 'Lật mặt sau';
             modalEl.classList.add('open');
@@ -1687,7 +1702,8 @@ document.addEventListener('keydown', (e) => {
                 e.preventDefault();
                 const img = w.querySelector('.proof-degree-img');
                 if (img) {
-                    openModal(img.src);
+                    const customBack = w.getAttribute('data-back') || img.getAttribute('data-back');
+                    openModal(img.src, customBack);
                 }
             });
         });

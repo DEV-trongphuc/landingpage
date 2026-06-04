@@ -305,6 +305,8 @@ abbr {
   color: #111729;
   position: relative;
   transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
 button.nav-link {
@@ -317,6 +319,8 @@ button.nav-link {
   padding: 0;
   cursor: pointer;
   line-height: inherit;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-link::after {
@@ -341,7 +345,11 @@ button.nav-link {
 }
 
 .nav-cta {
-  padding: 10px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 24px;
   background: var(--grad-primary);
   color: #fff !important;
   border-radius: 100px;
@@ -349,12 +357,87 @@ button.nav-link {
   font-size: 0.88rem;
   box-shadow: 0 4px 15px rgba(171, 14, 0, 0.2);
   transition: all 0.3s ease;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 .nav-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(171, 14, 0, 0.35);
   filter: brightness(1.1);
+}
+
+.bk-open-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 40px !important;
+  padding: 0 20px !important;
+  background: transparent !important;
+  color: #ab0e00 !important;
+  border: 1.5px solid rgba(171, 14, 0, 0.45) !important;
+  border-radius: 100px !important;
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+  gap: 6px !important;
+  line-height: 1 !important;
+}
+
+.bk-open-btn:hover {
+  background: #ab0e00 !important;
+  color: #fff !important;
+  border-color: #ab0e00 !important;
+}
+
+/* Header Navigation Badges */
+.nav-link-badge-red {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-danger, #dc2626) !important;
+  margin-right: 5px;
+  flex-shrink: 0;
+  position: relative;
+  top: -1px;
+}
+
+.nav-link-badge-red i {
+  font-size: 0.85rem;
+  line-height: 1;
+  display: block;
+}
+
+.nav-link-badge-round-90 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-primary, #b31400);
+  color: #fff !important;
+  font-size: 0.55rem;
+  font-weight: 900;
+  min-width: 22px;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: 10px;
+  margin-left: 6px;
+  box-shadow: 0 2px 5px rgba(179, 20, 0, 0.3);
+  border: 1px solid #fff;
+  text-align: center;
+  flex-shrink: 0;
+  line-height: 1;
+  position: relative;
+  top: -1px;
+}
+
+@media (min-width: 769px) {
+  .proof-qs-logo {
+    width: 170px !important;
+    height: auto !important;
+  }
 }
 
 .hamburger {
@@ -8576,7 +8659,6 @@ body .pcv2-featured .pcv2-desc {
 }
 
 /* GPU Hardware Acceleration for heavy rendering layers (120Hz optimization) */
-.degree-card-inner,
 .vn-grad-card,
 .proof-degree-frame,
 .bk-modal,
@@ -10269,6 +10351,7 @@ body .pcv2-featured .pcv2-features li {
   margin-right: -12px;
   object-fit: cover;
   display: block;
+  background-color: #ffffff;
 }
 
 .eco-advisors-proof p {
