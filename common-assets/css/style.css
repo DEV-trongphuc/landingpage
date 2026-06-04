@@ -9774,7 +9774,7 @@ h3.section-title {
     gap: 14px !important;
   }
   .hero-accred-logos img {
-    height: 2.4rem !important;
+    height: 48px !important;
   }
 }
 
@@ -9872,7 +9872,7 @@ body .pcv2-featured .pcv2-features li {
     width: 100% !important;
   }
   body .hero-accred-logos img {
-    height: 2.4rem !important;
+    height: 42px !important;
     max-width: 100% !important;
     object-fit: contain !important;
   }
@@ -9887,7 +9887,7 @@ body .pcv2-featured .pcv2-features li {
     width: 100% !important;
   }
   body .hero-accred-logos img {
-    height: 2.4rem !important;
+    height: 44px !important;
     max-width: 25% !important;
     object-fit: contain !important;
   }
