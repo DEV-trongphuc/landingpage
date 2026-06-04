@@ -158,7 +158,7 @@
         "name": "Các gói học phí của chương trình MBA Thụy Sĩ trực tuyến?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "MBA Swiss UMEF cung cấp hai gói: Standard (4.020 CHF) học trực tuyến linh hoạt qua video LMS, và High Quality (5.120 CHF) bổ sung các buổi học trực tiếp qua Zoom với Giảng viên quốc tế."
+          "text": "MBA Swiss UMEF cung cấp hai gói: Standard (4.220 CHF) học trực tuyến linh hoạt qua video LMS, và High Quality (từ 5.120 CHF đến 6.500 CHF tùy theo phương án chuyến đi Thụy Sĩ) bổ sung các buổi học trực tiếp qua Zoom với Giảng viên quốc tế."
         }
       },
       {
@@ -205,9 +205,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="common-assets/css/style.min.css?v=1780547210530" as="style" />
-    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780547210530" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780547210530" />
+    <link rel="preload" href="common-assets/css/style.min.css?v=1780548167041" as="style" />
+    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780548167041" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780548167041" />
     <style>
         /* ═══════════════════════════════════════
            PROOF CARD - Premium 2-col design
@@ -2743,7 +2743,8 @@
                         </div>
                     </div>
                 </div>
-                <a href="#chung-minh" class="nav-link"><span class="nav-link-badge-red"><i class="fa-solid fa-certificate"></i></span>Uy tín</a>
+                <a href="#chung-minh" class="nav-link"><span class="nav-link-badge-red"><i
+                            class="fa-solid fa-certificate"></i></span>Uy tín</a>
                 <a href="#bang-gia" class="nav-link">Học phí</a>
                 <div style="display:flex;align-items:center;gap:8px;">
                     <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
@@ -2863,7 +2864,8 @@
                 </div>
             </div>
         </div>
-        <a href="#chung-minh" class="nav-link"><span class="nav-link-badge-red"><i class="fa-solid fa-certificate"></i></span>Uy tín</a>
+        <a href="#chung-minh" class="nav-link"><span class="nav-link-badge-red"><i
+                    class="fa-solid fa-certificate"></i></span>Uy tín</a>
         <a href="#bang-gia" class="nav-link">Học phí</a>
         <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
     </div>
@@ -4607,8 +4609,10 @@
                                 <div class="pcv2-tier">Standard</div>
                                 <div
                                     style="font-size:2.2rem;font-weight:900;color:#fff;line-height:1;margin:12px 0 4px;">
-                                    4.020 <span style="font-size:1rem;font-weight:700;opacity:0.85;">CHF</span></div>
-                                <p class="pcv2-desc">Ưu tiên tính linh hoạt cao - học theo lịch riêng</p>
+                                    4.220 <span style="font-size:1rem;font-weight:700;opacity:0.85;">CHF</span></div>
+                                <p style="margin: 0 0 4px 0; font-size: 1.15rem; color: #fff; font-weight: 800;">~139.260.000đ</p>
+                                <p style="margin: 0; font-size: 0.8rem; color: rgba(255,255,255,0.7); text-decoration: line-through;">Học phí gốc: 5.570 CHF</p>
+                                <p class="pcv2-desc" style="margin-top: 8px;">Ưu tiên tính linh hoạt cao - học theo lịch riêng</p>
                             </div>
                             <div class="pcv2-divider"></div>
                             <ul class="pcv2-features">
@@ -4666,12 +4670,72 @@
                                 </svg>
                                 Chất lượng tốt nhất
                             </div>
-                            <div class="pcv2-header">
+                            <div class="pcv2-header" style="padding-bottom: 0;">
                                 <div class="pcv2-tier">High Quality</div>
-                                <div
-                                    style="font-size:2.2rem;font-weight:900;color:#ab0e00;line-height:1;margin:12px 0 4px;">
-                                    5.120 <span style="font-size:1rem;font-weight:700;opacity:0.6;">CHF</span></div>
-                                <p class="pcv2-desc">Tương tác trực tiếp - trao đổi học thuật chuyên sâu</p>
+                                
+                                <style>
+                                    /* ── Toggle Switch ── */
+                                    .hq-toggle-switch input:checked + .hq-toggle-slider {
+                                        background-color: #ab0e00;
+                                    }
+                                    .hq-toggle-switch input:checked + .hq-toggle-slider:before {
+                                        transform: translateX(18px);
+                                    }
+                                    .hq-toggle-slider {
+                                        position: absolute;
+                                        cursor: pointer;
+                                        inset: 0;
+                                        background-color: #cbd5e1;
+                                        transition: .3s;
+                                        border-radius: 20px;
+                                    }
+                                    .hq-toggle-slider:before {
+                                        position: absolute;
+                                        content: "";
+                                        height: 14px;
+                                        width: 14px;
+                                        left: 3px;
+                                        bottom: 3px;
+                                        background-color: white;
+                                        transition: .3s;
+                                        border-radius: 50%;
+                                        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+                                    }
+                                </style>
+                                
+                                <div style="font-size: 2.2rem; font-weight: 900; color: #ab0e00; line-height: 1; margin: 12px 0 4px; text-align: center;">
+                                    <span id="hq-price-chf-mba">5.120</span> <span style="font-size: 1.05rem; font-weight: 700; color: #0f172a;">CHF</span>
+                                </div>
+                                <p id="hq-price-vnd-mba" style="margin: 0 0 4px 0; font-size: 1.15rem; color: #0f172a; font-weight: 800; text-align: center;">~168.960.000đ</p>
+                                <p id="hq-price-original-mba" style="margin: 0 0 12px 0; font-size: 0.8rem; color: #64748b; text-decoration: line-through; text-align: center;">Học phí gốc: 7.970 CHF</p>
+                                
+                                <!-- Toggle Switch container -->
+                                <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin: 16px auto; background: rgba(171, 14, 0, 0.04); border: 1px solid rgba(171, 14, 0, 0.08); padding: 8px 14px; border-radius: 12px; width: fit-content;">
+                                    <span style="font-size: 0.82rem; font-weight: 700; color: #475569;">Chuyến đi Thụy Sĩ</span>
+                                    <label class="hq-toggle-switch" style="position: relative; display: inline-block; width: 38px; height: 20px; margin: 0; flex-shrink: 0;">
+                                        <input type="checkbox" id="hq-tour-toggle-mba" aria-label="Chọn chuyến đi Thụy Sĩ" style="opacity: 0; width: 0; height: 0;" onchange="toggleHqTourMba(this)">
+                                        <span class="hq-toggle-slider"></span>
+                                    </label>
+                                </div>
+
+                                <script>
+                                    function toggleHqTourMba(cb) {
+                                        const priceChf = document.getElementById("hq-price-chf-mba");
+                                        const priceVnd = document.getElementById("hq-price-vnd-mba");
+                                        const priceOrig = document.getElementById("hq-price-original-mba");
+                                        if (cb.checked) {
+                                            priceChf.innerText = "6.500";
+                                            priceVnd.innerText = "~214.500.000đ";
+                                            priceOrig.innerText = "Học phí gốc: 10.970 CHF";
+                                        } else {
+                                            priceChf.innerText = "5.120";
+                                            priceVnd.innerText = "~168.960.000đ";
+                                            priceOrig.innerText = "Học phí gốc: 7.970 CHF";
+                                        }
+                                    }
+                                </script>
+
+                                <p class="pcv2-desc" style="margin-top: 12px;">Tương tác trực tiếp - trao đổi học thuật chuyên sâu</p>
                             </div>
                             <div class="pcv2-divider"></div>
                             <ul class="pcv2-features">
@@ -4702,7 +4766,7 @@
                                 <li>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ab0e00"
                                         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                                        aria-required="true">
+                                        aria-hidden="true">
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg>
                                     Truy cập IDEAS-LMS 24/7
@@ -4890,8 +4954,8 @@
                                     style="font-size: 0.75rem; transition: transform 0.3s ease; color: #64748b; margin-left: 10px;"></i>
                             </button>
                             <div class="faq-content">
-                                <p>MBA Swiss UMEF cung cấp hai gói: Standard (4.020 CHF) học trực tuyến linh hoạt qua
-                                    video LMS, và High Quality (5.120 CHF) bổ sung các buổi học trực tiếp qua Zoom với
+                                <p>MBA Swiss UMEF cung cấp hai gói: Standard (4.220 CHF) học trực tuyến linh hoạt qua
+                                    video LMS, và High Quality (từ 5.120 CHF đến 6.500 CHF tùy theo phương án chuyến đi Thụy Sĩ) bổ sung các buổi học trực tiếp qua Zoom với
                                     Giảng viên quốc tế.</p>
                             </div>
                         </div>
@@ -5035,7 +5099,7 @@
                             </div>
                         </div>
 
-                        <p class="form-privacy">Cam kết bảo mật thông tin 100%</p>
+                        <p class="form-privacy">Cam kết bảo mật thông tin</p>
                     </form>
 
                     <!-- Success State -->
@@ -5178,7 +5242,7 @@
                         </div>
                     </div>
 
-                    <p class="form-privacy">Cam kết bảo mật thông tin 100%</p>
+                    <p class="form-privacy">Cam kết bảo mật thông tin</p>
                 </form>
 
                 <div class="modal-form-success" id="modal-form-success">
@@ -5901,8 +5965,8 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.min.js?v=1780547210530" defer></script>
-    <script src="common-assets/js/booking-modal.min.js?v=1780547210530" defer></script>
+    <script src="common-assets/js/script.min.js?v=1780548167041" defer></script>
+    <script src="common-assets/js/booking-modal.min.js?v=1780548167041" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
@@ -6617,7 +6681,9 @@
                     ctaBtn.textContent = CURRENT_PROGRAM ? `Khám phá chương trình ${type} →` : `Khám phá ngay →`;
                     ctaBtn.href = matchedProg.url;
                     ctaBtn.onclick = function (e) {
+                        e.preventDefault();
                         close();
+                        window.location.href = matchedProg.url;
                     };
                 }
 
@@ -6847,12 +6913,12 @@
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
             <div class="vn-ceremony-footer">
                 <button
-                        onclick="closeVNCeremonyModal();setTimeout(()=>document.querySelector('.bk-open-btn')?.click(),200);"
-                        style="background:linear-gradient(135deg,#8c1000,#c41e00);color:#fff;border:none;padding:13px 28px;border-radius:50px;font-size:0.9rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(171,14,0,0.28);">&#272;&#259;ng
-                        k&#253; tham d&#7921; l&#7877;</button>
+                    onclick="closeVNCeremonyModal();setTimeout(()=>document.querySelector('.bk-open-btn')?.click(),200);"
+                    style="background:linear-gradient(135deg,#8c1000,#c41e00);color:#fff;border:none;padding:13px 28px;border-radius:50px;font-size:0.9rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(171,14,0,0.28);">&#272;&#259;ng
+                    k&#253; tham d&#7921; l&#7877;</button>
             </div>
         </div>
     </div>

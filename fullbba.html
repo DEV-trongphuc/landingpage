@@ -184,9 +184,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="common-assets/css/style.min.css?v=1780547210527" as="style" />
-    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780547210527" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780547210527" />
+    <link rel="preload" href="common-assets/css/style.min.css?v=1780548167038" as="style" />
+    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780548167038" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780548167038" />
     <style>
         @media (min-width: 992px) {
             .BBA-grid {
@@ -3122,7 +3122,8 @@
                         </div>
                     </div>
                 </div>
-                <a href="#chung-minh" class="nav-link"><span class="nav-link-badge-red"><i class="fa-solid fa-certificate"></i></span>Uy tín</a>
+                <a href="#chung-minh" class="nav-link"><span class="nav-link-badge-red"><i
+                            class="fa-solid fa-certificate"></i></span>Uy tín</a>
                 <a href="#bang-gia" class="nav-link">Học phí <span class="nav-link-badge-round-90">90%</span></a>
                 <div style="display:flex;align-items:center;gap:8px;">
                     <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
@@ -3242,7 +3243,8 @@
                 </div>
             </div>
         </div>
-        <a href="#chung-minh" class="nav-link"><span class="nav-link-badge-red"><i class="fa-solid fa-certificate"></i></span>Uy tín</a>
+        <a href="#chung-minh" class="nav-link"><span class="nav-link-badge-red"><i
+                    class="fa-solid fa-certificate"></i></span>Uy tín</a>
         <a href="#bang-gia" class="nav-link">Học phí <span class="nav-link-badge-round-90">90%</span></a>
         <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
     </div>
@@ -5346,7 +5348,7 @@
                             </div>
                         </div>
 
-                        <p class="form-privacy">Cam kết bảo mật thông tin 100%</p>
+                        <p class="form-privacy">Cam kết bảo mật thông tin</p>
                     </form>
 
                     <!-- Success State -->
@@ -5487,7 +5489,7 @@
                         </div>
                     </div>
 
-                    <p class="form-privacy">Cam kết bảo mật thông tin 100%</p>
+                    <p class="form-privacy">Cam kết bảo mật thông tin</p>
                 </form>
 
                 <div class="modal-form-success" id="modal-form-success">
@@ -5901,8 +5903,8 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.min.js?v=1780547210527" defer></script>
-    <script src="common-assets/js/booking-modal.min.js?v=1780547210527" defer></script>
+    <script src="common-assets/js/script.min.js?v=1780548167038" defer></script>
+    <script src="common-assets/js/booking-modal.min.js?v=1780548167038" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
@@ -6617,7 +6619,9 @@
                     ctaBtn.textContent = CURRENT_PROGRAM ? `Khám phá chương trình ${type} →` : `Khám phá ngay →`;
                     ctaBtn.href = matchedProg.url;
                     ctaBtn.onclick = function (e) {
+                        e.preventDefault();
                         close();
+                        window.location.href = matchedProg.url;
                     };
                 }
 
@@ -7141,12 +7145,12 @@
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
             <div class="vn-ceremony-footer">
                 <button
-                        onclick="closeVNCeremonyModal();setTimeout(()=>document.querySelector('.bk-open-btn')?.click(),200);"
-                        style="background:linear-gradient(135deg,#8c1000,#c41e00);color:#fff;border:none;padding:13px 28px;border-radius:50px;font-size:0.9rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(171,14,0,0.28);">&#272;&#259;ng
-                        k&#253; tham d&#7921; l&#7877;</button>
+                    onclick="closeVNCeremonyModal();setTimeout(()=>document.querySelector('.bk-open-btn')?.click(),200);"
+                    style="background:linear-gradient(135deg,#8c1000,#c41e00);color:#fff;border:none;padding:13px 28px;border-radius:50px;font-size:0.9rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(171,14,0,0.28);">&#272;&#259;ng
+                    k&#253; tham d&#7921; l&#7877;</button>
             </div>
         </div>
     </div>
