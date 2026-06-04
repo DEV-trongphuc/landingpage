@@ -5,29 +5,44 @@ const path = require('path');
 const targetVersion = process.argv[2];
 
 // Quét thư mục hiện tại để tìm các tệp HTML
-const files = fs.readdirSync(__dirname)
-    .filter(file => file.endsWith('.html'));
+// Quét thư mục hiện tại và thư mục /en để tìm các tệp HTML
+const getHtmlFiles = (dir) => {
+    let results = [];
+    const list = fs.readdirSync(dir);
+    list.forEach(file => {
+        const filePath = path.join(dir, file);
+        const stat = fs.statSync(filePath);
+        if (stat && stat.isDirectory()) {
+            if (file === 'en') {
+                results = results.concat(getHtmlFiles(filePath));
+            }
+        } else if (file.endsWith('.html')) {
+            results.push(filePath);
+        }
+    });
+    return results;
+};
 
-console.log(`Tìm thấy ${files.length} tệp HTML cần xử lý.`);
+const filePaths = getHtmlFiles(__dirname);
+console.log(`Tìm thấy ${filePaths.length} tệp HTML cần xử lý.`);
 
-files.forEach(file => {
-    const filePath = path.join(__dirname, file);
+filePaths.forEach(filePath => {
+    const file = path.relative(__dirname, filePath);
     let content = fs.readFileSync(filePath, 'utf8');
     let hasChanges = false;
     const replacements = [];
 
-    // Regex tìm các đường dẫn tài nguyên trong common-assets (cả CSS và JS) có hoặc không có tham số ?v=
-    // Khớp: href="common-assets/css/style.css?v=4.3" hoặc src="common-assets/js/variables.js"
-    const regex = /(href|src)="common-assets\/((?:css|js)\/[\w.-]+\.(?:css|js))(?:\?v=([\w.]+))?"/g;
+    // Regex tìm các đường dẫn tài nguyên trong common-assets (cả CSS và JS) có hoặc không có tham số ?v= và hỗ trợ cả ../
+    const regex = /(href|src)="(\.\.\/)?common-assets\/((?:css|js)\/[\w.-]+\.(?:css|js))(?:\?v=([\w.]+))?"/g;
 
-    const newContent = content.replace(regex, (match, attr, assetPath, currentVersion) => {
+    const newContent = content.replace(regex, (match, attr, dotdot, assetPath, currentVersion) => {
         let newVersion;
 
         if (targetVersion) {
             // Nếu người dùng truyền version cụ thể hoặc dùng từ khóa 'timestamp'
             newVersion = targetVersion === 'timestamp' ? Date.now().toString() : targetVersion;
         } else if (currentVersion) {
-            // Tự động tăng phiên bản số ở phần tử cuối (ví dụ: 4.3 -> 4.4, 1.1 -> 1.2)
+            // Tự động tăng phiên bản số ở phần tử cuối
             const parts = currentVersion.split('.');
             if (parts.length > 0 && !isNaN(parts[parts.length - 1])) {
                 const lastIdx = parts.length - 1;
@@ -51,13 +66,13 @@ files.forEach(file => {
             }
         }
 
-        // If the path was updated to .min, or version changed, we write it back
-        const oldRef = `${attr}="common-assets/${assetPath}${currentVersion ? `?v=${currentVersion}` : ''}"`;
-        const newRef = `${attr}="common-assets/${mappedAssetPath}?v=${newVersion}"`;
+        const prefix = dotdot || '';
+        const oldRef = `${attr}="${prefix}common-assets/${assetPath}${currentVersion ? `?v=${currentVersion}` : ''}"`;
+        const newRef = `${attr}="${prefix}common-assets/${mappedAssetPath}?v=${newVersion}"`;
 
         if (oldRef !== newRef) {
             hasChanges = true;
-            replacements.push(`common-assets/${assetPath} -> common-assets/${mappedAssetPath} (${currentVersion || 'không có'} -> ${newVersion})`);
+            replacements.push(`${prefix}common-assets/${assetPath} -> ${prefix}common-assets/${mappedAssetPath} (${currentVersion || 'không có'} -> ${newVersion})`);
             return newRef;
         }
 

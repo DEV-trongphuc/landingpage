@@ -1,0 +1,631 @@
+﻿diff --git a/mbainai.html b/mbainai.html
+index 5c466a7..fa258d1 100644
+--- a/mbainai.html
++++ b/mbainai.html
+@@ -2,6 +2,11 @@
+ <html lang="vi" style="overflow-x: hidden;">
+ 
+ <head>
++    <script>
++        if (localStorage.getItem('lang') === 'en') {
++            window.location.replace((window.location.pathname === '/' || window.location.pathname === '') ? '/index-en.html' : window.location.pathname.replace('.html', '-en.html') + window.location.search + window.location.hash);
++        }
++    </script>
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link rel="preconnect" href="https://automation.ideas.edu.vn" />
+@@ -201,9 +206,9 @@
+         rel="stylesheet" />
+ 
+     <!-- Styles -->
+-    <link rel="preload" href="common-assets/css/style.min.css?v=1780557619987" as="style" />
+-    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780557619987" />
+-    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780557619987" />
++    <link rel="preload" href="common-assets/css/style.min.css?v=1780558903644" as="style" />
++    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780558903644" />
++    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780558903644" />
+     <style>
+         /* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+            PROOF CARD - Premium 2-col design
+@@ -3058,6 +3063,46 @@
+                             class="fa-solid fa-certificate"></i></span>Uy t├¡n</a>
+                 <a href="#bang-gia" class="nav-link">Hß╗ìc ph├¡</a>
+                 <div style="display:flex;align-items:center;gap:8px;">
++                    <div class="lang-switcher-wrapper">
++                        <button class="lang-toggle-btn" aria-label="Select Language" type="button">
++                            <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
++                                <rect width="30" height="20" fill="#da251d"/>
++                                <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00"/>
++                            </svg>
++                            <span>VI</span>
++                            <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
++                                <path d="M1 1L5 5L9 1" stroke-linecap="round" stroke-linejoin="round"/>
++                            </svg>
++                        </button>
++                        <div class="lang-dropdown-menu">
++                            <button class="lang-dropdown-item active" data-lang="vi" type="button">
++                                <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
++                                    <rect width="30" height="20" fill="#da251d"/>
++                                    <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00"/>
++                                </svg>
++                                Tiß║┐ng Viß╗çt
++                            </button>
++                            <button class="lang-dropdown-item" data-lang="en" type="button">
++                                <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
++                                    <rect width="30" height="20" fill="#ffffff"/>
++                                    <rect width="30" height="1.54" fill="#b22234"/>
++                                    <rect y="3.08" width="30" height="1.54" fill="#b22234"/>
++                                    <rect y="6.16" width="30" height="1.54" fill="#b22234"/>
++                                    <rect y="9.24" width="30" height="1.54" fill="#b22234"/>
++                                    <rect y="12.32" width="30" height="1.54" fill="#b22234"/>
++                                    <rect y="15.4" width="30" height="1.54" fill="#b22234"/>
++                                    <rect y="18.48" width="30" height="1.54" fill="#b22234"/>
++                                    <rect width="12" height="10.78" fill="#3c3b6e"/>
++                                    <circle cx="2" cy="1.8" r="0.45" fill="#ffffff"/><circle cx="6" cy="1.8" r="0.45" fill="#ffffff"/><circle cx="10" cy="1.8" r="0.45" fill="#ffffff"/>
++                                    <circle cx="4" cy="3.6" r="0.45" fill="#ffffff"/><circle cx="8" cy="3.6" r="0.45" fill="#ffffff"/>
++                                    <circle cx="2" cy="5.4" r="0.45" fill="#ffffff"/><circle cx="6" cy="5.4" r="0.45" fill="#ffffff"/><circle cx="10" cy="5.4" r="0.45" fill="#ffffff"/>
++                                    <circle cx="4" cy="7.2" r="0.45" fill="#ffffff"/><circle cx="8" cy="7.2" r="0.45" fill="#ffffff"/>
++                                    <circle cx="2" cy="9" r="0.45" fill="#ffffff"/><circle cx="6" cy="9" r="0.45" fill="#ffffff"/><circle cx="10" cy="9" r="0.45" fill="#ffffff"/>
++                                </svg>
++                                English
++                            </button>
++                        </div>
++                    </div>
+                     <a href="#dang-ky" class="nav-cta">Nhß║¡n t╞░ vß║Ñn</a>
+                     <button class="bk-open-btn" aria-label="Mß╗ƒ form ─æß║╖t lß╗ïch t╞░ vß║Ñn"
+                         style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;color:#ab0e00;border:1.5px solid rgba(171,14,0,0.45);border-radius:100px;font-weight:700;font-size:0.88rem;cursor:pointer;transition:all 0.3s ease;white-space:nowrap;"
+@@ -3179,6 +3224,37 @@
+                     class="fa-solid fa-certificate"></i></span>Uy t├¡n</a>
+         <a href="#bang-gia" class="nav-link">Hß╗ìc ph├¡</a>
+         <a href="#dang-ky" class="nav-cta">Nhß║¡n t╞░ vß║Ñn</a>
++        <div class="mobile-lang-selector">
++            <div class="mobile-lang-title">Ng├┤n ngß╗» / Language</div>
++            <div class="mobile-lang-options">
++                <button class="mobile-lang-btn active" data-lang="vi" type="button">
++                    <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
++                        <rect width="30" height="20" fill="#da251d"/>
++                        <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00"/>
++                    </svg>
++                    Tiß║┐ng Viß╗çt
++                </button>
++                <button class="mobile-lang-btn" data-lang="en" type="button">
++                    <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
++                        <rect width="30" height="20" fill="#ffffff"/>
++                        <rect width="30" height="1.54" fill="#b22234"/>
++                        <rect y="3.08" width="30" height="1.54" fill="#b22234"/>
++                        <rect y="6.16" width="30" height="1.54" fill="#b22234"/>
++                        <rect y="9.24" width="30" height="1.54" fill="#b22234"/>
++                        <rect y="12.32" width="30" height="1.54" fill="#b22234"/>
++                        <rect y="15.4" width="30" height="1.54" fill="#b22234"/>
++                        <rect y="18.48" width="30" height="1.54" fill="#b22234"/>
++                        <rect width="12" height="10.78" fill="#3c3b6e"/>
++                        <circle cx="2" cy="1.8" r="0.45" fill="#ffffff"/><circle cx="6" cy="1.8" r="0.45" fill="#ffffff"/><circle cx="10" cy="1.8" r="0.45" fill="#ffffff"/>
++                        <circle cx="4" cy="3.6" r="0.45" fill="#ffffff"/><circle cx="8" cy="3.6" r="0.45" fill="#ffffff"/>
++                        <circle cx="2" cy="5.4" r="0.45" fill="#ffffff"/><circle cx="6" cy="5.4" r="0.45" fill="#ffffff"/><circle cx="10" cy="5.4" r="0.45" fill="#ffffff"/>
++                        <circle cx="4" cy="7.2" r="0.45" fill="#ffffff"/><circle cx="8" cy="7.2" r="0.45" fill="#ffffff"/>
++                        <circle cx="2" cy="9" r="0.45" fill="#ffffff"/><circle cx="6" cy="9" r="0.45" fill="#ffffff"/><circle cx="10" cy="9" r="0.45" fill="#ffffff"/>
++                    </svg>
++                    English
++                </button>
++            </div>
++        </div>
+     </div>
+ 
+ 
+@@ -4948,28 +5024,6 @@
+                             </div>
+                         </a>
+                     </div>
+-                    <!-- Graduate stats strip -->
+-                    <!-- <div class="grad-stats-strip reveal-up" aria-label="Thß╗æng k├¬ hß╗ìc vi├¬n tß╗æt nghiß╗çp">
+-                        <div class="grad-stat-item">
+-                            <span class="grad-stat-val">2571+</span>
+-                            <span class="grad-stat-lbl">Hß╗ìc vi├¬n tß╗æt nghiß╗çp</span>
+-                        </div>
+-                        <div class="grad-stat-divider" aria-hidden="true"></div>
+-                        <div class="grad-stat-item">
+-                            <span class="grad-stat-val">15</span>
+-                            <span class="grad-stat-lbl">N─âm ─æ├áo tß║ío MBA in AI</span>
+-                        </div>
+-                        <div class="grad-stat-divider" aria-hidden="true"></div>
+-                        <div class="grad-stat-item">
+-                            <span class="grad-stat-val">94%</span>
+-                            <span class="grad-stat-lbl">H├ái l├▓ng ch╞░╞íng tr├¼nh</span>
+-                        </div>
+-                        <div class="grad-stat-divider" aria-hidden="true"></div>
+-                        <div class="grad-stat-item">
+-                            <span class="grad-stat-val">3</span>
+-                            <span class="grad-stat-lbl">Kh├│a tß╗æt nghiß╗çp tß║íi Thß╗Ñy S─⌐</span>
+-                        </div>
+-                    </div> -->
+                 </div>
+                 <div class="scroll-dots" data-scroll-target=".gallery-mosaic"></div>
+             </div>
+@@ -4995,136 +5049,169 @@
+             style="background: #f8fafc; padding: 80px 24px !important; border-radius: 32px; margin: 40px auto !important; max-width: 1400px !important; width: 100% !important; border: 1px solid #e2e8f0; box-sizing: border-box;">
+ 
+             <style>
+-                .pricing-grid-new {
++                .pricing-grid-v2 {
+                     display: grid;
+-                    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+-                    gap: 32px;
+-                    margin: 48px auto;
+-                    align-items: stretch;
+-                    max-width: 960px;
++                    grid-template-columns: 1fr 1fr;
++                    gap: 24px;
++                    max-width: 980px;
++                    margin: 0 auto 32px;
+                 }
+ 
+-                .pricing-card-new {
+-                    background: #ffffff;
+-                    border: 1px solid #e2e8f0;
++                .pricing-card-v2 {
++                    background: #fff;
++                    border: 1.5px solid rgba(17, 23, 41, 0.1);
+                     border-radius: 24px;
+-                    padding: 40px 32px;
++                    padding: 32px 28px;
+                     display: flex;
+                     flex-direction: column;
+-                    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+-                    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
++                    gap: 0;
++                    box-shadow: 0 4px 20px rgba(17, 23, 41, 0.07);
+                     position: relative;
++                    transition: transform 0.25s ease, box-shadow 0.25s ease;
+                 }
+ 
+-                .pricing-card-new:hover {
+-                    transform: translateY(-8px);
+-                    border-color: #cbd5e1;
+-                    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
++                .pricing-card-v2:hover {
++                    transform: translateY(-4px);
++                    box-shadow: 0 12px 40px rgba(17, 23, 41, 0.12);
+                 }
+ 
+-                .pricing-card-new.recommended-new {
+-                    border: 2.5px solid #ab0e00;
+-                    box-shadow: 0 20px 40px -15px rgba(171, 14, 0, 0.1);
++                /* Featured RED card */
++                .pcv2-featured {
++                    background: linear-gradient(145deg, #7a0000 0%, #ab0e00 45%, #c41a00 100%);
++                    border-color: transparent;
++                    box-shadow: 0 8px 50px rgba(171, 14, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+                 }
+ 
+-                .pricing-card-new.recommended-new:hover {
+-                    box-shadow: 0 25px 50px -12px rgba(171, 14, 0, 0.18);
++                .pcv2-featured:hover {
++                    box-shadow: 0 20px 70px rgba(171, 14, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.12);
++                    transform: translateY(-5px);
+                 }
+ 
+-                .pricing-badge-new {
+-                    position: absolute;
+-                    top: -14px;
+-                    left: 50%;
+-                    transform: translateX(-50%);
+-                    background: #ab0e00;
+-                    color: #ffffff;
+-                    font-size: 0.75rem;
++                .pcv2-badge {
++                    display: inline-flex;
++                    align-items: center;
++                    gap: 5px;
++                    padding: 4px 12px;
++                    background: #ffffff;
++                    border: 1px solid rgba(15, 23, 42, 0.15);
++                    border-radius: 99px;
++                    font-size: 0.72rem;
+                     font-weight: 800;
+-                    padding: 6px 16px;
+-                    border-radius: 20px;
+-                    text-transform: uppercase;
+-                    letter-spacing: 1px;
+-                    box-shadow: 0 4px 10px rgba(171, 14, 0, 0.3);
++                    color: #ab0e00;
++                    letter-spacing: 0.02em;
++                    margin-bottom: 20px;
++                    width: fit-content;
++                }
++
++                .pcv2-header {
++                    margin-bottom: 4px;
++                }
++
++                .pcv2-tier {
++                    font-size: 1.5rem;
++                    font-weight: 900;
++                    color: var(--clr-text);
++                    letter-spacing: -0.02em;
++                }
++
++                .pcv2-featured .pcv2-tier {
++                    color: #fff;
++                }
++
++                .pcv2-desc {
++                    font-size: 0.85rem;
++                    color: #64748b;
++                    margin: 6px 0 0;
++                    line-height: 1.5;
++                }
++
++                .pcv2-featured .pcv2-desc {
++                    color: rgba(255, 255, 255, 0.5);
+                 }
+ 
+-                .pricing-price-box-new {
+-                    border-top: 1px solid #f1f5f9;
+-                    border-bottom: 1px solid #f1f5f9;
+-                    padding: 24px 0;
+-                    margin: 24px 0;
++                .pcv2-divider {
++                    height: 1px;
++                    background: rgba(17, 23, 41, 0.08);
++                    margin: 20px 0;
+                 }
+ 
+-                .pricing-features-new {
++                .pcv2-featured .pcv2-divider {
++                    background: rgba(255, 255, 255, 0.1);
++                }
++
++                .pcv2-features {
+                     list-style: none;
+                     padding: 0;
+-                    margin: 0 0 40px 0;
++                    margin: 0 0 28px;
+                     display: flex;
+                     flex-direction: column;
+-                    gap: 14px;
+-                    flex-grow: 1;
++                    gap: 12px;
++                    flex: 1;
+                 }
+ 
+-                .pricing-features-new li {
++                .pcv2-features li {
+                     display: flex;
+                     align-items: flex-start;
+                     gap: 10px;
+-                    font-size: 0.95rem;
+-                    line-height: 1.4;
+-                    color: #334155;
++                    font-size: 0.88rem;
++                    line-height: 1.5;
++                    color: #374151;
+                     text-align: left;
+                 }
+ 
+-                .pricing-features-new li.disabled-feat {
+-                    color: #94a3b8;
+-                    text-decoration: line-through;
+-                }
+-
+-                .pricing-features-new li .check-icon-new {
+-                    color: #10b981;
+-                    font-weight: 800;
+-                    font-size: 1.1rem;
+-                    line-height: 1;
++                .pcv2-featured .pcv2-features li {
++                    color: rgba(255, 255, 255, 0.82);
+                 }
+ 
+-                .pricing-features-new li .cross-icon-new {
+-                    color: #ef4444;
+-                    font-weight: 800;
+-                    font-size: 1.1rem;
+-                    line-height: 1;
++                .pcv2-features li svg {
++                    flex-shrink: 0;
++                    margin-top: 2px;
+                 }
+ 
+-                .pricing-btn-new {
+-                    display: block;
++                .pcv2-btn {
++                    width: 100%;
++                    justify-content: center;
+                     text-align: center;
+-                    padding: 16px;
++                    border-radius: 12px;
++                    padding: 13px 20px;
++                    font-size: 0.9rem;
+                     font-weight: 700;
+-                    border-radius: 14px;
+                     text-decoration: none;
+-                    transition: all 0.3s ease;
+-                    font-size: 1.05rem;
++                    display: inline-flex;
++                    align-items: center;
++                    border: 1.5px solid #ab0e00;
++                    color: #ab0e00;
++                    background: transparent;
++                    transition: all 0.25s ease;
+                 }
+ 
+-                .pricing-btn-new.standard-btn-new {
+-                    background: #f1f5f9;
+-                    color: #334155;
+-                    border: 1px solid #e2e8f0;
++                .pcv2-btn:hover {
++                    background: #ab0e00;
++                    color: #fff;
++                    transform: translateY(-2px);
+                 }
+ 
+-                .pricing-btn-new.standard-btn-new:hover {
+-                    background: #e2e8f0;
+-                    color: #1e293b;
++                .pcv2-btn-featured {
++                    display: block;
++                    width: 100%;
++                    text-align: center;
++                    padding: 13px 20px;
++                    border-radius: 12px;
++                    background: #ffffff;
++                    border: 1.5px solid rgba(15, 23, 42, 0.25);
++                    color: #ab0e00;
++                    font-weight: 800;
++                    font-size: 0.9rem;
++                    font-family: var(--font-sans);
++                    text-decoration: none;
++                    transition: all 0.25s ease;
+                 }
+ 
+-                .pricing-btn-new.recommended-btn-new {
++                .pcv2-btn-featured:hover {
+                     background: #ab0e00;
++                    border-color: #ffffff;
+                     color: #ffffff;
+-                    box-shadow: 0 4px 14px rgba(171, 14, 0, 0.3);
+-                }
+-
+-                .pricing-btn-new.recommended-btn-new:hover {
+-                    background: #900c00;
+-                    box-shadow: 0 6px 20px rgba(171, 14, 0, 0.4);
+-                    transform: translateY(-1px);
++                    transform: translateY(-2px);
+                 }
+ 
+                 .scholarship-banner-new {
+@@ -5135,26 +5222,17 @@
+                     display: flex;
+                     align-items: center;
+                     gap: 24px;
+-                    max-width: 960px;
++                    max-width: 980px;
+                     margin: 0 auto 40px;
+                     width: 100%;
+                     box-sizing: border-box;
+                     box-shadow: 0 4px 20px rgba(171, 14, 0, 0.02);
+                 }
+ 
+-
+-                @media (min-width: 1024px) {
+-                    .pricing-grid-new {
+-                        grid-template-columns: repeat(2, 1fr) !important;
+-                    }
+-                }
+-
+                 @media (max-width: 768px) {
+-                    .pricing-grid-new {
++                    .pricing-grid-v2 {
+                         grid-template-columns: 1fr;
+-                        gap: 24px;
+                     }
+-
+                     .scholarship-banner-new {
+                         flex-direction: column;
+                         text-align: center;
+@@ -5163,184 +5241,29 @@
+                 }
+             </style>
+ 
+-            <div class="section-label"
+-                style="margin: 0 auto 1.5rem; display: table; color: #ab0e00; background: rgba(171, 14, 0, 0.08); font-weight: 700;">
+-                Hß╗îC PH├ì & Lß╗ÿ TR├îNH T├ÇI CH├ìNH</div>
++            <div class="section-label" style="margin: 0 auto 1.5rem; display: table;">Hß╗îC PH├ì</div>
+             <h3 class="pricing-title"
+                 style="text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #0f172a; margin-bottom: 12px; line-height: 1.2;">
+-                ─Éß║ºu t╞░ th├┤ng minh cho<br /><span style="color:#ab0e00">T╞░╞íng lai Quß║ún trß╗ï C├┤ng nghß╗ç</span>
++                MBA in AI Swiss UMEF - Chß╗ìn h├¼nh thß╗⌐c hß╗ìc<br /><span style="color:#ab0e00">ph├╣ hß╗úp vß╗¢i lß╗ïch tr├¼nh cß╗ºa bß║ín</span>
+             </h3>
+-
++            <p class="pricing-subtitle" style="margin-bottom: 16px; color: #475569; font-size: 1.05rem;">
++                C├╣ng bß║▒ng MBA in AI - c├╣ng gi├í trß╗ï quß╗æc tß║┐. Kh├íc nhau ß╗ƒ mß╗⌐c ─æß╗Ö t╞░╞íng t├íc vß╗¢i giß║úng vi├¬n.
++            </p>
++            <p style="color:#ab0e00; font-weight:700; margin-bottom: 28px; font-size: 0.95rem;">
++                CH├ìNH S├üCH Hß╗îC PH├ì TH├üNG 6: ├üp dß╗Ñng ─æß║┐n hß║┐t ng├áy 01/07/2026 (Tß╗╖ gi├í 33.000 VN─É/CHF)
++            </p>
+ 
+             <!-- Scholarship Banner -->
+             <div class="scholarship-banner-new">
+-                <div
+-                    style="background: #ab0e00; color: #fff; font-size: 0.85rem; font-weight: 800; padding: 8px 16px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">
++                <div style="background: #ab0e00; color: #fff; font-size: 0.85rem; font-weight: 800; padding: 8px 16px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">
+                     Hß╗ìc bß╗òng hß╗ù trß╗ú
+                 </div>
+                 <div style="font-size: 0.95rem; color: #334155; line-height: 1.6; text-align: left;">
+-                    Swiss UMEF t├ái trß╗ú ─æß║╖c biß╗çt <strong>70% Hß╗ìc ph├¡ c╞í bß║ún (Platform)</strong> trß╗ï gi├í <strong>9.030 CHF
+-                        (~298.000.000─æ)</strong>. Hß╗ìc ph├¡ c╞í bß║ún gß╗æc 12.900 CHF giß║úm c├▓n <strong>3.870 CHF</strong>.
++                    Swiss UMEF t├ái trß╗ú ─æß║╖c biß╗çt <strong>70% Hß╗ìc ph├¡ c╞í bß║ún (Platform)</strong> trß╗ï gi├í <strong>9.030 CHF (~298.000.000─æ)</strong>. Hß╗ìc ph├¡ c╞í bß║ún gß╗æc 12.900 CHF giß║úm c├▓n <strong>3.870 CHF</strong>.
+                 </div>
+             </div>
+ 
+             <!-- Pricing Grid -->
+-            <div class="pricing-grid-new">
+-
+-                <!-- Card 1: Standard -->
+-                <div class="pricing-card-new">
+-                    <div style="margin-bottom: 24px; text-align: left;">
+-                        <span
+-                            style="background: #f1f5f9; color: #475569; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Lß╗Ö
+-                            tr├¼nh tß╗▒ hß╗ìc</span>
+-                        <h4 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin: 12px 0 8px;">Standard
+-                            Package</h4>
+-                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.4; min-height: 40px; margin: 0;">
+-                            D├ánh cho hß╗ìc vi├¬n chß╗º ─æß╗Öng tß╗▒ hß╗ìc v├á tß╗▒ sß║»p xß║┐p lß╗ïch hß╗ìc tß║¡p qua hß╗ç thß╗æng Platform.</p>
+-                    </div>
+-
+-                    <div class="pricing-price-box-new" style="text-align: left;">
+-                        <div style="display: flex; align-items: baseline; gap: 4px;">
+-                            <span
+-                                style="font-size: 2.2rem; font-weight: 900; color: #ab0e00; line-height: 1;">4.220</span>
+-                            <span style="font-size: 1.2rem; font-weight: 700; color: #ab0e00;">CHF</span>
+-                        </div>
+-                        <div style="font-size: 1.1rem; font-weight: 800; color: #1e293b; margin-top: 6px;">~139.260.000─æ
+-                        </div>
+-                        <div
+-                            style="font-size: 0.85rem; color: #94a3b8; text-decoration: line-through; margin-top: 4px;">
+-                            Hß╗ìc ph├¡ gß╗æc: 5.570 CHF</div>
+-                    </div>
+-
+-                    <ul class="pricing-features-new">
+-                        <li>
+-                            <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+-                                stroke-linecap="round" stroke-linejoin="round">
+-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+-                                    fill="rgba(16, 185, 129, 0.1)"></circle>
+-                                <polyline points="8 12 11 15 16 9" stroke="currentColor" stroke-width="2.5"></polyline>
+-                            </svg>
+-                            <span>Lß╗ç ph├¡ hß╗ô s╞í x├⌐t tuyß╗ân (150 CHF)</span>
+-                        </li>
+-                        <li>
+-                            <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+-                                stroke-linecap="round" stroke-linejoin="round">
+-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+-                                    fill="rgba(16, 185, 129, 0.1)"></circle>
+-                                <polyline points="8 12 11 15 16 9" stroke="currentColor" stroke-width="2.5"></polyline>
+-                            </svg>
+-                            <span>Hß╗ìc ph├¡ Platform (3.870 CHF - ─æ├ú ├íp dß╗Ñng hß╗ìc bß╗òng 70%)</span>
+-                        </li>
+-                        <li>
+-                            <svg style="color: #10b981; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+-                                stroke-linecap="round" stroke-linejoin="round">
+-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+-                                    fill="rgba(16, 185, 129, 0.1)"></circle>
+-                                <polyline points="8 12 11 15 16 9" stroke="currentColor" stroke-width="2.5"></polyline>
+-                            </svg>
+-                            <span>Dß╗ïch vß╗Ñ hß╗ù trß╗ú hß╗ìc vß╗Ñ c╞í bß║ún IDEAS (200 CHF)</span>
+-                        </li>
+-                        <li class="disabled-feat">
+-                            <svg style="color: #ef4444; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+-                                stroke-linecap="round" stroke-linejoin="round">
+-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+-                                    fill="rgba(239, 68, 68, 0.1)"></circle>
+-                                <line x1="15" y1="9" x2="9" y2="15" stroke="currentColor" stroke-width="2.5"></line>
+-                                <line x1="9" y1="9" x2="15" y2="15" stroke="currentColor" stroke-width="2.5"></line>
+-                            </svg>
+-                            <span>Lß╗¢p chuy├¬n ─æß╗ü & H╞░ß╗¢ng dß║½n luß║¡n v─ân 1:1</span>
+-                        </li>
+-                        <li class="disabled-feat">
+-                            <svg style="color: #ef4444; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+-                                stroke-linecap="round" stroke-linejoin="round">
+-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+-                                    fill="rgba(239, 68, 68, 0.1)"></circle>
+-                                <line x1="15" y1="9" x2="9" y2="15" stroke="currentColor" stroke-width="2.5"></line>
+-                                <line x1="9" y1="9" x2="15" y2="15" stroke="currentColor" stroke-width="2.5"></line>
+-                            </svg>
+-                            <span>Buß╗òi hß╗ìc trß╗▒c tiß║┐p qua Zoom vß╗¢i GV n╞░ß╗¢c ngo├ái</span>
+-                        </li>
+-                        <li class="disabled-feat">
+-                            <svg style="color: #ef4444; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+-                                stroke-linecap="round" stroke-linejoin="round">
+-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+-                                    fill="rgba(239, 68, 68, 0.1)"></circle>
+-                                <line x1="15" y1="9" x2="9" y2="15" stroke="currentColor" stroke-width="2.5"></line>
+-                                <line x1="9" y1="9" x2="15" y2="15" stroke="currentColor" stroke-width="2.5"></line>
+-                            </svg>
+-                            <span>Lß╗ç ph├¡ Canton tß╗æt nghiß╗çp & Hß╗úp ph├íp h├│a bß║▒ng</span>
+-                        </li>
+-                        <li class="disabled-feat">
+-                            <svg style="color: #ef4444; flex-shrink: 0; margin-top: 2px;" width="18" height="18"
+-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+-                                stroke-linecap="round" stroke-linejoin="round">
+-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"
+-                                    fill="rgba(239, 68, 68, 0.1)"></circle>
+-                                <line x1="15" y1="9" x2="9" y2="15" stroke="currentColor" stroke-width="2.5"></line>
+-                                <line x1="9" y1="9" x2="15" y2="15" stroke="currentColor" stroke-width="2.5"></line>
+-                            </svg>
+-                            <span>Chuyß║┐n ─æi trß║úi nghiß╗çm thß╗▒c tß║┐ tß║íi Geneva, Thß╗Ñy S─⌐</span>
+-                        </li>
+-                    </ul>
+-
+-                    <a href="#dang-ky" class="pricing-btn-new standard-btn-new">T╞░ vß║Ñn Lß╗Ö tr├¼nh Tß╗▒ hß╗ìc</a>
+-                </div>
+-
+-                <!-- Card 2: Recommended (High Quality) -->
+-                <div class="pricing-card-new recommended-new" style="border-radius: 32px;">
+-                    <div class="pricing-badge-new">Khuy├¬n d├╣ng</div>
+-
+-                    <div style="margin-bottom: 24px; text-align: left; margin-top: 4px;">
+-                        <span
+-                            style="background: rgba(171, 14, 0, 0.08); color: #ab0e00; font-size: 0.75rem; font-weight: 700; padding: 6px 12px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block;">Hß╗ìc
+-                            tß║íi Viß╗çt Nam</span>
+-                        <h4
+-                            style="font-size: 1.8rem; font-weight: 900; color: #0f172a; margin: 16px 0 8px; text-transform: none; letter-spacing: -0.5px;">
+-                            High
+-                            Quality</h4>
+-                        <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; min-height: 40px; margin: 0;">Lß╗Ö
+-                            tr├¼nh hß╗ìc tß║¡p ─æß║ºy ─æß╗º tß║íi VN c├│ giß║úng vi├¬n quß╗æc tß║┐, nghi├¬n cß╗⌐u luß║¡n v─ân 1:1 &amp; hß╗úp ph├íp
+-                            h├│a
+-                            bß║▒ng cß║Ñp.</p>
+-                    </div>
+-
+-                    <div class="pricing-price-box-new" style="text-align: left; padding: 12px 0;">
+-                        <style>
+-                            /* ΓöÇΓöÇ Toggle Switch ΓöÇΓöÇ */
+-                            .hq-toggle-switch input:checked+.hq-toggle-slider {
+-                                background-color: #ab0e00;
+-                            }
+-
+-                            .hq-toggle-switch input:checked+.hq-toggle-slider:before {
+-                                transform: translateX(18px);
+-                            }
+-
+-                            .hq-toggle-slider {
+-                                position: absolute;
+-                                cursor: pointer;
+-                                inset: 0;
+-                                background-color: #cbd5e1;
+-                                transition: .3s;
+-                                border-radius: 20px;
+-                            }
+-
+-                            .hq-toggle-slider:before {
+-                                position: absolute;
+-                                content: "";
+-                                height: 14px;
+-                                width: 14px;
+-                                left: 3px;
+-                                bottom: 3px;
+-                                background-color: white;
+-                                transition: .3s;
+-                                border-radius: 50%;
+-                                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+                             }
+                         </style>
+                         <div style="display: flex; align-items: baseline; gap: 4px;">
+@@ -6651,8 +6574,8 @@
+         </div>
+     </div>
+ 
+-    <script src="common-assets/js/script.min.js?v=1780557619987" defer></script>
+-    <script src="common-assets/js/booking-modal.min.js?v=1780557619987" defer></script>
++    <script src="common-assets/js/script.min.js?v=1780558903644" defer></script>
++    <script src="common-assets/js/booking-modal.min.js?v=1780558903644" defer></script>
+ 
+ 
+ 

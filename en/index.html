@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <script>
-        if (localStorage.getItem('lang') === 'en') {
+        if (localStorage.getItem('lang') === 'vi') {
             var path = window.location.pathname;
-            if (path.indexOf('/en/') === -1) {
-                var lastSlash = path.lastIndexOf('/');
-                var dir = path.substring(0, lastSlash + 1);
-                var filename = path.substring(lastSlash + 1);
-                window.location.replace(dir + 'en/' + filename + window.location.search + window.location.hash);
+            var enIndex = path.indexOf('/en/');
+            if (enIndex !== -1) {
+                var newPath = path.substring(0, enIndex) + '/' + path.substring(enIndex + 4);
+                window.location.replace(newPath + window.location.search + window.location.hash);
             }
         }
     </script>
@@ -21,16 +20,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Primary -->
-    <title>IDEAS Institute | Viện Khảo thí & Đánh giá Giáo dục Quốc tế</title>
+    <title>IDEAS Institute | Institute of & International Educational Assessment</title>
     <meta name="description"
-        content="Đồng hành giáo dục với hơn 15 năm kinh nghiệm, cung cấp các chương trình đào tạo BBA, MBA, DBA chuẩn quốc tế, liên kết với các trường đại học hàng đầu Châu Âu.">
+        content="Educational companion with over 15 years of experience, providing BBA, MBA, DBA international programs, in partnership with top European universities.">
     
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ideas.edu.vn" />
-    <meta property="og:title" content="IDEAS Institute | Viện Khảo thí & Đánh giá Giáo dục Quốc tế" />
-    <meta property="og:description" content="Đồng hành giáo dục với hơn 15 năm kinh nghiệm, cung cấp các chương trình đào tạo BBA, MBA, DBA chuẩn quốc tế, liên kết với các trường đại học hàng đầu Châu Âu." />
+    <meta property="og:title" content="IDEAS Institute | Institute of & International Educational Assessment" />
+    <meta property="og:description" content="Educational companion with over 15 years of experience, providing BBA, MBA, DBA international programs, in partnership with top European universities." />
     <meta property="og:image" content="https://ideas.edu.vn/wp-content/uploads/2025/11/logo.png" />
     <meta property="og:locale" content="vi_VN" />
     <meta property="og:site_name" content="IDEAS Institute" />
@@ -38,26 +37,26 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://ideas.edu.vn" />
-    <meta property="twitter:title" content="IDEAS Institute | Viện Khảo thí & Đánh giá Giáo dục Quốc tế" />
-    <meta property="twitter:description" content="Đồng hành giáo dục với hơn 15 năm kinh nghiệm, cung cấp các chương trình đào tạo BBA, MBA, DBA chuẩn quốc tế, liên kết với các trường đại học hàng đầu Châu Âu." />
+    <meta property="twitter:title" content="IDEAS Institute | Institute of & International Educational Assessment" />
+    <meta property="twitter:description" content="Educational companion with over 15 years of experience, providing BBA, MBA, DBA international programs, in partnership with top European universities." />
     <meta property="twitter:image" content="https://ideas.edu.vn/wp-content/uploads/2025/11/logo.png" />
-    <link rel="canonical" href="https://ideas.edu.vn" />
+    <link rel="canonical" href="https://ideas.edu.vn/en" />
 
     <!-- Structured Data (Local Business / Organization) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
-      "name": "Viện Khảo thí & Đánh giá Giáo dục Quốc tế (IDEAS Institute)",
-      "alternateName": "Viện IDEAS",
+      "name": "Institute of & International Educational Assessment (IDEAS Institute)",
+      "alternateName": "IDEAS Institute",
       "url": "https://ideas.edu.vn",
       "logo": "https://ideas.edu.vn/wp-content/uploads/2025/11/logo.png",
       "telephone": "+842822442244",
       "email": "info@ideas.edu.vn",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Tầng 4, 39B Trường Sơn, Phường 2, Quận Tân Bình",
-        "addressLocality": "Thành phố Hồ Chí Minh",
+        "streetAddress": "4th Floor, 39B Truong Son, Ward 2, Tan Binh District",
+        "addressLocality": "Ho Chi Minh City",
         "addressRegion": "TP.HCM",
         "postalCode": "700000",
         "addressCountry": "VN"
@@ -90,10 +89,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Booking Modal CSS -->
-    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780560560028">
+    <link rel="stylesheet" href="../common-assets/css/booking-modal.min.css?v=1780560560028">
 
     <!-- Ideas Portal CSS (Solid Light Theme) -->
-    <link rel="stylesheet" href="homepage-assets/css/ideas-portal.css?v=1.5">
+    <link rel="stylesheet" href="../homepage-assets/css/ideas-portal.css?v=1.5">
 
     <!-- Google Tag Manager (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKV7LKNLLH"></script>
@@ -142,9 +141,9 @@
         <div class="loader-split-left"></div>
         <div class="loader-split-right"></div>
         <div class="portal-loader-content">
-            <img src="assets/logo.png" alt="IDEAS Logo" class="portal-loader-logo" onerror="this.outerHTML='<span class=\'logo-text\' decoding="async">IDEAS</span>'">
-            <h1 class="portal-loader-slogan">TRI THỨC KHAI SÁNG &mdash; KIẾN TẠO TƯƠNG LAI</h1>
-            <p class="portal-loader-sub">IDEAS INSTITUTE &bull; THẾ GIỚI TRẢI NGHIỆM SỰ NGHIỆP THĂNG TIẾN</p>
+            <img src="../assets/logo.png" alt="IDEAS Logo" class="portal-loader-logo" onerror="this.outerHTML='<span class=\'logo-text\' decoding="async">IDEAS</span>'">
+            <h1 class="portal-loader-slogan">ENLIGHTEN KNOWLEDGE &mdash; SHAPE THE FUTURE</h1>
+            <p class="portal-loader-sub">IDEAS INSTITUTE &bull; WORLD OF EXPERIENCES, CAREER ADVANCEMENT</p>
             <div class="portal-loader-bar">
                 <div class="portal-loader-progress"></div>
             </div>
@@ -164,48 +163,30 @@
         <!-- HUD Tips Overlay -->
         <div class="hud-tips" id="hud-tips">
             <i class="fa-solid fa-circle-info"></i>
-            <span id="hud-tips-text">Kéo rê chuột để xoay vũ trụ tri thức. Cuộn chuột để phóng to/thu nhỏ.</span>
+            <span id="hud-tips-text">Drag mouse to rotate the knowledge universe. Scroll to zoom in/out.</span>
         </div>
 
         <!-- Navigation Header (HUD Header) -->
         <header class="hud-header">
-            <a href="/" class="hud-logo">
-                <img src="assets/logo.png" alt="IDEAS Logo" onerror="this.outerHTML='<span class=\'logo-text\' decoding="async">IDEAS</span>'">
+            <a href="/index-en.html" class="hud-logo">
+                <img src="../assets/logo.png" alt="IDEAS Logo" onerror="this.outerHTML='<span class=\'logo-text\' decoding="async">IDEAS</span>'">
             </a>
 
             <nav class="hud-nav">
                 <button class="hud-nav-btn active" id="nav-btn-explore" data-mode="explore">
-                    <i class="fa-solid fa-compass" style="margin-right: 6px;"></i>Khám phá 3D
+                    <i class="fa-solid fa-compass" style="margin-right: 6px;"></i>Explore 3D
                 </button>
                 <button class="hud-nav-btn" id="nav-btn-quiz" data-mode="quiz">
-                    <i class="fa-solid fa-graduation-cap" style="margin-right: 6px;"></i>Tìm lộ trình
+                    <i class="fa-solid fa-graduation-cap" style="margin-right: 6px;"></i>Find Path
                 </button>
                 <button class="hud-nav-btn" id="nav-btn-tunnel" data-mode="tunnel">
-                    <i class="fa-solid fa-images" style="margin-right: 6px;"></i>Hành trình vinh quang
+                    <i class="fa-solid fa-images" style="margin-right: 6px;"></i>Glorious Journey
                 </button>
             </nav>
 
             <div class="hud-actions">
                 <div class="lang-switcher-wrapper">
-                    <button class="lang-toggle-btn" aria-label="Select Language" type="button">
-                        <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="30" height="20" fill="#da251d"/>
-                            <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00"/>
-                        </svg>
-                        <span>VI</span>
-                        <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L5 5L9 1" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="lang-dropdown-menu">
-                        <button class="lang-dropdown-item active" data-lang="vi" type="button">
-                            <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="30" height="20" fill="#da251d"/>
-                                <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00"/>
-                            </svg>
-                            Tiếng Việt
-                        </button>
-                        <button class="lang-dropdown-item" data-lang="en" type="button">
+                        <button class="lang-toggle-btn" aria-label="Select Language" type="button">
                             <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="30" height="20" fill="#ffffff"/>
                                 <rect width="30" height="1.54" fill="#b22234"/>
@@ -222,15 +203,45 @@
                                 <circle cx="4" cy="7.2" r="0.45" fill="#ffffff"/><circle cx="8" cy="7.2" r="0.45" fill="#ffffff"/>
                                 <circle cx="2" cy="9" r="0.45" fill="#ffffff"/><circle cx="6" cy="9" r="0.45" fill="#ffffff"/><circle cx="10" cy="9" r="0.45" fill="#ffffff"/>
                             </svg>
-                            English
+                            <span>EN</span>
+                            <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5 5L9 1" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </button>
+                        <div class="lang-dropdown-menu">
+                            <button class="lang-dropdown-item" data-lang="vi" type="button">
+                                <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="30" height="20" fill="#da251d"/>
+                                    <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00"/>
+                                </svg>
+                                Tiếng Việt
+                            </button>
+                            <button class="lang-dropdown-item active" data-lang="en" type="button">
+                                <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="30" height="20" fill="#ffffff"/>
+                                <rect width="30" height="1.54" fill="#b22234"/>
+                                <rect y="3.08" width="30" height="1.54" fill="#b22234"/>
+                                <rect y="6.16" width="30" height="1.54" fill="#b22234"/>
+                                <rect y="9.24" width="30" height="1.54" fill="#b22234"/>
+                                <rect y="12.32" width="30" height="1.54" fill="#b22234"/>
+                                <rect y="15.4" width="30" height="1.54" fill="#b22234"/>
+                                <rect y="18.48" width="30" height="1.54" fill="#b22234"/>
+                                <rect width="12" height="10.78" fill="#3c3b6e"/>
+                                <circle cx="2" cy="1.8" r="0.45" fill="#ffffff"/><circle cx="6" cy="1.8" r="0.45" fill="#ffffff"/><circle cx="10" cy="1.8" r="0.45" fill="#ffffff"/>
+                                <circle cx="4" cy="3.6" r="0.45" fill="#ffffff"/><circle cx="8" cy="3.6" r="0.45" fill="#ffffff"/>
+                                <circle cx="2" cy="5.4" r="0.45" fill="#ffffff"/><circle cx="6" cy="5.4" r="0.45" fill="#ffffff"/><circle cx="10" cy="5.4" r="0.45" fill="#ffffff"/>
+                                <circle cx="4" cy="7.2" r="0.45" fill="#ffffff"/><circle cx="8" cy="7.2" r="0.45" fill="#ffffff"/>
+                                <circle cx="2" cy="9" r="0.45" fill="#ffffff"/><circle cx="6" cy="9" r="0.45" fill="#ffffff"/><circle cx="10" cy="9" r="0.45" fill="#ffffff"/>
+                            </svg>
+                                English
+                            </button>
+                        </div>
                     </div>
-                </div>
                 <button class="btn-outline-crimson" id="trigger-compare-matrix" style="border-radius: 9999px;">
-                    <i class="fa-solid fa-code-compare"></i>So sánh
+                    <i class="fa-solid fa-code-compare"></i>Compare
                 </button>
                 <button class="btn-primary-crimson bk-open-btn" style="border-radius: 9999px;">
-                    <span>Tư vấn ngay</span>
+                    <span>Consult Now</span>
                     <i class="fa-regular fa-calendar-check"></i>
                 </button>
             </div>
@@ -239,8 +250,8 @@
         <!-- MOBILE PORTAL DIRECTORY: FLAT LIST FOR MOBILE/TABLET -->
         <div class="mobile-portal-directory" id="mobile-portal-directory" style="display: none;">
             <div class="mobile-directory-header">
-                <h2>Cổng Đào Tạo Quốc Tế</h2>
-                <p>Khám phá lộ trình phát triển sự nghiệp chuẩn Châu Âu</p>
+                <h2>International Education Portal</h2>
+                <p>Explore career development path in European standards</p>
             </div>
             <div class="mobile-directory-grid" id="mobile-directory-grid">
                 <!-- Dynamic cards populated in main.js -->
@@ -251,8 +262,8 @@
         <div class="hud-panel-left hidden" id="hud-panel-left">
             <div class="placeholder-details" id="placeholder-details">
                 <i class="fa-solid fa-compass"></i>
-                <h3>VŨ TRỤ TRI THỨC IDEAS</h3>
-                <p>Nhấp chọn một chương trình đào tạo để khám phá lộ trình chi tiết</p>
+                <h3>IDEAS KNOWLEDGE UNIVERSE</h3>
+                <p>Click on a program to explore its detailed path</p>
             </div>
             <div class="program-details-wrap hidden" id="program-details-wrap">
                 <div class="program-details-header">
@@ -260,36 +271,36 @@
                     <h2 class="program-name-title" id="prog-title">Online MBA</h2>
                     <div class="program-country-badge">
                         <i class="fa-solid fa-earth-americas"></i>
-                        <span id="prog-country">Thụy Sĩ</span>
+                        <span id="prog-country">Switzerland</span>
                     </div>
                 </div>
                 <div class="program-tagline" id="prog-tagline">
-                    Đại học tư thục đầu tiên tại Geneva đạt kiểm định liên bang cao nhất Thụy Sĩ
+                    The first private university in Geneva to achieve the highest Swiss federal accreditation
                 </div>
                 <div class="program-meta-grid">
                     <div class="meta-item-box">
-                        <span class="meta-item-label">Thời gian học</span>
-                        <span class="meta-item-value" id="prog-duration">18 tháng</span>
+                        <span class="meta-item-label">Duration</span>
+                        <span class="meta-item-value" id="prog-duration">18 months</span>
                     </div>
                     <div class="meta-item-box">
-                        <span class="meta-item-label">Cấu trúc</span>
+                        <span class="meta-item-label">Structure</span>
                         <span class="meta-item-value" id="prog-ects">90 ECTS</span>
                     </div>
                 </div>
                 <h4 class="program-section-title">
                     <i class="fa-solid fa-circle-check"></i>
-                    Lợi ích chương trình
+                    Program Benefits
                 </h4>
                 <ul class="program-benefits-list" id="prog-benefits">
                     <!-- Dynamic items -->
                 </ul>
                 <div class="program-cta-group">
                     <button class="btn-primary-crimson bk-open-btn" id="prog-cta-btn">
-                        <span>Tư vấn ngay</span>
+                        <span>Consult Now</span>
                         <i class="fa-regular fa-calendar-check"></i>
                     </button>
                     <a href="#" class="btn-glass-crimson" id="prog-link-btn" target="_blank">
-                        <span>Xem chi tiết</span>
+                        <span>See Details</span>
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
@@ -300,9 +311,9 @@
         <div class="hud-panel-right hidden" id="hud-panel-right">
             <div class="quiz-container-hud">
                 <div class="quiz-hud-header">
-                    <div class="quiz-hud-badge">LỘ TRÌNH THĂNG TIẾN</div>
-                    <h2 class="quiz-hud-title">Tìm Chương Trình Phù Hợp</h2>
-                    <p class="quiz-hud-sub">Trả lời các câu hỏi ngắn để hệ thống xác định lộ trình tối ưu cho bạn</p>
+                    <div class="quiz-hud-badge">CAREER PATH</div>
+                    <h2 class="quiz-hud-title">Find the Right Program</h2>
+                    <p class="quiz-hud-sub">Answer brief questions to determine the optimal path for you</p>
                 </div>
                 <div class="quiz-progress-hud">
                     <div class="quiz-progress-fill-hud" id="quiz-progress-fill"></div>
@@ -310,85 +321,85 @@
 
                 <!-- Step 1 -->
                 <div class="quiz-step-hud active" data-step="1">
-                    <div class="quiz-question-hud">Trình độ học vấn hiện tại của bạn?</div>
+                    <div class="quiz-question-hud">Your current education level?</div>
                     <button class="quiz-option-hud" data-val="highschool">
                         <div class="quiz-opt-icon-hud">1</div>
                         <div class="quiz-opt-text-hud">
-                            <h4>Tốt nghiệp THPT</h4>
-                            <p>Hoặc tương đương học sinh cấp 3</p>
+                            <h4>High School Graduate</h4>
+                            <p>Or equivalent</p>
                         </div>
                     </button>
                     <button class="quiz-option-hud" data-val="college">
                         <div class="quiz-opt-icon-hud">2</div>
                         <div class="quiz-opt-text-hud">
-                            <h4>Trung cấp / Cao đẳng</h4>
-                            <p>Hoặc đã học 1-2 năm Đại học</p>
+                            <h4>Vocational Certificate / College/Diploma</h4>
+                            <p>Or studied 1-2 years at University</p>
                         </div>
                     </button>
                     <button class="quiz-option-hud" data-val="bachelor">
                         <div class="quiz-opt-icon-hud">3</div>
                         <div class="quiz-opt-text-hud">
-                            <h4>Đại học / Cử nhân</h4>
-                            <p>Đã tốt nghiệp Đại học</p>
+                            <h4>University / Bachelor's</h4>
+                            <p>Graduated from University</p>
                         </div>
                     </button>
                     <button class="quiz-option-hud" data-val="master">
                         <div class="quiz-opt-icon-hud">4</div>
                         <div class="quiz-opt-text-hud">
-                            <h4>Thạc sĩ trở lên</h4>
-                            <p>Đã có bằng Master/MBA</p>
+                            <h4>Master's or above</h4>
+                            <p>Already holds a Master's degree/MBA</p>
                         </div>
                     </button>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="quiz-step-hud" data-step="2">
-                    <div class="quiz-question-hud">Số năm kinh nghiệm làm việc của bạn?</div>
+                    <div class="quiz-question-hud">Your years of work experience?</div>
                     <button class="quiz-option-hud" data-val="under-2">
                         <div class="quiz-opt-icon-hud">1</div>
                         <div class="quiz-opt-text-hud">
-                            <h4>Dưới 2 năm</h4>
-                            <p>Mới đi làm hoặc đang là sinh viên</p>
+                            <h4>Under 2 years</h4>
+                            <p>Fresh graduate or current student</p>
                         </div>
                     </button>
                     <button class="quiz-option-hud" data-val="2-to-5">
                         <div class="quiz-opt-icon-hud">2</div>
                         <div class="quiz-opt-text-hud">
-                            <h4>Từ 2 đến 5 năm</h4>
-                            <p>Đang làm nhân viên / chuyên viên chuyên môn</p>
+                            <h4>2 to 5 years</h4>
+                            <p>Working as staff / specialist</p>
                         </div>
                     </button>
                     <button class="quiz-option-hud" data-val="over-5">
                         <div class="quiz-opt-icon-hud">3</div>
                         <div class="quiz-opt-text-hud">
-                            <h4>Trên 5 năm</h4>
-                            <p>Đang làm quản lý / giám sát / điều hành</p>
+                            <h4>Over 5 years</h4>
+                            <p>Working as manager / supervisor / executive</p>
                         </div>
                     </button>
                 </div>
 
                 <!-- Step 3 -->
                 <div class="quiz-step-hud" data-step="3">
-                    <div class="quiz-question-hud">Mục tiêu nghề nghiệp cốt lõi của bạn?</div>
+                    <div class="quiz-question-hud">Your core career goal?</div>
                     <button class="quiz-option-hud" data-val="tech">
                         <div class="quiz-opt-icon-hud">1</div>
                         <div class="quiz-opt-text-hud">
-                            <h4>Làm chủ công nghệ AI</h4>
-                            <p>Ứng dụng AI đột phá công việc & quản lý số</p>
+                            <h4>Master AI technology</h4>
+                            <p>Apply AI for breakthrough work & digital management</p>
                         </div>
                     </button>
                     <button class="quiz-option-hud" data-val="management">
                         <div class="quiz-opt-icon-hud">2</div>
                         <div class="quiz-opt-text-hud">
-                            <h4>Thăng tiến quản lý cấp cao</h4>
-                            <p>Lãnh đạo, điều hành doanh nghiệp thực chiến</p>
+                            <h4>Advance to senior management</h4>
+                            <p>Leadership, hands-on business executive</p>
                         </div>
                     </button>
                     <button class="quiz-option-hud" data-val="degree">
                         <div class="quiz-opt-icon-hud">3</div>
                         <div class="quiz-opt-text-hud">
-                            <h4>Nhận bằng Quốc tế Thụy Sĩ</h4>
-                            <p>Nâng cao học vị chuẩn quốc tế nhanh nhất</p>
+                            <h4>Earn a Swiss International degree</h4>
+                            <p>Upgrade credentials to international standards fastest</p>
                         </div>
                     </button>
                 </div>
@@ -396,26 +407,26 @@
                 <!-- Quiz Footer -->
                 <div class="quiz-footer-hud">
                     <button class="quiz-btn-prev" id="quiz-btn-prev" style="visibility: hidden;">
-                        <i class="fa-solid fa-arrow-left"></i> Quay lại
-                    </button>
-                    <button class="quiz-btn-next" id="quiz-btn-next" disabled>Tiếp theo</button>
+                        <i class="fa-solid fa-arrow-left"></i> Back
+                        </button>
+                    <button class="quiz-btn-next" id="quiz-btn-next" disabled>Next</button>
                 </div>
 
                 <!-- Results Screen -->
                 <div class="quiz-result-hud" id="quiz-result-hud">
                     <div class="quiz-result-header-hud">
                         <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
-                        <h3>Lộ trình đề xuất riêng</h3>
+                        <h3>Your Personalized Recommended Path</h3>
                     </div>
                     <div class="quiz-result-card-hud" id="quiz-result-card">
                         <!-- Dynamic recommendations -->
                     </div>
                     <div class="program-cta-group">
                         <button class="btn-primary-crimson bk-open-btn" id="quiz-result-cta">
-                            <span>Đăng ký tư vấn ngay</span>
+                            <span>Register for Consultation Now</span>
                         </button>
                         <button class="btn-glass-crimson" id="quiz-result-explore">
-                            <span>Xem trên bản đồ 3D</span>
+                            <span>View on 3D Map</span>
                         </button>
                     </div>
                 </div>
@@ -436,10 +447,10 @@
 
             <div class="mode-toggle-wrap">
                 <button class="mode-toggle-btn active" id="toggle-mode-explore">
-                    <i class="fa-solid fa-globe"></i> Vũ Trụ 3D
+                    <i class="fa-solid fa-globe"></i> 3D Universe
                 </button>
                 <button class="mode-toggle-btn" id="toggle-mode-tunnel">
-                    <i class="fa-solid fa-road"></i> Lễ Tốt Nghiệp
+                    <i class="fa-solid fa-road"></i> Graduation Ceremony
                 </button>
             </div>
         </div>
@@ -449,13 +460,13 @@
             <img src="" alt="Graduation" class="tunnel-info-img" id="tunnel-info-img" loading="lazy" decoding="async">
             <div class="tunnel-info-text">
                 <div class="tunnel-info-badge" id="tunnel-info-school">Swiss UMEF</div>
-                <h4 class="tunnel-info-title" id="tunnel-info-title">Lễ tốt nghiệp 2025</h4>
+                <h4 class="tunnel-info-title" id="tunnel-info-title">Graduation Ceremony 2025</h4>
                 <div class="tunnel-info-meta">
                     <span><i class="fa-solid fa-location-dot"></i> <span id="tunnel-info-location">Geneva</span></span>
                     <span><i class="fa-solid fa-calendar-days"></i> <span id="tunnel-info-time">10/2025</span></span>
                 </div>
             </div>
-            <a href="#" target="_blank" class="tunnel-info-btn" id="tunnel-info-btn">Xem Album ảnh</a>
+            <a href="#" target="_blank" class="tunnel-info-btn" id="tunnel-info-btn">View Photo Album</a>
         </div>
 
         <!-- SCROLL INSTRUCTIONS -->
@@ -463,7 +474,7 @@
             <div class="scroll-mouse-icon">
                 <div class="scroll-mouse-wheel"></div>
             </div>
-            <span class="scroll-text-vertical">Cuộn chuột để bay</span>
+            <span class="scroll-text-vertical">Scroll to fly</span>
         </div>
 
         <!-- TOGGLE TRIGGERS -->
@@ -476,7 +487,7 @@
     </div>
 
     <!-- ═══════════════════════════════════════
-         BOOKING MODAL - Đặt lịch tư vấn
+         BOOKING MODAL - Request Consultation
     ═══════════════════════════════════════ -->
     <div class="bk-modal" id="bk-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="bk-title">
         <div class="bk-overlay" id="bk-overlay"></div>
@@ -497,9 +508,9 @@
                     <div class="bk-progress-fill" id="bk-progress-fill"></div>
                 </div>
                 <div class="bk-steps-label">
-                    <span class="bk-step-lbl active" data-step="1">Thông tin</span>
-                    <span class="bk-step-lbl" data-step="2">Chọn lịch</span>
-                    <span class="bk-step-lbl" data-step="3">Xác nhận</span>
+                    <span class="bk-step-lbl active" data-step="1">Information</span>
+                    <span class="bk-step-lbl" data-step="2">Choose Date</span>
+                    <span class="bk-step-lbl" data-step="3">Confirmation</span>
                 </div>
             </div>
 
@@ -514,22 +525,22 @@
                         </svg>
                     </div>
                     <div>
-                        <div class="bk-step-badge">BƯỚC 1 / 3</div>
-                        <h2 class="bk-step-title" id="bk-title">Thông tin của bạn</h2>
-                        <p class="bk-step-sub">Điền thông tin để chuyên viên chuẩn bị buổi tư vấn phù hợp nhất</p>
+                        <div class="bk-step-badge">STEP 1 / 3</div>
+                        <h2 class="bk-step-title" id="bk-title">Your Details</h2>
+                        <p class="bk-step-sub">Please provide details so we can prepare the best consultation session</p>
                     </div>
                 </div>
 
                 <form class="bk-form" id="bk-form-1" novalidate>
                     <div class="bk-field">
-                        <label for="bk-name">Họ và tên <span class="bk-required">*</span></label>
+                        <label for="bk-name">Full Name <span class="bk-required">*</span></label>
                         <div class="bk-input-wrap">
                             <svg class="bk-input-icon" width="16" height="16" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="1.8">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
-                            <input type="text" id="bk-name" name="bk-name" placeholder="Nguyễn Văn A"
+                            <input type="text" id="bk-name" name="bk-name" placeholder="John Doe"
                                 autocomplete="name" required />
                         </div>
                         <span class="bk-err" id="bk-name-err"></span>
@@ -537,7 +548,7 @@
 
                     <div class="bk-row-2">
                         <div class="bk-field">
-                            <label for="bk-phone">Số điện thoại <span class="bk-required">*</span></label>
+                            <label for="bk-phone">Phone Number <span class="bk-required">*</span></label>
                             <div class="bk-input-wrap">
                                 <svg class="bk-input-icon" width="16" height="16" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor" stroke-width="1.8">
@@ -566,28 +577,28 @@
 
                     <div class="bk-row-2">
                         <div class="bk-field">
-                            <label for="bk-edu">Trình độ học vấn <span class="bk-required">*</span></label>
+                            <label for="bk-edu">Highest Education <span class="bk-required">*</span></label>
                             <div class="bk-select-wrap">
                                 <select id="bk-edu" name="bk-edu" required>
-                                    <option value="">-- Chọn trình độ --</option>
-                                    <option value="highschool">THPT / Trung cấp</option>
-                                    <option value="college">Cao đẳng</option>
-                                    <option value="bachelor">Cử nhân</option>
-                                    <option value="master">Thạc sĩ</option>
-                                    <option value="other">Khác</option>
+                                    <option value="">-- Select English Level --</option>
+                                    <option value="highschool">THPT / Vocational Certificate</option>
+                                    <option value="college">College/Diploma</option>
+                                    <option value="bachelor">Bachelor's Degree</option>
+                                    <option value="master">Master's Degree</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </div>
                             <span class="bk-err" id="bk-edu-err"></span>
                         </div>
                         <div class="bk-field">
-                            <label for="bk-eng">Trình độ Tiếng Anh <span class="bk-required">*</span></label>
+                            <label for="bk-eng">English Proficiency <span class="bk-required">*</span></label>
                             <div class="bk-select-wrap">
                                 <select id="bk-eng" name="bk-eng" required>
-                                    <option value="">-- Chọn trình độ --</option>
-                                    <option value="below-5.0">Dưới IELTS 5.0</option>
+                                    <option value="">-- Select English Level --</option>
+                                    <option value="below-5.0">Below IELTS 5.0</option>
                                     <option value="5.0-5.5">IELTS 5.0 – 5.5</option>
                                     <option value="6.0-plus">IELTS 6.0+</option>
-                                    <option value="other">Khác / Chưa thi</option>
+                                    <option value="other">Other / Not Taken</option>
                                 </select>
                             </div>
                             <span class="bk-err" id="bk-eng-err"></span>
@@ -595,22 +606,22 @@
                     </div>
 
                     <div class="bk-field">
-                        <label>Chương trình quan tâm <span class="bk-required">*</span></label>
+                        <label>Program of Interest <span class="bk-required">*</span></label>
                         <div class="bk-program-grid" id="bk-program-grid">
                             <label class="bk-program-card">
                                 <input type="radio" name="bk-program" value="MBA High Quality" checked />
                                 <div class="bk-program-inner">
                                     <div class="bk-program-icon">🎓</div>
                                     <div class="bk-program-name">MBA / BBA / DBA</div>
-                                    <div class="bk-program-desc">Chương trình chất lượng cao</div>
+                                    <div class="bk-program-desc">High-quality program</div>
                                 </div>
                             </label>
                             <label class="bk-program-card">
-                                <input type="radio" name="bk-program" value="Chưa quyết định" />
+                                <input type="radio" name="bk-program" value="Undecided" />
                                 <div class="bk-program-inner">
                                     <div class="bk-program-icon">💡</div>
-                                    <div class="bk-program-name">Cần tư vấn chọn trường</div>
-                                    <div class="bk-program-desc">Hỗ trợ định hướng lộ trình</div>
+                                    <div class="bk-program-name">Need advice on choosing school</div>
+                                    <div class="bk-program-desc">Need career path guidance</div>
                                 </div>
                             </label>
                         </div>
@@ -618,9 +629,9 @@
                     </div>
 
                     <button type="button" class="bk-btn-next" id="bk-next-1"
-                        aria-label="Sang bước tiếp theo: chọn lịch">
-                        Tiếp theo - Chọn lịch
-                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        aria-label="Proceed to the next step: select date and time">
+                        Next - Choose Schedule
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
@@ -641,22 +652,22 @@
                         </svg>
                     </div>
                     <div>
-                        <div class="bk-step-badge">BƯỚC 2 / 3</div>
-                        <h2 class="bk-step-title">Chọn ngày &amp; giờ</h2>
-                        <p class="bk-step-sub">Chọn thời gian phù hợp để chuyên viên gọi tư vấn cho bạn</p>
+                        <div class="bk-step-badge">STEP 2 / 3</div>
+                        <h2 class="bk-step-title">Select Date &amp; Time</h2>
+                        <p class="bk-step-sub">Select a convenient time for an advisor to call you</p>
                     </div>
                 </div>
 
                 <div class="bk-calendar-wrap">
                     <div class="bk-cal-header">
-                        <button type="button" class="bk-cal-nav" id="bk-cal-prev" aria-label="Tháng trước">
+                        <button type="button" class="bk-cal-nav" id="bk-cal-prev" aria-label="Previous Month">
                             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 stroke-width="2.5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                             </svg>
                         </button>
                         <span class="bk-cal-month-label" id="bk-cal-month-label"></span>
-                        <button type="button" class="bk-cal-nav" id="bk-cal-next" aria-label="Tháng tiếp theo">
+                        <button type="button" class="bk-cal-nav" id="bk-cal-next" aria-label="Next Month">
                             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 stroke-width="2.5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -676,24 +687,24 @@
                             <circle cx="12" cy="12" r="10" />
                             <polyline points="12 6 12 12 16 14" />
                         </svg>
-                        <span id="bk-selected-date-label">Vui lòng chọn ngày trước</span>
+                        <span id="bk-selected-date-label">Please select a date first</span>
                     </div>
                     <div class="bk-time-grid" id="bk-time-grid"></div>
                     <span class="bk-err" id="bk-time-err"></span>
                 </div>
 
                 <div class="bk-step-actions">
-                    <button type="button" class="bk-btn-back" id="bk-back-2" aria-label="Quay lại bước trước">
+                    <button type="button" class="bk-btn-back" id="bk-back-2" aria-label="Go back to the previous step">
                         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7" />
                         </svg>
-                        Quay lại
-                    </button>
+                        Back
+                        </button>
                     <button type="button" class="bk-btn-next" id="bk-next-2"
-                        aria-label="Sang bước tiếp theo: xem xác nhận">
-                        Xem xác nhận
-                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        aria-label="Proceed to the next step: view confirmation">
+                        View Confirmation
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
@@ -712,9 +723,9 @@
                         </svg>
                     </div>
                     <div>
-                        <div class="bk-step-badge bk-badge-green">BƯỚC 3 / 3</div>
-                        <h2 class="bk-step-title">Xác nhận lịch hẹn</h2>
-                        <p class="bk-step-sub">Vui lòng kiểm tra lại thông tin trước khi xác nhận</p>
+                        <div class="bk-step-badge bk-badge-green">STEP 3 / 3</div>
+                        <h2 class="bk-step-title">Confirm Appointment</h2>
+                        <p class="bk-step-sub">Please review your information before confirming</p>
                     </div>
                 </div>
 
@@ -731,7 +742,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="bk-sum-label">Ngày hẹn</div>
+                                <div class="bk-sum-label">Date</div>
                                 <div class="bk-sum-value" id="bk-confirm-date">-</div>
                             </div>
                         </div>
@@ -745,7 +756,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="bk-sum-label">Giờ tư vấn</div>
+                                <div class="bk-sum-label">Time</div>
                                 <div class="bk-sum-value" id="bk-confirm-time">-</div>
                             </div>
                         </div>
@@ -793,25 +804,25 @@
                             <line x1="12" y1="8" x2="12" y2="12" />
                             <line x1="12" y1="16" x2="12.01" y2="16" />
                         </svg>
-                        Chuyên viên sẽ gọi cho bạn đúng giờ đã đặt. Nếu cần thay đổi, bạn có thể liên hệ hotline.
+                        An advisor will call you exactly at the scheduled time. If you need changes, please contact the hotline.
                     </div>
                 </div>
 
                 <div class="bk-step-actions">
-                    <button type="button" class="bk-btn-back" id="bk-back-3" aria-label="Quay lại chỉnh sửa thông tin">
+                    <button type="button" class="bk-btn-back" id="bk-back-3" aria-label="Go back to edit information">
                         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7" />
                         </svg>
-                        Chỉnh sửa
-                    </button>
-                    <button type="button" class="bk-btn-confirm" id="bk-confirm-btn" aria-label="Xác nhận đặt lịch">
+                        Edit
+                        </button>
+                    <button type="button" class="bk-btn-confirm" id="bk-confirm-btn" aria-label="Confirm Booking">
                         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
-                        Xác nhận đặt lịch
-                    </button>
+                        Confirm Booking
+                            </button>
                 </div>
             </div>
 
@@ -824,10 +835,10 @@
                             <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" class="bk-checkmark__check" />
                         </svg>
                     </div>
-                    <div class="bk-success-badge">ĐÃ XÁC NHẬN</div>
-                    <h2 class="bk-success-title">Đặt lịch thành công!</h2>
-                    <p class="bk-success-sub">Cảm ơn <strong id="bk-success-name"></strong>! Chuyên viên IDEAS sẽ gọi
-                        cho bạn vào:</p>
+                    <div class="bk-success-badge">CONFIRMED</div>
+                    <h2 class="bk-success-title">Booking Successful!</h2>
+                    <p class="bk-success-sub">Thank you <strong id="bk-success-name"></strong>! An IDEAS specialist will call
+                        you on:</p>
                     <div class="bk-success-datetime">
                         <div class="bk-suc-dt">
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -849,9 +860,9 @@
                             <span id="bk-success-time"></span>
                         </div>
                     </div>
-                    <p class="bk-success-note">Một email xác nhận đã được gửi tới hộp thư của bạn.</p>
-                    <button type="button" class="bk-btn-done" id="bk-done-btn" aria-label="Hoàn tất và đóng modal">
-                        Hoàn tất
+                    <p class="bk-success-note">A confirmation email has been sent to your email address.</p>
+                    <button type="button" class="bk-btn-done" id="bk-done-btn" aria-label="Complete and close modal">
+                        Complete
                         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
@@ -868,11 +879,10 @@
     ═══════════════════════════════════════ -->
     <div class="compare-modal" id="compare-modal" role="dialog" aria-modal="true" aria-hidden="true">
         <div class="compare-modal-content">
-            <button class="compare-modal-close" id="compare-modal-close" aria-label="Đóng so sánh">&times;</button>
+            <button class="compare-modal-close" id="compare-modal-close" aria-label="Close Comparison">&times;</button>
             <div class="compare-modal-header">
-                <h3>So Sánh Các Chương Trình Đào Tạo</h3>
-                <p>Chi tiết các thông tin về trường đại học, quốc gia cấp bằng, thời gian học, tín chỉ và học phí của
-                    các chương trình.</p>
+                <h3>Compare Educational Programs</h3>
+                <p>Detailed information about the university, degree-awarding country, duration, credits, and tuition fees of the programs.</p>
             </div>
             <div class="compare-table-wrapper">
                 <table class="compare-table" id="compare-table">
@@ -880,18 +890,18 @@
                 </table>
             </div>
             <div class="compare-modal-footer">
-                <button class="btn btn-outline" id="compare-close-btn" style="border-radius: 9999px;">Đóng bảng so
-                    sánh</button>
+                <button class="btn btn-outline" id="compare-close-btn" style="border-radius: 9999px;">Close comparison
+                    table</button>
             </div>
         </div>
     </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>window.THREE || document.write('<script src="homepage-assets/js/three.min.js"><\/script>')</script>
-    <script src="common-assets/js/variables.min.js?v=1780560560028" defer></script>
-    <script src="homepage-assets/js/main.js?v=1.5" defer></script>
-    <script src="common-assets/js/booking-modal.min.js?v=1780560560028" defer></script>
+    <script>window.THREE || document.write('<script src="../homepage-assets/js/three.min.js"><\/script>')</script>
+    <script src="../common-assets/js/variables-en.min.js?v=1780560560028" defer></script>
+    <script src="../homepage-assets/js/main.js?v=1.5" defer></script>
+    <script src="../common-assets/js/booking-modal.min.js?v=1780560560028" defer></script>
 </body>
 
 </html>

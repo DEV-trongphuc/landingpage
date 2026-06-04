@@ -68,7 +68,8 @@ const assets = [
   { type: 'css', src: 'common-assets/css/booking-modal.css', dist: 'common-assets/css/booking-modal.min.css' },
   { type: 'js', src: 'common-assets/js/script.js', dist: 'common-assets/js/script.min.js' },
   { type: 'js', src: 'common-assets/js/booking-modal.js', dist: 'common-assets/js/booking-modal.min.js' },
-  { type: 'js', src: 'common-assets/js/variables.js', dist: 'common-assets/js/variables.min.js' }
+  { type: 'js', src: 'common-assets/js/variables.js', dist: 'common-assets/js/variables.min.js' },
+  { type: 'js', src: 'common-assets/js/variables-en.js', dist: 'common-assets/js/variables-en.min.js' }
 ];
 
 assets.forEach(asset => {

@@ -63,7 +63,7 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 760px;
+    max-width: 900px;
     background: #ffffff;
     border-radius: 28px;
     box-shadow: 0 50px 120px -20px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.06);

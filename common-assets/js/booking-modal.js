@@ -41,6 +41,8 @@
 (function () {
     'use strict';
 
+    const isEn = document.documentElement.lang === 'en';
+
     function lockScroll() {
         document.body.style.overflow = 'hidden';
         if (window.lenis) {
@@ -355,28 +357,36 @@
         clearErr('bk-edu-err');
         clearErr('bk-eng-err');
 
+        let ok = true;
+        clearErr('bk-name-err');
+        clearErr('bk-phone-err');
+        clearErr('bk-email-err');
+        clearErr('bk-program-err');
+        clearErr('bk-edu-err');
+        clearErr('bk-eng-err');
+
         if (!name || !name.value.trim()) {
-            showErr('bk-name-err', 'Vui lòng nhập họ và tên.');
+            showErr('bk-name-err', isEn ? 'Please enter your full name.' : 'Vui lòng nhập họ và tên.');
             ok = false;
         }
         if (!phone || !isValidPhone(phone.value)) {
-            showErr('bk-phone-err', 'Số điện thoại không hợp lệ (VD: 0912345678 hoặc +84912345678).');
+            showErr('bk-phone-err', isEn ? 'Invalid phone number (e.g. 0912345678).' : 'Số điện thoại không hợp lệ (VD: 0912345678 hoặc +84912345678).');
             ok = false;
         }
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-            showErr('bk-email-err', 'Địa chỉ email không hợp lệ.');
+            showErr('bk-email-err', isEn ? 'Invalid email address.' : 'Địa chỉ email không hợp lệ.');
             ok = false;
         }
         if (!program) {
-            showErr('bk-program-err', 'Vui lòng chọn chương trình quan tâm.');
+            showErr('bk-program-err', isEn ? 'Please select a program of interest.' : 'Vui lòng chọn chương trình quan tâm.');
             ok = false;
         }
         if (!edu || !edu.value) {
-            showErr('bk-edu-err', 'Vui lòng chọn trình độ học vấn.');
+            showErr('bk-edu-err', isEn ? 'Please select your education level.' : 'Vui lòng chọn trình độ học vấn.');
             ok = false;
         }
         if (!eng || !eng.value) {
-            showErr('bk-eng-err', 'Vui lòng chọn trình độ Tiếng Anh.');
+            showErr('bk-eng-err', isEn ? 'Please select your English level.' : 'Vui lòng chọn trình độ Tiếng Anh.');
             ok = false;
         }
 
@@ -390,11 +400,11 @@
     if (next2) next2.addEventListener('click', () => {
         clearErr('bk-time-err');
         if (!state.selectedDate) {
-            showErr('bk-time-err', 'Vui lòng chọn ngày tư vấn.');
+            showErr('bk-time-err', isEn ? 'Please select a consultation date.' : 'Vui lòng chọn ngày tư vấn.');
             return;
         }
         if (!state.selectedTime) {
-            showErr('bk-time-err', 'Vui lòng chọn khung giờ.');
+            showErr('bk-time-err', isEn ? 'Please select a time slot.' : 'Vui lòng chọn khung giờ.');
             return;
         }
         populateConfirmation();
@@ -421,8 +431,8 @@
         const dateStr = formatDateFull(state.selectedDate);
         const timeStr = state.selectedTime || '';
 
-        // time_dat_lich: e.g. "Thứ tư, 4/3/2026 lúc 08:30"
-        const timeDatLich = dateStr && timeStr ? `${dateStr} lúc ${timeStr}` : '';
+        // time_dat_lich: e.g. "Thứ tư, 4/3/2026 lúc 08:30" or "Wednesday, 3/4/2026 at 08:30"
+        const timeDatLich = dateStr && timeStr ? (isEn ? `${dateStr} at ${timeStr}` : `${dateStr} lúc ${timeStr}`) : '';
         // note_dat_lich: program + optional education/english
         const eduVal = eduEl ? eduEl.value : '';
         const engVal = engEl ? engEl.value : '';
@@ -432,7 +442,16 @@
             const val = el.value;
             if (!val) return '';
             if (el.selectedIndex >= 0) return el.options[el.selectedIndex].text;
-            const mapping = {
+            const mapping = isEn ? {
+                'highschool': 'High School',
+                'college': 'College/Diploma',
+                'bachelor': 'Bachelor',
+                'master': 'Master',
+                'other': 'Other',
+                'below-5.0': 'Below IELTS 5.0',
+                '5.0-5.5': 'IELTS 5.0 - 5.5',
+                '6.0-plus': 'IELTS 6.0+'
+            } : {
                 'highschool': 'THPT',
                 'college': 'Cao đẳng',
                 'bachelor': 'Cử nhân',
@@ -524,7 +543,7 @@
         // Loading state
         confirmB.disabled = true;
         const origText = confirmB.innerHTML;
-        confirmB.innerHTML = '<span>Đang gửi...</span>';
+        confirmB.innerHTML = isEn ? '<span>Sending...</span>' : '<span>Đang gửi...</span>';
         confirmB.style.opacity = '0.7';
 
         const p1 = fetch("https://automation.ideas.edu.vn/mail_api/forms.php?route=submit", {
@@ -644,7 +663,9 @@
 
         const MONTHS_VI = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6',
             'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'];
-        label.textContent = `${MONTHS_VI[state.calMonth]} ${state.calYear}`;
+        const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'];
+        label.textContent = isEn ? `${MONTHS_EN[state.calMonth]} ${state.calYear}` : `${MONTHS_VI[state.calMonth]} ${state.calYear}`;
 
         const firstDay = new Date(state.calYear, state.calMonth, 1);
         let startDow = firstDay.getDay(); // 0=Sun … 6=Sat
@@ -702,12 +723,12 @@
         if (!grid || !label) return;
 
         if (!state.selectedDate) {
-            label.textContent = 'Vui lòng chọn ngày trước';
+            label.textContent = isEn ? 'Please select a date first' : 'Vui lòng chọn ngày trước';
             grid.innerHTML = '';
             return;
         }
 
-        label.textContent = 'Khung giờ có sẵn - ' + formatDateShort(state.selectedDate);
+        label.textContent = (isEn ? 'Available slots - ' : 'Khung giờ có sẵn - ') + formatDateShort(state.selectedDate);
         grid.innerHTML = '';
 
         timeSlots.forEach(t => {
@@ -743,10 +764,13 @@
 
     /* ── Date formatting ──────────────────── */
     const DAYS_VI = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'];
+    const DAYS_EN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     function formatDateFull(d) {
         if (!d) return '-';
-        return `${DAYS_VI[d.getDay()]}, ${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
+        return isEn 
+            ? `${DAYS_EN[d.getDay()]}, ${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()}`
+            : `${DAYS_VI[d.getDay()]}, ${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
     }
     function formatDateShort(d) {
         if (!d) return '';

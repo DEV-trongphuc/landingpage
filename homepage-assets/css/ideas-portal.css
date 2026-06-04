@@ -1806,3 +1806,126 @@ button {
     }
 }
 
+/* ==========================================================================
+   LANGUAGE SWITCHER STYLES
+   ========================================================================== */
+.lang-switcher-wrapper {
+  position: relative;
+  display: inline-block;
+  z-index: 1000;
+}
+
+.lang-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.lang-toggle-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.lang-toggle-btn svg.flag-icon {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.lang-toggle-btn svg.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+.lang-switcher-wrapper:hover .lang-toggle-btn svg.chevron-icon {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 2px);
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 16px;
+  padding: 8px;
+  min-width: 140px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.lang-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: transparent;
+}
+
+.lang-switcher-wrapper:hover .lang-dropdown-menu,
+.lang-switcher-wrapper.active .lang-dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.lang-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  width: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.lang-dropdown-item:hover {
+  background: #f1f5f9;
+  color: #ab0e00;
+}
+
+.lang-dropdown-item.active {
+  background: rgba(171, 14, 0, 0.08);
+  color: #ab0e00;
+}
+
+.lang-dropdown-item svg.flag-icon {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
