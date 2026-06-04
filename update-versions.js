@@ -18,7 +18,7 @@ files.forEach(file => {
 
     // Regex tìm các đường dẫn tài nguyên trong common-assets (cả CSS và JS) có hoặc không có tham số ?v=
     // Khớp: href="common-assets/css/style.css?v=4.3" hoặc src="common-assets/js/variables.js"
-    const regex = /(href|src)="common-assets\/((?:css|js)\/[\w-]+\.(?:css|js))(?:\?v=([\w.]+))?"/g;
+    const regex = /(href|src)="common-assets\/((?:css|js)\/[\w.-]+\.(?:css|js))(?:\?v=([\w.]+))?"/g;
 
     const newContent = content.replace(regex, (match, attr, assetPath, currentVersion) => {
         let newVersion;

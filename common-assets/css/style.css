@@ -5247,8 +5247,8 @@ button.nav-link {
 
 .dropdown-item .item-avatar {
   width: 89.6px;
-  height: 63px;
-  /* 1.42 aspect ratio to match actual image dimensions */
+  height: auto !important;
+  aspect-ratio: auto !important;
   border-radius: 8px;
   object-fit: cover;
   flex-shrink: 0;
@@ -7720,8 +7720,8 @@ h6,
 
   .mobile-dropdown-item .item-avatar {
     width: 44.8px !important;
-    height: 31.5px !important;
-    /* 1.42 aspect ratio to match actual image dimensions */
+    height: auto !important;
+    aspect-ratio: auto !important;
     border-radius: 4px !important;
     object-fit: cover !important;
     border: 1.5px solid #f1f5f9 !important;
@@ -10066,7 +10066,8 @@ body .pcv2-featured .pcv2-features li {
 
 .mobile-dropdown-item .item-avatar {
   width: 38.4px !important;
-  height: 27px !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
 }
 
 .mobile-dropdown-item .item-title {

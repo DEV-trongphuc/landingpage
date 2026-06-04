@@ -28,7 +28,7 @@ const IDEAS_DATA = {
             ],
             link_iframe: "https://www.youtube.com/embed/ZrLeuFGGXQI?si=0tiJvbnRDzwEyo3B",
             listImgs: [
-                "https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg"
             ],
@@ -131,7 +131,7 @@ const IDEAS_DATA = {
             link_iframe:
                 "https://www.youtube.com/embed/ZrLeuFGGXQI?si=o8eCXmmewBzKvCgT",
             listImgs: [
-                "https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6740.jpg",
@@ -429,7 +429,7 @@ const IDEAS_DATA = {
             link_iframe:
                 "https://www.youtube.com/embed/ZrLeuFGGXQI?si=0tiJvbnRDzwEyo3B",
             listImgs: [
-                "https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6740.jpg",
@@ -706,7 +706,7 @@ const IDEAS_DATA = {
             link_iframe:
                 "https://www.youtube.com/embed/mB0mDrgjVNs?si=wP6X9bDGqVVR2R28",
             listImgs: [
-                "https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6740.jpg",
@@ -984,7 +984,7 @@ const IDEAS_DATA = {
             ],
             link_iframe: "https://www.youtube.com/embed/mB0mDrgjVNs?si=wP6X9bDGqVVR2R28",
             listImgs: [
-                "https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg"
             ],
@@ -1295,7 +1295,7 @@ const IDEAS_DATA = {
             link_iframe:
                 "https://www.youtube.com/embed/ZrLeuFGGXQI?si=0tiJvbnRDzwEyo3B",
             listImgs: [
-                "https://ideas.edu.vn/wp-content/uploads/2025/11/ltnumef10202501.jpg",
+                "https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSC_9177.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6555.jpg",
                 "https://ideas.edu.vn/wp-content/uploads/2025/11/DSCF6740.jpg",
