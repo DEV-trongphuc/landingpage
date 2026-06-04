@@ -61,9 +61,9 @@
                                     nhận</em>
                                 quốc tế</h2> -> Hệ thống Kiểm định &amp; Công nhận quốc tế
 <h2 class="section-title reveal-up" id="gallery-headline">
-                    Hơn 2502 học viên đã tốt nghiệp<br />
+                    Hơn 2571 học viên đã tốt nghiệp<br />
                     <span class="gradient-text">Swiss UMEF cùng IDEAS</span>
-                </h2> -> Hơn 2502 học viên đã tốt nghiệp Swiss UMEF cùng IDEAS
+                </h2> -> Hơn 2571 học viên đã tốt nghiệp Swiss UMEF cùng IDEAS
 <h3 class="testimonials-title" id="testimonials-headline">Học viên nói gì về chương trình</h3> -> Học viên nói gì về chương trình
 <h4 class="testi-v4-name">Nguyễn Thanh Bình</h4> -> Nguyễn Thanh Bình
 <h4 class="testi-v4-name">Nguyễn Huỳnh Phương</h4> -> Nguyễn Huỳnh Phương

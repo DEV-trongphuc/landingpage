@@ -4,7 +4,7 @@ let renderAlert = null;
 let renderMedia = null;
 const IDEAS_DATA = {
     year_count: 14,
-    students_count: 2502,
+    students_count: 2571,
     courses_count: 74,
     teachers_count: 28,
     facebook_link: "https://www.facebook.com/ideas.edu.vn/",
