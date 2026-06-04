@@ -9067,8 +9067,24 @@ html.lenis {
   transform: translateY(-1px) !important;
 }
 
+.vn-ceremony-footer {
+  background: #ffffff;
+  padding: 16px 32px 24px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  z-index: 2;
+}
+
 /* Responsiveness for VN modal */
 @media (max-width: 640px) {
+  .vn-ceremony-footer {
+    padding: 16px 20px 20px;
+  }
+
   .vn-ceremony-header {
     padding: 16px 20px;
   }

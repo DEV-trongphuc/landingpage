@@ -1806,36 +1806,6 @@ document.addEventListener('keydown', (e) => {
                         </div>
                         <div class="vn-ceremony-content" data-lenis-prevent>
                             <div class="vn-timeline">
-<!-- Event 1: 21/04/2026 -->
-                                <div class="vn-timeline-item">
-                                <div class="vn-timeline-badge"></div>
-                                <div class="vn-timeline-date">21/04/2026</div>
-                                <div class="vn-card">
-                                <div class="vn-card-img-wrap">
-                                <img decoding="async"
-                                src="https://ideas.edu.vn/wp-content/uploads/2026/04/recap_growverth.webp"
-                                alt="IDEAS x GrowthVerse 2026" loading="lazy">
-                                </div>
-                                <div class="vn-card-info">
-                                <a href="https://www.facebook.com/share/p/18FBbmmySq/"
-                                target="_blank" rel="noopener" class="vn-card-title">IDEAS x GrowthVerse 2026</a>
-                                <div class="vn-card-meta">
-                                <p><i class="fa-solid fa-graduation-cap"></i> IDEAS &mdash; Swiss UMEF</p>
-                                <p><i class="fa-solid fa-location-dot"></i> SIHUB - Hồ Chí Minh</p>
-                                </div>
-                                <a href="https://www.facebook.com/share/p/18FBbmmySq/"
-                                target="_blank" rel="noopener" class="vn-card-play"
-                                aria-label="Xem chi tiết">
-                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg>
-                                </a>
-                                </div>
-                                </div>
-                                </div>
-
                                 <!-- Event 2: 27/12/2025 -->
                                 <div class="vn-timeline-item">
                                 <div class="vn-timeline-badge"></div>
