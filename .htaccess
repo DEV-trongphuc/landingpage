@@ -6,18 +6,67 @@ RewriteEngine On
 RewriteCond %{REQUEST_URI} !^/wp-content/new_public/LANDINGPAGE_MBA/
 RewriteRule (?:^|/)(common-assets|homepage-assets|assets)/(.*)$ /wp-content/new_public/LANDINGPAGE_MBA/$1/$2 [L,NC]
 
-# Redirect direct access to .html files to their clean URLs
+# --- 1. REDIRECTS (301) to Clean URLs ---
+
+# Redirect direct access to physical Vietnamese .html files under wp-content
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^/?wp-content/new_public/LANDINGPAGE_MBA/(mba|mscai|emba|bba|fullbba|mbainai|dual-dba|dat-lich)\.html$ /$1 [R=301,L,NC]
 
+# Redirect direct access to physical English .html files under wp-content
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^/?wp-content/new_public/LANDINGPAGE_MBA/en/(mba|mscai|emba|bba|fullbba|mbainai|dual-dba|dat-lich)\.html$ /en/$1 [R=301,L,NC]
+
+# Redirect direct access to physical English index.html under wp-content
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^/?wp-content/new_public/LANDINGPAGE_MBA/en/index\.html$ /en [R=301,L,NC]
+
+# Redirect direct access to root-level Vietnamese .html files to clean URLs
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^(mba|mscai|emba|bba|fullbba|mbainai|dual-dba|dat-lich)\.html$ /$1 [R=301,L,NC]
+
+# Redirect direct access to root-level English/legacy .html files to clean URLs
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^(mba|mscai|emba|bba|fullbba|mbainai|bba)-en\.html$ /en/$1 [R=301,L,NC]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^index-en\.html$ /en [R=301,L,NC]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^dual-dba-estiam-rb-en$ /en/dual-dba-estiam-rb [R=301,L,NC]
+
+# Redirect legacy/portal CTA Vietnamese URLs to clean URLs
+RewriteRule ^swiss-umef-online-mba/?$ /mba [R=301,L,NC]
+RewriteRule ^swiss-umef-executive-mba/?$ /emba [R=301,L,NC]
+RewriteRule ^swiss-umef-msc-ai/?$ /mscai [R=301,L,NC]
+RewriteRule ^swiss-umef-top-up-bba/?$ /bba [R=301,L,NC]
+
+# Redirect legacy/portal CTA English URLs to clean URLs
+RewriteRule ^swiss-umef-online-mba-en/?$ /en/mba [R=301,L,NC]
+RewriteRule ^swiss-umef-executive-mba-en/?$ /en/emba [R=301,L,NC]
+RewriteRule ^swiss-umef-msc-ai-en/?$ /en/mscai [R=301,L,NC]
+RewriteRule ^swiss-umef-topup-bba-en/?$ /en/bba [R=301,L,NC]
+
+
+# --- 2. INTERNAL REWRITES (Silently map clean URLs to physical files) ---
+
+# Vietnamese clean URLs
 RewriteRule ^mba/?$ /wp-content/new_public/LANDINGPAGE_MBA/mba.html [L]
-RewriteRule ^mscai/?$ /wp-content/new_public/LANDINGPAGE_MBA/mscai.html [L]
+RewriteRule ^msc-?ai/?$ /wp-content/new_public/LANDINGPAGE_MBA/mscai.html [L,NC]
 RewriteRule ^emba/?$ /wp-content/new_public/LANDINGPAGE_MBA/emba.html [L]
 RewriteRule ^bba/?$ /wp-content/new_public/LANDINGPAGE_MBA/bba.html [L]
 RewriteRule ^fullbba/?$ /wp-content/new_public/LANDINGPAGE_MBA/fullbba.html [L]
-RewriteRule ^mbainai/?$ /wp-content/new_public/LANDINGPAGE_MBA/mbainai.html [L]
-RewriteRule ^dual-dba(-estiam-rb)?/?$ /wp-content/new_public/LANDINGPAGE_MBA/dual-dba.html [L]
+RewriteRule ^(mba-in-ai|mbainai)/?$ /wp-content/new_public/LANDINGPAGE_MBA/mbainai.html [L,NC]
+RewriteRule ^dual-dba(-estiam-rb)?/?$ /wp-content/new_public/LANDINGPAGE_MBA/dual-dba.html [L,NC]
 RewriteRule ^dat-lich/?$ /wp-content/new_public/LANDINGPAGE_MBA/dat-lich.html [L]
+
+# English clean URLs
+RewriteRule ^en/?$ /wp-content/new_public/LANDINGPAGE_MBA/en/index.html [L]
+RewriteRule ^en/mba/?$ /wp-content/new_public/LANDINGPAGE_MBA/en/mba.html [L]
+RewriteRule ^en/msc-?ai/?$ /wp-content/new_public/LANDINGPAGE_MBA/en/mscai.html [L,NC]
+RewriteRule ^en/emba/?$ /wp-content/new_public/LANDINGPAGE_MBA/en/emba.html [L]
+RewriteRule ^en/bba/?$ /wp-content/new_public/LANDINGPAGE_MBA/en/bba.html [L]
+RewriteRule ^en/fullbba/?$ /wp-content/new_public/LANDINGPAGE_MBA/en/fullbba.html [L]
+RewriteRule ^en/(mba-in-ai|mbainai)/?$ /wp-content/new_public/LANDINGPAGE_MBA/en/mbainai.html [L,NC]
+RewriteRule ^en/dual-dba(-estiam-rb)?/?$ /wp-content/new_public/LANDINGPAGE_MBA/en/dual-dba.html [L,NC]
+RewriteRule ^en/dat-lich/?$ /wp-content/new_public/LANDINGPAGE_MBA/en/dat-lich.html [L]
 
 # Route riêng cho landing xét duyệt (giữ nguyên rule cũ)
 RewriteRule ^xet-duyet-ho-so-truc-tuyen/?$ /wp-content/index.html [L]

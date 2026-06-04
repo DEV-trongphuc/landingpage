@@ -46,7 +46,7 @@ const IDEAS_DATA = {
             subjects: "<b>180</b> ECTS - <b>34</b> courses and Graduation Thesis",
             duration: "36 months",
             tagline: "Swiss UMEF: First private university in Geneva to achieve the highest Swiss Federal Accreditation (SAC) - officially recognized by the Swiss Higher Education Council",
-            link: "/fullbba-en.html",
+            link: "/en/fullbba",
             experience: [
                 "High school graduate or equivalent",
                 "Passed the Admissions Board screening requirements",
@@ -179,7 +179,7 @@ const IDEAS_DATA = {
                 "2 sessions/course (Sunday)",
             ],
             tagline: "Swiss UMEF: First private university in Geneva to achieve the highest Swiss Federal Accreditation (SAC) - officially recognized by the Swiss Higher Education Council",
-            link: "/swiss-umef-online-mba-en",
+            link: "/en/mba",
             description: "The Online MBA program is tailored for busy professionals. The degree is accredited by the Swiss Federal Council, guaranteeing international value, providing practical knowledge, and matching global business trends.",
             demographic: {
                 jobs: [
@@ -328,7 +328,7 @@ const IDEAS_DATA = {
                 "2 sessions/course (Sunday)",
             ],
             tagline: "Swiss UMEF: First private university in Geneva to achieve the highest Swiss Federal Accreditation (SAC) - officially recognized by the Swiss Higher Education Council",
-            link: "/swiss-umef-executive-mba-en",
+            link: "/en/emba",
             description: "The Online EMBA program is designed for busy professionals. The degree is accredited by the Swiss Federal Council, guaranteeing international value, providing practical knowledge, and matching global business trends.",
             demographic: {
                 jobs: [
@@ -466,7 +466,7 @@ const IDEAS_DATA = {
                 "2 sessions/course (Sunday)",
             ],
             tagline: "Swiss UMEF: First private university in Geneva to achieve the highest Swiss Federal Accreditation (SAC) - officially recognized by the Swiss Higher Education Council",
-            link: "/swiss-umef-msc-ai-en",
+            link: "/en/mscai",
             description: "The MSc AI program is specially designed for business managers and leaders who want to explore and harness the potential of artificial intelligence in corporate management.",
             demographic: {
                 jobs: [
@@ -586,7 +586,7 @@ const IDEAS_DATA = {
             subjects: "<b>90</b> ECTS - <b>12</b> courses and Graduation Thesis",
             duration: "16-18 months",
             tagline: "Swiss UMEF: First private university in Geneva to achieve the highest Swiss Federal Accreditation (SAC) - officially recognized by the Swiss Higher Education Council",
-            link: "/mbainai-en.html",
+            link: "/en/mbainai",
             experience: [
                 "Bachelor's degree graduate",
                 "Minimum 3 years of professional work experience",
@@ -693,7 +693,7 @@ const IDEAS_DATA = {
             subjects: "<b>4</b> stages | <b>2.5 - 3</b> years - 1 thesis",
             duration: "2.5 - 3 years",
             tagline: "Receive UK and French DBA degrees from Estiam and RB College",
-            link: "/dual-dba-estiam-rb-en",
+            link: "/en/dual-dba-estiam-rb",
             experience: [
                 "Master's degree and transcripts or equivalent.",
                 "IELTS 6.0/TOEFL 60 certificate or other proof of English proficiency.",
@@ -837,7 +837,7 @@ const IDEAS_DATA = {
                 "2 sessions/course (Sunday)",
             ],
             tagline: "Swiss UMEF: First private university in Geneva to achieve the highest Swiss Federal Accreditation (SAC) - officially recognized by the Swiss Higher Education Council",
-            link: "/swiss-umef-topup-bba-en",
+            link: "/en/bba",
             description: "A BBA Top-up pathway in 1 year of online study to get a Bachelor of Business Administration, don't let a bachelor's degree limit your strategic career path!",
             demographic: {
                 jobs: [

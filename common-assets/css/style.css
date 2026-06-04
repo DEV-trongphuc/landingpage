@@ -385,12 +385,14 @@ button.nav-link {
   white-space: nowrap !important;
   gap: 6px !important;
   line-height: 1 !important;
+  box-shadow: none !important;
 }
 
 .bk-open-btn:hover {
   background: #ab0e00 !important;
   color: #fff !important;
   border-color: #ab0e00 !important;
+  box-shadow: none !important;
 }
 
 /* Header Navigation Badges */
@@ -10448,6 +10450,14 @@ body .pain-card-desc {
 /* ==========================================
    LANGUAGE SWITCHER STYLES
    ========================================== */
+.lang-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(17, 23, 41, 0.15);
+  margin: 0 12px;
+  display: inline-block;
+}
+
 .lang-switcher-wrapper {
   position: relative;
   display: inline-block;
