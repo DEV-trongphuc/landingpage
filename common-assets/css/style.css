@@ -2664,6 +2664,13 @@ button.nav-link {
 }
 
 @media (max-width: 768px) {
+
+  .badge-dot,
+  .proof-cert-pulse,
+  .pain-label-dot {
+    display: none !important;
+  }
+
   :root {
     --section-py: 64px;
   }
@@ -5032,24 +5039,29 @@ button.nav-link {
 /* ── Mobile: Zalo + Đặt lịch row ─────────────────── */
 @media (max-width: 540px) {
   .modal-zalo-row {
-    gap: 8px;
+    gap: 6px !important;
   }
 
   .modal-zalo-btn,
   .modal-booking-btn {
-    font-size: 0.75rem;
-    padding: 8px 10px;
-    gap: 6px;
+    font-size: 0.7rem !important;
+    padding: 6px 8px !important;
+    gap: 4px !important;
+    height: 32px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 6px !important;
   }
 
   .modal-zalo-btn img {
-    width: 16px;
-    height: 16px;
+    width: 14px !important;
+    height: 14px !important;
   }
 
   .modal-booking-btn svg {
-    width: 14px;
-    height: 14px;
+    width: 12px !important;
+    height: 12px !important;
   }
 }
 
@@ -8739,7 +8751,8 @@ html.lenis {
   }
 
   .modal-form .modal-zalo-section {
-    display: none !important; /* Hide contact details inside overlay modal on mobile */
+    display: none !important;
+    /* Hide contact details inside overlay modal on mobile */
   }
 }
 
@@ -9745,10 +9758,12 @@ h3.section-title {
   .curri-pillar-header {
     padding: 16px 16px !important;
   }
+
   .curri-subjects {
     padding: 16px 16px !important;
     gap: 9px !important;
   }
+
   .curri-subjects li {
     font-size: 0.85rem !important;
     gap: 8px !important;
@@ -9773,6 +9788,7 @@ h3.section-title {
     flex-wrap: nowrap !important;
     gap: 14px !important;
   }
+
   .hero-accred-logos img {
     height: 48px !important;
   }
@@ -9796,7 +9812,8 @@ h3.section-title {
    ═══════════════════════════════════════════════════════════ */
 
 /* 1. Global scroll horizontal prevention */
-html, body {
+html,
+body {
   overflow-x: hidden !important;
   width: 100% !important;
 }
@@ -9811,6 +9828,7 @@ html, body {
 
 /* 3. Section nested padding elimination and standardization on mobile */
 @media (max-width: 768px) {
+
   body section,
   body .pricing-section,
   body .cta-section,
@@ -9829,6 +9847,7 @@ html, body {
     padding: 24px 16px !important;
     gap: 16px !important;
   }
+
   body .proof-card-accred {
     padding: 24px 16px !important;
     gap: 20px !important;
@@ -9843,11 +9862,13 @@ html, body {
     width: 100% !important;
     margin-bottom: 12px !important;
   }
+
   body .proof-qs-logo {
     width: 80% !important;
     max-width: 180px !important;
     height: auto !important;
   }
+
   body .proof-card-headline {
     flex-direction: column !important;
     align-items: center !important;
@@ -9871,6 +9892,7 @@ body .pcv2-featured .pcv2-features li {
     align-items: center !important;
     width: 100% !important;
   }
+
   body .hero-accred-logos img {
     height: 42px !important;
     max-width: 100% !important;
@@ -9886,6 +9908,7 @@ body .pcv2-featured .pcv2-features li {
     gap: 12px !important;
     width: 100% !important;
   }
+
   body .hero-accred-logos img {
     height: 44px !important;
     max-width: 25% !important;
@@ -9900,15 +9923,18 @@ body .pcv2-featured .pcv2-features li {
     grid-template-columns: 1fr 1fr !important;
     gap: 8px !important;
   }
+
   body .sol-v2-stat {
     padding: 8px 6px !important;
     gap: 4px !important;
     flex-direction: row !important;
     align-items: center !important;
   }
+
   body .sol-v2-stat-val {
     font-size: 0.9rem !important;
   }
+
   body .sol-v2-stat-lbl {
     font-size: 0.68rem !important;
     white-space: nowrap !important;
@@ -9934,8 +9960,10 @@ body .pcv2-featured .pcv2-features li {
     padding-right: 15px !important;
     box-sizing: border-box !important;
   }
-  body .eco-workshops > div:first-child h4 {
-    font-size: 1.45rem !important; /* Slightly larger text on mobile */
+
+  body .eco-workshops>div:first-child h4 {
+    font-size: 1.45rem !important;
+    /* Slightly larger text on mobile */
     line-height: 1.35 !important;
   }
 }
@@ -10050,27 +10078,44 @@ body .pcv2-featured .pcv2-features li {
 }
 
 /* Direct child animation adjustments */
-.mobile-menu > .nav-link,
-.mobile-menu > .mobile-dropdown,
-.mobile-menu > .nav-cta {
+.mobile-menu>.nav-link,
+.mobile-menu>.mobile-dropdown,
+.mobile-menu>.nav-cta {
   opacity: 0 !important;
   transform: translateY(16px) !important;
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.mobile-menu.open > .nav-link,
-.mobile-menu.open > .mobile-dropdown,
-.mobile-menu.open > .nav-cta {
+.mobile-menu.open>.nav-link,
+.mobile-menu.open>.mobile-dropdown,
+.mobile-menu.open>.nav-cta {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 
-.mobile-menu.open > .nav-link:nth-of-type(1) { transition-delay: 0.08s !important; }
-.mobile-menu.open > .nav-link:nth-of-type(2) { transition-delay: 0.12s !important; }
-.mobile-menu.open > .mobile-dropdown { transition-delay: 0.16s !important; }
-.mobile-menu.open > .nav-link:nth-of-type(3) { transition-delay: 0.20s !important; }
-.mobile-menu.open > .nav-link:nth-of-type(4) { transition-delay: 0.24s !important; }
-.mobile-menu.open > .nav-cta { transition-delay: 0.28s !important; }
+.mobile-menu.open>.nav-link:nth-of-type(1) {
+  transition-delay: 0.08s !important;
+}
+
+.mobile-menu.open>.nav-link:nth-of-type(2) {
+  transition-delay: 0.12s !important;
+}
+
+.mobile-menu.open>.mobile-dropdown {
+  transition-delay: 0.16s !important;
+}
+
+.mobile-menu.open>.nav-link:nth-of-type(3) {
+  transition-delay: 0.20s !important;
+}
+
+.mobile-menu.open>.nav-link:nth-of-type(4) {
+  transition-delay: 0.24s !important;
+}
+
+.mobile-menu.open>.nav-cta {
+  transition-delay: 0.28s !important;
+}
 
 /* Workshop Section Title Larger on Desktop (Requested) */
 .eco-workshop-title {
@@ -10111,14 +10156,17 @@ body .pcv2-featured .pcv2-features li {
     justify-content: center !important;
     gap: 16px !important;
   }
+
   .proof-accred-logos img {
     height: 2.4rem !important;
   }
 }
+
 @media (max-width: 480px) {
   .proof-accred-logos {
     gap: 10px !important;
   }
+
   .proof-accred-logos img {
     height: 1.8rem !important;
   }
@@ -10230,6 +10278,7 @@ body .pcv2-featured .pcv2-features li {
 
 /* Unified Pain Cards (2 cards per row on desktop) */
 @media (min-width: 769px) {
+
   body .pain-section .pain-cards,
   body .pain-cards {
     display: grid !important;
@@ -10260,4 +10309,37 @@ body .pain-card-desc {
   color: #cbd5e1 !important;
   line-height: 1.65 !important;
   margin: 0 !important;
+}
+
+/* Mobile title optimization to keep lines compact and enforce 2 lines */
+@media (max-width: 540px) {
+
+  /* Hero Headline */
+  body .hero-headline,
+  body .hero-hl-big {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.015em !important;
+  }
+
+  body .hero-headline span.gradient-text,
+  body .hero-headline em,
+  body .hero-hl-big span,
+  body .hero-hl-big em {
+    font-size: inherit !important;
+  }
+
+  /* Section Title */
+  body h2,
+  body .section-title {
+    font-size: 1.15rem !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.010em !important;
+  }
+
+  body .section-title .gradient-text,
+  body .section-title em {
+    font-size: 1.22rem !important;
+    display: inline !important;
+  }
 }
