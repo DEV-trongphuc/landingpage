@@ -2983,7 +2983,7 @@ button.nav-link {
 
   .cta-left {
     text-align: center !important;
-    padding: 0 12px !important;
+    padding: 0 !important;
   }
 
   .gmac-quote {
@@ -5802,7 +5802,7 @@ h6,
   }
 
   .container {
-    padding: 0 12px;
+    padding: 0 20px;
   }
 
   .section-label {
@@ -5903,11 +5903,11 @@ h6,
     /* Start aligned from the left */
     overflow-x: auto !important;
     scroll-snap-type: x mandatory !important;
-    scroll-padding-left: 15px !important;
+    scroll-padding-left: 20px !important;
     gap: 16px !important;
-    padding: 12px 15px 20px 15px !important;
-    margin-left: -15px !important;
-    margin-right: -15px !important;
+    padding: 12px 20px 20px 20px !important;
+    margin-left: -20px !important;
+    margin-right: -20px !important;
     margin-bottom: 8px !important;
     scrollbar-width: none !important;
     -webkit-overflow-scrolling: touch;
@@ -6004,8 +6004,8 @@ h6,
 
   body #bang-gia,
   body .pricing-section {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   .pricing-grid-new {
@@ -6032,10 +6032,10 @@ h6,
   #giang-vien div[style*="display:grid"],
   #co-van div[style*="display: grid"],
   #co-van div[style*="display:grid"] {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-    margin-left: -12px !important;
-    margin-right: -12px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-left: -20px !important;
+    margin-right: -20px !important;
   }
 }
 
@@ -7581,6 +7581,7 @@ h6,
 }
 
 .degree-modal-hint {
+  text-align: center;
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.9rem;
   font-weight: 500;
@@ -7919,8 +7920,8 @@ h6,
   }
 
   .container {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   body h1,
@@ -8001,8 +8002,8 @@ h6,
   }
 
   .container {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   /* Fixed Header Offset & Alt-Text Layout Protection */
@@ -9901,6 +9902,13 @@ h3.section-title {
   line-height: 1.25 !important;
 }
 
+/* Hide line break inside solution headline on mobile to prevent wrapping into 3 lines */
+@media (max-width: 768px) {
+  #solution-headline br {
+    display: none !important;
+  }
+}
+
 /* Ensure primary brand color for badge icons on light pages (desktop & mobile) */
 .info-badge .icon,
 .info-badge .icon svg {
@@ -9919,11 +9927,11 @@ body {
   width: 100% !important;
 }
 
-/* 2. Container mobile padding 15px (Audited & Refined) */
+/* 2. Container mobile padding 20px (Audited & Refined) */
 @media (max-width: 768px) {
   body .container {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 }
 
@@ -9945,12 +9953,12 @@ body {
 /* 4. Proof Card mobile spacing optimization */
 @media (max-width: 768px) {
   body .proof-card-inner {
-    padding: 24px 16px !important;
+    padding: 24px 20px !important;
     gap: 16px !important;
   }
 
   body .proof-card-accred {
-    padding: 24px 16px !important;
+    padding: 24px 20px !important;
     gap: 20px !important;
   }
 }
@@ -10057,8 +10065,8 @@ body .pcv2-featured .pcv2-features li {
 /* 11. Ecosystem inner mobile spacing & title font-size adjustment */
 @media (max-width: 768px) {
   body .eco-inner {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
     box-sizing: border-box !important;
   }
 
@@ -10134,11 +10142,16 @@ body .pcv2-featured .pcv2-features li {
   transform: rotate(90deg) !important;
 }
 
-/* Sidebar Text Smaller (Requested) */
+/* Hide badge in sidebar */
+.mobile-menu .nav-link-badge-red {
+  display: none !important;
+}
+
+/* Sidebar Text Smaller (Requested) with larger vertical spacing */
 .mobile-menu .nav-link,
 .mobile-menu .mobile-dropdown-toggle {
   font-size: 0.92rem !important;
-  padding: 6px 0 !important;
+  padding: 12px 0 !important;
   font-weight: 600 !important;
   color: #1e293b !important;
   transition: color 0.2s ease !important;
@@ -10150,7 +10163,7 @@ body .pcv2-featured .pcv2-features li {
 }
 
 .mobile-menu .nav-cta {
-  margin-top: 12px !important;
+  margin-top: 18px !important;
   font-size: 0.88rem !important;
   padding: 10px 24px !important;
   text-align: center !important;
@@ -10581,12 +10594,13 @@ body .pain-card-desc {
 
 /* Language selector inside mobile drawer menu */
 .mobile-lang-selector {
-  margin: 16px 24px;
-  padding-top: 16px;
+  margin: 20px 0 0 0;
+  padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 
 .mobile-lang-title {
@@ -10600,6 +10614,7 @@ body .pain-card-desc {
 .mobile-lang-options {
   display: flex;
   gap: 10px;
+  width: 100%;
 }
 
 .mobile-lang-btn {
@@ -10618,6 +10633,7 @@ body .pain-card-desc {
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .mobile-lang-btn svg.flag-icon {
@@ -10632,4 +10648,92 @@ body .pain-card-desc {
   border-color: var(--clr-primary, #ab0e00);
   color: var(--clr-primary, #ab0e00);
   box-shadow: 0 0 0 1px var(--clr-primary, #ab0e00);
+}
+
+/* Hide numbers on mobile for ecosystem cards */
+@media (max-width: 768px) {
+  .eco-card-v2-num {
+    display: none !important;
+  }
+}
+
+/* Swiss Federal Accreditation (SAC) mobile overrides */
+@media (max-width: 768px) {
+  body .proof-card-left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  body .proof-cert-badge {
+    align-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body .proof-qs-logo-link {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-bottom: 12px !important;
+  }
+
+  body .proof-qs-logo {
+    width: 90% !important;
+    max-width: 240px !important;
+    height: auto !important;
+  }
+
+  body .proof-card-headline {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  body .proof-card-checklist {
+    align-items: flex-start !important;
+    max-width: 100% !important;
+    margin: 24px auto 0 !important;
+    width: fit-content !important;
+  }
+
+  /* Reduce shadow and glow on sample degree for mobile, and add bottom spacing */
+  body .proof-degree-wrap {
+    margin-bottom: 28px !important;
+  }
+
+  body .proof-degree-glow {
+    display: none !important;
+  }
+
+  body .proof-degree-frame {
+    box-shadow: 0 10px 30px rgba(17, 23, 41, 0.12) !important;
+  }
+
+  body .proof-degree-badge {
+    box-shadow: 0 4px 12px rgba(171, 14, 0, 0.2) !important;
+  }
+}
+
+/* Center pricing badges on mobile */
+@media (max-width: 768px) {
+  body .pcv2-badge {
+    align-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* High contrast pricing text for featured red cards */
+.pcv2-featured .pcv2-header p,
+.pcv2-featured .pcv2-header div,
+.pcv2-featured p[style*="line-through"] {
+  color: #ffffff !important;
+}
+.pcv2-featured .pcv2-header p[style*="line-through"],
+.pcv2-featured p[style*="line-through"] {
+  color: rgba(255, 255, 255, 0.7) !important;
 }

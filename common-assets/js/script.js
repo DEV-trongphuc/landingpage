@@ -33,6 +33,8 @@
     }
 })();
 
+const isEn = document.documentElement.lang === 'en';
+
 /* ═══════════════════════════════════════
    SWISS UMEF MBA – script.js
    Interactions, Animations, Form Logic
@@ -501,6 +503,8 @@
                 if (!val) return '';
                 if (el.selectedIndex >= 0) return el.options[el.selectedIndex].text;
                 const mapping = isEn ? {
+                    'highschool': 'High School',
+                    'college': 'College/Diploma',
                     'bachelor': 'Bachelor',
                     'master': 'Master',
                     'other': 'Other',
@@ -508,6 +512,8 @@
                     '5.0-5.5': 'IELTS 5.0 - 5.5',
                     '6.0-plus': 'IELTS 6.0+'
                 } : {
+                    'highschool': 'THPT',
+                    'college': 'Cao đẳng',
                     'bachelor': 'Cử nhân',
                     'master': 'Thạc sĩ',
                     'other': 'Khác',
@@ -1716,12 +1722,16 @@ document.addEventListener('keydown', (e) => {
             cardInner.classList.remove('flipped');
             flipText.textContent = isEn ? 'Flip Back' : 'Lật mặt sau';
             modalEl.classList.add('open');
-            lockScroll();
+            if (typeof window.lockScroll === 'function') {
+                window.lockScroll();
+            }
         }
 
         function closeModal() {
             modalEl.classList.remove('open');
-            unlockScroll();
+            if (typeof window.unlockScroll === 'function') {
+                window.unlockScroll();
+            }
         }
 
         function toggleFlip() {
@@ -1933,15 +1943,15 @@ document.addEventListener('keydown', (e) => {
 
         function openModal() {
             modalEl.classList.add('open');
-            if (typeof lockScroll === 'function') {
-                lockScroll();
+            if (typeof window.lockScroll === 'function') {
+                window.lockScroll();
             }
         }
 
         function closeModal() {
             modalEl.classList.remove('open');
-            if (typeof unlockScroll === 'function') {
-                unlockScroll();
+            if (typeof window.unlockScroll === 'function') {
+                window.unlockScroll();
             }
         }
 
