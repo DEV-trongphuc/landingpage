@@ -10118,3 +10118,140 @@ body .pcv2-featured .pcv2-features li {
   }
 }
 
+/* Slider Dots Sizing Optimization (Make them smaller & premium) */
+.dot {
+  width: 8px !important;
+  height: 8px !important;
+  border: none !important;
+  background: rgba(171, 14, 0, 0.2) !important;
+  position: relative !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  transition: all 0.3s ease !important;
+}
+
+.dot::after {
+  content: '' !important;
+  position: absolute !important;
+  top: -8px !important;
+  left: -8px !important;
+  right: -8px !important;
+  bottom: -8px !important;
+}
+
+.dot.active {
+  background: var(--clr-primary) !important;
+  width: 20px !important;
+  border-radius: 99px !important;
+}
+
+.scroll-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border: none !important;
+  background: rgba(148, 163, 184, 0.3) !important;
+  position: relative !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  transition: all 0.3s ease !important;
+}
+
+.scroll-dot::after {
+  content: '' !important;
+  position: absolute !important;
+  top: -8px !important;
+  left: -8px !important;
+  right: -8px !important;
+  bottom: -8px !important;
+}
+
+.scroll-dot.active {
+  background: #ef4444 !important;
+  width: 16px !important;
+  border-radius: 99px !important;
+}
+
+/* Eco Workshops Advisor Proof Block */
+.eco-advisors-proof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.eco-advisors-proof .avatars {
+  display: flex;
+  padding-left: 12px;
+}
+
+.eco-advisors-proof .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-right: -12px;
+  object-fit: cover;
+  display: block;
+}
+
+.eco-advisors-proof p {
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+.eco-advisors-proof strong {
+  color: var(--clr-primary);
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .eco-advisors-proof {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+  }
+}
+
+/* Unified Pain Cards (2 cards per row on desktop) */
+@media (min-width: 769px) {
+  body .pain-section .pain-cards,
+  body .pain-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px 28px !important;
+  }
+}
+
+/* Title next to icon layout */
+body .pain-card-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin-bottom: 12px !important;
+  width: 100% !important;
+}
+
+body .pain-card-title {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+}
+
+body .pain-card-desc {
+  font-size: 0.88rem !important;
+  color: #cbd5e1 !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}
