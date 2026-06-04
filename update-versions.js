@@ -41,10 +41,24 @@ files.forEach(file => {
             newVersion = '1.0';
         }
 
-        if (currentVersion !== newVersion) {
+        // Map to minified version if exists
+        let mappedAssetPath = assetPath;
+        if (!assetPath.includes('.min.')) {
+            const minPath = assetPath.replace(/\.(css|js)$/, '.min.$1');
+            const absoluteMinPath = path.join(__dirname, 'common-assets', minPath);
+            if (fs.existsSync(absoluteMinPath)) {
+                mappedAssetPath = minPath;
+            }
+        }
+
+        // If the path was updated to .min, or version changed, we write it back
+        const oldRef = `${attr}="common-assets/${assetPath}${currentVersion ? `?v=${currentVersion}` : ''}"`;
+        const newRef = `${attr}="common-assets/${mappedAssetPath}?v=${newVersion}"`;
+
+        if (oldRef !== newRef) {
             hasChanges = true;
-            replacements.push(`common-assets/${assetPath} (${currentVersion || 'không có'} -> ${newVersion})`);
-            return `${attr}="common-assets/${assetPath}?v=${newVersion}"`;
+            replacements.push(`common-assets/${assetPath} -> common-assets/${mappedAssetPath} (${currentVersion || 'không có'} -> ${newVersion})`);
+            return newRef;
         }
 
         return match;
