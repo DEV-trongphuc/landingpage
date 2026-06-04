@@ -354,6 +354,15 @@
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
+    min-width: 0;
+}
+
+.bk-trigger-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex: 1;
 }
 
 .bk-custom-trigger.bk-placeholder {
@@ -1024,7 +1033,7 @@
 }
 
 /* Responsive */
-@media (max-width: 540px) {
+@media (max-width: 640px) {
     .bk-modal {
         align-items: center;
         justify-content: center;

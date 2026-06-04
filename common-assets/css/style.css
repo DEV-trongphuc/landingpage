@@ -5002,7 +5002,7 @@ abbr {
   }
 
   .form-row {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .modal-form-header {
@@ -5084,9 +5084,9 @@ abbr {
     gap: 12px;
   }
 
-  /* Keep form-row as 2 columns on mobile */
+  /* Stack form-row as 1 column on mobile */
   .modal-form .form-row {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 12px;
   }
 
@@ -5791,10 +5791,11 @@ h6,
     /* Start aligned from the left */
     overflow-x: auto !important;
     scroll-snap-type: x mandatory !important;
+    scroll-padding-left: 15px !important;
     gap: 16px !important;
-    padding: 12px 16px 20px 16px !important;
-    margin-left: -16px !important;
-    margin-right: -16px !important;
+    padding: 12px 15px 20px 15px !important;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
     margin-bottom: 8px !important;
     scrollbar-width: none !important;
     -webkit-overflow-scrolling: touch;
@@ -5867,7 +5868,7 @@ h6,
     background: #ef4444 !important;
     /* Crimson Red active */
     width: 20px;
-    border-radius: 4px;
+    border-radius: 99px !important;
   }
 
   /* Dark Theme Contrast overrides for dot elements */
@@ -8330,6 +8331,35 @@ h6,
   transform: rotate(90deg);
 }
 
+/* ═══════════════════════════════════════
+   GLOBAL CONTRAST & RESPONSIVE UX AUDIT
+   Fixing high contrast for dark sections and
+   mobile/tablet alignment globally.
+ ═══════════════════════════════════════ */
+/* Custom Select Ellipsis Fix to prevent wrapping on narrow viewports */
+.select-value {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  min-width: 0 !important;
+  flex: 1 !important;
+  text-align: left !important;
+}
+
+.select-trigger {
+  min-width: 0 !important;
+  gap: 8px !important;
+}
+
+/* High Contrast for Featured Pricing Card Description (Image 1) */
+body .pcv2-featured .pcv2-desc {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.sacom-sub {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
 .vn-grad-header {
   text-align: center;
   margin-bottom: 36px;
@@ -9725,8 +9755,8 @@ h3.section-title {
 
   /* Hero CTA button mobile sizing optimization */
   .hero-cta .btn {
-    padding: 15px 30px !important;
-    font-size: 1.02rem !important;
+    padding: 12px 22px !important;
+    font-size: 0.92rem !important;
   }
 }
 
@@ -9756,7 +9786,7 @@ h3.section-title {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   MOBILE NESTED PADDING & ACCREDITATION ENHANCEMENTS
+   MOBILE NESTED PADDING & ACCREDITATION ENHANCEMENTS (AUDITED)
    ═══════════════════════════════════════════════════════════ */
 
 /* 1. Global scroll horizontal prevention */
@@ -9765,21 +9795,23 @@ html, body {
   width: 100% !important;
 }
 
-/* 2. Container mobile padding 5px */
+/* 2. Container mobile padding 15px (Audited & Refined) */
 @media (max-width: 768px) {
   body .container {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
 }
 
-/* 3. Section nested padding elimination on mobile */
+/* 3. Section nested padding elimination and standardization on mobile */
 @media (max-width: 768px) {
   body section,
   body .pricing-section,
   body .cta-section,
   body .hero-section,
   body .ecosystem-section {
+    padding-top: var(--section-py) !important;
+    padding-bottom: var(--section-py) !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
@@ -9788,11 +9820,11 @@ html, body {
 /* 4. Proof Card mobile spacing optimization */
 @media (max-width: 768px) {
   body .proof-card-inner {
-    padding: 24px 10px !important;
+    padding: 24px 16px !important;
     gap: 16px !important;
   }
   body .proof-card-accred {
-    padding: 24px 10px !important;
+    padding: 24px 16px !important;
     gap: 20px !important;
   }
 }
@@ -9823,25 +9855,266 @@ body .pcv2-featured .pcv2-features li {
   color: rgba(255, 255, 255, 0.95) !important;
 }
 
-/* 7. Tighten padding for stats grid on solution-section to avoid rớt dòng */
-@media (max-width: 640px) {
+/* 7. Ensure accreditation logos wrap into a beautiful 3-column grid on mobile (<= 540px) */
+@media (max-width: 540px) {
+  body .hero-accred-logos {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px 8px !important;
+    justify-items: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  body .hero-accred-logos img {
+    height: 2.2rem !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+  body .hero-accred-logos {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  body .hero-accred-logos img {
+    height: 2.2rem !important;
+    max-width: 15% !important;
+    object-fit: contain !important;
+  }
+}
+
+/* 8. Solution stat cards to be exactly 2 cards 1 row on mobile (no wrapping, no 1-col) */
+@media (max-width: 768px) {
   body .sol-v2-stats {
+    display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 8px !important;
   }
   body .sol-v2-stat {
-    padding: 10px 8px !important;
-    gap: 6px !important;
+    padding: 8px 6px !important;
+    gap: 4px !important;
+    flex-direction: row !important;
+    align-items: center !important;
   }
   body .sol-v2-stat-val {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
   }
   body .sol-v2-stat-lbl {
-    font-size: 0.72rem !important;
+    font-size: 0.68rem !important;
+    white-space: nowrap !important;
   }
 }
-@media (max-width: 400px) {
+
+/* 9. Disable any 1-column layout for sol-v2-stats on mobile */
+@media (max-width: 480px) {
   body .sol-v2-stats {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr 1fr !important;
   }
 }
+
+/* 10. Synchronize active slider dot shape (rounded pill capsules) */
+.dot.active {
+  border-radius: 99px !important;
+}
+
+/* 11. Ecosystem inner mobile spacing & title font-size adjustment */
+@media (max-width: 768px) {
+  body .eco-inner {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box !important;
+  }
+  body .eco-workshops > div:first-child h4 {
+    font-size: 1.45rem !important; /* Slightly larger text on mobile */
+    line-height: 1.35 !important;
+  }
+}
+
+/* 12. Hero CTA button phone sizing override to prevent giant buttons */
+@media (max-width: 480px) {
+  body .hero-cta .btn {
+    padding: 11px 18px !important;
+    font-size: 0.86rem !important;
+  }
+}
+
+/* ═══════════════════════════════════════
+   MOBILE SIDEBAR & WORKSHOP TITLE OPTIMIZATIONS
+   ═══════════════════════════════════════ */
+
+/* Mobile Sidebar Styling */
+.mobile-menu {
+  padding: 20px 24px 28px !important;
+  max-height: 100vh !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 4px !important;
+}
+
+.mobile-menu-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin-bottom: 16px !important;
+  padding-bottom: 12px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.mobile-menu-logo {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.mobile-menu-logo img {
+  height: 36px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+.mobile-menu-close {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  background: #f1f5f9 !important;
+  border: none !important;
+  color: #475569 !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.mobile-menu-close:hover {
+  background: #ab0e00 !important;
+  color: #ffffff !important;
+  transform: rotate(90deg) !important;
+}
+
+/* Sidebar Text Smaller (Requested) */
+.mobile-menu .nav-link,
+.mobile-menu .mobile-dropdown-toggle {
+  font-size: 0.92rem !important;
+  padding: 6px 0 !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+  transition: color 0.2s ease !important;
+}
+
+.mobile-menu .nav-link:hover,
+.mobile-menu .mobile-dropdown-toggle:hover {
+  color: #ab0e00 !important;
+}
+
+.mobile-menu .nav-cta {
+  margin-top: 12px !important;
+  font-size: 0.88rem !important;
+  padding: 10px 24px !important;
+  text-align: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  border-radius: 50px !important;
+}
+
+/* Smaller dropdown items for compact layout */
+.mobile-dropdown-item {
+  gap: 10px !important;
+  padding: 8px 10px !important;
+}
+
+.mobile-dropdown-item .item-avatar {
+  width: 48px !important;
+  height: 27px !important;
+}
+
+.mobile-dropdown-item .item-title {
+  font-size: 0.78rem !important;
+}
+
+.mobile-dropdown-item .item-desc {
+  font-size: 0.65rem !important;
+}
+
+/* Direct child animation adjustments */
+.mobile-menu > .nav-link,
+.mobile-menu > .mobile-dropdown,
+.mobile-menu > .nav-cta {
+  opacity: 0 !important;
+  transform: translateY(16px) !important;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.mobile-menu.open > .nav-link,
+.mobile-menu.open > .mobile-dropdown,
+.mobile-menu.open > .nav-cta {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.mobile-menu.open > .nav-link:nth-of-type(1) { transition-delay: 0.08s !important; }
+.mobile-menu.open > .nav-link:nth-of-type(2) { transition-delay: 0.12s !important; }
+.mobile-menu.open > .mobile-dropdown { transition-delay: 0.16s !important; }
+.mobile-menu.open > .nav-link:nth-of-type(3) { transition-delay: 0.20s !important; }
+.mobile-menu.open > .nav-link:nth-of-type(4) { transition-delay: 0.24s !important; }
+.mobile-menu.open > .nav-cta { transition-delay: 0.28s !important; }
+
+/* Workshop Section Title Larger on Desktop (Requested) */
+.eco-workshop-title {
+  font-size: 1.85rem !important;
+  font-weight: 800 !important;
+  color: var(--clr-text) !important;
+  margin-bottom: 12px !important;
+  line-height: 1.35 !important;
+}
+
+@media (max-width: 768px) {
+  .eco-workshop-title {
+    font-size: 1.45rem !important;
+    margin-bottom: 8px !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* Accreditation Logos Spacing & Size (Requested) */
+.proof-accred-logos {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 24px !important;
+  margin: 0 auto !important;
+  max-width: 880px !important;
+}
+
+.proof-accred-logos img {
+  height: 3.6rem !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 768px) {
+  .proof-accred-logos {
+    justify-content: center !important;
+    gap: 16px !important;
+  }
+  .proof-accred-logos img {
+    height: 2.4rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .proof-accred-logos {
+    gap: 10px !important;
+  }
+  .proof-accred-logos img {
+    height: 1.8rem !important;
+  }
+}
+

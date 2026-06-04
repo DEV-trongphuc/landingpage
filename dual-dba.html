@@ -206,8 +206,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Oswald:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="common-assets/css/style.css?v=1780514528392" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780514528392" />
+    <link rel="stylesheet" href="common-assets/css/style.css?v=1780533146087" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.css?v=1780533146087" />
     <style>
         /* ═══════════════════════════════════════
            PROOF CARD - Premium 2-col design
@@ -2794,14 +2794,20 @@
     </header>
 
     <div class="mobile-overlay" id="mobile-overlay"></div>
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-        <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Đóng menu">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
-                xmlns="http://www.w3.org/2000/svg">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-lenis-prevent>
+        <div class="mobile-menu-header">
+            <a href="/" class="mobile-menu-logo" aria-label="Trang chủ Viện IDEAS">
+                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/01/Logo_15_nam.webp"
+                    alt="Logo IDEAS Education - 15 năm thành lập" width="45" height="45" loading="lazy">
+            </a>
+            <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Đóng menu">
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
         <a href="#van-de" class="nav-link">Vấn đề</a>
         <a href="#giai-phap" class="nav-link">Giải pháp</a>
         <div class="mobile-dropdown">
@@ -3714,8 +3720,9 @@
                 <div class="eco-workshops"
                     style="margin-top: 56px; border-top: 1.5px dashed rgba(171, 14, 0, 0.15); padding-top: 48px;">
                     <div style="text-align: center; max-width: 720px; margin: 0 auto 36px;">
-                        <h4 style="font-size: 1.35rem; font-weight: 800; color: var(--clr-text); margin-bottom: 8px;">
-                            IDEAS - Việt Nam và các buổi <span class="gradient-text">Workshop &amp; Chuyên đề</span>
+                        <h4 class="eco-workshop-title">
+                            IDEAS - Việt Nam và các buổi<br />
+                            <span class="gradient-text">Workshop &amp; Chuyên đề</span>
                         </h4>
                         <p style="color: var(--clr-text-muted); font-size: 0.9rem; line-height: 1.5;">
                             IDEAS đồng hành và hỗ trợ học viên tận tình suốt quá trình học tập thông qua các buổi học
@@ -4098,11 +4105,25 @@
                     <div class="proof-accred-strip">
                         <p class="proof-accred-label">Tổ chức liên kết &amp; kiểm định</p>
                         <div class="proof-accred-logos">
-                            <img decoding="async"
-                                src="https://ideas.edu.vn/wp-content/uploads/2025/10/rbcollege_logo.webp"
-                                alt="RB College Logo" title="RB College" style="height: 3.5rem;"  loading="lazy"/>
-                            <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2025/03/estiam.png"
-                                alt="ÉSTIAM Logo" title="ÉSTIAM Pháp" style="height: 3.5rem;"  loading="lazy"/>
+                            <img width="120" loading="eager" decoding="async"
+                                src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef1.png"
+                                alt="Swiss Accreditation" class="accred-trigger" data-accred="sac" height="40" />
+                            <img width="90" loading="eager" decoding="async"
+                                src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef5.png" alt="CHEA"
+                                class="accred-trigger" data-accred="chea" height="40" />
+                            <img width="130" loading="eager" decoding="async"
+                                src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef4.png" alt="IACBE"
+                                class="accred-trigger" data-accred="iacbe" height="40" />
+                            <img width="100" loading="eager" decoding="async"
+                                src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef2.png" alt="ACBSP"
+                                class="accred-trigger" data-accred="acbsp" height="40" />
+                            <img width="80" loading="eager" decoding="async"
+                                src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef3.png" alt="Eduqua"
+                                class="accred-trigger" data-accred="eduqua" height="40" />
+                            <img width="40" loading="eager" decoding="async"
+                                src="https://ideas.edu.vn/wp-content/uploads/2025/10/qs-1.webp" alt="QS Stars"
+                                class="accred-trigger" data-accred="qs" height="40" />
+
                         </div>
                     </div>
 
@@ -4635,7 +4656,7 @@
                             <div class="pcv2-header">
                                 <div class="pcv2-tier">High Quality DBA</div>
                                 <div
-                                    style="font-size:2.0rem;font-weight:900;color:#0f172a;line-height:1;margin:12px 0 4px;">
+                                    style="font-size:2.0rem;font-weight:900;color:#ab0e00;line-height:1;margin:12px 0 4px;">
                                     Liên hệ nhận báo phí</div>
                                 <p class="pcv2-desc">Đồng hành 1-1 cùng Giáo sư hướng dẫn khoa học</p>
                             </div>
@@ -5870,8 +5891,8 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.js?v=1780514528392" defer></script>
-    <script src="common-assets/js/booking-modal.js?v=1780514528392" defer></script>
+    <script src="common-assets/js/script.js?v=1780533146087" defer></script>
+    <script src="common-assets/js/booking-modal.js?v=1780533146087" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
