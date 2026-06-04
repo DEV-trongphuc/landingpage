@@ -201,9 +201,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="common-assets/css/style.min.css?v=1780548167043" as="style" />
-    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780548167043" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780548167043" />
+    <link rel="preload" href="common-assets/css/style.min.css?v=1780554184756" as="style" />
+    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780554184756" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780554184756" />
     <style>
         /* ═══════════════════════════════════════
            PROOF CARD - Premium 2-col design
@@ -328,10 +328,10 @@
         .proof-card-headline {
             display: flex;
             align-items: center;
-            gap: 20px;
-            font-size: clamp(1.2rem, 2.2vw, 1.85rem);
+            gap: 16px;
+            font-size: clamp(1.2rem, 1.8vw, 1.7rem);
             font-weight: 900;
-            line-height: 1.25;
+            line-height: 1.1;
             color: var(--clr-navy, #111729);
             margin: 0;
         }
@@ -350,8 +350,8 @@
         }
 
         .proof-qs-logo {
-            width: clamp(75px, 8vw, 96px);
-            height: clamp(75px, 8vw, 96px);
+            width: 130px;
+            height: 130px;
             object-fit: contain;
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
             transition: transform 0.3s ease, opacity 0.3s ease;
@@ -708,23 +708,28 @@
             margin: 0;
         }
 
-        /* Pain cards grid */
-        .pain-cards {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-
-        @media (max-width: 1024px) {
-            .pain-cards {
-                grid-template-columns: repeat(2, 1fr);
+        /* Pain cards grid override */
+        @media (min-width: 769px) {
+            body .pain-section .pain-cards {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 16px !important;
+                margin-bottom: 56px !important;
             }
         }
 
-        @media (max-width: 640px) {
-            .pain-cards {
-                grid-template-columns: 1fr 1fr;
+        @media (max-width: 768px) {
+            body .pain-section .pain-cards {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 16px !important;
+                margin-bottom: 40px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body .pain-section .pain-cards {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+                margin-bottom: 32px !important;
             }
         }
 
@@ -3503,10 +3508,11 @@
                         <span class="pain-label-dot"></span>
                         VẤN ĐỀ
                     </div>
-                    <h2 class="pain-headline" id="pain-headline">Vì sao nhiều doanh nghiệp thất bại <br />
-                        <span class="pain-headline-accent"> dù đã đầu tư vào AI?</span>
+                    <h2 class="pain-headline" id="pain-headline">Thách thức to lớn của nhà lãnh đạo <br />
+                        <span class="pain-headline-accent">trong kỷ nguyên Trí tuệ Nhân tạo</span>
                     </h2>
-                    <p class="pain-sub">Vấn đề nằm ở cách nhà quản lý triển khai và tích hợp AI vào doanh nghiệp</p>
+                    <p class="pain-sub">Làm thế nào để ứng dụng AI tăng hiệu suất và danh tiếng mà không bị sa đà vào
+                        lập trình?</p>
                 </div>
 
                 <!-- Pain cards - numbered -->
@@ -3521,11 +3527,11 @@
                                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                                 </svg>
                             </div>
-                            <h3 class="pain-card-title">Quá tải thông tin</h3>
+                            <h3 class="pain-card-title">Rào cản lập trình &amp; Công nghệ</h3>
                         </div>
-                        <p class="pain-card-desc"><strong>Quá tải thông tin & Ra quyết định chậm:</strong> Chìm trong
-                            biển dữ liệu thô rời rạc, thiếu khả năng phân tích tự động bằng AI dẫn đến bỏ lỡ thời cơ
-                            vàng.</p>
+                        <p class="pain-card-desc"><strong>Rào cản lập trình:</strong> Lo ngại việc học AI đòi hỏi viết
+                            mã code phức tạp. Lãnh đạo chỉ cần <strong>tư duy ứng dụng và quản trị AI</strong>, không phải làm việc
+                            của một lập trình viên.</p>
                     </div>
                     <div class="pain-card-v2 ai-neon-box">
                         <div class="pain-card-num">02</div>
@@ -3537,10 +3543,11 @@
                                     <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                                 </svg>
                             </div>
-                            <h3 class="pain-card-title">Lãng phí chi phí vận hành</h3>
+                            <h3 class="pain-card-title">Lãng phí ngân sách công nghệ</h3>
                         </div>
-                        <p class="pain-card-desc"><strong>Lãng phí chi phí vận hành:</strong> Quy trình làm việc thủ
-                            công, tốn kém nhân sự nhưng hiệu suất thấp do chưa biết dùng AI tối ưu hóa vận hành.</p>
+                        <p class="pain-card-desc"><strong>Lãng phí ngân sách:</strong> Đầu tư dòng tiền lớn vào các công
+                            cụ AI theo trào lưu nhưng <strong>không đem lại hiệu quả kinh tế (ROI)</strong> do thiếu nền tảng quản
+                            trị kinh doanh bài bản.</p>
                     </div>
                     <div class="pain-card-v2 ai-neon-box">
                         <div class="pain-card-num">03</div>
@@ -3555,10 +3562,11 @@
                                     <line x1="12" y1="17" x2="12.01" y2="17" />
                                 </svg>
                             </div>
-                            <h3 class="pain-card-title">Hụt hơi trong cuộc đua số</h3>
+                            <h3 class="pain-card-title">Giới hạn mở rộng quy mô</h3>
                         </div>
-                        <p class="pain-card-desc"><strong>Hụt hơi trong cuộc đua số:</strong> Nhìn đối thủ bứt phá năng
-                            suất nhờ AI trong khi doanh nghiệp mình loay hoay không tìm ra hướng đi đúng đắn.</p>
+                        <p class="pain-card-desc"><strong>Bẫy vận hành thủ công:</strong> Doanh nghiệp hoạt động dựa
+                            trên năng lực cá nhân rời rạc, <strong>thiếu hệ thống tự động hóa thông minh</strong> khiến hiệu suất
+                            quản trị bị kịch trần.</p>
                     </div>
                     <div class="pain-card-v2 ai-neon-box">
                         <div class="pain-card-num">04</div>
@@ -3573,10 +3581,11 @@
                                         d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                                 </svg>
                             </div>
-                            <h3 class="pain-card-title">Mất kết nối chiến lược</h3>
+                            <h3 class="pain-card-title">Áp lực vị thế &amp; Uy tín</h3>
                         </div>
-                        <p class="pain-card-desc"><strong>Mất kết nối giữa chiến lược và thực thi:</strong> Đầu tư ngân
-                            sách vào các công cụ AI đắt đỏ nhưng không đem lại giá trị đo lường được (ROI bằng 0).</p>
+                        <p class="pain-card-desc"><strong>Thử thách danh tiếng:</strong> Thiếu tự tin khi thảo luận về
+                            chiến lược AI/Tech tại các cuộc họp HĐQT hoặc đối tác, lo sợ mất đi tầm ảnh hưởng trước thế
+                            hệ lãnh đạo trẻ nhạy bén.</p>
                     </div>
                     <div class="pain-card-v2 ai-neon-box">
                         <div class="pain-card-num">05</div>
@@ -3591,11 +3600,28 @@
                                     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                                 </svg>
                             </div>
-                            <h3 class="pain-card-title">Rủi ro tụt hậu công nghệ</h3>
+                            <h3 class="pain-card-title">Thiếu bằng cấp quốc tế xứng tầm</h3>
                         </div>
-                        <p class="pain-card-desc"><strong>Rủi ro tụt hậu trong kỷ nguyên mới:</strong> Nhà quản trị
-                            thiếu kiến thức AI chiến lược, khó thăng tiến và đối mặt nguy cơ bị thay thế bởi thế hệ quản
-                            lý trẻ.</p>
+                        <p class="pain-card-desc"><strong>Khẳng định danh tiếng:</strong> Đã có kinh nghiệm thực chiến
+                            xuất sắc nhưng <strong>chưa sở hữu tấm bằng Thạc sĩ quốc tế danh giá</strong> để khẳng định vị thế và tự
+                            tin thăng tiến toàn cầu.</p>
+                    </div>
+                    <div class="pain-card-v2 ai-neon-box">
+                        <div class="pain-card-num">06</div>
+                        <div class="pain-card-header">
+                            <div class="pain-card-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="pain-card-title">Quỹ thời gian hạn hẹp</h3>
+                        </div>
+                        <p class="pain-card-desc"><strong>Lịch trình bận rộn:</strong> Cường độ làm việc cao và những
+                            chuyến công tác dày đặc khiến nhà lãnh đạo khó theo học các lớp học offline cố định thời
+                            gian hoặc di chuyển xa.</p>
                     </div>
                 </div>
 
@@ -3664,9 +3690,9 @@
                             d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H14.017V7H15.017C18.883 7 22.017 10.134 22.017 14V21H14.017ZM3.01697 21L3.01697 18C3.01697 16.8954 3.9124 16 5.01697 16H8.01697V14C8.01697 11.7909 6.22611 10 4.01697 10H3.01697V7H4.01697C7.883 7 11.017 10.134 11.017 14V21H3.01697Z" />
                     </svg>
                     <div>
-                        <p style="margin:0 0 8px;"><strong style="font-style: italic;">"Trong hầu hết các dự án AI thất
-                                bại, vấn đề không nằm ở công nghệ - mà nằm ở việc thiếu hụt năng lực quản trị và không
-                                gắn liền với mục tiêu chiến lược của doanh nghiệp."</strong></p>
+                        <p style="margin:0 0 8px;"><strong style="font-style: italic;">"Lãnh đạo trong kỷ nguyên số
+                                không phải là học viết code, mà là làm chủ tư duy chiến lược để dẫn dắt AI tạo ra kết
+                                quả kinh doanh đột phá và khẳng định vị thế dẫn đầu."</strong></p>
                     </div>
                 </div>
 
@@ -3695,8 +3721,11 @@
                     <h2 class="section-title" id="solution-headline" style="margin-bottom:16px">Đưa AI vào doanh nghiệp
                         với tư duy<br /><span class="gradient-text">của một nhà lãnh đạo toàn cầu</span></h2>
 
-                    <p class="sol-v2-desc"><strong>MBA in AI từ Swiss UMEF</strong> giúp bạn kết nối AI với chiến lược,
-                        vận hành và ra quyết định để tạo ra kết quả kinh doanh thực tế cho doanh nghiệp.</p>
+                    <p class="sol-v2-desc"><strong>MBA in AI Thụy Sĩ</strong> là sự kết hợp tinh hoa giữa <strong>10 môn
+                            Quản trị Kinh doanh (MBA)</strong> và <strong>02 module Ứng dụng AI &amp; Phân tích Dữ liệu
+                            lớn</strong>. Đây là thiết kế chuyên biệt dành cho các Nhà lãnh đạo, CEO nâng tầm vị thế,
+                        gia tăng hiệu suất quản trị và khẳng định danh tiếng quốc tế mà không cần kiến thức lập trình
+                        phức tạp.</p>
 
                     <!-- Compact stat pills -->
                     <div class="sol-v2-stats">
@@ -3892,9 +3921,10 @@
                     12 môn + Dự án<br />
                     <span class="gradient-text">Thiết kế theo chuẩn Châu Âu (90 ECTS)</span>
                 </h2>
-                <p class="solution-intro reveal-up">Chương trình được xây dựng theo tiêu chuẩn Bologna của Châu Âu, đảm
-                    bảo tính hệ thống từ nền tảng quản trị đến chuyên sâu chiến lược, ứng dụng ngay vào công việc hiện
-                    tại.</p>
+                <p class="solution-intro reveal-up">Chương trình được tích hợp tinh hoa từ <strong>10 môn MBA cốt
+                        lõi</strong> (Chiến lược, Tài chính, Lãnh đạo) kết hợp cùng <strong>02 module AI &amp; Phân tích
+                        chuyên sâu</strong> từ Swiss UMEF. Đây là lộ trình tối ưu giúp các nhà quản lý làm chủ tư duy
+                    kinh doanh và dẫn dắt việc ứng dụng công nghệ hiệu quả nhất.</p>
 
 
                 <div class="curriculum-grid reveal-up">
@@ -5283,12 +5313,14 @@
                     <div class="pricing-price-box-new" style="text-align: left; padding: 12px 0;">
                         <style>
                             /* ── Toggle Switch ── */
-                            .hq-toggle-switch input:checked + .hq-toggle-slider {
+                            .hq-toggle-switch input:checked+.hq-toggle-slider {
                                 background-color: #ab0e00;
                             }
-                            .hq-toggle-switch input:checked + .hq-toggle-slider:before {
+
+                            .hq-toggle-switch input:checked+.hq-toggle-slider:before {
                                 transform: translateX(18px);
                             }
+
                             .hq-toggle-slider {
                                 position: absolute;
                                 cursor: pointer;
@@ -5297,6 +5329,7 @@
                                 transition: .3s;
                                 border-radius: 20px;
                             }
+
                             .hq-toggle-slider:before {
                                 position: absolute;
                                 content: "";
@@ -5307,21 +5340,29 @@
                                 background-color: white;
                                 transition: .3s;
                                 border-radius: 50%;
-                                box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+                                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
                             }
                         </style>
                         <div style="display: flex; align-items: baseline; gap: 4px;">
-                            <span id="hq-price-chf-mbainai" style="font-size: 2.2rem; font-weight: 900; color: #ab0e00; line-height: 1;">5.120</span>
+                            <span id="hq-price-chf-mbainai"
+                                style="font-size: 2.2rem; font-weight: 900; color: #ab0e00; line-height: 1;">5.120</span>
                             <span style="font-size: 1.2rem; font-weight: 700; color: #1e293b;">CHF</span>
                         </div>
-                        <div id="hq-price-vnd-mbainai" style="font-size: 1.1rem; font-weight: 800; color: #1e293b; margin-top: 6px;">~168.960.000đ</div>
-                        <div id="hq-price-original-mbainai" style="font-size: 0.85rem; color: #94a3b8; text-decoration: line-through; margin-top: 4px;">Học phí gốc: 7.970 CHF</div>
-                        
+                        <div id="hq-price-vnd-mbainai"
+                            style="font-size: 1.1rem; font-weight: 800; color: #1e293b; margin-top: 6px;">~168.960.000đ
+                        </div>
+                        <div id="hq-price-original-mbainai"
+                            style="font-size: 0.85rem; color: #94a3b8; text-decoration: line-through; margin-top: 4px;">
+                            Học phí gốc: 7.970 CHF</div>
+
                         <!-- Toggle Switch container -->
-                        <div style="display: flex; align-items: center; gap: 10px; margin-top: 14px; background: rgba(171, 14, 0, 0.04); border: 1px solid rgba(171, 14, 0, 0.08); padding: 8px 12px; border-radius: 10px; width: fit-content;">
+                        <div
+                            style="display: flex; align-items: center; gap: 10px; margin-top: 14px; background: rgba(171, 14, 0, 0.04); border: 1px solid rgba(171, 14, 0, 0.08); padding: 8px 12px; border-radius: 10px; width: fit-content;">
                             <span style="font-size: 0.82rem; font-weight: 700; color: #475569;">Chuyến đi Thụy Sĩ</span>
-                            <label class="hq-toggle-switch" style="position: relative; display: inline-block; width: 38px; height: 20px; margin: 0; flex-shrink: 0;">
-                                <input type="checkbox" id="hq-tour-toggle-mbainai" aria-label="Chọn chuyến đi Thụy Sĩ" style="opacity: 0; width: 0; height: 0;" onchange="toggleHqTourMbainai(this)">
+                            <label class="hq-toggle-switch"
+                                style="position: relative; display: inline-block; width: 38px; height: 20px; margin: 0; flex-shrink: 0;">
+                                <input type="checkbox" id="hq-tour-toggle-mbainai" aria-label="Chọn chuyến đi Thụy Sĩ"
+                                    style="opacity: 0; width: 0; height: 0;" onchange="toggleHqTourMbainai(this)">
                                 <span class="hq-toggle-slider"></span>
                             </label>
                         </div>
@@ -5424,7 +5465,9 @@
                     </li>
                     <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; color: #475569;">
                         <span style="color: #ab0e00; font-size: 1rem; line-height: 1;">•</span>
-                        <span><strong>Chuyến đi tham quan Thụy Sĩ (3.000 CHF)</strong> là tự nguyện. Nếu không tham gia chuyến đi (Phương án 1), học phí sau chính sách là <strong>5.120 CHF</strong>. Nếu tham gia chuyến đi (Phương án 2), học phí là <strong>6.500 CHF</strong>.</span>
+                        <span><strong>Chuyến đi tham quan Thụy Sĩ (3.000 CHF)</strong> là tự nguyện. Nếu không tham gia
+                            chuyến đi (Phương án 1), học phí sau chính sách là <strong>5.120 CHF</strong>. Nếu tham gia
+                            chuyến đi (Phương án 2), học phí là <strong>6.500 CHF</strong>.</span>
                     </li>
                 </ul>
             </div>
@@ -5730,7 +5773,7 @@
                                 <a href="https://zalo.me/3857867121882640296" target="_blank" class="modal-zalo-btn"
                                     aria-label="Chat Zalo với IDEAS">
                                     <img decoding="async"
-                                        src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1714776582486"
+                                        src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1780553812775"
                                         alt="Zalo Logo IDEAS" width="20" height="20" loading="lazy">
                                     <span>Chat Zalo với IDEAS</span>
                                 </a>
@@ -5871,7 +5914,7 @@
                             <a href="https://zalo.me/3857867121882640296" target="_blank" class="modal-zalo-btn"
                                 aria-label="Chat Zalo với IDEAS">
                                 <img decoding="async"
-                                    src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1714776582486"
+                                    src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1780553812775"
                                     alt="Zalo Logo IDEAS" width="20" height="20" loading="lazy">
                                 <span>Chat Zalo với IDEAS</span>
                             </a>
@@ -6608,8 +6651,8 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.min.js?v=1780548167043" defer></script>
-    <script src="common-assets/js/booking-modal.min.js?v=1780548167043" defer></script>
+    <script src="common-assets/js/script.min.js?v=1780554184756" defer></script>
+    <script src="common-assets/js/booking-modal.min.js?v=1780554184756" defer></script>
 
 
 

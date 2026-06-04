@@ -200,9 +200,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="common-assets/css/style.min.css?v=1780548167037" as="style" />
-    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780548167037" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780548167037" />
+    <link rel="preload" href="common-assets/css/style.min.css?v=1780554184747" as="style" />
+    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780554184747" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780554184747" />
     <style>
         /* ═══════════════════════════════════════
            PROOF CARD - Premium 2-col design
@@ -327,10 +327,10 @@
         .proof-card-headline {
             display: flex;
             align-items: center;
-            gap: 20px;
-            font-size: clamp(1.2rem, 2.2vw, 1.85rem);
+            gap: 16px;
+            font-size: clamp(1.2rem, 1.8vw, 1.7rem);
             font-weight: 900;
-            line-height: 1.25;
+            line-height: 1.1;
             color: var(--clr-navy, #111729);
             margin: 0;
         }
@@ -349,8 +349,8 @@
         }
 
         .proof-qs-logo {
-            width: clamp(75px, 8vw, 96px);
-            height: clamp(75px, 8vw, 96px);
+            width: 130px;
+            height: 130px;
             object-fit: contain;
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
             transition: transform 0.3s ease, opacity 0.3s ease;
@@ -703,23 +703,28 @@
             margin: 0;
         }
 
-        /* Pain cards grid */
-        .pain-cards {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-
-        @media (max-width: 1024px) {
-            .pain-cards {
-                grid-template-columns: repeat(3, 1fr);
+        /* Pain cards grid override */
+        @media (min-width: 769px) {
+            body .pain-section .pain-cards {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 16px !important;
+                margin-bottom: 56px !important;
             }
         }
 
-        @media (max-width: 640px) {
-            .pain-cards {
-                grid-template-columns: 1fr 1fr;
+        @media (max-width: 768px) {
+            body .pain-section .pain-cards {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 16px !important;
+                margin-bottom: 40px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body .pain-section .pain-cards {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+                margin-bottom: 32px !important;
             }
         }
 
@@ -3194,6 +3199,20 @@
                         <p class="pain-card-desc">Thiếu cơ hội kết giao cùng <strong>cộng đồng doanh chủ tinh
                                 anh</strong> đồng đẳng để mở rộng liên kết hợp tác quốc tế.</p>
                     </div>
+                    <div class="pain-card-v2">
+                        <div class="pain-card-num">06</div>
+                        <div class="pain-card-header">
+                            <div class="pain-card-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <h3 class="pain-card-title">Bế tắc khi mở rộng quy mô</h3>
+                        </div>
+                        <p class="pain-card-desc">Gặp khó khăn khi xây dựng hệ thống <strong>quản trị bài bản</strong>, phân quyền và kiểm soát rủi ro khi doanh nghiệp tăng trưởng nóng hoặc muốn nhân bản.</p>
+                    </div>
                 </div>
 
                 <!-- Stat + Trends -->
@@ -5111,7 +5130,7 @@
                                 <a href="https://zalo.me/3857867121882640296" target="_blank" class="modal-zalo-btn"
                                     aria-label="Chat Zalo với IDEAS">
                                     <img decoding="async"
-                                        src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1714776582486"
+                                        src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1780553812775"
                                         alt="Zalo Logo IDEAS" width="20" height="20" loading="lazy">
                                     <span>Chat Zalo với IDEAS</span>
                                 </a>
@@ -5253,7 +5272,7 @@
                             <a href="https://zalo.me/3857867121882640296" target="_blank" class="modal-zalo-btn"
                                 aria-label="Chat Zalo với IDEAS">
                                 <img decoding="async"
-                                    src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1714776582486"
+                                    src="https://cdn-1.webcatalog.io/catalog/zalo-oa/zalo-oa-icon-unplated.png?v=1780553812775"
                                     alt="Zalo Logo IDEAS" width="20" height="20" loading="lazy">
                                 <span>Chat Zalo với IDEAS</span>
                             </a>
@@ -5990,8 +6009,8 @@
         </div>
     </div>
 
-    <script src="common-assets/js/script.min.js?v=1780548167037" defer></script>
-    <script src="common-assets/js/booking-modal.min.js?v=1780548167037" defer></script>
+    <script src="common-assets/js/script.min.js?v=1780554184747" defer></script>
+    <script src="common-assets/js/booking-modal.min.js?v=1780554184747" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
