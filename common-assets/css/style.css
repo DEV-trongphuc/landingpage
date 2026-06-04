@@ -175,6 +175,7 @@ abbr {
   white-space: nowrap;
   position: relative;
   overflow: hidden;
+  font-family: inherit;
 }
 
 .btn-primary {
@@ -306,6 +307,18 @@ abbr {
   transition: color 0.3s ease;
 }
 
+button.nav-link {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #111729;
+  padding: 0;
+  cursor: pointer;
+  line-height: inherit;
+}
+
 .nav-link::after {
   content: '';
   position: absolute;
@@ -394,11 +407,13 @@ abbr {
   gap: 8px;
   box-shadow: 10px 0 40px rgba(0, 0, 0, 0.1);
   transform: translateX(-100%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
 }
 
 .mobile-menu.open {
   transform: translateX(0);
+  visibility: visible;
 }
 
 .mobile-menu .nav-link {
