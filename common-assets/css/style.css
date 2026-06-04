@@ -5246,9 +5246,9 @@ button.nav-link {
 }
 
 .dropdown-item .item-avatar {
-  width: 112px;
+  width: 89.6px;
   height: 63px;
-  /* 16:9 ratio */
+  /* 1.42 aspect ratio to match actual image dimensions */
   border-radius: 8px;
   object-fit: cover;
   flex-shrink: 0;
@@ -7719,9 +7719,9 @@ h6,
   }
 
   .mobile-dropdown-item .item-avatar {
-    width: 56px !important;
+    width: 44.8px !important;
     height: 31.5px !important;
-    /* 16:9 aspect ratio */
+    /* 1.42 aspect ratio to match actual image dimensions */
     border-radius: 4px !important;
     object-fit: cover !important;
     border: 1.5px solid #f1f5f9 !important;
@@ -10065,7 +10065,7 @@ body .pcv2-featured .pcv2-features li {
 }
 
 .mobile-dropdown-item .item-avatar {
-  width: 48px !important;
+  width: 38.4px !important;
   height: 27px !important;
 }
 
