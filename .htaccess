@@ -4,7 +4,7 @@ RewriteEngine On
 
 # Route relative asset paths from the root to the physical LANDINGPAGE_MBA directory
 RewriteCond %{REQUEST_URI} !^/wp-content/new_public/LANDINGPAGE_MBA/
-RewriteRule (?:^|/)(common-assets|homepage-assets|assets)/(.*)$ /wp-content/new_public/LANDINGPAGE_MBA/$1/$2 [L,NC]
+RewriteRule (?:^|/)(common-assets|homepage-assets|assets|salekit)/(.*)$ /wp-content/new_public/LANDINGPAGE_MBA/$1/$2 [L,NC]
 
 # --- 1. REDIRECTS (301) to Clean URLs ---
 
@@ -70,6 +70,10 @@ RewriteRule ^en/dat-lich/?$ /wp-content/new_public/LANDINGPAGE_MBA/en/dat-lich.h
 
 # Route riêng cho landing xét duyệt (giữ nguyên rule cũ)
 RewriteRule ^xet-duyet-ho-so-truc-tuyen/?$ /wp-content/index.html [L]
+
+# Route cho salekit portal
+RewriteRule ^salekit$ /salekit/ [R=301,L,NC]
+RewriteRule ^salekit/$ /wp-content/new_public/LANDINGPAGE_MBA/salekit/index.html [L]
 </IfModule>
 # ────────────────────────────────────────────────────────────────────
 
