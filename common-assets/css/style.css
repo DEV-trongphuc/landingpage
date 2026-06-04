@@ -283,8 +283,8 @@ abbr {
 
 @media (max-width: 768px) {
   .logo img {
-    height: 48px !important;
-    max-width: 65% !important;
+    height: 54px !important;
+    max-width: 100% !important;
     object-fit: contain;
   }
 }
@@ -7912,13 +7912,13 @@ h6,
     display: flex !important;
     align-items: center !important;
     overflow: hidden !important;
-    max-height: 42px !important;
-    max-width: 140px !important;
+    max-height: 58px !important;
+    max-width: 220px !important;
   }
 
   .logo img {
-    max-height: 38px !important;
-    height: 38px !important;
+    max-height: 52px !important;
+    height: 52px !important;
     width: auto !important;
     display: block !important;
   }
@@ -8050,7 +8050,7 @@ h6,
   }
 
   .hero-accred-logos img {
-    height: 22px !important;
+    height: 38px !important;
   }
 
   /* Cards & Grid gaps */
@@ -9872,7 +9872,7 @@ body .pcv2-featured .pcv2-features li {
     width: 100% !important;
   }
   body .hero-accred-logos img {
-    height: 2.2rem !important;
+    height: 2.4rem !important;
     max-width: 100% !important;
     object-fit: contain !important;
   }
@@ -9887,8 +9887,8 @@ body .pcv2-featured .pcv2-features li {
     width: 100% !important;
   }
   body .hero-accred-logos img {
-    height: 2.2rem !important;
-    max-width: 15% !important;
+    height: 2.4rem !important;
+    max-width: 25% !important;
     object-fit: contain !important;
   }
 }

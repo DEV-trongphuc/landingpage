@@ -1,3 +1,38 @@
+/* Google Tag Manager & Conversion Tracking setup */
+(function() {
+    if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-QKV7LKNLLH';
+        document.head.appendChild(script);
+    }
+    window.dataLayer = window.dataLayer || [];
+    if (!window.gtag) {
+        window.gtag = function() {
+            window.dataLayer.push(arguments);
+        };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-QKV7LKNLLH');
+        window.gtag('config', 'AW-11205917800');
+    }
+    if (!window.gtag_report_conversion) {
+        window.gtag_report_conversion = function(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            window.gtag('event', 'conversion', {
+                'send_to': 'AW-11205917800/mdXJCOTL-bccEOj4st8p',
+                'value': 1.0,
+                'currency': 'VND',
+                'event_callback': callback
+            });
+            return false;
+        };
+    }
+})();
+
 /* ═══════════════════════════════════════
    SWISS UMEF MBA – script.js
    Interactions, Animations, Form Logic
