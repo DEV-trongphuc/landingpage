@@ -5051,7 +5051,7 @@ button.nav-link {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    border-radius: 6px !important;
+    border-radius: 100px !important;
   }
 
   .modal-zalo-btn img {
