@@ -4817,305 +4817,440 @@
         ══════════════════════════════════════════ -->
         <div class="pricing-section reveal-up" id="bang-gia" style="margin-top: 80px; margin-bottom: 24px;">
             <style>
-                .pricing-card-premium {
+                .scholarship-grid {
+                    display: flex;
+                    gap: 24px;
+                    align-items: stretch;
+                    justify-content: center;
+                    margin-top: 32px;
+                    margin-bottom: 40px;
+                    flex-wrap: wrap;
+                }
+
+                .scholarship-card {
+                    flex: 1 1 300px;
+                    min-width: 290px;
+                    max-width: 480px;
+                    background: #ffffff;
+                    border: 1.5px solid #e2e8f0;
+                    border-radius: 24px;
+                    padding: 32px 24px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    position: relative;
                     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
                 }
 
-                .pricing-card-premium:hover {
-                    transform: translateY(-8px);
-                    box-shadow: 0 25px 50px -12px rgba(171, 14, 0, 0.18) !important;
+                .scholarship-card:hover {
+                    transform: translateY(-6px);
+                    box-shadow: 0 20px 40px -10px rgba(171, 14, 0, 0.12);
+                    border-color: rgba(171, 14, 0, 0.3);
                 }
 
-                #premium-cta-bba:hover {
+                .scholarship-card.highlighted {
+                    border: 2.5px solid #ab0e00;
+                    box-shadow: 0 15px 35px -10px rgba(171, 14, 0, 0.15);
+                }
+
+                .scholarship-card.highlighted:hover {
+                    box-shadow: 0 25px 50px -12px rgba(171, 14, 0, 0.25) !important;
+                }
+
+                .scholarship-badge {
+                    position: absolute;
+                    top: 16px;
+                    right: 16px;
+                    padding: 4px 10px;
+                    border-radius: 99px;
+                    font-size: 0.72rem;
+                    font-weight: 850;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+
+                .scholarship-badge.limited {
+                    background: rgba(171, 14, 0, 0.08);
+                    color: #ab0e00;
+                    border: 1px solid rgba(171, 14, 0, 0.2);
+                }
+
+                .scholarship-badge.popular {
+                    background: linear-gradient(135deg, #ab0e00, #ff4c4c);
+                    color: #ffffff;
+                }
+
+                .scholarship-badge.partner {
+                    background: #f1f5f9;
+                    color: #475569;
+                    border: 1px solid #cbd5e1;
+                }
+
+                .scholarship-card h4 {
+                    font-size: 1.35rem;
+                    font-weight: 900;
+                    color: #0f172a;
+                    margin: 8px 0 12px 0;
+                    text-align: left;
+                    line-height: 1.3;
+                }
+
+                .scholarship-card-price {
+                    margin: 16px 0;
+                    border-top: 1px dashed #e2e8f0;
+                    border-bottom: 1px dashed #e2e8f0;
+                    padding: 14px 0;
+                    text-align: left;
+                }
+
+                .scholarship-card-price-value {
+                    font-size: 2.1rem;
+                    font-weight: 900;
+                    color: #ab0e00;
+                    line-height: 1.1;
+                }
+
+                .scholarship-card-price-sub {
+                    font-size: 0.85rem;
+                    color: #64748b;
+                    margin-top: 4px;
+                    font-weight: 600;
+                }
+
+                .scholarship-features {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0 0 24px;
+                    text-align: left;
+                    font-size: 0.88rem;
+                    line-height: 1.5;
+                    color: #334155;
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                }
+
+                .scholarship-features li {
+                    display: flex;
+                    gap: 8px;
+                    align-items: flex-start;
+                }
+
+                .scholarship-features svg {
+                    flex-shrink: 0;
+                    color: #ab0e00;
+                    margin-top: 2px;
+                }
+
+                .scholarship-cta-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 14px 20px;
+                    border-radius: 12px;
+                    font-weight: 800;
+                    text-decoration: none;
+                    font-size: 0.95rem;
+                    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                    border: none;
+                    cursor: pointer;
+                }
+
+                .scholarship-cta-btn.primary {
+                    background: #ab0e00 !important;
+                    color: #ffffff !important;
+                    box-shadow: 0 6px 16px rgba(171, 14, 0, 0.15) !important;
+                }
+
+                .scholarship-cta-btn.primary:hover {
                     background: #900c00 !important;
                     transform: translateY(-2px);
-                    box-shadow: 0 12px 28px rgba(171, 14, 0, 0.35) !important;
+                    box-shadow: 0 10px 20px rgba(171, 14, 0, 0.3) !important;
                 }
 
-                @media (min-width: 769px) {
-                    .pricing-card-premium-content {
-                        display: flex;
-                        gap: 40px;
-                        align-items: stretch;
-                    }
-
-                    .pricing-card-premium-left {
-                        flex: 1.2;
-                        text-align: left !important;
-                    }
-
-                    .pricing-card-premium-right {
-                        flex: 0.8;
-                        border-left: 1px solid #e2e8f0;
-                        padding-left: 40px;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        text-align: right !important;
-                    }
+                .scholarship-cta-btn.secondary {
+                    background: #ffffff;
+                    color: #ab0e00 !important;
+                    border: 1.5px solid #ab0e00;
                 }
 
-                @media (max-width: 768px) {
-                    .pricing-card-premium-content {
-                        display: flex;
+                .scholarship-cta-btn.secondary:hover {
+                    background: rgba(171, 14, 0, 0.04) !important;
+                    transform: translateY(-2px);
+                }
+
+                .fee-tab-group {
+                    display: inline-flex;
+                    background: #f1f5f9;
+                    border-radius: 12px;
+                    padding: 4px;
+                    margin-bottom: 20px;
+                    gap: 4px;
+                    border: 1px solid #e2e8f0;
+                }
+
+                .fee-tab-btn {
+                    border: none;
+                    background: none;
+                    padding: 10px 18px;
+                    font-weight: 700;
+                    font-size: 0.85rem;
+                    color: #475569;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                }
+
+                .fee-tab-btn.active {
+                    background: #ab0e00;
+                    color: #ffffff;
+                    box-shadow: 0 4px 10px rgba(171, 14, 0, 0.15);
+                }
+
+                @media (max-width: 991px) {
+                    .scholarship-grid {
                         flex-direction: column;
-                        gap: 32px;
+                        align-items: center;
                     }
-
-                    .pricing-card-premium-left {
-                        text-align: left !important;
-                    }
-
-                    .pricing-card-premium-right {
-                        text-align: center !important;
-                        border-top: 1px dashed #e2e8f0;
-                        padding-top: 32px;
-                        margin-top: 8px;
-                    }
-
-                    .pricing-card-premium-right div {
-                        text-align: center !important;
-                    }
-
-                    .pricing-card-premium-right div div {
-                        justify-content: center !important;
+                    .scholarship-card {
+                        width: 100%;
+                        max-width: 480px;
                     }
                 }
             </style>
             <div class="section-label" style="margin: 0 auto 1.5rem; display: table;">HỌC PHÍ & LỘ TRÌNH TÀI CHÍNH</div>
             <h3 class="pricing-title"
                 style="text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #ab0e00; margin-bottom: 12px; line-height: 1.2;">
-                Học bổng Khuyến học 2026<br />
+                Chính Sách Học Bổng Full BBA 2026<br />
             </h3>
 
             <!-- Scholarship Banner -->
             <div class="scholarship-banner-new"
-                style="background: linear-gradient(135deg, rgba(171, 14, 0, 0.03) 0%, rgba(255, 76, 76, 0.03) 100%); border: 1.5px solid rgba(171, 14, 0, 0.2); border-radius: 20px; padding: 24px; display: flex; align-items: center; gap: 24px; margin-bottom: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                style="background: linear-gradient(135deg, rgba(171, 14, 0, 0.03) 0%, rgba(255, 76, 76, 0.03) 100%); border: 1.5px solid rgba(171, 14, 0, 0.2); border-radius: 20px; padding: 24px; display: flex; align-items: center; gap: 24px; margin-bottom: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); max-width: 980px; margin-left: auto; margin-right: auto;">
                 <div
                     style="background: #ab0e00; border-radius: 50%; width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 14px rgba(171,14,0,0.3);">
                     <span style="font-size: 1.8rem; font-weight: 900; color: #ffffff;">90%</span>
                 </div>
                 <div style="font-size: 1.05rem; color: #1e293b; font-weight: 700; line-height: 1.6; text-align: left;">
-                    Swiss UMEF hỗ trợ các học viên Việt Nam học phí năm đầu lên đến 90%.
+                    Swiss UMEF hỗ trợ các học viên Việt Nam học phí năm đầu lên đến 90%. Chương trình học bổng đa cấp độ, mở rộng cơ hội học tập chuẩn Châu Âu.
                 </div>
             </div>
 
             <div class="premium-policy-wrapper"
-                style="max-width: 980px; margin: 0 auto; position: relative; padding: 0 20px;">
+                style="max-width: 1140px; margin: 0 auto; position: relative; padding: 0 20px;">
 
-                <!-- Premium Tuition Card -->
-                <div class="pricing-card-premium"
-                    style="position: relative; background: #ffffff; border: 2.5px solid #ab0e00; border-radius: 32px; box-shadow: 0 20px 40px -15px rgba(171, 14, 0, 0.1); padding: 40px 32px; overflow: hidden; color: #334155; z-index: 1;">
-
-                    <div class="pricing-card-premium-content">
-                        <!-- Left Column -->
-                        <div class="pricing-card-premium-left">
-                            <!-- Title -->
-                            <div style="margin-bottom: 24px; margin-top: 4px;">
-                                <span
-                                    style="background: rgba(171, 14, 0, 0.08); color: #ab0e00; font-size: 0.75rem; font-weight: 700; padding: 6px 12px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 16px;">
-                                    Học bổng Khuyến học 2026
-                                </span>
-                                <h4
-                                    style="font-size: 1.8rem; font-weight: 900; color: #0f172a; margin: 0 0 8px 0; text-transform: none; letter-spacing: -0.5px;">
-                                    Cử nhân Quản trị kinh doanh
-                                </h4>
-                                <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin: 0;">
-                                    Chương trình đào tạo Cử nhân Quản trị Kinh doanh (3 năm - 36 tháng).
-                                </p>
+                <!-- 2-Card Scholarship Grid -->
+                <div class="scholarship-grid">
+                    
+                    <!-- Card 1: Học bổng Toàn phần -->
+                    <div class="scholarship-card highlighted">
+                        <div>
+                            <span class="scholarship-badge limited">Tối đa 5 suất/năm</span>
+                            <h4 style="margin-top: 24px; color: #ab0e00;">Học bổng Toàn phần</h4>
+                            <p style="font-size: 0.85rem; color: #64748b; margin-top: -6px; margin-bottom: 16px;">Tài trợ 100% học phí chương trình.</p>
+                            
+                            <div class="scholarship-card-price">
+                                <div class="scholarship-card-price-value">0 CHF</div>
+                                <div class="scholarship-card-price-sub">Miễn 100% Học phí gốc</div>
                             </div>
-
-                            <!-- Conditions / Maintenance Criteria -->
-                            <div style="text-align: left; display: flex; flex-direction: column; gap: 14px;">
-                                <div>
-                                    <h5
-                                        style="font-size: 0.95rem; font-weight: 800; color: #ab0e00; margin: 0 0 6px 0; text-transform: uppercase; letter-spacing: 0.5px;">
-                                        ĐIỀU KIỆN THAM GIA</h5>
-                                    <p style="font-size: 0.92rem; color: #334155; line-height: 1.5; margin: 0;">
-                                        Tất cả học viên Việt Nam đủ điều kiện đầu vào đều có cơ hội nhận học bổng 90% từ
-                                        Swiss
-                                        UMEF.
-                                    </p>
-                                </div>
-                                <div
-                                    style="background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; border-radius: 14px; padding: 16px 20px; box-sizing: border-box; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);">
-                                    <p style="margin: 0; font-size: 0.9rem; line-height: 1.5; color: #334155;">
-                                        <strong style="color: #ab0e00; font-weight: 900;">Đặc biệt:</strong> Học bổng có
-                                        thể duy
-                                        trì vào năm 2 và năm 3 nếu đạt thành tích A tất cả các môn và không bị trượt
-                                        môn.
-                                    </p>
-                                </div>
-                            </div>
+                            
+                            <ul class="scholarship-features">
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Chính sách ưu tiên:</strong> Dành riêng cho ứng viên nộp hồ sơ đăng ký xét tuyển học bổng ngay từ thời điểm nộp đơn.</span>
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Đặc quyền tuyển sinh:</strong> Được Ban Lãnh đạo & Hội đồng tuyển sinh trực tiếp hướng dẫn hồ sơ và đồng hành từ đầu để tối ưu tỷ lệ duyệt.</span>
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Điều kiện duy trì:</strong> Đạt kết quả học tập xuất sắc (Grade A) để tiếp tục nhận học bổng cho các năm tiếp theo.</span>
+                                </li>
+                            </ul>
                         </div>
-
-                        <!-- Right Column -->
-                        <div class="pricing-card-premium-right">
-                            <!-- Price Section -->
-                            <div style="margin-bottom: 24px;">
-                                <span
-                                    style="display: block; font-size: 0.8rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">HỌC
-                                    PHÍ NĂM I</span>
-                                <div
-                                    style="display: flex; align-items: baseline; gap: 4px; justify-content: flex-end; text-decoration: line-through; color: #94a3b8; font-size: 1.25rem; font-weight: 700; margin-bottom: -2px;">
-                                    <span>8.900</span>
-                                    <span style="font-size: 0.9rem; font-weight: 600;">CHF</span>
-                                </div>
-                                <div
-                                    style="display: flex; align-items: baseline; gap: 4px; justify-content: flex-end; margin-bottom: 2px;">
-                                    <span
-                                        style="font-size: 3rem; font-weight: 900; color: #ab0e00; line-height: 1;">890</span>
-                                    <span style="font-size: 1.3rem; font-weight: 800; color: #ab0e00;">CHF</span>
-                                </div>
-                                <p
-                                    style="margin: 0; font-size: 1.35rem; color: #0f172a; font-weight: 900; margin-bottom: 12px;">
-                                    ~29.370.000 VND
-                                </p>
-                                <p style="margin: 0; font-size: 0.85rem; color: #64748b; line-height: 1.5;">
-                                    Không bao gồm Lệ phí hồ sơ và các chi phí phát sinh nếu bị đánh giá trượt môn, thi
-                                    lại.
-                                </p>
-                            </div>
-
-                            <!-- CTA Button -->
-                            <div style="text-align: center; margin-top: auto; width: 100%;">
-                                <a href="#dang-ky" id="premium-cta-bba"
-                                    style="display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 16px 28px; background: #ab0e00; color: white !important; font-size: 1.1rem; font-weight: 800; text-decoration: none; border-radius: 16px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 8px 20px rgba(171, 14, 0, 0.25); border: none;">
-                                    <span>Đăng ký tư vấn lộ trình</span>
-                                </a>
-                            </div>
+                        
+                        <div>
+                            <a href="#dang-ky" class="scholarship-cta-btn primary bk-open-btn">Đăng ký xét tuyển</a>
                         </div>
                     </div>
 
-                    <!-- Toggle Show More -->
-                    <div style="margin-bottom: 24px;">
-                        <button class="toggle-details-btn" onclick="toggleTuitionDetails()"
-                            style="background: none; border: none; color: #ab0e00; font-size: 0.92rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; text-decoration: underline; padding: 4px 8px;">
-                            <span id="toggle-details-text">Xem chi tiết các khoản phí</span>
-                            <svg id="toggle-details-icon" style="transition: transform 0.3s;" width="14" height="14"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
-                        </button>
-
-                        <!-- Expandable Details Table -->
-                        <div id="tuition-details-container"
-                            style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; text-align: left; margin-top: 16px;">
-                            <div style="border-top: 1px dashed #cbd5e1; padding-top: 16px;">
-                                <table
-                                    style="width: 100%; border-collapse: collapse; font-size: 0.85rem; color: #475569; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
-                                    <thead>
-                                        <tr
-                                            style="border-bottom: 1px solid #cbd5e1; background: #ab0e00; color: #ffffff;">
-                                            <th rowspan="2"
-                                                style="padding: 12px 10px; text-align: left; font-weight: 800; border-right: 1px solid rgba(255,255,255,0.2);">
-                                                Chi tiết</th>
-                                            <th colspan="2"
-                                                style="padding: 12px 10px; text-align: center; font-weight: 800; border-right: 1px solid rgba(255,255,255,0.2);">
-                                                Giai đoạn 01</th>
-                                            <th style="padding: 12px 10px; text-align: center; font-weight: 800;">
-                                                Giai đoạn 02</th>
-                                        </tr>
-                                        <tr
-                                            style="border-bottom: 2px solid #cbd5e1; background: #fecaca; color: #470600;">
-                                            <th
-                                                style="padding: 8px; text-align: center; font-weight: 700; border-right: 1px solid rgba(0,0,0,0.08); width: 22%;">
-                                                Năm 01</th>
-                                            <th
-                                                style="padding: 8px; text-align: center; font-weight: 700; border-right: 1px solid rgba(0,0,0,0.08); width: 22%;">
-                                                Năm 02</th>
-                                            <th style="padding: 8px; text-align: center; font-weight: 700; width: 22%;">
-                                                Năm 03</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr style="border-bottom: 1px solid #e2e8f0;">
-                                            <td
-                                                style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">
-                                                Lệ phí hồ sơ (CHF)</td>
-                                            <td
-                                                style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">
-                                                150</td>
-                                            <td
-                                                style="padding: 10px; text-align: center; color: #94a3b8; border-right: 1px solid #e2e8f0;">
-                                                -</td>
-                                            <td style="padding: 10px; text-align: center; color: #94a3b8;">-</td>
-                                        </tr>
-                                        <tr style="border-bottom: 1px solid #e2e8f0;">
-                                            <td
-                                                style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">
-                                                Học phí (CHF)</td>
-                                            <td
-                                                style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">
-                                                890</td>
-                                            <td
-                                                style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">
-                                                890</td>
-                                            <td
-                                                style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a;">
-                                                890</td>
-                                        </tr>
-                                        <tr style="border-bottom: 1px solid #e2e8f0;">
-                                            <td
-                                                style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">
-                                                Phí dịch vụ (CHF)</td>
-                                            <td
-                                                style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">
-                                                200</td>
-                                            <td
-                                                style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">
-                                                200</td>
-                                            <td
-                                                style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a;">
-                                                500</td>
-                                        </tr>
-                                        <tr style="border-bottom: 1px solid #cbd5e1;">
-                                            <td
-                                                style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">
-                                                Canton & Lãnh sự & Lễ tốt nghiệp (CHF)</td>
-                                            <td
-                                                style="padding: 10px; text-align: center; color: #94a3b8; border-right: 1px solid #e2e8f0;">
-                                                -</td>
-                                            <td
-                                                style="padding: 10px; text-align: center; color: #94a3b8; border-right: 1px solid #e2e8f0;">
-                                                -</td>
-                                            <td
-                                                style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a;">
-                                                200</td>
-                                        </tr>
-                                        <tr
-                                            style="border-bottom: 1px solid #cbd5e1; font-weight: 800; background: rgba(171, 14, 0, 0.02);">
-                                            <td rowspan="2"
-                                                style="padding: 12px 10px; font-weight: 800; color: #0f172a; text-transform: uppercase; border-right: 1px solid #e2e8f0;">
-                                                TỔNG HỌC PHÍ (CHF)</td>
-                                            <td
-                                                style="padding: 12px 10px; text-align: center; font-weight: 800; color: #ab0e00; border-right: 1px solid #e2e8f0;">
-                                                1.240</td>
-                                            <td
-                                                style="padding: 12px 10px; text-align: center; font-weight: 800; color: #ab0e00; border-right: 1px solid #e2e8f0;">
-                                                1.090</td>
-                                            <td
-                                                style="padding: 12px 10px; text-align: center; font-weight: 800; color: #ab0e00;">
-                                                1.590</td>
-                                        </tr>
-                                        <tr
-                                            style="border-bottom: 1.5px solid #cbd5e1; font-weight: 800; background: rgba(171, 14, 0, 0.06);">
-                                            <td colspan="3"
-                                                style="padding: 12px 10px; text-align: center; font-weight: 900; color: #ab0e00; font-size: 1.15rem; letter-spacing: 0.5px;">
-                                                3.920</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div
-                                    style="margin-top: 12px; padding: 12px; background: #f8fafc; border-radius: 8px; font-size: 0.8rem; color: #64748b; line-height: 1.4;">
-                                    <strong>Ghi chú:</strong> Các khoản phí (CHF) được quy đổi theo tỷ giá cố định áp
-                                    dụng tại Việt Nam là 33.000 VNĐ/CHF.
+                    <!-- Card 2: Học bổng Khuyến học (Highlighted) -->
+                    <div class="scholarship-card highlighted">
+                        <div>
+                            <span class="scholarship-badge popular">Khuyến học</span>
+                            <h4 style="margin-top: 24px; color: #ab0e00;">Học bổng Khuyến học</h4>
+                            <p style="font-size: 0.85rem; color: #64748b; margin-top: -6px; margin-bottom: 16px;">Hỗ trợ 90% học phí năm đầu từ Swiss UMEF.</p>
+                            
+                            <div class="scholarship-card-price">
+                                <div style="display: flex; align-items: baseline; gap: 4px; justify-content: flex-start; text-decoration: line-through; color: #94a3b8; font-size: 1.1rem; font-weight: 700; margin-bottom: 2px;">
+                                    <span>8.900</span><span>CHF</span>
                                 </div>
+                                <div style="display: flex; align-items: baseline; gap: 4px; justify-content: flex-start;">
+                                    <span class="scholarship-card-price-value">890</span><span style="font-size: 1.2rem; font-weight: 800; color: #ab0e00;">CHF</span>
+                                    <span style="font-size: 1rem; color: #64748b; font-weight: 600; margin-left: 6px;">~29.370.000 VND</span>
+                                </div>
+                                <div class="scholarship-card-price-sub">Tổng 3 năm duy trì: 3.920 CHF (~129,360,000 VND)</div>
                             </div>
+                            
+                            <ul class="scholarship-features">
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Điều kiện tham gia:</strong> Tất cả học viên Việt Nam đủ điều kiện đầu vào của chương trình.</span>
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Điều kiện xét & duy trì:</strong> Điểm trung bình môn (GPA) không thấp hơn 4.25 (thang điểm 6) và không môn nào bị rớt.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <a href="#dang-ky" class="scholarship-cta-btn primary bk-open-btn">Đăng ký tư vấn lộ trình</a>
                         </div>
                     </div>
 
+                </div>
+
+                <!-- Toggle Show More Details -->
+                <div style="margin-bottom: 24px; text-align: center;">
+                    <button class="toggle-details-btn" onclick="toggleTuitionDetails()"
+                        style="background: none; border: none; color: #ab0e00; font-size: 0.95rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; text-decoration: underline; padding: 4px 8px;">
+                        <span id="toggle-details-text">Xem chi tiết các khoản phí</span>
+                        <svg id="toggle-details-icon" style="transition: transform 0.3s;" width="14" height="14"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+
+                    <!-- Expandable Details Table Container -->
+                    <div id="tuition-details-container"
+                        style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; text-align: left; margin-top: 16px;">
+                        <div style="border-top: 1px dashed #cbd5e1; padding-top: 16px; text-align: center;">
+                            
+                            <!-- Tab buttons to switch tables -->
+                            <div class="fee-tab-group">
+                                <button class="fee-tab-btn active" id="tab-btn-encouragement" onclick="switchTuitionTab('tuition-table-encouragement')">Biểu phí Học bổng Khuyến học (Tổng 3.920 CHF)</button>
+                                <button class="fee-tab-btn" id="tab-btn-ideas" onclick="switchTuitionTab('tuition-table-ideas')">Biểu phí Học bổng Đối tác IDEAS (Tổng 4.810 CHF)</button>
+                            </div>
+
+                            <!-- Table 1: Study Encouragement -->
+                            <table id="tuition-table-encouragement"
+                                style="width: 100%; border-collapse: collapse; font-size: 0.85rem; color: #475569; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; display: table;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #cbd5e1; background: #ab0e00; color: #ffffff;">
+                                        <th rowspan="2" style="padding: 12px 10px; text-align: left; font-weight: 800; border-right: 1px solid rgba(255,255,255,0.2);">Chi tiết (Học bổng Khuyến học 90%)</th>
+                                        <th colspan="2" style="padding: 12px 10px; text-align: center; font-weight: 800; border-right: 1px solid rgba(255,255,255,0.2);">Giai đoạn 01</th>
+                                        <th style="padding: 12px 10px; text-align: center; font-weight: 800;">Giai đoạn 02</th>
+                                    </tr>
+                                    <tr style="border-bottom: 2px solid #cbd5e1; background: #fecaca; color: #470600;">
+                                        <th style="padding: 8px; text-align: center; font-weight: 700; border-right: 1px solid rgba(0,0,0,0.08); width: 22%;">Năm 01</th>
+                                        <th style="padding: 8px; text-align: center; font-weight: 700; border-right: 1px solid rgba(0,0,0,0.08); width: 22%;">Năm 02</th>
+                                        <th style="padding: 8px; text-align: center; font-weight: 700; width: 22%;">Năm 03</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                                        <td style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">Lệ phí hồ sơ (CHF)</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">150</td>
+                                        <td style="padding: 10px; text-align: center; color: #94a3b8; border-right: 1px solid #e2e8f0;">-</td>
+                                        <td style="padding: 10px; text-align: center; color: #94a3b8;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                                        <td style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">Học phí (CHF)</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">890</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">890</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a;">890</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                                        <td style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">Phí dịch vụ (CHF)</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">200</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">200</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a;">500</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #cbd5e1;">
+                                        <td style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">Canton & Lãnh sự & Lễ tốt nghiệp (CHF)</td>
+                                        <td style="padding: 10px; text-align: center; color: #94a3b8; border-right: 1px solid #e2e8f0;">-</td>
+                                        <td style="padding: 10px; text-align: center; color: #94a3b8; border-right: 1px solid #e2e8f0;">-</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a;">200</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #cbd5e1; font-weight: 800; background: rgba(171, 14, 0, 0.02);">
+                                        <td rowspan="2" style="padding: 12px 10px; font-weight: 800; color: #0f172a; text-transform: uppercase; border-right: 1px solid #e2e8f0;">TỔNG HỌC PHÍ (CHF)</td>
+                                        <td style="padding: 12px 10px; text-align: center; font-weight: 800; color: #ab0e00; border-right: 1px solid #e2e8f0;">1.240</td>
+                                        <td style="padding: 12px 10px; text-align: center; font-weight: 800; color: #ab0e00; border-right: 1px solid #e2e8f0;">1.090</td>
+                                        <td style="padding: 12px 10px; text-align: center; font-weight: 800; color: #ab0e00;">1.590</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1.5px solid #cbd5e1; font-weight: 800; background: rgba(171, 14, 0, 0.06);">
+                                        <td colspan="3" style="padding: 12px 10px; text-align: center; font-weight: 900; color: #ab0e00; font-size: 1.15rem; letter-spacing: 0.5px;">3.920</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- Table 2: IDEAS Partner -->
+                            <table id="tuition-table-ideas"
+                                style="width: 100%; border-collapse: collapse; font-size: 0.85rem; color: #475569; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; display: none;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #cbd5e1; background: #ab0e00; color: #ffffff;">
+                                        <th rowspan="2" style="padding: 12px 10px; text-align: left; font-weight: 800; border-right: 1px solid rgba(255,255,255,0.2);">Chi tiết (Học bổng Đối tác IDEAS 85%)</th>
+                                        <th colspan="2" style="padding: 12px 10px; text-align: center; font-weight: 800; border-right: 1px solid rgba(255,255,255,0.2);">Giai đoạn 01</th>
+                                        <th style="padding: 12px 10px; text-align: center; font-weight: 800;">Giai đoạn 02</th>
+                                    </tr>
+                                    <tr style="border-bottom: 2px solid #cbd5e1; background: #fecaca; color: #470600;">
+                                        <th style="padding: 8px; text-align: center; font-weight: 700; border-right: 1px solid rgba(0,0,0,0.08); width: 22%;">Năm 01</th>
+                                        <th style="padding: 8px; text-align: center; font-weight: 700; border-right: 1px solid rgba(0,0,0,0.08); width: 22%;">Năm 02</th>
+                                        <th style="padding: 8px; text-align: center; font-weight: 700; width: 22%;">Năm 03</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                                        <td style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">Lệ phí hồ sơ (CHF)</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">150</td>
+                                        <td style="padding: 10px; text-align: center; color: #94a3b8; border-right: 1px solid #e2e8f0;">-</td>
+                                        <td style="padding: 10px; text-align: center; color: #94a3b8;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                                        <td style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">Học phí (CHF)</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">890</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">1.335</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a;">890</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                                        <td style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">Phí dịch vụ (CHF)</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">200</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a; border-right: 1px solid #e2e8f0;">200</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a;">500</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #cbd5e1;">
+                                        <td style="padding: 10px; font-weight: 600; text-align: left; border-right: 1px solid #e2e8f0;">Canton & Lãnh sự & Lễ tốt nghiệp (CHF)</td>
+                                        <td style="padding: 10px; text-align: center; color: #94a3b8; border-right: 1px solid #e2e8f0;">-</td>
+                                        <td style="padding: 10px; text-align: center; color: #94a3b8; border-right: 1px solid #e2e8f0;">-</td>
+                                        <td style="padding: 10px; text-align: center; font-weight: 500; color: #0f172a;">200</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #cbd5e1; font-weight: 800; background: rgba(171, 14, 0, 0.02);">
+                                        <td rowspan="2" style="padding: 12px 10px; font-weight: 800; color: #0f172a; text-transform: uppercase; border-right: 1px solid #e2e8f0;">TỔNG HỌC PHÍ (CHF)</td>
+                                        <td style="padding: 12px 10px; text-align: center; font-weight: 800; color: #ab0e00; border-right: 1px solid #e2e8f0;">1.240</td>
+                                        <td style="padding: 12px 10px; text-align: center; font-weight: 800; color: #ab0e00; border-right: 1px solid #e2e8f0;">1.535</td>
+                                        <td style="padding: 12px 10px; text-align: center; font-weight: 800; color: #ab0e00;">2.035</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1.5px solid #cbd5e1; font-weight: 800; background: rgba(171, 14, 0, 0.06);">
+                                        <td colspan="3" style="padding: 12px 10px; text-align: center; font-weight: 900; color: #ab0e00; font-size: 1.15rem; letter-spacing: 0.5px;">4.810</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div id="ideas-note" style="display: none; margin-top: 12px; padding: 14px; background: rgba(171, 14, 0, 0.02); border-left: 4px solid #ab0e00; border-radius: 8px; font-size: 0.82rem; color: #475569; line-height: 1.5; text-align: left;">
+                                <strong style="color: #ab0e00;">* Học bổng Đối tác IDEAS (Hỗ trợ 85% học phí):</strong> Phương án hỗ trợ chuẩn học phí cho học viên không đạt hoặc không đáp ứng điều kiện duy trì của Học bổng Toàn phần và Học bổng Khuyến học. Điều kiện duy trì được xét duyệt hằng năm căn cứ vào kết quả học tập và tuân thủ quy định học vụ của Swiss UMEF.
+                            </div>
+
+                            <div style="margin-top: 12px; padding: 12px; background: #f8fafc; border-radius: 8px; font-size: 0.8rem; color: #64748b; line-height: 1.4; text-align: left;">
+                                <strong>Ghi chú:</strong> Các khoản phí (CHF) được quy đổi theo tỷ giá cố định áp dụng tại Việt Nam là 33.000 VNĐ/CHF.
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Sacombank Installment Banner -->
@@ -5177,14 +5312,29 @@
                             icon.style.transform = 'rotate(0deg)';
                         }
                     }
-                </script>
 
-                <style>
-                    #premium-cta-bba:hover {
-                        transform: translateY(-2px);
-                        box-shadow: 0 15px 30px -5px rgba(171, 14, 0, 0.5) !important;
+                    function switchTuitionTab(tabId) {
+                        document.getElementById('tuition-table-encouragement').style.display = 'none';
+                        document.getElementById('tuition-table-ideas').style.display = 'none';
+                        document.getElementById('ideas-note').style.display = 'none';
+                        document.getElementById(tabId).style.display = 'table';
+                        
+                        document.getElementById('tab-btn-encouragement').classList.remove('active');
+                        document.getElementById('tab-btn-ideas').classList.remove('active');
+                        
+                        if (tabId === 'tuition-table-encouragement') {
+                            document.getElementById('tab-btn-encouragement').classList.add('active');
+                        } else {
+                            document.getElementById('tab-btn-ideas').classList.add('active');
+                            document.getElementById('ideas-note').style.display = 'block';
+                        }
+                        
+                        const container = document.getElementById('tuition-details-container');
+                        if (container.style.maxHeight && container.style.maxHeight !== '0px') {
+                            container.style.maxHeight = container.scrollHeight + 'px';
+                        }
                     }
-                </style>
+                </script>
             </div>
         </div>
 
