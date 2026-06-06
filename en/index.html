@@ -26,9 +26,12 @@
     <title>IDEAS Institute - Support for International Bachelor, Master, and DBA Programs</title>
     <meta name="description" content="IDEAS Institute supports academic studies for online Bachelor, Master (MBA, MSc AI), and Doctorate (DBA) programs from Switzerland, France, and the US." />
     <meta name="keywords"
-        content="Full BBA, Bachelor of Business Administration, Swiss BBA, online BBA, Swiss degree" />
+        content="IDEAS Institute, IDEAS Academy, online BBA, online MBA, MSc AI, DBA, international degree program, study online" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://ideas.edu.vn/en/fullbba" />
+    <link rel="canonical" href="https://ideas.edu.vn/en/" />
+    <link rel="alternate" hreflang="vi" href="https://ideas.edu.vn/" />
+    <link rel="alternate" hreflang="en" href="https://ideas.edu.vn/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://ideas.edu.vn/" />
 
     <!-- GEO Targeting -->
     <meta name="geo.region" content="VN-SG" />
@@ -38,19 +41,19 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Bachelor of Business Administration | Full BBA Swiss UMEF" />
+    <meta property="og:title" content="IDEAS Institute - International Academic Support & Degree Programs" />
     <meta property="og:description"
-        content="Bachelor of Business Administration (Full BBA) program 100% online awarded by Swiss UMEF Switzerland. Duration 36 Months (3 Years), 180 ECTS." />
+        content="IDEAS Institute supports academic studies for online Bachelor, Master (MBA, MSc AI), and Doctorate (DBA) programs from international universities." />
     <meta property="og:image" content="https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp" />
-    <meta property="og:url" content="https://ideas.edu.vn/fullbba" />
-    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:url" content="https://ideas.edu.vn/en/" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="IDEAS" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Bachelor of Business Administration | Full BBA Swiss UMEF" />
+    <meta name="twitter:title" content="IDEAS Institute - International Academic Support & Degree Programs" />
     <meta name="twitter:description"
-        content="Swiss Bachelor of Business Administration (Full BBA) program. Complete in 3 Years." />
+        content="IDEAS Institute supports academic studies for online Bachelor, Master (MBA, MSc AI), and Doctorate (DBA) programs from international universities." />
     <meta name="twitter:image" content="https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp" />
 
 
@@ -69,85 +72,132 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Bachelor of Business Administration (Full BBA) – Swiss UMEF",
-      "description": "100% Online Bachelor of Business Administration (Full BBA) program awarded by Swiss UMEF Switzerland, duration 36 months, 180 ECTS.",
-      "courseCode": "Full-BBA",
-      "educationalLevel": "Undergraduate",
-      "inLanguage": "vi",
-      "courseMode": "online",
-      "timeRequired": "P36M",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "IDEAS Institute",
-        "alternateName": "IDEAS Institute",
-        "url": "https://ideas.edu.vn",
-        "logo": "https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "4th Floor, Hai Au Building, 39B Truong Son",
-          "addressLocality": "Ward 2, Tan Binh District",
-          "addressRegion": "Ho Chi Minh City",
-          "postalCode": "700000",
-          "addressCountry": "VN"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 10.8125,
-          "longitude": 106.6668
-        },
-        "telephone": "+842822442244"
-      },
-      "offers": {
-        "@type": "Offer",
-        "category": "BBA",
-        "url": "https://ideas.edu.vn/en/fullbba",
-        "priceCurrency": "CHF",
-        "eligibleRegion": {
-          "@type": "Place",
-          "name": "Vietnam"
-        },
-        "offeredBy": {
+      "@graph": [
+        {
           "@type": "EducationalOrganization",
+          "@id": "https://ideas.edu.vn/en/#organization",
           "name": "IDEAS Institute",
-          "sameAs": "https://ideas.edu.vn"
+          "alternateName": "IDEAS Institute",
+          "url": "https://ideas.edu.vn/en/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp",
+            "caption": "IDEAS Institute Logo"
+          },
+          "description": "IDEAS Institute provides professional academic support and consulting for accredited international European Bachelor, Master, and Doctorate programs.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "4th Floor, Hai Au Building, 39B Truong Son",
+            "addressLocality": "Ward 2, Tan Binh District",
+            "addressRegion": "Ho Chi Minh City",
+            "postalCode": "700000",
+            "addressCountry": "VN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 10.8125,
+            "longitude": 106.6668
+          },
+          "telephone": "+842822442244",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+842822442244",
+            "contactType": "Admissions & Hotline",
+            "areaServed": "VN",
+            "availableLanguage": ["English", "Vietnamese"]
+          },
+          "sameAs": [
+            "https://ideas.edu.vn/en/",
+            "https://www.facebook.com/ideas.edu.vn"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://ideas.edu.vn/en/#website",
+          "url": "https://ideas.edu.vn/en/",
+          "name": "IDEAS Institute",
+          "publisher": {
+            "@id": "https://ideas.edu.vn/en/#organization"
+          },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "Course",
+          "name": "Bachelor of Business Administration (Full BBA) – Swiss UMEF",
+          "description": "100% Online Bachelor of Business Administration (Full BBA) program awarded by Swiss UMEF Switzerland, duration 36 months, 180 ECTS.",
+          "courseCode": "Full-BBA",
+          "educationalLevel": "Undergraduate",
+          "inLanguage": "en",
+          "courseMode": "online",
+          "timeRequired": "P36M",
+          "provider": {
+            "@id": "https://ideas.edu.vn/en/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "BBA",
+            "url": "https://ideas.edu.vn/en/fullbba",
+            "priceCurrency": "CHF",
+            "eligibleRegion": {
+              "@type": "Place",
+              "name": "Vietnam"
+            }
+          }
+        },
+        {
+          "@type": "Course",
+          "name": "Master of Business Administration (MBA) – Swiss UMEF",
+          "description": "European standard Master of Business Administration (MBA) program awarded directly by Swiss UMEF Switzerland.",
+          "courseCode": "MBA-UMEF",
+          "educationalLevel": "Postgraduate",
+          "inLanguage": "en",
+          "courseMode": "online",
+          "timeRequired": "P18M",
+          "provider": {
+            "@id": "https://ideas.edu.vn/en/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "MBA",
+            "url": "https://ideas.edu.vn/en/mba"
+          }
+        },
+        {
+          "@type": "Course",
+          "name": "Master of Science in Artificial Intelligence (MSc AI) – Estiam & Ascencia",
+          "description": "Postgraduate Master of Science in AI (MSc AI) program awarded by Estiam and Ascencia Business School France.",
+          "courseCode": "MSc-AI",
+          "educationalLevel": "Postgraduate",
+          "inLanguage": "en",
+          "courseMode": "online",
+          "timeRequired": "P18M",
+          "provider": {
+            "@id": "https://ideas.edu.vn/en/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "MSc AI",
+            "url": "https://ideas.edu.vn/en/mscai"
+          }
+        },
+        {
+          "@type": "Course",
+          "name": "Doctor of Business Administration (Dual DBA) – Estiam & Swiss UMEF",
+          "description": "Doctorate of Business Administration Dual DBA program awarded jointly by Estiam France and Swiss UMEF Switzerland.",
+          "courseCode": "Dual-DBA",
+          "educationalLevel": "Doctorate",
+          "inLanguage": "en",
+          "courseMode": "online",
+          "timeRequired": "P36M",
+          "provider": {
+            "@id": "https://ideas.edu.vn/en/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "DBA",
+            "url": "https://ideas.edu.vn/en/dual-dba"
+          }
         }
-      }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "IDEAS Institute",
-      "alternateName": "IDEAS Institute",
-      "url": "https://ideas.edu.vn",
-      "logo": "https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp",
-      "description": "IDEAS Institute provides prestigious international business, MBA, EMBA, and DBA programs in Vietnam in collaboration with global partners.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "4th Floor, Hai Au Building, 39B Truong Son",
-        "addressLocality": "Ward 2, Tan Binh District",
-        "addressRegion": "Ho Chi Minh City",
-        "postalCode": "700000",
-        "addressCountry": "VN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 10.8125,
-        "longitude": 106.6668
-      },
-      "telephone": "+842822442244",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+842822442244",
-        "contactType": "Admissions & Hotline",
-        "areaServed": "VN",
-        "availableLanguage": "Vietnamese"
-      },
-      "sameAs": [
-        "https://ideas.edu.vn"
       ]
     }
     </script>
@@ -209,9 +259,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="../common-assets/css/style.min.css?v=1780762406303" as="style" />
-    <link rel="stylesheet" href="../common-assets/css/style.min.css?v=1780762406303" />
-    <link rel="stylesheet" href="../common-assets/css/booking-modal.min.css?v=1780762406303" />
+    <link rel="preload" href="../common-assets/css/style.min.css?v=1780762652442" as="style" />
+    <link rel="stylesheet" href="../common-assets/css/style.min.css?v=1780762652442" />
+    <link rel="stylesheet" href="../common-assets/css/booking-modal.min.css?v=1780762652442" />
     <style>
         @media (min-width: 992px) {
             .BBA-grid {
@@ -6948,8 +6998,8 @@
         </div>
     </div>
 
-    <script src="../common-assets/js/script.min.js?v=1780762406303" defer></script>
-    <script src="../common-assets/js/booking-modal.min.js?v=1780762406303" defer></script>
+    <script src="../common-assets/js/script.min.js?v=1780762652442" defer></script>
+    <script src="../common-assets/js/booking-modal.min.js?v=1780762652442" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
