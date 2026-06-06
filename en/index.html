@@ -259,9 +259,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="../common-assets/css/style.min.css?v=1780766907109" as="style" />
-    <link rel="stylesheet" href="../common-assets/css/style.min.css?v=1780766907109" />
-    <link rel="stylesheet" href="../common-assets/css/booking-modal.min.css?v=1780766907109" />
+    <link rel="preload" href="../common-assets/css/style.min.css?v=1780783152564" as="style" />
+    <link rel="stylesheet" href="../common-assets/css/style.min.css?v=1780783152564" />
+    <link rel="stylesheet" href="../common-assets/css/booking-modal.min.css?v=1780783152564" />
     <style>
         @media (min-width: 992px) {
             .BBA-grid {
@@ -3178,6 +3178,106 @@
                 height: auto;
                 padding: 10px 20px;
                 flex-wrap: wrap;
+            }
+        }
+
+        /* ── Mobile Overrides for #cta-form ── */
+        @media (max-width: 767px) {
+            #cta-form {
+                padding: 12px 16px 16px !important;
+                gap: 8px !important;
+            }
+            #cta-form .form-row {
+                grid-template-columns: 1fr !important;
+                gap: 8px !important;
+            }
+            #cta-form .form-group {
+                gap: 3px !important;
+            }
+            #cta-form .form-group label {
+                font-size: 0.72rem !important;
+                margin-bottom: 0 !important;
+            }
+            #cta-form .form-group input,
+            #cta-form .form-group select,
+            #cta-form .form-group textarea,
+            #cta-form .select-wrapper .select-trigger {
+                padding: 6px 10px !important;
+                font-size: 0.78rem !important;
+                border-radius: 8px !important;
+                min-height: 34px !important;
+                height: 34px !important;
+            }
+            #cta-form .form-group textarea {
+                min-height: 48px !important;
+                height: auto !important;
+            }
+            #cta-form .select-wrapper .select-trigger::after {
+                right: 10px !important;
+            }
+            #cta-form .form-error {
+                min-height: 12px !important;
+                font-size: 0.7rem !important;
+                margin-top: 1px !important;
+            }
+            #cta-form #form-submit-btn {
+                padding: 8px 12px !important;
+                font-size: 0.8rem !important;
+                height: 36px !important;
+            }
+            #cta-form .modal-zalo-section {
+                margin-top: 4px !important;
+            }
+            #cta-form .modal-zalo-divider {
+                margin: 8px 0 !important;
+            }
+            #cta-form .modal-zalo-row {
+                gap: 6px !important;
+            }
+            #cta-form .modal-zalo-btn, 
+            #cta-form .modal-booking-btn {
+                padding: 6px 8px !important;
+                font-size: 0.7rem !important;
+                height: 32px !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                border-radius: 100px !important;
+            }
+            #cta-form .modal-zalo-btn img {
+                width: 14px !important;
+                height: 14px !important;
+            }
+            #cta-form .modal-booking-btn svg {
+                width: 12px !important;
+                height: 12px !important;
+            }
+            #cta-form .select-dropdown .select-option {
+                padding: 6px 10px !important;
+                font-size: 0.78rem !important;
+            }
+
+            /* ── Footer bottom links stacking on mobile ── */
+            .ideas_footer .footer-bottom-row {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                gap: 16px !important;
+            }
+            .ideas_footer .footer-bottom-right {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 16px !important;
+                width: 100% !important;
+            }
+            .ideas_footer .footer-bottom-links {
+                flex-direction: column !important;
+                gap: 10px !important;
+                align-items: center !important;
+                width: 100% !important;
+            }
+            .ideas_footer .footer-bottom-links .divider {
+                display: none !important;
             }
         }
     </style>
@@ -6680,9 +6780,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="interest-program">Interested Program *</label>
-                            <select id="interest-program" name="program" required>
+                            <label for="interest-program">Interested Program</label>
+                            <select id="interest-program" name="program">
                                 <option value="">-- Select program --</option>
+                                <option value="Suitable Roadmap">Suitable Roadmap</option>
                                 <option value="Full BBA">Full BBA (Bachelor 3 years)</option>
                                 <option value="Top-up BBA">Top-up BBA (Bachelor 1 year)</option>
                                 <option value="Online MBA">Online MBA (Master's)</option>
@@ -7407,8 +7508,8 @@
         </div>
     </div>
 
-    <script src="../common-assets/js/script.min.js?v=1780766907109" defer></script>
-    <script src="../common-assets/js/booking-modal.min.js?v=1780766907109" defer></script>
+    <script src="../common-assets/js/script.min.js?v=1780783152564" defer></script>
+    <script src="../common-assets/js/booking-modal.min.js?v=1780783152564" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz

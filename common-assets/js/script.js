@@ -554,21 +554,37 @@ const isEn = document.documentElement.lang === 'en';
 
             // Fallback: check current page URL if programKey is not resolved yet, or for inline forms
             if (!resolvedProgramKey) {
-                const path = window.location.pathname.toLowerCase();
-                if (path.includes("mbainai")) {
-                    resolvedProgramKey = 'IDEAS05';
-                } else if (path.includes("mscinai") || path.includes("mscai")) {
-                    resolvedProgramKey = 'IDEAS04';
-                } else if (path.includes("emba")) {
-                    resolvedProgramKey = 'IDEAS03';
-                } else if (path.includes("fullbba")) {
-                    resolvedProgramKey = 'IDEAS01';
-                } else if (path.includes("bba")) {
-                    resolvedProgramKey = 'IDEAS07';
-                } else if (path.includes("dual-dba") || path.includes("dba")) {
-                    resolvedProgramKey = 'IDEAS06';
-                } else if (path.includes("mba")) {
-                    resolvedProgramKey = 'IDEAS02';
+                // Prioritize the user's explicit selection from the "Chương trình quan tâm" dropdown if present
+                const programSelect = form.querySelector('[name="program"]');
+                const selectedProgramVal = programSelect ? programSelect.value : '';
+                if (selectedProgramVal) {
+                    if (selectedProgramVal === 'Full BBA') resolvedProgramKey = 'IDEAS01';
+                    else if (selectedProgramVal === 'Top-up BBA') resolvedProgramKey = 'IDEAS07';
+                    else if (selectedProgramVal === 'Online MBA') resolvedProgramKey = 'IDEAS02';
+                    else if (selectedProgramVal === 'Executive MBA') resolvedProgramKey = 'IDEAS03';
+                    else if (selectedProgramVal === 'MBA in AI') resolvedProgramKey = 'IDEAS05';
+                    else if (selectedProgramVal === 'MSc AI') resolvedProgramKey = 'IDEAS04';
+                    else if (selectedProgramVal === 'Dual DBA') resolvedProgramKey = 'IDEAS06';
+                    else if (selectedProgramVal === 'Lộ trình phù hợp' || selectedProgramVal === 'Suitable Roadmap') {
+                        resolvedProgramKey = 'ROADMAP';
+                    }
+                } else {
+                    const path = window.location.pathname.toLowerCase();
+                    if (path.includes("mbainai")) {
+                        resolvedProgramKey = 'IDEAS05';
+                    } else if (path.includes("mscinai") || path.includes("mscai")) {
+                        resolvedProgramKey = 'IDEAS04';
+                    } else if (path.includes("emba")) {
+                        resolvedProgramKey = 'IDEAS03';
+                    } else if (path.includes("fullbba")) {
+                        resolvedProgramKey = 'IDEAS01';
+                    } else if (path.includes("bba")) {
+                        resolvedProgramKey = 'IDEAS07';
+                    } else if (path.includes("dual-dba") || path.includes("dba")) {
+                        resolvedProgramKey = 'IDEAS06';
+                    } else if (path.includes("mba")) {
+                        resolvedProgramKey = 'IDEAS02';
+                    }
                 }
             }
 
@@ -594,6 +610,9 @@ const isEn = document.documentElement.lang === 'en';
             } else if (resolvedProgramKey === 'IDEAS02') {
                 sourceVal = "Landing_MBA";
                 chuongTrinhVal = "Online MBA";
+            } else if (resolvedProgramKey === 'ROADMAP') {
+                sourceVal = isEn ? "Landing_Roadmap" : "Landing_Lo_Trinh";
+                chuongTrinhVal = isEn ? "Suitable Roadmap" : "Lộ trình phù hợp";
             } else {
                 sourceVal = "Landing_General";
                 chuongTrinhVal = "General International Program";
@@ -1366,30 +1385,6 @@ const isEn = document.documentElement.lang === 'en';
             }
             .back-to-top-btn.visible:active {
                 transform: translateX(-50%) translateY(1px);
-            }
-            @media (max-width: 768px) {
-                .back-to-top-btn {
-                    left: auto;
-                    right: 16px;
-                    bottom: 85px;
-                    width: 44px;
-                    height: 44px;
-                    padding: 0;
-                    border-radius: 50%;
-                    transform: translateY(20px);
-                }
-                .back-to-top-btn.visible {
-                    transform: translateY(0);
-                }
-                .back-to-top-btn.visible:hover {
-                    transform: translateY(-4px);
-                }
-                .back-to-top-btn.visible:active {
-                    transform: translateY(1px);
-                }
-                .back-to-top-btn span {
-                    display: none;
-                }
             }
         `;
         document.head.appendChild(style);
@@ -2408,6 +2403,190 @@ function initReadingProgressAndSideNav() {
     updateSideNav();
 }
 
+/* ─── Mobile Top Sheet Advisor ─── */
+function initMobileTopSheet() {
+    // Only run on mobile screen sizes (max-width: 767px)
+    if (window.innerWidth > 767) return;
+
+    // Prevent duplicate injection
+    if (document.querySelector('.mobile-top-sheet')) return;
+
+    const path = window.location.pathname.toLowerCase();
+    const isEn = path.includes('/en/');
+
+    let programName = "";
+    let programSub = "";
+    let avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp";
+
+    if (path.includes("mbainai")) {
+        programName = "MBA in AI";
+        programSub = isEn ? "Swiss Applied AI Master's" : "Thạc sĩ QTKD Ứng dụng AI";
+        avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2026/06/mba_in_ai.webp";
+    } else if (path.includes("mscinai") || path.includes("mscai")) {
+        programName = "MSc AI";
+        programSub = isEn ? "Applied AI Master of Science" : "Thạc sĩ Khoa học Trí tuệ Nhân tạo";
+        avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2025/09/mscai.png.webp";
+    } else if (path.includes("emba")) {
+        programName = "Executive MBA";
+        programSub = isEn ? "Executive Master of Business Administration" : "Thạc sĩ Điều hành QTKD";
+        avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2025/09/emba.png.webp";
+    } else if (path.includes("fullbba")) {
+        programName = "Full BBA";
+        programSub = isEn ? "Bachelor of Business Administration" : "Cử nhân Quản trị Kinh doanh";
+        avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2026/06/online_bba.webp";
+    } else if (path.includes("bba")) {
+        programName = isEn ? "Top-up BBA" : "TOP-UP BBA";
+        programSub = isEn ? "Top-up Bachelor of Business Administration" : "Liên thông Cử nhân QTKD";
+        avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2026/02/TOPUP.webp";
+    } else if (path.includes("dual-dba") || path.includes("dba")) {
+        programName = "Dual DBA";
+        programSub = isEn ? "Dual Doctorate of Business Administration" : "Tiến sĩ QTKD song bằng";
+        avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2025/10/Dual-DBA.webp";
+    } else if (path.includes("mba")) {
+        programName = "Online MBA";
+        programSub = isEn ? "Master of Business Administration" : "Thạc sĩ Quản trị Kinh doanh";
+        avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2025/09/online-mba-1.png.webp";
+    } else {
+        programName = isEn ? "IDEAS Institute" : "Viện IDEAS";
+        programSub = isEn ? "Admissions & Scholarship Roadmaps" : "Tư vấn lộ trình học vụ & học bổng";
+        avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp";
+    }
+
+    // Create elements
+    const sheet = document.createElement('div');
+    sheet.className = 'mobile-top-sheet';
+
+    const btnText = isEn ? "Consult Now" : "Tư vấn";
+
+    sheet.innerHTML = `
+        <div class="mbs-left">
+            <div class="mbs-avatar-container">
+                <img src="${avatarUrl}" class="mbs-avatar" alt="${programName}">
+            </div>
+            <div class="mbs-info">
+                <div class="mbs-title">${programName}</div>
+                <div class="mbs-subtitle">${programSub}</div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary mbs-action-btn">${btnText}</button>
+    `;
+
+    // Style elements
+    const style = document.createElement('style');
+    style.textContent = `
+        .mobile-top-sheet {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: #ffffff;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            transform: translateY(-110%);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .mobile-top-sheet.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .mbs-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            min-width: 0;
+        }
+        .mbs-avatar-container {
+            width: 80px;
+            height: 45px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        .mbs-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .mbs-info {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+        .mbs-title {
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: #0f172a;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.25;
+        }
+        .mbs-subtitle {
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: #64748b;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 2px;
+            line-height: 1.2;
+        }
+        .mbs-action-btn {
+            padding: 6px 14px !important;
+            font-size: 0.78rem !important;
+            font-weight: 750 !important;
+            border-radius: 99px !important;
+            height: 32px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            white-space: nowrap !important;
+            width: auto !important;
+            box-shadow: 0 4px 12px rgba(171, 14, 0, 0.2) !important;
+        }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(sheet);
+
+    // Click event to open registration modal
+    const actionBtn = sheet.querySelector('.mbs-action-btn');
+    if (actionBtn) {
+        actionBtn.addEventListener('click', () => {
+            if (typeof window.openRegModal === 'function') {
+                const pageCta = isEn ? "mobile_top_sheet_en" : "mobile_top_sheet_vi";
+                window.openRegModal(pageCta);
+            }
+        });
+    }
+
+    // Scroll listener to toggle visibility in sync with header hiding
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        
+        if (scrollY > 100 && scrollY > lastScrollTop) {
+            // Scrolling down and past 100px: show compact top sheet
+            sheet.classList.add('show');
+        } else if (scrollY < lastScrollTop || scrollY <= 100) {
+            // Scrolling up or under 100px: hide compact top sheet
+            sheet.classList.remove('show');
+        }
+        
+        lastScrollTop = scrollY;
+    }, { passive: true });
+}
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         initCopyrightYear();
@@ -2420,6 +2599,7 @@ if (document.readyState === 'loading') {
         initCardTiltGlow();
         initCountersParallax();
         initReadingProgressAndSideNav();
+        initMobileTopSheet();
     });
 } else {
     initCopyrightYear();
@@ -2432,6 +2612,7 @@ if (document.readyState === 'loading') {
     initCardTiltGlow();
     initCountersParallax();
     initReadingProgressAndSideNav();
+    initMobileTopSheet();
 }
 
 

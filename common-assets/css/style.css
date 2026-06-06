@@ -4678,7 +4678,7 @@ button.nav-link {
 .reg-modal {
   position: fixed;
   inset: 0;
-  z-index: 2000;
+  z-index: 100000;
   display: flex;
   align-items: center;
   justify-content: center;
