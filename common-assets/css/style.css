@@ -12509,12 +12509,12 @@ body .pain-card-desc {
   flex-direction: column;
   gap: 16px;
   z-index: 1000;
-  background: rgba(15, 23, 42, 0.4) !important;
+  background: rgba(255, 255, 255, 0.04) !important; /* Extremely transparent light glass background */
   padding: 14px 10px !important;
   border-radius: 30px !important;
-  backdrop-filter: blur(16px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(20px) !important; /* Strong blur */
+  border: 1px solid rgba(148, 163, 184, 0.16) !important; /* High contrast glass border */
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important; /* Soft dark shadow */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease !important;
@@ -12544,13 +12544,13 @@ body .pain-card-desc {
 .side-dot-circle {
   width: 8px;
   height: 8px;
-  background: rgba(255, 255, 255, 0.4) !important;
+  background: rgba(148, 163, 184, 0.5) !important; /* Slate grey for visibility on both light/dark */
   border-radius: 50% !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .side-dot-item:hover .side-dot-circle {
-  background: #ffffff !important;
+  background: #ab0e00 !important; /* Turn brand red on hover */
   transform: scale(1.3) !important;
 }
 
