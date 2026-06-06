@@ -1131,7 +1131,8 @@ const isEn = document.documentElement.lang === 'en';
                 '.competency-grid',
                 '#audience-cards-grid',
                 '.testimonials-grid',
-                '.gallery-mosaic'
+                '.gallery-mosaic',
+                '.video-talk-grid'
             ];
 
             selectors.forEach(sel => {

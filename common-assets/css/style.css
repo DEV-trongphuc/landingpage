@@ -5160,14 +5160,14 @@ button.nav-link {
   .reg-modal {
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 10px !important;
   }
 
   .reg-modal-container {
     max-width: 100%;
     width: 100%;
-    border-radius: 24px;
-    max-height: 88vh;
+    border-radius: 16px !important;
+    max-height: 90vh;
     overflow-y: auto;
     overflow-x: hidden;
     transform: translateY(24px) scale(0.97);
@@ -5191,33 +5191,89 @@ button.nav-link {
   }
 
   .modal-form-header {
-    padding: 20px 20px 18px;
+    padding: 14px 14px 8px !important;
+  }
+
+  .modal-badge {
+    font-size: 0.65rem !important;
+    padding: 4px 8px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .modal-form-header h3 {
+    font-size: 0.95rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .modal-form-header p {
+    font-size: 0.72rem !important;
+    line-height: 1.35 !important;
+    margin-top: 4px !important;
   }
 
   .modal-form {
-    padding: 16px 20px 24px;
-    gap: 12px;
+    padding: 8px 14px 16px !important;
+    gap: 8px !important;
   }
 
   /* Stack form-row as 1 column on mobile */
   .modal-form .form-row {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 8px !important;
+  }
+
+  /* Compact Inputs and Selects inside Registration Modal */
+  .modal-form .form-group {
+    gap: 3px !important;
+  }
+
+  .modal-form .form-group label {
+    font-size: 0.72rem !important;
+  }
+
+  .modal-form .form-group input,
+  .modal-form .form-group select,
+  .modal-form .form-group textarea,
+  .modal-form .select-wrapper .select-trigger {
+    padding: 6px 10px !important;
+    font-size: 0.78rem !important;
+    border-radius: 8px !important;
+    min-height: 34px !important;
+    height: 34px !important;
+  }
+
+  .modal-form .form-group textarea {
+    min-height: 48px !important;
+    height: auto !important;
+    padding: 6px 10px !important;
+  }
+
+  .modal-form .select-wrapper .select-trigger::after {
+    right: 10px !important;
+  }
+
+  #modal-form-submit-btn {
+    padding: 8px 12px !important;
+    font-size: 0.8rem !important;
+    border-radius: 8px !important;
+    margin-top: 4px !important;
   }
 
   .reg-modal-close {
-    top: 14px;
-    right: 14px;
-    width: 32px;
-    height: 32px;
+    top: 8px !important;
+    right: 8px !important;
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 0.8rem !important;
   }
 
   /* Tighter Zalo/Booking row inside popup */
   .modal-form .modal-zalo-btn,
   .modal-form .modal-booking-btn {
-    font-size: 0.72rem;
-    padding: 8px 10px;
-    gap: 5px;
+    font-size: 0.7rem !important;
+    padding: 6px 10px !important;
+    gap: 4px !important;
+    height: 30px !important;
   }
 }
 
@@ -5894,6 +5950,7 @@ h6,
   body #audience-cards-grid,
   body .testimonials-grid,
   body .gallery-mosaic,
+  body .video-talk-grid,
   #giang-vien div[style*="display: grid"],
   #giang-vien div[style*="display:grid"],
   #co-van div[style*="display: grid"],
@@ -5915,6 +5972,7 @@ h6,
     scrollbar-width: none !important;
     -webkit-overflow-scrolling: touch;
     grid-template-columns: none !important;
+    align-items: stretch !important;
   }
 
   body .pain-section .pain-cards::-webkit-scrollbar,
@@ -5923,6 +5981,7 @@ h6,
   body #audience-cards-grid::-webkit-scrollbar,
   body .testimonials-grid::-webkit-scrollbar,
   body .gallery-mosaic::-webkit-scrollbar,
+  body .video-talk-grid::-webkit-scrollbar,
   #giang-vien div[style*="display: grid"]::-webkit-scrollbar,
   #giang-vien div[style*="display:grid"]::-webkit-scrollbar,
   #co-van div[style*="display: grid"]::-webkit-scrollbar,
@@ -5943,6 +6002,7 @@ h6,
   body .testimonials-grid>div,
   body .gallery-mosaic>.gallery-item,
   body .gallery-mosaic>div,
+  body .video-talk-grid>.video-talk-card,
   #giang-vien div[style*="display: grid"]>div,
   #giang-vien div[style*="display:grid"]>div,
   #co-van div[style*="display: grid"]>div,
@@ -5953,6 +6013,21 @@ h6,
     scroll-snap-align: start !important;
     margin-bottom: 0 !important;
     margin-top: 0 !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  /* Enforce equal height content distribution */
+  body .competency-card .comp-desc,
+  body .pain-card-v2 .pain-card-desc,
+  body .video-talk-card .video-talk-card-body,
+  body .prog-card-new > div:first-child,
+  body .activity-card .activity-card-body,
+  body #audience-cards-grid .audience-card p,
+  body .testimonials-grid .testi-card-v4 .testi-text {
+    flex-grow: 1 !important;
   }
 
   /* Scroll Dots Indicator Bar */
