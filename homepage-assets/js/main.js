@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════
- * IDEAS INSTITUTE: "VŨ TRỤ TRI THỨC 3D" (THREE.JS PORTAL)
+ * IDEAS: "VŨ TRỤ TRI THỨC 3D" (THREE.JS PORTAL)
  * ═══════════════════════════════════════════════════════
  */
 
@@ -74,12 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let hoveredNode = null;
     let hoveredTunnelPlane = null;
     let autoScrollSpeed = 0;
-    
+
     // Scene objects
     let scene, camera, renderer, starfield, nebula;
     let coreGroup, constellationGroup, tunnelGroup;
     let coreMesh, coreWireframe, coreLight;
-    
+
     // 3D Nodes maps
     const programNodes = [];
     const connectionLines = [];
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cameraTargetPos = new THREE.Vector3(0, 15, 28);
     const cameraTargetLookAt = new THREE.Vector3(0, 0, 0);
     const cameraCurrentLookAt = new THREE.Vector3(0, 0, 0);
-    
+
     // Default viewpoints
     const VIEW_HOME_POS = new THREE.Vector3(0, 14, 26);
     const VIEW_QUIZ_POS = new THREE.Vector3(-10, 12, 22);
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Swiss UMEF programs mapping (Omit IDEAS06 Dual DBA) ──
     const programIds = ['IDEAS01', 'IDEAS02', 'IDEAS03', 'IDEAS04', 'IDEAS05', 'IDEAS07'];
-    
+
     // Aesthetic Palette for Nodes
     const nodeAesthetics = {
         'IDEAS01': { color: 0xb31400, label: 'Full BBA' },
@@ -195,14 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.width = 16;
         canvas.height = 16;
         const ctx = canvas.getContext('2d');
-        
+
         const grad = ctx.createRadialGradient(8, 8, 0, 8, 8, 8);
         grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
         grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
-        
+
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, 16, 16);
-        
+
         return new THREE.CanvasTexture(canvas);
     }
 
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 2. Program Nodes
         const radius = 12;
         const totalNodes = programIds.length;
-        
+
         programIds.forEach((id, index) => {
             const data = IDEAS_DATA.programmes[id];
             if (!data) return;
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Node group (to coordinate sphere + ring)
             const nodeGroup = new THREE.Group();
-            
+
             // Compute orbit angle
             const angle = (index / totalNodes) * Math.PI * 2;
             const x = radius * Math.cos(angle);
@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
             canvas.width = image.naturalWidth || image.width || 1024;
             canvas.height = image.naturalHeight || image.height || 640;
             const ctx = canvas.getContext('2d');
-            
+
             const radius = Math.min(canvas.width, canvas.height) * 0.05; // 5% border radius
             ctx.beginPath();
             ctx.moveTo(radius, 0);
@@ -424,9 +424,9 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.quadraticCurveTo(0, 0, radius, 0);
             ctx.closePath();
             ctx.clip();
-            
+
             ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-            
+
             const texture = new THREE.CanvasTexture(canvas);
             callback(texture);
         };
@@ -479,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.fillText(title, 256, 210);
 
             ctx.font = 'italic 16px "Plus Jakarta Sans", sans-serif';
-            ctx.fillText("IDEAS INSTITUTE", 256, 250);
+            ctx.fillText("IDEAS", 256, 250);
 
             const texture = new THREE.CanvasTexture(canvas);
             callback(texture);
@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         helixGeom.setAttribute('position', new THREE.BufferAttribute(helixPositions, 3));
         helixGeom.setAttribute('color', new THREE.BufferAttribute(helixColors, 3));
-        
+
         const helixMat = new THREE.PointsMaterial({
             size: 0.32,
             vertexColors: true,
@@ -548,7 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.textAlign = 'center';
             ctx.font = '14px sans-serif';
             ctx.fillText("Loading memory...", 128, 80);
-            
+
             const initialTexture = new THREE.CanvasTexture(loadCanvas);
             const planeMat = new THREE.MeshBasicMaterial({
                 map: initialTexture,
@@ -559,14 +559,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const mesh = new THREE.Mesh(planeGeo, planeMat);
 
             // Compute spiral Z coordinates along helix corridor
-            const zDist = -18 - idx * 16; 
+            const zDist = -18 - idx * 16;
             const angle = idx * 1.5; // Offset placement angles
             const radius = 3.8;
             const x = radius * Math.cos(angle);
             const y = radius * Math.sin(angle);
 
             mesh.position.set(x, y, zDist);
-            
+
             // Align plane slightly towards tunnel axis
             mesh.lookAt(new THREE.Vector3(0, 0, zDist - 5));
             mesh.userData = {
@@ -590,7 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const logoGroup = new THREE.Group();
         logoGroup.position.set(0, 0, -135);
         logoGroup.name = "endLogoGroup";
-        
+
         const logoWidth = 1.6;
         const logoHeight = 1.6;
         const logoGeo = new THREE.PlaneGeometry(logoWidth, logoHeight);
@@ -600,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         const logoMesh = new THREE.Mesh(logoGeo, logoMat);
         logoGroup.add(logoMesh);
-        
+
         const ringGeo = new THREE.RingGeometry(1.28, 1.32, 64);
         const ringMat = new THREE.MeshBasicMaterial({
             color: 0xd4af37, // Gold
@@ -611,7 +611,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const ringMesh = new THREE.Mesh(ringGeo, ringMat);
         ringMesh.name = "glowRing";
         logoGroup.add(ringMesh);
-        
+
         const logoTexture = textureLoader.load('assets/logo.png', (tex) => {
             logoMat.map = tex;
             logoMat.needsUpdate = true;
@@ -622,7 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ringMesh.scale.set(ringScale, ringScale, 1);
             }
         });
-        
+
         tunnelGroup.add(logoGroup);
 
         // Hide tunnel initially
@@ -657,7 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mode === 'explore') {
             exploreBtn && exploreBtn.classList.add('active');
             toggleExplore && toggleExplore.classList.add('active');
-            
+
             constellationGroup.visible = true;
             coreGroup.visible = true;
             tunnelGroup.visible = false;
@@ -682,7 +682,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cameraTargetPos.copy(VIEW_TUNNEL_HOME_POS);
             cameraTargetLookAt.copy(VIEW_TUNNEL_TARGET_LOOK);
-            
+
             // Show scroll tip
             const scrollInstructions = document.getElementById('scroll-instructions');
             if (scrollInstructions) scrollInstructions.style.display = 'flex';
@@ -716,7 +716,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetConstellationView() {
         if (activeMode !== 'explore') setMode('explore');
-        
+
         selectedProgramId = null;
         cameraTargetPos.copy(VIEW_HOME_POS);
         cameraTargetLookAt.set(0, 0, 0);
@@ -730,11 +730,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setMode('explore');
         cameraTargetPos.copy(VIEW_QUIZ_POS);
         cameraTargetLookAt.set(0, 0, 0);
-        
+
         // Open Right HUD Panel
         const rightPanel = document.getElementById('hud-panel-right');
         if (rightPanel) rightPanel.classList.remove('hidden');
-        
+
         // Reset left panel
         document.getElementById('hud-panel-left').classList.add('hidden');
     }
@@ -761,7 +761,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const rightPanel = document.getElementById('hud-panel-right');
                 const isRightPanelHovered = rightPanel && rightPanel.matches(':hover');
                 const isCompareModalOpen = document.getElementById('compare-modal').style.display === 'flex';
-                
+
                 // Avoid resetting if interacting with overlays/modals
                 if (!isLeftPanelHovered && !isRightPanelHovered && !isCompareModalOpen) {
                     resetConstellationView();
@@ -810,7 +810,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (activeMode === 'explore') {
             starfield.rotation.y = time * 0.02;
             starfield.rotation.x = time * 0.01;
-            
+
             // Orbiting program nodes
             programNodes.forEach(node => {
                 const data = node.userData;
@@ -818,10 +818,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const currentAngle = data.angle + time * 0.08;
                 node.position.x = data.radius * Math.cos(currentAngle);
                 node.position.z = data.radius * Math.sin(currentAngle);
-                
+
                 // Keep label links connected
                 node.position.y = data.heightOffset + Math.sin(time * 2 + data.angle) * 0.3;
-                
+
                 // Spin individual sphere
                 const sphere = node.children[0];
                 if (sphere) sphere.rotation.y = time * 0.5;
@@ -942,7 +942,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (intersects.length > 0) {
                 const nodeGroup = intersects[0].object.userData.parentGroup;
-                
+
                 if (hoveredNode !== nodeGroup) {
                     if (hoveredNode) {
                         // Restore previous scale
@@ -964,7 +964,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (intersects.length > 0) {
                 const plane = intersects[0].object;
-                
+
                 if (hoveredTunnelPlane !== plane) {
                     if (hoveredTunnelPlane) {
                         resetTunnelPlane(hoveredTunnelPlane);
@@ -974,7 +974,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Hover scale up slightly
                     plane.scale.set(1.15, 1.15, 1.15);
-                    
+
                     // Slightly turn plane to face camera completely
                     plane.rotation.set(0, 0, 0);
 
@@ -986,7 +986,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     resetTunnelPlane(hoveredTunnelPlane);
                     hoveredTunnelPlane = null;
                     document.body.style.cursor = 'default';
-                    
+
                     // Hide overlay card
                     document.getElementById('tunnel-info-overlay').classList.remove('active');
                 }
@@ -1002,7 +1002,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ════════════════════════════════════════════
     // HUD LAYER CONTROLS & BINDINGS
     // ════════════════════════════════════════════
-    
+
     // ── Update Left HUD Details Panel ──
     function updateLeftHudPanel(id) {
         const prog = IDEAS_DATA.programmes[id];
@@ -1018,7 +1018,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('prog-country').textContent = prog.country;
         document.getElementById('prog-tagline').innerHTML = prog.tagline || prog.description;
         document.getElementById('prog-duration').textContent = prog.duration;
-        
+
         // Render subjects/ECTS details
         const ectsField = document.getElementById('prog-ects');
         if (prog.subjects.includes("ECTS")) {
@@ -1031,7 +1031,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Render benefits checklist
         const benefitsList = document.getElementById('prog-benefits');
         benefitsList.innerHTML = '';
-        
+
         const benefitsArray = prog.program_benefits_degree || prog.benefits || [];
         benefitsArray.forEach(b => {
             const li = document.createElement('li');
@@ -1119,7 +1119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function buildCompareMatrix() {
         if (!compareTable || typeof IDEAS_DATA === 'undefined' || !IDEAS_DATA.programmes) return;
-        
+
         // Retrieve and filter out IDEAS06 Dual DBA
         const programs = Object.entries(IDEAS_DATA.programmes)
             .filter(([id]) => id !== 'IDEAS06')
@@ -1214,7 +1214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnNext = document.getElementById('quiz-btn-next');
     const btnPrev = document.getElementById('quiz-btn-prev');
     const progressFill = document.getElementById('quiz-progress-fill');
-    
+
     let currentStep = 1;
     const quizAnswers = {
         education: null,
@@ -1260,7 +1260,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Check if next option is already selected to toggle disabled
                 const nextStepOptionsSelected = quizSteps[currentStep - 1].querySelector('.quiz-option-hud.selected');
                 btnNext.disabled = !nextStepOptionsSelected;
-                
+
                 // Show back button
                 btnPrev.style.visibility = 'visible';
 
@@ -1361,11 +1361,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Reset Quiz state when entering from nav
-    window.resetPathfinderQuiz = function() {
+    window.resetPathfinderQuiz = function () {
         currentStep = 1;
         quizSteps.forEach(s => s.classList.remove('active'));
         quizSteps[0].classList.add('active');
-        
+
         quizSteps.forEach(step => {
             step.querySelectorAll('.quiz-option-hud').forEach(opt => opt.classList.remove('selected'));
         });
@@ -1392,16 +1392,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // ════════════════════════════════════════════
     // EXECUTION & INTEGRATION
     // ════════════════════════════════════════════
-    
+
     // Prefill Booking Form Program Name Hook
     function setSelectedProgramInBookingModal(programName) {
         const grid = document.getElementById('bk-program-grid');
         if (!grid) return;
-        
+
         // Remove previous custom program card
         const customCard = grid.querySelector('.bk-program-card-custom');
         if (customCard) customCard.remove();
-        
+
         if (programName) {
             const cardHTML = `
                 <label class="bk-program-card bk-program-card-custom">
@@ -1426,7 +1426,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btn) {
             const progName = btn.getAttribute('data-program');
             setSelectedProgramInBookingModal(progName || '');
-            
+
             // Auto close compare modal if booking triggers from inside it
             closeCompareModal();
         }

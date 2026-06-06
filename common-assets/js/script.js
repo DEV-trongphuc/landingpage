@@ -794,14 +794,14 @@ const isEn = document.documentElement.lang === 'en';
             'default': 'International Programs'
         };
 
-        const titleText = isEnglish 
-            ? (titlesEN[programKey] || titlesEN['default']) 
+        const titleText = isEnglish
+            ? (titlesEN[programKey] || titlesEN['default'])
             : (titlesVN[programKey] || titlesVN['default']);
 
-        const modalTitleEl = regModal.querySelector('#modal-program-title') || 
-                             regModal.querySelector('.modal-form-header h3 span.gradient-text') ||
-                             regModal.querySelector('.modal-form-header h3 span') ||
-                             regModal.querySelector('.modal-form-header h3');
+        const modalTitleEl = regModal.querySelector('#modal-program-title') ||
+            regModal.querySelector('.modal-form-header h3 span.gradient-text') ||
+            regModal.querySelector('.modal-form-header h3 span') ||
+            regModal.querySelector('.modal-form-header h3');
         if (modalTitleEl) {
             modalTitleEl.innerText = titleText;
         }
@@ -2199,7 +2199,7 @@ function initWordPressBlog() {
 
 function initCardTiltGlow() {
     if (window.innerWidth < 992) return; // Disable on mobile/tablet for smooth scrolling
-    
+
     const selectors = '.prog-card-new, .activity-card, .video-talk-card, .pain-card-v2, .pain-stat-card, .featured-card';
     document.querySelectorAll(selectors).forEach(card => {
         // Prevent duplicate glow elements
@@ -2208,37 +2208,37 @@ function initCardTiltGlow() {
             glow.className = 'card-glow';
             card.appendChild(glow);
         }
-        
+
         card.style.position = 'relative';
         card.style.transformStyle = 'preserve-3d';
-        
+
         const isProgCard = card.classList.contains('prog-card-new');
-        
+
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             card.style.setProperty('--mouse-x', `${x}px`);
             card.style.setProperty('--mouse-y', `${y}px`);
-            
+
             if (!isProgCard) {
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
                 const rotateX = ((centerY - y) / centerY) * 3.5; // Max 3.5 degrees for a gentle tilt
                 const rotateY = ((x - centerX) / centerX) * 3.5;
-                
+
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.015, 1.015, 1.015)`;
             }
         });
-        
+
         card.addEventListener('mouseleave', () => {
             if (!isProgCard) {
                 card.style.transform = '';
             }
             card.style.transition = 'all 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
         });
-        
+
         card.addEventListener('mouseenter', () => {
             if (!isProgCard) {
                 card.style.transition = 'none';
@@ -2251,7 +2251,7 @@ function initCountersParallax() {
     const bg = document.querySelector('.counters-bg');
     if (!bg) return;
     const parent = bg.parentElement;
-    
+
     function updateParallax() {
         const rect = parent.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -2262,11 +2262,11 @@ function initCountersParallax() {
             bg.style.transform = `translate3d(0, ${yPos}px, 0) scale(1.15)`;
         }
     }
-    
+
     window.addEventListener('scroll', () => {
         window.requestAnimationFrame(updateParallax);
     }, { passive: true });
-    
+
     updateParallax();
 }
 
@@ -2325,13 +2325,13 @@ function initReadingProgressAndSideNav() {
     // Create container
     const navContainer = document.createElement('div');
     navContainer.className = 'side-dot-nav';
-    
+
     activeSections.forEach(sec => {
         const item = document.createElement('div');
         item.className = 'side-dot-item';
         const targetId = document.getElementById(sec.id) ? sec.id : sec.altId;
         item.setAttribute('data-target', '#' + targetId);
-        
+
         const name = isEnglish ? sec.nameEn : sec.nameVi;
         item.innerHTML = `
             <div class="side-dot-circle"></div>
@@ -2340,7 +2340,7 @@ function initReadingProgressAndSideNav() {
                 <span>${name}</span>
             </div>
         `;
-        
+
         // Click to scroll
         item.addEventListener('click', (e) => {
             e.preventDefault();
@@ -2354,7 +2354,7 @@ function initReadingProgressAndSideNav() {
                 });
             }
         });
-        
+
         navContainer.appendChild(item);
     });
 
@@ -2363,7 +2363,7 @@ function initReadingProgressAndSideNav() {
     // Show / hide and update active state of dot navigation on scroll
     function updateSideNav() {
         const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-        
+
         // Show navigation after scrolling 300px
         if (scrollPos > 300) {
             navContainer.classList.add('is-visible');
@@ -2374,7 +2374,7 @@ function initReadingProgressAndSideNav() {
         // Highlight active dot using simple viewport bounds
         let currentActiveId = '';
         const headerHeight = header ? header.offsetHeight : 72;
-        
+
         activeSections.forEach(sec => {
             const targetId = document.getElementById(sec.id) ? sec.id : sec.altId;
             const targetEl = document.getElementById(targetId);
@@ -2447,8 +2447,8 @@ function initMobileTopSheet() {
         programSub = isEn ? "Master of Business Administration" : "Thạc sĩ Quản trị Kinh doanh";
         avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2025/09/online-mba-1.png.webp";
     } else {
-        programName = isEn ? "IDEAS Institute" : "Viện IDEAS";
-        programSub = isEn ? "Admissions & Scholarship Roadmaps" : "Tư vấn lộ trình học vụ & học bổng";
+        programName = isEn ? "IDEAS" : "IDEAS";
+        programSub = isEn ? "Admissions & Scholarship Roadmaps" : "Tư vấn lộ trình phù hợp";
         avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp";
     }
 
@@ -2480,8 +2480,10 @@ function initMobileTopSheet() {
             left: 0;
             right: 0;
             z-index: 9999;
-            background: #ffffff;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
             padding: 10px 16px;
             display: flex;
             align-items: center;
@@ -2490,7 +2492,7 @@ function initMobileTopSheet() {
             transform: translateY(-110%);
             opacity: 0;
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid rgba(241, 245, 249, 0.6);
         }
         .mobile-top-sheet.show {
             transform: translateY(0);
@@ -2574,7 +2576,7 @@ function initMobileTopSheet() {
     let lastScrollTop = 0;
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
-        
+
         if (scrollY > 100 && scrollY > lastScrollTop) {
             // Scrolling down and past 100px: show compact top sheet
             sheet.classList.add('show');
@@ -2582,7 +2584,7 @@ function initMobileTopSheet() {
             // Scrolling up or under 100px: hide compact top sheet
             sheet.classList.remove('show');
         }
-        
+
         lastScrollTop = scrollY;
     }, { passive: true });
 }

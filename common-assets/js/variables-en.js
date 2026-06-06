@@ -17,7 +17,7 @@ const IDEAS_DATA = {
             benefits: [
                 "High-quality 3-year Bachelor of Business Administration (180 ECTS) program from Switzerland.",
                 "100% flexible online learning on a modern platform, suitable for working professionals and high school graduates.",
-                "IDEAS Institute support: IDEAS-LMS system, AI learning assistant, weekend auxiliary seminars.",
+                "IDEAS support: IDEAS-LMS system, AI learning assistant, weekend auxiliary seminars.",
                 "Prestigious graduation ceremony in Geneva, Switzerland with European travel opportunities."
             ],
             program_name_degree: "Bachelor of Business Administration",
@@ -118,8 +118,8 @@ const IDEAS_DATA = {
         IDEAS02: {
             benefits: [
                 "Interactive online sessions with foreign professors are mandatory. Enhances capability, communication confidence, discussion with professors, and practical business problem-solving.",
-                "I-AI chatbot technology supports relevant content in the online MBA program managed by IDEAS Institute. Program assistants help remind homework deadlines, system issues, and connections.",
-                "IDEAS Institute supports: IDEAS-LMS system and auxiliary seminars on Sundays, providing homework guidance and preliminary final exam evaluations.",
+                "I-AI chatbot technology supports relevant content in the online MBA program managed by IDEAS. Program assistants help remind homework deadlines, system issues, and connections.",
+                "IDEAS supports: IDEAS-LMS system and auxiliary seminars on Sundays, providing homework guidance and preliminary final exam evaluations.",
                 "Graduation ceremony and academic study trip at the main campus - Geneva, Switzerland.",
             ],
             program_name_degree: "Master of Business Administration",
@@ -162,13 +162,13 @@ const IDEAS_DATA = {
                 high: [
                     "Interactive live classes, allowing discussions with professors and peers",
                     "In-depth management knowledge combined with practical case studies",
-                    "DBA pathway with various scholarships from the university and IDEAS Institute",
+                    "DBA pathway with various scholarships from the university and IDEAS",
                     "Flexible tuition payment plans or installments",
                 ],
                 stand: [
                     "Flexible study and research schedule, supported by Vietnamese advisors during the course",
                     "In-depth management knowledge combined with practical case studies",
-                    "DBA pathway with various scholarships from the university and IDEAS Institute",
+                    "DBA pathway with various scholarships from the university and IDEAS",
                     "Flexible tuition payment plans or installments",
                 ],
             },
@@ -214,7 +214,7 @@ const IDEAS_DATA = {
                         "Technology application - AI Platform for learning developed by IDEAS.",
                         "Classes with foreign professors on weekday evenings (optional).",
                         "Schedule: each course lasts 4 weeks, with 2 evening classes per week with foreign professors (expected Tue/Thu evenings, 2-3 hours each, 20:00 - 22:00).",
-                        "Preliminary final exam evaluation: Evaluated and feedback given by the IDEAS Institute academic council to ensure final assignments are on track, reducing fail rates."
+                        "Preliminary final exam evaluation: Evaluated and feedback given by the IDEAS academic council to ensure final assignments are on track, reducing fail rates."
                     ],
                 },
             ],
@@ -237,11 +237,11 @@ const IDEAS_DATA = {
             faq: [
                 {
                     q: "What are the thesis requirements for the MBA program?",
-                    a: "For the Swiss UMEF MBA program, students are required to complete a graduation thesis. The thesis is an in-depth study of a practical management issue, helping students apply their learned knowledge to solve a specific problem in their business or industry. <br/><br/> IDEAS Institute will provide group or 1-1 guidance to help students draft outlines, collect data, analyze and present results. The thesis must comply with academic standards regarding content, structure, and research methodology as defined by Swiss UMEF. The thesis should be at least 20,000 words, formatted according to APA standards. Upon completion, the thesis will be evaluated by the academic committee.",
+                    a: "For the Swiss UMEF MBA program, students are required to complete a graduation thesis. The thesis is an in-depth study of a practical management issue, helping students apply their learned knowledge to solve a specific problem in their business or industry. <br/><br/> IDEAS will provide group or 1-1 guidance to help students draft outlines, collect data, analyze and present results. The thesis must comply with academic standards regarding content, structure, and research methodology as defined by Swiss UMEF. The thesis should be at least 20,000 words, formatted according to APA standards. Upon completion, the thesis will be evaluated by the academic committee.",
                 },
                 {
                     q: "Where is the graduation ceremony organized?",
-                    a: "Upon completing the Online MBA, students can participate in the graduation ceremony organized by Swiss UMEF. Typically, the graduation ceremony takes place in Geneva, Switzerland, where the main campus is located. However, Swiss UMEF can also organize graduation ceremonies in Vietnam or other locations depending on student enrollment and conditions. Students can choose to attend the ceremony in Geneva or in Vietnam organized in coordination with IDEAS Institute.",
+                    a: "Upon completing the Online MBA, students can participate in the graduation ceremony organized by Swiss UMEF. Typically, the graduation ceremony takes place in Geneva, Switzerland, where the main campus is located. However, Swiss UMEF can also organize graduation ceremonies in Vietnam or other locations depending on student enrollment and conditions. Students can choose to attend the ceremony in Geneva or in Vietnam organized in coordination with IDEAS.",
                 },
                 {
                     q: "What is the value of the Swiss UMEF MBA degree?",
@@ -267,8 +267,8 @@ const IDEAS_DATA = {
         IDEAS03: {
             benefits: [
                 "Interactive online sessions with foreign professors are mandatory. Enhances capability, communication confidence, discussion with professors, and practical business problem-solving.",
-                "I-AI chatbot technology supports relevant content in the online MBA program managed by IDEAS Institute. Program assistants help remind homework deadlines, system issues, and connections.",
-                "IDEAS Institute supports: IDEAS-LMS system and auxiliary seminars on Sundays, providing homework guidance and preliminary final exam evaluations.",
+                "I-AI chatbot technology supports relevant content in the online MBA program managed by IDEAS. Program assistants help remind homework deadlines, system issues, and connections.",
+                "IDEAS supports: IDEAS-LMS system and auxiliary seminars on Sundays, providing homework guidance and preliminary final exam evaluations.",
                 "Graduation ceremony and academic study trip at the main campus - Geneva, Switzerland.",
             ],
             program_name_degree: "Executive Master of Business Administration",
@@ -363,7 +363,7 @@ const IDEAS_DATA = {
                         "Technology application - AI Platform for learning developed by IDEAS.",
                         "Classes with foreign professors on weekday evenings (optional).",
                         "Schedule: each course lasts 4 weeks, with 2 evening classes per week with foreign professors (expected Tue/Thu evenings, 2-3 hours each, 20:00 - 22:00).",
-                        "Preliminary final exam evaluation: Evaluated and feedback given by the IDEAS Institute academic committee to ensure assignments are on track, reducing fail rates."
+                        "Preliminary final exam evaluation: Evaluated and feedback given by the IDEAS academic committee to ensure assignments are on track, reducing fail rates."
                     ],
                 },
             ],
@@ -390,11 +390,11 @@ const IDEAS_DATA = {
                 },
                 {
                     q: "Where is the graduation ceremony organized?",
-                    a: "Upon completing the EMBA program, students can participate in the graduation ceremony organized by Swiss UMEF. Typically, the graduation ceremony takes place in Geneva, Switzerland, where the main campus is located. However, Swiss UMEF can also organize graduation ceremonies in Vietnam or other locations depending on student enrollment and conditions. Students can choose to attend the ceremony in Geneva or in Vietnam organized in coordination with IDEAS Institute.",
+                    a: "Upon completing the EMBA program, students can participate in the graduation ceremony organized by Swiss UMEF. Typically, the graduation ceremony takes place in Geneva, Switzerland, where the main campus is located. However, Swiss UMEF can also organize graduation ceremonies in Vietnam or other locations depending on student enrollment and conditions. Students can choose to attend the ceremony in Geneva or in Vietnam organized in coordination with IDEAS.",
                 },
                 {
                     q: "Can I pursue a Doctorate after completing the EMBA program?",
-                    a: "Yes, after completing the Swiss UMEF EMBA program, students can continue to study for a Doctor of Business Administration (DBA) at suitable universities or institutions. Acceptances into doctoral programs depend on the receiving institution's admission rules. Some schools might require students to take bridging courses. Students can contact IDEAS Institute for specific advice on academic pathways and requirements.",
+                    a: "Yes, after completing the Swiss UMEF EMBA program, students can continue to study for a Doctor of Business Administration (DBA) at suitable universities or institutions. Acceptances into doctoral programs depend on the receiving institution's admission rules. Some schools might require students to take bridging courses. Students can contact IDEAS for specific advice on academic pathways and requirements.",
                 },
             ],
             this_subjects: [
@@ -415,7 +415,7 @@ const IDEAS_DATA = {
                 "The program provides foundational AI knowledge and practical applications, helping business leaders deploy AI to optimize operations, decision-making, and sustainable growth.",
                 "Deep understanding of modern AI technologies. Applying AI in management, data analysis, and decision-making.",
                 "Developing leadership skills in high-tech environments.",
-                "IDEAS Institute supports: IDEAS-LMS system and auxiliary seminars on Sundays, providing homework guidance and preliminary final exam evaluations.",
+                "IDEAS supports: IDEAS-LMS system and auxiliary seminars on Sundays, providing homework guidance and preliminary final exam evaluations.",
                 "Graduation ceremony and academic study trip at the main campus - Geneva, Switzerland.",
             ],
             program_name_degree: "Master of Science in Applied Artificial Intelligence",
@@ -503,7 +503,7 @@ const IDEAS_DATA = {
                         "Tài khoản truy cập tài liệu học tập, môn học theo chương trình gốc của trường.",
                         "Program assistants help remind homework deadlines, system support, and group chat connection.",
                         "Schedule: each course lasts 4 weeks, with 2 evening classes per week with foreign professors (expected Tue/Thu evenings, 2-3 hours each, 20:00 - 22:00).",
-                        "Preliminary final exam evaluation: Evaluated and feedback given by the IDEAS Institute academic council to ensure final assignments are on track, reducing fail rates."
+                        "Preliminary final exam evaluation: Evaluated and feedback given by the IDEAS academic council to ensure final assignments are on track, reducing fail rates."
                     ],
                 },
             ],
@@ -530,11 +530,11 @@ const IDEAS_DATA = {
                 },
                 {
                     q: "Does the program require special software background?",
-                    a: "The Swiss UMEF MSc AI is designed for applications in business management. To ensure student readiness, IDEAS Institute supports two bridging modules: Machine Learning & Deep Learning (understanding AI concepts) and AI Management (understanding how to apply AI in business operations). Therefore, regardless of your background, you will be able to follow and confidently apply AI.",
+                    a: "The Swiss UMEF MSc AI is designed for applications in business management. To ensure student readiness, IDEAS supports two bridging modules: Machine Learning & Deep Learning (understanding AI concepts) and AI Management (understanding how to apply AI in business operations). Therefore, regardless of your background, you will be able to follow and confidently apply AI.",
                 },
                 {
                     q: "Is it possible to study while working? Is the study load heavy?",
-                    a: "Absolutely. The Swiss UMEF MSc AI program is structured flexibly for working professionals. Online learning allows you to self-schedule, but attendance in virtual classrooms is required (maximum 30% absence rate). Class times in the evening fit Vietnam time zones perfectly. IDEAS Institute provides extra support via weekend workshops and case discussions to ease the workload.",
+                    a: "Absolutely. The Swiss UMEF MSc AI program is structured flexibly for working professionals. Online learning allows you to self-schedule, but attendance in virtual classrooms is required (maximum 30% absence rate). Class times in the evening fit Vietnam time zones perfectly. IDEAS provides extra support via weekend workshops and case discussions to ease the workload.",
                 },
             ],
             this_subjects: [
@@ -557,7 +557,7 @@ const IDEAS_DATA = {
             benefits: [
                 "Unique combination of modern business administration and pioneering no-code AI applications.",
                 "100% flexible online learning taught by top Swiss professors and international experts.",
-                "Supported by a 70% basic tuition scholarship from the Swiss UMEF and IDEAS Institute partnership.",
+                "Supported by a 70% basic tuition scholarship from the Swiss UMEF and IDEAS partnership.",
                 "Student network consisting of managers and executives in the digital era."
             ],
             program_name_degree: "MBA in Artificial Intelligence",
@@ -609,7 +609,7 @@ const IDEAS_DATA = {
                     price: "7,970 CHF",
                     benefits: [
                         "Includes all benefits of the Standard package.",
-                        "Auxiliary workshops, 1:1 thesis advising by IDEAS Institute experts.",
+                        "Auxiliary workshops, 1:1 thesis advising by IDEAS experts.",
                         "IDEAS LMS integrated with AI learning assistant.",
                         "Geneva graduation canton fee, Swiss consulate & degree legalization (300 CHF)."
                     ]
@@ -649,20 +649,20 @@ const IDEAS_DATA = {
         <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/icon2.png"/>
         <p><b>Pay in full or in 4 installments</b></p>
       <ul>
-        <li><b><i class="fa-solid fa-file-invoice-dollar"></i> Students paying in full receive a 20% subsidy from IDEAS Institute</b></li>
+        <li><b><i class="fa-solid fa-file-invoice-dollar"></i> Students paying in full receive a 20% subsidy from IDEAS</b></li>
         <li><i class="fa-solid fa-file-invoice-dollar"></i> <b>Or pay in 4 installments: 40%, 20%, 20%, 20% </b></li>
         <li><br/></li>
         <li><b class="main_clr">Payment Methods</b></li>
-        <li><i class="fa-solid fa-check"></i> Direct payment at IDEAS Institute</li>
+        <li><i class="fa-solid fa-check"></i> Direct payment at IDEAS</li>
         <li><i class="fa-solid fa-check"></i> Online transfer via bank account details provided in the contract or via Payoo.</li>
-        <li><i class="fa-solid fa-check"></i> IDEAS Institute provides receipt confirmations (upon direct or card payment) within 1 working day. Weekend or holiday payments will be confirmed on the next working day. Collected tuition fees cannot be invoiced for VAT under Vietnamese regulations.</li>
+        <li><i class="fa-solid fa-check"></i> IDEAS provides receipt confirmations (upon direct or card payment) within 1 working day. Weekend or holiday payments will be confirmed on the next working day. Collected tuition fees cannot be invoiced for VAT under Vietnamese regulations.</li>
         </ul>
       `,
             benefits: [
                 "Delivers an outstanding competitive advantage, as DBA students do not only hold deep expertise but are also equipped with advanced executive skills.",
                 "Stimulates academic thinking and intellectual development, training high-level strategic and analytical capabilities.",
                 "Stand out in the crowd, advance your career by capturing the latest trends, modern theories, and contemporary issues in management and business.",
-                "IDEAS Institute supports: IDEAS-LMS system and auxiliary seminars on Sundays, providing homework guidance and preliminary final exam evaluations.",
+                "IDEAS supports: IDEAS-LMS system and auxiliary seminars on Sundays, providing homework guidance and preliminary final exam evaluations.",
             ],
             program_name_degree: "Dual DBA",
             program_benefits_degree: [
@@ -710,7 +710,7 @@ const IDEAS_DATA = {
                         "Research duration: 2.5 - 4 years.",
                         "Program assistants help remind deadlines, system support, and advisor connection.",
                         "Self-guided research with directions and mentoring from professors.",
-                        "Preliminary final exam evaluation: Evaluated and feedback given by the IDEAS Institute academic council to ensure final assignments are on track, reducing fail rates."
+                        "Preliminary final exam evaluation: Evaluated and feedback given by the IDEAS academic council to ensure final assignments are on track, reducing fail rates."
                     ],
                 },
             ],
@@ -756,7 +756,7 @@ const IDEAS_DATA = {
             faq: [
                 {
                     q: "Can I enroll in the Dual DBA without prior research experience?",
-                    a: "Yes. The Dual DBA program is designed for managers and executives looking to enhance strategic thinking and applied research capabilities in business. IDEAS Institute provides detailed guidance on research methodology, helping students step-by-step to build their DBA thesis without prior research background.",
+                    a: "Yes. The Dual DBA program is designed for managers and executives looking to enhance strategic thinking and applied research capabilities in business. IDEAS provides detailed guidance on research methodology, helping students step-by-step to build their DBA thesis without prior research background.",
                 },
                 {
                     q: "What if I am on a business trip and cannot submit my assignment on time?",
@@ -764,7 +764,7 @@ const IDEAS_DATA = {
                 },
                 {
                     q: "Can students participate in the graduation ceremony in Paris, France?",
-                    a: "Yes. Students who complete the program can register to participate in the graduation ceremony in France, alongside other international students of Ascencia Business School. Ceremonies occur twice a year, in June and December. IDEAS Institute will inform students regarding the school schedule for registrations.",
+                    a: "Yes. Students who complete the program can register to participate in the graduation ceremony in France, alongside other international students of Ascencia Business School. Ceremonies occur twice a year, in June and December. IDEAS will inform students regarding the school schedule for registrations.",
                 },
             ],
             this_subjects: [
@@ -777,8 +777,8 @@ const IDEAS_DATA = {
         IDEAS07: {
             benefits: [
                 "Interactive online sessions with foreign professors are mandatory. Enhances capability, communication confidence, discussion with professors, and practical business problem-solving.",
-                "I-AI chatbot technology supports relevant content in the online MBA program managed by IDEAS Institute. Program assistants help remind homework deadlines, system issues, and connections.",
-                "IDEAS Institute supports: IDEAS-LMS system and auxiliary seminars on Sundays, providing homework guidance and preliminary final exam evaluations.",
+                "I-AI chatbot technology supports relevant content in the online MBA program managed by IDEAS. Program assistants help remind homework deadlines, system issues, and connections.",
+                "IDEAS supports: IDEAS-LMS system and auxiliary seminars on Sundays, providing homework guidance and preliminary final exam evaluations.",
                 "Graduation ceremony and academic study trip at the main campus - Geneva, Switzerland.",
             ],
             program_name_degree: "Bachelor of Business Administration",
@@ -870,7 +870,7 @@ const IDEAS_DATA = {
                         "Technology application - AI Platform for learning developed by IDEAS.",
                         "Classes with foreign professors on weekday evenings (optional).",
                         "Schedule: each course lasts 4 weeks, with 2 evening classes per week with foreign professors (expected Tue/Thu evenings, 2-3 hours each, 20:00 - 22:00).",
-                        "Preliminary final exam evaluation: Evaluated and feedback given by the IDEAS Institute academic council to ensure final assignments are on track, reducing fail rates."
+                        "Preliminary final exam evaluation: Evaluated and feedback given by the IDEAS academic council to ensure final assignments are on track, reducing fail rates."
                     ],
                 },
             ],
@@ -897,7 +897,7 @@ const IDEAS_DATA = {
                 },
                 {
                     q: "Where is the graduation ceremony organized?",
-                    a: "Upon completing the Top-up BBA, students can participate in the graduation ceremony organized by Swiss UMEF. Typically, the graduation ceremony takes place in Geneva, Switzerland, where the main campus is located. However, Swiss UMEF can also organize graduation ceremonies in Vietnam or other locations depending on student enrollment and conditions. Students can choose to attend the ceremony in Geneva or in Vietnam organized in coordination with IDEAS Institute.",
+                    a: "Upon completing the Top-up BBA, students can participate in the graduation ceremony organized by Swiss UMEF. Typically, the graduation ceremony takes place in Geneva, Switzerland, where the main campus is located. However, Swiss UMEF can also organize graduation ceremonies in Vietnam or other locations depending on student enrollment and conditions. Students can choose to attend the ceremony in Geneva or in Vietnam organized in coordination with IDEAS.",
                 },
                 {
                     q: "Can I pursue a Master's after completing the Top-up BBA?",
@@ -958,7 +958,7 @@ const IDEAS_DATA = {
         },
         {
             title: "Graduation Ceremony",
-            location: "IDEAS Institute - Vietnam",
+            location: "IDEAS - Vietnam",
             avatar: "./assets/8X1A9328-1-1.jpg",
             school: "Ascencia Business School",
             name: "Global MBA - DBA",
@@ -967,7 +967,7 @@ const IDEAS_DATA = {
         },
         {
             title: "Graduation Ceremony",
-            location: "IDEAS Institute - Vietnam",
+            location: "IDEAS - Vietnam",
             avatar: "https://ideas.edu.vn/wp-content/uploads/2024/10/Totnghiepumef.jpg",
             school: "Swiss UMEF",
             name: "EMBA & Online MBA",
@@ -985,7 +985,7 @@ const IDEAS_DATA = {
         },
         {
             title: "Graduation Ceremony",
-            location: "IDEAS Institute - Vietnam",
+            location: "IDEAS - Vietnam",
             avatar: "https://ideas.edu.vn/wp-content/uploads/2024/01/416256674_837845658141991_5379123310787471174_n.jpg",
             school: "Ascencia Business School",
             name: "Global MBA - DBA",
@@ -998,31 +998,31 @@ const IDEAS_DATA = {
             name: "Nguyễn Thanh Bình",
             title: "French Doctor of Business Administration (DBA) – Ascencia Business School - Director of Information & Environment technology application Institute",
             avatar: "https://ideas.edu.vn/wp-content/uploads/2025/02/casc1.jpg",
-            content: "Thank you for the very enthusiastic support of the IDEAS Institute academic and administrative staff. They have accompanied us throughout the research journey, supporting day and night to help us complete our Doctorate objectives – the terminal academic degree.",
+            content: "Thank you for the very enthusiastic support of the IDEAS academic and administrative staff. They have accompanied us throughout the research journey, supporting day and night to help us complete our Doctorate objectives – the terminal academic degree.",
         },
         {
             name: "Nguyễn Huỳnh Phương",
             title: "French Master of Business Administration (Global MBA) – Ascencia Business School - UNIT MANAGER in Hanwha Life Vietnam",
             avatar: "https://ideas.edu.vn/wp-content/uploads/2025/02/huynhphuong.jpg",
-            content: "For those choosing online study, I recommend selecting a trustworthy institution like IDEAS Institute. You should share any stress or difficulties with professors because they will give helpful suggestions to help you overcome them.",
+            content: "For those choosing online study, I recommend selecting a trustworthy institution like IDEAS. You should share any stress or difficulties with professors because they will give helpful suggestions to help you overcome them.",
         },
         {
             name: "Nguyễn Thị Hà Miên",
             title: "French Master of Business Administration (Global MBA) – Ascencia Business School - Deputy Project Manager",
             avatar: "https://ideas.edu.vn/wp-content/uploads/2025/02/hamien.jpg",
-            content: "I chose the online program because it is more flexible. In addition, the 24/7 support of IDEAS Institute helped me complete assignments on time and kept me updated with constant class reminders.",
+            content: "I chose the online program because it is more flexible. In addition, the 24/7 support of IDEAS helped me complete assignments on time and kept me updated with constant class reminders.",
         },
         {
             name: "Lê Ngọc Thương",
             title: "Swiss Master of Business Administration (Executive MBA) – Swiss UMEF Head of Commercial Operations – Boehringer Ingelheim",
             avatar: "https://ideas.edu.vn/wp-content/uploads/2025/02/cumef.jpg",
-            content: "The program connected me with many classmates across different industries, helping me gather valuable shares and experiences. I am especially grateful to IDEAS Institute for their support over the past year, from expert insights to 24/7 admin assistance, helping me balance work and study to achieve my goal.",
+            content: "The program connected me with many classmates across different industries, helping me gather valuable shares and experiences. I am especially grateful to IDEAS for their support over the past year, from expert insights to 24/7 admin assistance, helping me balance work and study to achieve my goal.",
         },
         {
             name: "Lê Chí Thành",
             title: "French Doctor of Business Administration (DBA) – Ascencia Business School - Channel Business Manager (Indochina) | Leica Biosystems (an OpCo of Danaher)",
             avatar: "https://ideas.edu.vn/wp-content/uploads/2025/02/casc2.jpg",
-            content: "My online learning journey since the 2016 MBA program and then continuing with the DBA has always been accompanied and supported by the IDEAS Institute team. Online learning was the right choice for me to balance work and family. My deep gratitude goes to Dr. Pham Quang Vinh and the IDEAS support team for constantly encouraging me along this long path.",
+            content: "My online learning journey since the 2016 MBA program and then continuing with the DBA has always been accompanied and supported by the IDEAS team. Online learning was the right choice for me to balance work and family. My deep gratitude goes to Dr. Pham Quang Vinh and the IDEAS support team for constantly encouraging me along this long path.",
         },
         {
             name: "Chu Hoàng Thái",
@@ -1082,16 +1082,16 @@ const IDEAS_DATA = {
     ],
     faq: [
         {
-            q: "Is this a joint training program between IDEAS Institute and the Universities?",
-            a: "<b>No,</b> <br/>When you start a program, you will officially be a student of the respective university. IDEAS Institute does not directly run joint training but serves as a bridge, academic advisor, and local support entity throughout your studies and degree legalization process. <br/> <br/> IDEAS helps students access <b>official programs</b> from international universities, supports them throughout their studies, and helps resolve any issues to ensure the smoothest learning experience. <br/> The entire program, degrees, and transcripts are issued directly by the universities and can be **legalized by the Vietnam Embassy** in the country where the university's main campus resides.",
+            q: "Is this a joint training program between IDEAS and the Universities?",
+            a: "<b>No,</b> <br/>When you start a program, you will officially be a student of the respective university. IDEAS does not directly run joint training but serves as a bridge, academic advisor, and local support entity throughout your studies and degree legalization process. <br/> <br/> IDEAS helps students access <b>official programs</b> from international universities, supports them throughout their studies, and helps resolve any issues to ensure the smoothest learning experience. <br/> The entire program, degrees, and transcripts are issued directly by the universities and can be **legalized by the Vietnam Embassy** in the country where the university's main campus resides.",
         },
         {
-            q: "Does IDEAS Institute organize offline classes or only support online study?",
-            a: "The programs supported by IDEAS Institute are primarily delivered online, allowing students flexibility in time and location. However, IDEAS also frequently organizes offline workshops, academic seminars, and networking events for students to connect and exchange knowledge.",
+            q: "Does IDEAS organize offline classes or only support online study?",
+            a: "The programs supported by IDEAS are primarily delivered online, allowing students flexibility in time and location. However, IDEAS also frequently organizes offline workshops, academic seminars, and networking events for students to connect and exchange knowledge.",
         },
         {
-            q: "How are the IDEAS Institute auxiliary seminars organized and are they mandatory?",
-            a: "The auxiliary seminars by IDEAS Institute are organized online and led by instructors or industry experts. The seminar content focuses on supplementing course materials, answering questions, deep-diving into subjects, and applying concepts in practice. These seminars are optional and do not affect course grades. However, IDEAS strongly encourages students to participate to enhance knowledge and achieve better academic outcomes. It is also an excellent opportunity to network with peers who are managers and leaders in the same cohort.",
+            q: "How are the IDEAS auxiliary seminars organized and are they mandatory?",
+            a: "The auxiliary seminars by IDEAS are organized online and led by instructors or industry experts. The seminar content focuses on supplementing course materials, answering questions, deep-diving into subjects, and applying concepts in practice. These seminars are optional and do not affect course grades. However, IDEAS strongly encourages students to participate to enhance knowledge and achieve better academic outcomes. It is also an excellent opportunity to network with peers who are managers and leaders in the same cohort.",
         },
     ],
 };
