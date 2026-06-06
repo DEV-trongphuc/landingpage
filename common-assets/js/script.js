@@ -1,5 +1,5 @@
 /* Google Tag Manager & Conversion Tracking setup */
-(function() {
+(function () {
     if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
         var script = document.createElement('script');
         script.async = true;
@@ -8,7 +8,7 @@
     }
     window.dataLayer = window.dataLayer || [];
     if (!window.gtag) {
-        window.gtag = function() {
+        window.gtag = function () {
             window.dataLayer.push(arguments);
         };
         window.gtag('js', new Date());
@@ -16,7 +16,7 @@
         window.gtag('config', 'AW-11205917800');
     }
     if (!window.gtag_report_conversion) {
-        window.gtag_report_conversion = function(url) {
+        window.gtag_report_conversion = function (url) {
             var callback = function () {
                 if (typeof (url) != 'undefined') {
                     window.location = url;
@@ -532,10 +532,10 @@ const isEn = document.documentElement.lang === 'en';
             if (eduText) noteParts.push((isEn ? 'Education: ' : 'Học vấn: ') + eduText);
             if (engText) noteParts.push((isEn ? 'English: ' : 'Tiếng Anh: ') + engText);
             if (msgVal) noteParts.push(msgVal);
-            
+
             const ctaSource = (formId === 'modal-cta-form') ? activeCtaSource : 'inline_form';
             noteParts.push('CTA Source: ' + ctaSource);
-            
+
             const combinedNote = noteParts.join(' | ');
 
             // Tự động phân loại source và chuong_trinh theo pathname
@@ -666,14 +666,14 @@ const isEn = document.documentElement.lang === 'en';
             if (typeof ctaSource === 'object' && ctaSource.innerText) {
                 resolvedSource = ctaSource.innerText.replace(/\s+/g, ' ').trim();
             } else if (typeof ctaSource === 'string') {
-                let el = document.getElementById(ctaSource) || 
-                         document.querySelector('.' + ctaSource) || 
-                         document.querySelector(`[data-cta="${ctaSource}"]`);
-                
+                let el = document.getElementById(ctaSource) ||
+                    document.querySelector('.' + ctaSource) ||
+                    document.querySelector(`[data-cta="${ctaSource}"]`);
+
                 if (!el && ctaSource === 'tour_footer_cta') {
                     el = document.querySelector('.tour-footer-btn');
                 }
-                
+
                 if (el && el.innerText) {
                     resolvedSource = el.innerText.replace(/\s+/g, ' ').trim();
                 } else {
@@ -1022,7 +1022,7 @@ const isEn = document.documentElement.lang === 'en';
     function initMobileSliders() {
         if (window.innerWidth <= 768) {
             const mobileGrids = [];
-            
+
             // Collect all potential card sliders
             const selectors = [
                 '.pain-cards',
@@ -1031,11 +1031,11 @@ const isEn = document.documentElement.lang === 'en';
                 '.testimonials-grid',
                 '.gallery-mosaic'
             ];
-            
+
             selectors.forEach(sel => {
                 document.querySelectorAll(sel).forEach(el => mobileGrids.push(el));
             });
-            
+
             // Collect grids in giang-vien and co-van
             document.querySelectorAll('#giang-vien, #co-van').forEach(section => {
                 section.querySelectorAll('div').forEach(div => {
@@ -1048,7 +1048,7 @@ const isEn = document.documentElement.lang === 'en';
 
             mobileGrids.forEach((grid, idx) => {
                 if (grid.dataset.sliderId) return; // avoid double init
-                
+
                 // Check if any existing scroll-dots container targets this element
                 let hasExistingDots = false;
                 document.querySelectorAll('.scroll-dots').forEach(dotsContainer => {
@@ -1063,12 +1063,12 @@ const isEn = document.documentElement.lang === 'en';
                         }
                     }
                 });
-                
+
                 if (hasExistingDots) {
                     grid.dataset.sliderId = 'manual-slider';
                     return;
                 }
-                
+
                 const id = `slider-target-${idx}`;
                 grid.dataset.sliderId = id;
                 grid.classList.add(id);
@@ -1076,7 +1076,7 @@ const isEn = document.documentElement.lang === 'en';
                 const dotsDiv = document.createElement('div');
                 dotsDiv.className = 'scroll-dots';
                 dotsDiv.dataset.scrollTarget = `.${id}`;
-                
+
                 // Append dots container right after the slider grid
                 grid.parentNode.insertBefore(dotsDiv, grid.nextSibling);
             });
@@ -1306,7 +1306,7 @@ const isEn = document.documentElement.lang === 'en';
         function checkScroll() {
             const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
             if (scrollableHeight <= 0) return;
-            
+
             const scrollPercent = window.scrollY / scrollableHeight;
             if (scrollPercent >= 0.3) {
                 btn.classList.add('visible');
@@ -1325,7 +1325,7 @@ const isEn = document.documentElement.lang === 'en';
                 });
             }
         }, { passive: true });
-        
+
         // Scroll to top on click
         btn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1385,16 +1385,16 @@ function toggleAccredSection() {
     const btn = document.getElementById('accred-toggle-btn');
     const btnText = document.getElementById('accred-toggle-btn-text');
     const btnIcon = document.getElementById('accred-toggle-btn-icon');
-    
+
     if (!content || !btnText) return;
-    
+
     // Store original text if not already done
     let originalText = btnText.getAttribute('data-original-text');
     if (!originalText) {
         originalText = btnText.textContent.trim();
         btnText.setAttribute('data-original-text', originalText);
     }
-    
+
     if (content.classList.contains('is-open')) {
         content.classList.remove('is-open');
         btnText.textContent = originalText;
@@ -1411,16 +1411,16 @@ function toggleTripSection() {
     const btn = document.getElementById('trip-toggle-btn');
     const btnText = document.getElementById('trip-toggle-btn-text');
     const btnIcon = document.getElementById('trip-toggle-btn-icon');
-    
+
     if (!content || !btnText) return;
-    
+
     // Store original text if not already done
     let originalText = btnText.getAttribute('data-original-text');
     if (!originalText) {
         originalText = btnText.textContent.trim();
         btnText.setAttribute('data-original-text', originalText);
     }
-    
+
     if (content.classList.contains('is-open')) {
         content.classList.remove('is-open');
         btnText.textContent = originalText;
@@ -1438,18 +1438,18 @@ let capitalsSequenceStarted = false;
 function initTourModalSequence() {
     const modalScrollable = document.getElementById('tour-modal-scrollable');
     if (!modalScrollable) return;
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                
+
                 // Capitals showcase sequence
                 if (entry.target.id === 'tour-capitals-section' && !capitalsSequenceStarted) {
                     capitalsSequenceStarted = true;
                     startCapitalsSequence(entry.target);
                 }
-                
+
                 // Video container reveal
                 if (entry.target.id === 'tour-video-container') {
                     const video = document.getElementById('tour-video-el');
@@ -1463,7 +1463,7 @@ function initTourModalSequence() {
         threshold: 0.15,
         root: modalScrollable
     });
-    
+
     modalScrollable.querySelectorAll('.tour-reveal').forEach(el => observer.observe(el));
     const capitalsSec = document.getElementById('tour-capitals-section');
     if (capitalsSec) observer.observe(capitalsSec);
@@ -1475,7 +1475,7 @@ function startCapitalsSequence(section) {
     const cards = section.querySelectorAll('.tour-capital-card');
     const footer = section.querySelector('.tour-capitals-footer');
     let step = 0;
-    
+
     function nextStep() {
         step++;
         if (step <= cards.length) {
@@ -1529,13 +1529,13 @@ function closeTourModal() {
     if (typeof window.unlockScroll === 'function') {
         window.unlockScroll();
     }
-    
+
     const video = document.getElementById('tour-video-el');
     if (video) video.pause();
-    
+
     setTimeout(() => {
         modal.style.display = 'none';
-        
+
         const modalScrollable = document.getElementById('tour-modal-scrollable');
         if (modalScrollable) {
             modalScrollable.scrollTop = 0;
@@ -1585,19 +1585,19 @@ document.addEventListener('DOMContentLoaded', () => {
             openTourModal();
         });
     });
-    
+
     const closeBtn = document.getElementById('tour-modal-close');
     const overlay = document.getElementById('tour-modal-overlay');
     if (closeBtn) closeBtn.addEventListener('click', closeTourModal);
     if (overlay) overlay.addEventListener('click', closeTourModal);
-    
+
     // Video player handlers
     const video = document.getElementById('tour-video-el');
     const playBtn = document.getElementById('tour-video-play-btn');
     const muteBtn = document.getElementById('tour-video-mute-btn');
     const videoContainer = document.getElementById('tour-video-container');
     const fallbackGrid = document.getElementById('tour-images-fallback');
-    
+
     if (video) {
         video.addEventListener('ended', () => {
             if (videoContainer) {
@@ -1614,7 +1614,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 800);
             }
         });
-        
+
         if (playBtn) {
             playBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -1627,7 +1627,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-        
+
         if (muteBtn) {
             muteBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -1651,18 +1651,18 @@ document.addEventListener('keydown', (e) => {
 
 // Remnants of old custom smooth scroll removed to allow native compositor-level smooth scrolling
 
-    /* ─── DYNAMIC DEGREE FLIPPING MODAL ─── */
-    function initDegreeModal() {
-        const wraps = document.querySelectorAll('.proof-degree-wrap');
-        if (wraps.length === 0) return;
+/* ─── DYNAMIC DEGREE FLIPPING MODAL ─── */
+function initDegreeModal() {
+    const wraps = document.querySelectorAll('.proof-degree-wrap');
+    if (wraps.length === 0) return;
 
-        // Set cursor to pointer for the wrap to indicate clickability
-        wraps.forEach(w => {
-            w.style.cursor = 'pointer';
-        });
+    // Set cursor to pointer for the wrap to indicate clickability
+    wraps.forEach(w => {
+        w.style.cursor = 'pointer';
+    });
 
-        // Create modal HTML dynamically
-        const modalHtml = `
+    // Create modal HTML dynamically
+    const modalHtml = `
             <div class="degree-modal" id="degree-modal" role="dialog" aria-modal="true" aria-label="Xem mẫu văn bằng">
                 <div class="degree-modal-overlay" id="degree-modal-overlay"></div>
                 <div class="degree-modal-container">
@@ -1688,177 +1688,177 @@ document.addEventListener('keydown', (e) => {
             </div>
         `;
 
-        // Append modal to body
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = modalHtml.trim();
-        const modalEl = tempDiv.firstChild;
-        document.body.appendChild(modalEl);
+    // Append modal to body
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = modalHtml.trim();
+    const modalEl = tempDiv.firstChild;
+    document.body.appendChild(modalEl);
 
-        const overlay = document.getElementById('degree-modal-overlay');
-        const closeBtn = document.getElementById('degree-modal-close');
-        const cardContainer = document.getElementById('degree-card-container');
-        const cardInner = document.getElementById('degree-card-inner');
-        const flipBtn = document.getElementById('degree-modal-flip-btn');
-        const flipText = document.getElementById('degree-modal-flip-text');
-        const imgFront = document.getElementById('degree-modal-img-front');
-        const imgBack = document.getElementById('degree-modal-img-back');
+    const overlay = document.getElementById('degree-modal-overlay');
+    const closeBtn = document.getElementById('degree-modal-close');
+    const cardContainer = document.getElementById('degree-card-container');
+    const cardInner = document.getElementById('degree-card-inner');
+    const flipBtn = document.getElementById('degree-modal-flip-btn');
+    const flipText = document.getElementById('degree-modal-flip-text');
+    const imgFront = document.getElementById('degree-modal-img-front');
+    const imgBack = document.getElementById('degree-modal-img-back');
 
-        function openModal(src, customBack) {
-            imgFront.src = src;
+    function openModal(src, customBack) {
+        imgFront.src = src;
 
-            let backSrc = customBack;
-            if (!backSrc) {
-                backSrc = 'https://ideas.edu.vn/wp-content/uploads/2025/11/Sample_page-0002.webp'; // Default Swiss UMEF back
-                if (src.includes('RB-DBA') || src.includes('Estiam') || src.includes('RB-College')) {
-                    backSrc = 'https://ideas.edu.vn/wp-content/uploads/2025/10/RB-DBA-2.webp';
-                } else if (src.includes('Ascencia')) {
-                    backSrc = 'https://ideas.edu.vn/wp-content/uploads/2024/11/MBA-Ascencia-Diploma-EN-MOFA-2.webp';
+        let backSrc = customBack;
+        if (!backSrc) {
+            backSrc = 'https://ideas.edu.vn/wp-content/uploads/2025/11/Sample_page-0002.webp'; // Default Swiss UMEF back
+            if (src.includes('RB-DBA') || src.includes('Estiam') || src.includes('RB-College')) {
+                backSrc = 'https://ideas.edu.vn/wp-content/uploads/2025/10/RB-DBA-2.webp';
+            } else if (src.includes('Ascencia')) {
+                backSrc = 'https://ideas.edu.vn/wp-content/uploads/2024/11/MBA-Ascencia-Diploma-EN-MOFA-2.webp';
+            }
+        }
+        if (imgBack) {
+            imgBack.src = backSrc;
+        }
+
+        cardInner.classList.remove('flipped');
+        flipText.textContent = isEn ? 'Flip Back' : 'Lật mặt sau';
+        modalEl.classList.add('open');
+        if (typeof window.lockScroll === 'function') {
+            window.lockScroll();
+        }
+    }
+
+    function closeModal() {
+        modalEl.classList.remove('open');
+        if (typeof window.unlockScroll === 'function') {
+            window.unlockScroll();
+        }
+    }
+
+    function toggleFlip() {
+        const isFlipped = cardInner.classList.toggle('flipped');
+        flipText.textContent = isEn
+            ? (isFlipped ? 'Flip Front' : 'Flip Back')
+            : (isFlipped ? 'Lật mặt trước' : 'Lật mặt sau');
+    }
+
+    // Add click listener to wraps
+    wraps.forEach(w => {
+        w.addEventListener('click', (e) => {
+            // Prevent trigger other default behaviors
+            e.preventDefault();
+            const img = w.querySelector('.proof-degree-img');
+            if (img) {
+                const customBack = w.getAttribute('data-back') || img.getAttribute('data-back');
+                openModal(img.src, customBack);
+            }
+        });
+    });
+
+    // Close listeners
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+
+    // Flip listeners
+    cardContainer.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleFlip();
+    });
+    flipBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleFlip();
+    });
+
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalEl.classList.contains('open')) {
+            closeModal();
+        }
+    });
+}
+
+/* ─── Scroll Spy – Highlight Active Nav Link ─── */
+function initScrollSpy() {
+    const spySections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.header-nav .nav-link[href^="#"], .mobile-menu .nav-link[href^="#"]');
+
+    if ('IntersectionObserver' in window && spySections.length > 0) {
+        const spyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        const href = link.getAttribute('href');
+                        const isActive = href === '#' + id;
+                        link.classList.toggle('active', isActive);
+                    });
                 }
-            }
-            if (imgBack) {
-                imgBack.src = backSrc;
-            }
-
-            cardInner.classList.remove('flipped');
-            flipText.textContent = isEn ? 'Flip Back' : 'Lật mặt sau';
-            modalEl.classList.add('open');
-            if (typeof window.lockScroll === 'function') {
-                window.lockScroll();
-            }
-        }
-
-        function closeModal() {
-            modalEl.classList.remove('open');
-            if (typeof window.unlockScroll === 'function') {
-                window.unlockScroll();
-            }
-        }
-
-        function toggleFlip() {
-            const isFlipped = cardInner.classList.toggle('flipped');
-            flipText.textContent = isEn 
-                ? (isFlipped ? 'Flip Front' : 'Flip Back') 
-                : (isFlipped ? 'Lật mặt trước' : 'Lật mặt sau');
-        }
-
-        // Add click listener to wraps
-        wraps.forEach(w => {
-            w.addEventListener('click', (e) => {
-                // Prevent trigger other default behaviors
-                e.preventDefault();
-                const img = w.querySelector('.proof-degree-img');
-                if (img) {
-                    const customBack = w.getAttribute('data-back') || img.getAttribute('data-back');
-                    openModal(img.src, customBack);
-                }
             });
+        }, {
+            rootMargin: '-30% 0px -60% 0px' // Trigger active state when section takes up the middle part of viewport
         });
 
-        // Close listeners
-        closeBtn.addEventListener('click', closeModal);
-        overlay.addEventListener('click', closeModal);
+        spySections.forEach(section => spyObserver.observe(section));
+    }
+}
 
-        // Flip listeners
-        cardContainer.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleFlip();
-        });
-        flipBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleFlip();
-        });
+/* ─── Workshop Tabs Switcher ─── */
+function initWorkshopTabs() {
+    const tabBtns = document.querySelectorAll('.workshop-tab-btn');
+    const tabContents = document.querySelectorAll('.workshop-tab-content');
 
-        // Escape key to close
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modalEl.classList.contains('open')) {
-                closeModal();
-            }
+    if (tabBtns.length === 0 || tabContents.length === 0) return;
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.dataset.tab;
+
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            btn.classList.add('active');
+            const targetContent = document.getElementById(targetTab);
+            if (targetContent) targetContent.classList.add('active');
         });
+    });
+}
+
+/* ─── VIETNAM GRADUATION CEREMONY MODAL ─── */
+function initVnGradModal() {
+    // Load FontAwesome dynamically if not present
+    if (!document.querySelector('link[href*="font-awesome"]')) {
+        const fontAwesomeLink = document.createElement('link');
+        fontAwesomeLink.rel = 'stylesheet';
+        fontAwesomeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+        document.head.appendChild(fontAwesomeLink);
     }
 
-    /* ─── Scroll Spy – Highlight Active Nav Link ─── */
-    function initScrollSpy() {
-        const spySections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.header-nav .nav-link[href^="#"], .mobile-menu .nav-link[href^="#"]');
+    // Dynamically inject the trigger button in the Tour Modal footer
+    const tourFooterBtnWrap = document.querySelector('.tour-footer-btn-wrap');
+    if (!tourFooterBtnWrap) return;
 
-        if ('IntersectionObserver' in window && spySections.length > 0) {
-            const spyObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            const href = link.getAttribute('href');
-                            const isActive = href === '#' + id;
-                            link.classList.toggle('active', isActive);
-                        });
-                    }
-                });
-            }, {
-                rootMargin: '-30% 0px -60% 0px' // Trigger active state when section takes up the middle part of viewport
-            });
-
-            spySections.forEach(section => spyObserver.observe(section));
-        }
-    }
-
-    /* ─── Workshop Tabs Switcher ─── */
-    function initWorkshopTabs() {
-        const tabBtns = document.querySelectorAll('.workshop-tab-btn');
-        const tabContents = document.querySelectorAll('.workshop-tab-content');
-
-        if (tabBtns.length === 0 || tabContents.length === 0) return;
-
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const targetTab = btn.dataset.tab;
-
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-
-                btn.classList.add('active');
-                const targetContent = document.getElementById(targetTab);
-                if (targetContent) targetContent.classList.add('active');
-            });
-        });
-    }
-
-    /* ─── VIETNAM GRADUATION CEREMONY MODAL ─── */
-    function initVnGradModal() {
-        // Load FontAwesome dynamically if not present
-        if (!document.querySelector('link[href*="font-awesome"]')) {
-            const fontAwesomeLink = document.createElement('link');
-            fontAwesomeLink.rel = 'stylesheet';
-            fontAwesomeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
-            document.head.appendChild(fontAwesomeLink);
-        }
-
-        // Dynamically inject the trigger button in the Tour Modal footer
-        const tourFooterBtnWrap = document.querySelector('.tour-footer-btn-wrap');
-        if (!tourFooterBtnWrap) return;
-
-        // Check if trigger button already exists
-        let trigger = document.getElementById('vn-graduation-trigger');
-        if (!trigger) {
-            trigger = document.createElement('button');
-            trigger.id = 'vn-graduation-trigger';
-            trigger.className = 'tour-vn-ceremony-btn';
-            trigger.innerHTML = `
+    // Check if trigger button already exists
+    let trigger = document.getElementById('vn-graduation-trigger');
+    if (!trigger) {
+        trigger = document.createElement('button');
+        trigger.id = 'vn-graduation-trigger';
+        trigger.className = 'tour-vn-ceremony-btn';
+        trigger.innerHTML = `
                 <i class="fa-solid fa-graduation-cap"></i>
                 <span>Tham dự Lễ tại Việt Nam</span>
             `;
-            // Insert it before the secondary close button
-            const closeBtnSecondary = tourFooterBtnWrap.querySelector('.tour-footer-btn-secondary');
-            if (closeBtnSecondary) {
-                tourFooterBtnWrap.insertBefore(trigger, closeBtnSecondary);
-            } else {
-                tourFooterBtnWrap.appendChild(trigger);
-            }
+        // Insert it before the secondary close button
+        const closeBtnSecondary = tourFooterBtnWrap.querySelector('.tour-footer-btn-secondary');
+        if (closeBtnSecondary) {
+            tourFooterBtnWrap.insertBefore(trigger, closeBtnSecondary);
+        } else {
+            tourFooterBtnWrap.appendChild(trigger);
         }
+    }
 
-        // Check if modal already exists to prevent duplicate appending
-        let modalEl = document.getElementById('vn-ceremony-modal');
-        if (!modalEl) {
-            const modalHtml = `
+    // Check if modal already exists to prevent duplicate appending
+    let modalEl = document.getElementById('vn-ceremony-modal');
+    if (!modalEl) {
+        const modalHtml = `
                 <div class="vn-ceremony-modal" id="vn-ceremony-modal" role="dialog" aria-modal="true" aria-label="Lễ tốt nghiệp tại Việt Nam">
                     <div class="vn-ceremony-overlay" id="vn-ceremony-overlay"></div>
                     <div class="vn-ceremony-container" data-lenis-prevent>
@@ -1913,7 +1913,7 @@ document.addEventListener('keydown', (e) => {
                                 target="_blank" rel="noopener" class="vn-card-title">Lễ tốt nghiệp 26/10/2024</a>
                                 <div class="vn-card-meta">
                                 <p><i class="fa-solid fa-graduation-cap"></i> Swiss UMEF &mdash; MBA/EMBA</p>
-                                <p><i class="fa-solid fa-location-dot"></i> Viện IDEAS</p>
+                                <p><i class="fa-solid fa-location-dot"></i> IDEAS</p>
                                 </div>
                                 <a href="https://www.youtube.com/watch?si=eJDfqKWc4HxT_TmS&v=fBf5YcaMxDY&feature=youtu.be"
                                 target="_blank" rel="noopener" class="vn-card-play"
@@ -1932,99 +1932,99 @@ document.addEventListener('keydown', (e) => {
                     </div>
                 </div>
             `;
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = modalHtml.trim();
-            modalEl = tempDiv.firstChild;
-            document.body.appendChild(modalEl);
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = modalHtml.trim();
+        modalEl = tempDiv.firstChild;
+        document.body.appendChild(modalEl);
+    }
+
+    const overlay = modalEl.querySelector('#vn-ceremony-overlay');
+    const closeBtn = modalEl.querySelector('#vn-ceremony-close');
+
+    function openModal() {
+        modalEl.classList.add('open');
+        if (typeof window.lockScroll === 'function') {
+            window.lockScroll();
         }
+    }
 
-        const overlay = modalEl.querySelector('#vn-ceremony-overlay');
-        const closeBtn = modalEl.querySelector('#vn-ceremony-close');
-
-        function openModal() {
-            modalEl.classList.add('open');
-            if (typeof window.lockScroll === 'function') {
-                window.lockScroll();
-            }
+    function closeModal() {
+        modalEl.classList.remove('open');
+        if (typeof window.unlockScroll === 'function') {
+            window.unlockScroll();
         }
+    }
 
-        function closeModal() {
-            modalEl.classList.remove('open');
-            if (typeof window.unlockScroll === 'function') {
-                window.unlockScroll();
-            }
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openModal();
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (overlay) overlay.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalEl.classList.contains('open')) {
+            closeModal();
         }
+    });
+}
 
-        trigger.addEventListener('click', (e) => {
+function initLanguageSwitcher() {
+    const langBtns = document.querySelectorAll('.lang-dropdown-item, .mobile-lang-btn');
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', function (e) {
             e.preventDefault();
-            e.stopPropagation();
-            openModal();
-        });
+            const targetLang = this.getAttribute('data-lang');
+            if (!targetLang) return;
 
-        if (closeBtn) closeBtn.addEventListener('click', closeModal);
-        if (overlay) overlay.addEventListener('click', closeModal);
+            localStorage.setItem('lang', targetLang);
+            const currentLang = document.documentElement.lang || 'vi';
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modalEl.classList.contains('open')) {
-                closeModal();
+            if (currentLang !== targetLang) {
+                let newPath;
+                const pathname = window.location.pathname;
+                if (targetLang === 'en') {
+                    // Switch to EN: insert 'en/' before the filename if not already there
+                    if (pathname.indexOf('/en/') === -1) {
+                        const lastSlash = pathname.lastIndexOf('/');
+                        const dir = pathname.substring(0, lastSlash + 1);
+                        const filename = pathname.substring(lastSlash + 1);
+                        newPath = dir + 'en/' + filename;
+                    } else {
+                        newPath = pathname;
+                    }
+                } else {
+                    // Switch to VI: remove '/en/' from the pathname
+                    const enIndex = pathname.indexOf('/en/');
+                    if (enIndex !== -1) {
+                        newPath = pathname.substring(0, enIndex) + '/' + pathname.substring(enIndex + 4);
+                    } else {
+                        newPath = pathname;
+                    }
+                }
+                window.location.replace(newPath + window.location.search + window.location.hash);
             }
         });
-    }
+    });
+}
 
-    function initLanguageSwitcher() {
-        const langBtns = document.querySelectorAll('.lang-dropdown-item, .mobile-lang-btn');
-        langBtns.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetLang = this.getAttribute('data-lang');
-                if (!targetLang) return;
-                
-                localStorage.setItem('lang', targetLang);
-                const currentLang = document.documentElement.lang || 'vi';
-                
-                if (currentLang !== targetLang) {
-                    let newPath;
-                    const pathname = window.location.pathname;
-                    if (targetLang === 'en') {
-                        // Switch to EN: insert 'en/' before the filename if not already there
-                        if (pathname.indexOf('/en/') === -1) {
-                            const lastSlash = pathname.lastIndexOf('/');
-                            const dir = pathname.substring(0, lastSlash + 1);
-                            const filename = pathname.substring(lastSlash + 1);
-                            newPath = dir + 'en/' + filename;
-                        } else {
-                            newPath = pathname;
-                        }
-                    } else {
-                        // Switch to VI: remove '/en/' from the pathname
-                        const enIndex = pathname.indexOf('/en/');
-                        if (enIndex !== -1) {
-                            newPath = pathname.substring(0, enIndex) + '/' + pathname.substring(enIndex + 4);
-                        } else {
-                            newPath = pathname;
-                        }
-                    }
-                    window.location.replace(newPath + window.location.search + window.location.hash);
-                }
-            });
-        });
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            initDegreeModal();
-            initVnGradModal();
-            initScrollSpy();
-            initWorkshopTabs();
-            initLanguageSwitcher();
-        });
-    } else {
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
         initDegreeModal();
         initVnGradModal();
         initScrollSpy();
         initWorkshopTabs();
         initLanguageSwitcher();
-    }
+    });
+} else {
+    initDegreeModal();
+    initVnGradModal();
+    initScrollSpy();
+    initWorkshopTabs();
+    initLanguageSwitcher();
+}
 
 
 

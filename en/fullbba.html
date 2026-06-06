@@ -194,9 +194,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="../common-assets/css/style.min.css?v=1780569304461" as="style" />
-    <link rel="stylesheet" href="../common-assets/css/style.min.css?v=1780569304461" />
-    <link rel="stylesheet" href="../common-assets/css/booking-modal.min.css?v=1780569304461" />
+    <link rel="preload" href="../common-assets/css/style.min.css?v=1780753238862" as="style" />
+    <link rel="stylesheet" href="../common-assets/css/style.min.css?v=1780753238862" />
+    <link rel="stylesheet" href="../common-assets/css/booking-modal.min.css?v=1780753238862" />
     <style>
         @media (min-width: 992px) {
             .BBA-grid {
@@ -4790,63 +4790,63 @@
                     min-width: 290px;
                     max-width: 480px;
                     background: #ffffff;
-                    border: 1.5px solid #e2e8f0;
                     border-radius: 24px;
-                    padding: 32px 24px;
+                    padding: 36px 28px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     position: relative;
                     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+                    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
                 }
 
-                .scholarship-card:hover {
+                .scholarship-card.elite {
+                    border: 2px solid rgba(217, 119, 6, 0.15);
+                    background: linear-gradient(180deg, #ffffff 0%, rgba(217, 119, 6, 0.01) 100%);
+                }
+
+                .scholarship-card.elite:hover {
                     transform: translateY(-6px);
-                    box-shadow: 0 20px 40px -10px rgba(171, 14, 0, 0.12);
-                    border-color: rgba(171, 14, 0, 0.3);
+                    border-color: rgba(217, 119, 6, 0.6);
+                    box-shadow: 0 20px 45px -10px rgba(217, 119, 6, 0.18);
                 }
 
-                .scholarship-card.highlighted {
-                    border: 2.5px solid #ab0e00;
-                    box-shadow: 0 15px 35px -10px rgba(171, 14, 0, 0.15);
+                .scholarship-card.popular {
+                    border: 2px solid rgba(171, 14, 0, 0.15);
+                    background: linear-gradient(180deg, #ffffff 0%, rgba(171, 14, 0, 0.01) 100%);
                 }
 
-                .scholarship-card.highlighted:hover {
-                    box-shadow: 0 25px 50px -12px rgba(171, 14, 0, 0.25) !important;
+                .scholarship-card.popular:hover {
+                    transform: translateY(-6px);
+                    border-color: rgba(171, 14, 0, 0.6);
+                    box-shadow: 0 20px 45px -10px rgba(171, 14, 0, 0.18);
                 }
 
                 .scholarship-badge {
                     position: absolute;
                     top: 16px;
                     right: 16px;
-                    padding: 4px 10px;
+                    padding: 6px 12px;
                     border-radius: 99px;
                     font-size: 0.72rem;
-                    font-weight: 850;
+                    font-weight: 900;
                     text-transform: uppercase;
-                    letter-spacing: 0.5px;
+                    letter-spacing: 0.8px;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
                 }
 
-                .scholarship-badge.limited {
-                    background: rgba(171, 14, 0, 0.08);
-                    color: #ab0e00;
-                    border: 1px solid rgba(171, 14, 0, 0.2);
-                }
-
-                .scholarship-badge.popular {
-                    background: linear-gradient(135deg, #ab0e00, #ff4c4c);
+                .scholarship-badge.gold {
+                    background: linear-gradient(135deg, #b45309, #d97706, #f59e0b);
                     color: #ffffff;
                 }
 
-                .scholarship-badge.partner {
-                    background: #f1f5f9;
-                    color: #475569;
-                    border: 1px solid #cbd5e1;
+                .scholarship-badge.red {
+                    background: linear-gradient(135deg, #900c00, #ab0e00, #e11d48);
+                    color: #ffffff;
                 }
 
                 .scholarship-card h4 {
-                    font-size: 1.35rem;
+                    font-size: 1.45rem;
                     font-weight: 900;
                     color: #0f172a;
                     margin: 8px 0 12px 0;
@@ -4858,48 +4858,80 @@
                     margin: 16px 0;
                     border-top: 1px dashed #e2e8f0;
                     border-bottom: 1px dashed #e2e8f0;
-                    padding: 14px 0;
+                    padding: 16px 0;
                     text-align: left;
                 }
 
                 .scholarship-card-price-value {
-                    font-size: 2.1rem;
+                    font-size: 2.3rem;
                     font-weight: 900;
-                    color: #ab0e00;
                     line-height: 1.1;
+                }
+
+                .scholarship-card-price-value.gold-text {
+                    background: linear-gradient(135deg, #b45309, #d97706);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .scholarship-card-price-value.red-text {
+                    background: linear-gradient(135deg, #ab0e00, #e11d48);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
                 }
 
                 .scholarship-card-price-sub {
                     font-size: 0.85rem;
                     color: #64748b;
-                    margin-top: 4px;
+                    margin-top: 6px;
                     font-weight: 600;
                 }
 
                 .scholarship-features {
                     list-style: none;
                     padding: 0;
-                    margin: 0 0 24px;
+                    margin: 0 0 28px;
                     text-align: left;
                     font-size: 0.88rem;
-                    line-height: 1.5;
+                    line-height: 1.6;
                     color: #334155;
                     flex-grow: 1;
                     display: flex;
                     flex-direction: column;
-                    gap: 12px;
+                    gap: 14px;
                 }
 
                 .scholarship-features li {
                     display: flex;
-                    gap: 8px;
+                    gap: 12px;
                     align-items: flex-start;
                 }
 
-                .scholarship-features svg {
+                .feature-icon-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
                     flex-shrink: 0;
+                }
+
+                .feature-icon-wrapper.gold {
+                    background: rgba(217, 119, 6, 0.1);
+                    color: #d97706;
+                }
+
+                .feature-icon-wrapper.red {
+                    background: rgba(171, 14, 0, 0.08);
                     color: #ab0e00;
-                    margin-top: 2px;
+                }
+
+                .feature-icon-wrapper svg {
+                    width: 13px !important;
+                    height: 13px !important;
+                    color: currentColor !important;
+                    margin-top: 0 !important;
                 }
 
                 .scholarship-cta-btn {
@@ -4907,37 +4939,38 @@
                     align-items: center;
                     justify-content: center;
                     width: 100%;
-                    padding: 14px 20px;
-                    border-radius: 12px;
-                    font-weight: 800;
+                    padding: 15px 20px;
+                    border-radius: 14px;
+                    font-weight: 850;
                     text-decoration: none;
-                    font-size: 0.95rem;
+                    font-size: 0.98rem;
                     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
                     border: none;
                     cursor: pointer;
                 }
 
-                .scholarship-cta-btn.primary {
-                    background: #ab0e00 !important;
+                .scholarship-cta-btn.gold-btn {
+                    background: linear-gradient(135deg, #d97706, #f59e0b) !important;
                     color: #ffffff !important;
-                    box-shadow: 0 6px 16px rgba(171, 14, 0, 0.15) !important;
+                    box-shadow: 0 6px 16px rgba(217, 119, 6, 0.2) !important;
                 }
 
-                .scholarship-cta-btn.primary:hover {
-                    background: #900c00 !important;
+                .scholarship-cta-btn.gold-btn:hover {
+                    background: linear-gradient(135deg, #b45309, #d97706) !important;
                     transform: translateY(-2px);
-                    box-shadow: 0 10px 20px rgba(171, 14, 0, 0.3) !important;
+                    box-shadow: 0 10px 22px rgba(217, 119, 6, 0.35) !important;
                 }
 
-                .scholarship-cta-btn.secondary {
-                    background: #ffffff;
-                    color: #ab0e00 !important;
-                    border: 1.5px solid #ab0e00;
+                .scholarship-cta-btn.red-btn {
+                    background: linear-gradient(135deg, #ab0e00, #e11d48) !important;
+                    color: #ffffff !important;
+                    box-shadow: 0 6px 16px rgba(171, 14, 0, 0.2) !important;
                 }
 
-                .scholarship-cta-btn.secondary:hover {
-                    background: rgba(171, 14, 0, 0.04) !important;
+                .scholarship-cta-btn.red-btn:hover {
+                    background: linear-gradient(135deg, #900c00, #ab0e00) !important;
                     transform: translateY(-2px);
+                    box-shadow: 0 10px 22px rgba(171, 14, 0, 0.35) !important;
                 }
 
                 .fee-tab-group {
@@ -4978,6 +5011,123 @@
                         max-width: 480px;
                     }
                 }
+                /* EMBA-style Red Featured Card styling for Card 1 (Học bổng Toàn phần - elite) */
+                .scholarship-card.elite {
+                    background: linear-gradient(145deg, #7a0000 0%, #ab0e00 45%, #c41a00 100%) !important;
+                    border-color: transparent !important;
+                    box-shadow: 0 10px 40px rgba(171, 14, 0, 0.4) !important;
+                }
+
+                .scholarship-card.elite:hover {
+                    box-shadow: 0 20px 60px rgba(171, 14, 0, 0.5) !important;
+                    transform: translateY(-6px);
+                }
+
+                .scholarship-card.elite .scholarship-badge {
+                    background: #ffffff !important;
+                    color: #ab0e00 !important;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+                }
+
+                .scholarship-card.elite h4 {
+                    color: #ffffff !important;
+                }
+
+                .scholarship-card.elite p {
+                    color: rgba(255, 255, 255, 0.7) !important;
+                }
+
+                .scholarship-card.elite .scholarship-card-price {
+                    border-top: 1px dashed rgba(255, 255, 255, 0.2) !important;
+                    border-bottom: 1px dashed rgba(255, 255, 255, 0.2) !important;
+                }
+
+                .scholarship-card.elite .scholarship-card-price-value {
+                    color: #ffffff !important;
+                    background: none !important;
+                    -webkit-text-fill-color: initial !important;
+                }
+
+                .scholarship-card.elite .scholarship-card-price-sub {
+                    color: rgba(255, 255, 255, 0.6) !important;
+                }
+
+                .scholarship-card.elite .scholarship-features li {
+                    color: rgba(255, 255, 255, 0.85) !important;
+                }
+
+                .scholarship-card.elite .feature-icon-wrapper.gold {
+                    background: rgba(255, 255, 255, 0.15) !important;
+                    color: #ffffff !important;
+                }
+
+                .scholarship-card.elite .scholarship-cta-btn {
+                    background: #ffffff !important;
+                    color: #ab0e00 !important;
+                    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+                    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1) !important;
+                }
+
+                .scholarship-card.elite .scholarship-cta-btn:hover {
+                    background: #ab0e00 !important;
+                    border-color: #ffffff !important;
+                    color: #ffffff !important;
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+                }
+
+                /* Styling for Card 2 (Học bổng Khuyến học - popular) to be a premium white card with red outline */
+                .scholarship-card.popular {
+                    background: #ffffff !important;
+                    border: 2px solid rgba(171, 14, 0, 0.2) !important;
+                    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03) !important;
+                }
+
+                .scholarship-card.popular:hover {
+                    border-color: rgba(171, 14, 0, 0.6) !important;
+                    box-shadow: 0 20px 45px -10px rgba(171, 14, 0, 0.15) !important;
+                }
+
+                .scholarship-card.popular h4 {
+                    color: #ab0e00 !important;
+                }
+
+                .scholarship-card.popular p {
+                    color: #64748b !important;
+                }
+
+                .scholarship-card.popular .scholarship-card-price-value {
+                    background: linear-gradient(135deg, #ab0e00, #e11d48) !important;
+                    -webkit-background-clip: text !important;
+                    -webkit-text-fill-color: transparent !important;
+                }
+
+                .scholarship-card.popular .scholarship-card-price span {
+                    color: #ab0e00 !important;
+                }
+
+                .scholarship-card.popular .scholarship-card-price-sub {
+                    color: #64748b !important;
+                }
+
+                .scholarship-card.popular .scholarship-features li {
+                    color: #334155 !important;
+                }
+
+                .scholarship-card.popular .feature-icon-wrapper.red {
+                    background: rgba(171, 14, 0, 0.08) !important;
+                    color: #ab0e00 !important;
+                }
+
+                .scholarship-card.popular .scholarship-cta-btn {
+                    background: linear-gradient(135deg, #ab0e00, #e11d48) !important;
+                    color: #ffffff !important;
+                    box-shadow: 0 6px 16px rgba(171, 14, 0, 0.2) !important;
+                }
+
+                .scholarship-card.popular .scholarship-cta-btn:hover {
+                    background: linear-gradient(135deg, #900c00, #ab0e00) !important;
+                    box-shadow: 0 10px 22px rgba(171, 14, 0, 0.35) !important;
+                }
             </style>
             <div class="section-label" style="margin: 0 auto 1.5rem; display: table;">TUITION & FINANCIAL PATHWAY</div>
             <h3 class="pricing-title"
@@ -5004,42 +5154,48 @@
                 <div class="scholarship-grid">
                     
                     <!-- Card 1: Full Scholarship -->
-                    <div class="scholarship-card highlighted">
+                    <div class="scholarship-card elite">
                         <div>
-                            <span class="scholarship-badge limited">Max 5 slots/year</span>
-                            <h4 style="margin-top: 24px; color: #ab0e00;">Full Scholarship</h4>
+                            <span class="scholarship-badge gold">Max 5 slots/year</span>
+                            <h4 style="margin-top: 24px; color: #b45309;">Full Scholarship</h4>
                             <p style="font-size: 0.85rem; color: #64748b; margin-top: -6px; margin-bottom: 16px;">100% Tuition sponsored.</p>
                             
                             <div class="scholarship-card-price">
-                                <div class="scholarship-card-price-value">0 CHF</div>
+                                <div class="scholarship-card-price-value gold-text">0 CHF</div>
                                 <div class="scholarship-card-price-sub">100% Tuition Waived</div>
                             </div>
                             
                             <ul class="scholarship-features">
                                 <li>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <div class="feature-icon-wrapper gold">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
                                     <span><strong>Exclusive Priority:</strong> Reserved for candidates who apply for the scholarship program directly at the time of initial application.</span>
                                 </li>
                                 <li>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <div class="feature-icon-wrapper gold">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
                                     <span><strong>Premium Guidance:</strong> Receive direct portfolio advising and guidance from the Institute's Leadership & Admissions Committee from the start to maximize approval rates.</span>
                                 </li>
                                 <li>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <div class="feature-icon-wrapper gold">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
                                     <span><strong>Maintenance Criteria:</strong> Maintain excellent academic standing (Grade A) to secure the scholarship for subsequent years.</span>
                                 </li>
                             </ul>
                         </div>
                         
                         <div>
-                            <a href="#dang-ky" class="scholarship-cta-btn primary bk-open-btn">Apply for Scholarship</a>
+                            <a href="#dang-ky" class="scholarship-cta-btn gold-btn bk-open-btn">Apply for Scholarship</a>
                         </div>
                     </div>
 
                     <!-- Card 2: Study Encouragement Scholarship (Highlighted) -->
-                    <div class="scholarship-card highlighted">
+                    <div class="scholarship-card popular">
                         <div>
-                            <span class="scholarship-badge popular">Study Encouragement</span>
+                            <span class="scholarship-badge red">Study Encouragement</span>
                             <h4 style="margin-top: 24px; color: #ab0e00;">Study Encouragement Scholarship</h4>
                             <p style="font-size: 0.85rem; color: #64748b; margin-top: -6px; margin-bottom: 16px;">90% Tuition sponsor for year 1 from Swiss UMEF.</p>
                             
@@ -5048,7 +5204,7 @@
                                     <span>8,900</span><span>CHF</span>
                                 </div>
                                 <div style="display: flex; align-items: baseline; gap: 4px; justify-content: flex-start;">
-                                    <span class="scholarship-card-price-value">890</span><span style="font-size: 1.2rem; font-weight: 800; color: #ab0e00;">CHF</span>
+                                    <span class="scholarship-card-price-value red-text">890</span><span style="font-size: 1.2rem; font-weight: 800; color: #ab0e00; margin-left: 4px;">CHF</span>
                                     <span style="font-size: 1rem; color: #64748b; font-weight: 600; margin-left: 6px;">~29,370,000 VND</span>
                                 </div>
                                 <div class="scholarship-card-price-sub">Total 3-Year: 3,920 CHF (~129,360,000 VND)</div>
@@ -5056,18 +5212,22 @@
                             
                             <ul class="scholarship-features">
                                 <li>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <div class="feature-icon-wrapper red">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
                                     <span><strong>Eligibility:</strong> All Vietnamese students who meet the entry requirements of the program.</span>
                                 </li>
                                 <li>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <div class="feature-icon-wrapper red">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
                                     <span><strong>Maintenance Criteria:</strong> GPA not less than 4.25 (Swiss 6-point scale) and no failed courses.</span>
                                 </li>
                             </ul>
                         </div>
                         
                         <div>
-                            <a href="#dang-ky" class="scholarship-cta-btn primary bk-open-btn">Request Pathway Consultation</a>
+                            <a href="#dang-ky" class="scholarship-cta-btn red-btn bk-open-btn">Request Pathway Consultation</a>
                         </div>
                     </div>
 
@@ -6096,8 +6256,8 @@
         </div>
     </div>
 
-    <script src="../common-assets/js/script.min.js?v=1780569304461" defer></script>
-    <script src="../common-assets/js/booking-modal.min.js?v=1780569304461" defer></script>
+    <script src="../common-assets/js/script.min.js?v=1780753238862" defer></script>
+    <script src="../common-assets/js/booking-modal.min.js?v=1780753238862" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
