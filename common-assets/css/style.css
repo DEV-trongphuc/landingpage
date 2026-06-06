@@ -68,9 +68,22 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
   /* Enabled native smooth scroll for GPU compositor rendering */
   font-size: 16px;
   overflow-x: hidden;
+}
+
+/* Scroll snap alignment for landing page sections */
+.hero,
+.pain-section,
+.solution-section,
+.pathfinder-section,
+.ai-advisor-section,
+.registration-section,
+.faq-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 body {
