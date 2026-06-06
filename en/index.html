@@ -64,7 +64,7 @@
     <script>
         window._mf_config = {
             property_id: "ce71ea2e-d841-4e0f-b3ad-332297cde330",
-            ai_chat: false
+            ai_chat: true
         };
     </script>
     <script src="https://automation.ideas.edu.vn/tracker.js" defer></script>
@@ -5970,14 +5970,14 @@
                     <span class="section-label" style="margin: 0 auto; display: inline-flex; background: linear-gradient(90deg, #ab0e00, #ff4133); color: #fff;">AI ADVISOR</span>
                 </div>
                 <h2 class="section-title" style="text-align: center; margin-bottom: 12px; color: #ffffff;">
-                    Chat with <span style="color: #ff4133;">AI Virtual Assistant</span>
+                    IDEAS AI - <span style="color: #ff4133;">Consultation for AI Virtual Assistant</span>
                 </h2>
                 <p style="text-align: center; color: #94a3b8; max-width: 600px; margin: 0 auto 30px auto; font-size: 0.95rem;">
                     Click the energy orb below to activate the AI assistant and design your personalized study roadmap.
                 </p>
 
                 <!-- AI Orb Button -->
-                <div class="ai-orb-btn-wrapper" onclick="triggerAIChat()" style="cursor: pointer; position: relative; width: 320px; height: 320px; display: flex; align-items: center; justify-content: center; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+                <div class="ai-orb-btn-wrapper" onclick="triggerAIChat('AI Virtual Assistant')" style="cursor: pointer; position: relative; width: 320px; height: 320px; display: flex; align-items: center; justify-content: center; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
                     <div class="ai-orb-glow"></div>
                     
                     <!-- Concentric Orbit Rings -->
@@ -8894,8 +8894,14 @@
             if (e.key === 'Escape') closeCompareModal();
         });
 
+        
         // AI Advisor Trigger
-        function triggerAIChat() {
+        let isChatTriggering = false;
+        function triggerAIChat(programName) {
+            if (isChatTriggering) return;
+            isChatTriggering = true;
+            setTimeout(() => { isChatTriggering = false; }, 3000);
+
             if (window.__mf_app && typeof window.__mf_app.toggle === 'function') {
                 window.__mf_app.toggle(true);
             }
@@ -8907,12 +8913,28 @@
             if (chatWindow) {
                 chatWindow.classList.add('open');
             }
-            if (!chatWidget && !chatWindow) {
+            if (!chatWidget && !chatWindow && !window.__mf_app) {
                 console.warn('Could not find chat widgets');
                 if (typeof openBookingModal === 'function') {
                     openBookingModal();
                 }
+                return;
             }
+            
+            const textToSend = "I want a consultation on the roadmap for " + programName;
+            setTimeout(() => {
+                const inputEl = document.getElementById("mf-input");
+                if (inputEl) {
+                    inputEl.value = textToSend;
+                    inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+                    setTimeout(() => {
+                        const sendBtn = document.getElementById("mf-send");
+                        if (sendBtn && !sendBtn.disabled) {
+                            sendBtn.click();
+                        }
+                    }, 100);
+                }
+            }, 400);
         }
         function toggleAllPrograms() {
             const container = document.getElementById('all-programs-container');

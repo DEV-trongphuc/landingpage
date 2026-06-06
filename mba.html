@@ -4048,6 +4048,109 @@
             </div>
         </section>
 
+        <!-- ══════════════════════════════════════════
+         SECTION 4B: AI ADVISOR
+        ══════════════════════════════════════════ -->
+        <section class="ai-advisor-section" id="ai-tu-van"
+            style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 0; background-color: #070d19; background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 28px 28px; position: relative; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <!-- background light effects -->
+            <div style="position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(171,14,0,0.15) 0%, transparent 70%); top: -100px; left: -100px; pointer-events: none;"></div>
+            <div style="position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%); bottom: -200px; right: -100px; pointer-events: none;"></div>
+
+            <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; z-index: 2;">
+                <div style="text-align: center; margin-bottom: 16px;">
+                    <span class="section-label" style="margin: 0 auto; display: inline-flex; background: linear-gradient(90deg, #ab0e00, #ff4133); color: #fff;">AI ADVISOR</span>
+                </div>
+                <h2 class="section-title" style="text-align: center; margin-bottom: 12px; color: #ffffff;">
+                    IDEAS AI - <span style="color: #ff4133;">Tư vấn Thạc sĩ MBA</span>
+                </h2>
+                <p style="text-align: center; color: #94a3b8; max-width: 600px; margin: 0 auto 30px auto; font-size: 0.95rem;">
+                    Bấm vào quả cầu năng lượng dưới đây để kích hoạt trợ lý AI thiết kế lộ trình học tập cá nhân hóa dành riêng cho bạn.
+                </p>
+
+                <!-- AI Orb Button -->
+                <div class="ai-orb-btn-wrapper" onclick="triggerAIChat('Thạc sĩ MBA')"
+                    style="cursor: pointer; position: relative; width: 320px; height: 320px; display: flex; align-items: center; justify-content: center; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+                    <div class="ai-orb-glow"></div>
+                    
+                    <!-- Concentric Orbit Rings -->
+                    <div class="orb-ring ring-outer"></div>
+                    <div class="orb-ring ring-middle"></div>
+                    <div class="orb-ring ring-inner"></div>
+
+                    <!-- Converging Light Particles -->
+                    <div class="orb-particles">
+                        <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+                        <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+                        <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+                        <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+                    </div>
+
+                    <div class="ai-orb-core">
+                        <div class="ai-orb-inner-content">
+                            <i class="fa-solid fa-robot"></i>
+                            <span class="ai-orb-text">IDEAS AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px; text-align: center;">
+                    <span style="font-size: 0.85rem; font-weight: 700; color: #ff4133; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 6px; animation: textPulse 2s infinite;">KÍCH HOẠT TRỢ LÝ AI</span>
+                    <div style="font-size: 0.78rem; color: #64748b; display: flex; align-items: center; justify-content: center;">
+                        <span style="display:inline-block; width: 8px; height: 8px; background: #10b981; border-radius: 50%; margin-right: 8px; animation: greenPulse 1.5s infinite;"></span>
+                        Sẵn sàng kết nối
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .ai-orb-btn-wrapper:hover { transform: scale(1.05); }
+                .ai-orb-btn-wrapper:hover .ai-orb-glow { opacity: 0.95; filter: blur(22px); background: radial-gradient(circle, rgba(255, 75, 51, 0.95) 0%, rgba(171, 14, 0, 0.75) 50%, transparent 70%); }
+                .ai-orb-glow { position: absolute; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 65, 51, 0.85) 0%, rgba(171, 14, 0, 0.35) 55%, transparent 75%); filter: blur(15px); animation: orbRedGlow 6s infinite ease-in-out; z-index: 1; transition: all 0.4s ease; }
+                .orb-ring { position: absolute; border-radius: 50%; pointer-events: none; z-index: 1; box-sizing: border-box; transition: all 0.4s ease; }
+                .ring-outer { width: 260px; height: 260px; border: 1px dashed rgba(255, 65, 51, 0.22); animation: spin-clockwise 70s infinite linear; }
+                .ring-middle { width: 210px; height: 210px; border: 1.5px dotted rgba(255, 65, 51, 0.28); animation: spin-counter-clockwise 50s infinite linear; }
+                .ring-inner { width: 175px; height: 175px; border: 1px solid rgba(255, 65, 51, 0.15); box-shadow: 0 0 15px rgba(255, 65, 51, 0.08); }
+                .ai-orb-btn-wrapper:hover .ring-outer { border-color: rgba(255, 65, 51, 0.45); width: 270px; height: 270px; }
+                .ai-orb-btn-wrapper:hover .ring-middle { border-color: rgba(255, 65, 51, 0.55); width: 220px; height: 220px; }
+                .ai-orb-core { position: relative; width: 130px; height: 130px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25), transparent 60%), radial-gradient(circle at 70% 70%, rgba(0, 0, 0, 0.55), transparent 75%), linear-gradient(135deg, #ff4133, #ab0e00); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 35px rgba(255, 65, 51, 0.45), inset 0 -8px 20px rgba(0, 0, 0, 0.55), inset 0 8px 16px rgba(255, 123, 114, 0.35), 0 0 0 8px rgba(255, 65, 51, 0.08); z-index: 2; border: 1.5px solid rgba(255, 65, 51, 0.3); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+                .ai-orb-btn-wrapper:hover .ai-orb-core { box-shadow: 0 20px 45px rgba(255, 65, 51, 0.7), inset 0 -12px 24px rgba(0, 0, 0, 0.65), inset 0 12px 24px rgba(255, 123, 114, 0.5), 0 0 0 12px rgba(255, 65, 51, 0.12); border-color: rgba(255, 65, 51, 0.5); width: 135px; height: 135px; }
+                .ai-orb-inner-content { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; z-index: 5; }
+                .ai-orb-inner-content i { font-size: 2.2rem; color: #fff; filter: drop-shadow(0 0 10px rgba(255, 65, 51, 0.8)); animation: robotPulse 3s infinite ease-in-out; }
+                .ai-orb-text { font-family: 'Outfit', 'Inter', monospace; font-size: 0.68rem; font-weight: 800; letter-spacing: 1.5px; color: #ffffff; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 8px rgba(255, 255, 255, 0.4); text-transform: uppercase; }
+                .orb-particles { position: absolute; width: 320px; height: 320px; pointer-events: none; z-index: 0; animation: particlesRotate 45s infinite linear; }
+                @keyframes particlesRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                .particle { position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin-top: -2px; margin-left: -2px; border-radius: 50%; background: #fff5f5; box-shadow: 0 0 6px #ff7b72, 0 0 12px #ff4133, 0 0 20px rgba(255, 65, 51, 0.8); pointer-events: none; opacity: 0; }
+                .particle:nth-child(1) { animation: spiral-in-1 9.0s infinite linear; animation-delay: 0s; }
+                .particle:nth-child(2) { animation: spiral-in-2 10.0s infinite linear; animation-delay: 1.0s; }
+                .particle:nth-child(3) { animation: spiral-in-3 8.4s infinite linear; animation-delay: 2.0s; }
+                .particle:nth-child(4) { animation: spiral-in-4 9.6s infinite linear; animation-delay: 3.0s; }
+                .particle:nth-child(5) { animation: spiral-in-1 7.8s infinite linear; animation-delay: 4.0s; }
+                .particle:nth-child(6) { animation: spiral-in-2 9.2s infinite linear; animation-delay: 5.0s; }
+                .particle:nth-child(7) { animation: spiral-in-3 10.4s infinite linear; animation-delay: 6.0s; }
+                .particle:nth-child(8) { animation: spiral-in-4 8.8s infinite linear; animation-delay: 7.0s; }
+                .particle:nth-child(9) { animation: spiral-in-1 10.8s infinite linear; animation-delay: 0.5s; }
+                .particle:nth-child(10) { animation: spiral-in-2 8.6s infinite linear; animation-delay: 1.5s; }
+                .particle:nth-child(11) { animation: spiral-in-3 10.0s infinite linear; animation-delay: 2.5s; }
+                .particle:nth-child(12) { animation: spiral-in-4 9.0s infinite linear; animation-delay: 3.5s; }
+                .particle:nth-child(13) { animation: spiral-in-1 9.6s infinite linear; animation-delay: 4.5s; }
+                .particle:nth-child(14) { animation: spiral-in-2 8.0s infinite linear; animation-delay: 5.5s; }
+                .particle:nth-child(15) { animation: spiral-in-3 9.2s infinite linear; animation-delay: 6.5s; }
+                .particle:nth-child(16) { animation: spiral-in-4 10.4s infinite linear; animation-delay: 7.5s; }
+                @keyframes spiral-in-1 { 0% { transform: rotate(0deg) translateY(-160px) scale(1.2); opacity: 0; } 12% { opacity: 0.85; } 88% { opacity: 0.85; } 100% { transform: rotate(360deg) translateY(-30px) scale(0.25); opacity: 0; } }
+                @keyframes spiral-in-2 { 0% { transform: rotate(90deg) translateY(-180px) scale(1.4); opacity: 0; } 15% { opacity: 0.95; } 85% { opacity: 0.95; } 100% { transform: rotate(450deg) translateY(-35px) scale(0.35); opacity: 0; } }
+                @keyframes spiral-in-3 { 0% { transform: rotate(180deg) translateY(-140px) scale(1.0); opacity: 0; } 10% { opacity: 0.9; } 90% { opacity: 0.9; } 100% { transform: rotate(540deg) translateY(-25px) scale(0.2); opacity: 0; } }
+                @keyframes spiral-in-4 { 0% { transform: rotate(270deg) translateY(-170px) scale(1.3); opacity: 0; } 14% { opacity: 0.8; } 86% { opacity: 0.8; } 100% { transform: rotate(630deg) translateY(-30px) scale(0.3); opacity: 0; } }
+                @keyframes spin-clockwise { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                @keyframes spin-counter-clockwise { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+                @keyframes orbRedGlow { 0%, 100% { transform: scale(0.95); opacity: 0.7; filter: blur(12px); } 50% { transform: scale(1.15); opacity: 0.95; filter: blur(20px); } }
+                @keyframes robotPulse { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(255, 65, 51, 0.6)); } 50% { transform: scale(1.08); filter: drop-shadow(0 0 18px rgba(255, 123, 114, 0.95)); } }
+                @keyframes textPulse { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; text-shadow: 0 0 10px rgba(255, 65, 51, 0.5); } }
+                @keyframes greenPulse { 0%, 100% { transform: scale(0.9); opacity: 0.6; } 50% { transform: scale(1.25); opacity: 1; } }
+            </style>
+        </section>
+
+
 
 
         <!-- ══════════════════════════════════════════
@@ -7068,6 +7171,49 @@
         }
         document.getElementById('vn-ceremony-overlay')?.addEventListener('click', closeVNCeremonyModal);
         document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.getElementById('vn-ceremony-modal')?.classList.contains('open')) closeVNCeremonyModal(); });
+    
+
+        // AI Advisor Trigger
+        let isChatTriggering = false;
+        function triggerAIChat(programName) {
+            if (isChatTriggering) return;
+            isChatTriggering = true;
+            setTimeout(() => { isChatTriggering = false; }, 3000);
+
+            if (window.__mf_app && typeof window.__mf_app.toggle === 'function') {
+                window.__mf_app.toggle(true);
+            }
+            const chatWidget = document.querySelector('.mf-ignore-tracking');
+            if (chatWidget) {
+                chatWidget.classList.add('open', 'full-screen');
+            }
+            const chatWindow = document.querySelector('.mf-window');
+            if (chatWindow) {
+                chatWindow.classList.add('open');
+            }
+            if (!chatWidget && !chatWindow && !window.__mf_app) {
+                console.warn('Could not find chat widgets');
+                if (typeof openBookingModal === 'function') {
+                    openBookingModal();
+                }
+                return;
+            }
+            
+            const textToSend = "Tôi muốn tư vấn lộ trình " + programName;
+            setTimeout(() => {
+                const inputEl = document.getElementById("mf-input");
+                if (inputEl) {
+                    inputEl.value = textToSend;
+                    inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+                    setTimeout(() => {
+                        const sendBtn = document.getElementById("mf-send");
+                        if (sendBtn && !sendBtn.disabled) {
+                            sendBtn.click();
+                        }
+                    }, 100);
+                }
+            }, 400);
+        }
     </script>
 </body>
 

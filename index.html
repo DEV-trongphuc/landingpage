@@ -6791,7 +6791,7 @@
                         ADVISOR</span>
                 </div>
                 <h2 class="section-title" style="text-align: center; margin-bottom: 12px; color: #ffffff;">
-                    Tư vấn lộ trình <span style="color: #ff4133;">Trợ lý IDEAS AI</span>
+                    IDEAS AI - <span style="color: #ff4133;">Tư vấn Trợ lý IDEAS AI</span>
                 </h2>
                 <p
                     style="text-align: center; color: #94a3b8; max-width: 600px; margin: 0 auto 30px auto; font-size: 0.95rem;">
@@ -6801,7 +6801,7 @@
 
                 <!-- AI Orb Button -->
                 <!-- AI Orb Button -->
-                <div class="ai-orb-btn-wrapper" onclick="triggerAIChat()"
+                <div class="ai-orb-btn-wrapper" onclick="triggerAIChat('Trợ lý IDEAS AI')"
                     style="cursor: pointer; position: relative; width: 320px; height: 320px; display: flex; align-items: center; justify-content: center; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
                     <div class="ai-orb-glow"></div>
                     
@@ -10022,8 +10022,14 @@
             if (e.key === 'Escape') closeCompareModal();
         });
 
+        
         // AI Advisor Trigger
-        function triggerAIChat() {
+        let isChatTriggering = false;
+        function triggerAIChat(programName) {
+            if (isChatTriggering) return;
+            isChatTriggering = true;
+            setTimeout(() => { isChatTriggering = false; }, 3000);
+
             if (window.__mf_app && typeof window.__mf_app.toggle === 'function') {
                 window.__mf_app.toggle(true);
             }
@@ -10035,12 +10041,28 @@
             if (chatWindow) {
                 chatWindow.classList.add('open');
             }
-            if (!chatWidget && !chatWindow) {
+            if (!chatWidget && !chatWindow && !window.__mf_app) {
                 console.warn('Could not find chat widgets');
                 if (typeof openBookingModal === 'function') {
                     openBookingModal();
                 }
+                return;
             }
+            
+            const textToSend = "Tôi muốn tư vấn lộ trình " + programName;
+            setTimeout(() => {
+                const inputEl = document.getElementById("mf-input");
+                if (inputEl) {
+                    inputEl.value = textToSend;
+                    inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+                    setTimeout(() => {
+                        const sendBtn = document.getElementById("mf-send");
+                        if (sendBtn && !sendBtn.disabled) {
+                            sendBtn.click();
+                        }
+                    }, 100);
+                }
+            }, 400);
         }
         function toggleAllPrograms() {
             const container = document.getElementById('all-programs-container');
