@@ -159,26 +159,42 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is the difference between Full BBA (3 Years) and Top-up BBA (12 Months)?",
+        "name": "Is this a joint training program between IDEAS Institute and the universities?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Full BBA offers structured 36-month learning (180 ECTS) for high school graduates. Top-up BBA is for College/Diploma/Vocational Certificate holders to transfer and earn their degree in 12 Months."
+          "text": "No. When you begin a program, you will officially be a student of the university. IDEAS Institute does not directly partner in training with the schools but acts as a bridge, advising unit, and academic support partner throughout your studies and graduation. IDEAS helps students access official programs from international universities while supporting them throughout their academic journey and resolving any arising issues to ensure a smooth and effective learning experience. All programs, degrees, and certificates are issued directly by the universities and can be consular legalized by the Vietnamese Embassy in the country where the university is headquartered."
         }
       },
       {
         "@type": "Question",
-        "name": "Does the Full BBA diploma state 'Online'?",
+        "name": "Does IDEAS Institute organize offline classes, or only support online learning?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. The degree is identical in format, content, and legal value to the on-campus program in Geneva, Switzerland."
+          "text": "The programs supported by IDEAS Institute are primarily implemented online, offering students flexibility in time and location. However, IDEAS also regularly organizes in-person workshops, special seminars, and networking events for students to connect and learn."
         }
       },
       {
         "@type": "Question",
-        "name": "What are the English entry requirements for the Full BBA?",
+        "name": "How are IDEAS Institute's special seminars structured, and are they mandatory?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Students need basic English skills and will be evaluated via an internal test or by submitting equivalent English certificates."
+          "text": "IDEAS special seminars are organized online and led by lecturers or industry experts. The content focuses on reinforcing knowledge, addressing questions, and helping students understand the courses deeply as well as apply them in practice. These seminars are optional and do not affect program grades. However, IDEAS encourages students to participate to enhance their knowledge and achieve better academic results. It is also a great opportunity for students to exchange directly with experts, network with peers who are managers and leaders in the same cohort, and receive valuable practical insights."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the graduation degree of the online international program state 'Online'?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The graduation degree is completely identical in form, content, and legal value to the program taught on campus in Geneva, Switzerland by Swiss UMEF."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the online international degree be consular legalized?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. The degree is consular legalized by the Swiss Ministry of Foreign Affairs / the Vietnamese Embassy in Switzerland, ensuring full international legal validity."
         }
       }
     ]
@@ -193,9 +209,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="../common-assets/css/style.min.css?v=1780753238864" as="style" />
-    <link rel="stylesheet" href="../common-assets/css/style.min.css?v=1780753238864" />
-    <link rel="stylesheet" href="../common-assets/css/booking-modal.min.css?v=1780753238864" />
+    <link rel="preload" href="../common-assets/css/style.min.css?v=1780762251938" as="style" />
+    <link rel="stylesheet" href="../common-assets/css/style.min.css?v=1780762251938" />
+    <link rel="stylesheet" href="../common-assets/css/booking-modal.min.css?v=1780762251938" />
     <style>
         @media (min-width: 992px) {
             .BBA-grid {
@@ -714,24 +730,37 @@
             margin: 0;
         }
 
+        .brand-red-text {
+            color: #ab0e00 !important;
+            font-weight: 900 !important;
+        }
+
         /* Pain cards grid */
+        @media (min-width: 769px) {
+            body .pain-section .pain-cards,
+            body .pain-cards {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body .pain-section .pain-cards,
+            body .pain-cards {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body .pain-section .pain-cards,
+            body .pain-cards {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
         .pain-cards {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-
-        @media (max-width: 1024px) {
-            .pain-cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .pain-cards {
-                grid-template-columns: 1fr 1fr;
-            }
+            display: grid !important;
+            gap: 16px !important;
+            margin-bottom: 40px !important;
         }
 
         .pain-card-v2 {
@@ -800,7 +829,7 @@
         /* Bottom row: stat + trends */
         .pain-bottom-row {
             display: grid;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: 1.6fr 1fr;
             gap: 32px;
             align-items: start;
             margin-bottom: 36px;
@@ -1138,7 +1167,7 @@
 
         .sol-stat-value {
             font-size: 2.8rem !important;
-            background: linear-gradient(135deg, #ff6b6b 0%, #ef4444 40%, #ab0e00 100%) !important;
+            background: linear-gradient(135deg, #ff4133 0%, #ef4444 40%, #ab0e00 100%) !important;
             -webkit-background-clip: text !important;
             -webkit-text-fill-color: transparent !important;
             background-clip: text !important;
@@ -2255,7 +2284,7 @@
         }
 
         .eco-title-accent {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ef4444 50%, #ab0e00 100%);
+            background: linear-gradient(135deg, #ff4133 0%, #ef4444 50%, #ab0e00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -3003,6 +3032,104 @@
         .sacom-tag {
             color: rgba(255, 255, 255, 0.85) !important;
         }
+
+        /* Social follow and community capsules */
+        .ideas_follow_inner {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .ideas_follow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            border-radius: 99px;
+            padding: 8px 18px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.01);
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            height: 42px;
+        }
+
+        .ideas_follow:hover {
+            background: rgba(0, 0, 0, 0.03);
+            border-color: rgba(171, 14, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(171, 14, 0, 0.04);
+        }
+
+        .ideas_follow p {
+            font-size: 0.82rem !important;
+            font-weight: 800 !important;
+            color: #334155 !important;
+            margin: 0 !important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .ideas_follow a {
+            color: #64748b;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .ideas_follow a:hover {
+            color: #ab0e00;
+            transform: translateY(-1.5px);
+        }
+
+        .ideas_follow a i {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ideas_follow a img {
+            height: 18px;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(1) opacity(0.65);
+            transition: all 0.3s ease;
+        }
+
+        .ideas_follow a:hover img {
+            filter: grayscale(0) opacity(1);
+        }
+
+        .ideas_follow.group a img {
+            height: 22px;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(1) opacity(0.7);
+        }
+
+        .ideas_follow.group a:hover img {
+            filter: grayscale(0) opacity(1);
+        }
+
+        @media (max-width: 576px) {
+            .ideas_follow_inner {
+                gap: 12px;
+                justify-content: center;
+            }
+            .ideas_follow {
+                width: 100%;
+                justify-content: center;
+                height: auto;
+                padding: 10px 20px;
+                flex-wrap: wrap;
+            }
+        }
     </style>
 
     <!-- Favicon -->
@@ -3039,12 +3166,34 @@
     <style>
         /* Counters Section Red Gradient & Whites */
         .counters-section {
-            background: linear-gradient(135deg, #ab0e00 0%, #7d0a00 100%) !important;
+            background: transparent !important;
             padding: 65px 0 !important;
             border-top: 3px solid var(--clr-gold) !important;
             position: relative;
             z-index: 5;
+            overflow: hidden;
         }
+
+        .counters-bg {
+            position: absolute;
+            top: -150px;
+            left: -10%;
+            width: 120%;
+            height: calc(100% + 300px);
+            background-image: linear-gradient(135deg, rgba(130, 10, 0, 0.82) 0%, rgba(15, 23, 42, 0.88) 100%), url('https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp');
+            background-size: cover;
+            background-position: center;
+            filter: blur(2px);
+            will-change: transform;
+            transform: translate3d(0, 0, 0) scale(1.15);
+            z-index: 1;
+        }
+
+        .counters-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
         .counters-section .stat-card div:first-child {
             color: #ffffff !important;
         }
@@ -3290,14 +3439,14 @@
             100% { transform: translate(-90px, 340px) scale(2.0) rotate(45deg); opacity: 0; filter: blur(2px); }
         }
         
-        .fa-1 { animation: fly-out-1 8.2s infinite linear; animation-delay: 0s; }
-        .fa-2 { animation: fly-out-2 7.5s infinite linear; animation-delay: 0.9s; }
-        .fa-3 { animation: fly-out-3 9.0s infinite linear; animation-delay: 1.8s; }
-        .fa-4 { animation: fly-out-4 6.8s infinite linear; animation-delay: 2.7s; }
-        .fa-5 { animation: fly-out-5 8.5s infinite linear; animation-delay: 3.6s; }
-        .fa-6 { animation: fly-out-6 7.2s infinite linear; animation-delay: 4.5s; }
-        .fa-7 { animation: fly-out-7 9.5s infinite linear; animation-delay: 5.4s; }
-        .fa-8 { animation: fly-out-8 6.5s infinite linear; animation-delay: 6.3s; }
+        .fa-1 { animation: fly-out-1 18.2s infinite linear; animation-delay: 0s; }
+        .fa-2 { animation: fly-out-2 16.5s infinite linear; animation-delay: 2s; }
+        .fa-3 { animation: fly-out-3 20.0s infinite linear; animation-delay: 4s; }
+        .fa-4 { animation: fly-out-4 15.0s infinite linear; animation-delay: 6s; }
+        .fa-5 { animation: fly-out-5 19.0s infinite linear; animation-delay: 8s; }
+        .fa-6 { animation: fly-out-6 17.0s infinite linear; animation-delay: 10s; }
+        .fa-7 { animation: fly-out-7 21.0s infinite linear; animation-delay: 12s; }
+        .fa-8 { animation: fly-out-8 14.5s infinite linear; animation-delay: 14s; }
 
         @media (max-width: 991px) {
             .hero-layout-new {
@@ -3619,34 +3768,37 @@
             }
         }
         .hero-badges-row .info-badge {
-            background: #ffffff !important;
-            border: 1px solid rgba(148, 163, 184, 0.15) !important;
-            border-radius: 14px !important;
-            padding: 14px 16px !important;
+            background: rgba(255, 255, 255, 0.55) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.5) !important;
+            border-radius: 10px !important;
+            padding: 6px 10px !important;
             display: flex !important;
             align-items: center !important;
-            gap: 10px !important;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02) !important;
+            gap: 6px !important;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03) !important;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
             box-sizing: border-box !important;
             justify-content: flex-start !important;
             margin: 0 !important;
         }
         .hero-badges-row .info-badge:hover {
-            transform: translateY(-3px) !important;
-            border-color: rgba(171, 14, 0, 0.18) !important;
-            box-shadow: 0 10px 22px rgba(171, 14, 0, 0.06) !important;
+            transform: translateY(-2px) !important;
+            background: rgba(255, 255, 255, 0.85) !important;
+            border-color: rgba(171, 14, 0, 0.25) !important;
+            box-shadow: 0 10px 22px rgba(171, 14, 0, 0.08) !important;
         }
         .hero-badges-row .info-badge .icon {
-            width: 34px !important;
-            height: 34px !important;
-            border-radius: 8px !important;
-            background: rgba(171, 14, 0, 0.05) !important;
+            width: 24px !important;
+            height: 24px !important;
+            border-radius: 5px !important;
+            background: rgba(171, 14, 0, 0.06) !important;
             color: #ab0e00 !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
-            font-size: 0.95rem !important;
+            font-size: 0.75rem !important;
             transition: all 0.3s ease !important;
             flex-shrink: 0 !important;
         }
@@ -3655,7 +3807,7 @@
             color: #ffffff !important;
         }
         .hero-badges-row .info-badge span:not(.icon) {
-            font-size: 0.85rem !important;
+            font-size: 0.76rem !important;
             font-weight: 700 !important;
             color: var(--clr-navy) !important;
             line-height: 1.3 !important;
@@ -3829,10 +3981,36 @@
                 gap: 16px !important;
             }
         }
-        @media (max-width: 576px) {
+        @media (max-width: 767px) {
             .pathfinder-grid {
-                grid-template-columns: 1fr !important;
-                gap: 16px !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 6px !important;
+                margin-top: 24px !important;
+                padding: 0 !important;
+            }
+            .path-card {
+                padding: 10px 4px !important;
+                border-radius: 12px !important;
+                min-height: 85px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            .path-card-icon {
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 1.0rem !important;
+                margin: 0 auto 6px !important;
+            }
+            .path-card h3 {
+                font-size: 0.65rem !important;
+                line-height: 1.25 !important;
+                margin: 0 !important;
+                word-break: break-word !important;
+            }
+            .path-card p {
+                display: none !important;
             }
         }
 
@@ -4101,54 +4279,27 @@
             justify-content: space-between;
             position: relative;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(0, 0, 0, 0.01);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(0, 0, 0, 0.01);
             overflow: hidden;
         }
         .prog-card-new:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 40px rgba(171, 14, 0, 0.12), 0 1px 5px rgba(171, 14, 0, 0.03);
-            border-color: rgba(171, 14, 0, 0.45);
-        }
-        
-        .prog-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        
-        .prog-card-badge {
-            font-size: 0.72rem;
-            font-weight: 800;
-            color: #ab0e00;
-            text-transform: uppercase;
-            background: rgba(171, 14, 0, 0.06);
-            padding: 4px 10px;
-            border-radius: 99px;
-            letter-spacing: 0.05em;
-        }
-        
-        .prog-card-school {
-            font-size: 0.76rem;
-            color: #64748b;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            border-color: rgba(171, 14, 0, 0.35);
         }
         
         .prog-avatar-container {
-            width: 100%;
-            height: 120px;
+            width: calc(100% + 40px);
+            aspect-ratio: 16 / 9;
+            height: auto;
+            margin: -20px -20px 16px -20px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: #f1f5f9;
-            border-radius: 12px;
-            margin-bottom: 12px;
             position: relative;
             overflow: hidden;
-            border: 1px solid #e2e8f0;
+            border-bottom: 1px solid #f1f5f9;
         }
         .prog-avatar-container img {
             width: 100%;
@@ -4157,18 +4308,59 @@
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .prog-card-new:hover .prog-avatar-container img {
-            transform: scale(1.08) rotate(1deg);
+            transform: scale(1.06) rotate(0.5deg);
+        }
+        
+        .prog-card-header {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            right: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 3;
+            pointer-events: none;
+        }
+        
+        .prog-card-badge {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            background: rgba(171, 14, 0, 0.88);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 3px 10px;
+            border-radius: 99px;
+            letter-spacing: 0.05em;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .prog-card-school {
+            font-size: 0.72rem;
+            color: #ffffff;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 4px 10px;
+            border-radius: 99px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
         
         .prog-card-title-group {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         .prog-card-title-new {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 800;
             color: var(--clr-navy);
             margin: 0;
-            line-height: 1.25;
+            line-height: 1.3;
         }
         .prog-card-subtitle-new {
             font-size: 0.8rem;
@@ -4178,10 +4370,10 @@
         }
         
         .prog-card-desc-new {
-            font-size: 0.84rem;
+            font-size: 0.82rem;
             color: #475569;
             line-height: 1.5;
-            margin: 0 0 20px 0;
+            margin: 0 0 16px 0;
             min-height: 54px;
         }
         
@@ -4190,10 +4382,10 @@
             flex-direction: column;
             gap: 8px;
             background: #f8fafc;
-            padding: 12px 16px;
+            padding: 10px 14px;
             border-radius: 12px;
             border: 1px solid #f1f5f9;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             font-size: 0.78rem;
         }
         .prog-spec-item {
@@ -4213,35 +4405,38 @@
         
         .prog-card-actions {
             display: flex;
-            gap: 12px;
+            gap: 10px;
         }
         .prog-btn-detail {
             flex: 1;
-            padding: 10px 14px;
-            font-size: 0.8rem;
+            padding: 10px 12px;
+            font-size: 0.82rem;
             font-weight: 700;
             text-align: center;
             border-radius: 10px;
             border: 1.5px solid #e2e8f0;
             color: var(--clr-navy);
             background: #fff;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            text-decoration: none;
         }
         .prog-btn-detail:hover {
             border-color: var(--clr-navy);
-            background: #f8fafc;
+            background: var(--clr-navy);
+            color: #ffffff;
         }
         .prog-btn-inquire {
             flex: 1;
-            padding: 10px 14px;
-            font-size: 0.8rem;
+            padding: 10px 12px;
+            font-size: 0.82rem;
             font-weight: 700;
             text-align: center;
             border-radius: 10px;
             background: var(--clr-primary);
             color: #fff;
             border: none;
-            transition: all 0.3s;
+            cursor: pointer;
+            transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(171, 14, 0, 0.15);
         }
         .prog-btn-inquire:hover {
@@ -4265,8 +4460,16 @@
             border-radius: 16px;
             box-shadow: 0 16px 40px rgba(17, 23, 41, 0.08);
             border: 5px solid #fff;
-            pointer-events: none;
-            transition: all 0.3s ease;
+            pointer-events: auto !important;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .floating-photo-card:hover {
+            z-index: 100 !important;
+            transform: scale(1.08) !important;
+            filter: blur(0px) grayscale(0%) brightness(1.05) !important;
+            box-shadow: 0 25px 60px rgba(171, 14, 0, 0.22) !important;
         }
 
         .floating-photo-1 {
@@ -4293,7 +4496,8 @@
             left: 8%;
             top: 42%;
             transform: rotate(2deg);
-            animation: gentle-float-3 10s ease-in-out infinite;
+            animation: gentle-float-3 10s ease-in-out infinite, glass-pulse-clear 14s ease-in-out infinite !important;
+            filter: blur(6px) grayscale(15%) brightness(0.92);
         }
 
         .floating-photo-4 {
@@ -4330,6 +4534,15 @@
             0% { transform: translateY(0) rotate(2deg); }
             50% { transform: translateY(-10px) rotate(4deg); }
             100% { transform: translateY(0) rotate(2deg); }
+        }
+
+        @keyframes glass-pulse-clear {
+            0%, 15%, 85%, 100% {
+                filter: blur(6px) grayscale(15%) brightness(0.92);
+            }
+            40%, 60% {
+                filter: blur(0px) grayscale(0%) brightness(1);
+            }
         }
 
         @keyframes gentle-float-4 {
@@ -4448,8 +4661,49 @@
                     fetchpriority="high">
             </a>
             <nav class="header-nav">
-                <a href="#van-de" class="nav-link">Problems</a>
-                <a href="#giai-phap" class="nav-link">Solutions</a>
+                <!-- Dropdown 1: About -->
+                <div class="nav-dropdown">
+                    <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        About
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu-box simple-dropdown">
+                        <a href="/en/he-thong-ho-tro-hoc-tap-lms-ideas" class="dropdown-item-simple">
+                            <i class="fa-solid fa-layer-group"></i> <span>LMS System</span>
+                        </a>
+                        <a href="/en/so-do-to-chuc" class="dropdown-item-simple">
+                            <i class="fa-solid fa-sitemap"></i> <span>Organizational Structure</span>
+                        </a>
+                        <a href="/en/doi-ngu-giang-vien" class="dropdown-item-simple">
+                            <i class="fa-solid fa-user-graduate"></i> <span>Academic Board</span>
+                        </a>
+                        <a href="/en/dong-su-kien" class="dropdown-item-simple">
+                            <i class="fa-solid fa-clock"></i> <span>Events Timeline</span>
+                        </a>
+                        <a href="/en/lich-su-hinh-thanh-va-phat-trien-vien-ideas" class="dropdown-item-simple">
+                            <i class="fa-solid fa-landmark"></i> <span>Development History</span>
+                        </a>
+                        <div class="dropdown-divider-simple"></div>
+                        <div class="dropdown-item-submenu">
+                            <span class="submenu-title">
+                                <span><i class="fa-solid fa-school"></i> Partner Schools</span>
+                                <i class="fa-solid fa-chevron-right submenu-arrow"></i>
+                            </span>
+                            <div class="submenu-box">
+                                <a href="/en/swiss-umef" class="dropdown-item-simple">Swiss UMEF</a>
+                                <a href="https://www.ascencia-business-school.com/en/" target="_blank" class="dropdown-item-simple">Ascencia Business School</a>
+                                <a href="https://www.collegedeparis.fr/" target="_blank" class="dropdown-item-simple">College de Paris</a>
+                                <a href="https://www.estiam.education/" target="_blank" class="dropdown-item-simple">Estiam</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dropdown 2: Programs -->
                 <div class="nav-dropdown">
                     <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                         Programs
@@ -4533,9 +4787,57 @@
                         </div>
                     </div>
                 </div>
-                <a href="#chung-minh" class="nav-link"><span class="nav-link-badge-red"><i
-                            class="fa-solid fa-certificate"></i></span>Prestige</a>
-                <a href="#bang-gia" class="nav-link">Tuition <span class="nav-link-badge-round-90">90%</span></a>
+                <!-- Dropdown 3: Policies -->
+                <div class="nav-dropdown">
+                    <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Policies
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu-box simple-dropdown">
+                        <a href="/en/ho-tro-tai-chinh-sacombank" class="dropdown-item-simple">
+                            <i class="fa-solid fa-circle-dollar-to-slot"></i> <span>Tuition Installment</span>
+                        </a>
+                        <a href="/en/voucher" class="dropdown-item-simple">
+                            <i class="fa-solid fa-ticket"></i> <span>IDEAS Voucher</span>
+                        </a>
+                        <a href="/en/cac-khoan-chi-phi" class="dropdown-item-simple">
+                            <i class="fa-solid fa-file-invoice-dollar"></i> <span>Tuition Fees</span>
+                        </a>
+                        <a href="/en/ideas-ambassador" class="dropdown-item-simple">
+                            <i class="fa-solid fa-user-graduate"></i> <span>IDEAS Ambassador</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dropdown 4: News -->
+                <div class="nav-dropdown">
+                    <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        News
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu-box simple-dropdown">
+                        <a href="/en/bai-viet" class="dropdown-item-simple">
+                            <i class="fa-solid fa-newspaper"></i> <span>Articles</span>
+                        </a>
+                        <a href="/en/dong-su-kien#chuyen-di" class="dropdown-item-simple">
+                            <i class="fa-solid fa-plane-departure"></i> <span>Europe Trip</span>
+                        </a>
+                        <a href="/en/ideas-talk" class="dropdown-item-simple">
+                            <i class="fa-solid fa-globe"></i> <span>Webinar</span>
+                        </a>
+                        <a href="/en/ideas-podcast-series-01" class="dropdown-item-simple">
+                            <i class="fa-solid fa-microphone-lines"></i> <span>Podcast</span>
+                        </a>
+                    </div>
+                </div>
                 <div style="display:flex;align-items:center;gap:8px;">
                     <div class="lang-switcher-wrapper">
                         <button class="lang-toggle-btn" aria-label="Select Language" type="button">
@@ -4630,8 +4932,38 @@
                 </svg>
             </button>
         </div>
-        <a href="#van-de" class="nav-link">Problems</a>
-        <a href="#giai-phap" class="nav-link">Solutions</a>
+        <div class="mobile-dropdown">
+            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+                About
+                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+                <a href="/en/he-thong-ho-tro-hoc-tap-lms-ideas" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-layer-group"></i> <span>LMS System</span>
+                </a>
+                <a href="/en/so-do-to-chuc" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-sitemap"></i> <span>Organizational Structure</span>
+                </a>
+                <a href="/en/doi-ngu-giang-vien" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-user-graduate"></i> <span>Academic Board</span>
+                </a>
+                <a href="/en/dong-su-kien" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-clock"></i> <span>Events Timeline</span>
+                </a>
+                <a href="/en/lich-su-hinh-thanh-va-phat-trien-vien-ideas" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-landmark"></i> <span>Development History</span>
+                </a>
+                <div class="mobile-dropdown-section-title">Partner Schools</div>
+                <a href="/en/swiss-umef" class="mobile-dropdown-item-simple">Swiss UMEF</a>
+                <a href="https://www.ascencia-business-school.com/en/" target="_blank" class="mobile-dropdown-item-simple">Ascencia Business School</a>
+                <a href="https://www.collegedeparis.fr/" target="_blank" class="mobile-dropdown-item-simple">College de Paris</a>
+                <a href="https://www.estiam.education/" target="_blank" class="mobile-dropdown-item-simple">Estiam</a>
+            </div>
+        </div>
         <div class="mobile-dropdown">
             <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
                 Programs
@@ -4707,9 +5039,54 @@
                 </div>
             </div>
         </div>
-        <a href="#chung-minh" class="nav-link"><span class="nav-link-badge-red"><i
-                    class="fa-solid fa-certificate"></i></span>Prestige</a>
-        <a href="#bang-gia" class="nav-link">Tuition <span class="nav-link-badge-round-90">90%</span></a>
+        <div class="mobile-dropdown">
+            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+                Policies
+                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+                <a href="/en/ho-tro-tai-chinh-sacombank" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-circle-dollar-to-slot"></i> <span>Tuition Installment</span>
+                </a>
+                <a href="/en/voucher" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-ticket"></i> <span>IDEAS Voucher</span>
+                </a>
+                <a href="/en/cac-khoan-chi-phi" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-file-invoice-dollar"></i> <span>Tuition Fees</span>
+                </a>
+                <a href="/en/ideas-ambassador" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-user-graduate"></i> <span>IDEAS Ambassador</span>
+                </a>
+            </div>
+        </div>
+        <div class="mobile-dropdown">
+            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+                News
+                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+                <a href="/en/bai-viet" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-newspaper"></i> <span>Articles</span>
+                </a>
+                <a href="/en/dong-su-kien#chuyen-di" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-plane-departure"></i> <span>Europe Trip</span>
+                </a>
+                <a href="/en/ideas-talk" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-globe"></i> <span>Webinar</span>
+                </a>
+                <a href="/en/ideas-podcast-series-01" class="mobile-dropdown-item-simple">
+                    <i class="fa-solid fa-microphone-lines"></i> <span>Podcast</span>
+                </a>
+            </div>
+        </div>
         <a href="#dang-ky" class="nav-cta">Consult Now</a>
         <div class="mobile-lang-selector">
             <div class="mobile-lang-title">Language</div>
@@ -4787,6 +5164,10 @@
                         <span>IDEAS INSTITUTE - 15 YEARS OF ACADEMIC COMPANIONSHIP</span>
                     </div>
 
+                    <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp" 
+                         alt="Swiss UMEF Graduation Ceremony" 
+                         class="hero-mobile-only-img" />
+
                     <div style="font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 600; color: #64748b; margin-bottom: 16px; letter-spacing: 0.02em; text-align: center;">
                         Academic support & global education transfer ecosystem
                     </div>
@@ -4822,15 +5203,15 @@
 
 
                     <div class="hero-cta" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px;">
-                        <a href="#lo-trinh-phu-hop" class="btn btn-primary" style="padding: 14px 28px; border-radius: 12px; font-weight: 700; display: flex; align-items: center; gap: 10px; transition: all 0.3s; text-decoration: none;">
+                        <a href="#lo-trinh-phu-hop" class="btn btn-primary" style="padding: 0 28px; height: 50px; border-radius: 12px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.3s; text-decoration: none; border: 2px solid var(--clr-primary); box-sizing: border-box;">
                             <span>Choose Your Pathway</span>
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" aria-hidden="true" style="stroke: currentColor; stroke-width: 2.5;">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </a>
-                        <button type="button" class="btn btn-outline" id="compare-trigger-hero" onclick="openCompareModal()" style="padding: 14px 28px; border-radius: 12px; font-weight: 700; display: flex; align-items: center; gap: 8px; transition: all 0.3s;">
-                            <span>Compare Programs</span>
-                            <i class="fa-solid fa-code-compare" style="font-size: 0.95rem;"></i>
+                        <button type="button" class="btn btn-outline" id="compare-trigger-hero" onclick="if(typeof quizModal !== 'undefined') quizModal.open()" style="padding: 0 28px; height: 50px; border-radius: 12px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s; border: 2px solid #ab0e00; box-sizing: border-box;">
+                            <span>Find Your Fit</span>
+                            <i class="fa-solid fa-graduation-cap" style="font-size: 0.95rem;"></i>
                         </button>
                     </div>
 
@@ -4858,7 +5239,8 @@
         <!-- ══════════════════════════════════════════
          SECTION 2: COUNTERS
         ══════════════════════════════════════════ -->
-        <section class="counters-section" id="thong-ke" style="background: var(--clr-navy); color: #fff; padding: 40px 0; border-top: 3px solid var(--clr-gold);">
+        <section class="counters-section" id="thong-ke" style="position: relative; color: #fff; padding: 50px 0; border-top: 3px solid var(--clr-gold); overflow: hidden;">
+            <div class="counters-bg"></div>
             <div class="container">
                 <div class="solution-stats" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; display: grid; margin-bottom: 0 !important;">
                     <div class="stat-card" style="text-align: center; border-right: 1px solid rgba(255,255,255,0.1); padding: 10px 20px;">
@@ -4886,11 +5268,11 @@
         ══════════════════════════════════════════ -->
         <section class="about-section" id="gioi-thieu" style="padding: 80px 0; background: #fff; position: relative;">
             <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 60px;">
+                <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 60px;">
                     <div class="reveal-up">
                         <div class="section-label">ABOUT US</div>
-                        <h2 class="section-title" style="font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--clr-primary); line-height: 1.3; margin-top: 10px; margin-bottom: 24px;">
-                            IDEAS – 15 Years Connecting Global Education
+                        <h2 class="section-title" style="font-size: clamp(1.8rem, 3vw, 2.3rem); color: var(--clr-navy); line-height: 1.35; margin-top: 10px; margin-bottom: 24px; font-weight: 800;">
+                            <span class="brand-red-text">IDEAS</span> – <span class="brand-red-text">15 Years</span> Connecting Global Education
                         </h2>
                         <p style="font-size: 1.05rem; color: #475569; line-height: 1.7; margin-top: 24px;">
                             IDEAS is an educational support institution with over 14 years of experience (established in 2011), helping Vietnamese learners pursue Postgraduate & Undergraduate degrees from prestigious international universities in Switzerland, France, and the US.
@@ -4898,12 +5280,47 @@
                         <p style="font-size: 1rem; color: #475569; line-height: 1.7; margin-top: 16px;">
                             As an official academic partner, IDEAS supports students in overcoming barriers of language, time, and study methodology through a modern learning ecosystem and a dedicated weekend tutoring system.
                         </p>
+                        <div class="ideas_follow_inner">
+                            <div class="ideas_follow">
+                                <p>Follow</p>
+                                <a target="_blank" href="https://www.facebook.com/ideas.edu.vn/">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a target="_blank" href="https://www.youtube.com/c/Vi%E1%BB%87nIDEAS">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                                <a target="_blank" href="https://www.linkedin.com/company/ideasinstitute/">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a target="_blank" href="https://www.tiktok.com/@ideas_institute">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                </a>
+                                <a target="_blank" href="https://zalo.me/3857867121882640296">
+                                    <i>
+                                        <img loading="lazy" decoding="async" alt="Zalo" src="https://hidosport.vn/wp-content/uploads/2023/09/zalo-icon.png">
+                                    </i>
+                                </a>
+                                <a target="_blank" href="https://www.instagram.com/ideas.edu.vn/">
+                                    <i class="fa-brands fa-square-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="ideas_follow group">
+                                <p>Community</p>
+                                <a target="_blank" href="https://chiefaiofficer.vn/" rel="noopener nofollow external noreferrer">
+                                    <i>
+                                        <img loading="lazy" decoding="async" alt="Chief AI Officer" src="https://ideas.edu.vn/wp-content/uploads/2025/09/cao-logo-1.png.webp">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="reveal-up" style="position: relative;">
                         <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/buoihuongdan.jpg" alt="IDEAS Student orientation" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08);" />
-                        <div style="position: absolute; bottom: -20px; left: -20px; background: var(--clr-primary); color: #fff; padding: 20px 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(171,14,0,0.3); font-weight: 700;">
-                            <span style="font-size: 2.2rem; color: #ffd54f; display: block; line-height: 1; font-weight: 900; margin-bottom: 4px;">15+</span>
-                            Years of Reputation
+                        <div class="about-badge"
+                            style="position: absolute; bottom: -20px; left: -20px; background: var(--clr-primary); color: #fff; padding: 20px 24px; border-radius: 16px; box-shadow: 0 10px 25px rgba(171,14,0,0.3); font-weight: 700; width: 170px; text-align: center;">
+                            <span
+                                style="font-size: 2.2rem; color: #ffffff; display: block; line-height: 1; font-weight: 900; margin-bottom: 6px;">15+</span>
+                            <span style="font-size: 0.78rem; font-weight: 600; display: block; line-height: 1.3; color: rgba(255,255,255,0.95);">Accompanying Vietnamese Students</span>
                         </div>
                     </div>
                 </div>
@@ -4933,7 +5350,147 @@
             </div>
         </section>
 
+        <!-- ══════════════════════════════════════════
+         SECTION 2B: PAIN POINTS & IDEAS COMPANIONSHIP
+        ══════════════════════════════════════════ -->
+        <section class="pain-section" id="thach-thuc" aria-labelledby="pain-headline">
+            <div class="pain-bg-decoration" aria-hidden="true">
+                <div class="pain-bg-orb pain-orb-1"></div>
+                <div class="pain-bg-orb pain-orb-2"></div>
+            </div>
+            <div class="container">
 
+                <div class="pain-header reveal-up" style="text-align: center;">
+                    <div class="pain-label-badge" style="margin: 0 auto 20px auto;">
+                        <span class="pain-label-dot"></span>
+                        CHALLENGES & SOLUTIONS
+                    </div>
+                    <h2 class="pain-headline" id="pain-headline" style="text-align: center;">
+                        The Biggest Hurdles In<br />
+                        <span class="pain-headline-accent">Online International Studies</span>
+                    </h2>
+                    <p class="pain-sub" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                        Online international study opens up excellent career advancement and optimizes time. However, self-study is never easy when you face real-world challenges.
+                    </p>
+                </div>
+
+                <div class="pain-cards reveal-up" style="display: grid; gap: 16px; margin-bottom: 56px;">
+                    <div class="pain-card-v2">
+                        <div class="pain-card-num">01</div>
+                        <div class="pain-card-header">
+                            <div class="pain-card-icon">
+                                <i class="fa-solid fa-battery-half" style="font-size: 1.2rem;"></i>
+                            </div>
+                            <h3 class="pain-card-title" style="font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin: 0;">Dropping Motivation Midway</h3>
+                        </div>
+                        <p class="pain-card-desc">Online learning requires extreme self-discipline. Without face-to-face peer pressure or instructor push, students easily lose momentum and drop out.</p>
+                    </div>
+                    <div class="pain-card-v2">
+                        <div class="pain-card-num">02</div>
+                        <div class="pain-card-header">
+                            <div class="pain-card-icon">
+                                <i class="fa-solid fa-language" style="font-size: 1.2rem;"></i>
+                            </div>
+                            <h3 class="pain-card-title" style="font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin: 0;">Language & Academic Barriers</h3>
+                        </div>
+                        <p class="pain-card-desc">International programs are taught entirely in English. Writing academic essays or doing research exams often leads to dead ends due to advanced language requirements.</p>
+                    </div>
+                    <div class="pain-card-v2">
+                        <div class="pain-card-num">03</div>
+                        <div class="pain-card-header">
+                            <div class="pain-card-icon">
+                                <i class="fa-solid fa-book-open" style="font-size: 1.2rem;"></i>
+                            </div>
+                            <h3 class="pain-card-title" style="font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin: 0;">Theoretical Disconnect</h3>
+                        </div>
+                        <p class="pain-card-desc">Theories in foreign textbooks can feel disconnected from the local business landscape, making them hard to apply to your day-to-day operations.</p>
+                    </div>
+                    <div class="pain-card-v2">
+                        <div class="pain-card-num">04</div>
+                        <div class="pain-card-header">
+                            <div class="pain-card-icon">
+                                <i class="fa-solid fa-hourglass-half" style="font-size: 1.2rem;"></i>
+                            </div>
+                            <h3 class="pain-card-title" style="font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin: 0;">Severe Time Overload</h3>
+                        </div>
+                        <p class="pain-card-desc">Balancing professional duties, family life, and self-study for multiple modules causes exhaustion and severe life imbalance.</p>
+                    </div>
+                    <div class="pain-card-v2">
+                        <div class="pain-card-num">05</div>
+                        <div class="pain-card-header">
+                            <div class="pain-card-icon">
+                                <i class="fa-solid fa-network-wired" style="font-size: 1.2rem;"></i>
+                            </div>
+                            <h3 class="pain-card-title" style="font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin: 0;">Isolation on Digital Space</h3>
+                        </div>
+                        <p class="pain-card-desc">Learning purely behind screens limits direct human connection, causing students to miss out on valuable networking with elite peers.</p>
+                    </div>
+                    <div class="pain-card-v2">
+                        <div class="pain-card-num">06</div>
+                        <div class="pain-card-header">
+                            <div class="pain-card-icon">
+                                <i class="fa-solid fa-shield-halved" style="font-size: 1.2rem;"></i>
+                            </div>
+                            <h3 class="pain-card-title" style="font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin: 0;">Doubts on Degree Value</h3>
+                        </div>
+                        <p class="pain-card-desc">Worries about whether online degrees are globally recognized or backed by top federal and international accreditations.</p>
+                    </div>
+                </div>
+
+                <!-- Stat + Trends -->
+                <div class="pain-bottom-row reveal-up">
+                    <div class="pain-stat-card" role="region" aria-label="IDEAS Commitment">
+                        <div class="pain-stat-glow" aria-hidden="true"></div>
+                        <h4 style="font-size: 1.3rem; font-weight: 900; color: #f8fafc; margin: 0 0 10px 0;">Why choose IDEAS Education?</h4>
+                        <div class="pain-stat-text">
+                            <p style="margin-bottom: 12px; font-size: 0.92rem; line-height: 1.6;">
+                                IDEAS Education establishes a professional academic support ecosystem to ensure the highest graduation rates. We provide Vietnamese study materials, organize weekend tutorial classes, offer 24/7 AI study assistants, and closely guide you throughout your final thesis.
+                            </p>
+                            <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">
+                                <strong>Comprehensive Strategic Partner:</strong> As the strategic human resource development partner of <strong>Swiss UMEF University (Switzerland)</strong> in Vietnam, IDEAS is proud to accompany over 2,500 students in conquering prestigious global degrees.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pain-trends">
+                        <p class="pain-trends-title">Our Support Commitment:</p>
+                        <div class="pain-trend-item">
+                            <span class="pain-trend-icon pain-trend-icon--blue">
+                                <i class="fa-solid fa-handshake-angle" style="font-size: 0.95rem;"></i>
+                            </span>
+                            <p><strong>1-1 Tutoring</strong> to guide you through assignments and resolve any academic difficulties.</p>
+                        </div>
+                        <div class="pain-trend-item">
+                            <span class="pain-trend-icon pain-trend-icon--amber">
+                                <i class="fa-solid fa-school" style="font-size: 0.95rem;"></i>
+                            </span>
+                            <p><strong>Weekend Support Classes</strong> to summarize key knowledge and discuss practical case studies.</p>
+                        </div>
+                        <div class="pain-trend-item">
+                            <span class="pain-trend-icon pain-trend-icon--green">
+                                <i class="fa-solid fa-circle-check" style="font-size: 0.95rem;"></i>
+                            </span>
+                            <p><strong>Guaranteed Outcome</strong> with European-standard degrees recognized globally and backed by Swiss federal accreditation (SAC).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote bar (Motivational quote) -->
+                <div class="pain-warning-v2 reveal-up">
+                    <i class="fa-solid fa-quote-left" style="font-size: 1.5rem; color: #f59e0b; opacity: 0.8; margin-top: 4px;"></i>
+                    <strong style="font-style: italic; font-weight: 700; color: #fef3c7;">
+                        "IDEAS does not just deliver courses; we walk with you through every essay, guide you through final exams, and fuel your motivation until you proudly hold your international degree in Geneva."
+                    </strong>
+                </div>
+
+                <div class="section-cta reveal-up" style="text-align: center;">
+                    <a href="#lo-trinh-phu-hop" class="btn btn-primary" id="pain-cta" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 14px 28px; border-radius: 12px; font-weight: 700; transition: all 0.3s;">
+                        <span>Discover suitable pathway for you</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
 
         <!-- ══════════════════════════════════════════
          SECTION 4: PATHFINDER
@@ -5344,190 +5901,149 @@
         <!-- ══════════════════════════════════════════
          SECTION 6: ACTIVITIES & EVENTS
         ══════════════════════════════════════════ -->
-        <section class="activities-section" id="hoat-dong" style="padding: 80px 0; background: #f8fafc; position: relative;">
+        <section class="activities-section" id="hoat-dong">
+            <div class="eco-orb eco-orb-1" aria-hidden="true"></div>
+            <div class="eco-orb eco-orb-2" aria-hidden="true"></div>
+            <div class="eco-orb eco-orb-3" aria-hidden="true"></div>
             <div class="container">
-                <div class="section-label" style="text-align: center;">ACTIVITIES &amp; EVENTS</div>
-                <h2 class="section-title" style="text-align: center; margin-bottom: 48px;">
+                <div class="section-label" style="text-align: center; background: var(--clr-primary); color: #fff;">ACTIVITIES &amp; EVENTS</div>
+                <h2 class="section-title" style="text-align: center; margin-bottom: 48px; color: #ffffff;">
                     Supporting Our Learners<br />
                     <span class="gradient-text">Through Real-world Engagement</span>
                 </h2>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                <div class="activities-grid">
                     <!-- Card 1: Graduation trip -->
-                    <article class="activity-card" style="background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); display: flex; flex-direction: column;">
-                        <div style="position: relative; overflow: hidden; height: 200px;">
-                            <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp" alt="Europe Graduation" style="width: 100%; height: 100%; object-fit: cover;" />
-                            <span style="position: absolute; top: 15px; left: 15px; background: var(--clr-primary); color: #fff; padding: 6px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">International</span>
+                    <article class="activity-card" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('activity-graduation-europe')">
+                        <div class="card-img-wrap">
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp" alt="Europe Graduation" loading="lazy" />
+                            <span class="card-tag">International</span>
                         </div>
-                        <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-                            <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--clr-navy); margin-bottom: 10px; text-align: center;">Graduation in Europe</h3>
-                            <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0; text-align: center;">Receive your degrees directly from the School Board in Geneva (Switzerland) or Paris (France). Combined with European travel.</p>
+                        <div class="activity-card-body">
+                            <h3>Graduation in Europe</h3>
+                            <p>Receive your degrees directly from the School Board in Geneva (Switzerland) or Paris (France). Combined with European travel.</p>
                         </div>
                     </article>
 
                     <!-- Card 2: Local graduation -->
-                    <article class="activity-card" style="background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); display: flex; flex-direction: column;">
-                        <div style="position: relative; overflow: hidden; height: 200px;">
-                            <img src="https://ideas.edu.vn/wp-content/uploads/2024/10/Totnghiepumef.jpg" alt="Vietnam graduation" style="width: 100%; height: 100%; object-fit: cover;" />
-                            <span style="position: absolute; top: 15px; left: 15px; background: var(--clr-primary); color: #fff; padding: 6px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">Local</span>
+                    <article class="activity-card" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('activity-graduation-vietnam')">
+                        <div class="card-img-wrap">
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2024/10/Totnghiepumef.jpg" alt="Vietnam graduation" loading="lazy" />
+                            <span class="card-tag">Local</span>
                         </div>
-                        <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-                            <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--clr-navy); margin-bottom: 10px; text-align: center;">Ceremony in Vietnam</h3>
-                            <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0; text-align: center;">Prestigious annual graduation ceremonies organized in HCMC with embassy officials and school representatives.</p>
+                        <div class="activity-card-body">
+                            <h3>Ceremony in Vietnam</h3>
+                            <p>Prestigious annual graduation ceremonies organized in HCMC with embassy officials and school representatives.</p>
                         </div>
                     </article>
 
                     <!-- Card 3: Sunday Tutoring -->
-                    <article class="activity-card" style="background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); display: flex; flex-direction: column;">
-                        <div style="position: relative; overflow: hidden; height: 200px;">
-                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/08/wsoff16_8.jpg" alt="Weekend supplementary tutoring" style="width: 100%; height: 100%; object-fit: cover;" />
-                            <span style="position: absolute; top: 15px; left: 15px; background: var(--clr-primary); color: #fff; padding: 6px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">Academic</span>
+                    <article class="activity-card" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('activity-sunday-tutoring')">
+                        <div class="card-img-wrap">
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/08/wsoff16_8.jpg" alt="Weekend supplementary tutoring" loading="lazy" />
+                            <span class="card-tag">Academic</span>
                         </div>
-                        <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-                            <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--clr-navy); margin-bottom: 10px; text-align: center;">Sunday Supplementary Classes</h3>
-                            <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0; text-align: center;">Weekend tutoring sessions to guide assignments, introduce LMS platforms, and review final exam drafts with local advisors.</p>
+                        <div class="activity-card-body">
+                            <h3>Sunday Supplementary Classes</h3>
+                            <p>Weekend tutoring sessions to guide assignments, introduce LMS platforms, and review final exam drafts with local advisors.</p>
                         </div>
                     </article>
 
                     <!-- Card 4: Workshops & Webinars -->
-                    <article class="activity-card" style="background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); display: flex; flex-direction: column;">
-                        <div style="position: relative; overflow: hidden; height: 200px;">
-                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/workshopAI.jpg" alt="Workshops & Webinars" style="width: 100%; height: 100%; object-fit: cover;" />
-                            <span style="position: absolute; top: 15px; left: 15px; background: var(--clr-primary); color: #fff; padding: 6px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">Networking</span>
+                    <article class="activity-card" onclick="if(typeof window.openRegModal === 'function') window.openRegModal('activity-workshops')">
+                        <div class="card-img-wrap">
+                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/workshopAI.jpg" alt="Workshops & Webinars" loading="lazy" />
+                            <span class="card-tag">Networking</span>
                         </div>
-                        <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-                            <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--clr-navy); margin-bottom: 10px; text-align: center;">Regular Workshops &amp; Webinars</h3>
-                            <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0; text-align: center;">Connecting academic communities and sharing practical management insights with domestic and international experts.</p>
-                        </div>
+                        <div class="activity-card-body">
+                            <h3>Regular Workshops &amp; Webinars</h3>
+                            <p>Connecting academic communities and sharing practical management insights with domestic and international experts.</p>
                     </article>
+                </div>
+
+                <!-- Videos row inside same section container -->
+                <div class="video-talk-wrapper" style="margin-top: 80px;">
+                    <div style="text-align: center; margin-bottom: 16px;">
+                        <span class="section-label" style="margin: 0; background: var(--clr-primary); color: #fff;">IDEAS TALK - AI</span>
+                    </div>
+                    <h2 class="section-title" style="text-align: center; margin-bottom: 48px; color: #ffffff;">
+                        Overcoming English Barriers<br />
+                        <span class="gradient-text">#By Applying AI In Learning</span>
+                    </h2>
+                    <div class="video-talk-grid">
+                        <!-- Video 1 -->
+                        <article class="video-talk-card" onclick="openVideoModal('https://www.youtube.com/embed/mB0mDrgjVNs?si=8OciF14MwQh1w1AF')">
+                            <div class="video-thumb-wrap">
+                                <img src="https://img.youtube.com/vi/mB0mDrgjVNs/maxresdefault.jpg" alt="Omnichannel Customer Service with AI" loading="lazy" />
+                                <div class="play-btn-overlay">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-talk-card-body">
+                                <div class="video-meta">
+                                    <span class="video-tag">IDEAS Talk - AI</span>
+                                    <span>2025/03/23</span>
+                                </div>
+                                <h4>Omnichannel Customer Service with AI</h4>
+                            </div>
+                        </article>
+
+                        <!-- Video 2 -->
+                        <article class="video-talk-card" onclick="openVideoModal('https://www.youtube.com/embed/n0S6vGsilhs?si=qOu2_jTHYmvj5ppD')">
+                            <div class="video-thumb-wrap">
+                                <img src="https://img.youtube.com/vi/n0S6vGsilhs/maxresdefault.jpg" alt="Decoding AI" loading="lazy" />
+                                <div class="play-btn-overlay">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-talk-card-body">
+                                <div class="video-meta">
+                                    <span class="video-tag">IDEAS Talk - AI</span>
+                                    <span>2025/05/25</span>
+                                </div>
+                                <h4>Decoding AI - Undisclosed Creative Methods</h4>
+                            </div>
+                        </article>
+
+                        <!-- Video 3 -->
+                        <article class="video-talk-card" onclick="openVideoModal('https://www.youtube.com/embed/1wyT6IVUCpg?si=Dl66rshN8IoTRKuG')">
+                            <div class="video-thumb-wrap">
+                                <img src="https://img.youtube.com/vi/1wyT6IVUCpg/maxresdefault.jpg" alt="Data Security in the AI Era" loading="lazy" />
+                                <div class="play-btn-overlay">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-talk-card-body">
+                                <div class="video-meta">
+                                    <span class="video-tag">IDEAS Talk - AI</span>
+                                    <span>2025/04/20</span>
+                                </div>
+                                <h4>Data Security in the AI Era: Challenges and Solutions</h4>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
-
         <!-- ══════════════════════════════════════════
-         SECTION 7: ACCREDITATIONS SWITCHER
+         SECTION 7: NEWS & EVENTS (WORDPRESS BLOG)
         ══════════════════════════════════════════ -->
-        <section class="accreditations-section" id="kiem-dinh" style="padding: 80px 0; background: #fff;">
+        <section class="blog-section" id="news" style="padding: 80px 0; background: #fff;">
             <div class="container">
-                <div class="section-label" style="text-align: center;">ACCREDITATIONS</div>
-                <h2 class="section-title" style="text-align: center; margin-bottom: 48px;">
-                    Prestigious Accreditations<br />
-                    <span class="gradient-text">Securing Your Degree Value</span>
-                </h2>
-
-                <div class="accred-grid-new reveal-up">
-                    <!-- Card 1: SAC -->
-                    <div class="accred-card-new">
-                        <div class="accred-card-header">
-                            <span class="accred-card-logo">SAC</span>
-                            <span class="accred-card-badge">Switzerland</span>
-                        </div>
-                        <h3 class="accred-card-title">Swiss Accreditation Council</h3>
-                        <p class="accred-card-desc">The highest Swiss federal accreditation body. Ensures the highest quality of education in accordance with federal standards for Swiss programs.</p>
-                        <a href="https://ideas.edu.vn/wp-content/uploads/2026/06/sac.webp" class="accred-cert-preview lightbox-trigger">
-                            <div class="cert-img-box">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/sac.webp" alt="SAC Certificate Preview" />
-                            </div>
-                            <div class="cert-details">
-                                <span>View original certificate</span>
-                                <i class="fa-solid fa-magnifying-glass-plus"></i>
-                            </div>
-                        </a>
+                <div class="news-section-header">
+                    <h2>News &amp; Events</h2>
+                    <a href="https://ideas.edu.vn/bai-viet" class="view-all-news" target="_blank">View All <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="news-grid" id="wp-news-container">
+                    <!-- Data will be loaded here via JS -->
+                    <div class="news-featured">
+                        <div class="featured-card wp-post-skeleton" style="height: 500px; background: #f1f5f9; border-radius: 24px;"></div>
                     </div>
-
-                    <!-- Card 2: QS Stars -->
-                    <div class="accred-card-new">
-                        <div class="accred-card-header">
-                            <span class="accred-card-logo">QS Stars ⭐</span>
-                            <span class="accred-card-badge" style="background: rgba(217, 119, 6, 0.06); color: #d97706;">Global</span>
-                        </div>
-                        <h3 class="accred-card-title">QS Stars Rating System</h3>
-                        <p class="accred-card-desc">Awarded the prestigious 5 Stars Overall rating by Quacquarelli Symonds (QS) UK, highlighting excellence across teaching quality and online learning.</p>
-                        <a href="https://ideas.edu.vn/wp-content/uploads/2026/06/qs.webp" class="accred-cert-preview lightbox-trigger">
-                            <div class="cert-img-box">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/qs.webp" alt="QS Stars Certificate Preview" />
-                            </div>
-                            <div class="cert-details">
-                                <span>View original certificate</span>
-                                <i class="fa-solid fa-magnifying-glass-plus"></i>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Card 3: EduQua -->
-                    <div class="accred-card-new">
-                        <div class="accred-card-header">
-                            <span class="accred-card-logo">EduQua</span>
-                            <span class="accred-card-badge">Switzerland</span>
-                        </div>
-                        <h3 class="accred-card-title">SGS – EduQua</h3>
-                        <p class="accred-card-desc">The Swiss quality label for continuing education, recognized by the Swiss Government and audited periodically by the renowned SGS organization.</p>
-                        <a href="https://ideas.edu.vn/wp-content/uploads/2026/06/eduqua.webp" class="accred-cert-preview lightbox-trigger">
-                            <div class="cert-img-box">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/eduqua.webp" alt="EduQua Certificate Preview" />
-                            </div>
-                            <div class="cert-details">
-                                <span>View original certificate</span>
-                                <i class="fa-solid fa-magnifying-glass-plus"></i>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Card 4: CHEA -->
-                    <div class="accred-card-new">
-                        <div class="accred-card-header">
-                            <span class="accred-card-logo">CHEA</span>
-                            <span class="accred-card-badge" style="background: rgba(30, 64, 175, 0.06); color: #1e40af;">USA</span>
-                        </div>
-                        <h3 class="accred-card-title">CHEA USA</h3>
-                        <p class="accred-card-desc">A major advocate and national voice for higher education quality assurance, recognizing elite accrediting bodies in the United States.</p>
-                        <a href="https://ideas.edu.vn/wp-content/uploads/2026/06/chea.webp" class="accred-cert-preview lightbox-trigger">
-                            <div class="cert-img-box">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/chea.webp" alt="CHEA Certificate Preview" />
-                            </div>
-                            <div class="cert-details">
-                                <span>View original certificate</span>
-                                <i class="fa-solid fa-magnifying-glass-plus"></i>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Card 5: ACBSP -->
-                    <div class="accred-card-new">
-                        <div class="accred-card-header">
-                            <span class="accred-card-logo">ACBSP</span>
-                            <span class="accred-card-badge" style="background: rgba(30, 64, 175, 0.06); color: #1e40af;">USA</span>
-                        </div>
-                        <h3 class="accred-card-title">ACBSP – Business Schools</h3>
-                        <p class="accred-card-desc">A leading global business education accrediting body recognized by the US Department of Education, focusing on teaching excellence and student outcomes.</p>
-                        <a href="https://ideas.edu.vn/wp-content/uploads/2026/06/acbsp.webp" class="accred-cert-preview lightbox-trigger">
-                            <div class="cert-img-box">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/acbsp.webp" alt="ACBSP Certificate Preview" />
-                            </div>
-                            <div class="cert-details">
-                                <span>View original certificate</span>
-                                <i class="fa-solid fa-magnifying-glass-plus"></i>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Card 6: IACBE -->
-                    <div class="accred-card-new">
-                        <div class="accred-card-header">
-                            <span class="accred-card-logo">IACBE</span>
-                            <span class="accred-card-badge" style="background: rgba(30, 64, 175, 0.06); color: #1e40af;">USA</span>
-                        </div>
-                        <h3 class="accred-card-title">IACBE – Business Education</h3>
-                        <p class="accred-card-desc">A premier international business accreditor recognized by CHEA, evaluating business education quality based on mission and learning outcomes.</p>
-                        <a href="https://ideas.edu.vn/wp-content/uploads/2026/06/iacbe.webp" class="accred-cert-preview lightbox-trigger">
-                            <div class="cert-img-box">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/iacbe.webp" alt="IACBE Certificate Preview" />
-                            </div>
-                            <div class="cert-details">
-                                <span>View original certificate</span>
-                                <i class="fa-solid fa-magnifying-glass-plus"></i>
-                            </div>
-                        </a>
+                    <div class="news-list">
+                        <div class="news-item wp-post-skeleton" style="height: 100px; background: #f1f5f9; border-radius: 20px; margin-bottom: 15px;"></div>
+                        <div class="news-item wp-post-skeleton" style="height: 100px; background: #f1f5f9; border-radius: 20px; margin-bottom: 15px;"></div>
+                        <div class="news-item wp-post-skeleton" style="height: 100px; background: #f1f5f9; border-radius: 20px; margin-bottom: 15px;"></div>
+                        <div class="news-item wp-post-skeleton" style="height: 100px; background: #f1f5f9; border-radius: 20px; margin-bottom: 15px;"></div>
                     </div>
                 </div>
             </div>
@@ -5601,41 +6117,51 @@
                     <div class="faq-accordion">
                         <div class="faq-item">
                             <button type="button" class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: none; border: none; font-size: 0.95rem; font-weight: 700; color: #1e293b; text-align: left; cursor: pointer; outline: none;">
-                                <span>What is the value of an online degree at IDEAS?</span>
+                                <span>Is this a joint training program between IDEAS Institute and the universities?</span>
                                 <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s; color: #64748b;"></i>
                             </button>
                             <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; padding: 0 20px; color: #475569; font-size: 0.88rem; line-height: 1.6;">
-                                <p style="margin-bottom: 16px; margin-top: 0;">All graduation degrees (BBA, MBA, EMBA, DBA) are issued directly by partner foreign universities, completely identical in format, content, and legal value to full-time on-campus programs. Degrees are legalized by the Vietnam Embassy in the host country.</p>
+                                <p style="margin-bottom: 16px; margin-top: 0;">No.<br><br>When you begin a program, you will officially be a student of the university. IDEAS Institute does not directly partner in training with the schools but acts as a bridge, advising unit, and academic support partner throughout your studies and graduation.<br><br>IDEAS helps students access official programs from international universities while supporting them throughout their academic journey and resolving any arising issues to ensure a smooth and effective learning experience.<br><br>All programs, degrees, and certificates are issued directly by the universities and can be consular legalized by the Vietnamese Embassy in the country where the university is headquartered.</p>
                             </div>
                         </div>
 
                         <div class="faq-item">
                             <button type="button" class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: none; border: none; font-size: 0.95rem; font-weight: 700; color: #1e293b; text-align: left; cursor: pointer; outline: none;">
-                                <span>How does IDEAS support students throughout the program?</span>
+                                <span>Does IDEAS Institute organize offline classes, or only support online learning?</span>
                                 <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s; color: #64748b;"></i>
                             </button>
                             <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; padding: 0 20px; color: #475569; font-size: 0.88rem; line-height: 1.6;">
-                                <p style="margin-bottom: 16px; margin-top: 0;">IDEAS provides a supplementary learning system (Vietnamese LMS, AI tutors) and organizes weekend specialized seminars. Academic assistants monitor deadlines, and Vietnamese advisors review final exam drafts to ensure proper study directions and minimize failure rates.</p>
+                                <p style="margin-bottom: 16px; margin-top: 0;">The programs supported by IDEAS Institute are primarily implemented online, offering students flexibility in time and location. However, IDEAS also regularly organizes in-person workshops, special seminars, and networking events for students to connect and learn.</p>
                             </div>
                         </div>
 
                         <div class="faq-item">
                             <button type="button" class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: none; border: none; font-size: 0.95rem; font-weight: 700; color: #1e293b; text-align: left; cursor: pointer; outline: none;">
-                                <span>What if my English is not good enough?</span>
+                                <span>How are IDEAS Institute's special seminars structured, and are they mandatory?</span>
                                 <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s; color: #64748b;"></i>
                             </button>
                             <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; padding: 0 20px; color: #475569; font-size: 0.88rem; line-height: 1.6;">
-                                <p style="margin-bottom: 16px; margin-top: 0;">IDEAS offers translation assistance and specialized seminars in Vietnamese. For admission, universities provide internal placement tests or interviews to evaluate language capability instead of requiring international certificates (IELTS/TOEFL).</p>
+                                <p style="margin-bottom: 16px; margin-top: 0;">IDEAS special seminars are organized online and led by lecturers or industry experts. The content focuses on reinforcing knowledge, addressing questions, and helping students understand the courses deeply as well as apply them in practice. These seminars are optional and do not affect program grades. However, IDEAS encourages students to participate to enhance their knowledge and achieve better academic results. It is also a great opportunity for students to exchange directly with experts, network with peers who are managers and leaders in the same cohort, and receive valuable practical insights.</p>
                             </div>
                         </div>
 
                         <div class="faq-item">
                             <button type="button" class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: none; border: none; font-size: 0.95rem; font-weight: 700; color: #1e293b; text-align: left; cursor: pointer; outline: none;">
-                                <span>Are the degrees recognized by the Vietnam Ministry of Education?</span>
+                                <span>Does the graduation degree of the online international program state 'Online'?</span>
                                 <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s; color: #64748b;"></i>
                             </button>
                             <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; padding: 0 20px; color: #475569; font-size: 0.88rem; line-height: 1.6;">
-                                <p style="margin-bottom: 16px; margin-top: 0;">Partner universities like Swiss UMEF are nationally recognized in Switzerland and internationally accredited by IACBE (US) & EduQua. Degrees are legalized, highly valued globally and in multinational corporations. Under current regulations, 100% online degrees are not yet recognized by the Vietnam MOET for civil service exams, but carry high academic & professional value in private and international sectors.</p>
+                                <p style="margin-bottom: 16px; margin-top: 0;">No. The graduation degree is completely identical in form, content, and legal value to the program taught on campus in Geneva, Switzerland by Swiss UMEF.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button type="button" class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: none; border: none; font-size: 0.95rem; font-weight: 700; color: #1e293b; text-align: left; cursor: pointer; outline: none;">
+                                <span>Can the online international degree be consular legalized?</span>
+                                <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; transition: transform 0.3s; color: #64748b;"></i>
+                            </button>
+                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; padding: 0 20px; color: #475569; font-size: 0.88rem; line-height: 1.6;">
+                                <p style="margin-bottom: 16px; margin-top: 0;">Absolutely. The degree is consular legalized by the Swiss Ministry of Foreign Affairs / the Vietnamese Embassy in Switzerland, ensuring full international legal validity.</p>
                             </div>
                         </div>
                     </div>
@@ -5751,7 +6277,148 @@
         </main>
 
 
-    <!-- Footer removed for WordPress embed -->
+    <footer class="ideas_footer">
+        <div class="footer-columns-wrap">
+            <!-- Column 1: Logo, description, social icons -->
+            <div class="footer-col-about">
+                <img loading="lazy" src="https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp"
+                    alt="IDEAS Logo" class="footer-logo-ideas" />
+                <p class="footer-desc-ideas">IDEAS – Professional academic support for international Bachelor's, Master's, and Doctoral programs, empowering career growth and global integration.</p>
+                <div class="ideas_follow_new">
+                    <a target="_blank" href="https://zalo.me/3857867121882640296" class="social-icon zalo" rel="nofollow noopener noreferrer" title="Zalo">
+                        <img loading="lazy" src="https://hidosport.vn/wp-content/uploads/2023/09/zalo-icon.png" alt="Zalo" />
+                    </a>
+                    <a target="_blank" href="https://www.facebook.com/ideas.edu.vn/" class="social-icon facebook" rel="nofollow noopener noreferrer" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a target="_blank" href="https://www.youtube.com/c/Vi%E1%BB%87nIDEAS" class="social-icon youtube" rel="nofollow noopener noreferrer" title="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/company/ideasinstitute/" class="social-icon linkedin" rel="nofollow noopener noreferrer" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a target="_blank" href="https://www.tiktok.com/@ideas_institute" class="social-icon tiktok" rel="nofollow noopener noreferrer" title="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Main Menu -->
+            <div class="footer-col-links">
+                <h5>Main Menu</h5>
+                <a href="/en" data-wpel-link="internal">Home</a>
+                <a href="/en/doi-ngu-giang-vien" data-wpel-link="internal">Academic Board</a>
+                <a href="/en/so-do-to-chuc" data-wpel-link="internal">Organizational Structure</a>
+                <a href="/en/dong-su-kien" data-wpel-link="internal">Events Timeline</a>
+            </div>
+
+            <!-- Column 3: Support -->
+            <div class="footer-col-links">
+                <h5>Programs</h5>
+                <a href="/en/fullbba" data-wpel-link="internal">Full BBA</a>
+                <a href="/en/mba" data-wpel-link="internal">MBA</a>
+                <a href="/en/mscai" data-wpel-link="internal">MSc AI</a>
+                <a href="/en/dual-dba-estiam-rb" data-wpel-link="internal">Dual DBA</a>
+            </div>
+
+            <!-- Column 4: Contact -->
+            <div class="footer-col-contact">
+                <h5>Contact</h5>
+                <p class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>028 2244 2244</span>
+                </p>
+                <p class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>info@ideas.edu.vn</span>
+                </p>
+                <p class="contact-item">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span>Tax ID: 0318949449</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-divider-line"></div>
+
+        <!-- Middle Row: Addresses & Badges -->
+        <div class="footer-middle-row">
+            <div class="footer-addresses">
+                <p class="address-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span><strong>Office:</strong> 4th Floor, Hai Au Building, 39B Truong Son, Ward 2, Tan Binh District, HCMC</span>
+                </p>
+            </div>
+            <div class="footer-badges">
+                <a href="https://www.dmca.com/Protection/Status.aspx?ID=dc41cd4b-8163-4a8c-aee1-e3b1b7ad5643&amp;refurl=https://ideas.edu.vn/"
+                    title="DMCA.com Protection Status" class="dmca-badge-new" rel="nofollow noopener noreferrer">
+                    <img loading="lazy"
+                        src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=dc41cd4b-8163-4a8c-aee1-e3b1b7ad5643"
+                        alt="DMCA.com Protection Status" />
+                </a>
+                <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+            </div>
+        </div>
+
+        <!-- Bottom Row: Copyright & Scroll to top -->
+        <div class="footer-bottom-row">
+            <p class="copyright-text">© <span class="copyright-year">2026</span> IDEAS ACADEMY. Redefining Global Knowledge.</p>
+            <div class="footer-bottom-right">
+                <div class="footer-bottom-links">
+                    <a target="_blank" href="/en/dieu-khoan-su-dung" data-wpel-link="internal">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Terms & Privacy</span>
+                    </a>
+                    <span class="divider">|</span>
+                    <a target="_blank" href="/en/trach-nhiem-mien-tru" data-wpel-link="internal">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Disclaimer</span>
+                    </a>
+                </div>
+                <button type="button" class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <span>Back to top</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="video-modal" role="dialog" aria-modal="true" style="display: none;">
+        <div class="video-modal-overlay" onclick="closeVideoModal()"></div>
+        <div class="video-modal-container">
+            <button class="video-modal-close" onclick="closeVideoModal()" aria-label="Close video">✕</button>
+            <div class="video-modal-content">
+                <div class="iframe-container">
+                    <iframe id="video-modal-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openVideoModal(url) {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('video-modal-iframe');
+            if (!modal || !iframe) return;
+            const autoplayUrl = url.indexOf('?') > -1 ? `${url}&autoplay=1` : `${url}?autoplay=1`;
+            iframe.src = autoplayUrl;
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('open'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('video-modal-iframe');
+            if (!modal || !iframe) return;
+            modal.classList.remove('open');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                iframe.src = '';
+            }, 300);
+            document.body.style.overflow = '';
+        }
+    </script>
 
     <!-- Accreditation Modal -->
     <div class="accred-modal" id="accred-modal" role="dialog" aria-modal="true" aria-hidden="true">
@@ -5780,7 +6447,7 @@
             <div class="reg-modal-content">
                 <header class="modal-form-header">
                     <div class="modal-badge">1:1 ADVISORY</div>
-                    <h3>Start the Journey <br><span class="gradient-text">Bachelor of Business Administration (BBA)</span></h3>
+                    <h3>Start the Journey <br><span class="gradient-text" id="modal-program-title">Bachelor of Business Administration (BBA)</span></h3>
                     <p>An admissions specialist will contact you within 24 working hours to design your path.</p>
                 </header>
 
@@ -6281,8 +6948,8 @@
         </div>
     </div>
 
-    <script src="../common-assets/js/script.min.js?v=1780753238864" defer></script>
-    <script src="../common-assets/js/booking-modal.min.js?v=1780753238864" defer></script>
+    <script src="../common-assets/js/script.min.js?v=1780762251938" defer></script>
+    <script src="../common-assets/js/booking-modal.min.js?v=1780762251938" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
@@ -6962,48 +7629,21 @@
 
             function showResult() {
                 const type = classify();
-                const matchedProg = PROGRAM_DETAILS[type];
+                const resolvedKey = {
+                    'EMBA': 'IDEAS03',
+                    'MBA': 'IDEAS02',
+                    'MBA_AI': 'IDEAS05',
+                    'MSC_AI': 'IDEAS04',
+                    'BBA': 'IDEAS07',
+                    'FULL_BBA': 'IDEAS01',
+                    'DUAL_DBA': 'IDEAS06'
+                }[type] || 'IDEAS01';
 
-                body.style.display = 'none';
-                const progressWrap = document.querySelector('.qz-progress-wrap');
-                if (progressWrap) progressWrap.style.display = 'none';
+                close(); // Close quiz modal
 
-                const iconEl = document.getElementById('qz-result-icon');
-                const grpEl = document.getElementById('qz-result-group');
-                const titleEl = document.getElementById('qz-result-title');
-                const msgEl = document.getElementById('qz-result-msg');
-
-                if (type === CURRENT_PROGRAM) {
-                    iconEl.innerHTML = '<i class="fa-solid fa-award"></i>';
-                    grpEl.textContent = 'Confirmation: This is the perfect program for you!';
-                    grpEl.className = 'qz-result-group qz-result-group--strategic';
-                    titleEl.textContent = `You are highly suitable for ${matchedProg.name}!`;
-                    msgEl.innerHTML = `Your choice matches this program perfectly. The program helps you to <strong>${matchedProg.highlight}</strong>.`;
-                    ctaBtn.textContent = 'Get Personalized Path — Free';
-                    ctaBtn.href = 'javascript:void(0)';
-                    ctaBtn.onclick = function (e) {
-                        e.preventDefault();
-                        close();
-                        if (typeof window.openRegModal === 'function') {
-                            window.openRegModal('quiz_result');
-                        }
-                    };
-                } else {
-                    iconEl.innerHTML = '<i class="fa-solid fa-lightbulb"></i>';
-                    grpEl.textContent = CURRENT_PROGRAM ? 'Recommended Program' : 'Recommended Program';
-                    grpEl.className = 'qz-result-group';
-                    titleEl.textContent = CURRENT_PROGRAM ? `You are a better fit for ${matchedProg.name}!` : `You are best suited for ${matchedProg.name}!`;
-                    msgEl.innerHTML = `Your responses reflect a focus on <strong>${matchedProg.highlight}</strong>. Please explore this program to achieve the highest efficiency.`;
-                    ctaBtn.textContent = CURRENT_PROGRAM ? `Explore the ${type} →` : `Explore Now →`;
-                    ctaBtn.href = matchedProg.url;
-                    ctaBtn.onclick = function (e) {
-                        e.preventDefault();
-                        close();
-                        window.location.href = matchedProg.url;
-                    };
+                if (typeof openPathfinderModal === 'function') {
+                    openPathfinderModal([resolvedKey]);
                 }
-
-                resultEl.classList.add('qz-active');
             }
 
             qContainer.addEventListener('click', function (e) {
@@ -7597,7 +8237,9 @@
             if (!modal || !body) return;
 
             let matches = [];
-            if (eduLevel === 'highschool') {
+            if (Array.isArray(eduLevel)) {
+                matches = eduLevel;
+            } else if (eduLevel === 'highschool') {
                 matches = ['IDEAS01'];
             } else if (eduLevel === 'college') {
                 matches = ['IDEAS07'];
@@ -7611,6 +8253,26 @@
             
             const isEnglish = window.location.pathname.indexOf('/en/') !== -1;
             
+            const progImages = {
+                'IDEAS01': 'https://ideas.edu.vn/wp-content/uploads/2026/06/online_bba.webp',
+                'IDEAS07': 'https://ideas.edu.vn/wp-content/uploads/2026/02/TOPUP.webp',
+                'IDEAS02': 'https://ideas.edu.vn/wp-content/uploads/2025/09/online-mba-1.png.webp',
+                'IDEAS03': 'https://ideas.edu.vn/wp-content/uploads/2025/09/emba.png.webp',
+                'IDEAS05': 'https://ideas.edu.vn/wp-content/uploads/2026/06/mba_in_ai.webp',
+                'IDEAS04': 'https://ideas.edu.vn/wp-content/uploads/2025/09/mscai.png.webp',
+                'IDEAS06': 'https://ideas.edu.vn/wp-content/uploads/2025/10/Dual-DBA.webp'
+            };
+
+            const progSubtitles = {
+                'IDEAS01': isEnglish ? 'Bachelor of Business Administration' : 'Cử nhân Quản trị Kinh doanh',
+                'IDEAS07': isEnglish ? 'Top-up BBA' : 'Liên thông Cử nhân QTKD',
+                'IDEAS02': isEnglish ? 'Master of Business Administration' : 'Thạc sĩ Quản trị Kinh doanh',
+                'IDEAS03': isEnglish ? 'Executive MBA' : 'Thạc sĩ Điều hành QTKD',
+                'IDEAS05': isEnglish ? 'MBA in AI' : 'Thạc sĩ QTKD Ứng dụng AI',
+                'IDEAS04': isEnglish ? 'MSc AI' : 'Thạc sĩ Khoa học Trí tuệ Nhân tạo',
+                'IDEAS06': isEnglish ? 'Dual DBA' : 'Tiến sĩ Quản trị Kinh doanh Song bằng'
+            };
+
             matches.forEach(key => {
                 const prog = IDEAS_DATA.programmes[key];
                 if (!prog) return;
@@ -7624,41 +8286,47 @@
                 let durationLbl = isEnglish ? 'Duration:' : 'Thời gian:';
 
                 const card = document.createElement('div');
-                card.style.background = '#f8fafc';
-                card.style.border = '1px solid #e2e8f0';
-                card.style.borderRadius = '16px';
-                card.style.padding = '20px';
-                card.style.display = 'flex';
-                card.style.flexDirection = 'column';
-                card.style.gap = '12px';
-                card.style.textAlign = 'left';
+                card.className = 'prog-card-new';
+                card.id = `pathfinder-card-${key}`;
                 
                 card.innerHTML = `
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
-                        <div>
-                            <h4 style="font-size: 1.1rem; font-weight: 900; color: var(--clr-navy); margin: 0; line-height: 1.35;">${prog.name}</h4>
-                            <div style="font-size: 0.76rem; color: #64748b; font-weight: 600; margin-top: 4px;">${schoolLbl} ${prog.school}</div>
+                    <div>
+                        <div class="prog-card-header">
+                            <span class="prog-card-badge">${prog.level}</span>
+                            <div class="prog-card-school">
+                                <i class="fa-solid fa-building-columns"></i>
+                                <span>${prog.school} | ${prog.country}</span>
+                            </div>
                         </div>
-                        <span style="font-size: 0.72rem; font-weight: 800; color: #ab0e00; text-transform: uppercase; background: rgba(171, 14, 0, 0.06); padding: 3px 8px; border-radius: 99px; white-space: nowrap; letter-spacing: 0.05em;">${prog.level}</span>
+                        <div class="prog-avatar-container">
+                            <img src="${progImages[key] || prog.avatar}" alt="${prog.name}" />
+                        </div>
+                        <div class="prog-card-title-group">
+                            <h3 class="prog-card-title-new">${prog.name}</h3>
+                            <div class="prog-card-subtitle-new">${progSubtitles[key]}</div>
+                        </div>
+                        <p class="prog-card-desc-new">${prog.description}</p>
                     </div>
-                    <p style="font-size: 0.84rem; color: #475569; line-height: 1.5; margin: 0;">${prog.description}</p>
-                    <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.78rem; color: #475569; background: #ffffff; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #f1f5f9;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="color:#64748b;">${durationLbl}</span>
-                            <strong>${durText}</strong>
+                    <div>
+                        <div class="prog-card-specs">
+                            <div class="prog-spec-item">
+                                <span class="prog-spec-label">${durationLbl}</span>
+                                <strong class="prog-spec-value">${durText}</strong>
+                            </div>
+                            <div class="prog-spec-item">
+                                <span class="prog-spec-label">${isEnglish ? 'Structure:' : 'Cấu trúc môn:'}</span>
+                                <strong class="prog-spec-value">${subText.replace(/<\/?b>/g, '')}</strong>
+                            </div>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="color:#64748b;">${isEnglish ? 'Structure:' : 'Cấu trúc:'}</span>
-                            <strong style="text-align: right; max-width: 65%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${subText.replace(/<\/?b>/g, '')}">${subText.replace(/<\/?b>/g, '')}</strong>
+                        <div class="prog-card-actions">
+                            <button type="button" class="prog-btn-detail" onclick="viewProgramDetails('${key}')">${detailLbl}</button>
+                            <button type="button" class="prog-btn-inquire" onclick="inquireProgram('${key}')">${inquireLbl}</button>
                         </div>
-                    </div>
-                    <div style="display: flex; gap: 8px; margin-top: 4px;">
-                        <button type="button" class="btn btn-outline" style="flex: 1; padding: 8px; font-size: 0.76rem; border-radius: 8px;" onclick="viewProgramDetails('${key}')">${detailLbl}</button>
-                        <button type="button" class="btn btn-primary" style="flex: 1; padding: 8px; font-size: 0.76rem; border-radius: 8px;" onclick="inquireProgram('${key}')">${inquireLbl}</button>
                     </div>
                 `;
                 body.appendChild(card);
             });
+            if (typeof initCardTiltGlow === 'function') initCardTiltGlow();
 
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
@@ -7804,6 +8472,69 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeCompareModal();
         });
+
+        // Initialize mobile card sliders (snapping + dots)
+        function initMobileSliders() {
+            const sliders = [
+                { gridSelector: '.catalog-grid-new', dotContainerClass: 'catalog-dots' },
+                { gridSelector: '.activities-grid', dotContainerClass: 'activities-dots' }
+            ];
+
+            sliders.forEach(sliderConfig => {
+                const grid = document.querySelector(sliderConfig.gridSelector);
+                if (!grid) return;
+
+                // Find or create dot container
+                let dotContainer = grid.parentNode.querySelector('.' + sliderConfig.dotContainerClass);
+                if (!dotContainer) {
+                    dotContainer = document.createElement('div');
+                    dotContainer.className = `slider-dots-container ${sliderConfig.dotContainerClass}`;
+                    grid.parentNode.insertBefore(dotContainer, grid.nextSibling);
+                }
+
+                const cards = grid.querySelectorAll('.prog-card-new, .activity-card');
+                const cardCount = cards.length;
+                if (cardCount <= 1) return;
+
+                // Clear and rebuild dots
+                dotContainer.innerHTML = '';
+                for (let i = 0; i < cardCount; i++) {
+                    const dot = document.createElement('span');
+                    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                    dot.addEventListener('click', () => {
+                        const cardWidth = cards[0].offsetWidth + 16; // width + gap
+                        grid.scrollTo({
+                            left: i * cardWidth,
+                            behavior: 'smooth'
+                        });
+                    });
+                    dotContainer.appendChild(dot);
+                }
+
+                // Listen for scroll to update active dot
+                grid.addEventListener('scroll', () => {
+                    const scrollLeft = grid.scrollLeft;
+                    const cardWidth = cards[0].offsetWidth + 16;
+                    const activeIndex = Math.round(scrollLeft / cardWidth);
+                    
+                    const dots = dotContainer.querySelectorAll('.slider-dot');
+                    dots.forEach((dot, idx) => {
+                        if (idx === activeIndex) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        }
+        
+        // Run initialization
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMobileSliders);
+        } else {
+            initMobileSliders();
+        }
     </script>
 </body>
 
