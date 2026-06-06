@@ -2302,10 +2302,8 @@ function initReadingProgressAndSideNav() {
         }
     }, { passive: true });
 
-    // 2. Floating Scroll-Spy Dot Navigation
-    // We only build it if we are on a page containing #trang-chu
-    const homeHero = document.getElementById('trang-chu');
-    if (!homeHero) return;
+    // 2. Floating Scroll-Spy Dot Navigation (Disabled as per user request)
+    return;
 
     const isEnglish = window.location.pathname.includes('/en/');
 
