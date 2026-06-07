@@ -261,9 +261,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="common-assets/css/style.min.css?v=1780810134019" as="style" />
-    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780810134019" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780810134019" />
+    <link rel="preload" href="common-assets/css/style.min.css?v=1780811228645" as="style" />
+    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780811228645" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780811228645" />
     <style>
         @media (min-width: 992px) {
             .BBA-grid {
@@ -9660,9 +9660,9 @@
         </div>
     </div>
 
-    <script src="common-assets/js/variables.min.js?v=1780810134019" defer></script>
-    <script src="common-assets/js/script.min.js?v=1780810134019" defer></script>
-    <script src="common-assets/js/booking-modal.min.js?v=1780810134019" defer></script>
+    <script src="common-assets/js/variables.min.js?v=1780811228645" defer></script>
+    <script src="common-assets/js/script.min.js?v=1780811228645" defer></script>
+    <script src="common-assets/js/booking-modal.min.js?v=1780811228645" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
@@ -11138,15 +11138,38 @@
 
         function viewProgramDetails(key) {
             closePathfinderModal();
-            const card = document.getElementById(`catalog-card-${key}`);
-            if (card) {
-                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                card.style.borderColor = 'var(--clr-primary)';
-                card.style.boxShadow = '0 0 25px rgba(171, 14, 0, 0.3)';
-                setTimeout(() => {
-                    card.style.borderColor = '';
-                    card.style.boxShadow = '';
-                }, 3000);
+            const urls = {
+                'IDEAS01': '/fullbba',
+                'IDEAS07': '/bba',
+                'IDEAS02': '/mba',
+                'IDEAS03': '/emba',
+                'IDEAS05': '/mbainai',
+                'IDEAS04': '/mscai',
+                'IDEAS06': '/dual-dba-estiam-rb'
+            };
+            const localUrls = {
+                'IDEAS01': 'fullbba.html',
+                'IDEAS07': 'bba.html',
+                'IDEAS02': 'mba.html',
+                'IDEAS03': 'emba.html',
+                'IDEAS05': 'mbainai.html',
+                'IDEAS04': 'mscai.html',
+                'IDEAS06': 'dual-dba.html'
+            };
+            const currentHref = window.location.href;
+            const isLocal = currentHref.includes('localhost') || currentHref.includes('127.0.0.1') || currentHref.startsWith('file:///');
+            const targetUrl = isLocal ? localUrls[key] : urls[key];
+            
+            if (targetUrl) {
+                window.location.href = targetUrl;
+            } else {
+                // fallback scroll
+                const card = document.getElementById(`catalog-card-${key}`);
+                if (card) {
+                    const container = document.getElementById('all-programs-container');
+                    if (container) container.style.display = 'block';
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
             }
         }
 
