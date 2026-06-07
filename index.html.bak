@@ -90,7 +90,7 @@
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Tầng 4, Tòa nhà Hải Âu, 39B Trường Sơn",
-            "addressLocality": "Phường 2, Quận Tân Bình",
+            "addressLocality": "Phường Tân Sơn Nhất",
             "addressRegion": "Thành phố Hồ Chí Minh",
             "postalCode": "700000",
             "addressCountry": "VN"
@@ -8766,8 +8766,7 @@
             <div class="footer-addresses">
                 <p class="address-item">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span><strong>Văn phòng:</strong> Tầng 4, Tòa nhà Hải Âu, 39B Trường Sơn, Phường 2, Quận Tân Bình,
-                        TP.HCM</span>
+                    <span><strong>Văn phòng:</strong> Tầng 4, Tòa nhà Hải Âu, 39B Trường Sơn, Phường Tân Sơn Nhất, TP.HCM</span>
                 </p>
             </div>
             <div class="footer-badges">
