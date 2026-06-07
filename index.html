@@ -261,9 +261,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="common-assets/css/style.min.css?v=1780809164756" as="style" />
-    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780809164756" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780809164756" />
+    <link rel="preload" href="common-assets/css/style.min.css?v=1780809324015" as="style" />
+    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780809324015" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780809324015" />
     <style>
         @media (min-width: 992px) {
             .BBA-grid {
@@ -7979,6 +7979,10 @@
                 gap: 20px;
             }
 
+            .acc-sac-cert-link {
+                display: none;
+            }
+
             .acc-sac-logo-wrap img {
                 height: 80px;
                 width: auto;
@@ -8365,17 +8369,39 @@
                     white-space: nowrap !important;
                 }
 
-                /* Stack logo and text vertically on mobile */
+                /* Stack logo and text vertically on mobile, showing certificate image instead of logo */
                 .acc-sac-logo-wrap {
                     flex-direction: column !important;
-                    align-items: flex-start !important;
+                    align-items: center !important;
+                    text-align: center !important;
                     gap: 16px !important;
                     margin-bottom: 24px !important;
                 }
 
-                .acc-sac-logo-wrap img {
-                    width: 140px !important;
+                .acc-sac-logo-img {
+                    display: none !important;
+                }
+
+                .acc-sac-cert-link {
+                    display: block !important;
+                    width: 100% !important;
+                    max-width: 240px !important;
+                    margin: 0 auto !important;
+                }
+
+                .acc-sac-cert-img {
+                    width: 100% !important;
                     height: auto !important;
+                    border-radius: 8px !important;
+                    border: 1px solid rgba(171, 14, 0, 0.2) !important;
+                    display: block !important;
+                    padding: 0 !important;
+                    background: transparent !important;
+                }
+
+                .acc-sac-logo-text {
+                    text-align: center !important;
+                    width: 100% !important;
                 }
 
                 /* 5 cards as horizontal slider with dots on mobile */
@@ -8465,7 +8491,13 @@
                     <div class="acc-sac-right">
                         <div class="acc-sac-logo-wrap">
                             <img src="https://ideas.edu.vn/wp-content/new_public/data_imgs/kdumef1.png"
+                                class="acc-sac-logo-img"
                                 alt="Logo SAC - Swiss Accreditation Council" loading="lazy" decoding="async" />
+                            <a href="https://ideas.edu.vn/wp-content/uploads/2026/06/sac.webp" target="_blank" rel="noopener noreferrer" class="acc-sac-cert-link">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/sac.webp"
+                                    class="acc-sac-cert-img"
+                                    alt="Chứng nhận SAC - Swiss Accreditation Council" loading="lazy" decoding="async" />
+                            </a>
                             <div class="acc-sac-logo-text">
                                 <h4>Swiss Accreditation Council</h4>
                                 <p>Cơ quan kiểm định liên bang Thụy Sĩ<br>Công nhận chính thức từ Hội đồng Giáo dục Thụy
@@ -9552,9 +9584,9 @@
         </div>
     </div>
 
-    <script src="common-assets/js/variables.min.js?v=1780809164756" defer></script>
-    <script src="common-assets/js/script.min.js?v=1780809164756" defer></script>
-    <script src="common-assets/js/booking-modal.min.js?v=1780809164756" defer></script>
+    <script src="common-assets/js/variables.min.js?v=1780809324015" defer></script>
+    <script src="common-assets/js/script.min.js?v=1780809324015" defer></script>
+    <script src="common-assets/js/booking-modal.min.js?v=1780809324015" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
