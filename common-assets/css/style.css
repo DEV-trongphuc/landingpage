@@ -12674,3 +12674,115 @@ body .pain-card-desc {
   visibility: visible !important;
   transform: translateX(0) !important;
 }
+
+/* ─── BACKGROUND FLOATING DECOR ICONS ─── */
+.section-bg-decor {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  overflow: hidden !important;
+}
+
+.bg-decor-icon {
+  position: absolute !important;
+  color: rgba(239, 68, 68, 0.05) !important;
+  font-size: clamp(3.2rem, 7vw, 5rem) !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  animation: float-drift 28s infinite ease-in-out !important;
+  z-index: 1 !important;
+}
+
+@keyframes float-drift {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-28px) translateX(12px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.decor-lg {
+  font-size: clamp(4.5rem, 10vw, 7.5rem) !important;
+}
+
+.decor-md {
+  font-size: clamp(3.2rem, 7vw, 5rem) !important;
+}
+
+.decor-sm {
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+}
+
+.decor-white {
+  color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Elevate main section containers above background icons */
+.hero .container,
+.counters-section .container,
+.about-section .container,
+.pain-section .container,
+.pathfinder-container,
+.ai-advisor-container,
+.solution-section .container,
+.activities-section .container,
+.blog-section .container,
+.acc-inner,
+.ecosystem-section .container,
+.pricing-section .container,
+.curriculum-section .container,
+.enroll-section .container,
+.cta-section .container {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* ─── PARTNER CONNECTION WIDGET ─── */
+@keyframes connect-flow {
+  0% {
+    left: -80px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.partner-connection-widget {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border-top: 4px solid #ab0e00 !important;
+}
+.partner-connection-widget:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08) !important;
+  border-color: #ff2a1a !important;
+}
+.connect-glowing-dot {
+  position: absolute;
+  top: 0 !important;
+  left: -80px;
+  width: 80px !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, #ab0e00, transparent) !important;
+  animation: connect-flow 2s infinite ease-in-out !important;
+}
+.connect-anchor-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: #ab0e00;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 6px rgba(171, 14, 0, 0.6);
+  transition: all 0.3s ease;
+}
+.partner-connection-widget:hover .connect-anchor-dot {
+  background: #ff2a1a;
+  box-shadow: 0 0 10px #ff2a1a;
+  transform: translate(-50%, -50%) scale(1.3);
+}
