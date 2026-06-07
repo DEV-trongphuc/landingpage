@@ -261,9 +261,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="common-assets/css/style.min.css?v=1780807339211" as="style" />
-    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780807339211" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780807339211" />
+    <link rel="preload" href="common-assets/css/style.min.css?v=1780809164756" as="style" />
+    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780809164756" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780809164756" />
     <style>
         @media (min-width: 992px) {
             .BBA-grid {
@@ -2595,6 +2595,23 @@
                 /* Increased touch target */
                 font-size: 1.1rem;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            }
+            .mobile-menu a:last-child {
+                border-bottom: none !important;
+            }
+
+            /* Make simple dropdown items scrollable if too long */
+            .mobile-dropdown.expanded:not(.expanded-default) .mobile-dropdown-content {
+                max-height: 280px !important;
+                overflow-y: auto !important;
+            }
+            .mobile-dropdown-item-simple {
+                font-size: 0.8rem !important;
+                padding: 6px 12px !important;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.02) !important;
+            }
+            .mobile-dropdown-item-simple:last-of-type {
+                border-bottom: none !important;
             }
 
             .ecosystem-section {
@@ -5836,8 +5853,8 @@
                 <a href="https://www.estiam.education/" target="_blank" class="mobile-dropdown-item-simple">Estiam</a>
             </div>
         </div>
-        <div class="mobile-dropdown">
-            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+        <div class="mobile-dropdown expanded expanded-default">
+            <button type="button" class="mobile-dropdown-toggle" aria-expanded="true">
                 Chương trình
                 <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -8240,20 +8257,70 @@
 
             @media (max-width: 560px) {
                 .acc-section {
-                    padding: 60px 0 20px !important;
+                    padding: 40px 0 20px !important; /* Reduced top padding */
                 }
 
                 .acc-inner {
-                    padding: 0 20px;
+                    padding: 0 16px !important;
+                }
+
+                .acc-header {
+                    margin-bottom: 24px !important; /* Reduced vertical spacing from description to card */
+                }
+
+                .acc-sac-hero {
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    box-sizing: border-box !important;
+                    width: 100% !important;
                 }
 
                 .acc-sac-left,
                 .acc-sac-right {
-                    padding: 32px 24px;
+                    padding: 24px 16px !important; /* Centered, padding normalized */
+                    width: 100% !important;
+                    box-sizing: border-box !important;
                 }
 
-                .acc-card {
-                    padding: 20px 14px;
+                /* Fixed misaligned columns and text wrapper issue for points list */
+                .acc-sac-points {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: stretch !important;
+                    width: 100% !important;
+                    padding: 0 !important;
+                    margin: 0 0 20px 0 !important;
+                    gap: 12px !important;
+                }
+
+                .acc-sac-points li {
+                    display: block !important;
+                    position: relative !important;
+                    padding-left: 24px !important;
+                    text-align: left !important;
+                    width: 100% !important;
+                    font-size: 0.85rem !important;
+                    line-height: 1.45 !important;
+                }
+
+                .acc-sac-points li i {
+                    position: absolute !important;
+                    left: 0 !important;
+                    top: 4px !important;
+                    margin: 0 !important;
+                    display: inline-block !important;
+                }
+
+                /* Ensure the text container wraps inline */
+                .acc-sac-points li span {
+                    display: inline !important;
+                    width: auto !important;
+                }
+
+                /* Force strong inside points list to behave inline without inherited grid behavior */
+                .acc-sac-points li strong {
+                    display: inline !important;
+                    font-weight: 800 !important;
                 }
 
                 /* 3 stats items in 1 row on mobile */
@@ -8406,12 +8473,9 @@
                             </div>
                         </div>
                         <ul class="acc-sac-points">
-                            <li><i class="fa-solid fa-circle-check"></i>Bằng cấp được hợp pháp hóa lãnh sự tại Đại sứ
-                                quán Việt Nam tại Thụy Sĩ</li>
-                            <li><i class="fa-solid fa-circle-check"></i>Chương trình đạt chuẩn châu Âu — ECTS tín chỉ
-                                quốc tế</li>
-                            <li><i class="fa-solid fa-circle-check"></i>Swiss UMEF là trường đại học tư thục <strong>đầu
-                                    tiên tại Geneva</strong> đạt kiểm định SAC chính thức</li>
+                            <li><i class="fa-solid fa-circle-check"></i><span>Bằng cấp được hợp pháp hóa lãnh sự tại Đại sứ quán Việt Nam tại Thụy Sĩ</span></li>
+                            <li><i class="fa-solid fa-circle-check"></i><span>Chương trình đạt chuẩn châu Âu — ECTS tín chỉ quốc tế</span></li>
+                            <li><i class="fa-solid fa-circle-check"></i><span>Swiss UMEF là trường đại học tư thục <strong>đầu tiên tại Geneva</strong> đạt kiểm định SAC chính thức</span></li>
                         </ul>
                         <div class="acc-sac-cert-strip">
                             <a href="https://ideas.edu.vn/wp-content/uploads/2026/06/sac.webp"
@@ -9488,9 +9552,9 @@
         </div>
     </div>
 
-    <script src="common-assets/js/variables.min.js?v=1780807339211" defer></script>
-    <script src="common-assets/js/script.min.js?v=1780807339211" defer></script>
-    <script src="common-assets/js/booking-modal.min.js?v=1780807339211" defer></script>
+    <script src="common-assets/js/variables.min.js?v=1780809164756" defer></script>
+    <script src="common-assets/js/script.min.js?v=1780809164756" defer></script>
+    <script src="common-assets/js/booking-modal.min.js?v=1780809164756" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
