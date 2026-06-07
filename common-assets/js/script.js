@@ -158,16 +158,6 @@ const isEn = document.documentElement.lang === 'en';
                 hamburger.classList.add('active');
                 hamburger.setAttribute('aria-expanded', 'true');
                 if (mobileOverlay) mobileOverlay.classList.add('visible');
-
-                // Auto-expand "Chương trình" dropdown
-                const dropdowns = mobileMenu.querySelectorAll('.mobile-dropdown');
-                dropdowns.forEach(dropdown => {
-                    const toggleBtn = dropdown.querySelector('.mobile-dropdown-toggle');
-                    if (toggleBtn && (toggleBtn.textContent.trim().includes('Chương trình') || toggleBtn.textContent.trim().includes('Programs'))) {
-                        toggleBtn.setAttribute('aria-expanded', 'true');
-                        dropdown.classList.add('expanded');
-                    }
-                });
             }
         });
 
@@ -1447,11 +1437,6 @@ const isEn = document.documentElement.lang === 'en';
         dropdowns.forEach(dropdown => {
             const toggleBtn = dropdown.querySelector('.mobile-dropdown-toggle');
             if (toggleBtn) {
-                // Default expand Programs / Chương trình dropdown on load
-                if (toggleBtn.textContent.trim().includes('Chương trình') || toggleBtn.textContent.trim().includes('Programs')) {
-                    toggleBtn.setAttribute('aria-expanded', 'true');
-                    dropdown.classList.add('expanded');
-                }
                 toggleBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
