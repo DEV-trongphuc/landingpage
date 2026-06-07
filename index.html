@@ -261,9 +261,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="common-assets/css/style.min.css?v=1780809324015" as="style" />
-    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780809324015" />
-    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780809324015" />
+    <link rel="preload" href="common-assets/css/style.min.css?v=1780810134019" as="style" />
+    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780810134019" />
+    <link rel="stylesheet" href="common-assets/css/booking-modal.min.css?v=1780810134019" />
     <style>
         @media (min-width: 992px) {
             .BBA-grid {
@@ -6028,6 +6028,11 @@
         ══════════════════════════════════════════ -->
         <section class="hero" id="trang-chu" aria-labelledby="hero-headline">
             <div class="hero-bg">
+                <!-- Localized Background Decor -->
+                <div class="section-bg-decor">
+                    <i class="fa-solid fa-graduation-cap bg-decor-icon decor-lg" style="top: 15%; left: 5%; animation-duration: 28s;"></i>
+                    <i class="fa-solid fa-book bg-decor-icon decor-white decor-sm" style="top: 55%; right: 5%; animation-duration: 32s;"></i>
+                </div>
                 <div class="hero-orb hero-orb-1"></div>
                 <div class="hero-orb hero-orb-2"></div>
                 <div class="hero-grid"></div>
@@ -6092,14 +6097,12 @@
                     <h1 class="hero-headline" id="hero-headline"
                         style="font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.15; color: var(--clr-navy); margin: 0 0 24px 0; letter-spacing: -0.02em; text-align: center;">
                         Chinh Phục Tấm Bằng<br />
-                        <span class="gradient-text">Thạc sĩ & Cử nhân Quốc tế</span>
+                        <span class="gradient-text">Quốc Tế Trực Tuyến</span>
                     </h1>
 
                     <p class="hero-sub"
                         style="font-size: clamp(0.95rem, 1.5vw, 1.1rem); color: #475569; line-height: 1.65; margin: 0 auto 36px auto; max-width: 700px; font-weight: 400; text-align: center;">
-                        Đồng hành cùng học viên Việt Nam chinh phục các chương trình đại học & sau đại học trực tuyến từ
-                        Thụy Sĩ, Pháp, Mỹ. Tối ưu chi phí, học tập linh hoạt với sự bổ trợ học thuật chuyên nghiệp cuối
-                        tuần.
+                        IDEAS không chỉ cung cấp các chương trình học; chúng tôi đồng hành cùng bạn trên từng trang viết luận, hỗ trợ bạn qua từng kỳ thi và tiếp thêm động lực cho đến ngày bạn kiêu hãnh cầm trên tay tấm bằng quốc tế tại Geneva.
                     </p>
 
                     <!-- Info Badges Row -->
@@ -6356,6 +6359,11 @@
         ══════════════════════════════════════════ -->
         <section class="pain-section" id="thach-thuc" aria-labelledby="pain-headline">
             <div class="pain-bg-decoration" aria-hidden="true">
+                <!-- Localized Background Decor -->
+                <div class="section-bg-decor">
+                    <i class="fa-solid fa-lightbulb bg-decor-icon decor-lg" style="top: 35%; left: 4%; animation-duration: 24s;"></i>
+                    <i class="fa-solid fa-graduation-cap bg-decor-icon decor-white decor-sm" style="top: 75%; right: 6%; animation-duration: 30s;"></i>
+                </div>
                 <div class="pain-bg-orb pain-orb-1"></div>
                 <div class="pain-bg-orb pain-orb-2"></div>
             </div>
@@ -6567,6 +6575,11 @@
             </div>
             <div
                 style="position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%); bottom: -200px; right: -100px; pointer-events: none; filter: blur(90px); z-index: 1;">
+            </div>
+            <!-- Localized Background Decor -->
+            <div class="section-bg-decor">
+                <i class="fa-solid fa-school bg-decor-icon decor-lg" style="top: 45%; left: 3%; animation-duration: 25s; color: rgba(239, 68, 68, 0.055);"></i>
+                <i class="fa-solid fa-graduation-cap bg-decor-icon decor-md" style="top: 35%; right: 3%; animation-duration: 32s; color: rgba(239, 68, 68, 0.055);"></i>
             </div>
             <div class="container" style="position: relative; z-index: 2;">
                 <div style="text-align: center; margin-bottom: 16px;">
@@ -7720,6 +7733,65 @@
         </section>
 
         <style>
+            /* ── LOCALIZED BACKGROUND DECOR ICONS ── */
+            .section-bg-decor {
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                z-index: 1;
+                overflow: hidden;
+            }
+            .bg-decor-icon {
+                position: absolute;
+                color: rgba(239, 68, 68, 0.05);
+                font-size: clamp(3.2rem, 7vw, 5rem); /* default medium size */
+                pointer-events: none;
+                user-select: none;
+                animation: float-drift 28s infinite ease-in-out; /* ease-in-out feels more organic than linear for floating */
+                z-index: 1;
+            }
+            @keyframes float-drift {
+                0% {
+                    transform: translateY(0) translateX(0);
+                }
+                50% {
+                    transform: translateY(-28px) translateX(12px);
+                }
+                100% {
+                    transform: translateY(0) translateX(0);
+                }
+            }
+            /* Size variants */
+            .decor-lg {
+                font-size: clamp(4.5rem, 10vw, 7.5rem) !important;
+            }
+            .decor-md {
+                font-size: clamp(3.2rem, 7vw, 5rem) !important;
+            }
+            .decor-sm {
+                font-size: clamp(2rem, 4vw, 3rem) !important;
+            }
+            .decor-white {
+                color: rgba(255, 255, 255, 0.04) !important;
+            }
+
+            /* Ensure section contents stay on top of the floating background icons */
+            .hero .container, 
+            .counters-section .container, 
+            .about-section .container, 
+            .pain-section .container, 
+            .pathfinder-container, 
+            .ai-advisor-container, 
+            .solution-section .container, 
+            .activities-section .container, 
+            .blog-section .container, 
+            .acc-inner, 
+            .ecosystem-section .container, 
+            .pricing-section .container {
+                position: relative;
+                z-index: 2;
+            }
+
             /* ── ACCREDITATION SECTION ── */
             .acc-section {
                 background: linear-gradient(145deg, #0a0f1e 0%, #0f0505 40%, #1a0305 70%, #0a0f1e 100%);
@@ -8440,6 +8512,11 @@
             <div class="acc-orb acc-orb-1"></div>
             <div class="acc-orb acc-orb-2"></div>
             <div class="acc-orb acc-orb-3"></div>
+            <!-- Localized Background Decor -->
+            <div class="section-bg-decor">
+                <i class="fa-solid fa-award bg-decor-icon decor-lg" style="top: 20%; left: 6%; animation-duration: 26s;"></i>
+                <i class="fa-solid fa-globe bg-decor-icon decor-white decor-sm" style="top: 60%; right: 8%; animation-duration: 34s;"></i>
+            </div>
 
             <div class="acc-inner">
                 <!-- Header -->
@@ -8977,8 +9054,7 @@
 
         <!-- Bottom Row: Copyright & Scroll to top -->
         <div class="footer-bottom-row">
-            <p class="copyright-text">© <span class="copyright-year">2026</span> IDEAS ACADEMY. Định Nghĩa Lại Tri Thức
-                Toàn Cầu.</p>
+            <p class="copyright-text">© <span class="copyright-year">2026</span> IDEAS - Đồng hành cùng tri thức toàn cầu.</p>
             <div class="footer-bottom-right">
                 <div class="footer-bottom-links">
                     <a target="_blank" href="/dieu-khoan-su-dung" data-wpel-link="internal">
@@ -9584,9 +9660,9 @@
         </div>
     </div>
 
-    <script src="common-assets/js/variables.min.js?v=1780809324015" defer></script>
-    <script src="common-assets/js/script.min.js?v=1780809324015" defer></script>
-    <script src="common-assets/js/booking-modal.min.js?v=1780809324015" defer></script>
+    <script src="common-assets/js/variables.min.js?v=1780810134019" defer></script>
+    <script src="common-assets/js/script.min.js?v=1780810134019" defer></script>
+    <script src="common-assets/js/booking-modal.min.js?v=1780810134019" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz
