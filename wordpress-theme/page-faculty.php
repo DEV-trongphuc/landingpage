@@ -787,11 +787,10 @@ ob_start(function ($html) {
         <div class="container header-inner">
             <a href="https://ideas.edu.vn/" class="logo" aria-label="Trang chủ IDEAS">
                 <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp"
-                    alt="Logo IDEAS Education - 15 năm thành lập" width="60" height="60" loading="eager"
-                    fetchpriority="high">
+                    alt="Logo IDEAS Education" width="60" height="60" loading="eager" fetchpriority="high">
             </a>
             <nav class="header-nav">
-                <!-- Dropdown 1: Giới thiệu -->
+                <!-- Giới thiệu -->
                 <div class="nav-dropdown">
                     <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                         Giới thiệu
@@ -802,41 +801,20 @@ ob_start(function ($html) {
                         </svg>
                     </button>
                     <div class="dropdown-menu-box simple-dropdown">
-                        <a href="/he-thong-ho-tro-hoc-tap-lms-ideas" class="dropdown-item-simple">
-                            <i class="fa-solid fa-layer-group"></i> <span>Hệ thống LMS</span>
-                        </a>
-                        <a href="/so-do-to-chuc" class="dropdown-item-simple">
-                            <i class="fa-solid fa-sitemap"></i> <span>Cơ cấu tổ chức</span>
-                        </a>
-                        <a href="/doi-ngu-giang-vien" class="dropdown-item-simple">
-                            <i class="fa-solid fa-user-graduate"></i> <span>Hội đồng chuyên môn</span>
-                        </a>
-                        <a href="/dong-su-kien" class="dropdown-item-simple">
-                            <i class="fa-solid fa-clock"></i> <span>Dòng sự kiện</span>
-                        </a>
-                        <a href="/lich-su-hinh-thanh-va-phat-trien-vien-ideas" class="dropdown-item-simple">
-                            <i class="fa-solid fa-landmark"></i> <span>Lịch sử phát triển</span>
-                        </a>
-                        <div class="dropdown-divider-simple"></div>
-                        <div class="dropdown-item-submenu">
-                            <span class="submenu-title">
-                                <span><i class="fa-solid fa-school"></i> Trường đối tác</span>
-                                <i class="fa-solid fa-chevron-right submenu-arrow"></i>
-                            </span>
-                            <div class="submenu-box">
-                                <a href="/swiss-umef" class="dropdown-item-simple">Swiss UMEF</a>
-                                <a href="https://www.ascencia-business-school.com/en/" target="_blank"
-                                    class="dropdown-item-simple">Ascencia Business School</a>
-                                <a href="https://www.collegedeparis.fr/" target="_blank"
-                                    class="dropdown-item-simple">College de Paris</a>
-                                <a href="https://www.estiam.education/" target="_blank"
-                                    class="dropdown-item-simple">Estiam</a>
-                            </div>
-                        </div>
+                        <a href="/he-thong-ho-tro-hoc-tap-lms-ideas" class="dropdown-item-simple"><i
+                                class="fa-solid fa-layer-group"></i> <span>Hệ thống LMS</span></a>
+                        <a href="/so-do-to-chuc" class="dropdown-item-simple"><i class="fa-solid fa-sitemap"></i>
+                            <span>Cơ cấu tổ chức</span></a>
+                        <a href="/doi-ngu-giang-vien" class="dropdown-item-simple" aria-current="page"><i
+                                class="fa-solid fa-user-graduate"></i> <span>Hội đồng chuyên môn</span></a>
+                        <a href="/dong-su-kien" class="dropdown-item-simple"><i class="fa-solid fa-clock"></i>
+                            <span>Dòng sự kiện</span></a>
+                        <a href="/lich-su-hinh-thanh-va-phat-trien-vien-ideas" class="dropdown-item-simple"><i
+                                class="fa-solid fa-landmark"></i> <span>Lịch sử phát triển</span></a>
                     </div>
                 </div>
 
-                <!-- Dropdown 2: Chương trình -->
+                <!-- Chương trình -->
                 <div class="nav-dropdown">
                     <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                         Chương trình
@@ -849,8 +827,7 @@ ob_start(function ($html) {
                     <div class="dropdown-menu-box">
                         <div class="dropdown-column">
                             <div class="dropdown-column-title">Thạc sĩ</div>
-                            <a href="/mba" class="dropdown-item">
-                                <img class="item-avatar"
+                            <a href="/mba" class="dropdown-item"><img class="item-avatar"
                                     src="https://ideas.edu.vn/wp-content/uploads/2025/09/online-mba-1.png.webp"
                                     alt="Online MBA" decoding="async" loading="lazy" />
                                 <div class="item-content">
@@ -858,8 +835,7 @@ ob_start(function ($html) {
                                     <div class="item-desc">Thạc sĩ QTKD Trực tuyến</div>
                                 </div>
                             </a>
-                            <a href="/emba" class="dropdown-item">
-                                <img class="item-avatar"
+                            <a href="/emba" class="dropdown-item"><img class="item-avatar"
                                     src="https://ideas.edu.vn/wp-content/uploads/2025/09/emba.png.webp"
                                     alt="Executive MBA" decoding="async" loading="lazy" />
                                 <div class="item-content">
@@ -867,8 +843,7 @@ ob_start(function ($html) {
                                     <div class="item-desc">Thạc sĩ điều hành QTKD trực tuyến</div>
                                 </div>
                             </a>
-                            <a href="/mscai" class="dropdown-item">
-                                <img class="item-avatar"
+                            <a href="/mscai" class="dropdown-item"><img class="item-avatar"
                                     src="https://ideas.edu.vn/wp-content/uploads/2025/09/mscai.png.webp" alt="Master AI"
                                     loading="lazy" decoding="async" />
                                 <div class="item-content">
@@ -876,8 +851,7 @@ ob_start(function ($html) {
                                     <div class="item-desc">Thạc sĩ AI ứng dụng</div>
                                 </div>
                             </a>
-                            <a href="/mbainai" class="dropdown-item">
-                                <img class="item-avatar"
+                            <a href="/mbainai" class="dropdown-item"><img class="item-avatar"
                                     src="https://ideas.edu.vn/wp-content/uploads/2026/06/mba_in_ai.webp" alt="MBA in AI"
                                     loading="lazy" decoding="async" />
                                 <div class="item-content">
@@ -888,9 +862,8 @@ ob_start(function ($html) {
                         </div>
                         <div class="dropdown-column-divider"></div>
                         <div class="dropdown-column">
-                            <div class="dropdown-column-title">Cử nhân</div>
-                            <a href="/bba" class="dropdown-item">
-                                <img class="item-avatar"
+                            <div class="dropdown-column-title">Cử nhân & Tiến sĩ</div>
+                            <a href="/bba" class="dropdown-item"><img class="item-avatar"
                                     src="https://ideas.edu.vn/wp-content/uploads/2026/02/TOPUP.webp" alt="Top-up BBA"
                                     loading="lazy" decoding="async" />
                                 <div class="item-content">
@@ -898,8 +871,7 @@ ob_start(function ($html) {
                                     <div class="item-desc">Liên thông Cử nhân 12 tháng</div>
                                 </div>
                             </a>
-                            <a href="/fullbba" class="dropdown-item">
-                                <img class="item-avatar"
+                            <a href="/fullbba" class="dropdown-item"><img class="item-avatar"
                                     src="https://ideas.edu.vn/wp-content/uploads/2026/06/online_bba.webp" alt="Full BBA"
                                     loading="lazy" decoding="async" />
                                 <div class="item-content">
@@ -907,11 +879,9 @@ ob_start(function ($html) {
                                     <div class="item-desc">Cử nhân QTKD Thụy Sĩ</div>
                                 </div>
                             </a>
-                            <div class="dropdown-column-title" style="margin-top: 16px;">Tiến sĩ</div>
-                            <a href="/dual-dba-estiam-rb" class="dropdown-item">
-                                <img class="item-avatar"
-                                    src="https://ideas.edu.vn/wp-content/uploads/2025/10/Dual-DBA.webp" alt="Dual DBA"
-                                    loading="lazy" decoding="async" />
+                            <a href="/dual-dba" class="dropdown-item"><img class="item-avatar"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5c9vyalfHcxNNvOrudO4IQ9qGHz8PC0GhVw&s"
+                                    alt="Dual DBA" loading="lazy" decoding="async" />
                                 <div class="item-content">
                                     <div class="item-title">Dual DBA</div>
                                     <div class="item-desc">Tiến sĩ song bằng Pháp & Anh</div>
@@ -921,7 +891,7 @@ ob_start(function ($html) {
                     </div>
                 </div>
 
-                <!-- Dropdown 3: Chính sách -->
+                <!-- Chính sách -->
                 <div class="nav-dropdown">
                     <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                         Chính sách
@@ -932,19 +902,16 @@ ob_start(function ($html) {
                         </svg>
                     </button>
                     <div class="dropdown-menu-box simple-dropdown">
-                        <a href="/ho-tro-tai-chinh-sacombank" class="dropdown-item-simple">
-                            <i class="fa-solid fa-circle-dollar-to-slot"></i> <span>Trả góp học phí</span>
-                        </a>
-                        <a href="/cac-khoan-chi-phi" class="dropdown-item-simple">
-                            <i class="fa-solid fa-file-invoice-dollar"></i> <span>Các khoản chi phí</span>
-                        </a>
-                        <a href="/ideas-ambassador" class="dropdown-item-simple">
-                            <i class="fa-solid fa-user-graduate"></i> <span>IDEAS - Ambassador</span>
-                        </a>
+                        <a href="/ho-tro-tai-chinh-sacombank" class="dropdown-item-simple"><i
+                                class="fa-solid fa-circle-dollar-to-slot"></i> <span>Trả góp học phí</span></a>
+                        <a href="/cac-khoan-chi-phi" class="dropdown-item-simple"><i
+                                class="fa-solid fa-file-invoice-dollar"></i> <span>Các khoản chi phí</span></a>
+                        <a href="/ideas-ambassador" class="dropdown-item-simple"><i
+                                class="fa-solid fa-user-graduate"></i> <span>IDEAS - Ambassador</span></a>
                     </div>
                 </div>
 
-                <!-- Dropdown 4: Bản tin -->
+                <!-- Bản tin -->
                 <div class="nav-dropdown">
                     <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                         Bản tin
@@ -955,159 +922,72 @@ ob_start(function ($html) {
                         </svg>
                     </button>
                     <div class="dropdown-menu-box simple-dropdown">
-                        <a href="/bai-viet" class="dropdown-item-simple">
-                            <i class="fa-solid fa-newspaper"></i> <span>Bài viết</span>
-                        </a>
-                        <a href="/dong-su-kien#chuyen-di" class="dropdown-item-simple">
-                            <i class="fa-solid fa-plane-departure"></i> <span>Chuyến đi</span>
-                        </a>
-                        <a href="/ideas-talk" class="dropdown-item-simple">
-                            <i class="fa-solid fa-globe"></i> <span>Webinar</span>
-                        </a>
-                        <a href="/ideas-podcast-series-01" class="dropdown-item-simple">
-                            <i class="fa-solid fa-microphone-lines"></i> <span>Podcast</span>
-                        </a>
+                        <a href="/bai-viet" class="dropdown-item-simple"><i class="fa-solid fa-newspaper"></i> <span>Bài
+                                viết</span></a>
+                        <a href="/dong-su-kien#chuyen-di" class="dropdown-item-simple"><i
+                                class="fa-solid fa-plane-departure"></i> <span>Chuyến đi</span></a>
+                        <a href="/ideas-talk" class="dropdown-item-simple"><i class="fa-solid fa-globe"></i>
+                            <span>Webinar</span></a>
+                        <a href="/ideas-podcast-series-01" class="dropdown-item-simple"><i
+                                class="fa-solid fa-microphone-lines"></i> <span>Podcast</span></a>
                     </div>
                 </div>
-                <div style="display:flex;align-items:center;gap:8px;">
-                    <div class="lang-switcher-wrapper">
-                        <button class="lang-toggle-btn" aria-label="Select Language" type="button">
-                            <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="30" height="20" fill="#da251d" />
-                                <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00" />
-                            </svg>
-                            <span>VI</span>
-                            <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                                stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L5 5L9 1" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div class="lang-dropdown-menu">
-                            <button class="lang-dropdown-item active" data-lang="vi" type="button">
-                                <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="30" height="20" fill="#da251d" />
-                                    <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00" />
-                                </svg>
-                                Tiếng Việt
-                            </button>
-                            <button class="lang-dropdown-item" data-lang="en" type="button">
-                                <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="30" height="20" fill="#ffffff" />
-                                    <rect width="30" height="1.54" fill="#b22234" />
-                                    <rect y="3.08" width="30" height="1.54" fill="#b22234" />
-                                    <rect y="6.16" width="30" height="1.54" fill="#b22234" />
-                                    <rect y="9.24" width="30" height="1.54" fill="#b22234" />
-                                    <rect y="12.32" width="30" height="1.54" fill="#b22234" />
-                                    <rect y="15.4" width="30" height="1.54" fill="#b22234" />
-                                    <rect y="18.48" width="30" height="1.54" fill="#b22234" />
-                                    <rect width="12" height="10.78" fill="#3c3b6e" />
-                                    <circle cx="2" cy="1.8" r="0.45" fill="#ffffff" />
-                                    <circle cx="6" cy="1.8" r="0.45" fill="#ffffff" />
-                                    <circle cx="10" cy="1.8" r="0.45" fill="#ffffff" />
-                                    <circle cx="4" cy="3.6" r="0.45" fill="#ffffff" />
-                                    <circle cx="8" cy="3.6" r="0.45" fill="#ffffff" />
-                                    <circle cx="2" cy="5.4" r="0.45" fill="#ffffff" />
-                                    <circle cx="6" cy="5.4" r="0.45" fill="#ffffff" />
-                                    <circle cx="10" cy="5.4" r="0.45" fill="#ffffff" />
-                                    <circle cx="4" cy="7.2" r="0.45" fill="#ffffff" />
-                                    <circle cx="8" cy="7.2" r="0.45" fill="#ffffff" />
-                                    <circle cx="2" cy="9" r="0.45" fill="#ffffff" />
-                                    <circle cx="6" cy="9" r="0.45" fill="#ffffff" />
-                                    <circle cx="10" cy="9" r="0.45" fill="#ffffff" />
-                                </svg>
-                                English
-                            </button>
-                        </div>
-                    </div>
-                    <div class="lang-divider"></div>
-                    <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
-                    <button class="bk-open-btn" aria-label="Mở form đặt lịch tư vấn"
-                        style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;color:#ab0e00;border:1.5px solid rgba(171,14,0,0.45);border-radius:100px;font-weight:700;font-size:0.88rem;cursor:pointer;transition:all 0.3s ease;white-space:nowrap;"
-                        onmouseover="this.style.background='#ab0e00';this.style.color='#fff';this.style.borderColor='#ab0e00';"
-                        onmouseout="this.style.background='transparent';this.style.color='#ab0e00';this.style.borderColor='rgba(171,14,0,0.45)';"
-                        type="button">
-                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2.5" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        Đặt lịch
-                    </button>
-                </div>
+
+                <a href="/dat-lich" class="nav-cta">Nhận tư vấn</a>
             </nav>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <!-- Hamburger -->
+            <button class="hamburger" id="hamburger" aria-label="Mở menu" aria-expanded="false"
+                aria-controls="mobile-menu">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
+    <!-- Mobile overlay & menu -->
     <div class="mobile-overlay" id="mobile-overlay"></div>
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-lenis-prevent>
         <div class="mobile-menu-header">
             <a href="/" class="mobile-menu-logo" aria-label="Trang chủ IDEAS">
-                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/01/Logo_15_nam.webp"
-                    alt="Logo IDEAS Education - 15 năm thành lập" width="45" height="45" loading="lazy">
+                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp"
+                    alt="Logo IDEAS" width="45" height="45" loading="lazy">
             </a>
             <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Đóng menu">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
-                    xmlns="http://www.w3.org/2000/svg">
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
         </div>
         <div class="mobile-dropdown">
-            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
-                Giới thiệu
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">Giới thiệu <svg
+                    class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
                     <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                         stroke-linejoin="round" />
-                </svg>
-            </button>
+                </svg></button>
             <div class="mobile-dropdown-content">
-                <a href="/he-thong-ho-tro-hoc-tap-lms-ideas" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-layer-group"></i> <span>Hệ thống LMS</span>
-                </a>
-                <a href="/so-do-to-chuc" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-sitemap"></i> <span>Cơ cấu tổ chức</span>
-                </a>
-                <a href="/doi-ngu-giang-vien" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-user-graduate"></i> <span>Hội đồng chuyên môn</span>
-                </a>
-                <a href="/dong-su-kien" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-clock"></i> <span>Dòng sự kiện</span>
-                </a>
-                <a href="/lich-su-hinh-thanh-va-phat-trien-vien-ideas" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-landmark"></i> <span>Lịch sử phát triển</span>
-                </a>
-                <div class="mobile-dropdown-section-title">Trường đối tác</div>
-                <a href="/swiss-umef" class="mobile-dropdown-item-simple">Swiss UMEF</a>
-                <a href="https://www.ascencia-business-school.com/en/" target="_blank"
-                    class="mobile-dropdown-item-simple">Ascencia Business School</a>
-                <a href="https://www.collegedeparis.fr/" target="_blank" class="mobile-dropdown-item-simple">College de
-                    Paris</a>
-                <a href="https://www.estiam.education/" target="_blank" class="mobile-dropdown-item-simple">Estiam</a>
+                <a href="/he-thong-ho-tro-hoc-tap-lms-ideas" class="mobile-dropdown-item-simple"><i
+                        class="fa-solid fa-layer-group"></i> <span>Hệ thống LMS</span></a>
+                <a href="/so-do-to-chuc" class="mobile-dropdown-item-simple"><i class="fa-solid fa-sitemap"></i>
+                    <span>Cơ cấu tổ chức</span></a>
+                <a href="/doi-ngu-giang-vien" class="mobile-dropdown-item-simple"><i
+                        class="fa-solid fa-user-graduate"></i> <span>Hội đồng chuyên môn</span></a>
+                <a href="/dong-su-kien" class="mobile-dropdown-item-simple"><i class="fa-solid fa-clock"></i> <span>Dòng
+                        sự kiện</span></a>
+                <a href="/lich-su-hinh-thanh-va-phat-trien-vien-ideas" class="mobile-dropdown-item-simple"><i
+                        class="fa-solid fa-landmark"></i> <span>Lịch sử phát triển</span></a>
             </div>
         </div>
         <div class="mobile-dropdown expanded expanded-default">
-            <button type="button" class="mobile-dropdown-toggle" aria-expanded="true">
-                Chương trình
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+            <button type="button" class="mobile-dropdown-toggle" aria-expanded="true">Chương trình <svg
+                    class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
                     <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                         stroke-linejoin="round" />
-                </svg>
-            </button>
+                </svg></button>
             <div class="mobile-dropdown-content">
                 <div class="mobile-dropdown-section">
                     <div class="mobile-section-title">Thạc sĩ</div>
-                    <a href="/mba" class="mobile-dropdown-item">
-                        <img class="item-avatar"
+                    <a href="/mba" class="mobile-dropdown-item"><img class="item-avatar"
                             src="https://ideas.edu.vn/wp-content/uploads/2025/09/online-mba-1.png.webp" alt="Online MBA"
                             loading="lazy" decoding="async" />
                         <div class="item-content">
@@ -1115,25 +995,25 @@ ob_start(function ($html) {
                             <div class="item-desc">Thạc sĩ QTKD Trực tuyến</div>
                         </div>
                     </a>
-                    <a href="/emba" class="mobile-dropdown-item">
-                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2025/09/emba.png.webp"
-                            alt="Executive MBA" loading="lazy" decoding="async" />
+                    <a href="/emba" class="mobile-dropdown-item"><img class="item-avatar"
+                            src="https://ideas.edu.vn/wp-content/uploads/2025/09/emba.png.webp" alt="Executive MBA"
+                            loading="lazy" decoding="async" />
                         <div class="item-content">
                             <div class="item-title">Executive MBA</div>
                             <div class="item-desc">Thạc sĩ điều hành QTKD trực tuyến</div>
                         </div>
                     </a>
-                    <a href="/mscai" class="mobile-dropdown-item">
-                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2025/09/mscai.png.webp"
-                            alt="Master AI" loading="lazy" decoding="async" />
+                    <a href="/mscai" class="mobile-dropdown-item"><img class="item-avatar"
+                            src="https://ideas.edu.vn/wp-content/uploads/2025/09/mscai.png.webp" alt="Master AI"
+                            loading="lazy" decoding="async" />
                         <div class="item-content">
                             <div class="item-title">Master AI (MSc AI)</div>
                             <div class="item-desc">Thạc sĩ AI ứng dụng</div>
                         </div>
                     </a>
-                    <a href="/mbainai" class="mobile-dropdown-item">
-                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2026/06/mba_in_ai.webp"
-                            alt="MBA in AI" loading="lazy" decoding="async" />
+                    <a href="/mbainai" class="mobile-dropdown-item"><img class="item-avatar"
+                            src="https://ideas.edu.vn/wp-content/uploads/2026/06/mba_in_ai.webp" alt="MBA in AI"
+                            loading="lazy" decoding="async" />
                         <div class="item-content">
                             <div class="item-title">MBA in AI</div>
                             <div class="item-desc">Thạc sĩ QTKD Ứng dụng AI</div>
@@ -1141,25 +1021,25 @@ ob_start(function ($html) {
                     </a>
                 </div>
                 <div class="mobile-dropdown-section">
-                    <div class="mobile-section-title">Cử nhân &amp; Tiến sĩ</div>
-                    <a href="/bba" class="mobile-dropdown-item">
-                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2026/02/TOPUP.webp"
-                            alt="Top-up BBA" loading="lazy" decoding="async" />
+                    <div class="mobile-section-title">Cử nhân & Tiến sĩ</div>
+                    <a href="/bba" class="mobile-dropdown-item"><img class="item-avatar"
+                            src="https://ideas.edu.vn/wp-content/uploads/2026/02/TOPUP.webp" alt="Top-up BBA"
+                            loading="lazy" decoding="async" />
                         <div class="item-content">
                             <div class="item-title">Top-up BBA</div>
                             <div class="item-desc">Liên thông Cử nhân 12 tháng</div>
                         </div>
                     </a>
-                    <a href="/fullbba" class="mobile-dropdown-item">
-                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2026/06/online_bba.webp"
-                            alt="Full BBA" loading="lazy" decoding="async" />
+                    <a href="/fullbba" class="mobile-dropdown-item"><img class="item-avatar"
+                            src="https://ideas.edu.vn/wp-content/uploads/2026/06/online_bba.webp" alt="Full BBA"
+                            loading="lazy" decoding="async" />
                         <div class="item-content">
                             <div class="item-title">Full BBA</div>
                             <div class="item-desc">Cử nhân QTKD Thụy Sĩ</div>
                         </div>
                     </a>
-                    <a href="/dual-dba-estiam-rb" class="mobile-dropdown-item">
-                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2025/10/Dual-DBA.webp"
+                    <a href="/dual-dba" class="mobile-dropdown-item"><img class="item-avatar"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5c9vyalfHcxNNvOrudO4IQ9qGHz8PC0GhVw&s"
                             alt="Dual DBA" loading="lazy" decoding="async" />
                         <div class="item-content">
                             <div class="item-title">Dual DBA</div>
@@ -1170,89 +1050,39 @@ ob_start(function ($html) {
             </div>
         </div>
         <div class="mobile-dropdown">
-            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
-                Chính sách
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">Chính sách <svg
+                    class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
                     <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                         stroke-linejoin="round" />
-                </svg>
-            </button>
+                </svg></button>
             <div class="mobile-dropdown-content">
-                <a href="/ho-tro-tai-chinh-sacombank" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-circle-dollar-to-slot"></i> <span>Trả góp học phí</span>
-                </a>
-                <a href="/cac-khoan-chi-phi" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-file-invoice-dollar"></i> <span>Các khoản chi phí</span>
-                </a>
-                <a href="/ideas-ambassador" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-user-graduate"></i> <span>IDEAS - Ambassador</span>
-                </a>
+                <a href="/ho-tro-tai-chinh-sacombank" class="mobile-dropdown-item-simple"><i
+                        class="fa-solid fa-circle-dollar-to-slot"></i> <span>Trả góp học phí</span></a>
+                <a href="/cac-khoan-chi-phi" class="mobile-dropdown-item-simple"><i
+                        class="fa-solid fa-file-invoice-dollar"></i> <span>Các khoản chi phí</span></a>
+                <a href="/ideas-ambassador" class="mobile-dropdown-item-simple"><i
+                        class="fa-solid fa-user-graduate"></i> <span>IDEAS - Ambassador</span></a>
             </div>
         </div>
         <div class="mobile-dropdown">
-            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
-                Bản tin
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">Bản tin <svg
+                    class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
                     <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                         stroke-linejoin="round" />
-                </svg>
-            </button>
+                </svg></button>
             <div class="mobile-dropdown-content">
-                <a href="/bai-viet" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-newspaper"></i> <span>Bài viết</span>
-                </a>
-                <a href="/dong-su-kien#chuyen-di" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-plane-departure"></i> <span>Chuyến đi</span>
-                </a>
-                <a href="/ideas-talk" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-globe"></i> <span>Webinar</span>
-                </a>
-                <a href="/ideas-podcast-series-01" class="mobile-dropdown-item-simple">
-                    <i class="fa-solid fa-microphone-lines"></i> <span>Podcast</span>
-                </a>
+                <a href="/bai-viet" class="mobile-dropdown-item-simple"><i class="fa-solid fa-newspaper"></i> <span>Bài
+                        viết</span></a>
+                <a href="/dong-su-kien#chuyen-di" class="mobile-dropdown-item-simple"><i
+                        class="fa-solid fa-plane-departure"></i> <span>Chuyến đi</span></a>
+                <a href="/ideas-talk" class="mobile-dropdown-item-simple"><i class="fa-solid fa-globe"></i>
+                    <span>Webinar</span></a>
+                <a href="/ideas-podcast-series-01" class="mobile-dropdown-item-simple"><i
+                        class="fa-solid fa-microphone-lines"></i> <span>Podcast</span></a>
             </div>
         </div>
-        <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
-        <div class="mobile-lang-selector">
-            <div class="mobile-lang-title">Ngôn ngữ / Language</div>
-            <div class="mobile-lang-options">
-                <button class="mobile-lang-btn active" data-lang="vi" type="button">
-                    <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="30" height="20" fill="#da251d" />
-                        <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00" />
-                    </svg>
-                    Tiếng Việt
-                </button>
-                <button class="mobile-lang-btn" data-lang="en" type="button">
-                    <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="30" height="20" fill="#ffffff" />
-                        <rect width="30" height="1.54" fill="#b22234" />
-                        <rect y="3.08" width="30" height="1.54" fill="#b22234" />
-                        <rect y="6.16" width="30" height="1.54" fill="#b22234" />
-                        <rect y="9.24" width="30" height="1.54" fill="#b22234" />
-                        <rect y="12.32" width="30" height="1.54" fill="#b22234" />
-                        <rect y="15.4" width="30" height="1.54" fill="#b22234" />
-                        <rect y="18.48" width="30" height="1.54" fill="#b22234" />
-                        <rect width="12" height="10.78" fill="#3c3b6e" />
-                        <circle cx="2" cy="1.8" r="0.45" fill="#ffffff" />
-                        <circle cx="6" cy="1.8" r="0.45" fill="#ffffff" />
-                        <circle cx="10" cy="1.8" r="0.45" fill="#ffffff" />
-                        <circle cx="4" cy="3.6" r="0.45" fill="#ffffff" />
-                        <circle cx="8" cy="3.6" r="0.45" fill="#ffffff" />
-                        <circle cx="2" cy="5.4" r="0.45" fill="#ffffff" />
-                        <circle cx="6" cy="5.4" r="0.45" fill="#ffffff" />
-                        <circle cx="10" cy="5.4" r="0.45" fill="#ffffff" />
-                        <circle cx="4" cy="7.2" r="0.45" fill="#ffffff" />
-                        <circle cx="8" cy="7.2" r="0.45" fill="#ffffff" />
-                        <circle cx="2" cy="9" r="0.45" fill="#ffffff" />
-                        <circle cx="6" cy="9" r="0.45" fill="#ffffff" />
-                        <circle cx="10" cy="9" r="0.45" fill="#ffffff" />
-                    </svg>
-                    English
-                </button>
-            </div>
+        <div style="padding:20px; margin-top:16px;">
+            <a href="/dat-lich" class="nav-cta" style="display:block; text-align:center; width:100%;">Nhận tư vấn</a>
         </div>
     </div>
 

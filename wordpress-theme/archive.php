@@ -634,22 +634,6 @@ ob_start(function($html) {
                         <a href="/lich-su-hinh-thanh-va-phat-trien-vien-ideas" class="dropdown-item-simple">
                             <i class="fa-solid fa-landmark"></i> <span>Lịch sử phát triển</span>
                         </a>
-                        <div class="dropdown-divider-simple"></div>
-                        <div class="dropdown-item-submenu">
-                            <span class="submenu-title">
-                                <span><i class="fa-solid fa-school"></i> Trường đối tác</span>
-                                <i class="fa-solid fa-chevron-right submenu-arrow"></i>
-                            </span>
-                            <div class="submenu-box">
-                                <a href="/swiss-umef" class="dropdown-item-simple">Swiss UMEF</a>
-                                <a href="https://www.ascencia-business-school.com/en/" target="_blank"
-                                    class="dropdown-item-simple">Ascencia Business School</a>
-                                <a href="https://www.collegedeparis.fr/" target="_blank"
-                                    class="dropdown-item-simple">College de Paris</a>
-                                <a href="https://www.estiam.education/" target="_blank"
-                                    class="dropdown-item-simple">Estiam</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -725,9 +709,9 @@ ob_start(function($html) {
                                 </div>
                             </a>
                             <div class="dropdown-column-title" style="margin-top: 16px;">Tiến sĩ</div>
-                            <a href="/dual-dba-estiam-rb" class="dropdown-item">
+                            <a href="/dual-dba" class="dropdown-item">
                                 <img class="item-avatar"
-                                    src="https://ideas.edu.vn/wp-content/uploads/2025/10/Dual-DBA.webp" alt="Dual DBA"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5c9vyalfHcxNNvOrudO4IQ9qGHz8PC0GhVw&s" alt="Dual DBA"
                                     loading="lazy" decoding="async" />
                                 <div class="item-content">
                                     <div class="item-title">Dual DBA</div>
@@ -787,71 +771,7 @@ ob_start(function($html) {
                     </div>
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;">
-                    <div class="lang-switcher-wrapper">
-                        <button class="lang-toggle-btn" aria-label="Select Language" type="button">
-                            <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="30" height="20" fill="#da251d" />
-                                <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00" />
-                            </svg>
-                            <span>VI</span>
-                            <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                                stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L5 5L9 1" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div class="lang-dropdown-menu">
-                            <button class="lang-dropdown-item active" data-lang="vi" type="button">
-                                <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="30" height="20" fill="#da251d" />
-                                    <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00" />
-                                </svg>
-                                Tiếng Việt
-                            </button>
-                            <button class="lang-dropdown-item" data-lang="en" type="button">
-                                <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="30" height="20" fill="#ffffff" />
-                                    <rect width="30" height="1.54" fill="#b22234" />
-                                    <rect y="3.08" width="30" height="1.54" fill="#b22234" />
-                                    <rect y="6.16" width="30" height="1.54" fill="#b22234" />
-                                    <rect y="9.24" width="30" height="1.54" fill="#b22234" />
-                                    <rect y="12.32" width="30" height="1.54" fill="#b22234" />
-                                    <rect y="15.4" width="30" height="1.54" fill="#b22234" />
-                                    <rect y="18.48" width="30" height="1.54" fill="#b22234" />
-                                    <rect width="12" height="10.78" fill="#3c3b6e" />
-                                    <circle cx="2" cy="1.8" r="0.45" fill="#ffffff" />
-                                    <circle cx="6" cy="1.8" r="0.45" fill="#ffffff" />
-                                    <circle cx="10" cy="1.8" r="0.45" fill="#ffffff" />
-                                    <circle cx="4" cy="3.6" r="0.45" fill="#ffffff" />
-                                    <circle cx="8" cy="3.6" r="0.45" fill="#ffffff" />
-                                    <circle cx="2" cy="5.4" r="0.45" fill="#ffffff" />
-                                    <circle cx="6" cy="5.4" r="0.45" fill="#ffffff" />
-                                    <circle cx="10" cy="5.4" r="0.45" fill="#ffffff" />
-                                    <circle cx="4" cy="7.2" r="0.45" fill="#ffffff" />
-                                    <circle cx="8" cy="7.2" r="0.45" fill="#ffffff" />
-                                    <circle cx="2" cy="9" r="0.45" fill="#ffffff" />
-                                    <circle cx="6" cy="9" r="0.45" fill="#ffffff" />
-                                    <circle cx="10" cy="9" r="0.45" fill="#ffffff" />
-                                </svg>
-                                English
-                            </button>
-                        </div>
-                    </div>
-                    <div class="lang-divider"></div>
-                    <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
-                    <button class="bk-open-btn" aria-label="Mở form đặt lịch tư vấn"
-                        style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;color:#ab0e00;border:1.5px solid rgba(171,14,0,0.45);border-radius:100px;font-weight:700;font-size:0.88rem;cursor:pointer;transition:all 0.3s ease;white-space:nowrap;"
-                        onmouseover="this.style.background='#ab0e00';this.style.color='#fff';this.style.borderColor='#ab0e00';"
-                        onmouseout="this.style.background='transparent';this.style.color='#ab0e00';this.style.borderColor='rgba(171,14,0,0.45)';"
-                        type="button">
-                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2.5" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        Đặt lịch
-                    </button>
+                    <a href="/dat-lich" class="nav-cta">Nhận tư vấn</a>
                 </div>
             </nav>
             <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -866,7 +786,7 @@ ob_start(function($html) {
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-lenis-prevent>
         <div class="mobile-menu-header">
             <a href="/" class="mobile-menu-logo" aria-label="Trang chủ IDEAS">
-                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/01/Logo_15_nam.webp"
+                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp"
                     alt="Logo IDEAS Education - 15 năm thành lập" width="45" height="45" loading="lazy">
             </a>
             <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Đóng menu">
@@ -902,13 +822,6 @@ ob_start(function($html) {
                 <a href="/lich-su-hinh-thanh-va-phat-trien-vien-ideas" class="mobile-dropdown-item-simple">
                     <i class="fa-solid fa-landmark"></i> <span>Lịch sử phát triển</span>
                 </a>
-                <div class="mobile-dropdown-section-title">Trường đối tác</div>
-                <a href="/swiss-umef" class="mobile-dropdown-item-simple">Swiss UMEF</a>
-                <a href="https://www.ascencia-business-school.com/en/" target="_blank"
-                    class="mobile-dropdown-item-simple">Ascencia Business School</a>
-                <a href="https://www.collegedeparis.fr/" target="_blank" class="mobile-dropdown-item-simple">College de
-                    Paris</a>
-                <a href="https://www.estiam.education/" target="_blank" class="mobile-dropdown-item-simple">Estiam</a>
             </div>
         </div>
         <div class="mobile-dropdown expanded expanded-default">
@@ -975,8 +888,8 @@ ob_start(function($html) {
                             <div class="item-desc">Cử nhân QTKD Thụy Sĩ</div>
                         </div>
                     </a>
-                    <a href="/dual-dba-estiam-rb" class="mobile-dropdown-item">
-                        <img class="item-avatar" src="https://ideas.edu.vn/wp-content/uploads/2025/10/Dual-DBA.webp"
+                    <a href="/dual-dba" class="mobile-dropdown-item">
+                        <img class="item-avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5c9vyalfHcxNNvOrudO4IQ9qGHz8PC0GhVw&s"
                             alt="Dual DBA" loading="lazy" decoding="async" />
                         <div class="item-content">
                             <div class="item-title">Dual DBA</div>
@@ -1031,46 +944,7 @@ ob_start(function($html) {
                 </a>
             </div>
         </div>
-        <a href="#dang-ky" class="nav-cta">Nhận tư vấn</a>
-        <div class="mobile-lang-selector">
-            <div class="mobile-lang-title">Ngôn ngữ / Language</div>
-            <div class="mobile-lang-options">
-                <button class="mobile-lang-btn active" data-lang="vi" type="button">
-                    <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="30" height="20" fill="#da251d" />
-                        <polygon points="15,4 11.5,14.5 20.5,8 9.5,8 18.5,14.5" fill="#ffff00" />
-                    </svg>
-                    Tiếng Việt
-                </button>
-                <button class="mobile-lang-btn" data-lang="en" type="button">
-                    <svg class="flag-icon" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="30" height="20" fill="#ffffff" />
-                        <rect width="30" height="1.54" fill="#b22234" />
-                        <rect y="3.08" width="30" height="1.54" fill="#b22234" />
-                        <rect y="6.16" width="30" height="1.54" fill="#b22234" />
-                        <rect y="9.24" width="30" height="1.54" fill="#b22234" />
-                        <rect y="12.32" width="30" height="1.54" fill="#b22234" />
-                        <rect y="15.4" width="30" height="1.54" fill="#b22234" />
-                        <rect y="18.48" width="30" height="1.54" fill="#b22234" />
-                        <rect width="12" height="10.78" fill="#3c3b6e" />
-                        <circle cx="2" cy="1.8" r="0.45" fill="#ffffff" />
-                        <circle cx="6" cy="1.8" r="0.45" fill="#ffffff" />
-                        <circle cx="10" cy="1.8" r="0.45" fill="#ffffff" />
-                        <circle cx="4" cy="3.6" r="0.45" fill="#ffffff" />
-                        <circle cx="8" cy="3.6" r="0.45" fill="#ffffff" />
-                        <circle cx="2" cy="5.4" r="0.45" fill="#ffffff" />
-                        <circle cx="6" cy="5.4" r="0.45" fill="#ffffff" />
-                        <circle cx="10" cy="5.4" r="0.45" fill="#ffffff" />
-                        <circle cx="4" cy="7.2" r="0.45" fill="#ffffff" />
-                        <circle cx="8" cy="7.2" r="0.45" fill="#ffffff" />
-                        <circle cx="2" cy="9" r="0.45" fill="#ffffff" />
-                        <circle cx="6" cy="9" r="0.45" fill="#ffffff" />
-                        <circle cx="10" cy="9" r="0.45" fill="#ffffff" />
-                    </svg>
-                    English
-                </button>
-            </div>
-        </div>
+        <a href="/dat-lich" class="nav-cta">Nhận tư vấn</a>
     </div>
 
     <!-- Banner Hero Area -->

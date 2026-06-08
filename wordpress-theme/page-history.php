@@ -82,12 +82,12 @@ ob_start(function($html) {
 
         body {
             font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #e2e8f0;
+            background-color: #f4f6fb;
+            color: #1e293b;
             background-image: 
-                radial-gradient(circle at 15% 20%, rgba(185, 14, 0, 0.15) 0%, transparent 45%),
-                radial-gradient(circle at 85% 60%, rgba(185, 14, 0, 0.08) 0%, transparent 50%),
-                radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+                radial-gradient(circle at 15% 20%, rgba(185, 14, 0, 0.04) 0%, transparent 45%),
+                radial-gradient(circle at 85% 60%, rgba(185, 14, 0, 0.03) 0%, transparent 50%),
+                radial-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px);
             background-size: 100% 100%, 100% 100%, 28px 28px;
             background-attachment: scroll, scroll, fixed;
         }
@@ -95,67 +95,86 @@ ob_start(function($html) {
         /* Hero Header */
         .history-hero {
             position: relative;
-            background: #0b0f19;
-            padding: 180px 20px 100px;
+            padding: 180px 20px 110px;
             text-align: center;
             color: #ffffff;
             overflow: hidden;
-            border-bottom: 2px solid rgba(171, 14, 0, 0.3);
+            background: #0d0405;
         }
 
-        .history-hero .counters-bg {
+        /* Parallax background image */
+        .history-hero-bg {
             position: absolute;
             top: -150px;
-            left: -10%;
-            width: 120%;
+            left: -5%;
+            width: 110%;
             height: calc(100% + 300px);
             background-size: cover;
             background-position: center;
-            filter: blur(1px);
             will-change: transform;
-            transform: translate3d(0, 0, 0) scale(1.15);
+            transform: translate3d(0, 0, 0) scale(1.1);
             z-index: 1;
-            opacity: 0.85;
+            opacity: 0.35;
+        }
+
+        /* Multi-layer gradient overlay (top-heavy dark, red glow bottom) */
+        .history-hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background:
+                linear-gradient(180deg,
+                    rgba(13, 4, 5, 0.85) 0%,
+                    rgba(80, 6, 0, 0.5) 60%,
+                    rgba(13, 4, 5, 0.95) 100%),
+                radial-gradient(ellipse at 50% 50%, rgba(171, 14, 0, 0.35) 0%, transparent 65%);
+        }
+
+        .history-hero .container {
+            position: relative;
+            z-index: 3;
         }
 
         .history-hero-badge {
-            background: rgba(171, 14, 0, 0.2);
-            border: 1px solid rgba(171, 14, 0, 0.5);
+            background: rgba(171, 14, 0, 0.15);
+            border: 1px solid rgba(171, 14, 0, 0.4);
             padding: 8px 18px;
             border-radius: 100px;
-            color: #ab0e00;
-            font-size: 0.85rem;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.82rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
+            margin-bottom: 22px;
+            backdrop-filter: blur(12px);
         }
 
         .history-hero h1 {
-            font-size: clamp(2.4rem, 6vw, 3.8rem);
+            font-size: clamp(2.6rem, 6vw, 4rem);
             font-weight: 800;
             margin-bottom: 20px;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
             color: #ffffff;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.4);
         }
 
         .history-hero h1 span {
-            background: linear-gradient(135deg, #ff0000, #ab0e00);
+            background: linear-gradient(135deg, #ff4444 0%, #ab0e00 60%, #ff3030 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .history-hero p {
-            font-size: 1.15rem;
-            color: #94a3b8;
-            max-width: 700px;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 640px;
             margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* Timeline Section */
@@ -182,7 +201,7 @@ ob_start(function($html) {
             width: 3px;
             background: linear-gradient(to bottom, #ab0e00 0%, #ff0000 50%, #ab0e00 100%);
             transform: translateX(-50%);
-            box-shadow: 0 0 15px rgba(171, 14, 0, 0.4);
+            box-shadow: 0 0 10px rgba(171, 14, 0, 0.15);
             border-radius: 2px;
         }
 
@@ -210,8 +229,8 @@ ob_start(function($html) {
             height: 20px;
             border-radius: 50%;
             background: #ff0000;
-            border: 4px solid #0b0f19;
-            box-shadow: 0 0 10px #ff0000;
+            border: 4px solid #f4f6fb;
+            box-shadow: 0 0 8px rgba(171, 14, 0, 0.3);
             z-index: 10;
             transition: all 0.3s ease;
         }
@@ -235,20 +254,20 @@ ob_start(function($html) {
             padding: 4px 14px;
             border-radius: 100px;
             z-index: 11;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 10px rgba(171, 14, 0, 0.25);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         /* Timeline Content Card */
         .timeline-card {
             width: 45%;
-            background: rgba(30, 41, 59, 0.45);
+            background: #ffffff;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid #e2e8f0;
             border-radius: 24px;
             padding: 35px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
         }
@@ -256,8 +275,8 @@ ob_start(function($html) {
         .timeline-item:hover .timeline-card {
             transform: translateY(-5px);
             border-color: rgba(171, 14, 0, 0.25);
-            background: rgba(30, 41, 59, 0.65);
-            box-shadow: 0 20px 40px rgba(171, 14, 0, 0.08);
+            background: #ffffff;
+            box-shadow: 0 15px 35px rgba(171, 14, 0, 0.08);
         }
 
         .timeline-card-year {
@@ -274,13 +293,13 @@ ob_start(function($html) {
         .timeline-card h3 {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #ffffff;
+            color: #0f172a;
             margin-bottom: 16px;
             line-height: 1.3;
         }
 
         .timeline-card p {
-            color: #cbd5e1;
+            color: #475569;
             font-size: 0.98rem;
             line-height: 1.6;
             margin-bottom: 16px;
@@ -296,7 +315,7 @@ ob_start(function($html) {
             position: relative;
             padding-left: 24px;
             margin-bottom: 10px;
-            color: #94a3b8;
+            color: #475569;
             font-size: 0.95rem;
             line-height: 1.5;
         }
@@ -309,35 +328,65 @@ ob_start(function($html) {
             font-size: 0.9rem;
         }
 
-        /* Image styling */
+        /* Image styling – 2 photos per row, 3 logos per row */
         .timeline-images {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
             margin-top: 20px;
         }
 
+        /* Single image takes full width */
+        .timeline-images img:only-child {
+            grid-column: 1 / -1;
+        }
+
         .timeline-images img {
-            max-height: 160px;
+            width: 100%;
+            height: 160px;
             border-radius: 12px;
             object-fit: cover;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #e2e8f0;
             transition: transform 0.3s ease;
+            display: block;
         }
 
         .timeline-images img:hover {
-            transform: scale(1.05);
+            transform: scale(1.04);
+        }
+
+        /* Logo grid – 3 per row */
+        .timeline-images.wlogos {
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            justify-items: center;
         }
 
         .timeline-images img.wlogo {
-            max-height: 70px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 10px;
+            height: 70px;
+            width: 100%;
+            background: #f8fafc;
+            padding: 10px 14px;
             object-fit: contain;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
         }
 
-        .timeline-images.wlogos {
-            align-items: center;
+        /* Single logo - still auto size */
+        .timeline-images.wlogos img.wlogo:only-child {
+            grid-column: auto;
+            max-width: 200px;
+            justify-self: start;
+        }
+
+        /* Mobile: stack to 1 column */
+        @media (max-width: 600px) {
+            .timeline-images {
+                grid-template-columns: 1fr;
+            }
+            .timeline-images.wlogos {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* Responsive breakpoints */
@@ -369,6 +418,14 @@ ob_start(function($html) {
             .timeline-card {
                 width: 100%;
                 padding: 25px;
+            }
+
+            .history-hero {
+                padding: 130px 16px 50px !important;
+            }
+
+            .timeline-section {
+                padding: 50px 16px !important;
             }
         }
     </style>
@@ -512,9 +569,6 @@ ob_start(function($html) {
                         <a href="/ho-tro-tai-chinh-sacombank" class="dropdown-item-simple">
                             <i class="fa-solid fa-circle-dollar-to-slot"></i> <span>Trả góp học phí</span>
                         </a>
-                        <a href="/voucher" class="dropdown-item-simple">
-                            <i class="fa-solid fa-ticket"></i> <span>IDEAS Voucher</span>
-                        </a>
                         <a href="/cac-khoan-chi-phi" class="dropdown-item-simple">
                             <i class="fa-solid fa-file-invoice-dollar"></i> <span>Các khoản chi phí</span>
                         </a>
@@ -624,7 +678,6 @@ ob_start(function($html) {
             </button>
             <div class="mobile-dropdown-menu">
                 <a href="/ho-tro-tai-chinh-sacombank"><i class="fa-solid fa-circle-dollar-to-slot"></i> Trả góp học phí</a>
-                <a href="/voucher"><i class="fa-solid fa-ticket"></i> IDEAS Voucher</a>
                 <a href="/cac-khoan-chi-phi"><i class="fa-solid fa-file-invoice-dollar"></i> Các khoản chi phí</a>
                 <a href="/ideas-ambassador"><i class="fa-solid fa-user-graduate"></i> IDEAS Ambassador</a>
             </div>
@@ -651,9 +704,11 @@ ob_start(function($html) {
     </div>
 
     <!-- Hero Area -->
-    <section class="history-hero">
-        <div class="counters-bg" style="background-image: linear-gradient(135deg, rgba(110, 8, 0, 0.96) 0%, rgba(8, 12, 21, 0.98) 100%), url('https://ideas.edu.vn/wp-content/uploads/2026/05/Kien-tao-2.webp');"></div>
-        <div class="container" style="position: relative; z-index: 3;">
+    <section class="history-hero" id="history-hero-top">
+        <div class="history-hero-bg" id="history-parallax-bg"
+            style="background-image: url('https://ideas.edu.vn/wp-content/uploads/2026/05/Kien-tao-2.webp');"></div>
+        <div class="history-hero-overlay"></div>
+        <div class="container">
             <div class="history-hero-badge">
                 <i class="fa-solid fa-landmark"></i>
                 Hành Trình Kiến Tạo
@@ -680,7 +735,7 @@ ob_start(function($html) {
                         <li><i class="fa-solid fa-check"></i> Vượt qua khó khăn, khẳng định chất lượng & thương hiệu</li>
                         <li><i class="fa-solid fa-check"></i> Mở rộng hợp tác đào tạo quốc tế</li>
                     </ul>
-                    <div class="timeline-images">
+                    <div class="timeline-images wlogos">
                         <img class="wlogo" src="https://static.ybox.vn/2015/12/IBM.png" alt="Viện IBM" />
                     </div>
                 </div>
@@ -750,8 +805,10 @@ ob_start(function($html) {
                         <li><i class="fa-solid fa-check"></i> Hợp tác mở rộng các chương trình chất lượng cao mới: SBS Swiss Business School, Swiss UMEF, Ascencia Business School.</li>
                         <li><i class="fa-solid fa-check"></i> Đào tạo thực tiễn, định hướng tư duy khai phóng toàn diện.</li>
                     </ul>
-                    <div class="timeline-images">
+                    <div class="timeline-images wlogos">
                         <img class="wlogo" src="https://ideas.edu.vn/wp-content/new_public/data_imgs/ideas-02.png" alt="Logo IDEAS" />
+                    </div>
+                    <div class="timeline-images" style="margin-top: 15px;">
                         <img src="https://ideas.edu.vn/wp-content/uploads/2024/01/416256674_837845658141991_5379123310787471174_n.jpg" alt="Lễ tốt nghiệp Ascencia 2024" />
                     </div>
                 </div>
@@ -795,6 +852,8 @@ ob_start(function($html) {
                     </ul>
                     <div class="timeline-images">
                         <img src="https://ideas.edu.vn/wp-content/uploads/2025/04/AI.jpg" alt="Trí tuệ nhân tạo AI" />
+                    </div>
+                    <div class="timeline-images wlogos" style="margin-top: 15px;">
                         <img class="wlogo" src="https://ideas.edu.vn/wp-content/uploads/2025/03/estiam.png" alt="ESTIAM Paris" />
                     </div>
                 </div>
@@ -802,6 +861,27 @@ ob_start(function($html) {
 
         </div>
     </main>
+
+    <!-- Parallax script for history hero -->
+    <script>
+        const historyBg = document.getElementById('history-parallax-bg');
+        if (historyBg) {
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        const scrollY = window.scrollY;
+                        const heroH = document.getElementById('history-hero-top').offsetHeight;
+                        if (scrollY < heroH + 200) {
+                            historyBg.style.transform = 'translate3d(0, ' + (scrollY * 0.35) + 'px, 0) scale(1.15)';
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+    </script>
 
     <!-- Custom Menu Toggle Script -->
     <script>
@@ -846,5 +926,12 @@ ob_start(function($html) {
             });
         });
     </script>
+
+    <!-- Script imports -->
+    <?php 
+    $js_path = get_stylesheet_directory() . '/common-assets/js/script.min.js';
+    $js_version = file_exists($js_path) ? filemtime($js_path) : time();
+    ?>
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/js/script.min.js?v=<?php echo $js_version; ?>" defer></script>
 
     <?php get_footer(); ?>
