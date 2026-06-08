@@ -62,6 +62,7 @@ ob_start(function ($html) {
     
     <!-- Booking Modal stylesheet -->
     <?php
+    define('BOOKING_MODAL_CSS_LOADED', true);
     $bk_css_path = get_stylesheet_directory() . '/common-assets/css/booking-modal.min.css';
     $bk_css_version = file_exists($bk_css_path) ? filemtime($bk_css_path) : time();
     ?>
@@ -170,25 +171,26 @@ ob_start(function ($html) {
             margin-bottom: 20px;
             letter-spacing: -0.02em;
             line-height: 1.15;
-            color: #ffffff;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            color: #ffffff !important;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
         }
 
         .scb-hero h1 span {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff3b30 50%, #ab0e00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: linear-gradient(135deg, #ff8e8e 0%, #ff4f4f 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
         }
 
         .scb-hero p.hero-subtitle {
             font-size: 1.15rem;
-            color: #ffffff;
+            color: rgba(255, 255, 255, 0.92) !important;
             max-width: 650px;
             margin-bottom: 32px;
             line-height: 1.6;
             font-weight: 500;
             letter-spacing: 0.02em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         /* Hero Stats Grid */
@@ -303,10 +305,40 @@ ob_start(function ($html) {
             }
         }
 
+        @media (max-width: 768px) {
+            .scb-hero {
+                padding: 120px 20px 60px !important;
+                min-height: auto;
+            }
+            .scb-section {
+                padding: 50px 20px !important;
+            }
+            .scb-hero-stats {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 8px !important;
+                margin: 0 auto 24px !important;
+            }
+            .scb-stat-card {
+                padding: 10px 6px !important;
+                border-radius: 12px !important;
+            }
+            .scb-stat-num {
+                font-size: 0.95rem !important;
+                gap: 4px !important;
+            }
+            .scb-stat-num i {
+                font-size: 0.85rem !important;
+            }
+            .scb-stat-lbl {
+                font-size: 0.62rem !important;
+                line-height: 1.25 !important;
+            }
+        }
+
         @media (max-width: 480px) {
             .scb-hero-stats {
-                grid-template-columns: 1fr;
-                gap: 12px;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 8px !important;
             }
         }
 
@@ -322,16 +354,6 @@ ob_start(function ($html) {
             margin: 0 auto;
             width: 100%;
             box-sizing: border-box;
-        }
-
-        @media (max-width: 768px) {
-            .scb-hero {
-                padding: 120px 16px 60px;
-                min-height: auto;
-            }
-            .scb-section {
-                padding: 50px 16px;
-            }
         }
 
         .scb-section-title-wrap {
@@ -1231,6 +1253,7 @@ ob_start(function ($html) {
     
     <!-- Booking Modal script import -->
     <?php
+    define('BOOKING_MODAL_JS_LOADED', true);
     $bk_js_path = get_stylesheet_directory() . '/common-assets/js/booking-modal.min.js';
     $bk_js_version = file_exists($bk_js_path) ? filemtime($bk_js_path) : time();
     ?>

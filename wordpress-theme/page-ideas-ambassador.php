@@ -62,6 +62,7 @@ ob_start(function ($html) {
     
     <!-- Booking Modal stylesheet -->
     <?php
+    define('BOOKING_MODAL_CSS_LOADED', true);
     $bk_css_path = get_stylesheet_directory() . '/common-assets/css/booking-modal.min.css';
     $bk_css_version = file_exists($bk_css_path) ? filemtime($bk_css_path) : time();
     ?>
@@ -1342,6 +1343,7 @@ ob_start(function ($html) {
     
     <!-- Booking Modal script import -->
     <?php
+    define('BOOKING_MODAL_JS_LOADED', true);
     $bk_js_path = get_stylesheet_directory() . '/common-assets/js/booking-modal.min.js';
     $bk_js_version = file_exists($bk_js_path) ? filemtime($bk_js_path) : time();
     ?>

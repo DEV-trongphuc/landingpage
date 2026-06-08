@@ -62,6 +62,7 @@ ob_start(function ($html) {
     
     <!-- Booking Modal stylesheet -->
     <?php
+    define('BOOKING_MODAL_CSS_LOADED', true);
     $bk_css_path = get_stylesheet_directory() . '/common-assets/css/booking-modal.min.css';
     $bk_css_version = file_exists($bk_css_path) ? filemtime($bk_css_path) : time();
     ?>
@@ -163,25 +164,26 @@ ob_start(function ($html) {
             margin-bottom: 20px;
             letter-spacing: -0.02em;
             line-height: 1.15;
-            color: #ffffff;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            color: #ffffff !important;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
         .podcast-hero h1 span {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff3b30 50%, #ab0e00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: linear-gradient(135deg, #ff8e8e 0%, #ff4f4f 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
         }
 
         .podcast-hero p {
             font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.95) !important;
             max-width: 650px;
             margin-bottom: 0;
             line-height: 1.6;
             font-weight: 500;
             letter-spacing: 0.01em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         /* ── Theater Section ────────────────── */
@@ -209,7 +211,7 @@ ob_start(function ($html) {
 
         @media (max-width: 768px) {
             .podcast-hero {
-                padding: 130px 16px 50px;
+                padding: 130px 20px 50px !important;
                 min-height: auto;
             }
             .podcast-hero h1 {
@@ -221,7 +223,7 @@ ob_start(function ($html) {
                 margin-bottom: 24px;
             }
             .theater-section {
-                padding: 40px 16px;
+                padding: 40px 20px !important;
             }
             .player-column {
                 gap: 16px;
@@ -239,7 +241,7 @@ ob_start(function ($html) {
                 padding: 10px;
             }
             .podcast-coop {
-                padding: 50px 16px;
+                padding: 50px 20px !important;
             }
             .coop-sub {
                 margin-bottom: 24px;
@@ -757,6 +759,7 @@ ob_start(function ($html) {
     
     <!-- Booking Modal script import -->
     <?php
+    define('BOOKING_MODAL_JS_LOADED', true);
     $bk_js_path = get_stylesheet_directory() . '/common-assets/js/booking-modal.min.js';
     $bk_js_version = file_exists($bk_js_path) ? filemtime($bk_js_path) : time();
     ?>

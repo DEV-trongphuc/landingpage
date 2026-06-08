@@ -191,8 +191,19 @@ if (is_page('so-do-to-chuc')) {
     </div>
 </div>
 
+<?php
+if (!defined('BOOKING_MODAL_CSS_LOADED')) {
+    define('BOOKING_MODAL_CSS_LOADED', true);
+    $bk_css_path = get_stylesheet_directory() . '/common-assets/css/booking-modal.min.css';
+    $bk_css_version = file_exists($bk_css_path) ? filemtime($bk_css_path) : time();
+    ?>
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/css/booking-modal.min.css?v=<?php echo $bk_css_version; ?>" />
+    <?php
+}
+?>
+
 <!-- 2. Booking Modal - Đặt lịch tư vấn -->
-<div class="bk-modal" id="bk-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="bk-title">
+<div class="bk-modal" id="bk-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="bk-title" style="display: none;">
     <div class="bk-overlay" id="bk-overlay"></div>
     <div class="bk-container" data-lenis-prevent role="document">
         <button class="bk-close" id="bk-close" aria-label="Đóng modal">
@@ -694,3 +705,14 @@ if (is_page('so-do-to-chuc')) {
         });
     });
 </script>
+
+<?php
+if (!defined('BOOKING_MODAL_JS_LOADED')) {
+    define('BOOKING_MODAL_JS_LOADED', true);
+    $bk_js_path = get_stylesheet_directory() . '/common-assets/js/booking-modal.min.js';
+    $bk_js_version = file_exists($bk_js_path) ? filemtime($bk_js_path) : time();
+    ?>
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/js/booking-modal.min.js?v=<?php echo $bk_js_version; ?>" defer></script>
+    <?php
+}
+?>
