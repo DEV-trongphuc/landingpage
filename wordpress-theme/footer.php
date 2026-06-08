@@ -123,6 +123,58 @@
         </div>
     </footer>
 
+    <!-- CSS transition overrides for scroll-hiding site header -->
+    <style>
+        #site-header {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease !important;
+        }
+        #site-header.hide {
+            transform: translateY(-100%) !important;
+        }
+    </style>
+
+    <!-- Studio Freight Lenis for ultra-smooth momentum scrolling (120Hz optimization) -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.36/dist/lenis.min.js"></script>
+    <script>
+        // Only initialize Lenis on desktop/tablet to avoid weird native scroll friction on mobile touch
+        if (window.innerWidth > 768) {
+            window.lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                direction: 'vertical',
+                gestureDirection: 'vertical',
+                smooth: true,
+                mouseMultiplier: 1,
+                smoothTouch: false,
+                infinite: false,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
+
+            // Integrate Lenis with custom anchor link scrolling
+            document.querySelectorAll('a[href^="#"]:not([href="#dang-ky"])').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetAttr = this.getAttribute('href');
+                    if (targetAttr === '#') return;
+                    const target = document.querySelector(targetAttr);
+                    if (target) {
+                        lenis.scrollTo(target, {
+                            offset: -80,
+                            duration: 1.2,
+                            immediate: false
+                        });
+                    }
+                });
+            });
+        }
+    </script>
+
 <?php wp_footer(); ?>
 </body>
 </html>

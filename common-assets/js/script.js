@@ -2248,19 +2248,21 @@ function initCardTiltGlow() {
 }
 
 function initCountersParallax() {
-    const bg = document.querySelector('.counters-bg');
-    if (!bg) return;
-    const parent = bg.parentElement;
+    const bgs = document.querySelectorAll('.counters-bg');
+    if (bgs.length === 0) return;
 
     function updateParallax() {
-        const rect = parent.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            const speed = 0.25;
-            const viewportCenter = window.innerHeight / 2;
-            const sectionCenter = rect.top + rect.height / 2;
-            const yPos = (sectionCenter - viewportCenter) * speed;
-            bg.style.transform = `translate3d(0, ${yPos}px, 0) scale(1.15)`;
-        }
+        bgs.forEach(bg => {
+            const parent = bg.parentElement;
+            const rect = parent.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const speed = 0.25;
+                const viewportCenter = window.innerHeight / 2;
+                const sectionCenter = rect.top + rect.height / 2;
+                const yPos = (sectionCenter - viewportCenter) * speed;
+                bg.style.transform = `translate3d(0, ${yPos}px, 0) scale(1.15)`;
+            }
+        });
     }
 
     window.addEventListener('scroll', () => {
@@ -2602,6 +2604,7 @@ if (document.readyState === 'loading') {
         initCountersParallax();
         initReadingProgressAndSideNav();
         initMobileTopSheet();
+        initBackToTop();
     });
 } else {
     initCopyrightYear();
@@ -2615,6 +2618,7 @@ if (document.readyState === 'loading') {
     initCountersParallax();
     initReadingProgressAndSideNav();
     initMobileTopSheet();
+    initBackToTop();
 }
 
 

@@ -12930,3 +12930,39 @@ body .pain-card-desc {
     transform: translateY(3px) !important; /* Shift connecting line down to match logos baseline/middle line */
   }
 }
+
+/* ─── IMAGE LOADER SKELETON SCREEN SHIMMER ─── */
+.skeleton {
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: #e2e8f0 !important;
+}
+
+.skeleton::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  transform: translateX(-100%) !important;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
+  animation: shimmer-skeleton 1.5s infinite !important;
+  z-index: 2;
+}
+
+@keyframes shimmer-skeleton {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton img {
+  opacity: 0 !important;
+}

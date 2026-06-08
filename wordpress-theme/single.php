@@ -1,5 +1,36 @@
+<?php
+/**
+ * The template for displaying all single posts
+ * Template Name: Premium Single Post Layout
+ * Template Post Type: post
+ */
+
+// Dequeue unwanted old CSS styles (via WordPress API - catches enqueued styles)
+add_action('wp_enqueue_scripts', function() {
+    global $wp_styles;
+    if ($wp_styles && !empty($wp_styles->registered)) {
+        foreach ($wp_styles->registered as $handle => $style) {
+            if (isset($style->src) && strpos($style->src, 'LANDINGPAGE_MBA/main.css') !== false) {
+                wp_dequeue_style($handle);
+                wp_deregister_style($handle);
+            }
+        }
+    }
+}, 9999);
+
+// Also block via output buffering — removes the <link> tag even if hardcoded by a plugin/theme
+ob_start(function($html) {
+    // Remove any <link> tag loading LANDINGPAGE_MBA/main.css
+    $html = preg_replace(
+        '/<link[^>]+href=[\'"][^\'"]*LANDINGPAGE_MBA\/main\.css[^\'"]*[\'"][^>]*\/?>/i',
+        '<!-- [BLOCKED: LANDINGPAGE_MBA/main.css] -->',
+        $html
+    );
+    return $html;
+});
+?>
 <!DOCTYPE html>
-<html lang="vi" prefix="og: https://ogp.me/ns#">
+<html <?php language_attributes(); ?> prefix="og: https://ogp.me/ns#">
 <head>
     <!-- Google Tag Manager / Global Site Tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKV7LKNLLH"></script>
@@ -11,28 +42,44 @@
         gtag('config', 'AW-11205917800');
     </script>
 
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liên thông quốc tế là gì? Khác gì với liên thông trong nước?</title>
+    <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
     
-    <meta name="description" content="Liên thông quốc tế là hình thức học 100% online với trường đại học nước ngoài, nhận bằng Cử nhân quốc tế chính quy chỉ trong khoảng 1 năm.">
+    <?php
+    // Prepare SEO details dynamically
+    $post_id = get_the_ID();
+    $excerpt = get_the_excerpt();
+    if (empty($excerpt)) {
+        $excerpt = wp_strip_all_tags(wp_trim_words(get_the_content(), 30));
+    }
+    
+    // Extract first image in content as fallback featured image
+    $featured_image = get_the_post_thumbnail_url($post_id, 'full');
+    if (!$featured_image) {
+        $content = get_the_content();
+        preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $content, $matches);
+        $featured_image = isset($matches[1][0]) ? $matches[1][0] : 'https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp';
+    }
+    ?>
+    <meta name="description" content="<?php echo esc_attr($excerpt); ?>">
     <link rel="icon" href="https://ideas.edu.vn/wp-content/uploads/2023/04/logofavicon.png" sizes="32x32" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Liên thông quốc tế là gì? Khác gì với liên thông trong nước?" />
-    <meta property="og:description" content="Liên thông quốc tế là hình thức học 100% online với trường đại học nước ngoài, nhận bằng Cử nhân quốc tế chính quy chỉ trong khoảng 1 năm." />
-    <meta property="og:image" content="https://ideas.edu.vn/wp-content/uploads/2026/05/lien-thong-blog.webp" />
-    <meta property="og:url" content="https://ideas.edu.vn/tin-tuc-moi/lien-thong-quoc-te-la-gi.html" />
-    <meta property="og:site_name" content="IDEAS" />
-    <meta property="article:published_time" content="2026-06-02T08:00:00+07:00" />
-    <meta property="article:modified_time" content="2026-06-02T08:00:00+07:00" />
+    <meta property="og:title" content="<?php echo esc_attr(get_the_title()); ?>" />
+    <meta property="og:description" content="<?php echo esc_attr($excerpt); ?>" />
+    <meta property="og:image" content="<?php echo esc_url($featured_image); ?>" />
+    <meta property="og:url" content="<?php echo esc_url(get_permalink()); ?>" />
+    <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
+    <meta property="article:published_time" content="<?php echo get_the_date('c'); ?>" />
+    <meta property="article:modified_time" content="<?php echo get_the_modified_date('c'); ?>" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Liên thông quốc tế là gì? Khác gì với liên thông trong nước?" />
-    <meta name="twitter:description" content="Liên thông quốc tế là hình thức học 100% online với trường đại học nước ngoài, nhận bằng Cử nhân quốc tế chính quy chỉ trong khoảng 1 năm." />
-    <meta name="twitter:image" content="https://ideas.edu.vn/wp-content/uploads/2026/05/lien-thong-blog.webp" />
+    <meta name="twitter:title" content="<?php echo esc_attr(get_the_title()); ?>" />
+    <meta name="twitter:description" content="<?php echo esc_attr($excerpt); ?>" />
+    <meta name="twitter:image" content="<?php echo esc_url($featured_image); ?>" />
 
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +88,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     
     <!-- Link the main minified style.css -->
-    <link rel="stylesheet" href="common-assets/css/style.min.css?v=1780831787747" />
+    <?php 
+    $css_path = get_stylesheet_directory() . '/common-assets/css/style.min.css';
+    $css_version = file_exists($css_path) ? filemtime($css_path) : time();
+    ?>
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/css/style.min.css?v=<?php echo $css_version; ?>" />
     
     <style>
         /* Prevent overflow-x from breaking sticky elements */
@@ -144,6 +195,10 @@
             letter-spacing: 0.05em;
             margin-bottom: 16px;
         }
+        .article-category-badge a {
+            color: #ab0e00;
+            text-decoration: none;
+        }
 
         .article-main-title {
             font-size: 2.25rem;
@@ -169,32 +224,6 @@
             flex-wrap: wrap;
         }
 
-        .author-card {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .author-avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #e2e8f0;
-        }
-
-        .author-name {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #334155;
-        }
-
-        .author-label {
-            font-size: 0.78rem;
-            color: #64748b;
-            display: block;
-        }
-
         .meta-info-item {
             display: flex;
             align-items: center;
@@ -203,23 +232,19 @@
             color: #64748b;
         }
 
-        .meta-info-item i {
-            color: #ab0e00;
-        }
-
-        /* Article Content */
+        /* Post Body Content Card */
         .article-content-card {
             background: #ffffff;
             border-radius: 24px;
-            padding: 50px 48px;
+            padding: 40px;
             border: 1px solid #e2e8f0;
             box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 576px) {
             .article-content-card {
-                padding: 30px 20px;
+                padding: 24px 20px;
                 border-radius: 16px;
             }
         }
@@ -230,6 +255,18 @@
             color: #334155;
         }
 
+        .article-body-content a {
+            color: #ab0e00;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .article-body-content a:hover {
+            color: #ff3600;
+            text-decoration: underline;
+        }
+
         .article-body-content p {
             margin-bottom: 24px;
         }
@@ -238,8 +275,8 @@
             font-size: 1.6rem;
             font-weight: 700;
             color: #0f172a;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            margin: 40px 0 20px;
+            line-height: 1.4;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -252,47 +289,86 @@
             height: 24px;
             background: #ab0e00;
             border-radius: 4px;
+            flex-shrink: 0;
         }
 
-        .article-body-content ul {
+        .article-body-content h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 30px 0 16px;
+        }
+
+        .article-body-content ul, 
+        .article-body-content ol {
             margin-bottom: 24px;
-            padding-left: 20px;
+            padding-left: 24px;
         }
 
-        .article-body-content ul li {
-            margin-bottom: 12px;
-            position: relative;
-            list-style: none;
-            padding-left: 8px;
+        /* Override WordPress block editor list-style: none */
+        .article-body-content ul,
+        .article-body-content ul.wp-block-list {
+            list-style-type: disc !important;
         }
 
-        .article-body-content ul li::before {
-            content: "•";
+        .article-body-content ol,
+        .article-body-content ol.wp-block-list {
+            list-style-type: decimal !important;
+        }
+
+        .article-body-content li,
+        .article-body-content .wp-block-list li {
+            margin-bottom: 10px;
+            display: list-item !important;
+        }
+
+        .article-body-content ul li::marker,
+        .article-body-content ul.wp-block-list li::marker {
             color: #ab0e00;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
         }
 
-        /* Beautiful Responsive Table */
-        .table-responsive-wrapper {
+        /* Blockquote style */
+        .ideas-blockquote {
+            border-left: 4px solid #ab0e00;
+            padding: 20px 24px;
+            background: #fdf2f2;
+            border-radius: 0 16px 16px 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #475569;
+            margin: 30px 0;
+            line-height: 1.6;
+        }
+
+        /* Table styling — figure.wp-block-table from WordPress block editor */
+        .article-body-content figure.wp-block-table,
+        .article-body-content .table-responsive-wrapper {
             width: 100%;
+            overflow: hidden;         /* clips border-radius corners on table */
             overflow-x: auto;
-            margin: 35px 0;
+            margin: 35px 0 !important;
             border-radius: 16px;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
 
-        .article-body-content table {
+        /* Reset default figure margin from WordPress */
+        .article-body-content figure.wp-block-table {
+            padding: 0;
+        }
+
+        .article-body-content table,
+        .article-body-content figure.wp-block-table table {
             width: 100%;
             border-collapse: collapse;
             text-align: left;
             font-size: 0.95rem;
+            margin: 0 !important;     /* reset any wp margins */
         }
 
-        .article-body-content th {
+        /* Header row <th> — from thead */
+        .article-body-content th,
+        .article-body-content figure.wp-block-table th {
             background: #f8fafc;
             color: #0f172a;
             font-weight: 700;
@@ -300,53 +376,45 @@
             border-bottom: 2px solid #e2e8f0;
         }
 
-        .article-body-content td {
+        /* Data cells <td> */
+        .article-body-content td,
+        .article-body-content figure.wp-block-table td {
             padding: 16px 20px;
             border-bottom: 1px solid #f1f5f9;
             color: #475569;
+            vertical-align: top;
         }
 
-        .article-body-content tbody tr:last-child td {
+        /* First row acting as header (when WP table has no thead) */
+        .article-body-content figure.wp-block-table tbody tr:first-child td,
+        .article-body-content tbody tr:first-child td {
+            background: #f8fafc;
+            color: #0f172a;
+            font-weight: 700;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        /* Last row — no bottom border */
+        .article-body-content tbody tr:last-child td,
+        .article-body-content figure.wp-block-table tbody tr:last-child td {
             border-bottom: none;
         }
 
-        .article-body-content tbody tr:hover {
-            background: #fafafa;
+        /* Row hover */
+        .article-body-content tbody tr:hover td,
+        .article-body-content figure.wp-block-table tbody tr:hover td {
+            background: #f8fafc;
         }
 
-        /* Image Styling */
-        .wp-block-image {
-            margin: 35px 0;
-            text-align: center;
-        }
-
-        .wp-block-image img {
-            max-width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* Callout / Blockquote */
-        .ideas-blockquote {
-            background: #fff8f8;
-            border-left: 4px solid #ab0e00;
-            padding: 24px;
-            border-radius: 0 16px 16px 0;
-            margin: 30px 0;
-            font-style: italic;
-            font-weight: 500;
-            color: #475569;
-        }
-
-        /* Accordion FAQs - App Style */
+        /* FAQs styling */
         .ideas-faq-section {
             margin-top: 50px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 40px;
         }
 
         .ideas-faq-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: #0f172a;
             margin-bottom: 24px;
@@ -356,14 +424,14 @@
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
-        .faq-accordion-item.active {
+        .faq-accordion-item:hover {
             border-color: #ab0e00;
-            box-shadow: 0 4px 15px rgba(171, 14, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(171, 14, 0, 0.03);
         }
 
         .faq-header {
@@ -372,21 +440,34 @@
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            user-select: none;
             font-weight: 600;
-            font-size: 1.05rem;
-            color: #1e293b;
-            transition: color 0.2s;
-        }
-
-        .faq-header:hover {
-            color: #ab0e00;
+            color: #0f172a;
+            user-select: none;
+            gap: 16px;
         }
 
         .faq-icon {
-            font-size: 0.85rem;
-            color: #94a3b8;
+            font-size: 0.9rem;
+            color: #64748b;
             transition: transform 0.3s ease;
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-content {
+            padding: 0 24px 20px 24px;
+            color: #475569;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .faq-accordion-item.active {
+            border-color: #ab0e00;
+            background: #fdf2f2;
         }
 
         .faq-accordion-item.active .faq-icon {
@@ -394,90 +475,20 @@
             color: #ab0e00;
         }
 
-        .faq-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            background: #fafafa;
-        }
-
-        .faq-content {
-            padding: 20px 24px;
-            font-size: 0.98rem;
-            color: #475569;
-            line-height: 1.6;
-            border-top: 1px solid #f1f5f9;
-        }
-
-        /* Post Navigation */
-        .post-navigation {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 40px;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 40px;
-        }
-
-        @media (max-width: 576px) {
-            .post-navigation {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .nav-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            padding: 24px;
-            border-radius: 16px;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-card:hover {
-            border-color: #ab0e00;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
-        }
-
-        .nav-card-label {
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: #ab0e00;
-        }
-
-        .nav-card-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #1e293b;
-            line-height: 1.4;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        /* Share Section */
+        /* Share bar */
         .article-share-bar {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 20px 30px;
-            border: 1px solid #e2e8f0;
-            margin-top: 30px;
+            gap: 16px;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid #f1f5f9;
         }
 
         .share-label {
+            font-weight: 600;
+            color: #475569;
             font-size: 0.95rem;
-            font-weight: 700;
-            color: #1e293b;
         }
 
         .share-buttons {
@@ -552,18 +563,18 @@
         .widget-title::after {
             content: '';
             position: absolute;
-            bottom: -2px;
             left: 0;
+            bottom: -2px;
             width: 40px;
             height: 2px;
             background: #ab0e00;
         }
 
-        /* Register Form Inside Widget */
+        /* Sidebar Inputs */
         .ideas-widget-form {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
 
         .ideas-widget-form input,
@@ -611,7 +622,7 @@
             transform: translateY(-1px);
         }
 
-        /* Popular Courses Sidebar List */
+        /* Sidebar Courses Widget styling */
         .sidebar-course-list {
             display: flex;
             flex-direction: column;
@@ -650,9 +661,60 @@
             font-size: 0.78rem;
             color: #64748b;
         }
+
+        /* Post navigation cards */
+        .post-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 576px) {
+            .post-navigation {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .nav-card {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-card:hover {
+            border-color: #ab0e00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(171, 14, 0, 0.03);
+        }
+
+        .nav-card-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-card-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.4;
+        }
     </style>
+    <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 
     <header class="ideas_header" id="site-header">
         <div class="container header-inner">
@@ -1007,6 +1069,8 @@
         <a href="/dat-lich" class="nav-cta">Nhận tư vấn</a>
     </div>
 
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    
     <!-- Main Layout Container -->
     <div class="post-layout-wrapper">
         
@@ -1015,206 +1079,104 @@
             <!-- Hero Header Card -->
             <article class="article-hero">
                 <div class="article-breadcrumbs">
-                    <a href="/"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                    <a href="<?php echo esc_url(home_url('/')); ?>"><i class="fa-solid fa-house"></i> Trang chủ</a>
                     <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
-                    <a href="/tin-tuc-moi">Tin Tức Mới</a>
-                    <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
-                    <span>Liên thông quốc tế</span>
+                    <?php 
+                    $categories = get_the_category();
+                    if (!empty($categories)) {
+                        $cat = $categories[0];
+                        echo '<a href="' . esc_url(get_category_link($cat->term_id)) . '">' . esc_html($cat->name) . '</a>';
+                        echo '<i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>';
+                    }
+                    ?>
+                    <span><?php the_title(); ?></span>
                 </div>
                 
-                <span class="article-category-badge">Tin Tức Mới</span>
+                <span class="article-category-badge">
+                    <?php the_category(', '); ?>
+                </span>
                 
-                <h1 class="article-main-title">Liên thông quốc tế là gì? Khác gì với liên thông trong nước?</h1>
+                <h1 class="article-main-title"><?php the_title(); ?></h1>
                 
                 <div class="article-meta-row">
                     <div class="meta-info-item">
                         <i class="fa-solid fa-calendar-days"></i>
-                        <span>Tháng 6 2, 2026</span>
+                        <span><?php echo get_the_date('d/m/Y'); ?></span>
                     </div>
                     
                     <div class="meta-info-item">
                         <i class="fa-solid fa-clock"></i>
-                        <span>8 phút đọc</span>
+                        <?php
+                        $post_content = get_the_content();
+                        $word_count = str_word_count(strip_tags($post_content));
+                        $reading_time = ceil($word_count / 200);
+                        if ($reading_time < 1) $reading_time = 1;
+                        ?>
+                        <span><?php echo $reading_time; ?> phút đọc</span>
                     </div>
                 </div>
 
                 <!-- Featured Cover Image / Ảnh bìa -->
-                <div class="article-featured-image">
-                    <img src="https://ideas.edu.vn/wp-content/uploads/2026/05/lien-thong-blog.webp" alt="Liên thông quốc tế là gì? Lộ trình cử nhân quốc tế BBA Swiss UMEF" />
+                <div class="article-featured-image skeleton">
+                    <img src="<?php echo esc_url($featured_image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" onload="this.parentElement.classList.remove('skeleton')" />
                 </div>
             </article>
 
             <!-- Main Content Card -->
             <div class="article-content-card">
                 <div class="article-body-content">
-                    <p>Nếu bạn đang có bằng Cao đẳng, hoặc đang học đại học nhưng muốn đổi chuyên ngành, chắc hẳn bạn có thể đã từng nghe đến hai từ <strong>"liên thông"</strong>. Và cũng có thể bạn đang thắc mắc: liên thông quốc tế với liên thông trong nước thì khác nhau ở chỗ nào, cái nào phù hợp với mình hơn?</p>
-
-                    <p>Hai hình thức này nghe có vẻ chỉ khác nhau ở chỗ "trong nước" hay "quốc tế", nhưng thực ra khác nhau hoàn toàn về cách học, thời gian, chi phí và giá trị bằng cấp sau khi tốt nghiệp. Trong bài viết này, IDEAS sẽ giúp bạn hiểu rõ từng hình thức, để tự đánh giá được lựa chọn nào đang phù hợp với giai đoạn hiện tại của mình.</p>
-
-                    <h2>Vậy liên thông là gì?</h2>
+                    <?php 
+                    // Render content, and automatically strip duplicate of the first image inline if it matches featured image
+                    $content_html = apply_filters('the_content', get_the_content());
                     
-                    <p>Liên thông là hình thức học để hoàn thiện bằng cấp ở bậc cao hơn mà không cần học lại từ đầu. Thay vì phải học 4 năm đại học như bình thường, bạn được công nhận một phần tín chỉ đã học ở bậc Cao đẳng và chỉ cần học phần còn lại, thường là chương trình năm cuối bậc đại học. Cả liên thông trong nước lẫn liên thông quốc tế đều hoạt động theo nguyên lý này. Điểm khác nhau nằm ở chỗ bạn học với ai, học như thế nào và nhận bằng từ đâu.</p>
-
-                    <h2>Liên thông trong nước: Hình thức học quen thuộc</h2>
+                    // Simple regex replacement to omit the first duplicate image from the body layout
+                    if ($featured_image) {
+                        $escaped_img = preg_quote($featured_image, '/');
+                        // Remove figure or image block containing this exact url
+                        $content_html = preg_replace('/<figure[^>]*>\s*<img[^>]+src="' . $escaped_img . '"[^>]*>\s*<\/figure>/i', '', $content_html, 1);
+                        $content_html = preg_replace('/<img[^>]+src="' . $escaped_img . '"[^>]*>/i', '', $content_html, 1);
+                    }
                     
-                    <p>Hầu hết các trường đại học trong nước đều có chương trình liên thông từ Cao đẳng lên Đại học. Bạn có thể xét tuyển hoặc thi tuyển đầu vào tùy theo từng trường, và học thêm khoảng 1,5 đến 2 năm tại trường, nhận bằng Đại học do trường Việt Nam cấp và được Bộ GD&ĐT công nhận. Ưu điểm rõ nhất là chi phí thấp, thủ tục quen thuộc, và bằng được công nhận đầy đủ trong hệ thống nhà nước. Nếu bạn đang làm việc trong khu vực công, muốn thi công chức hoặc cần bằng để đáp ứng yêu cầu hành chính, đây là con đường thẳng và ít rào cản nhất.</p>
-
-                    <p>Tuy nhiên, chương trình học phần lớn vẫn thiên về lý thuyết, chưa cập nhật nhiều với thực tế thị trường lao động quốc tế. Môi trường học khá đồng nhất, ít cơ hội tiếp xúc với góc nhìn quản trị từ bên ngoài Việt Nam. Và giá trị bằng cấp, dù được công nhận trong nước, thường không mở ra nhiều cơ hội ở môi trường doanh nghiệp nước ngoài hoặc tập đoàn đa quốc gia.</p>
-
-                    <h2>Liên thông quốc tế: Hình thức mới mẻ & tối ưu</h2>
+                    // Strip leftover raw ultimate post kit (ultp) plugin icon strings
+                    $content_html = preg_replace('/_ultp_aci_ic_[a-zA-Z0-9_]+?_ultp_aci_ic_end_/i', '', $content_html);
                     
-                    <p>Liên thông quốc tế có nghĩa là: bạn đã có bằng Cao đẳng, đăng ký học thẳng với một trường đại học nước ngoài, <strong>học 100% online</strong> trong khoảng 1 năm, không qua trường liên kết trung gian trong nước, và nhận bằng Cử nhân chính quy do chính trường đó cấp.</p>
-
-                    <p>Chương trình <strong>Top-up BBA của Swiss UMEF</strong> mà IDEAS đang hỗ trợ là một ví dụ cụ thể. Bạn liên hệ với đơn vị tuyển sinh chính thức của trường tại Việt Nam là IDEAS, chúng tôi sẽ hỗ trợ bạn chuẩn bị và hoàn thiện hồ sơ, nộp trực tiếp với Hội đồng tuyển sinh Swiss UMEF. Toàn bộ chương trình học sẽ do Swiss UMEF đào tạo trực tiếp, học hoàn toàn online và nhận bằng Cử nhân Quản trị Kinh doanh do chính Swiss UMEF cấp. Bạn không cần bay sang Thụy Sĩ, không cần học qua trường nào ở Việt Nam.</p>
-
-                    <h2>Liên thông trong nước và liên thông quốc tế khác nhau ở đâu?</h2>
-                    
-                    <p>Mỗi hình thức học đều có ưu điểm và hạn chế riêng. IDEAS so sánh thẳng vào những điểm mà người học thường quan tâm nhất:</p>
-
-                    <div class="table-responsive-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Tiêu chí</th>
-                                    <th>Liên thông quốc tế</th>
-                                    <th>Liên thông trong nước</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Thời gian học</strong></td>
-                                    <td>1 năm</td>
-                                    <td>1,5 đến 2 năm</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Hình thức</strong></td>
-                                    <td>Học 100% online vào buổi tối, linh hoạt thời gian</td>
-                                    <td>Học tập trung cuối tuần hoặc tối, cần đến lớp</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Đơn vị cấp bằng</strong></td>
-                                    <td>Trường đại học nước ngoài cấp trực tiếp</td>
-                                    <td>Trường đại học Việt Nam</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Giảng viên</strong></td>
-                                    <td>Giảng viên quốc tế & chuyên gia Việt Nam</td>
-                                    <td>Giảng viên Việt Nam</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Giá trị trong nước</strong></td>
-                                    <td>Phù hợp khu vực tư nhân & môi trường quốc tế</td>
-                                    <td>Công nhận đầy đủ bởi Bộ GD&ĐT</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Giá trị quốc tế</strong></td>
-                                    <td>Được công nhận rộng rãi theo ECTS, IEE, WES</td>
-                                    <td>Hạn chế ngoài Việt Nam</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Phù hợp với ai</strong></td>
-                                    <td>Muốn phát triển tại doanh nghiệp tư nhân, đa quốc gia</td>
-                                    <td>Cần bằng cho khu vực công, thi công chức</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h2>Tại sao chương trình liên thông quốc tế của Swiss UMEF phù hợp với bạn?</h2>
-                    
-                    <ul>
-                        <li><strong>Bằng chính quy từ trường quốc tế:</strong> Bằng cấp gắn thẳng với uy tín của Swiss UMEF, trường đạt kiểm định Liên bang SAC của Thụy Sĩ, kiểm định kinh doanh quốc tế ACBSP và IACBE, cùng chứng nhận QS Stars 5 sao toàn diện.</li>
-                        <li><strong>Không cần ra nước ngoài du học:</strong> Toàn bộ học 100% online vào buổi tối trong tuần theo lịch của trường, nhưng bạn có thể linh hoạt lịch phù hợp với công việc.</li>
-                        <li><strong>Thời gian ngắn để có bằng Cử nhân quốc tế:</strong> Chỉ khoảng 1 năm để hoàn thành, ngắn hơn đáng kể so với liên thông trong nước.</li>
-                        <li><strong>Bằng mở ra cơ hội học tiếp lên Thạc sĩ quốc tế:</strong> Chương trình áp dụng hệ thống tín chỉ châu Âu (ECTS), tương thích với chuẩn Bologna, tạo điều kiện để học lên MBA hay Thạc sĩ tại châu Âu.</li>
-                        <li><strong>Giá trị văn bằng cao:</strong> Được kiểm soát chặt chẽ bởi Chính phủ Thụy Sĩ, sở hữu giá trị đặc biệt cao tại thị trường việc làm tư nhân và đa quốc gia.</li>
-                    </ul>
-
-                    <h2>Vậy bạn nên chọn hình thức nào?</h2>
-                    
-                    <div class="ideas-blockquote">
-                        "Không có lựa chọn nào đúng tuyệt đối, chỉ có lựa chọn phù hợp nhất với mục tiêu nghề nghiệp của từng người."
-                    </div>
-
-                    <ul>
-                        <li><strong>Chọn liên thông trong nước</strong> nếu bạn cần bằng để đáp ứng yêu cầu hành chính trong khu vực công, muốn thi công chức, hoặc ngân sách đang ưu tiên chi phí thấp tối đa.</li>
-                        <li><strong>Chọn liên thông quốc tế</strong> nếu bạn đã có bằng Cao đẳng, đang đi làm, muốn có bằng Cử nhân quốc tế chính quy trong thời gian ngắn nhất, và định hướng thăng tiến trong doanh nghiệp tư nhân hoặc môi trường quốc tế.</li>
-                    </ul>
-
-                    <h2>Môi trường học bạn nhận được khi lựa chọn liên thông quốc tế</h2>
-                    
-                    <p>Rất nhiều người khi so sánh hai hình thức này chỉ nhìn vào bằng cấp và chi phí. Nhưng thực ra, môi trường học tập cũng ảnh hưởng lớn đến giá trị bạn nhận được. Học trong một chương trình quốc tế, bạn được tiếp xúc với cách tư duy và cách làm việc của người học từ nhiều quốc gia khác nhau. Cách đặt câu hỏi, cách phân tích tình huống, cách viết báo cáo học thuật theo chuẩn quốc tế, những thứ này không nằm trong giáo trình nhưng lại là thứ bạn mang ra ngoài đời thực nhiều nhất.</p>
-
-                    <p>Đó là lý do IDEAS không chỉ hỗ trợ tuyển sinh mà còn đồng hành xuyên suốt quá trình học. Các học viên Việt Nam sẽ được sử dụng hệ sinh thái hỗ trợ học tập do chính IDEAS phát triển, từ lớp chuyên đề cuối tuần, AI platform hỗ trợ 24/7, đến thư viện học thuật quốc tế từ Cengage. Đem đến trải nghiệm học tập phù hợp với nhịp sống của người trưởng thành.</p>
-
-                    <figure class="wp-block-image size-full">
-                        <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/05/thumbnail.webp" alt="liên thông quốc tế là gì? hệ sinh thái ideas" />
-                    </figure>
-
-                    <p>Liên thông trong nước và liên thông quốc tế trực tiếp phục vụ hai nhóm mục tiêu khác nhau. Nếu bạn đang có bằng Cao đẳng, muốn nâng cấp lên Cử nhân quốc tế trong thời gian ngắn nhất mà không cần ra nước ngoài với thời gian tối ưu, đây là thời điểm phù hợp để tìm hiểu kỹ hơn về lộ trình này.</p>
-                </div>
-
-                <!-- Accordion FAQs -->
-                <div class="ideas-faq-section">
-                    <h3 class="ideas-faq-title"><i class="fa-solid fa-circle-question" style="color: #ab0e00; margin-right: 8px;"></i> Câu hỏi thường gặp (FAQs)</h3>
-                    
-                    <div class="faq-accordion-item">
-                        <div class="faq-header">
-                            <span>Điều kiện đầu vào để học liên thông quốc tế là gì?</span>
-                            <i class="fa-solid fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-body">
-                            <div class="faq-content">
-                                Bạn cần có bằng Cao đẳng, hoặc bảng điểm năm 3 đại học chuyên ngành về Kinh tế. Trường xem xét và công nhận tín chỉ phù hợp từ bảng điểm của bạn. Đội ngũ tư vấn của IDEAS sẽ đánh giá hồ sơ cụ thể.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-accordion-item">
-                        <div class="faq-header">
-                            <span>Học liên thông quốc tế có cần tiếng Anh không?</span>
-                            <i class="fa-solid fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-body">
-                            <div class="faq-content">
-                                Có. Chương trình giảng dạy hoàn toàn bằng tiếng Anh, bạn cần đọc tài liệu, làm bài tập và hoàn thành bài kiểm tra theo chuẩn quốc tế. Đầu vào chương trình cần trình độ tiếng Anh tương đương IELTS 6.0 hoặc phỏng vấn đầu vào với đại diện của trường tại Việt Nam. IDEAS cũng hỗ trợ học viên trong giai đoạn đầu làm quen với môi trường học bằng tiếng Anh.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-accordion-item">
-                        <div class="faq-header">
-                            <span>Liên thông quốc tế khác liên kết quốc tế như thế nào?</span>
-                            <i class="fa-solid fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-body">
-                            <div class="faq-content">
-                                Liên kết quốc tế (2+2, 3+1…) dành cho học sinh THPT, học cử nhân 4 năm qua hai trường. Liên thông quốc tế dành cho người đã có bằng Cao đẳng, chỉ học thêm khoảng 1 năm để hoàn thiện bằng Cử nhân quốc tế.
-                            </div>
-                        </div>
-                    </div>
+                    echo $content_html; 
+                    ?>
                 </div>
 
                 <!-- Share Section -->
                 <div class="article-share-bar">
                     <span class="share-label">Chia sẻ bài viết:</span>
                     <div class="share-buttons">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://ideas.edu.vn/tin-tuc-moi/lien-thong-quoc-te-la-gi.html" target="_blank" class="share-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://ideas.edu.vn/tin-tuc-moi/lien-thong-quoc-te-la-gi.html" target="_blank" class="share-btn linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://twitter.com/intent/tweet?url=https://ideas.edu.vn/tin-tuc-moi/lien-thong-quoc-te-la-gi.html" target="_blank" class="share-btn twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url(get_permalink()); ?>" target="_blank" class="share-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo esc_url(get_permalink()); ?>" target="_blank" class="share-btn linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/intent/tweet?url=<?php echo esc_url(get_permalink()); ?>" target="_blank" class="share-btn twitter"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
 
                 <!-- Post Navigation Links -->
                 <div class="post-navigation">
-                    <a href="/mba-hay-emba-dau-la-lua-chon-phu-hop.html" class="nav-card">
-                        <span class="nav-card-label"><i class="fa-solid fa-arrow-left"></i> Bài trước đó</span>
-                        <span class="nav-card-title">MBA Hay EMBA: Đâu Là Lựa Chọn Bứt Phá Sự Nghiệp Cho Người Đi Làm?</span>
-                    </a>
-                    <a href="/du-hoc-thac-si-tai-phap.html" class="nav-card" style="text-align: right; align-items: flex-end;">
-                        <span class="nav-card-label">Bài tiếp theo <i class="fa-solid fa-arrow-right"></i></span>
-                        <span class="nav-card-title">Có nên du học thạc sĩ tại Pháp? Lợi ích và thủ tục hồ sơ</span>
-                    </a>
+                    <?php
+                    $prev_post = get_previous_post();
+                    if (!empty($prev_post)) : ?>
+                        <a href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>" class="nav-card">
+                            <span class="nav-card-label"><i class="fa-solid fa-arrow-left"></i> Bài trước đó</span>
+                            <span class="nav-card-title"><?php echo esc_html(get_the_title($prev_post->ID)); ?></span>
+                        </a>
+                    <?php else : ?>
+                        <div></div>
+                    <?php endif; ?>
+
+                    <?php
+                    $next_post = get_next_post();
+                    if (!empty($next_post)) : ?>
+                        <a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" class="nav-card" style="text-align: right; align-items: flex-end;">
+                            <span class="nav-card-label">Bài tiếp theo <i class="fa-solid fa-arrow-right"></i></span>
+                            <span class="nav-card-title"><?php echo esc_html(get_the_title($next_post->ID)); ?></span>
+                        </a>
+                    <?php else: ?>
+                        <div></div>
+                    <?php endif; ?>
                 </div>
             </div>
         </main>
@@ -1249,27 +1211,36 @@
                 <div class="sidebar-widget">
                     <h3 class="widget-title">Bài viết gần đây</h3>
                     <div class="sidebar-course-list">
-                        <a href="/mba-hay-emba-dau-la-lua-chon-phu-hop.html" class="sidebar-course-item">
-                            <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/ltnumef10202501.webp" alt="MBA hay EMBA" class="sidebar-course-img">
-                            <div>
-                                <h4 class="sidebar-course-title" style="font-size: 0.88rem; line-height: 1.3;">MBA Hay EMBA: Lựa Chọn Nào Bứt Phá?</h4>
-                                <p class="sidebar-course-desc" style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">Tháng 6 1, 2026 • 5 phút đọc</p>
-                            </div>
-                        </a>
-                        <a href="/du-hoc-thac-si-tai-phap.html" class="sidebar-course-item">
-                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/12/paris.webp" alt="Du học Pháp" class="sidebar-course-img">
-                            <div>
-                                <h4 class="sidebar-course-title" style="font-size: 0.88rem; line-height: 1.3;">Có nên du học thạc sĩ tại Pháp?</h4>
-                                <p class="sidebar-course-desc" style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">Tháng 5 28, 2026 • 6 phút đọc</p>
-                            </div>
-                        </a>
-                        <a href="/ai-changing-education.html" class="sidebar-course-item">
-                            <img src="https://ideas.edu.vn/wp-content/uploads/2026/06/mba_in_ai.webp" alt="AI in Education" class="sidebar-course-img">
-                            <div>
-                                <h4 class="sidebar-course-title" style="font-size: 0.88rem; line-height: 1.3;">AI Thay Đổi Bản Đồ Giáo Dục?</h4>
-                                <p class="sidebar-course-desc" style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">Tháng 5 25, 2026 • 7 phút đọc</p>
-                            </div>
-                        </a>
+                        <?php
+                        $recent_posts = new WP_Query(array(
+                            'posts_per_page' => 3,
+                            'post__not_in'   => array($post_id),
+                            'post_status'    => 'publish'
+                        ));
+                        
+                        if ($recent_posts->have_posts()) :
+                            while ($recent_posts->have_posts()) : $recent_posts->the_post();
+                                $recent_img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+                                if (!$recent_img) {
+                                    $recent_content = get_the_content();
+                                    preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $recent_content, $matches_r);
+                                    $recent_img = isset($matches_r[1][0]) ? $matches_r[1][0] : 'https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp';
+                                }
+                                ?>
+                                <a href="<?php the_permalink(); ?>" class="sidebar-course-item">
+                                    <div class="sidebar-course-img-wrap skeleton" style="width: 60px; height: 60px; border-radius: 8px; overflow: hidden; flex-shrink: 0;">
+                                        <img src="<?php echo esc_url($recent_img); ?>" alt="<?php the_title_attribute(); ?>" class="sidebar-course-img" style="width: 100%; height: 100%;" onload="this.parentElement.classList.remove('skeleton')">
+                                    </div>
+                                    <div>
+                                        <h4 class="sidebar-course-title" style="font-size: 0.88rem; line-height: 1.3;"><?php the_title(); ?></h4>
+                                        <p class="sidebar-course-desc" style="font-size: 0.75rem; color: #64748b; margin-top: 2px;"><?php echo get_the_date('d/m/Y'); ?></p>
+                                    </div>
+                                </a>
+                                <?php
+                            endwhile;
+                            wp_reset_postdata();
+                        endif;
+                        ?>
                     </div>
                 </div>
 
@@ -1334,53 +1305,14 @@
 
     </div>
 
-    <!-- Footer -->
-    <div class="ideas_footer">
-        <div>
-            <div>
-                <img src="https://ideas.edu.vn/wp-content/uploads/2025/06/Log_ideas_w.png" alt="Logo IDEAS White" />
-                <p>Địa chỉ: Tầng 4, 39B Trường Sơn, Phường Tân Sơn Nhất, TP.HCM</p>
-                <p>MST: 0318949449</p>
-                <div class="ideas_follow">
-                    <a target="_blank" href="https://www.facebook.com/ideas.edu.vn/"><i class="fa-brands fa-facebook"></i></a>
-                    <a target="_blank" href="https://www.youtube.com/c/Vi%E1%BB%87nIDEAS"><i class="fa-brands fa-youtube"></i></a>
-                    <a target="_blank" href="https://www.linkedin.com/company/ideasinstitute/"><i class="fa-brands fa-linkedin"></i></a>
-                    <a target="_blank" href="https://www.tiktok.com/@ideas_institute"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
-            </div>
-            <div>
-                <h5>IDEAS</h5>
-                <a href="/"><i class="fa-solid fa-angles-right"></i> Trang chủ</a>
-                <a href="/dong-su-kien"><i class="fa-solid fa-angles-right"></i> Dòng sự kiện</a>
-                <a href="/doi-ngu-giang-vien"><i class="fa-solid fa-angles-right"></i> Hội đồng chuyên môn</a>
-                <a href="/so-do-to-chuc"><i class="fa-solid fa-angles-right"></i> Cơ cấu tổ chức</a>
-            </div>
-            <div>
-                <h5>Chương trình</h5>
-                <a href="/swiss-umef-online-mba"><i class="fa-solid fa-angles-right"></i> Online MBA</a>
-                <a href="/swiss-umef-executive-mba"><i class="fa-solid fa-angles-right"></i> Executive MBA</a>
-                <a href="/swiss-umef-msc-ai"><i class="fa-solid fa-angles-right"></i> MSc AI</a>
-                <a href="/dual-dba-estiam-rb"><i class="fa-solid fa-angles-right"></i> Dual DBA</a>
-            </div>
-            <div>
-                <h5>Đối tác</h5>
-                <a target="_blank" href="/swiss-umef"><i class="fa-solid fa-angles-right"></i> Swiss UMEF</a>
-                <a target="_blank" href="https://www.ascencia-business-school.com/en/"><i class="fa-solid fa-angles-right"></i> Ascencia Business</a>
-                <a target="_blank" href="https://www.collegedeparis.com/"><i class="fa-solid fa-angles-right"></i> College de Paris</a>
-                <a target="_blank" href="https://www.estiam.education/"><i class="fa-solid fa-angles-right"></i> Estiam</a>
-            </div>
-        </div>
-        <p>
-            <span>@2025 IDEAS Academy</span>
-            <span>
-                <a target="_blank" href="/dieu-khoan-su-dung"><i class="fa-solid fa-lock"></i> Điều khoản - bảo mật</a>
-                <a target="_blank" href="/trach-nhiem-mien-tru"><i class="fa-solid fa-shield"></i> Trách nhiệm miễn trừ</a>
-            </span>
-        </p>
-    </div>
+    <?php endwhile; endif; ?>
 
     <!-- Site JS script (for mobile menu toggles and dropdown behaviors) -->
-    <script src="common-assets/js/script.min.js?v=1780831787748" defer></script>
+    <?php 
+    $js_path = get_stylesheet_directory() . '/common-assets/js/script.min.js';
+    $js_version = file_exists($js_path) ? filemtime($js_path) : time();
+    ?>
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/js/script.min.js?v=<?php echo $js_version; ?>" defer></script>
     
     <!-- FAQ Accordion Script -->
     <script>
@@ -1410,120 +1342,8 @@
         });
     </script>
 
-    <!-- Dynamic WordPress REST API post loader (for future-proof rendering) -->
+    <!-- Handle Sidebar Sticky Offset dynamically on scroll based on header visibility -->
     <script>
-        async function loadPostDynamic() {
-            const params = new URLSearchParams(window.location.search);
-            let slug = params.get('slug');
-            
-            // If no slug in query param, try to extract from pathname
-            if (!slug) {
-                const pathParts = window.location.pathname.split('/');
-                const lastPart = pathParts[pathParts.length - 1];
-                if (lastPart && lastPart.endsWith('.html') && lastPart !== 'singlepost.html') {
-                    slug = lastPart.replace('.html', '');
-                }
-            }
-            
-            if (!slug) {
-                console.log("No slug provided. Displaying default static pre-rendered content.");
-                return;
-            }
-            
-            try {
-                const titleContainer = document.querySelector('.article-main-title');
-                const bodyContainer = document.querySelector('.article-body-content');
-                
-                if (titleContainer) titleContainer.textContent = "Đang tải bài viết...";
-                
-                const response = await fetch(`https://ideas.edu.vn/wp-json/wp/v2/posts?_embed=true&slug=${slug}`);
-                if (!response.ok) throw new Error("API request failed");
-                const posts = await response.json();
-                
-                if (!posts || posts.length === 0) {
-                    if (titleContainer) titleContainer.textContent = "Không tìm thấy bài viết";
-                    return;
-                }
-                
-                const post = posts[0];
-                const postTitle = post.title.rendered;
-                
-                // Update page titles
-                document.title = postTitle + " - IDEAS";
-                if (titleContainer) titleContainer.textContent = postTitle;
-                
-                let postContent = post.content.rendered;
-                
-                // Extract first image to use as cover image
-                let featuredImgUrl = "";
-                const imgRegex = /<img[^>]+src="([^">]+)"/g;
-                const matches = imgRegex.exec(postContent);
-                if (matches && matches[1]) {
-                    featuredImgUrl = matches[1];
-                }
-                
-                // Prefer WP official featured image if exists
-                if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
-                    featuredImgUrl = post._embedded['wp:featuredmedia'][0].source_url || featuredImgUrl;
-                }
-                
-                // Set the cover image src
-                const coverImg = document.querySelector('.article-featured-image img');
-                if (coverImg && featuredImgUrl) {
-                    coverImg.src = featuredImgUrl;
-                    
-                    // Update social/SEO meta elements dynamically
-                    const ogImage = document.querySelector('meta[property="og:image"]');
-                    if (ogImage) ogImage.setAttribute('content', featuredImgUrl);
-                    const twitterImage = document.querySelector('meta[name="twitter:image"]');
-                    if (twitterImage) twitterImage.setAttribute('content', featuredImgUrl);
-                }
-                
-                // Update SEO tags
-                const ogTitle = document.querySelector('meta[property="og:title"]');
-                if (ogTitle) ogTitle.setAttribute('content', postTitle);
-                const ogUrl = document.querySelector('meta[property="og:url"]');
-                if (ogUrl) ogUrl.setAttribute('content', window.location.href);
-                
-                // Format and update date
-                const postDate = new Date(post.date);
-                const months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
-                const formattedDate = `Tháng ${months[postDate.getMonth()]} ${postDate.getDate()}, ${postDate.getFullYear()}`;
-                
-                const metaDate = document.querySelector('.meta-info-item span');
-                if (metaDate) metaDate.textContent = formattedDate;
-                
-                // Update article content, removing the duplicated first image if it is embedded inline
-                if (bodyContainer) {
-                    bodyContainer.innerHTML = postContent;
-                    
-                    const inlineImages = bodyContainer.querySelectorAll('img');
-                    if (inlineImages.length > 0 && inlineImages[0].src === featuredImgUrl) {
-                        const figureParent = inlineImages[0].closest('figure');
-                        if (figureParent) {
-                            figureParent.remove();
-                        } else {
-                            inlineImages[0].remove();
-                        }
-                    }
-                }
-                
-                // Estimate reading time
-                const text = bodyContainer ? bodyContainer.textContent || bodyContainer.innerText : "";
-                const wordCount = text.split(/\s+/).length;
-                const readingTime = Math.max(1, Math.round(wordCount / 200));
-                
-                const readTimeEl = document.querySelectorAll('.meta-info-item span')[1];
-                if (readTimeEl) readTimeEl.textContent = `${readingTime} phút đọc`;
-                
-            } catch (err) {
-                console.error("Error loading dynamic WordPress post:", err);
-            }
-        }
-        
-        window.addEventListener('DOMContentLoaded', loadPostDynamic);
-
-        // Handle Sidebar Sticky Offset dynamically on scroll based on header visibility
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
             const asideEl = document.querySelector('aside');
@@ -1682,5 +1502,4 @@
             });
         });
     </script>
-</body>
-</html>
+    <?php get_footer(); ?>

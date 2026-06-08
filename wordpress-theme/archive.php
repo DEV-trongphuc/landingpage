@@ -1,9 +1,9 @@
 <?php
 /**
- * The template for displaying all single posts
- * Template Name: Premium Single Post Layout
- * Template Post Type: post
+ * The template for displaying archive pages and standard news listings
+ * Template Name: Premium Blog Archive Layout
  */
+global $wp;
 
 // Dequeue unwanted old CSS styles (via WordPress API - catches enqueued styles)
 add_action('wp_enqueue_scripts', function() {
@@ -18,9 +18,8 @@ add_action('wp_enqueue_scripts', function() {
     }
 }, 9999);
 
-// Also block via output buffering — removes the <link> tag even if hardcoded by a plugin/theme
+// Block unwanted styles via output buffering
 ob_start(function($html) {
-    // Remove any <link> tag loading LANDINGPAGE_MBA/main.css
     $html = preg_replace(
         '/<link[^>]+href=[\'"][^\'"]*LANDINGPAGE_MBA\/main\.css[^\'"]*[\'"][^>]*\/?>/i',
         '<!-- [BLOCKED: LANDINGPAGE_MBA/main.css] -->',
@@ -44,42 +43,23 @@ ob_start(function($html) {
 
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+    <title>Tin tức &amp; Sự kiện | <?php bloginfo('name'); ?></title>
     
-    <?php
-    // Prepare SEO details dynamically
-    $post_id = get_the_ID();
-    $excerpt = get_the_excerpt();
-    if (empty($excerpt)) {
-        $excerpt = wp_strip_all_tags(wp_trim_words(get_the_content(), 30));
-    }
-    
-    // Extract first image in content as fallback featured image
-    $featured_image = get_the_post_thumbnail_url($post_id, 'full');
-    if (!$featured_image) {
-        $content = get_the_content();
-        preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $content, $matches);
-        $featured_image = isset($matches[1][0]) ? $matches[1][0] : 'https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp';
-    }
-    ?>
-    <meta name="description" content="<?php echo esc_attr($excerpt); ?>">
+    <meta name="description" content="Khám phá các tin tức mới nhất, sự kiện giáo dục và chia sẻ từ các chuyên gia đầu ngành về các chương trình BBA, MBA, MSc AI, DBA quốc tế tại IDEAS.">
     <link rel="icon" href="https://ideas.edu.vn/wp-content/uploads/2023/04/logofavicon.png" sizes="32x32" />
     
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="<?php echo esc_attr(get_the_title()); ?>" />
-    <meta property="og:description" content="<?php echo esc_attr($excerpt); ?>" />
-    <meta property="og:image" content="<?php echo esc_url($featured_image); ?>" />
-    <meta property="og:url" content="<?php echo esc_url(get_permalink()); ?>" />
-    <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
-    <meta property="article:published_time" content="<?php echo get_the_date('c'); ?>" />
-    <meta property="article:modified_time" content="<?php echo get_the_modified_date('c'); ?>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tin tức & Sự kiện | IDEAS" />
+    <meta property="og:description" content="Cập nhật tin tức giáo dục, hoạt động thực tế và học vụ chuyên nghiệp cùng các chương trình cử nhân, thạc sĩ, tiến sĩ quốc tế." />
+    <meta property="og:image" content="https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp" />
+    <meta property="og:url" content="<?php echo esc_url(home_url(add_query_arg(array(), $wp->request))); ?>" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="<?php echo esc_attr(get_the_title()); ?>" />
-    <meta name="twitter:description" content="<?php echo esc_attr($excerpt); ?>" />
-    <meta name="twitter:image" content="<?php echo esc_url($featured_image); ?>" />
+    <meta name="twitter:title" content="Tin tức & Sự kiện | IDEAS" />
+    <meta name="twitter:description" content="Cập nhật tin tức giáo dục, hoạt động thực tế và học vụ chuyên nghiệp cùng các chương trình cử nhân, thạc sĩ, tiến sĩ quốc tế." />
+    <meta name="twitter:image" content="https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp" />
 
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,433 +80,378 @@ ob_start(function($html) {
             overflow-x: clip !important;
         }
 
-        /* Modern Single Post UI/UX App-like Custom Styles */
+        /* Modern Archive UI/UX Styles */
         body {
             font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
             background-color: #f8fafc;
             color: #1e293b;
         }
 
+        /* Hero Header */
+        .blog-archive-hero {
+            background: #0f172a;
+            padding: 140px 20px 90px;
+            text-align: center;
+            position: relative;
+            color: #ffffff;
+            overflow: hidden;
+            border-bottom: 4px solid #ab0e00;
+        }
+        
+        .counters-bg {
+            position: absolute;
+            top: -150px;
+            left: -10%;
+            width: 120%;
+            height: calc(100% + 300px);
+            background-size: cover;
+            background-position: center;
+            filter: blur(1.5px);
+            will-change: transform;
+            transform: translate3d(0, 0, 0) scale(1.15);
+            z-index: 1;
+            opacity: 0.85;
+        }
+
+        /* Search bar styles */
+        .archive-search-form {
+            max-width: 600px;
+            margin: 30px auto 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .search-input-wrap {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 100px;
+            padding: 6px 6px 6px 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .search-input-wrap:focus-within {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.45);
+            box-shadow: 0 10px 35px rgba(171, 14, 0, 0.25);
+        }
+
+        .search-icon {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 1.1rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .search-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            font-size: 1rem;
+            width: 100%;
+            padding: 8px 0;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .search-btn {
+            background: var(--grad-primary, linear-gradient(135deg, #ab0e00, #ff3600));
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .search-btn:hover {
+            opacity: 0.95;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(171, 14, 0, 0.4);
+        }
+
+        .blog-archive-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 3;
+            color: #ffffff;
+        }
+        .blog-archive-hero p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+            line-height: 1.5;
+        }
+
+        /* Main layout wrapper */
         .post-layout-wrapper {
             max-width: 1320px;
-            margin: 120px auto 80px;
+            margin: 50px auto 80px;
             padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr 350px;
             gap: 40px;
         }
 
-        .article-featured-image {
-            width: 100%;
-            border-radius: 16px;
-            overflow: hidden;
-            margin-top: 24px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-        }
-
-        .article-featured-image img {
-            width: 100%;
-            height: auto;
-            max-height: 480px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .article-featured-image:hover img {
-            transform: scale(1.015);
-        }
-
         @media (max-width: 992px) {
             .post-layout-wrapper {
                 grid-template-columns: 1fr;
-                margin: 90px auto 40px;
+                margin: 40px auto;
                 gap: 30px;
             }
         }
 
-        /* Hero Article Header */
-        .article-hero {
+        /* Featured Post Card Style */
+        .blog-featured-card {
             background: #ffffff;
             border-radius: 24px;
-            padding: 40px;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 576px) {
-            .article-hero {
-                padding: 24px 20px;
-                border-radius: 16px;
-            }
-        }
-
-        .article-breadcrumbs {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.88rem;
-            color: #64748b;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .article-breadcrumbs a {
-            color: #64748b;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            overflow: hidden;
+            margin-bottom: 40px;
+            transition: all 0.4s ease;
             text-decoration: none;
-            transition: color 0.2s;
+            color: inherit;
         }
-
-        .article-breadcrumbs a:hover {
-            color: #ab0e00;
+        .blog-featured-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(171, 14, 0, 0.08);
+            border-color: rgba(171, 14, 0, 0.15);
         }
-
-        .article-category-badge {
-            display: inline-block;
+        .blog-featured-card .featured-img-wrap {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16 / 10;
+        }
+        .blog-featured-card .featured-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .blog-featured-card:hover .featured-img-wrap img {
+            transform: scale(1.025);
+        }
+        .blog-featured-card .featured-body {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .featured-tag {
             background: #fef2f2;
             color: #ab0e00;
             padding: 6px 14px;
             border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.78rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 16px;
         }
-        .article-category-badge a {
-            color: #ab0e00;
-            text-decoration: none;
-        }
-
-        .article-main-title {
-            font-size: 2.25rem;
+        .blog-featured-card h2 {
+            font-size: 1.75rem;
             font-weight: 800;
             color: #0f172a;
-            line-height: 1.3;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-        }
-
-        @media (max-width: 768px) {
-            .article-main-title {
-                font-size: 1.75rem;
-            }
-        }
-
-        .article-meta-row {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            border-top: 1px solid #f1f5f9;
-            padding-top: 24px;
-            flex-wrap: wrap;
-        }
-
-        .meta-info-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.88rem;
-            color: #64748b;
-        }
-
-        /* Post Body Content Card */
-        .article-content-card {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 40px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 576px) {
-            .article-content-card {
-                padding: 24px 20px;
-                border-radius: 16px;
-            }
-        }
-
-        .article-body-content {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: #334155;
-        }
-
-        .article-body-content a {
-            color: #ab0e00;
-            text-decoration: underline;
-            font-weight: 600;
-            transition: color 0.2s ease;
-        }
-
-        .article-body-content a:hover {
-            color: #ff3600;
-            text-decoration: underline;
-        }
-
-        .article-body-content p {
-            margin-bottom: 24px;
-        }
-
-        .article-body-content h2 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin: 40px 0 20px;
-            line-height: 1.4;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .article-body-content h2::before {
-            content: '';
-            display: inline-block;
-            width: 4px;
-            height: 24px;
-            background: #ab0e00;
-            border-radius: 4px;
-            flex-shrink: 0;
-        }
-
-        .article-body-content h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin: 30px 0 16px;
-        }
-
-        .article-body-content ul, 
-        .article-body-content ol {
-            margin-bottom: 24px;
-            padding-left: 24px;
-        }
-
-        /* Override WordPress block editor list-style: none */
-        .article-body-content ul,
-        .article-body-content ul.wp-block-list {
-            list-style-type: disc !important;
-        }
-
-        .article-body-content ol,
-        .article-body-content ol.wp-block-list {
-            list-style-type: decimal !important;
-        }
-
-        .article-body-content li,
-        .article-body-content .wp-block-list li {
-            margin-bottom: 10px;
-            display: list-item !important;
-        }
-
-        .article-body-content ul li::marker,
-        .article-body-content ul.wp-block-list li::marker {
-            color: #ab0e00;
-        }
-
-        /* Blockquote style */
-        .ideas-blockquote {
-            border-left: 4px solid #ab0e00;
-            padding: 20px 24px;
-            background: #fdf2f2;
-            border-radius: 0 16px 16px 0;
-            font-style: italic;
-            font-size: 1.1rem;
-            color: #475569;
-            margin: 30px 0;
-            line-height: 1.6;
-        }
-
-        /* Table styling — figure.wp-block-table from WordPress block editor */
-        .article-body-content figure.wp-block-table,
-        .article-body-content .table-responsive-wrapper {
-            width: 100%;
-            overflow: hidden;         /* clips border-radius corners on table */
-            overflow-x: auto;
-            margin: 35px 0 !important;
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        }
-
-        /* Reset default figure margin from WordPress */
-        .article-body-content figure.wp-block-table {
-            padding: 0;
-        }
-
-        .article-body-content table,
-        .article-body-content figure.wp-block-table table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.95rem;
-            margin: 0 !important;     /* reset any wp margins */
-        }
-
-        /* Header row <th> — from thead */
-        .article-body-content th,
-        .article-body-content figure.wp-block-table th {
-            background: #f8fafc;
-            color: #0f172a;
-            font-weight: 700;
-            padding: 16px 20px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        /* Data cells <td> */
-        .article-body-content td,
-        .article-body-content figure.wp-block-table td {
-            padding: 16px 20px;
-            border-bottom: 1px solid #f1f5f9;
-            color: #475569;
-            vertical-align: top;
-        }
-
-        /* First row acting as header (when WP table has no thead) */
-        .article-body-content figure.wp-block-table tbody tr:first-child td,
-        .article-body-content tbody tr:first-child td {
-            background: #f8fafc;
-            color: #0f172a;
-            font-weight: 700;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        /* Last row — no bottom border */
-        .article-body-content tbody tr:last-child td,
-        .article-body-content figure.wp-block-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Row hover */
-        .article-body-content tbody tr:hover td,
-        .article-body-content figure.wp-block-table tbody tr:hover td {
-            background: #f8fafc;
-        }
-
-        /* FAQs styling */
-        .ideas-faq-section {
-            margin-top: 50px;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 40px;
-        }
-
-        .ideas-faq-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 24px;
-        }
-
-        .faq-accordion-item {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
+            line-height: 1.35;
             margin-bottom: 16px;
+            transition: color 0.3s ease;
+        }
+        .blog-featured-card:hover h2 {
+            color: #ab0e00;
+        }
+        .blog-featured-card p {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
             overflow: hidden;
-            transition: all 0.3s ease;
+        }
+        .blog-featured-card .meta-row {
+            display: flex;
+            gap: 16px;
+            color: #64748b;
+            font-size: 0.85rem;
         }
 
-        .faq-accordion-item:hover {
-            border-color: #ab0e00;
-            box-shadow: 0 4px 12px rgba(171, 14, 0, 0.03);
+        /* Post Grid */
+        .blog-grid-inner {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
         }
-
-        .faq-header {
-            padding: 20px 24px;
+        
+        .blog-card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(171, 14, 0, 0.06);
+            border-color: rgba(171, 14, 0, 0.15);
+        }
+        .blog-card .card-img-wrap {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #f1f5f9;
+        }
+        .blog-card .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .blog-card:hover .card-img-wrap img {
+            transform: scale(1.03);
+        }
+        .blog-card .card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .blog-card .card-tag {
+            color: #ab0e00;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+        .blog-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #0f172a;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .blog-card:hover h3 {
+            color: #ab0e00;
+        }
+        .blog-card p {
+            color: #475569;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .blog-card .card-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer;
-            font-weight: 600;
-            color: #0f172a;
-            user-select: none;
-            gap: 16px;
-        }
-
-        .faq-icon {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #64748b;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-content {
-            padding: 0 24px 20px 24px;
-            color: #475569;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        .faq-accordion-item.active {
-            border-color: #ab0e00;
-            background: #fdf2f2;
-        }
-
-        .faq-accordion-item.active .faq-icon {
-            transform: rotate(180deg);
-            color: #ab0e00;
-        }
-
-        /* Share bar */
-        .article-share-bar {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-top: 40px;
-            padding-top: 24px;
+            margin-top: auto;
             border-top: 1px solid #f1f5f9;
+            padding-top: 16px;
+        }
+        .blog-card .read-more {
+            color: #ab0e00;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: gap 0.2s;
+        }
+        .blog-card:hover .read-more {
+            gap: 10px;
         }
 
-        .share-label {
-            font-weight: 600;
-            color: #475569;
-            font-size: 0.95rem;
-        }
-
-        .share-buttons {
+        /* Modern Pagination */
+        .blog-pagination {
             display: flex;
-            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 50px;
         }
-
-        .share-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
+        .blog-pagination a,
+        .blog-pagination span {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: #ffffff;
+            min-width: 40px;
+            height: 40px;
+            padding: 0 12px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            color: #475569;
+            font-weight: 600;
             text-decoration: none;
-            transition: opacity 0.2s, transform 0.2s;
-            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .blog-pagination a:hover {
+            border-color: #ab0e00;
+            color: #ab0e00;
+            transform: translateY(-1px);
+        }
+        .blog-pagination span.current {
+            background: #ab0e00;
+            border-color: #ab0e00;
+            color: #ffffff;
         }
 
-        .share-btn:hover {
-            transform: scale(1.08);
-            opacity: 0.9;
+        @media (max-width: 992px) {
+            .blog-featured-card {
+                grid-template-columns: 1fr;
+            }
+            .blog-featured-card .featured-body {
+                padding: 30px;
+            }
+            .blog-grid-inner {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .share-btn.facebook { background: #1877f2; }
-        .share-btn.linkedin { background: #0077b5; }
-        .share-btn.twitter { background: #1da1f2; }
-
-        /* Sidebar Sticky & Scrollable */
+        /* Sidebar Styling */
         aside {
             position: sticky;
             top: 90px;
             align-self: start;
             max-height: calc(100vh - 120px);
             overflow-y: auto;
-            scrollbar-width: none !important; /* Firefox */
-            -ms-overflow-style: none !important;  /* IE and Edge */
+            scrollbar-width: none !important;
+            -ms-overflow-style: none !important;
             transition: top 0.3s ease, max-height 0.3s ease;
         }
 
@@ -570,7 +495,7 @@ ob_start(function($html) {
             background: #ab0e00;
         }
 
-        /* Sidebar Inputs */
+        /* Sidebar Form inputs */
         .ideas-widget-form {
             display: flex;
             flex-direction: column;
@@ -622,7 +547,6 @@ ob_start(function($html) {
             transform: translateY(-1px);
         }
 
-        /* Sidebar Courses Widget styling */
         .sidebar-course-list {
             display: flex;
             flex-direction: column;
@@ -660,56 +584,6 @@ ob_start(function($html) {
         .sidebar-course-desc {
             font-size: 0.78rem;
             color: #64748b;
-        }
-
-        /* Post navigation cards */
-        .post-navigation {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 576px) {
-            .post-navigation {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .nav-card {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            padding: 20px;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .nav-card:hover {
-            border-color: #ab0e00;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(171, 14, 0, 0.03);
-        }
-
-        .nav-card-label {
-            font-size: 0.78rem;
-            font-weight: 700;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .nav-card-title {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #0f172a;
-            line-height: 1.4;
         }
     </style>
     <?php wp_head(); ?>
@@ -1069,123 +943,159 @@ ob_start(function($html) {
         <a href="/dat-lich" class="nav-cta">Nhận tư vấn</a>
     </div>
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    
-    <!-- Main Layout Container -->
+    <!-- Banner Hero Area -->
+    <section class="blog-archive-hero">
+        <div class="counters-bg" style="background-image: linear-gradient(135deg, rgba(185, 14, 0, 0.92) 0%, rgba(15, 23, 42, 0.9) 100%), url('https://ideas.edu.vn/wp-content/uploads/2026/01/ltn27122025.webp');"></div>
+        <div class="container" style="position: relative; z-index: 3;">
+            <h1>Tin Tức &amp; Sự Kiện</h1>
+            <p>Cập nhật những thông tin tuyển sinh mới nhất, hoạt động của học viên và bài viết chia sẻ tri thức chuyên môn từ Hội đồng Học thuật IDEAS.</p>
+            
+            <!-- Search bar -->
+            <form role="search" method="get" class="archive-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <div class="search-input-wrap">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="search" class="search-input" placeholder="Tìm kiếm bài viết..." value="<?php echo get_search_query(); ?>" name="s" required />
+                    <button type="submit" class="search-btn">Tìm kiếm</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
     <div class="post-layout-wrapper">
-        
-        <!-- Main Content Area -->
         <main>
-            <!-- Hero Header Card -->
-            <article class="article-hero">
-                <div class="article-breadcrumbs">
-                    <a href="<?php echo esc_url(home_url('/')); ?>"><i class="fa-solid fa-house"></i> Trang chủ</a>
-                    <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
-                    <?php 
-                    $categories = get_the_category();
-                    if (!empty($categories)) {
-                        $cat = $categories[0];
-                        echo '<a href="' . esc_url(get_category_link($cat->term_id)) . '">' . esc_html($cat->name) . '</a>';
-                        echo '<i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>';
-                    }
-                    ?>
-                    <span><?php the_title(); ?></span>
-                </div>
-                
-                <span class="article-category-badge">
-                    <?php the_category(', '); ?>
-                </span>
-                
-                <h1 class="article-main-title"><?php the_title(); ?></h1>
-                
-                <div class="article-meta-row">
-                    <div class="meta-info-item">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span><?php echo get_the_date('d/m/Y'); ?></span>
-                    </div>
-                    
-                    <div class="meta-info-item">
-                        <i class="fa-solid fa-clock"></i>
-                        <?php
-                        $post_content = get_the_content();
-                        $word_count = str_word_count(strip_tags($post_content));
-                        $reading_time = ceil($word_count / 200);
-                        if ($reading_time < 1) $reading_time = 1;
-                        ?>
-                        <span><?php echo $reading_time; ?> phút đọc</span>
-                    </div>
-                </div>
+            <?php
+            // Support both standard archive queries and custom page template setups
+            if ( !is_archive() && !is_home() ) {
+                global $wp_query;
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                $wp_query = new WP_Query(array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 7,
+                    'paged' => $paged,
+                    'post_status' => 'publish'
+                ));
+            }
 
-                <!-- Featured Cover Image / Ảnh bìa -->
-                <div class="article-featured-image">
-                    <img src="<?php echo esc_url($featured_image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                </div>
-            </article>
-
-            <!-- Main Content Card -->
-            <div class="article-content-card">
-                <div class="article-body-content">
-                    <?php 
-                    // Render content, and automatically strip duplicate of the first image inline if it matches featured image
-                    $content_html = apply_filters('the_content', get_the_content());
-                    
-                    // Simple regex replacement to omit the first duplicate image from the body layout
-                    if ($featured_image) {
-                        $escaped_img = preg_quote($featured_image, '/');
-                        // Remove figure or image block containing this exact url
-                        $content_html = preg_replace('/<figure[^>]*>\s*<img[^>]+src="' . $escaped_img . '"[^>]*>\s*<\/figure>/i', '', $content_html, 1);
-                        $content_html = preg_replace('/<img[^>]+src="' . $escaped_img . '"[^>]*>/i', '', $content_html, 1);
+            if (have_posts()) {
+                $post_counter = 0;
+                $featured_id = 0;
+                
+                // 1. Render Featured Post (Only on Page 1)
+                $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                if ($current_page == 1) {
+                    the_post();
+                    $featured_id = get_the_ID();
+                    $featured_img = get_the_post_thumbnail_url($featured_id, 'large');
+                    if (!$featured_img) {
+                        $content = get_the_content();
+                        preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $content, $matches);
+                        $featured_img = isset($matches[1][0]) ? $matches[1][0] : 'https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp';
                     }
                     
-                    // Strip leftover raw ultimate post kit (ultp) plugin icon strings
-                    $content_html = preg_replace('/_ultp_aci_ic_[a-zA-Z0-9_]+?_ultp_aci_ic_end_/i', '', $content_html);
-                    
-                    echo $content_html; 
+                    $excerpt = get_the_excerpt();
+                    if (empty($excerpt)) {
+                        $excerpt = wp_strip_all_tags(wp_trim_words(get_the_content(), 35));
+                    }
                     ?>
-                </div>
-
-                <!-- Share Section -->
-                <div class="article-share-bar">
-                    <span class="share-label">Chia sẻ bài viết:</span>
-                    <div class="share-buttons">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url(get_permalink()); ?>" target="_blank" class="share-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo esc_url(get_permalink()); ?>" target="_blank" class="share-btn linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://twitter.com/intent/tweet?url=<?php echo esc_url(get_permalink()); ?>" target="_blank" class="share-btn twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
-                </div>
-
-                <!-- Post Navigation Links -->
-                <div class="post-navigation">
+                    <a href="<?php the_permalink(); ?>" class="blog-featured-card">
+                        <div class="featured-img-wrap skeleton">
+                            <img src="<?php echo esc_url($featured_img); ?>" alt="<?php the_title_attribute(); ?>" onload="this.parentElement.classList.remove('skeleton')">
+                        </div>
+                        <div class="featured-body">
+                            <span class="featured-tag">Mới nhất</span>
+                            <h2><?php the_title(); ?></h2>
+                            <p><?php echo esc_html($excerpt); ?></p>
+                            <div class="meta-row">
+                                <span><i class="fa-regular fa-calendar-days" style="color:#ab0e00; margin-right:4px;"></i> <?php echo get_the_date('d/m/Y'); ?></span>
+                                <?php
+                                $categories = get_the_category();
+                                if (!empty($categories)) {
+                                    echo '<span><i class="fa-regular fa-folder" style="color:#ab0e00; margin-right:4px;"></i> ' . esc_html($categories[0]->name) . '</span>';
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </a>
                     <?php
-                    $prev_post = get_previous_post();
-                    if (!empty($prev_post)) : ?>
-                        <a href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>" class="nav-card">
-                            <span class="nav-card-label"><i class="fa-solid fa-arrow-left"></i> Bài trước đó</span>
-                            <span class="nav-card-title"><?php echo esc_html(get_the_title($prev_post->ID)); ?></span>
-                        </a>
-                    <?php else : ?>
-                        <div></div>
-                    <?php endif; ?>
-
+                }
+                
+                // 2. Render Post Grid for the rest
+                echo '<div class="blog-grid-inner">';
+                while (have_posts()) : the_post();
+                    // Skip the featured post we already rendered
+                    if (get_the_ID() === $featured_id) {
+                        continue;
+                    }
+                    
+                    $post_img = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');
+                    if (!$post_img) {
+                        $content = get_the_content();
+                        preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $content, $matches);
+                        $post_img = isset($matches[1][0]) ? $matches[1][0] : 'https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp';
+                    }
+                    
+                    $excerpt = get_the_excerpt();
+                    if (empty($excerpt)) {
+                        $excerpt = wp_strip_all_tags(wp_trim_words(get_the_content(), 22));
+                    }
+                    ?>
+                    <a href="<?php the_permalink(); ?>" class="blog-card">
+                        <div class="card-img-wrap skeleton">
+                            <img src="<?php echo esc_url($post_img); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy" onload="this.parentElement.classList.remove('skeleton')">
+                        </div>
+                        <div class="card-body">
+                            <?php
+                            $categories = get_the_category();
+                            if (!empty($categories)) {
+                                echo '<span class="card-tag">' . esc_html($categories[0]->name) . '</span>';
+                            }
+                            ?>
+                            <h3><?php the_title(); ?></h3>
+                            <p><?php echo esc_html($excerpt); ?></p>
+                            <div class="card-meta">
+                                <span><i class="fa-regular fa-calendar-days" style="color:#ab0e00; margin-right:4px;"></i> <?php echo get_the_date('d/m/Y'); ?></span>
+                                <span class="read-more">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
                     <?php
-                    $next_post = get_next_post();
-                    if (!empty($next_post)) : ?>
-                        <a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" class="nav-card" style="text-align: right; align-items: flex-end;">
-                            <span class="nav-card-label">Bài tiếp theo <i class="fa-solid fa-arrow-right"></i></span>
-                            <span class="nav-card-title"><?php echo esc_html(get_the_title($next_post->ID)); ?></span>
-                        </a>
-                    <?php else: ?>
-                        <div></div>
-                    <?php endif; ?>
-                </div>
-            </div>
+                endwhile;
+                echo '</div>'; // End Grid
+
+                // 3. Render Modern Pagination
+                $pagination_links = paginate_links(array(
+                    'type'      => 'array',
+                    'prev_text' => '<i class="fa-solid fa-chevron-left"></i>',
+                    'next_text' => '<i class="fa-solid fa-chevron-right"></i>',
+                ));
+                
+                if (!empty($pagination_links)) {
+                    echo '<div class="blog-pagination">';
+                    foreach ($pagination_links as $link) {
+                        echo $link;
+                    }
+                    echo '</div>';
+                }
+                
+                // Reset post data if custom query
+                if ( !is_archive() && !is_home() ) {
+                    wp_reset_postdata();
+                }
+
+            } else {
+                ?>
+                <p style="text-align: center; padding: 60px 0; color: #64748b; font-weight: 500;">Không có bài viết nào được tìm thấy.</p>
+                <?php
+            }
+            ?>
         </main>
 
-        <!-- Sidebar Widgets Area -->
+        <!-- Sidebar Section -->
         <aside>
             <div class="sidebar-wrapper">
                 
-                <!-- Quick Register Consultation Widget -->
+                <!-- Quick Register Consultation Widget (Parity with single.php) -->
                 <div class="sidebar-widget">
                     <h3 class="widget-title">Đăng ký tư vấn lộ trình</h3>
                     <form class="ideas-widget-form">
@@ -1205,41 +1115,6 @@ ob_start(function($html) {
                         <textarea rows="3" placeholder="Ghi chú về kinh nghiệm, nhu cầu của bạn..."></textarea>
                         <button type="submit"><i class="fa-solid fa-paper-plane"></i> Đăng ký ngay</button>
                     </form>
-                </div>
-
-                <!-- Recent Posts Widget -->
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Bài viết gần đây</h3>
-                    <div class="sidebar-course-list">
-                        <?php
-                        $recent_posts = new WP_Query(array(
-                            'posts_per_page' => 3,
-                            'post__not_in'   => array($post_id),
-                            'post_status'    => 'publish'
-                        ));
-                        
-                        if ($recent_posts->have_posts()) :
-                            while ($recent_posts->have_posts()) : $recent_posts->the_post();
-                                $recent_img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
-                                if (!$recent_img) {
-                                    $recent_content = get_the_content();
-                                    preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $recent_content, $matches_r);
-                                    $recent_img = isset($matches_r[1][0]) ? $matches_r[1][0] : 'https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp';
-                                }
-                                ?>
-                                <a href="<?php the_permalink(); ?>" class="sidebar-course-item">
-                                    <img src="<?php echo esc_url($recent_img); ?>" alt="<?php the_title_attribute(); ?>" class="sidebar-course-img">
-                                    <div>
-                                        <h4 class="sidebar-course-title" style="font-size: 0.88rem; line-height: 1.3;"><?php the_title(); ?></h4>
-                                        <p class="sidebar-course-desc" style="font-size: 0.75rem; color: #64748b; margin-top: 2px;"><?php echo get_the_date('d/m/Y'); ?></p>
-                                    </div>
-                                </a>
-                                <?php
-                            endwhile;
-                            wp_reset_postdata();
-                        endif;
-                        ?>
-                    </div>
                 </div>
 
                 <!-- Suggested Programs Widget -->
@@ -1300,47 +1175,16 @@ ob_start(function($html) {
 
             </div>
         </aside>
-
     </div>
 
-    <?php endwhile; endif; ?>
-
-    <!-- Site JS script (for mobile menu toggles and dropdown behaviors) -->
+    <!-- Script imports -->
     <?php 
     $js_path = get_stylesheet_directory() . '/common-assets/js/script.min.js';
     $js_version = file_exists($js_path) ? filemtime($js_path) : time();
     ?>
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/js/script.min.js?v=<?php echo $js_version; ?>" defer></script>
     
-    <!-- FAQ Accordion Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const faqItems = document.querySelectorAll('.faq-accordion-item');
-            
-            faqItems.forEach(item => {
-                const header = item.querySelector('.faq-header');
-                const body = item.querySelector('.faq-body');
-                const content = item.querySelector('.faq-content');
-                
-                header.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    
-                    // Close all active items
-                    faqItems.forEach(el => {
-                        el.classList.remove('active');
-                        el.querySelector('.faq-body').style.maxHeight = null;
-                    });
-                    
-                    if (!isActive) {
-                        item.classList.add('active');
-                        body.style.maxHeight = content.offsetHeight + 'px';
-                    }
-                });
-            });
-        });
-    </script>
-
-    <!-- Handle Sidebar Sticky Offset dynamically on scroll based on header visibility -->
+    <!-- Sidebar Sticky Alignment Script on Scroll -->
     <script>
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
@@ -1379,7 +1223,7 @@ ob_start(function($html) {
             lastScrollTop = st <= 0 ? 0 : st;
         }, { passive: true });
 
-        // Sidebar inline registration form submission handler
+        // Sidebar inline form submission logic (parity with single.php)
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.querySelector('.ideas-widget-form');
             if (!form) return;
@@ -1398,7 +1242,7 @@ ob_start(function($html) {
                     return;
                 }
                 
-                let sourceVal = "Landing_Blog_Single";
+                let sourceVal = "Landing_Blog_Archive";
                 let chuongTrinhVal = program;
                 
                 // Prefill source mapping based on selected program
