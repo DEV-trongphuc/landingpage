@@ -32,19 +32,23 @@ ob_start(function ($html) {
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sơ đồ tổ chức & Cơ cấu nhân sự | Viện IDEAS</title>
-    <meta name="description" content="Khám phá sơ đồ tổ chức của Viện IDEAS với đội ngũ điều hành chuyên nghiệp, hội đồng khoa học chuyên môn và các tư vấn viên tận tâm." />
+    <meta name="description"
+        content="Khám phá sơ đồ tổ chức của Viện IDEAS với đội ngũ điều hành chuyên nghiệp, hội đồng khoa học chuyên môn và các tư vấn viên tận tâm." />
     <link rel="icon" href="https://ideas.edu.vn/wp-content/uploads/2023/04/logofavicon.png" sizes="32x32" />
 
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Sơ đồ tổ chức & Cơ cấu nhân sự | Viện IDEAS" />
-    <meta property="og:description" content="Hành trình hỗ trợ học vụ chuyên nghiệp và bền vững với bộ máy nhân sự được tối ưu hóa toàn diện." />
+    <meta property="og:description"
+        content="Hành trình hỗ trợ học vụ chuyên nghiệp và bền vững với bộ máy nhân sự được tối ưu hóa toàn diện." />
     <meta property="og:image" content="https://ideas.edu.vn/wp-content/uploads/2026/05/Kien-tao-2.webp" />
     <meta property="og:url" content="<?php echo esc_url(home_url(add_query_arg(array(), $wp->request))); ?>" />
 
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
     <!-- Main stylesheet -->
@@ -52,20 +56,24 @@ ob_start(function ($html) {
     $css_path = get_stylesheet_directory() . '/common-assets/css/style.min.css';
     $css_version = file_exists($css_path) ? filemtime($css_path) : time();
     ?>
-    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/css/style.min.css?v=<?php echo $css_version; ?>" />
-    
+    <link rel="stylesheet"
+        href="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/css/style.min.css?v=<?php echo $css_version; ?>" />
+
     <!-- Booking Modal stylesheet -->
     <?php
     define('BOOKING_MODAL_CSS_LOADED', true);
     $bk_css_path = get_stylesheet_directory() . '/common-assets/css/booking-modal.min.css';
     $bk_css_version = file_exists($bk_css_path) ? filemtime($bk_css_path) : time();
     ?>
-    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/css/booking-modal.min.css?v=<?php echo $bk_css_version; ?>" />
+    <link rel="stylesheet"
+        href="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/css/booking-modal.min.css?v=<?php echo $bk_css_version; ?>" />
 
     <style>
         :root {
-            --line-color: rgba(148, 163, 184, 0.35); /* Faint gray-blue connector lines */
+            --line-color: rgba(148, 163, 184, 0.35);
+            /* Faint gray-blue connector lines */
         }
+
         /* ══════════════════════════════════════
            ORGANIZATION CHART – PREMIUM LIGHT THEME
         ══════════════════════════════════════ */
@@ -161,6 +169,7 @@ ob_start(function ($html) {
             align-items: center;
             position: relative;
         }
+
         .canvas-viewport .org-tree-container {
             max-width: none !important;
             width: max-content !important;
@@ -511,8 +520,10 @@ ob_start(function ($html) {
             .org-tree-container::before {
                 content: '';
                 position: absolute;
-                top: 46px; /* Aligns exactly with vertical center of first card */
-                bottom: 46px; /* Aligns exactly with vertical center of last card */
+                top: 46px;
+                /* Aligns exactly with vertical center of first card */
+                bottom: 46px;
+                /* Aligns exactly with vertical center of last card */
                 left: 12px;
                 width: 2px;
                 background: var(--line-color);
@@ -529,10 +540,12 @@ ob_start(function ($html) {
                 width: 100% !important;
                 max-width: 100% !important;
             }
+
             .org-tree-container a.org-node-link {
                 width: 100% !important;
                 max-width: 100% !important;
             }
+
             .org-tree-container .org-branch-col {
                 width: 100% !important;
                 max-width: 100% !important;
@@ -587,7 +600,8 @@ ob_start(function ($html) {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                left: -24px; /* Matches padding-left(36px) - trunk offset(12px) */
+                left: -24px;
+                /* Matches padding-left(36px) - trunk offset(12px) */
                 width: 24px;
                 height: 2px;
                 background: var(--line-color);
@@ -648,7 +662,8 @@ ob_start(function ($html) {
                 content: '';
                 position: absolute;
                 top: -10px;
-                bottom: 40px; /* Aligns with vertical center of last consultant card */
+                bottom: 40px;
+                /* Aligns with vertical center of last consultant card */
                 left: 0;
                 width: 2px;
                 background: var(--line-color);
@@ -768,12 +783,15 @@ ob_start(function ($html) {
                 align-items: center;
                 padding-left: 0;
             }
+
             .canvas-viewport .org-tree-container::before {
                 display: none !important;
             }
+
             .canvas-viewport .org-tree-line {
                 display: block !important;
             }
+
             .canvas-viewport .org-node:not(.org-node-link) {
                 display: block;
                 text-align: center;
@@ -782,43 +800,54 @@ ob_start(function ($html) {
                 margin-bottom: 0;
                 gap: 0;
             }
+
             .canvas-viewport .org-node-body {
                 text-align: center;
             }
+
             .canvas-viewport .org-node:not(.org-node-link) .org-node-info {
                 justify-content: center;
             }
+
             .canvas-viewport .org-node::before {
                 display: none !important;
             }
+
             .canvas-viewport .org-branches {
                 flex-direction: row;
                 align-items: flex-start;
                 gap: 32px;
             }
+
             .canvas-viewport .org-branch-col {
                 width: 320px !important;
                 flex: 0 0 auto !important;
                 align-items: center;
             }
+
             .canvas-viewport .org-branch-col.has-consultants {
                 width: 580px !important;
                 flex: 0 0 auto !important;
             }
+
             .canvas-viewport .org-branch-col.has-sub-branches {
                 width: auto !important;
                 flex: 0 0 auto !important;
             }
+
             .canvas-viewport .org-branch-col::before,
             .canvas-viewport .org-branch-col::after {
                 display: block !important;
             }
+
             .canvas-viewport .consultants-grid::before {
                 display: none !important;
             }
+
             .canvas-viewport .consultant-card::before {
                 display: none !important;
             }
+
             .canvas-viewport .consultants-grid {
                 width: 100%;
                 margin: 10px 0 0 0;
@@ -837,15 +866,18 @@ ob_start(function ($html) {
                 position: relative;
                 width: 100%;
             }
+
             .org-tree-container .org-vertical-trunk {
                 display: none !important;
             }
+
             .org-tree-container .org-side-branch-left {
                 position: static !important;
                 transform: none !important;
                 display: block !important;
                 width: 100% !important;
             }
+
             .org-tree-container .org-horizontal-connector {
                 display: none !important;
             }
@@ -860,6 +892,7 @@ ob_start(function ($html) {
                 position: relative !important;
                 width: 100% !important;
             }
+
             .canvas-viewport .org-vertical-trunk {
                 display: block !important;
                 position: absolute !important;
@@ -871,6 +904,7 @@ ob_start(function ($html) {
                 background: var(--line-color) !important;
                 z-index: 1 !important;
             }
+
             .canvas-viewport .org-side-branch-left {
                 position: absolute !important;
                 right: calc(50% + 40px) !important;
@@ -881,6 +915,7 @@ ob_start(function ($html) {
                 z-index: 10 !important;
                 width: auto !important;
             }
+
             .canvas-viewport .org-horizontal-connector {
                 display: block !important;
                 width: 40px !important;
@@ -933,15 +968,20 @@ ob_start(function ($html) {
 
     <!-- Background Decorative Icons -->
     <div class="bg-decorations" aria-hidden="true">
-        <i class="fa-solid fa-sitemap bg-decor-icon" style="top: 15%; left: 4%; transform: rotate(15deg); font-size: 8rem;"></i>
-        <i class="fa-solid fa-users bg-decor-icon" style="top: 35%; right: 4%; transform: rotate(-20deg); font-size: 7.5rem;"></i>
-        <i class="fa-solid fa-network-wired bg-decor-icon" style="top: 55%; left: 3%; transform: rotate(-10deg); font-size: 7rem;"></i>
-        <i class="fa-solid fa-graduation-cap bg-decor-icon" style="top: 72%; right: 3%; transform: rotate(25deg); font-size: 8rem;"></i>
-        <i class="fa-solid fa-award bg-decor-icon" style="top: 88%; left: 5%; transform: rotate(-15deg); font-size: 7.5rem;"></i>
+        <i class="fa-solid fa-sitemap bg-decor-icon"
+            style="top: 15%; left: 4%; transform: rotate(15deg); font-size: 8rem;"></i>
+        <i class="fa-solid fa-users bg-decor-icon"
+            style="top: 35%; right: 4%; transform: rotate(-20deg); font-size: 7.5rem;"></i>
+        <i class="fa-solid fa-network-wired bg-decor-icon"
+            style="top: 55%; left: 3%; transform: rotate(-10deg); font-size: 7rem;"></i>
+        <i class="fa-solid fa-graduation-cap bg-decor-icon"
+            style="top: 72%; right: 3%; transform: rotate(25deg); font-size: 8rem;"></i>
+        <i class="fa-solid fa-award bg-decor-icon"
+            style="top: 88%; left: 5%; transform: rotate(-15deg); font-size: 7.5rem;"></i>
     </div>
 
     <!-- Site Header -->
-        <!-- Shared Header & Mobile Menu -->
+    <!-- Shared Header & Mobile Menu -->
     <?php get_template_part('shared-header'); ?>
 
 
@@ -952,7 +992,8 @@ ob_start(function ($html) {
             Bộ máy nhân sự
         </div>
         <h1>Cơ Cấu Tổ Chức &amp; <span>Sơ Đồ Nhân Sự</span></h1>
-        <p>Quy chế hoạt động khoa học, bộ máy quản lý tinh gọn cùng đội ngũ chuyên viên học vụ chuyên nghiệp đồng hành cùng học viên Viện IDEAS.</p>
+        <p>Quy chế hoạt động khoa học, bộ máy quản lý tinh gọn cùng đội ngũ chuyên viên học vụ chuyên nghiệp đồng hành
+            cùng học viên Viện IDEAS.</p>
     </section>
 
     <!-- Tree Flow Section -->
@@ -962,15 +1003,17 @@ ob_start(function ($html) {
             <div class="canvas-controls">
                 <button type="button" id="btn-zoom-in" title="Phóng to"><i class="fa-solid fa-plus"></i></button>
                 <button type="button" id="btn-zoom-out" title="Thu nhỏ"><i class="fa-solid fa-minus"></i></button>
-                <button type="button" id="btn-zoom-reset" title="Đặt lại góc nhìn"><i class="fa-solid fa-arrows-to-eye"></i></button>
+                <button type="button" id="btn-zoom-reset" title="Đặt lại góc nhìn"><i
+                        class="fa-solid fa-arrows-to-eye"></i></button>
             </div>
-            
+
             <div class="canvas-content" id="org-canvas-content">
                 <div class="org-tree-container">
-                    
+
                     <!-- LEVEL 1: Viện Trưởng -->
                     <div class="org-node">
-                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/vientruong_avt.jpg" class="org-node-avatar" alt="Viện trưởng IDEAS - TS. Phạm Quang Vinh">
+                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/vientruong_avt.jpg"
+                            class="org-node-avatar" alt="Viện trưởng IDEAS - TS. Phạm Quang Vinh">
                         <div class="org-node-body">
                             <div class="org-node-role">Viện Trưởng</div>
                             <h3 class="org-node-name">TS. Phạm Quang Vinh</h3>
@@ -985,14 +1028,19 @@ ob_start(function ($html) {
                     <div class="org-trunk-container">
                         <!-- Vertical Trunk Line -->
                         <div class="org-vertical-trunk"></div>
-                        
+
                         <!-- Side Branch: Hội đồng chuyên môn -->
                         <div class="org-side-branch-left">
-                            <a href="/doi-ngu-giang-vien" title="Hội đồng chuyên môn Viện IDEAS" class="org-node org-node-link">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2023/04/logofavicon.png" class="org-node-avatar" alt="Hội đồng chuyên môn">
+                            <a href="/doi-ngu-giang-vien" title="Hội đồng chuyên môn Viện IDEAS"
+                                class="org-node org-node-link">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2023/04/logofavicon.png"
+                                    class="org-node-avatar" alt="Hội đồng chuyên môn">
                                 <div class="org-node-body-horizontal">
                                     <div class="org-node-role" style="margin-bottom:2px;">Hội đồng chuyên môn</div>
-                                    <div class="org-node-name" style="margin-bottom:0; font-size:0.95rem;"><i class="fa-solid fa-user-group" style="font-size:0.85rem; color:#ab0e00; margin-right:4px;"></i> Giảng viên – cố vấn</div>
+                                    <div class="org-node-name" style="margin-bottom:0; font-size:0.95rem;"><i
+                                            class="fa-solid fa-user-group"
+                                            style="font-size:0.85rem; color:#ab0e00; margin-right:4px;"></i> Giảng viên
+                                        – cố vấn</div>
                                 </div>
                                 <i class="fa-solid fa-angle-right org-node-arrow"></i>
                             </a>
@@ -1003,15 +1051,18 @@ ob_start(function ($html) {
 
                     <!-- LEVEL 3: Division Heads (3 Columns) -->
                     <div class="org-branches">
-                        
+
                         <!-- COLUMN 1: Mai Nữ & Departments -->
                         <div class="org-branch-col has-sub-branches">
                             <div class="org-node">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/04/mainu_avt.jpg" class="org-node-avatar" alt="Trưởng phòng Kinh doanh - Mai Nữ">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/04/mainu_avt.jpg"
+                                    class="org-node-avatar" alt="Trưởng phòng Kinh doanh - Mai Nữ">
                                 <div class="org-node-body">
                                     <div class="org-node-role">Trưởng Khối</div>
                                     <h3 class="org-node-name">Mai Nữ</h3>
-                                    <div class="org-node-role" style="font-size:0.64rem; color:#64748b; margin-top:2px; font-weight:700;">Kinh Doanh &amp; Trải Nghiệm Học Viên</div>
+                                    <div class="org-node-role"
+                                        style="font-size:0.64rem; color:#64748b; margin-top:2px; font-weight:700;">Kinh
+                                        Doanh &amp; Trải Nghiệm Học Viên</div>
                                     <div class="org-node-info">
                                         <i class="fa-solid fa-envelope"></i>
                                         <a href="mailto:info@ideas.edu.vn">info@ideas.edu.vn</a>
@@ -1021,21 +1072,22 @@ ob_start(function ($html) {
 
                             <!-- Line down to departments -->
                             <div class="org-tree-line"></div>
-                            
+
                             <div class="org-branches">
                                 <!-- Department 1.1: Phòng Sale -->
                                 <div class="org-branch-col has-consultants">
                                     <div class="org-node">
-                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/04/mainu_avt.jpg" class="org-node-avatar" alt="Trưởng phòng Sale - Mai Nữ">
+                                        <img src="https://ideas.edu.vn/wp-content/uploads/2025/04/mainu_avt.jpg"
+                                            class="org-node-avatar" alt="Trưởng phòng Sale - Mai Nữ">
                                         <div class="org-node-body">
                                             <div class="org-node-role">Trưởng Phòng Sale</div>
                                             <h3 class="org-node-name">Mai Nữ</h3>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Line down to Sale Admin -->
                                     <div class="org-tree-line"></div>
-                                    
+
                                     <div class="org-node">
                                         <div class="org-node-avatar-placeholder">TKL</div>
                                         <div class="org-node-body">
@@ -1043,21 +1095,24 @@ ob_start(function ($html) {
                                             <h3 class="org-node-name">Trần Khánh Linh</h3>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Line down to advisors -->
                                     <div class="org-tree-line sub-line"></div>
-                                    <div class="consultants-title"><i class="fa-solid fa-headset" style="margin-right:4px; color:#ab0e00;"></i> Tư vấn viên tuyển sinh</div>
-                                    
+                                    <div class="consultants-title"><i class="fa-solid fa-headset"
+                                            style="margin-right:4px; color:#ab0e00;"></i> Tư vấn viên tuyển sinh</div>
+
                                     <div class="consultants-grid">
                                         <div class="consultants-warning">
                                             <i class="fa-solid fa-triangle-exclamation"></i>
                                             <div>
-                                                <strong>CẢNH BÁO:</strong> Cảnh giác với các số điện thoại lạ mạo danh là tư vấn viên tuyển sinh của Viện IDEAS.
+                                                <strong>CẢNH BÁO:</strong> Cảnh giác với các số điện thoại lạ mạo danh
+                                                là tư vấn viên tuyển sinh của Viện IDEAS.
                                             </div>
                                         </div>
-                                        
+
                                         <article class="consultant-card">
-                                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/09/cphuc.webp" class="consultant-avatar" alt="Lưu Phan Hoàng Phúc">
+                                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/09/cphuc.webp"
+                                                class="consultant-avatar" alt="Lưu Phan Hoàng Phúc">
                                             <div class="consultant-body">
                                                 <h4 class="consultant-name">Lưu Phan Hoàng Phúc</h4>
                                                 <span class="consultant-role">Tư vấn viên</span>
@@ -1067,9 +1122,10 @@ ob_start(function ($html) {
                                                 </div>
                                             </div>
                                         </article>
-                                        
+
                                         <article class="consultant-card">
-                                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/09/cdan.webp" class="consultant-avatar" alt="Nguyễn Thị Linh Đan">
+                                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/09/cdan.webp"
+                                                class="consultant-avatar" alt="Nguyễn Thị Linh Đan">
                                             <div class="consultant-body">
                                                 <h4 class="consultant-name">Nguyễn Thị Linh Đan</h4>
                                                 <span class="consultant-role">Tư vấn viên</span>
@@ -1079,9 +1135,10 @@ ob_start(function ($html) {
                                                 </div>
                                             </div>
                                         </article>
-                                        
+
                                         <article class="consultant-card">
-                                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/nhi_avt.jpg" class="consultant-avatar" alt="Lê Đinh Ý Nhi">
+                                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/nhi_avt.jpg"
+                                                class="consultant-avatar" alt="Lê Đinh Ý Nhi">
                                             <div class="consultant-body">
                                                 <h4 class="consultant-name">Lê Đinh Ý Nhi</h4>
                                                 <span class="consultant-role">Tư vấn viên</span>
@@ -1091,9 +1148,10 @@ ob_start(function ($html) {
                                                 </div>
                                             </div>
                                         </article>
-                                        
+
                                         <article class="consultant-card">
-                                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/09/uyen.webp" class="consultant-avatar" alt="Nguyễn Phương Uyên">
+                                            <img src="https://ideas.edu.vn/wp-content/uploads/2025/09/uyen.webp"
+                                                class="consultant-avatar" alt="Nguyễn Phương Uyên">
                                             <div class="consultant-body">
                                                 <h4 class="consultant-name">Nguyễn Phương Uyên</h4>
                                                 <span class="consultant-role">Tư vấn viên</span>
@@ -1105,21 +1163,22 @@ ob_start(function ($html) {
                                         </article>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Department 1.2: Phòng Học vụ -->
                                 <div class="org-branch-col has-consultants">
                                     <div class="org-node">
                                         <div class="org-node-avatar-placeholder">LHT</div>
                                         <div class="org-node-body">
-                                            <div class="org-node-role">Trưởng Phòng Học Vụ</div>
+                                            <div class="org-node-role">Hỗ trợ học thuật</div>
                                             <h3 class="org-node-name">Lê Huyền Trâm</h3>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Line down to team members -->
                                     <div class="org-tree-line sub-line"></div>
-                                    <div class="consultants-title"><i class="fa-solid fa-users" style="margin-right:4px; color:#ab0e00;"></i> Hỗ trợ học vụ</div>
-                                    
+                                    <div class="consultants-title"><i class="fa-solid fa-users"
+                                            style="margin-right:4px; color:#ab0e00;"></i> Hỗ trợ học vụ</div>
+
                                     <div class="consultants-grid">
                                         <article class="consultant-card">
                                             <div class="consultant-avatar-placeholder">NHN</div>
@@ -1143,11 +1202,14 @@ ob_start(function ($html) {
                         <!-- COLUMN 2: Phạm Thị Phương Lan -->
                         <div class="org-branch-col has-sub-branches">
                             <div class="org-node">
-                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/phamthiphuonglan_avt.jpg" class="org-node-avatar" alt="Trưởng phòng Kế hoạch - Phạm Thị Phương Lan">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2025/03/phamthiphuonglan_avt.jpg"
+                                    class="org-node-avatar" alt="Trưởng phòng Kế hoạch - Phạm Thị Phương Lan">
                                 <div class="org-node-body">
                                     <div class="org-node-role">Trưởng Khối</div>
                                     <h3 class="org-node-name">Phạm Thị Phương Lan</h3>
-                                    <div class="org-node-role" style="font-size:0.64rem; color:#64748b; margin-top:2px; font-weight:700;">Quản Trị &amp; Hậu Cần</div>
+                                    <div class="org-node-role"
+                                        style="font-size:0.64rem; color:#64748b; margin-top:2px; font-weight:700;">Quản
+                                        Trị &amp; Hậu Cần</div>
                                     <div class="org-node-info">
                                         <i class="fa-solid fa-envelope"></i>
                                         <a href="mailto:lanptp@ideas.edu.vn">lanptp@ideas.edu.vn</a>
@@ -1157,10 +1219,10 @@ ob_start(function ($html) {
 
                             <!-- Line down to sub-departments -->
                             <div class="org-tree-line"></div>
-                            
+
                             <div class="org-branches">
                                 <!-- Department 2.1: Nhân sự -->
-                                <div class="org-branch-col">
+                                <div class="org-branch-col has-consultants">
                                     <div class="org-node">
                                         <div class="org-node-avatar-placeholder">DP</div>
                                         <div class="org-node-body">
@@ -1168,8 +1230,23 @@ ob_start(function ($html) {
                                             <h3 class="org-node-name">Nguyễn Thị Duy Phương</h3>
                                         </div>
                                     </div>
+
+                                    <!-- Line down to team members -->
+                                    <div class="org-tree-line sub-line"></div>
+                                    <div class="consultants-title"><i class="fa-solid fa-users"
+                                            style="margin-right:4px; color:#ab0e00;"></i> Nhân sự trực thuộc</div>
+
+                                    <div class="consultants-grid">
+                                        <article class="consultant-card">
+                                            <div class="consultant-avatar-placeholder">HCC</div>
+                                            <div class="consultant-body">
+                                                <h4 class="consultant-name">Nguyễn Phạm Hoàng Cương</h4>
+                                                <span class="consultant-role">Hành chính nhân sự</span>
+                                            </div>
+                                        </article>
+                                    </div>
                                 </div>
-                                
+
                                 <!-- Department 2.2: Kế toán -->
                                 <div class="org-branch-col">
                                     <div class="org-node">
@@ -1190,7 +1267,9 @@ ob_start(function ($html) {
                                 <div class="org-node-body">
                                     <div class="org-node-role">Trưởng Khối</div>
                                     <h3 class="org-node-name">Võ Trùng Dương</h3>
-                                    <div class="org-node-role" style="font-size:0.64rem; color:#64748b; margin-top:2px; font-weight:700;">Tăng Trưởng &amp; Công Nghệ</div>
+                                    <div class="org-node-role"
+                                        style="font-size:0.64rem; color:#64748b; margin-top:2px; font-weight:700;">Tăng
+                                        Trưởng &amp; Công Nghệ</div>
                                     <div class="org-node-info">
                                         <i class="fa-solid fa-envelope"></i>
                                         <a href="mailto:duongvt@ideas.edu.vn">duongvt@ideas.edu.vn</a>
@@ -1200,7 +1279,7 @@ ob_start(function ($html) {
 
                             <!-- Line down to sub-branches -->
                             <div class="org-tree-line"></div>
-                            
+
                             <div class="org-branches">
                                 <!-- Sub-branch 3.1: Trịnh Đình Thanh -->
                                 <div class="org-branch-col has-consultants">
@@ -1211,11 +1290,12 @@ ob_start(function ($html) {
                                             <h3 class="org-node-name">Trịnh Đình Thanh</h3>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Line down to team members -->
                                     <div class="org-tree-line sub-line"></div>
-                                    <div class="consultants-title"><i class="fa-solid fa-users" style="margin-right:4px; color:#ab0e00;"></i> Nhân sự trực thuộc</div>
-                                    
+                                    <div class="consultants-title"><i class="fa-solid fa-users"
+                                            style="margin-right:4px; color:#ab0e00;"></i> Nhân sự trực thuộc</div>
+
                                     <div class="consultants-grid">
                                         <article class="consultant-card">
                                             <div class="consultant-avatar-placeholder">TD</div>
@@ -1247,29 +1327,15 @@ ob_start(function ($html) {
                                         </article>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Sub-branch 3.2: Ngô Gia Thái -->
-                                <div class="org-branch-col has-consultants">
+                                <div class="org-branch-col">
                                     <div class="org-node">
                                         <div class="org-node-avatar-placeholder">NGT</div>
                                         <div class="org-node-body">
                                             <div class="org-node-role">Tech Lead</div>
                                             <h3 class="org-node-name">Ngô Gia Thái</h3>
                                         </div>
-                                    </div>
-                                    
-                                    <!-- Line down to team members -->
-                                    <div class="org-tree-line sub-line"></div>
-                                    <div class="consultants-title"><i class="fa-solid fa-users" style="margin-right:4px; color:#ab0e00;"></i> Nhân sự trực thuộc</div>
-                                    
-                                    <div class="consultants-grid">
-                                        <article class="consultant-card">
-                                            <div class="consultant-avatar-placeholder">HCC</div>
-                                            <div class="consultant-body">
-                                                <h4 class="consultant-name">Nguyễn Phạm Hoàng Cương</h4>
-                                                <span class="consultant-role">Helpdesk</span>
-                                            </div>
-                                        </article>
                                     </div>
                                 </div>
                             </div>
@@ -1291,22 +1357,26 @@ ob_start(function ($html) {
     $js_path = get_stylesheet_directory() . '/common-assets/js/script.min.js';
     $js_version = file_exists($js_path) ? filemtime($js_path) : time();
     ?>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/js/script.min.js?v=<?php echo $js_version; ?>" defer></script>
-    
+    <script
+        src="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/js/script.min.js?v=<?php echo $js_version; ?>"
+        defer></script>
+
     <!-- Booking Modal script import -->
     <?php
     define('BOOKING_MODAL_JS_LOADED', true);
     $bk_js_path = get_stylesheet_directory() . '/common-assets/js/booking-modal.min.js';
     $bk_js_version = file_exists($bk_js_path) ? filemtime($bk_js_path) : time();
     ?>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/js/booking-modal.min.js?v=<?php echo $bk_js_version; ?>" defer></script>
+    <script
+        src="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/js/booking-modal.min.js?v=<?php echo $bk_js_version; ?>"
+        defer></script>
 
     <!-- Canvas Pan & Zoom Control Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const viewport = document.getElementById('org-canvas-viewport');
             const content = document.getElementById('org-canvas-content');
-            
+
             if (!viewport || !content) return;
 
             let scale = 1.0;
@@ -1331,14 +1401,14 @@ ob_start(function ($html) {
                 const vr = viewport.getBoundingClientRect();
                 const rootNode = content.querySelector('.org-node');
                 if (!rootNode) return;
-                
+
                 scale = 1.0;
                 const rootOffsetLeft = rootNode.offsetLeft;
                 const rootWidth = rootNode.offsetWidth;
-                
+
                 panX = (vr.width / 2) - (rootOffsetLeft + rootWidth / 2);
                 panY = 60; // Margin from top
-                
+
                 applyTransform();
             }
 
@@ -1402,17 +1472,17 @@ ob_start(function ($html) {
                     );
                     const ratio = dist / startDist;
                     const newScale = Math.min(Math.max(0.3, startScale * ratio), 2.5);
-                    
+
                     if (newScale !== scale) {
                         const vr = viewport.getBoundingClientRect();
                         const mx = touchCenterX - vr.left;
                         const my = touchCenterY - vr.top;
-                        
+
                         const sRatio = newScale / scale;
                         panX = mx - (mx - panX) * sRatio;
                         panY = my - (my - panY) * sRatio;
                         scale = newScale;
-                        
+
                         applyTransform();
                     }
                 }
@@ -1433,10 +1503,10 @@ ob_start(function ($html) {
                 const vr = viewport.getBoundingClientRect();
                 const mx = e.clientX - vr.left;
                 const my = e.clientY - vr.top;
-                
+
                 const factor = e.deltaY > 0 ? -0.1 : 0.1;
                 const newScale = Math.min(Math.max(0.3, scale + factor), 2.5);
-                
+
                 if (newScale !== scale) {
                     const ratio = newScale / scale;
                     panX = mx - (mx - panX) * ratio;

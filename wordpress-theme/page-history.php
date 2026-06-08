@@ -82,13 +82,13 @@ ob_start(function($html) {
 
         body {
             font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-            background-color: #f4f6fb;
-            color: #1e293b;
-            background-image: 
-                radial-gradient(circle at 15% 20%, rgba(185, 14, 0, 0.04) 0%, transparent 45%),
-                radial-gradient(circle at 85% 60%, rgba(185, 14, 0, 0.03) 0%, transparent 50%),
-                radial-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 28px 28px;
+            background-color: #ffffff;
+            color: #111827;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(171, 14, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 70%, rgba(171, 14, 0, 0.04) 0%, transparent 45%),
+                radial-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 26px 26px;
             background-attachment: scroll, scroll, fixed;
         }
 
@@ -136,45 +136,45 @@ ob_start(function($html) {
         }
 
         .history-hero-badge {
-            background: rgba(171, 14, 0, 0.15);
-            border: 1px solid rgba(171, 14, 0, 0.4);
-            padding: 8px 18px;
-            border-radius: 100px;
-            color: rgba(255,255,255,0.85);
-            font-size: 0.82rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 22px;
-            backdrop-filter: blur(12px);
+            background: rgba(171, 14, 0, 0.25) !important;
+            border: 1px solid rgba(171, 14, 0, 0.6) !important;
+            padding: 8px 18px !important;
+            border-radius: 100px !important;
+            color: #ffffff !important;
+            font-size: 0.82rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.12em !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            margin-bottom: 22px !important;
+            backdrop-filter: blur(12px) !important;
         }
 
         .history-hero h1 {
-            font-size: clamp(2.6rem, 6vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
-            color: #ffffff;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+            font-size: clamp(2.6rem, 6vw, 4rem) !important;
+            font-weight: 800 !important;
+            margin-bottom: 20px !important;
+            letter-spacing: -0.03em !important;
+            line-height: 1.15 !important;
+            color: #ffffff !important;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.4) !important;
         }
 
         .history-hero h1 span {
-            background: linear-gradient(135deg, #ff4444 0%, #ab0e00 60%, #ff3030 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: linear-gradient(135deg, #ff4444 0%, #ab0e00 60%, #ff3030 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
         }
 
         .history-hero p {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.7);
-            max-width: 640px;
-            margin: 0 auto;
-            line-height: 1.7;
+            font-size: 1.1rem !important;
+            color: rgba(255, 255, 255, 0.95) !important;
+            max-width: 640px !important;
+            margin: 0 auto !important;
+            line-height: 1.7 !important;
         }
 
         /* Timeline Section */
@@ -229,7 +229,7 @@ ob_start(function($html) {
             height: 20px;
             border-radius: 50%;
             background: #ff0000;
-            border: 4px solid #f4f6fb;
+            border: 4px solid #ffffff;
             box-shadow: 0 0 8px rgba(171, 14, 0, 0.3);
             z-index: 10;
             transition: all 0.3s ease;

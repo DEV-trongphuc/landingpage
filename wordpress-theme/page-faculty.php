@@ -765,7 +765,7 @@ ob_start(function ($html) {
                 scroll-behavior: smooth;
                 padding-bottom: 15px;
                 gap: 16px;
-                scrollbar-width: none; /* Firefox */
+                scrollbar-width: none !important; /* Firefox */
                 margin-left: -20px !important;
                 margin-right: -20px !important;
                 padding-left: 20px !important;
@@ -773,7 +773,7 @@ ob_start(function ($html) {
             }
 
             .faculty-grid::-webkit-scrollbar {
-                display: none; /* Chrome/Safari */
+                display: none !important; /* Chrome/Safari */
             }
 
             .faculty-card {

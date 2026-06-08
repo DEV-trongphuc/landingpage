@@ -254,14 +254,14 @@ ob_start(function ($html) {
                 scroll-behavior: smooth;
                 padding-bottom: 15px;
                 gap: 16px;
-                scrollbar-width: none; /* Firefox */
+                scrollbar-width: none !important; /* Firefox */
                 margin-left: -16px;
                 margin-right: -16px;
                 padding-left: 16px;
                 padding-right: 16px;
             }
             .events-grid::-webkit-scrollbar {
-                display: none; /* Chrome/Safari */
+                display: none !important; /* Chrome/Safari */
             }
             .event-card {
                 flex: 0 0 280px;
@@ -523,6 +523,142 @@ ob_start(function ($html) {
             cursor: not-allowed;
             pointer-events: none;
         }
+
+        /* ── Mobile Custom Dropdown Filters ──────────────── */
+        .events-mobile-filters { display: none; }
+
+        @media (max-width: 768px) {
+            .events-filter-bar { display: none !important; }
+            .events-mobile-filters {
+                display: flex;
+                gap: 12px;
+                margin-bottom: 32px;
+                position: relative;
+                z-index: 30;
+            }
+            .emf-dropdown {
+                flex: 1;
+                position: relative;
+            }
+            .emf-trigger {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 11px 13px;
+                background: #ffffff;
+                border: 1.5px solid #e2e8f0;
+                border-radius: 14px;
+                font-family: inherit;
+                font-size: 0.82rem;
+                font-weight: 600;
+                color: #374151;
+                cursor: pointer;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                transition: all 0.25s ease;
+                text-align: left;
+                min-height: 46px;
+            }
+            .emf-trigger.open {
+                border-color: rgba(171,14,0,0.5);
+                box-shadow: 0 0 0 3px rgba(171,14,0,0.1), 0 4px 12px rgba(0,0,0,0.06);
+            }
+            .emf-trigger-icon {
+                color: #ab0e00;
+                font-size: 0.8rem;
+                flex-shrink: 0;
+                width: 16px;
+                text-align: center;
+            }
+            .emf-trigger-label {
+                flex: 1;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 0.82rem;
+                line-height: 1.2;
+            }
+            .emf-trigger-label small {
+                display: block;
+                font-size: 0.68rem;
+                font-weight: 500;
+                color: #9ca3af;
+                margin-bottom: 1px;
+            }
+            .emf-trigger-arrow {
+                color: #9ca3af;
+                font-size: 0.7rem;
+                transition: transform 0.25s ease;
+                flex-shrink: 0;
+            }
+            .emf-trigger.open .emf-trigger-arrow {
+                transform: rotate(180deg);
+                color: #ab0e00;
+            }
+            .emf-panel {
+                position: absolute;
+                top: calc(100% + 6px);
+                left: 0;
+                min-width: 100%;
+                background: #ffffff;
+                border: 1.5px solid #e9eef5;
+                border-radius: 16px;
+                box-shadow: 0 16px 48px rgba(15,23,42,0.16), 0 4px 16px rgba(0,0,0,0.06);
+                overflow: hidden;
+                opacity: 0;
+                transform: translateY(-8px) scale(0.97);
+                pointer-events: none;
+                transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.175,0.885,0.32,1.275);
+                z-index: 100;
+            }
+            .emf-panel.open {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                pointer-events: auto;
+            }
+            .emf-option {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 13px 16px;
+                font-size: 0.86rem;
+                font-weight: 600;
+                color: #374151;
+                cursor: pointer;
+                transition: all 0.18s ease;
+                border-bottom: 1px solid #f8fafc;
+                position: relative;
+            }
+            .emf-option:last-child { border-bottom: none; }
+            .emf-option i {
+                color: #9ca3af;
+                font-size: 0.82rem;
+                width: 16px;
+                text-align: center;
+                flex-shrink: 0;
+                transition: color 0.18s ease;
+            }
+            .emf-option:hover {
+                background: rgba(171,14,0,0.04);
+                color: #ab0e00;
+            }
+            .emf-option:hover i { color: #ab0e00; }
+            .emf-option.active {
+                background: linear-gradient(135deg,rgba(140,16,0,0.07) 0%,rgba(171,14,0,0.04) 100%);
+                color: #ab0e00;
+            }
+            .emf-option.active i { color: #ab0e00; }
+            .emf-option.active::after {
+                content: '';
+                position: absolute;
+                right: 14px;
+                width: 8px;
+                height: 8px;
+                background: #ab0e00;
+                border-radius: 50%;
+                box-shadow: 0 0 6px rgba(171,14,0,0.4);
+            }
+        }
     </style>
     <?php wp_head(); ?>
 </head>
@@ -551,13 +687,49 @@ ob_start(function ($html) {
 
     <!-- Main Section -->
     <main class="events-section">
-        <!-- Filter Tabs Bar -->
+        <!-- Filter Tabs Bar (desktop) -->
         <div class="events-filter-bar">
             <button class="filter-btn active" data-filter="TẤT CẢ">TẤT CẢ</button>
             <button class="filter-btn" data-filter="Workshop">Workshop</button>
             <button class="filter-btn" data-filter="Lễ tốt nghiệp">Lễ tốt nghiệp</button>
             <button class="filter-btn" data-filter="Chuyến đi">Chuyến đi</button>
             <button class="filter-btn" data-filter="Khác">Khác</button>
+        </div>
+
+        <!-- Mobile Dropdown Filters -->
+        <div class="events-mobile-filters" id="events-mobile-filters">
+            <!-- Category Dropdown -->
+            <div class="emf-dropdown" id="emf-cat-wrap">
+                <button class="emf-trigger" id="emf-cat-trigger" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="emf-trigger-icon"><i class="fa-solid fa-tag"></i></span>
+                    <span class="emf-trigger-label">
+                        <small>Loại sự kiện</small>
+                        <span id="emf-cat-label">Tất cả</span>
+                    </span>
+                    <span class="emf-trigger-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+                <div class="emf-panel" id="emf-cat-panel" role="listbox">
+                    <div class="emf-option active" data-value="TẤT CẢ" role="option"><i class="fa-solid fa-layer-group"></i>Tất cả</div>
+                    <div class="emf-option" data-value="Workshop" role="option"><i class="fa-solid fa-chalkboard-user"></i>Workshop</div>
+                    <div class="emf-option" data-value="Lễ tốt nghiệp" role="option"><i class="fa-solid fa-graduation-cap"></i>Lễ tốt nghiệp</div>
+                    <div class="emf-option" data-value="Chuyến đi" role="option"><i class="fa-solid fa-plane"></i>Chuyến đi</div>
+                    <div class="emf-option" data-value="Khác" role="option"><i class="fa-solid fa-ellipsis"></i>Khác</div>
+                </div>
+            </div>
+            <!-- Year Dropdown -->
+            <div class="emf-dropdown" id="emf-year-wrap">
+                <button class="emf-trigger" id="emf-year-trigger" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="emf-trigger-icon"><i class="fa-solid fa-calendar"></i></span>
+                    <span class="emf-trigger-label">
+                        <small>Năm</small>
+                        <span id="emf-year-label">Tất cả</span>
+                    </span>
+                    <span class="emf-trigger-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+                <div class="emf-panel" id="emf-year-panel" role="listbox">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
         </div>
 
         <!-- Cards Grid -->
@@ -871,6 +1043,33 @@ ob_start(function ($html) {
         const ITEMS_PER_PAGE = 15;
         let currentFilteredEvents = [...EVENTS];
         let currentPage = 1;
+        let currentCategoryFilter = 'TẤT CẢ';
+        let currentYearFilter = 'ALL';
+
+        // Combined filter function
+        const applyFilters = () => {
+            let filtered = [...EVENTS];
+            // Category
+            if (currentCategoryFilter === 'Khác') {
+                filtered = filtered.filter(e =>
+                    !e.type.includes('Workshop') &&
+                    !e.type.includes('Lễ tốt nghiệp') &&
+                    !e.type.includes('Chuyến đi')
+                );
+            } else if (currentCategoryFilter !== 'TẤT CẢ') {
+                filtered = filtered.filter(e => e.type.includes(currentCategoryFilter));
+            }
+            // Year
+            if (currentYearFilter !== 'ALL') {
+                filtered = filtered.filter(e => {
+                    const parts = e.data.split('/');
+                    return parts.length === 3 && parts[2] === currentYearFilter;
+                });
+            }
+            currentFilteredEvents = filtered;
+            currentPage = 1;
+            displayEventsPage();
+        };
 
         // Render page list & pagination buttons
         const displayEventsPage = () => {
@@ -1033,30 +1232,56 @@ ob_start(function ($html) {
             }
         };
 
-        // Filter Function
-        const filterEvents = (category) => {
-            if (category === "TẤT CẢ") {
-                currentFilteredEvents = [...EVENTS];
-            } else if (category === "Khác") {
-                currentFilteredEvents = EVENTS.filter(e =>
-                    !e.type.includes("Workshop") &&
-                    !e.type.includes("Lễ tốt nghiệp") &&
-                    !e.type.includes("Chuyến đi")
-                );
-            } else {
-                currentFilteredEvents = EVENTS.filter(e => e.type.includes(category));
-            }
-            currentPage = 1;
-            displayEventsPage();
-        };
-
-        // Attach click events to buttons
+        // Desktop button filter
         filterButtons.forEach(btn => {
             btn.addEventListener("click", function () {
                 filterButtons.forEach(b => b.classList.remove("active"));
                 this.classList.add("active");
-                const filterVal = this.getAttribute("data-filter");
-                filterEvents(filterVal);
+                currentCategoryFilter = this.getAttribute("data-filter");
+                applyFilters();
+            });
+        });
+
+        // ── Mobile Dropdown Logic ─────────────────────────
+        function setupEmfDropdown(triggerId, panelId, onSelect) {
+            const trigger = document.getElementById(triggerId);
+            const panel = document.getElementById(panelId);
+            if (!trigger || !panel) return;
+
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = panel.classList.contains('open');
+                // Close all dropdowns
+                document.querySelectorAll('.emf-panel').forEach(p => p.classList.remove('open'));
+                document.querySelectorAll('.emf-trigger').forEach(t => {
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) {
+                    panel.classList.add('open');
+                    trigger.classList.add('open');
+                    trigger.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            panel.querySelectorAll('.emf-option').forEach(opt => {
+                opt.addEventListener('click', () => {
+                    panel.querySelectorAll('.emf-option').forEach(o => o.classList.remove('active'));
+                    opt.classList.add('active');
+                    panel.classList.remove('open');
+                    trigger.classList.remove('open');
+                    trigger.setAttribute('aria-expanded', 'false');
+                    onSelect(opt.dataset.value, opt.textContent.trim());
+                });
+            });
+        }
+
+        // Close dropdowns on outside click
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.emf-panel').forEach(p => p.classList.remove('open'));
+            document.querySelectorAll('.emf-trigger').forEach(t => {
+                t.classList.remove('open');
+                t.setAttribute('aria-expanded', 'false');
             });
         });
 
@@ -1064,12 +1289,51 @@ ob_start(function ($html) {
         document.addEventListener("DOMContentLoaded", () => {
             displayEventsPage();
 
-            // Check URL hash for direct category selection (e.g. #chuyen-di)
+            // Populate year dropdown from EVENTS data
+            const years = [...new Set(EVENTS.map(e => {
+                const parts = e.data.split('/');
+                return parts.length === 3 ? parts[2] : null;
+            }).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
+
+            const yearPanel = document.getElementById('emf-year-panel');
+            if (yearPanel) {
+                const allOpt = document.createElement('div');
+                allOpt.className = 'emf-option active';
+                allOpt.dataset.value = 'ALL';
+                allOpt.setAttribute('role', 'option');
+                allOpt.innerHTML = '<i class="fa-solid fa-infinity"></i>Tất cả';
+                yearPanel.appendChild(allOpt);
+                years.forEach(yr => {
+                    const opt = document.createElement('div');
+                    opt.className = 'emf-option';
+                    opt.dataset.value = yr;
+                    opt.setAttribute('role', 'option');
+                    opt.innerHTML = `<i class="fa-solid fa-calendar-days"></i>${yr}`;
+                    yearPanel.appendChild(opt);
+                });
+            }
+
+            // Wire up mobile dropdowns
+            setupEmfDropdown('emf-cat-trigger', 'emf-cat-panel', (value, label) => {
+                document.getElementById('emf-cat-label').textContent = label;
+                currentCategoryFilter = value;
+                // Sync desktop buttons
+                filterButtons.forEach(b => {
+                    b.classList.toggle('active', b.getAttribute('data-filter') === value);
+                });
+                applyFilters();
+            });
+
+            setupEmfDropdown('emf-year-trigger', 'emf-year-panel', (value, label) => {
+                document.getElementById('emf-year-label').textContent = label;
+                currentYearFilter = value;
+                applyFilters();
+            });
+
+            // Check URL hash for direct category selection
             if (window.location.hash === "#chuyen-di") {
                 const targetBtn = Array.from(filterButtons).find(btn => btn.getAttribute("data-filter") === "Chuyến đi");
-                if (targetBtn) {
-                    targetBtn.click();
-                }
+                if (targetBtn) targetBtn.click();
             }
         });
     </script>

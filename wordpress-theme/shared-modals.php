@@ -6,28 +6,28 @@
 
 // 1. Resolve page-specific content for Registration Modal (reg-modal)
 $modal_badge = 'NHẬN TƯ VẤN 1:1';
-$modal_title = 'Đăng ký tìm hiểu <br><span class="gradient-text">Hành Trình Học Tập</span>';
+$modal_title = 'Đăng ký tìm hiểu <br><span class="gradient-text" id="modal-program-title">Hành Trình Học Tập</span>';
 $modal_subtitle = 'Chuyên viên hỗ trợ học vụ sẽ liên hệ với bạn trong vòng 24h làm việc để tư vấn chi tiết.';
 
 if (is_page('so-do-to-chuc')) {
-    $modal_title = 'Đăng ký tìm hiểu <br><span class="gradient-text">Cơ Cấu Tổ Chức</span>';
+    $modal_title = 'Đăng ký tìm hiểu <br><span class="gradient-text" id="modal-program-title">Cơ Cấu Tổ Chức</span>';
 } elseif (is_page('he-thong-ho-tro-hoc-tap-lms-ideas')) {
-    $modal_title = 'Đăng ký trải nghiệm <br><span class="gradient-text">Hệ Sinh Thái LMS</span>';
+    $modal_title = 'Đăng ký trải nghiệm <br><span class="gradient-text" id="modal-program-title">Hệ Sinh Thái LMS</span>';
     $modal_subtitle = 'Điền thông tin để chuyên viên cấp tài khoản học thử LMS và trợ lý AI.';
 } elseif (is_page('ideas-talk')) {
-    $modal_title = 'Đăng ký tham gia <br><span class="gradient-text">IDEAS Talk & AI</span>';
+    $modal_title = 'Đăng ký tham gia <br><span class="gradient-text" id="modal-program-title">IDEAS Talk & AI</span>';
     $modal_subtitle = 'Điền thông tin bên dưới, chuyên viên tư vấn sẽ liên hệ hướng dẫn lịch học và nhận link Zoom.';
 } elseif (is_page('ideas-podcast-series-01')) {
-    $modal_title = 'Nhận tài liệu <br><span class="gradient-text">Podcast Series 01</span>';
+    $modal_title = 'Nhận tài liệu <br><span class="gradient-text" id="modal-program-title">Podcast Series 01</span>';
     $modal_subtitle = 'Đăng ký thông tin để nhận slide tài liệu và thông báo tập podcast mới nhất.';
 } elseif (is_page('ideas-ambassador')) {
-    $modal_title = 'Đăng ký làm <br><span class="gradient-text">Đại Sứ IDEAS</span>';
+    $modal_title = 'Đăng ký làm <br><span class="gradient-text" id="modal-program-title">Đại Sứ IDEAS</span>';
     $modal_subtitle = 'Đồng hành lan tỏa tri thức và nhận chính sách đãi ngộ đặc quyền.';
 } elseif (is_page('ho-tro-tai-chinh-sacombank')) {
-    $modal_title = 'Đăng ký tư vấn <br><span class="gradient-text">Trả Góp Học Phí</span>';
+    $modal_title = 'Đăng ký tư vấn <br><span class="gradient-text" id="modal-program-title">Trả Góp Học Phí</span>';
     $modal_subtitle = 'Hỗ trợ trả góp học phí 0% liên kết Sacombank từ 12 đến 24 tháng.';
 } elseif (is_page('cac-khoan-chi-phi')) {
-    $modal_title = 'Nhận thông tin <br><span class="gradient-text">Học Phí & Ưu Đãi</span>';
+    $modal_title = 'Nhận thông tin <br><span class="gradient-text" id="modal-program-title">Học Phí & Ưu Đãi</span>';
     $modal_subtitle = 'Chuyên viên tư vấn tuyển sinh sẽ liên hệ gửi biểu phí chi tiết.';
 }
 

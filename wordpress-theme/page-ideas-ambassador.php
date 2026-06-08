@@ -148,47 +148,47 @@ ob_start(function ($html) {
         }
 
         .amb-hero-badge {
-            background: rgba(171, 14, 0, 0.18);
-            border: 1px solid rgba(255, 77, 77, 0.3);
-            padding: 8px 20px;
-            border-radius: 100px;
-            color: #ffcccc;
-            font-size: 0.82rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 24px;
-            backdrop-filter: blur(12px);
+            background: rgba(171, 14, 0, 0.25) !important;
+            border: 1px solid rgba(255, 77, 77, 0.5) !important;
+            padding: 8px 20px !important;
+            border-radius: 100px !important;
+            color: #ffffff !important;
+            font-size: 0.82rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.12em !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            margin-bottom: 24px !important;
+            backdrop-filter: blur(12px) !important;
         }
 
         .amb-hero h1 {
-            font-size: clamp(2.8rem, 6vw, 4.4rem);
-            font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-            color: #ffffff;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            font-size: clamp(2.8rem, 6vw, 4.4rem) !important;
+            font-weight: 900 !important;
+            margin-bottom: 20px !important;
+            letter-spacing: -0.02em !important;
+            line-height: 1.1 !important;
+            color: #ffffff !important;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
         }
 
         .amb-hero h1 span {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff3b30 50%, #ab0e00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff3b30 50%, #ab0e00 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
         }
 
         .amb-hero p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 650px;
-            margin-bottom: 36px;
-            line-height: 1.6;
-            font-weight: 500;
-            letter-spacing: 0.02em;
+            font-size: 1.2rem !important;
+            color: rgba(255, 255, 255, 0.95) !important;
+            max-width: 650px !important;
+            margin-bottom: 36px !important;
+            line-height: 1.6 !important;
+            font-weight: 500 !important;
+            letter-spacing: 0.02em !important;
         }
 
         .amb-hero-btn {

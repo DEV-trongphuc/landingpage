@@ -374,14 +374,14 @@ ob_start(function ($html) {
                 scroll-behavior: smooth;
                 padding-bottom: 15px;
                 gap: 16px;
-                scrollbar-width: none; /* Firefox */
+                scrollbar-width: none !important; /* Firefox */
                 margin-left: -20px !important;
                 margin-right: -20px !important;
                 padding-left: 20px !important;
                 padding-right: 20px !important;
             }
             .ecosystem-grid-v2::-webkit-scrollbar {
-                display: none; /* Chrome/Safari */
+                display: none !important; /* Chrome/Safari */
             }
             .eco-card-v2 {
                 flex: 0 0 280px;
@@ -619,6 +619,22 @@ ob_start(function ($html) {
                 direction: ltr;
             }
         }
+        @media (max-width: 480px) {
+            .lms-form-section {
+                padding: 40px 16px;
+            }
+            .lms-form-wrapper {
+                padding: 24px 16px;
+                border-radius: 16px;
+            }
+            .lms-form-wrapper h3 {
+                font-size: 1.35rem;
+            }
+            .lms-form-wrapper p {
+                margin-bottom: 20px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
     <?php wp_head(); ?>
 </head>
@@ -639,7 +655,7 @@ ob_start(function ($html) {
                 <i class="fa-solid fa-laptop-code"></i>
                 Công Nghệ Đào Tạo 4.0
             </div>
-            <h1>Hệ Thống LMS &amp; <span>Hệ Sinh Thái Học Tập</span></h1>
+            <h1>Hệ thống LMS <br/> Cùng <span>hệ sinh thái học tập.</span></h1>
             <p>Đồng hành hỗ trợ học vụ chuyên nghiệp, giải pháp học tập số toàn diện giúp tối ưu hóa thời gian và nâng cao hiệu quả tiếp thu kiến thức cho học viên.</p>
             <button type="button" class="btn btn-primary" onclick="showform('lms-hero')">
                 Trải nghiệm hệ thống ngay
