@@ -260,9 +260,9 @@
         rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="preload" href="../common-assets/css/style.min.css?v=1780831787717" as="style" />
-    <link rel="stylesheet" href="../common-assets/css/style.min.css?v=1780831787717" />
-    <link rel="stylesheet" href="../common-assets/css/booking-modal.min.css?v=1780831787717" />
+    <link rel="preload" href="../common-assets/css/style.min.css?v=1780831787725" as="style" />
+    <link rel="stylesheet" href="../common-assets/css/style.min.css?v=1780831787725" />
+    <link rel="stylesheet" href="../common-assets/css/booking-modal.min.css?v=1780831787725" />
     <style>
         @media (min-width: 992px) {
             .BBA-grid {
@@ -6136,25 +6136,25 @@
                         <div class="ideas_follow_inner">
                             <div class="ideas_follow">
                                 <p>Follow</p>
-                                <a target="_blank" href="https://www.facebook.com/ideas.edu.vn/">
+                                <a target="_blank" href="https://www.facebook.com/ideas.edu.vn/" aria-label="Facebook IDEAS">
                                     <i class="fa-brands fa-facebook"></i>
                                 </a>
-                                <a target="_blank" href="https://www.youtube.com/c/Vi%E1%BB%87nIDEAS">
+                                <a target="_blank" href="https://www.youtube.com/c/Vi%E1%BB%87nIDEAS" aria-label="YouTube IDEAS">
                                     <i class="fa-brands fa-youtube"></i>
                                 </a>
-                                <a target="_blank" href="https://www.linkedin.com/company/ideasinstitute/">
+                                <a target="_blank" href="https://www.linkedin.com/company/ideasinstitute/" aria-label="LinkedIn IDEAS">
                                     <i class="fa-brands fa-linkedin"></i>
                                 </a>
-                                <a target="_blank" href="https://www.tiktok.com/@ideas_institute">
+                                <a target="_blank" href="https://www.tiktok.com/@ideas_institute" aria-label="TikTok IDEAS">
                                     <i class="fa-brands fa-tiktok"></i>
                                 </a>
-                                <a target="_blank" href="https://zalo.me/3857867121882640296">
+                                <a target="_blank" href="https://zalo.me/3857867121882640296" aria-label="Zalo IDEAS">
                                     <i>
                                         <img loading="lazy" decoding="async" alt="Zalo"
                                             src="https://hidosport.vn/wp-content/uploads/2023/09/zalo-icon.png">
                                     </i>
                                 </a>
-                                <a target="_blank" href="https://www.instagram.com/ideas.edu.vn/">
+                                <a target="_blank" href="https://www.instagram.com/ideas.edu.vn/" aria-label="Instagram IDEAS">
                                     <i class="fa-brands fa-square-instagram"></i>
                                 </a>
                             </div>
@@ -7474,7 +7474,7 @@
                                     <span class="video-tag">IDEAS Talk - AI</span>
                                     <span>2025/03/23</span>
                                 </div>
-                                <h4>Omnichannel Customer Service with AI</h4>
+                                <h3>Omnichannel Customer Service with AI</h3>
                             </div>
                         </article>
 
@@ -7493,7 +7493,7 @@
                                     <span class="video-tag">IDEAS Talk - AI</span>
                                     <span>2025/05/25</span>
                                 </div>
-                                <h4>Decoding AI - Undisclosed Creative Methods</h4>
+                                <h3>Decoding AI - Undisclosed Creative Methods</h3>
                             </div>
                         </article>
 
@@ -7512,7 +7512,7 @@
                                     <span class="video-tag">IDEAS Talk - AI</span>
                                     <span>2025/04/20</span>
                                 </div>
-                                <h4>Data Security in the AI Era: Challenges and Solutions</h4>
+                                <h3>Data Security in the AI Era: Challenges and Solutions</h3>
                             </div>
                         </article>
                     </div>
@@ -8028,6 +8028,7 @@
                 originalSlides.forEach((_, idx) => {
                     const dot = document.createElement("button");
                     dot.classList.add("testi-dot");
+                    dot.setAttribute("aria-label", "Slide " + (idx + 1));
                     if (idx === currentIndex) dot.classList.add("active");
                     dotsContainer.appendChild(dot);
                     dot.addEventListener("click", (e) => {
@@ -8537,7 +8538,7 @@
 
             <!-- Column 2: Main Menu -->
             <div class="footer-col-links">
-                <h5>Main Menu</h5>
+                <h4>Main Menu</h4>
                 <a href="/en" data-wpel-link="internal">Home</a>
                 <a href="/en/doi-ngu-giang-vien" data-wpel-link="internal">Academic Board</a>
                 <a href="/en/so-do-to-chuc" data-wpel-link="internal">Organizational Structure</a>
@@ -8546,7 +8547,7 @@
 
             <!-- Column 3: Support -->
             <div class="footer-col-links">
-                <h5>Programs</h5>
+                <h4>Programs</h4>
                 <a href="/en/fullbba" data-wpel-link="internal">Full BBA</a>
                 <a href="/en/mba" data-wpel-link="internal">MBA</a>
                 <a href="/en/mscai" data-wpel-link="internal">MSc AI</a>
@@ -8555,7 +8556,7 @@
 
             <!-- Column 4: Contact -->
             <div class="footer-col-contact">
-                <h5>Contact</h5>
+                <h4>Contact</h4>
                 <p class="contact-item">
                     <i class="fa-solid fa-phone"></i>
                     <span>028 2244 2244</span>
@@ -8619,13 +8620,13 @@
     </footer>
 
     <!-- Video Modal -->
-    <div id="video-modal" class="video-modal" role="dialog" aria-modal="true" style="display: none;">
+    <div id="video-modal" class="video-modal" role="dialog" aria-modal="true" aria-label="Introduction Video" style="display: none;">
         <div class="video-modal-overlay" onclick="closeVideoModal()"></div>
         <div class="video-modal-container">
             <button class="video-modal-close" onclick="closeVideoModal()" aria-label="Close video">✕</button>
             <div class="video-modal-content">
                 <div class="iframe-container">
-                    <iframe id="video-modal-iframe" src="" frameborder="0"
+                    <iframe id="video-modal-iframe" src="" title="Introduction Video" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>
@@ -9196,8 +9197,8 @@
         </div>
     </div>
 
-    <script src="../common-assets/js/script.min.js?v=1780831787717" defer></script>
-    <script src="../common-assets/js/booking-modal.min.js?v=1780831787717" defer></script>
+    <script src="../common-assets/js/script.min.js?v=1780831787725" defer></script>
+    <script src="../common-assets/js/booking-modal.min.js?v=1780831787725" defer></script>
 
     <!-- ═══════════════════════════════════════
          Swiss UMEF Program Orientation Quiz

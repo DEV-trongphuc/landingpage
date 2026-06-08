@@ -310,7 +310,7 @@ abbr {
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 12px;
 }
 
 .nav-link {
@@ -321,6 +321,7 @@ abbr {
   transition: color 0.3s ease;
   display: inline-flex;
   align-items: center;
+  padding: 18px 12px;
 }
 
 button.nav-link {
@@ -330,7 +331,7 @@ button.nav-link {
   font-size: 0.92rem;
   font-weight: 600;
   color: #111729;
-  padding: 0;
+  padding: 18px 12px;
   cursor: pointer;
   line-height: inherit;
   display: inline-flex;
@@ -340,12 +341,14 @@ button.nav-link {
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
   height: 2px;
   background: var(--clr-primary);
-  transition: width 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
 }
 
 .nav-link:hover,
@@ -355,7 +358,7 @@ button.nav-link {
 
 .nav-link:hover::after,
 .nav-link.active::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .nav-cta {
@@ -5322,7 +5325,7 @@ button.nav-link {
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(32px);
+  transform: translateX(-50%) translateY(16px);
   background: #ffffff;
   border-radius: 16px;
   border: 1px solid #e2e8f0;
@@ -5342,17 +5345,17 @@ button.nav-link {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
-  transform: translateX(-50%) translateY(24px);
+  transform: translateX(-50%) translateY(4px);
 }
 
 /* Pseudo-element bridge to prevent hover loss */
 .dropdown-menu-box::before {
   content: "";
   position: absolute;
-  top: -40px;
+  top: -24px;
   left: 0;
   right: 0;
-  height: 40px;
+  height: 24px;
   background: transparent;
 }
 
@@ -11078,7 +11081,7 @@ body .pain-card-desc {
 
 .news-item .item-date {
   font-size: 0.8125rem;
-  color: var(--clr-text-dim, #999);
+  color: var(--clr-text-dim, #5e6e82);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -11265,7 +11268,8 @@ body .pain-card-desc {
   margin-bottom: 15px;
 }
 
-.ideas_footer h5 {
+.ideas_footer h5,
+.ideas_footer h4 {
   font-size: 1.15rem;
   font-weight: 800;
   color: #ffffff;
@@ -11277,7 +11281,8 @@ body .pain-card-desc {
   letter-spacing: 0.5px;
 }
 
-.ideas_footer h5::after {
+.ideas_footer h5::after,
+.ideas_footer h4::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -11887,7 +11892,7 @@ body .pain-card-desc {
   }
 
   /* Normalize Partner Logo Sizes & Alignment in a clean grid */
-  .partners-section .container>div {
+  .partners-section .container>div:not(.partner-connection-widget) {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 24px 16px !important;
@@ -11896,14 +11901,14 @@ body .pain-card-desc {
     opacity: 0.9 !important;
   }
 
-  .partners-section .container>div>div {
+  .partners-section .container>div:not(.partner-connection-widget)>div {
     grid-column: span 2 !important;
     margin: 8px 0 !important;
     height: 1px !important;
     background: rgba(0, 0, 0, 0.08) !important;
   }
 
-  .partners-section .container>div img {
+  .partners-section .container>div:not(.partner-connection-widget) img {
     height: auto !important;
     max-height: 32px !important;
     max-width: 120px !important;
@@ -12081,7 +12086,9 @@ body .pain-card-desc {
 }
 
 .ideas_footer .footer-col-links h5,
-.ideas_footer .footer-col-contact h5 {
+.ideas_footer .footer-col-links h4,
+.ideas_footer .footer-col-contact h5,
+.ideas_footer .footer-col-contact h4 {
   font-size: 1.05rem !important;
   font-weight: 700 !important;
   color: #ffffff !important;
@@ -12430,6 +12437,7 @@ body .pain-card-desc {
   font-weight: 600 !important;
 }
 
+.video-talk-card h3,
 .video-talk-card h4 {
   font-size: 1.05rem !important;
   font-weight: 700 !important;
@@ -12811,5 +12819,113 @@ body .pain-card-desc {
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
+  }
+}
+
+/* ─── MOBILE FIXES FOR LAYOUT ISSUES ─── */
+@media (max-width: 768px) {
+  /* Fix 1: Wrap social proof hero text and avatars */
+  .hero-social-proof {
+    flex-wrap: wrap !important;
+  }
+  .hero-social-proof p {
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
+  .hero-social-proof p strong {
+    color: #ab0e00 !important;
+    font-size: 1.4rem !important;
+  }
+
+  /* Fix 2: Testimonial card shadow cut-off and mobile centering */
+  .testimonials-section {
+    overflow: hidden !important;
+  }
+  .testi-carousel-container {
+    padding: 0 12px !important;
+  }
+  .testi-carousel-track-wrapper {
+    overflow: visible !important;
+    padding: 20px 0 35px 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .testi-carousel-slide {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .testi-carousel-slide.active {
+    transform: none !important;
+    box-shadow: 0 15px 35px rgba(171, 14, 0, 0.08) !important;
+  }
+  .ideas_quote_item {
+    min-height: auto !important;
+    padding: 24px 20px !important;
+  }
+  .testi-carousel-btn {
+    display: none !important;
+  }
+
+  /* Fix 3: Center and full width for strategic partner text */
+  .pain-stat-card .pain-stat-text,
+  .pain-stat-card .pain-stat-text p {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Fix 4: Center platform logos on mobile */
+  .sol-v2-platforms .platform-logos-grid {
+    justify-content: center !important;
+  }
+  .sol-v2-platforms span {
+    text-align: center !important;
+    display: block !important;
+  }
+
+  /* Fix 5: Adjust solution-stats numbers and text size on mobile */
+  .solution-stats .stat-card > div:first-child {
+    font-size: 3.2rem !important;
+  }
+  .solution-stats .stat-card > div:last-child {
+    font-size: 0.75rem !important;
+  }
+
+  /* Fix 6: Make partner connection widget badge and text full width and centered */
+  .partner-connection-widget {
+    padding: 20px 16px 24px 16px !important;
+  }
+  .partner-connection-widget span {
+    display: inline-flex !important;
+    width: auto !important;
+    white-space: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .partner-connection-widget p {
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 0.9rem !important;
+  }
+  .partner-connection-widget > div {
+    gap: 16px !important;
+    align-items: center !important;
+  }
+  .partner-connection-widget > div > img {
+    height: 44px !important;
+  }
+  .partner-connection-widget > div > img:first-child {
+    transform: translateY(1px) !important; /* Shift IDEAS logo slightly down */
+  }
+  .partner-connection-widget > div > img:last-child {
+    transform: translateY(-1px) !important; /* Shift Swiss UMEF logo slightly up */
+  }
+  .partner-connection-widget > div > div {
+    max-width: 90px !important;
+    margin: 0 4px !important;
+    transform: translateY(3px) !important; /* Shift connecting line down to match logos baseline/middle line */
   }
 }
