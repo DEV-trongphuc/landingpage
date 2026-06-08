@@ -498,9 +498,22 @@ if (!defined('BOOKING_MODAL_CSS_LOADED')) {
             if (typeof ctaSource === 'object' && ctaSource.innerText) {
                 resolvedSource = ctaSource.innerText.replace(/\s+/g, ' ').trim();
             } else if (typeof ctaSource === 'string') {
-                let el = document.getElementById(ctaSource) ||
-                    document.querySelector('.' + ctaSource) ||
-                    document.querySelector(`[data-cta="${ctaSource}"]`);
+                let el = null;
+                try {
+                    el = document.getElementById(ctaSource);
+                } catch (e) {}
+
+                if (!el && /^[a-zA-Z_-][a-zA-Z0-9_-]*$/.test(ctaSource)) {
+                    try {
+                        el = document.querySelector('.' + ctaSource);
+                    } catch (e) {}
+                }
+
+                if (!el) {
+                    try {
+                        el = document.querySelector(`[data-cta="${ctaSource.replace(/"/g, '\\"')}"]`);
+                    } catch (e) {}
+                }
 
                 if (el && el.innerText) {
                     resolvedSource = el.innerText.replace(/\s+/g, ' ').trim();

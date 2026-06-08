@@ -321,10 +321,13 @@ ob_start(function ($html) {
             .scb-stat-card {
                 padding: 10px 6px !important;
                 border-radius: 12px !important;
+                align-items: center !important;
+                text-align: center !important;
             }
             .scb-stat-num {
                 font-size: 0.95rem !important;
                 gap: 4px !important;
+                justify-content: center !important;
             }
             .scb-stat-num i {
                 font-size: 0.85rem !important;
