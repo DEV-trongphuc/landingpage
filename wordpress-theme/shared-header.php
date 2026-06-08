@@ -220,7 +220,7 @@
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-lenis-prevent>
         <div class="mobile-menu-header">
             <a href="/" class="mobile-menu-logo" aria-label="Trang chủ IDEAS">
-                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/01/Logo_15_nam.webp"
+                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp"
                     alt="Logo IDEAS Education - 15 năm thành lập" width="45" height="45" loading="lazy">
             </a>
             <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Đóng menu">
@@ -265,8 +265,8 @@
                 <a href="https://www.estiam.education/" target="_blank" class="mobile-dropdown-item-simple">Estiam</a>
             </div>
         </div>
-        <div class="mobile-dropdown">
-            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+        <div class="mobile-dropdown expanded expanded-default">
+            <button type="button" class="mobile-dropdown-toggle" aria-expanded="true">
                 Chương trình
                 <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -274,7 +274,7 @@
                         stroke-linejoin="round" />
                 </svg>
             </button>
-            <div class="mobile-dropdown-content">
+            <div class="mobile-dropdown-content active">
                 <div class="mobile-dropdown-section">
                     <div class="mobile-section-title">Thạc sĩ</div>
                     <a href="/mba" class="mobile-dropdown-item">

@@ -12252,6 +12252,32 @@ body .pain-card-desc {
   gap: 16px !important;
 }
 
+@media (max-width: 768px) {
+  .ideas_footer .footer-bottom-row {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+  .ideas_footer .copyright-text {
+    text-align: center !important;
+  }
+  .ideas_footer .footer-bottom-right {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+  .ideas_footer .footer-bottom-links {
+    justify-content: center !important;
+  }
+  .ideas_footer .back-to-top-btn {
+    margin-right: 0 !important;
+  }
+}
+
 .ideas_footer .footer-bottom-links a {
   font-size: 0.85rem !important;
   color: #64748b !important;
@@ -12296,6 +12322,7 @@ body .pain-card-desc {
   cursor: pointer !important;
   transition: all 0.3s ease !important;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1) !important;
+  margin-right: 80px !important;
 }
 
 .ideas_footer .back-to-top-btn:hover {

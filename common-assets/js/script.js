@@ -582,7 +582,7 @@ const isEn = document.documentElement.lang === 'en';
                         resolvedProgramKey = 'IDEAS07';
                     } else if (path.includes("dual-dba") || path.includes("dba")) {
                         resolvedProgramKey = 'IDEAS06';
-                    } else if (path.includes("mba")) {
+                    } else if (/(?:^|\/)mba(?:\.html|\/|$)/.test(path)) {
                         resolvedProgramKey = 'IDEAS02';
                     }
                 }
@@ -776,7 +776,7 @@ const isEn = document.documentElement.lang === 'en';
                 programKey = 'IDEAS05';
             } else if (path.includes('emba')) {
                 programKey = 'IDEAS03';
-            } else if (path.includes('mba')) {
+            } else if (/(?:^|\/)mba(?:\.html|\/|$)/.test(path)) {
                 programKey = 'IDEAS02';
             } else if (path.includes('fullbba')) {
                 programKey = 'IDEAS01';
@@ -1485,12 +1485,21 @@ const isEn = document.documentElement.lang === 'en';
         });
     }
 
-    // Initialize everything
-    initBackToTop();
-    initMobileDropdowns();
-    initCustomSelects();
-    initMobileSliders();
-    initScrollDots();
+    // Initialize everything when DOM is ready
+    function initialize() {
+        initBackToTop();
+        initMobileDropdowns();
+        initCustomSelects();
+        initMobileSliders();
+        initScrollDots();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+        initialize();
+    }
+
     window.initBackToTop = initBackToTop;
     window.addEventListener('resize', () => {
         initMobileSliders();
@@ -2461,7 +2470,7 @@ function initMobileTopSheet() {
         programName = "Dual DBA";
         programSub = isEn ? "Dual Doctorate of Business Administration" : "Tiến sĩ QTKD song bằng";
         avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2025/10/Dual-DBA.webp";
-    } else if (path.includes("mba")) {
+    } else if (/(?:^|\/)mba(?:\.html|\/|$)/.test(path)) {
         programName = "Online MBA";
         programSub = isEn ? "Master of Business Administration" : "Thạc sĩ Quản trị Kinh doanh";
         avatarUrl = "https://ideas.edu.vn/wp-content/uploads/2025/09/online-mba-1.png.webp";
