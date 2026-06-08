@@ -11081,7 +11081,8 @@ body .pain-card-desc {
 
 .news-item .item-date {
   font-size: 0.8125rem;
-  color: var(--clr-text-dim, #5e6e82);
+  color: #475569;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 6px;
