@@ -62,6 +62,9 @@ ob_start(function ($html) {
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/common-assets/css/booking-modal.min.css?v=<?php echo $bk_css_version; ?>" />
 
     <style>
+        :root {
+            --line-color: rgba(148, 163, 184, 0.35); /* Faint gray-blue connector lines */
+        }
         /* ══════════════════════════════════════
            ORGANIZATION CHART – PREMIUM LIGHT THEME
         ══════════════════════════════════════ */
@@ -157,12 +160,16 @@ ob_start(function ($html) {
             align-items: center;
             position: relative;
         }
+        .canvas-viewport .org-tree-container {
+            max-width: none !important;
+            width: max-content !important;
+        }
 
         /* Vertical Connector Line */
         .org-tree-line {
             width: 2px;
             height: 35px;
-            background: #cbd5e1;
+            background: var(--line-color);
             position: relative;
             z-index: 1;
         }
@@ -182,8 +189,8 @@ ob_start(function ($html) {
             position: relative;
             z-index: 10;
             transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
-            max-width: 310px;
-            width: 100%;
+            width: 320px;
+            box-sizing: border-box;
         }
 
         .org-node:hover {
@@ -200,8 +207,9 @@ ob_start(function ($html) {
             align-items: center;
             justify-content: space-between;
             padding: 20px 24px;
-            max-width: 340px;
+            width: 320px;
             text-align: left;
+            box-sizing: border-box;
         }
 
         a.org-node-link .org-node-arrow {
@@ -310,9 +318,21 @@ ob_start(function ($html) {
             flex-direction: column;
             align-items: center;
             position: relative;
-            flex: 1;
-            max-width: 320px;
-            width: 100%;
+            flex: 0 0 auto;
+            width: 320px;
+            box-sizing: border-box;
+        }
+
+        .org-branch-col.has-consultants {
+            width: 580px;
+            flex: 0 0 auto;
+            box-sizing: border-box;
+        }
+
+        .org-branch-col.has-sub-branches {
+            width: auto;
+            flex: 0 0 auto;
+            max-width: none;
         }
 
         /* Desktop vertical connector to branches */
@@ -320,7 +340,7 @@ ob_start(function ($html) {
             content: '';
             width: 2px;
             height: 20px;
-            background: #cbd5e1;
+            background: var(--line-color);
             z-index: 1;
         }
 
@@ -332,7 +352,7 @@ ob_start(function ($html) {
             left: 0;
             right: 0;
             height: 2px;
-            background: #cbd5e1;
+            background: var(--line-color);
             z-index: 1;
         }
 
@@ -361,6 +381,7 @@ ob_start(function ($html) {
         }
 
         .consultants-warning {
+            grid-column: span 2;
             background: #fffbeb;
             border: 1px solid #fef3c7;
             border-radius: 12px;
@@ -386,8 +407,8 @@ ob_start(function ($html) {
 
         /* ── Consultants (Tư vấn viên) ───────── */
         .consultants-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 14px;
             width: 100%;
             margin-top: 10px;
@@ -491,13 +512,28 @@ ob_start(function ($html) {
                 bottom: 46px; /* Aligns exactly with vertical center of last card */
                 left: 12px;
                 width: 2px;
-                background: #cbd5e1;
+                background: var(--line-color);
                 z-index: 1;
             }
 
             /* Hide default spacer lines between levels */
             .org-tree-line {
                 display: none !important;
+            }
+
+            /* Reset fixed widths outside canvas for vertical responsive stack */
+            .org-tree-container .org-node {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .org-tree-container a.org-node-link {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .org-tree-container .org-branch-col {
+                width: 100% !important;
+                max-width: 100% !important;
+                flex: 1 1 auto !important;
             }
 
             /* Flex layout to align avatar left and details right on mobile */
@@ -551,7 +587,7 @@ ob_start(function ($html) {
                 left: -24px; /* Matches padding-left(36px) - trunk offset(12px) */
                 width: 24px;
                 height: 2px;
-                background: #cbd5e1;
+                background: var(--line-color);
                 z-index: 2;
             }
 
@@ -600,8 +636,8 @@ ob_start(function ($html) {
                 position: relative;
                 padding-left: 20px;
                 gap: 12px;
-                display: flex;
-                flex-direction: column;
+                display: flex !important;
+                flex-direction: column !important;
             }
 
             /* Vertical sub-trunk inside consultants list */
@@ -612,7 +648,7 @@ ob_start(function ($html) {
                 bottom: 40px; /* Aligns with vertical center of last consultant card */
                 left: 0;
                 width: 2px;
-                background: #cbd5e1;
+                background: var(--line-color);
                 z-index: 1;
             }
 
@@ -630,7 +666,7 @@ ob_start(function ($html) {
                 left: -20px;
                 width: 20px;
                 height: 2px;
-                background: #cbd5e1;
+                background: var(--line-color);
                 z-index: 2;
             }
 
@@ -739,16 +775,9 @@ ob_start(function ($html) {
                 display: block;
                 text-align: center;
                 padding: 24px;
-                max-width: 310px;
-                width: 100%;
+                width: 320px !important;
                 margin-bottom: 0;
                 gap: 0;
-            }
-            .canvas-viewport .org-node:not(.org-node-link) .org-node-avatar,
-            .canvas-viewport .org-node:not(.org-node-link) .org-node-avatar-placeholder {
-                margin: 0 auto 12px;
-                width: 72px;
-                height: 72px;
             }
             .canvas-viewport .org-node-body {
                 text-align: center;
@@ -765,8 +794,17 @@ ob_start(function ($html) {
                 gap: 32px;
             }
             .canvas-viewport .org-branch-col {
-                max-width: 320px;
+                width: 320px !important;
+                flex: 0 0 auto !important;
                 align-items: center;
+            }
+            .canvas-viewport .org-branch-col.has-consultants {
+                width: 580px !important;
+                flex: 0 0 auto !important;
+            }
+            .canvas-viewport .org-branch-col.has-sub-branches {
+                width: auto !important;
+                flex: 0 0 auto !important;
             }
             .canvas-viewport .org-branch-col::before,
             .canvas-viewport .org-branch-col::after {
@@ -782,10 +820,107 @@ ob_start(function ($html) {
                 width: 100%;
                 margin: 10px 0 0 0;
                 padding-left: 0;
-                display: flex;
-                flex-direction: column;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
                 gap: 14px;
             }
+
+            /* main layout outside canvas */
+            .org-tree-container .org-trunk-container {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                align-items: stretch;
+                position: relative;
+                width: 100%;
+            }
+            .org-tree-container .org-vertical-trunk {
+                display: none !important;
+            }
+            .org-tree-container .org-side-branch-left {
+                position: static !important;
+                transform: none !important;
+                display: block !important;
+                width: 100% !important;
+            }
+            .org-tree-container .org-horizontal-connector {
+                display: none !important;
+            }
+
+            /* Restore for canvas viewport on mobile */
+            .canvas-viewport .org-trunk-container {
+                display: flex !important;
+                flex-direction: row !important;
+                height: 140px !important;
+                align-items: center !important;
+                justify-content: center !important;
+                position: relative !important;
+                width: 100% !important;
+            }
+            .canvas-viewport .org-vertical-trunk {
+                display: block !important;
+                position: absolute !important;
+                top: 0 !important;
+                bottom: 0 !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                width: 2px !important;
+                background: var(--line-color) !important;
+                z-index: 1 !important;
+            }
+            .canvas-viewport .org-side-branch-left {
+                position: absolute !important;
+                right: calc(50% + 40px) !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                display: flex !important;
+                align-items: center !important;
+                z-index: 10 !important;
+                width: auto !important;
+            }
+            .canvas-viewport .org-horizontal-connector {
+                display: block !important;
+                width: 40px !important;
+                height: 2px !important;
+                background: var(--line-color) !important;
+            }
+        }
+
+        /* ── Advisory Council Custom Layout ── */
+        .org-trunk-container {
+            position: relative;
+            width: 100%;
+            height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .org-vertical-trunk {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            background: var(--line-color);
+            z-index: 1;
+        }
+
+        .org-side-branch-left {
+            position: absolute;
+            right: calc(50% + 40px);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .org-horizontal-connector {
+            width: 40px;
+            height: 2px;
+            background: #cbd5e1;
         }
     </style>
     <?php wp_head(); ?>
@@ -803,275 +938,9 @@ ob_start(function ($html) {
     </div>
 
     <!-- Site Header -->
-    <header class="ideas_header" id="site-header">
-        <div class="container header-inner">
-            <a href="https://ideas.edu.vn/" class="logo" aria-label="Trang chủ IDEAS">
-                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp"
-                    alt="Logo IDEAS Education - 15 năm thành lập" width="60" height="60" loading="eager"
-                    fetchpriority="high">
-            </a>
-            <nav class="header-nav">
-                <!-- Dropdown 1: Giới thiệu -->
-                <div class="nav-dropdown">
-                    <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        Giới thiệu
-                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu-box simple-dropdown">
-                        <a href="/he-thong-ho-tro-hoc-tap-lms-ideas" class="dropdown-item-simple">
-                            <i class="fa-solid fa-layer-group"></i> <span>Hệ thống LMS</span>
-                        </a>
-                        <a href="/so-do-to-chuc" class="dropdown-item-simple">
-                            <i class="fa-solid fa-sitemap"></i> <span>Cơ cấu tổ chức</span>
-                        </a>
-                        <a href="/doi-ngu-giang-vien" class="dropdown-item-simple">
-                            <i class="fa-solid fa-user-graduate"></i> <span>Hội đồng chuyên môn</span>
-                        </a>
-                        <a href="/dong-su-kien" class="dropdown-item-simple">
-                            <i class="fa-solid fa-clock"></i> <span>Dòng sự kiện</span>
-                        </a>
-                        <a href="/lich-su-hinh-thanh-va-phat-trien-vien-ideas" class="dropdown-item-simple">
-                            <i class="fa-solid fa-landmark"></i> <span>Lịch sử phát triển</span>
-                        </a>
-                    </div>
-                </div>
+        <!-- Shared Header & Mobile Menu -->
+    <?php get_template_part('shared-header'); ?>
 
-                <!-- Dropdown 2: Chương trình -->
-                <div class="nav-dropdown">
-                    <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        Chương trình
-                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu-box">
-                        <div class="dropdown-column">
-                            <div class="dropdown-column-title">Thạc sĩ</div>
-                            <a href="/mba" class="dropdown-item">
-                                <img class="item-avatar"
-                                    src="https://ideas.edu.vn/wp-content/uploads/2025/09/online-mba-1.png.webp"
-                                    alt="Online MBA" decoding="async" loading="lazy" />
-                                <div class="item-content">
-                                    <div class="item-title">Online MBA</div>
-                                    <div class="item-desc">Thạc sĩ QTKD Trực tuyến</div>
-                                </div>
-                            </a>
-                            <a href="/emba" class="dropdown-item">
-                                <img class="item-avatar"
-                                    src="https://ideas.edu.vn/wp-content/uploads/2025/09/emba.png.webp"
-                                    alt="Executive MBA" decoding="async" loading="lazy" />
-                                <div class="item-content">
-                                    <div class="item-title">Executive MBA</div>
-                                    <div class="item-desc">Thạc sĩ điều hành QTKD trực tuyến</div>
-                                </div>
-                            </a>
-                            <a href="/mscai" class="dropdown-item">
-                                <img class="item-avatar"
-                                    src="https://ideas.edu.vn/wp-content/uploads/2025/09/mscai.png.webp" alt="Master AI"
-                                    loading="lazy" decoding="async" />
-                                <div class="item-content">
-                                    <div class="item-title">Master AI (MSc AI)</div>
-                                    <div class="item-desc">Thạc sĩ AI ứng dụng</div>
-                                </div>
-                            </a>
-                            <a href="/mbainai" class="dropdown-item">
-                                <img class="item-avatar"
-                                    src="https://ideas.edu.vn/wp-content/uploads/2026/06/mba_in_ai.webp" alt="MBA in AI"
-                                    loading="lazy" decoding="async" />
-                                <div class="item-content">
-                                    <div class="item-title">MBA in AI</div>
-                                    <div class="item-desc">Thạc sĩ QTKD Ứng dụng AI</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="dropdown-column-divider"></div>
-                        <div class="dropdown-column">
-                            <div class="dropdown-column-title">Cử nhân</div>
-                            <a href="/bba" class="dropdown-item">
-                                <img class="item-avatar"
-                                    src="https://ideas.edu.vn/wp-content/uploads/2026/02/TOPUP.webp" alt="Top-up BBA"
-                                    loading="lazy" decoding="async" />
-                                <div class="item-content">
-                                    <div class="item-title">Top-up BBA</div>
-                                    <div class="item-desc">Liên thông Cử nhân 12 tháng</div>
-                                </div>
-                            </a>
-                            <a href="/fullbba" class="dropdown-item">
-                                <img class="item-avatar"
-                                    src="https://ideas.edu.vn/wp-content/uploads/2026/06/online_bba.webp" alt="Full BBA"
-                                    loading="lazy" decoding="async" />
-                                <div class="item-content">
-                                    <div class="item-title">Full BBA</div>
-                                    <div class="item-desc">Cử nhân QTKD Thụy Sĩ</div>
-                                </div>
-                            </a>
-                            <div class="dropdown-column-title" style="margin-top: 16px;">Tiến sĩ</div>
-                            <a href="/dual-dba" class="dropdown-item">
-                                <img class="item-avatar"
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5c9vyalfHcxNNvOrudO4IQ9qGHz8PC0GhVw&s" alt="Dual DBA"
-                                    loading="lazy" decoding="async" />
-                                <div class="item-content">
-                                    <div class="item-title">Dual DBA</div>
-                                    <div class="item-desc">Tiến sĩ song bằng Pháp & Anh</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dropdown 3: Chính sách -->
-                <div class="nav-dropdown">
-                    <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        Chính sách
-                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu-box simple-dropdown">
-                        <a href="/ho-tro-tai-chinh-sacombank" class="dropdown-item-simple">
-                            <i class="fa-solid fa-circle-dollar-to-slot"></i> <span>Trả góp học phí</span>
-                        </a>
-                        <a href="/cac-khoan-chi-phi" class="dropdown-item-simple">
-                            <i class="fa-solid fa-file-invoice-dollar"></i> <span>Các khoản chi phí</span>
-                        </a>
-                        <a href="/ideas-ambassador" class="dropdown-item-simple">
-                            <i class="fa-solid fa-user-graduate"></i> <span>IDEAS - Ambassador</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Dropdown 4: Bản tin -->
-                <div class="nav-dropdown">
-                    <button type="button" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        Bản tin
-                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu-box simple-dropdown">
-                        <a href="/bai-viet" class="dropdown-item-simple">
-                            <i class="fa-solid fa-newspaper"></i> <span>Bài viết</span>
-                        </a>
-                        <a href="/dong-su-kien#chuyen-di" class="dropdown-item-simple">
-                            <i class="fa-solid fa-plane-departure"></i> <span>Chuyến đi</span>
-                        </a>
-                        <a href="/ideas-talk" class="dropdown-item-simple">
-                            <i class="fa-solid fa-globe"></i> <span>Webinar</span>
-                        </a>
-                        <a href="/ideas-podcast-series-01" class="dropdown-item-simple">
-                            <i class="fa-solid fa-microphone-lines"></i> <span>Podcast</span>
-                        </a>
-                    </div>
-                </div>
-                <div style="display:flex;align-items:center;gap:8px;">
-                    <a class="nav-cta" onclick="showform('sodo_header')">Nhận tư vấn</a>
-                </div>
-            </nav>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <!-- Mobile Drawer menu -->
-    <div class="mobile-overlay" id="mobile-overlay"></div>
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-lenis-prevent>
-        <div class="mobile-menu-header">
-            <a href="/" class="mobile-menu-logo" aria-label="Trang chủ IDEAS">
-                <img decoding="async" src="https://ideas.edu.vn/wp-content/uploads/2026/06/Logo_IDEAS_Slg.webp"
-                    alt="Logo IDEAS Education" width="45" height="45" loading="lazy">
-            </a>
-            <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Đóng menu">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <div class="mobile-dropdown">
-            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
-                Giới thiệu
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-            <div class="mobile-dropdown-menu">
-                <a href="/he-thong-ho-tro-hoc-tap-lms-ideas"><i class="fa-solid fa-layer-group"></i> LMS</a>
-                <a href="/so-do-to-chuc"><i class="fa-solid fa-sitemap"></i> Cơ cấu tổ chức</a>
-                <a href="/doi-ngu-giang-vien"><i class="fa-solid fa-user-graduate"></i> Hội đồng chuyên môn</a>
-                <a href="/dong-su-kien"><i class="fa-solid fa-clock"></i> Dòng sự kiện</a>
-                <a href="/lich-su-hinh-thanh-va-phat-trien-vien-ideas"><i class="fa-solid fa-landmark"></i> Lịch sử phát triển</a>
-            </div>
-        </div>
-        <div class="mobile-dropdown">
-            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
-                Chương trình
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-            <div class="mobile-dropdown-menu">
-                <a href="/mba"><i class="fa-solid fa-graduation-cap"></i> Online MBA</a>
-                <a href="/emba"><i class="fa-solid fa-graduation-cap"></i> Executive MBA</a>
-                <a href="/mscai"><i class="fa-solid fa-brain"></i> Master AI (MSc AI)</a>
-                <a href="/mbainai"><i class="fa-solid fa-robot"></i> MBA in AI</a>
-                <a href="/bba"><i class="fa-solid fa-user-tie"></i> Top-up BBA</a>
-                <a href="/fullbba"><i class="fa-solid fa-user-graduate"></i> Full BBA</a>
-                <a href="/dual-dba"><i class="fa-solid fa-award"></i> Dual DBA</a>
-            </div>
-        </div>
-        <div class="mobile-dropdown">
-            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
-                Chính sách
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-            <div class="mobile-dropdown-menu">
-                <a href="/ho-tro-tai-chinh-sacombank"><i class="fa-solid fa-circle-dollar-to-slot"></i> Trả góp học phí</a>
-                <a href="/cac-khoan-chi-phi"><i class="fa-solid fa-file-invoice-dollar"></i> Các khoản chi phí</a>
-                <a href="/ideas-ambassador"><i class="fa-solid fa-user-graduate"></i> IDEAS Ambassador</a>
-            </div>
-        </div>
-        <div class="mobile-dropdown">
-            <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
-                Bản tin
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-            <div class="mobile-dropdown-menu">
-                <a href="/bai-viet"><i class="fa-solid fa-newspaper"></i> Bài viết</a>
-                <a href="/dong-su-kien#chuyen-di"><i class="fa-solid fa-plane-departure"></i> Chuyến đi</a>
-                <a href="/ideas-talk"><i class="fa-solid fa-globe"></i> Webinar</a>
-                <a href="/ideas-podcast-series-01"><i class="fa-solid fa-microphone-lines"></i> Podcast</a>
-            </div>
-        </div>
-        <div style="padding:20px; margin-top:20px;">
-            <a class="nav-cta" style="display:block; text-align:center; width:100%;" onclick="showform('sodo_header_mb')">Nhận tư vấn</a>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <section class="org-hero">
@@ -1109,21 +978,25 @@ ob_start(function ($html) {
                         </div>
                     </div>
 
-                    <!-- Connector line -->
-                    <div class="org-tree-line"></div>
-
-                    <!-- LEVEL 2: Hội đồng chuyên môn -->
-                    <a href="/doi-ngu-giang-vien" title="Hội đồng chuyên môn Viện IDEAS" class="org-node org-node-link">
-                        <img src="https://ideas.edu.vn/wp-content/uploads/2023/04/logofavicon.png" class="org-node-avatar" alt="Hội đồng chuyên môn">
-                        <div class="org-node-body-horizontal">
-                            <div class="org-node-role" style="margin-bottom:2px;">Hội đồng chuyên môn</div>
-                            <div class="org-node-name" style="margin-bottom:0; font-size:0.95rem;"><i class="fa-solid fa-user-group" style="font-size:0.85rem; color:#ab0e00; margin-right:4px;"></i> Giảng viên – cố vấn</div>
+                    <!-- Trunk with Side Branch (Advisory Council) -->
+                    <div class="org-trunk-container">
+                        <!-- Vertical Trunk Line -->
+                        <div class="org-vertical-trunk"></div>
+                        
+                        <!-- Side Branch: Hội đồng chuyên môn -->
+                        <div class="org-side-branch-left">
+                            <a href="/doi-ngu-giang-vien" title="Hội đồng chuyên môn Viện IDEAS" class="org-node org-node-link">
+                                <img src="https://ideas.edu.vn/wp-content/uploads/2023/04/logofavicon.png" class="org-node-avatar" alt="Hội đồng chuyên môn">
+                                <div class="org-node-body-horizontal">
+                                    <div class="org-node-role" style="margin-bottom:2px;">Hội đồng chuyên môn</div>
+                                    <div class="org-node-name" style="margin-bottom:0; font-size:0.95rem;"><i class="fa-solid fa-user-group" style="font-size:0.85rem; color:#ab0e00; margin-right:4px;"></i> Giảng viên – cố vấn</div>
+                                </div>
+                                <i class="fa-solid fa-angle-right org-node-arrow"></i>
+                            </a>
+                            <!-- Horizontal perpendicular connector line -->
+                            <div class="org-horizontal-connector"></div>
                         </div>
-                        <i class="fa-solid fa-angle-right org-node-arrow"></i>
-                    </a>
-
-                    <!-- Connector line -->
-                    <div class="org-tree-line"></div>
+                    </div>
 
                     <!-- LEVEL 3: Division Heads (3 Columns) -->
                     <div class="org-branches">
@@ -1148,7 +1021,7 @@ ob_start(function ($html) {
                             
                             <div class="org-branches">
                                 <!-- Department 1.1: Phòng Sale -->
-                                <div class="org-branch-col has-sub-branches">
+                                <div class="org-branch-col has-consultants">
                                     <div class="org-node">
                                         <img src="https://ideas.edu.vn/wp-content/uploads/2025/04/mainu_avt.jpg" class="org-node-avatar" alt="Trưởng phòng Sale - Mai Nữ">
                                         <div class="org-node-body">
@@ -1231,7 +1104,7 @@ ob_start(function ($html) {
                                 </div>
                                 
                                 <!-- Department 1.2: Phòng Học vụ -->
-                                <div class="org-branch-col">
+                                <div class="org-branch-col has-consultants">
                                     <div class="org-node">
                                         <div class="org-node-avatar-placeholder">LHT</div>
                                         <div class="org-node-body">
@@ -1327,7 +1200,7 @@ ob_start(function ($html) {
                             
                             <div class="org-branches">
                                 <!-- Sub-branch 3.1: Trịnh Đình Thanh -->
-                                <div class="org-branch-col">
+                                <div class="org-branch-col has-consultants">
                                     <div class="org-node">
                                         <div class="org-node-avatar-placeholder">TDT</div>
                                         <div class="org-node-body">
@@ -1373,7 +1246,7 @@ ob_start(function ($html) {
                                 </div>
                                 
                                 <!-- Sub-branch 3.2: Ngô Gia Thái -->
-                                <div class="org-branch-col">
+                                <div class="org-branch-col has-consultants">
                                     <div class="org-node">
                                         <div class="org-node-avatar-placeholder">NGT</div>
                                         <div class="org-node-body">
@@ -1524,51 +1397,258 @@ ob_start(function ($html) {
                     <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
             </button>
-            
-            <!-- STEP 1: Select date & time -->
-            <div class="bk-step" id="bk-step-1">
-                <h2 class="bk-title" id="bk-title">Đặt lịch hẹn tư vấn 1:1</h2>
-                <p class="bk-subtitle">Chọn ngày &amp; khung giờ phù hợp để chuyên viên tư vấn gọi điện hỗ trợ bạn.</p>
 
-                <div class="bk-calendar-wrapper">
-                    <!-- Date picker row -->
-                    <div class="bk-dates-row" id="bk-dates-container"></div>
-                    <!-- Time slots grid -->
-                    <div class="bk-time-section">
-                        <h4 class="bk-section-title">Khung giờ khả dụng:</h4>
-                        <div class="bk-time-grid" id="bk-time-container"></div>
+            <!-- Progress bar -->
+            <div class="bk-progress">
+                <div class="bk-progress-track">
+                    <div class="bk-progress-fill" id="bk-progress-fill"></div>
+                </div>
+                <div class="bk-steps-label">
+                    <span class="bk-step-lbl active" data-step="1">Thông tin</span>
+                    <span class="bk-step-lbl" data-step="2">Chọn lịch</span>
+                    <span class="bk-step-lbl" data-step="3">Xác nhận</span>
+                </div>
+            </div>
+
+            <!-- STEP 1: Personal Info -->
+            <div class="bk-step" id="bk-step-1">
+                <div class="bk-step-header">
+                    <div class="bk-header-icon">
+                        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="bk-step-badge">BƯỚC 1 / 3</div>
+                        <h2 class="bk-step-title" id="bk-title">Thông tin của bạn</h2>
+                        <p class="bk-step-sub">Điền thông tin để chuyên viên chuẩn bị buổi tư vấn phù hợp nhất</p>
                     </div>
                 </div>
 
-                <button type="button" class="bk-btn-next" id="bk-to-step-2" disabled>Tiếp tục</button>
+                <form class="bk-form" id="bk-form-1" novalidate>
+                    <div class="bk-field">
+                        <label for="bk-name">Họ và tên <span class="bk-required">*</span></label>
+                        <div class="bk-input-wrap">
+                            <svg class="bk-input-icon" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                            <input type="text" id="bk-name" name="bk-name" placeholder="Nguyễn Văn A" autocomplete="name" required />
+                        </div>
+                        <span class="bk-err" id="bk-name-err"></span>
+                    </div>
+
+                    <div class="bk-row-2">
+                        <div class="bk-field">
+                            <label for="bk-phone">Số điện thoại <span class="bk-required">*</span></label>
+                            <div class="bk-input-wrap">
+                                <svg class="bk-input-icon" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                                <input type="tel" id="bk-phone" name="bk-phone" placeholder="0912 345 678" autocomplete="tel" required />
+                            </div>
+                            <span class="bk-err" id="bk-phone-err"></span>
+                        </div>
+                        <div class="bk-field">
+                            <label for="bk-email">Email <span class="bk-required">*</span></label>
+                            <div class="bk-input-wrap">
+                                <svg class="bk-input-icon" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <input type="email" id="bk-email" name="bk-email" placeholder="email@company.com" autocomplete="email" required />
+                            </div>
+                            <span class="bk-err" id="bk-email-err"></span>
+                        </div>
+                    </div>
+
+                    <div class="bk-row-2">
+                        <div class="bk-field">
+                            <label for="bk-edu">Trình độ học vấn <span class="bk-required">*</span></label>
+                            <div class="bk-select-wrap">
+                                <select id="bk-edu" name="bk-edu" required>
+                                    <option value="">-- Chọn trình độ --</option>
+                                    <option value="highschool">THPT</option>
+                                    <option value="college">Cao đẳng</option>
+                                    <option value="bachelor">Cử nhân</option>
+                                    <option value="master">Thạc sĩ</option>
+                                    <option value="other">Khác</option>
+                                </select>
+                            </div>
+                            <span class="bk-err" id="bk-edu-err"></span>
+                        </div>
+                        <div class="bk-field">
+                            <label for="bk-eng">Trình độ Tiếng Anh <span class="bk-required">*</span></label>
+                            <div class="bk-select-wrap">
+                                <select id="bk-eng" name="bk-eng" required>
+                                    <option value="">-- Chọn trình độ --</option>
+                                    <option value="below-5.0">Dưới IELTS 5.0</option>
+                                    <option value="5.0-5.5">IELTS 5.0 – 5.5</option>
+                                    <option value="6.0-plus">IELTS 6.0+</option>
+                                    <option value="other">Khác / Chưa thi</option>
+                                </select>
+                            </div>
+                            <span class="bk-err" id="bk-eng-err"></span>
+                        </div>
+                    </div>
+
+                    <div class="bk-field">
+                        <label>Chương trình quan tâm <span class="bk-required">*</span></label>
+                        <div class="bk-program-grid" id="bk-program-grid">
+                            <label class="bk-program-card">
+                                <input type="radio" name="bk-program" value="Cơ cấu tổ chức Viện" checked />
+                                <div class="bk-program-inner">
+                                    <div class="bk-program-icon">👔</div>
+                                    <div class="bk-program-name">Tổ chức Viện IDEAS</div>
+                                    <div class="bk-program-desc">Tìm hiểu thông tin hoạt động</div>
+                                </div>
+                            </label>
+                            <label class="bk-program-card">
+                                <input type="radio" name="bk-program" value="Chương trình Thạc sĩ" />
+                                <div class="bk-program-inner">
+                                    <div class="bk-program-icon">🎓</div>
+                                    <div class="bk-program-name">Chương trình Thạc sĩ</div>
+                                    <div class="bk-program-desc">MBA / EMBA / MBA in AI / MSc AI</div>
+                                </div>
+                            </label>
+                            <label class="bk-program-card">
+                                <input type="radio" name="bk-program" value="Chưa quyết định" />
+                                <div class="bk-program-inner">
+                                    <div class="bk-program-icon">💡</div>
+                                    <div class="bk-program-name">Chưa quyết định</div>
+                                    <div class="bk-program-desc">Cần tư vấn để lựa chọn</div>
+                                </div>
+                            </label>
+                        </div>
+                        <span class="bk-err" id="bk-program-err"></span>
+                    </div>
+
+                    <button type="button" class="bk-btn-next" id="bk-next-1" aria-label="Sang bước tiếp theo: chọn lịch">
+                        Tiếp theo - Chọn lịch
+                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </form>
             </div>
 
-            <!-- STEP 2: Fill details -->
+            <!-- STEP 2: Date & Time -->
             <div class="bk-step bk-hidden" id="bk-step-2">
-                <button type="button" class="bk-btn-back" id="bk-back-to-1">
-                    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    Quay lại
-                </button>
-                <h2 class="bk-title">Xác nhận thông tin</h2>
-                <p class="bk-subtitle">Nhập thông tin liên hệ của bạn để hoàn tất đặt lịch tư vấn.</p>
+                <div class="bk-step-header">
+                    <div class="bk-header-icon">
+                        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="bk-step-badge">BƯỚC 2 / 3</div>
+                        <h2 class="bk-step-title">Chọn ngày &amp; giờ</h2>
+                        <p class="bk-step-sub">Chọn thời gian phù hợp để chuyên viên gọi tư vấn cho bạn</p>
+                    </div>
+                </div>
 
-                <div class="bk-form">
-                    <div class="bk-form-group">
-                        <label for="bk-name-input">Họ và tên *</label>
-                        <input type="text" id="bk-name-input" placeholder="Họ và tên của bạn" required />
+                <div class="bk-calendar-wrap">
+                    <div class="bk-cal-header">
+                        <button type="button" class="bk-cal-nav" id="bk-cal-prev" aria-label="Tháng trước">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <span class="bk-cal-month-label" id="bk-cal-month-label"></span>
+                        <button type="button" class="bk-cal-nav" id="bk-cal-next" aria-label="Tháng tiếp theo">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
                     </div>
-                    <div class="bk-form-group">
-                        <label for="bk-phone-input">Số điện thoại *</label>
-                        <input type="tel" id="bk-phone-input" placeholder="Số điện thoại" required />
+                    <div class="bk-cal-weekdays">
+                        <span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span>
                     </div>
-                    <div class="bk-form-group">
-                        <label for="bk-email-input">Email *</label>
-                        <input type="email" id="bk-email-input" placeholder="Địa chỉ email" required />
+                    <div class="bk-cal-grid" id="bk-cal-grid"></div>
+                </div>
+
+                <div class="bk-time-section" id="bk-time-section">
+                    <div class="bk-time-label">
+                        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        <span id="bk-selected-date-label">Vui lòng chọn ngày trước</span>
                     </div>
-                    <button type="button" class="bk-btn-submit" id="bk-submit-btn">
-                        <span>Xác nhận đặt lịch</span>
+                    <div class="bk-time-grid" id="bk-time-grid"></div>
+                    <span class="bk-err" id="bk-time-err"></span>
+                </div>
+
+                <div class="bk-step-actions">
+                    <button type="button" class="bk-btn-back" id="bk-back-2" aria-label="Quay lại bước trước">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        Quay lại
+                    </button>
+                    <button type="button" class="bk-btn-next" id="bk-next-2" aria-label="Sang bước tiếp theo: xem xác nhận">
+                        Xem xác nhận
+                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 3: Confirm -->
+            <div class="bk-step bk-hidden" id="bk-step-3">
+                <div class="bk-step-header">
+                    <div class="bk-header-icon">
+                        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="bk-step-badge">BƯỚC 3 / 3</div>
+                        <h2 class="bk-step-title">Xác nhận lịch hẹn</h2>
+                        <p class="bk-step-sub">Vui lòng kiểm tra kỹ các thông tin trước khi xác nhận đặt lịch</p>
+                    </div>
+                </div>
+
+                <div class="bk-confirm-summary">
+                    <div class="bk-confirm-item-data">
+                        <span class="bk-confirm-lbl">Lịch tư vấn</span>
+                        <div class="bk-confirm-val">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            <span id="bk-confirm-date">-</span> &nbsp;lúc&nbsp;
+                            <span id="bk-confirm-time">-</span>
+                        </div>
+                    </div>
+                    <div class="bk-confirm-grid">
+                        <div class="bk-confirm-cell">
+                            <span class="bk-confirm-lbl">Họ và tên</span>
+                            <span class="bk-confirm-val" id="bk-confirm-name">-</span>
+                        </div>
+                        <div class="bk-confirm-cell">
+                            <span class="bk-confirm-lbl">Số điện thoại</span>
+                            <span class="bk-confirm-val" id="bk-confirm-phone">-</span>
+                        </div>
+                        <div class="bk-confirm-cell">
+                            <span class="bk-confirm-lbl">Email</span>
+                            <span class="bk-confirm-val" id="bk-confirm-email" style="word-break: break-all;">-</span>
+                        </div>
+                        <div class="bk-confirm-cell">
+                            <span class="bk-confirm-lbl">Chương trình</span>
+                            <span class="bk-confirm-val" id="bk-confirm-program">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bk-step-actions">
+                    <button type="button" class="bk-btn-back" id="bk-back-3" aria-label="Quay lại bước trước">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        Quay lại
+                    </button>
+                    <button type="button" class="bk-btn-next" id="bk-confirm-btn" aria-label="Xác nhận lịch hẹn">
+                        Xác nhận đặt lịch
                         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
@@ -1639,49 +1719,7 @@ ob_start(function ($html) {
         }
     </script>
 
-    <!-- Custom Menu Toggle Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const hamburger = document.getElementById('hamburger');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileOverlay = document.getElementById('mobile-overlay');
-            const closeBtn = document.getElementById('mobile-menu-close');
-
-            if (hamburger && mobileMenu && mobileOverlay) {
-                function openMenu() {
-                    mobileMenu.classList.add('active');
-                    mobileOverlay.classList.add('active');
-                    mobileMenu.setAttribute('aria-hidden', 'false');
-                    document.body.style.overflow = 'hidden';
-                }
-
-                function closeMenu() {
-                    mobileMenu.classList.remove('active');
-                    mobileOverlay.classList.remove('active');
-                    mobileMenu.setAttribute('aria-hidden', 'true');
-                    document.body.style.overflow = '';
-                }
-
-                hamburger.addEventListener('click', openMenu);
-                closeBtn?.addEventListener('click', closeMenu);
-                mobileOverlay.addEventListener('click', closeMenu);
-            }
-
-            // Mobile dropdown toggle
-            const toggles = document.querySelectorAll('.mobile-dropdown-toggle');
-            toggles.forEach(toggle => {
-                toggle.addEventListener('click', function () {
-                    const menu = this.nextElementSibling;
-                    const isOpen = this.getAttribute('aria-expanded') === 'true';
-
-                    this.setAttribute('aria-expanded', !isOpen);
-                    if (menu) {
-                        menu.classList.toggle('active');
-                    }
-                });
-            });
-        });
-    </script>
+    
 
     <!-- Form Lead Submission Handlers -->
     <script>
@@ -1934,6 +1972,10 @@ ob_start(function ($html) {
 
             // Wheel Zoom Event (centered at cursor)
             viewport.addEventListener('wheel', (e) => {
+                if (!e.ctrlKey) {
+                    // Normal wheel scroll behaves as normal page scroll
+                    return;
+                }
                 e.preventDefault();
                 const vr = viewport.getBoundingClientRect();
                 const mx = e.clientX - vr.left;
