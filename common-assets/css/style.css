@@ -5322,7 +5322,7 @@ button.nav-link {
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(12px);
+  transform: translateX(-50%) translateY(32px);
   background: #ffffff;
   border-radius: 16px;
   border: 1px solid #e2e8f0;
@@ -5342,17 +5342,17 @@ button.nav-link {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
-  transform: translateX(-50%) translateY(4px);
+  transform: translateX(-50%) translateY(24px);
 }
 
 /* Pseudo-element bridge to prevent hover loss */
 .dropdown-menu-box::before {
   content: "";
   position: absolute;
-  top: -20px;
+  top: -40px;
   left: 0;
   right: 0;
-  height: 20px;
+  height: 40px;
   background: transparent;
 }
 
