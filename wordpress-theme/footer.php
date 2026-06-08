@@ -4,6 +4,12 @@
  * Used by: get_footer()
  * Applies to: all pages (homepage, single posts, archives, etc.)
  */
+
+// Prevent duplicate footer execution across wrapper page setups
+if (defined('IDEAS_FOOTER_RENDERED')) {
+    return;
+}
+define('IDEAS_FOOTER_RENDERED', true);
 ?>
 
     <!-- Footer -->
