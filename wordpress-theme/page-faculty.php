@@ -691,6 +691,19 @@ ob_start(function ($html) {
             color: #94a3b8;
         }
 
+        /* ── Contrast Overrides for Dark Backgrounds ── */
+        body .faculty-hero h1 {
+            color: #ffffff !important;
+        }
+        body .faculty-hero p {
+            color: rgba(255, 255, 255, 0.85) !important;
+        }
+        body .faculty-hero-badge {
+            color: #fca5a5 !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            border: 1px solid rgba(255, 255, 255, 0.18) !important;
+        }
+
         /* ── Responsive ─────────────────── */
         /* ── Mobile horizontal carousel slider ── */
         .slider-dots {
@@ -716,15 +729,31 @@ ob_start(function ($html) {
 
         @media (max-width: 768px) {
             .faculty-hero {
-                padding: 130px 16px 50px;
+                padding: 120px 20px 50px !important;
             }
 
             .hero-stats {
-                gap: 28px;
+                flex-wrap: nowrap !important;
+                gap: 12px !important;
+                margin-top: 36px !important;
+                width: 100% !important;
+            }
+            
+            .hero-stat {
+                flex: 1 1 33.33% !important;
+            }
+
+            .hero-stat-number {
+                font-size: 1.6rem !important;
+            }
+
+            .hero-stat-label {
+                font-size: 0.68rem !important;
+                line-height: 1.3 !important;
             }
 
             .faculty-section {
-                padding: 40px 16px 60px;
+                padding: 50px 20px 60px !important;
             }
 
             .faculty-grid {
@@ -737,10 +766,10 @@ ob_start(function ($html) {
                 padding-bottom: 15px;
                 gap: 16px;
                 scrollbar-width: none; /* Firefox */
-                margin-left: -16px;
-                margin-right: -16px;
-                padding-left: 16px;
-                padding-right: 16px;
+                margin-left: -20px !important;
+                margin-right: -20px !important;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
             }
 
             .faculty-grid::-webkit-scrollbar {

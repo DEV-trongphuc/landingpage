@@ -1346,6 +1346,7 @@ const isEn = document.documentElement.lang === 'en';
 
     /* ─── Back to Top Button ─── */
     function initBackToTop() {
+        if (document.querySelector('.back-to-top-btn')) return;
         // Inject styles dynamically
         const style = document.createElement('style');
         style.textContent = `
@@ -1475,6 +1476,7 @@ const isEn = document.documentElement.lang === 'en';
     initCustomSelects();
     initMobileSliders();
     initScrollDots();
+    window.initBackToTop = initBackToTop;
     window.addEventListener('resize', () => {
         initMobileSliders();
         initScrollDots();
@@ -2604,7 +2606,6 @@ if (document.readyState === 'loading') {
         initCountersParallax();
         initReadingProgressAndSideNav();
         initMobileTopSheet();
-        initBackToTop();
     });
 } else {
     initCopyrightYear();
@@ -2618,7 +2619,6 @@ if (document.readyState === 'loading') {
     initCountersParallax();
     initReadingProgressAndSideNav();
     initMobileTopSheet();
-    initBackToTop();
 }
 
 

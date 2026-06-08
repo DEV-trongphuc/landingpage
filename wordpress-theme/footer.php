@@ -181,6 +181,8 @@ define('IDEAS_FOOTER_RENDERED', true);
         }
     </script>
 
+    <?php get_template_part('shared-modals'); ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>
